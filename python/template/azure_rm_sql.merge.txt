@@ -57,8 +57,6 @@ OLD : azure_rm_sql_serverazureadadministrators_facts
 OLD : azure_rm_sql_servercommunicationlinks
 OLD : azure_rm_sql_servercommunicationlinks_facts
 OLD : azure_rm_sql_serviceobjectives_facts
-OLD : azure_rm_servers
-Module 'azure_rm_servers' in old template only - KEEPING
 OLD : azure_rm_sql_servers_facts
 OLD : azure_rm_sql_serverusages_facts
 OLD : azure_rm_sql_databaseusages_facts
@@ -185,7 +183,6 @@ GENERATED: azure_rm_sql_serverazureadadministrators_facts
 GENERATED: azure_rm_sql_servercommunicationlinks
 GENERATED: azure_rm_sql_servercommunicationlinks_facts
 GENERATED: azure_rm_sql_serviceobjectives_facts
-GENERATED: azure_rm_servers
 GENERATED: azure_rm_sql_servers_facts
 GENERATED: azure_rm_sql_serverusages_facts
 GENERATED: azure_rm_sql_databaseusages_facts
