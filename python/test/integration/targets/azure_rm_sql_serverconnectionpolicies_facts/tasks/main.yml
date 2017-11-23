@@ -1,0 +1,8 @@
+- name: Create instance of ServerConnectionPolicies
+  azure_rm_sql_serverconnectionpolicies_facts:
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state.state == 'Ready'

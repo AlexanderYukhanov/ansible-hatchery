@@ -149,7 +149,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_sql()
+        response = self.get_transparentdataencryptions()
 
         if not response:
             self.log("TransparentDataEncryptions instance doesn't exist")
@@ -160,7 +160,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
         else:
             self.log("TransparentDataEncryptions instance already exists")
             if self.state == 'absent':
-                self.delete_sql()
+                self.delete_transparentdataencryptions()
                 self.results['changed'] = True
                 self.log("TransparentDataEncryptions instance deleted")
             elif self.state == 'present':
@@ -175,7 +175,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                 return self.results
 
             if to_be_updated:
-                self.results['state'] = self.create_update_sql()
+                self.results['state'] = self.create_update_transparentdataencryptions()
                 self.results['changed'] = True
             else:
                 self.results['state'] = response
@@ -184,7 +184,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_sql(self):
+    def create_update_transparentdataencryptions(self):
         '''
         Creates or updates TransparentDataEncryptions with the specified configuration.
 
@@ -196,8 +196,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
             response = self.mgmt_client.transparent_data_encryptions.create_or_update(self.resource_group_name,
                                                                                       self.server_name,
                                                                                       self.database_name,
-                                                                                      self.transparent_data_encryption_name,
-                                                                                      self.parameters)
+                                                                                      self.transparent_data_encryption_name)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -206,7 +205,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
             self.fail("Error creating the TransparentDataEncryptions instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_sql(self):
+    def delete_transparentdataencryptions(self):
         '''
         Deletes specified TransparentDataEncryptions instance in the specified subscription and resource group.
 
@@ -221,7 +220,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
 
         return True
 
-    def get_sql(self):
+    def get_transparentdataencryptions(self):
         '''
         Gets the properties of the specified TransparentDataEncryptions.
 

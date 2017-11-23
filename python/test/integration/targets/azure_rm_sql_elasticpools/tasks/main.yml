@@ -1,0 +1,12 @@
+- name: Create instance of ElasticPool
+  azure_rm_sql_elasticpools:
+    resource_group: "{{ resource_group }}"
+    server_name: zims-server
+    name: test-elastic-pool
+    location: westus
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state.state == 'Ready'
