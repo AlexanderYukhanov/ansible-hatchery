@@ -20,10 +20,18 @@ Option 'azure_rm_sql_elasticpools' ModuleNameAlt - KEEPING OLD
 Option 'elastic_pool_name' Documentation - KEEPING OLD
 Option 'parameters' in old template only - KEEPING
 Option 'status' Disposition - KEEPING OLD
+Option 'resource_group_name' NameAlt - KEEPING OLD
+Option 'resource_group_name' DefaultValueSample - KEEPING OLD
+Option 'resource_group_name' DefaultValueTest - KEEPING OLD
+Option 'server_name' NameAlt - KEEPING OLD
+Option 'server_name' DefaultValueTest - KEEPING OLD
+Option 'location' DefaultValueTest - KEEPING OLD
+Option 'administrator_login' DefaultValueTest - KEEPING OLD
+Option 'administrator_login_password' DefaultValueTest - KEEPING OLD
+Option 'azure_rm_sql_servers' ModuleNameAlt - KEEPING OLD
 Option 'server_name' Disposition - KEEPING OLD
 Option 'server_name' Documentation - KEEPING OLD
 Option 'server_name' Required - KEEPING OLD
 Option 'database_name' Disposition - KEEPING OLD
 Option 'database_name' Documentation - KEEPING OLD
 Option 'database_name' Required - KEEPING OLD
-Module 'azure_rm_sql_servers' in new template only - ADDING

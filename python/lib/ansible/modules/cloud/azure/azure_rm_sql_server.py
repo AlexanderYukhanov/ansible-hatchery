@@ -15,29 +15,29 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_sql_servers
+module: azure_rm_sql_server
 version_added: "2.5"
-short_description: Manage an Servers.
+short_description: Manage an Server.
 description:
-    - Create, update and delete an instance of Servers.
+    - Create, update and delete an instance of Server.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
-    server_name:
+    name:
         description:
             - The name of the server.
+        required: True
+    location:
+        description:
+            - Resource location.
         required: True
     tags:
         description:
             - Resource tags.
         required: False
-    location:
-        description:
-            - Resource location.
-        required: True
     identity:
         description:
             - The Azure Active Directory identity of the server.
@@ -71,22 +71,22 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) Servers
-        azure_rm_sql_servers:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+      - name: Create (or update) Server
+        azure_rm_sql_server:
+          resource_group: "{{ resource_group }}"
+          name: zimsserver
+          location: westus
           tags: "{{ tags }}"
-          location: "{{ location }}"
           identity:
             type: "{{ type }}"
-          administrator_login: "{{ administrator_login }}"
-          administrator_login_password: "{{ administrator_login_password }}"
+          administrator_login: mylogin
+          administrator_login_password: Testpasswordxyz12!
           version: "{{ version }}"
 '''
 
 RETURN = '''
 state:
-    description: Current state of Servers
+    description: Current state of Server
     returned: always
     type: dict
 '''
@@ -104,25 +104,25 @@ except ImportError:
 
 
 class AzureRMServers(AzureRMModuleBase):
-    """Configuration class for an Azure RM Servers resource"""
+    """Configuration class for an Azure RM Server resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
-            server_name=dict(
+            name=dict(
+                type='str',
+                required=True
+            ),
+            location=dict(
                 type='str',
                 required=True
             ),
             tags=dict(
                 type='dict',
                 required=False
-            ),
-            location=dict(
-                type='str',
-                required=True
             ),
             identity=dict(
                 type='dict',
@@ -148,8 +148,8 @@ class AzureRMServers(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
-        self.server_name = None
+        self.resource_group = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
@@ -166,10 +166,10 @@ class AzureRMServers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags":
-                self.parameters["tags"] = kwargs[key]
             elif key == "location":
                 self.parameters["location"] = kwargs[key]
+            elif key == "tags":
+                self.parameters["tags"] = kwargs[key]
             elif key == "identity":
                 self.parameters["identity"] = kwargs[key]
             elif key == "administrator_login":
@@ -191,33 +191,33 @@ class AzureRMServers(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_servers()
+        response = self.get_server()
 
         if not response:
-            self.log("Servers instance doesn't exist")
+            self.log("Server instance doesn't exist")
             if self.state == 'absent':
                 self.log("Nothing to delete")
             else:
                 to_be_updated = True
         else:
-            self.log("Servers instance already exists")
+            self.log("Server instance already exists")
             if self.state == 'absent':
-                self.delete_servers()
+                self.delete_server()
                 self.results['changed'] = True
-                self.log("Servers instance deleted")
+                self.log("Server instance deleted")
             elif self.state == 'present':
-                self.log("Need to check if Servers instance has to be deleted or may be updated")
+                self.log("Need to check if Server instance has to be deleted or may be updated")
                 to_be_updated = True
 
         if self.state == 'present':
 
-            self.log("Need to Create / Update the Servers instance")
+            self.log("Need to Create / Update the Server instance")
 
             if self.check_mode:
                 return self.results
 
             if to_be_updated:
-                self.results['state'] = self.create_update_servers()
+                self.results['state'] = self.create_update_server()
                 self.results['changed'] = True
             else:
                 self.results['state'] = response
@@ -226,58 +226,58 @@ class AzureRMServers(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_servers(self):
+    def create_update_server(self):
         '''
-        Creates or updates Servers with the specified configuration.
+        Creates or updates Server with the specified configuration.
 
-        :return: deserialized Servers instance state dictionary
+        :return: deserialized Server instance state dictionary
         '''
-        self.log("Creating / Updating the Servers instance {0}".format(self.server_name))
+        self.log("Creating / Updating the Server instance {0}".format(self.name))
 
         try:
-            response = self.mgmt_client.servers.create_or_update(self.resource_group_name,
-                                                                 self.server_name,
+            response = self.mgmt_client.servers.create_or_update(self.resource_group,
+                                                                 self.name,
                                                                  self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Servers instance.')
-            self.fail("Error creating the Servers instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Server instance.')
+            self.fail("Error creating the Server instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_servers(self):
+    def delete_server(self):
         '''
-        Deletes specified Servers instance in the specified subscription and resource group.
+        Deletes specified Server instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Servers instance {0}".format(self.server_name))
+        self.log("Deleting the Server instance {0}".format(self.name))
         try:
-            response = self.mgmt_client.servers.delete(self.resource_group_name,
-                                                       self.server_name)
+            response = self.mgmt_client.servers.delete(self.resource_group,
+                                                       self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the Servers instance.')
-            self.fail("Error deleting the Servers instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Server instance.')
+            self.fail("Error deleting the Server instance: {0}".format(str(e)))
 
         return True
 
-    def get_servers(self):
+    def get_server(self):
         '''
-        Gets the properties of the specified Servers.
+        Gets the properties of the specified Server.
 
-        :return: deserialized Servers instance state dictionary
+        :return: deserialized Server instance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
+        self.log("Checking if the Server instance {0} is present".format(self.name))
         found = False
         try:
-            response = self.mgmt_client.servers.get(self.resource_group_name,
-                                                    self.server_name)
+            response = self.mgmt_client.servers.get(self.resource_group,
+                                                    self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
+            self.log("Server instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Did not find the Server instance.')
         if found is True:
             return response.as_dict()
 
