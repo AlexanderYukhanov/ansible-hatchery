@@ -217,7 +217,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_sql()
+        response = self.get_elasticpool()
 
         if not response:
             self.log("ElasticPool instance doesn't exist")
@@ -228,7 +228,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
         else:
             self.log("ElasticPool instance already exists")
             if self.state == 'absent':
-                self.delete_sql()
+                self.delete_elasticpool()
                 self.results['changed'] = True
                 self.log("ElasticPool instance deleted")
             elif self.state == 'present':
@@ -243,7 +243,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
                 return self.results
 
             if to_be_updated:
-                self.results['state'] = self.create_update_sql()
+                self.results['state'] = self.create_update_elasticpool()
                 self.results['changed'] = True
             else:
                 self.results['state'] = response
@@ -252,7 +252,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_sql(self):
+    def create_update_elasticpool(self):
         '''
         Creates or updates ElasticPool with the specified configuration.
 
@@ -273,7 +273,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
             self.fail("Error creating the ElasticPool instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_sql(self):
+    def delete_elasticpool(self):
         '''
         Deletes specified ElasticPool instance in the specified subscription and resource group.
 
@@ -290,7 +290,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
 
         return True
 
-    def get_sql(self):
+    def get_elasticpool(self):
         '''
         Gets the properties of the specified ElasticPool.
 

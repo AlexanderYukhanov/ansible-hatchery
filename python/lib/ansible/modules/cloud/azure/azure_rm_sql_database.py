@@ -338,7 +338,7 @@ class AzureRMDatabases(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_sql()
+        response = self.get_database()
 
         if not response:
             self.log("Database instance doesn't exist")
@@ -349,7 +349,7 @@ class AzureRMDatabases(AzureRMModuleBase):
         else:
             self.log("Database instance already exists")
             if self.state == 'absent':
-                self.delete_sql()
+                self.delete_database()
                 self.results['changed'] = True
                 self.log("Database instance deleted")
             elif self.state == 'present':
@@ -364,7 +364,7 @@ class AzureRMDatabases(AzureRMModuleBase):
                 return self.results
 
             if to_be_updated:
-                self.results['state'] = self.create_update_sql()
+                self.results['state'] = self.create_update_database()
                 self.results['changed'] = True
             else:
                 self.results['state'] = response
@@ -373,7 +373,7 @@ class AzureRMDatabases(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_sql(self):
+    def create_update_database(self):
         '''
         Creates or updates Database with the specified configuration.
 
@@ -394,7 +394,7 @@ class AzureRMDatabases(AzureRMModuleBase):
             self.fail("Error creating the Database instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_sql(self):
+    def delete_database(self):
         '''
         Deletes specified Database instance in the specified subscription and resource group.
 
@@ -411,7 +411,7 @@ class AzureRMDatabases(AzureRMModuleBase):
 
         return True
 
-    def get_sql(self):
+    def get_database(self):
         '''
         Gets the properties of the specified Database.
 

@@ -191,7 +191,7 @@ class AzureRMServers(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_servers()
+        response = self.get_server()
 
         if not response:
             self.log("Server instance doesn't exist")
@@ -202,7 +202,7 @@ class AzureRMServers(AzureRMModuleBase):
         else:
             self.log("Server instance already exists")
             if self.state == 'absent':
-                self.delete_servers()
+                self.delete_server()
                 self.results['changed'] = True
                 self.log("Server instance deleted")
             elif self.state == 'present':
@@ -217,7 +217,7 @@ class AzureRMServers(AzureRMModuleBase):
                 return self.results
 
             if to_be_updated:
-                self.results['state'] = self.create_update_servers()
+                self.results['state'] = self.create_update_server()
                 self.results['changed'] = True
             else:
                 self.results['state'] = response
@@ -226,7 +226,7 @@ class AzureRMServers(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_servers(self):
+    def create_update_server(self):
         '''
         Creates or updates Server with the specified configuration.
 
@@ -246,7 +246,7 @@ class AzureRMServers(AzureRMModuleBase):
             self.fail("Error creating the Server instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_servers(self):
+    def delete_server(self):
         '''
         Deletes specified Server instance in the specified subscription and resource group.
 
@@ -262,7 +262,7 @@ class AzureRMServers(AzureRMModuleBase):
 
         return True
 
-    def get_servers(self):
+    def get_server(self):
         '''
         Gets the properties of the specified Server.
 
