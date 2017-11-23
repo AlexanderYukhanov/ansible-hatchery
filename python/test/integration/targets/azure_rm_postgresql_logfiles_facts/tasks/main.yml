@@ -1,0 +1,8 @@
+- name: Create instance of LogFiles
+  azure_rm_postgresql_logfiles_facts:
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state.state == 'Ready'
