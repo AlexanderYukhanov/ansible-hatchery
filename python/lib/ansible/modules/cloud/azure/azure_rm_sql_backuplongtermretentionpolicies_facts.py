@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_serverconnectionpolicies_facts
+module: azure_rm_sql_backuplongtermretentionpolicies_facts
 version_added: "2.5"
-short_description: Get ServerConnectionPolicies facts.
+short_description: Get BackupLongTermRetentionPolicies facts.
 description:
-    - Get facts of ServerConnectionPolicies.
+    - Get facts of BackupLongTermRetentionPolicies.
 
 options:
     resource_group_name:
@@ -30,9 +30,13 @@ options:
         description:
             - The name of the server.
         required: True
-    connection_policy_name:
+    database_name:
         description:
-            - The name of the connection policy.
+            - The name of the database.
+        required: True
+    backup_long_term_retention_policy_name:
+        description:
+            - The name of the backup long term retention policy
         required: True
 
 extends_documentation_fragment:
@@ -45,11 +49,12 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of ServerConnectionPolicies
-        azure_rm_serverconnectionpolicies_facts:
+      - name: Get instance of BackupLongTermRetentionPolicies
+        azure_rm_sql_backuplongtermretentionpolicies_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
-          connection_policy_name: "{{ connection_policy_name }}"
+          database_name: "{{ database_name }}"
+          backup_long_term_retention_policy_name: "{{ backup_long_term_retention_policy_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -57,14 +62,14 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.connectionpolicies import connectionpolicies
+    from azure.mgmt.sql import SqlManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common
     pass
 
 
-class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
+class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
@@ -76,7 +81,11 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            connection_policy_name=dict(
+            database_name=dict(
+                type='str',
+                required=True
+            ),
+            backup_long_term_retention_policy_name=dict(
                 type='str',
                 required=True
             ),
@@ -88,8 +97,9 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
         )
         self.resource_group_name = None
         self.server_name = None
-        self.connection_policy_name = None
-        super(AzureRMServerConnectionPoliciesFacts, self).__init__(self.module_arg_spec)
+        self.database_name = None
+        self.backup_long_term_retention_policy_name = None
+        super(AzureRMBackupLongTermRetentionPoliciesFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
@@ -97,27 +107,29 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
 
         if (self.resource_group_name is not None and
                 self.server_name is not None and
-                self.connection_policy_name is not None):
+                self.database_name is not None and
+                self.backup_long_term_retention_policy_name is not None):
             self.results['ansible_facts']['get'] = self.get()
         return self.results
 
     def get(self):
         '''
-        Gets facts of the specified ServerConnectionPolicies.
+        Gets facts of the specified BackupLongTermRetentionPolicies.
 
-        :return: deserialized ServerConnectionPoliciesinstance state dictionary
+        :return: deserialized BackupLongTermRetentionPoliciesinstance state dictionary
         '''
-        self.log("Checking if the ServerConnectionPolicies instance {0} is present".format(self.connection_policy_name))
+        self.log("Checking if the BackupLongTermRetentionPolicies instance {0} is present".format(self.backup_long_term_retention_policy_name))
         found = False
         try:
-            response = self.mgmt_client.server_connection_policies.get(self.resource_group_name,
-                                                                       self.server_name,
-                                                                       self.connection_policy_name)
+            response = self.mgmt_client.backup_long_term_retention_policies.get(self.resource_group_name,
+                                                                                self.server_name,
+                                                                                self.database_name,
+                                                                                self.backup_long_term_retention_policy_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerConnectionPolicies instance : {0} found".format(response.name))
+            self.log("BackupLongTermRetentionPolicies instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerConnectionPolicies instance.')
+            self.log('Did not find the BackupLongTermRetentionPolicies instance.')
         if found is True:
             return response.as_dict()
 
@@ -125,6 +137,6 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMServerConnectionPoliciesFacts()
+    AzureRMBackupLongTermRetentionPoliciesFacts()
 if __name__ == '__main__':
     main()

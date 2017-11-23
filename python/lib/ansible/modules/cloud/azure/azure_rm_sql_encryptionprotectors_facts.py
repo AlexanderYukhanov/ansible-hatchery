@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_serverkeys_facts
+module: azure_rm_sql_encryptionprotectors_facts
 version_added: "2.5"
-short_description: Get ServerKeys facts.
+short_description: Get EncryptionProtectors facts.
 description:
-    - Get facts of ServerKeys.
+    - Get facts of EncryptionProtectors.
 
 options:
     resource_group_name:
@@ -30,9 +30,9 @@ options:
         description:
             - The name of the server.
         required: True
-    key_name:
+    encryption_protector_name:
         description:
-            - The name of the server key to be retrieved.
+            - The name of the encryption protector to be retrieved.
         required: False
 
 extends_documentation_fragment:
@@ -45,14 +45,14 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of ServerKeys
-        azure_rm_serverkeys_facts:
+      - name: Get instance of EncryptionProtectors
+        azure_rm_sql_encryptionprotectors_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
-          key_name: "{{ key_name }}"
+          encryption_protector_name: "{{ encryption_protector_name }}"
 
-      - name: List instances of ServerKeys
-        azure_rm_serverkeys_facts:
+      - name: List instances of EncryptionProtectors
+        azure_rm_sql_encryptionprotectors_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
 '''
@@ -69,7 +69,7 @@ except ImportError:
     pass
 
 
-class AzureRMServerKeysFacts(AzureRMModuleBase):
+class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
@@ -81,7 +81,7 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            key_name=dict(
+            encryption_protector_name=dict(
                 type='str',
                 required=False
             ),
@@ -93,8 +93,8 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
         )
         self.resource_group_name = None
         self.server_name = None
-        self.key_name = None
-        super(AzureRMServerKeysFacts, self).__init__(self.module_arg_spec)
+        self.encryption_protector_name = None
+        super(AzureRMEncryptionProtectorsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
@@ -102,7 +102,7 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
         if (self.resource_group_name is not None and
                 self.server_name is not None and
-                self.key_name is not None):
+                self.encryption_protector_name is not None):
             self.results['ansible_facts']['get'] = self.get()
         elif (self.resource_group_name is not None and
               self.server_name is not None):
@@ -111,21 +111,21 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServerKeys.
+        Gets facts of the specified EncryptionProtectors.
 
-        :return: deserialized ServerKeysinstance state dictionary
+        :return: deserialized EncryptionProtectorsinstance state dictionary
         '''
-        self.log("Checking if the ServerKeys instance {0} is present".format(self.key_name))
+        self.log("Checking if the EncryptionProtectors instance {0} is present".format(self.encryption_protector_name))
         found = False
         try:
-            response = self.mgmt_client.server_keys.get(self.resource_group_name,
-                                                        self.server_name,
-                                                        self.key_name)
+            response = self.mgmt_client.encryption_protectors.get(self.resource_group_name,
+                                                                  self.server_name,
+                                                                  self.encryption_protector_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerKeys instance : {0} found".format(response.name))
+            self.log("EncryptionProtectors instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerKeys instance.')
+            self.log('Did not find the EncryptionProtectors instance.')
         if found is True:
             return response.as_dict()
 
@@ -133,20 +133,20 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServerKeys.
+        Gets facts of the specified EncryptionProtectors.
 
-        :return: deserialized ServerKeysinstance state dictionary
+        :return: deserialized EncryptionProtectorsinstance state dictionary
         '''
-        self.log("Checking if the ServerKeys instance {0} is present".format(self.key_name))
+        self.log("Checking if the EncryptionProtectors instance {0} is present".format(self.encryption_protector_name))
         found = False
         try:
-            response = self.mgmt_client.server_keys.list_by_server(self.resource_group_name,
-                                                                   self.server_name)
+            response = self.mgmt_client.encryption_protectors.list_by_server(self.resource_group_name,
+                                                                             self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerKeys instance : {0} found".format(response.name))
+            self.log("EncryptionProtectors instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerKeys instance.')
+            self.log('Did not find the EncryptionProtectors instance.')
         if found is True:
             return response.as_dict()
 
@@ -154,6 +154,6 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMServerKeysFacts()
+    AzureRMEncryptionProtectorsFacts()
 if __name__ == '__main__':
     main()

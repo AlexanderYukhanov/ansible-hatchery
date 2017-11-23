@@ -34,6 +34,10 @@ options:
         description:
             - The name of the elastic pool to be retrieved.
         required: False
+    filter:
+        description:
+            - An OData filter expression that describes a subset of metrics to return.
+        required: False
 
 extends_documentation_fragment:
     - azure
@@ -45,6 +49,19 @@ author:
 '''
 
 EXAMPLES = '''
+      - name: List instances of ElasticPools
+        azure_rm_sql_elasticpools_facts:
+          resource_group_name: "{{ resource_group_name }}"
+          server_name: "{{ server_name }}"
+          elastic_pool_name: "{{ elastic_pool_name }}"
+          filter: "{{ filter }}"
+
+      - name: List instances of ElasticPools
+        azure_rm_sql_elasticpools_facts:
+          resource_group_name: "{{ resource_group_name }}"
+          server_name: "{{ server_name }}"
+          elastic_pool_name: "{{ elastic_pool_name }}"
+
       - name: Get instance of ElasticPools
         azure_rm_sql_elasticpools_facts:
           resource_group_name: "{{ resource_group_name }}"
@@ -85,6 +102,10 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
                 type='str',
                 required=False
             ),
+            filter=dict(
+                type='str',
+                required=False
+            ),
         )
         # store the results of the module operation
         self.results = dict(
@@ -94,6 +115,7 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
         self.resource_group_name = None
         self.server_name = None
         self.elastic_pool_name = None
+        self.filter = None
         super(AzureRMElasticPoolsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -102,12 +124,66 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         if (self.resource_group_name is not None and
                 self.server_name is not None and
-                self.elastic_pool_name is not None):
+                self.elastic_pool_name is not None and
+                self.filter is not None):
+            self.results['ansible_facts']['list_metrics'] = self.list_metrics()
+        elif (self.resource_group_name is not None and
+              self.server_name is not None and
+              self.elastic_pool_name is not None):
+            self.results['ansible_facts']['list_metric_definitions'] = self.list_metric_definitions()
+        elif (self.resource_group_name is not None and
+              self.server_name is not None and
+              self.elastic_pool_name is not None):
             self.results['ansible_facts']['get'] = self.get()
         elif (self.resource_group_name is not None and
               self.server_name is not None):
             self.results['ansible_facts']['list_by_server'] = self.list_by_server()
         return self.results
+
+    def list_metrics(self):
+        '''
+        Gets facts of the specified ElasticPools.
+
+        :return: deserialized ElasticPoolsinstance state dictionary
+        '''
+        self.log("Checking if the ElasticPools instance {0} is present".format(self.elastic_pool_name))
+        found = False
+        try:
+            response = self.mgmt_client.elastic_pools.list_metrics(self.resource_group_name,
+                                                                   self.server_name,
+                                                                   self.elastic_pool_name,
+                                                                   self.filter)
+            found = True
+            self.log("Response : {0}".format(response))
+            self.log("ElasticPools instance : {0} found".format(response.name))
+        except CloudError as e:
+            self.log('Did not find the ElasticPools instance.')
+        if found is True:
+            return response.as_dict()
+
+        return False
+
+    def list_metric_definitions(self):
+        '''
+        Gets facts of the specified ElasticPools.
+
+        :return: deserialized ElasticPoolsinstance state dictionary
+        '''
+        self.log("Checking if the ElasticPools instance {0} is present".format(self.elastic_pool_name))
+        found = False
+        try:
+            response = self.mgmt_client.elastic_pools.list_metric_definitions(self.resource_group_name,
+                                                                              self.server_name,
+                                                                              self.elastic_pool_name)
+            found = True
+            self.log("Response : {0}".format(response))
+            self.log("ElasticPools instance : {0} found".format(response.name))
+        except CloudError as e:
+            self.log('Did not find the ElasticPools instance.')
+        if found is True:
+            return response.as_dict()
+
+        return False
 
     def get(self):
         '''

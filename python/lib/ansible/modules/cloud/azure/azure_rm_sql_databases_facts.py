@@ -61,6 +61,13 @@ author:
 '''
 
 EXAMPLES = '''
+      - name: List instances of Databases
+        azure_rm_sql_databases_facts:
+          resource_group_name: "{{ resource_group_name }}"
+          server_name: "{{ server_name }}"
+          database_name: "{{ database_name }}"
+          filter: "{{ filter }}"
+
       - name: Get instance of Databases
         azure_rm_sql_databases_facts:
           resource_group_name: "{{ resource_group_name }}"
@@ -74,6 +81,12 @@ EXAMPLES = '''
           server_name: "{{ server_name }}"
           expand: "{{ expand }}"
           filter: "{{ filter }}"
+
+      - name: List instances of Databases
+        azure_rm_sql_databases_facts:
+          resource_group_name: "{{ resource_group_name }}"
+          server_name: "{{ server_name }}"
+          database_name: "{{ database_name }}"
 
       - name: List instances of Databases
         azure_rm_sql_databases_facts:
@@ -153,11 +166,20 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
 
         if (self.resource_group_name is not None and
                 self.server_name is not None and
-                self.database_name is not None):
+                self.database_name is not None and
+                self.filter is not None):
+            self.results['ansible_facts']['list_metrics'] = self.list_metrics()
+        elif (self.resource_group_name is not None and
+              self.server_name is not None and
+              self.database_name is not None):
             self.results['ansible_facts']['get'] = self.get()
         elif (self.resource_group_name is not None and
               self.server_name is not None):
             self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+        elif (self.resource_group_name is not None and
+              self.server_name is not None and
+              self.database_name is not None):
+            self.results['ansible_facts']['list_metric_definitions'] = self.list_metric_definitions()
         elif (self.resource_group_name is not None and
               self.server_name is not None and
               self.elastic_pool_name is not None):
@@ -167,6 +189,29 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
               self.recommended_elastic_pool_name is not None):
             self.results['ansible_facts']['list_by_recommended_elastic_pool'] = self.list_by_recommended_elastic_pool()
         return self.results
+
+    def list_metrics(self):
+        '''
+        Gets facts of the specified Databases.
+
+        :return: deserialized Databasesinstance state dictionary
+        '''
+        self.log("Checking if the Databases instance {0} is present".format(self.))
+        found = False
+        try:
+            response = self.mgmt_client.databases.list_metrics(self.resource_group_name,
+                                                               self.server_name,
+                                                               self.database_name,
+                                                               self.filter)
+            found = True
+            self.log("Response : {0}".format(response))
+            self.log("Databases instance : {0} found".format(response.name))
+        except CloudError as e:
+            self.log('Did not find the Databases instance.')
+        if found is True:
+            return response.as_dict()
+
+        return False
 
     def get(self):
         '''
@@ -201,6 +246,28 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         try:
             response = self.mgmt_client.databases.list_by_server(self.resource_group_name,
                                                                  self.server_name)
+            found = True
+            self.log("Response : {0}".format(response))
+            self.log("Databases instance : {0} found".format(response.name))
+        except CloudError as e:
+            self.log('Did not find the Databases instance.')
+        if found is True:
+            return response.as_dict()
+
+        return False
+
+    def list_metric_definitions(self):
+        '''
+        Gets facts of the specified Databases.
+
+        :return: deserialized Databasesinstance state dictionary
+        '''
+        self.log("Checking if the Databases instance {0} is present".format(self.))
+        found = False
+        try:
+            response = self.mgmt_client.databases.list_metric_definitions(self.resource_group_name,
+                                                                          self.server_name,
+                                                                          self.database_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Databases instance : {0} found".format(response.name))

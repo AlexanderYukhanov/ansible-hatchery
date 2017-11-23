@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_serverdnsaliases_facts
+module: azure_rm_sql_failovergroups_facts
 version_added: "2.5"
-short_description: Get ServerDnsAliases facts.
+short_description: Get FailoverGroups facts.
 description:
-    - Get facts of ServerDnsAliases.
+    - Get facts of FailoverGroups.
 
 options:
     resource_group_name:
@@ -28,11 +28,11 @@ options:
         required: True
     server_name:
         description:
-            - The name of the server that the alias is pointing to.
+            - The name of the server containing the failover group.
         required: True
-    dns_alias_name:
+    failover_group_name:
         description:
-            - The name of the server DNS alias.
+            - The name of the failover group.
         required: False
 
 extends_documentation_fragment:
@@ -45,14 +45,14 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of ServerDnsAliases
-        azure_rm_serverdnsaliases_facts:
+      - name: Get instance of FailoverGroups
+        azure_rm_sql_failovergroups_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
-          dns_alias_name: "{{ dns_alias_name }}"
+          failover_group_name: "{{ failover_group_name }}"
 
-      - name: List instances of ServerDnsAliases
-        azure_rm_serverdnsaliases_facts:
+      - name: List instances of FailoverGroups
+        azure_rm_sql_failovergroups_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
 '''
@@ -69,7 +69,7 @@ except ImportError:
     pass
 
 
-class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
+class AzureRMFailoverGroupsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
@@ -81,7 +81,7 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            dns_alias_name=dict(
+            failover_group_name=dict(
                 type='str',
                 required=False
             ),
@@ -93,8 +93,8 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
         )
         self.resource_group_name = None
         self.server_name = None
-        self.dns_alias_name = None
-        super(AzureRMServerDnsAliasesFacts, self).__init__(self.module_arg_spec)
+        self.failover_group_name = None
+        super(AzureRMFailoverGroupsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
@@ -102,7 +102,7 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
         if (self.resource_group_name is not None and
                 self.server_name is not None and
-                self.dns_alias_name is not None):
+                self.failover_group_name is not None):
             self.results['ansible_facts']['get'] = self.get()
         elif (self.resource_group_name is not None and
               self.server_name is not None):
@@ -111,21 +111,21 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServerDnsAliases.
+        Gets facts of the specified FailoverGroups.
 
-        :return: deserialized ServerDnsAliasesinstance state dictionary
+        :return: deserialized FailoverGroupsinstance state dictionary
         '''
-        self.log("Checking if the ServerDnsAliases instance {0} is present".format(self.dns_alias_name))
+        self.log("Checking if the FailoverGroups instance {0} is present".format(self.failover_group_name))
         found = False
         try:
-            response = self.mgmt_client.server_dns_aliases.get(self.resource_group_name,
-                                                               self.server_name,
-                                                               self.dns_alias_name)
+            response = self.mgmt_client.failover_groups.get(self.resource_group_name,
+                                                            self.server_name,
+                                                            self.failover_group_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerDnsAliases instance : {0} found".format(response.name))
+            self.log("FailoverGroups instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerDnsAliases instance.')
+            self.log('Did not find the FailoverGroups instance.')
         if found is True:
             return response.as_dict()
 
@@ -133,20 +133,20 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServerDnsAliases.
+        Gets facts of the specified FailoverGroups.
 
-        :return: deserialized ServerDnsAliasesinstance state dictionary
+        :return: deserialized FailoverGroupsinstance state dictionary
         '''
-        self.log("Checking if the ServerDnsAliases instance {0} is present".format(self.dns_alias_name))
+        self.log("Checking if the FailoverGroups instance {0} is present".format(self.failover_group_name))
         found = False
         try:
-            response = self.mgmt_client.server_dns_aliases.list_by_server(self.resource_group_name,
-                                                                          self.server_name)
+            response = self.mgmt_client.failover_groups.list_by_server(self.resource_group_name,
+                                                                       self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerDnsAliases instance : {0} found".format(response.name))
+            self.log("FailoverGroups instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerDnsAliases instance.')
+            self.log('Did not find the FailoverGroups instance.')
         if found is True:
             return response.as_dict()
 
@@ -154,6 +154,6 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMServerDnsAliasesFacts()
+    AzureRMFailoverGroupsFacts()
 if __name__ == '__main__':
     main()

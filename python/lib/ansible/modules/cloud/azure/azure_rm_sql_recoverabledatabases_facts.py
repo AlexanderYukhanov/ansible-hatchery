@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_serviceobjectives_facts
+module: azure_rm_sql_recoverabledatabases_facts
 version_added: "2.5"
-short_description: Get ServiceObjectives facts.
+short_description: Get RecoverableDatabases facts.
 description:
-    - Get facts of ServiceObjectives.
+    - Get facts of RecoverableDatabases.
 
 options:
     resource_group_name:
@@ -30,9 +30,9 @@ options:
         description:
             - The name of the server.
         required: True
-    service_objective_name:
+    database_name:
         description:
-            - The name of the service objective to retrieve.
+            - The name of the database
         required: False
 
 extends_documentation_fragment:
@@ -45,14 +45,14 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of ServiceObjectives
-        azure_rm_serviceobjectives_facts:
+      - name: Get instance of RecoverableDatabases
+        azure_rm_sql_recoverabledatabases_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
-          service_objective_name: "{{ service_objective_name }}"
+          database_name: "{{ database_name }}"
 
-      - name: List instances of ServiceObjectives
-        azure_rm_serviceobjectives_facts:
+      - name: List instances of RecoverableDatabases
+        azure_rm_sql_recoverabledatabases_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
 '''
@@ -69,7 +69,7 @@ except ImportError:
     pass
 
 
-class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
+class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
@@ -81,7 +81,7 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            service_objective_name=dict(
+            database_name=dict(
                 type='str',
                 required=False
             ),
@@ -93,8 +93,8 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
         )
         self.resource_group_name = None
         self.server_name = None
-        self.service_objective_name = None
-        super(AzureRMServiceObjectivesFacts, self).__init__(self.module_arg_spec)
+        self.database_name = None
+        super(AzureRMRecoverableDatabasesFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
@@ -102,7 +102,7 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
         if (self.resource_group_name is not None and
                 self.server_name is not None and
-                self.service_objective_name is not None):
+                self.database_name is not None):
             self.results['ansible_facts']['get'] = self.get()
         elif (self.resource_group_name is not None and
               self.server_name is not None):
@@ -111,21 +111,21 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServiceObjectives.
+        Gets facts of the specified RecoverableDatabases.
 
-        :return: deserialized ServiceObjectivesinstance state dictionary
+        :return: deserialized RecoverableDatabasesinstance state dictionary
         '''
-        self.log("Checking if the ServiceObjectives instance {0} is present".format(self.service_objective_name))
+        self.log("Checking if the RecoverableDatabases instance {0} is present".format(self.database_name))
         found = False
         try:
-            response = self.mgmt_client.service_objectives.get(self.resource_group_name,
-                                                               self.server_name,
-                                                               self.service_objective_name)
+            response = self.mgmt_client.recoverable_databases.get(self.resource_group_name,
+                                                                  self.server_name,
+                                                                  self.database_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServiceObjectives instance : {0} found".format(response.name))
+            self.log("RecoverableDatabases instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServiceObjectives instance.')
+            self.log('Did not find the RecoverableDatabases instance.')
         if found is True:
             return response.as_dict()
 
@@ -133,20 +133,20 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServiceObjectives.
+        Gets facts of the specified RecoverableDatabases.
 
-        :return: deserialized ServiceObjectivesinstance state dictionary
+        :return: deserialized RecoverableDatabasesinstance state dictionary
         '''
-        self.log("Checking if the ServiceObjectives instance {0} is present".format(self.service_objective_name))
+        self.log("Checking if the RecoverableDatabases instance {0} is present".format(self.database_name))
         found = False
         try:
-            response = self.mgmt_client.service_objectives.list_by_server(self.resource_group_name,
-                                                                          self.server_name)
+            response = self.mgmt_client.recoverable_databases.list_by_server(self.resource_group_name,
+                                                                             self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServiceObjectives instance : {0} found".format(response.name))
+            self.log("RecoverableDatabases instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServiceObjectives instance.')
+            self.log('Did not find the RecoverableDatabases instance.')
         if found is True:
             return response.as_dict()
 
@@ -154,6 +154,6 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMServiceObjectivesFacts()
+    AzureRMRecoverableDatabasesFacts()
 if __name__ == '__main__':
     main()

@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_serverkeys
+module: azure_rm_sql_encryptionprotectors
 version_added: "2.5"
-short_description: Manage an ServerKeys.
+short_description: Manage an EncryptionProtectors.
 description:
-    - Create, update and delete an instance of ServerKeys.
+    - Create, update and delete an instance of EncryptionProtectors.
 
 options:
     resource_group_name:
@@ -30,32 +30,22 @@ options:
         description:
             - The name of the server.
         required: True
-    key_name:
+    encryption_protector_name:
         description:
-            - "The name of the server key to be operated on (updated or created). The key name is required to be in the format of 'vault_key_version'. For ex
-               ample, if the keyId is https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901, then the server key name shoul
-               d be formatted as: YourVaultName_YourKeyName_01234567890123456789012345678901"
+            - The name of the encryption protector to be updated.
         required: True
     kind:
         description:
             - Kind of encryption protector. This is metadata used for the Azure portal experience.
         required: False
+    server_key_name:
+        description:
+            - The name of the server key.
+        required: False
     server_key_type:
         description:
-            - "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'
+            - "The encryption protector type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'
         required: True
-    uri:
-        description:
-            - The URI of the server key.
-        required: False
-    thumbprint:
-        description:
-            - Thumbprint of the server key.
-        required: False
-    creation_date:
-        description:
-            - The server key creation date.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -67,21 +57,19 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) ServerKeys
-        azure_rm_serverkeys:
+      - name: Create (or update) EncryptionProtectors
+        azure_rm_sql_encryptionprotectors:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
-          key_name: "{{ key_name }}"
+          encryption_protector_name: "{{ encryption_protector_name }}"
           kind: "{{ kind }}"
+          server_key_name: "{{ server_key_name }}"
           server_key_type: "{{ server_key_type }}"
-          uri: "{{ uri }}"
-          thumbprint: "{{ thumbprint }}"
-          creation_date: "{{ creation_date }}"
 '''
 
 RETURN = '''
 state:
-    description: Current state of ServerKeys
+    description: Current state of EncryptionProtectors
     returned: always
     type: dict
 '''
@@ -98,8 +86,8 @@ except ImportError:
     pass
 
 
-class AzureRMServerKeys(AzureRMModuleBase):
-    """Configuration class for an Azure RM ServerKeys resource"""
+class AzureRMEncryptionProtectors(AzureRMModuleBase):
+    """Configuration class for an Azure RM EncryptionProtectors resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -111,7 +99,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            key_name=dict(
+            encryption_protector_name=dict(
                 type='str',
                 required=True
             ),
@@ -119,21 +107,13 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 type='str',
                 required=False
             ),
+            server_key_name=dict(
+                type='str',
+                required=False
+            ),
             server_key_type=dict(
                 type='str',
                 required=True
-            ),
-            uri=dict(
-                type='str',
-                required=False
-            ),
-            thumbprint=dict(
-                type='str',
-                required=False
-            ),
-            creation_date=dict(
-                type='datetime',
-                required=False
             ),
             state=dict(
                 type='str',
@@ -145,16 +125,16 @@ class AzureRMServerKeys(AzureRMModuleBase):
 
         self.resource_group_name = None
         self.server_name = None
-        self.key_name = None
+        self.encryption_protector_name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
         self.state = None
 
-        super(AzureRMServerKeys, self).__init__(derived_arg_spec=self.module_arg_spec,
-                                                supports_check_mode=True,
-                                                supports_tags=True)
+        super(AzureRMEncryptionProtectors, self).__init__(derived_arg_spec=self.module_arg_spec,
+                                                          supports_check_mode=True,
+                                                          supports_tags=True)
 
     def exec_module(self, **kwargs):
         """Main module execution method"""
@@ -164,14 +144,10 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif key == "kind":
                 self.parameters["kind"] = kwargs[key]
+            elif key == "server_key_name":
+                self.parameters["server_key_name"] = kwargs[key]
             elif key == "server_key_type":
                 self.parameters["server_key_type"] = kwargs[key]
-            elif key == "uri":
-                self.parameters["uri"] = kwargs[key]
-            elif key == "thumbprint":
-                self.parameters["thumbprint"] = kwargs[key]
-            elif key == "creation_date":
-                self.parameters["creation_date"] = kwargs[key]
 
         response = None
         results = dict()
@@ -185,33 +161,33 @@ class AzureRMServerKeys(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_serverkeys()
+        response = self.get_encryptionprotectors()
 
         if not response:
-            self.log("ServerKeys instance doesn't exist")
+            self.log("EncryptionProtectors instance doesn't exist")
             if self.state == 'absent':
                 self.log("Nothing to delete")
             else:
                 to_be_updated = True
         else:
-            self.log("ServerKeys instance already exists")
+            self.log("EncryptionProtectors instance already exists")
             if self.state == 'absent':
-                self.delete_serverkeys()
+                self.delete_encryptionprotectors()
                 self.results['changed'] = True
-                self.log("ServerKeys instance deleted")
+                self.log("EncryptionProtectors instance deleted")
             elif self.state == 'present':
-                self.log("Need to check if ServerKeys instance has to be deleted or may be updated")
+                self.log("Need to check if EncryptionProtectors instance has to be deleted or may be updated")
                 to_be_updated = True
 
         if self.state == 'present':
 
-            self.log("Need to Create / Update the ServerKeys instance")
+            self.log("Need to Create / Update the EncryptionProtectors instance")
 
             if self.check_mode:
                 return self.results
 
             if to_be_updated:
-                self.results['state'] = self.create_update_serverkeys()
+                self.results['state'] = self.create_update_encryptionprotectors()
                 self.results['changed'] = True
             else:
                 self.results['state'] = response
@@ -220,61 +196,59 @@ class AzureRMServerKeys(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_serverkeys(self):
+    def create_update_encryptionprotectors(self):
         '''
-        Creates or updates ServerKeys with the specified configuration.
+        Creates or updates EncryptionProtectors with the specified configuration.
 
-        :return: deserialized ServerKeys instance state dictionary
+        :return: deserialized EncryptionProtectors instance state dictionary
         '''
-        self.log("Creating / Updating the ServerKeys instance {0}".format(self.key_name))
+        self.log("Creating / Updating the EncryptionProtectors instance {0}".format(self.encryption_protector_name))
 
         try:
-            response = self.mgmt_client.server_keys.create_or_update(self.resource_group_name,
-                                                                     self.server_name,
-                                                                     self.key_name,
-                                                                     self.parameters)
+            response = self.mgmt_client.encryption_protectors.create_or_update(self.resource_group_name,
+                                                                               self.server_name,
+                                                                               self.encryption_protector_name,
+                                                                               self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ServerKeys instance.')
-            self.fail("Error creating the ServerKeys instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the EncryptionProtectors instance.')
+            self.fail("Error creating the EncryptionProtectors instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_serverkeys(self):
+    def delete_encryptionprotectors(self):
         '''
-        Deletes specified ServerKeys instance in the specified subscription and resource group.
+        Deletes specified EncryptionProtectors instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ServerKeys instance {0}".format(self.key_name))
+        self.log("Deleting the EncryptionProtectors instance {0}".format(self.encryption_protector_name))
         try:
-            response = self.mgmt_client.server_keys.delete(self.resource_group_name,
-                                                           self.server_name,
-                                                           self.key_name)
+            response = self.mgmt_client.encryption_protectors.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the ServerKeys instance.')
-            self.fail("Error deleting the ServerKeys instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the EncryptionProtectors instance.')
+            self.fail("Error deleting the EncryptionProtectors instance: {0}".format(str(e)))
 
         return True
 
-    def get_serverkeys(self):
+    def get_encryptionprotectors(self):
         '''
-        Gets the properties of the specified ServerKeys.
+        Gets the properties of the specified EncryptionProtectors.
 
-        :return: deserialized ServerKeys instance state dictionary
+        :return: deserialized EncryptionProtectors instance state dictionary
         '''
-        self.log("Checking if the ServerKeys instance {0} is present".format(self.key_name))
+        self.log("Checking if the EncryptionProtectors instance {0} is present".format(self.encryption_protector_name))
         found = False
         try:
-            response = self.mgmt_client.server_keys.get(self.resource_group_name,
-                                                        self.server_name,
-                                                        self.key_name)
+            response = self.mgmt_client.encryption_protectors.get(self.resource_group_name,
+                                                                  self.server_name,
+                                                                  self.encryption_protector_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerKeys instance : {0} found".format(response.name))
+            self.log("EncryptionProtectors instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerKeys instance.')
+            self.log('Did not find the EncryptionProtectors instance.')
         if found is True:
             return response.as_dict()
 
@@ -283,7 +257,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
 
 def main():
     """Main execution"""
-    AzureRMServerKeys()
+    AzureRMEncryptionProtectors()
 
 if __name__ == '__main__':
     main()

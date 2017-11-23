@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_servers_facts
+module: azure_rm_sql_backuplongtermretentionvaults_facts
 version_added: "2.5"
-short_description: Get Servers facts.
+short_description: Get BackupLongTermRetentionVaults facts.
 description:
-    - Get facts of Servers.
+    - Get facts of BackupLongTermRetentionVaults.
 
 options:
     resource_group_name:
@@ -29,7 +29,11 @@ options:
     server_name:
         description:
             - The name of the server.
-        required: False
+        required: True
+    backup_long_term_retention_vault_name:
+        description:
+            - The name of the Azure SQL Server backup LongTermRetention vault
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -41,14 +45,11 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of Servers
-        azure_rm_servers_facts:
+      - name: Get instance of BackupLongTermRetentionVaults
+        azure_rm_sql_backuplongtermretentionvaults_facts:
           resource_group_name: "{{ resource_group_name }}"
           server_name: "{{ server_name }}"
-
-      - name: List instances of Servers
-        azure_rm_servers_facts:
-          resource_group_name: "{{ resource_group_name }}"
+          backup_long_term_retention_vault_name: "{{ backup_long_term_retention_vault_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -63,7 +64,7 @@ except ImportError:
     pass
 
 
-class AzureRMServersFacts(AzureRMModuleBase):
+class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
@@ -73,7 +74,11 @@ class AzureRMServersFacts(AzureRMModuleBase):
             ),
             server_name=dict(
                 type='str',
-                required=False
+                required=True
+            ),
+            backup_long_term_retention_vault_name=dict(
+                type='str',
+                required=True
             ),
         )
         # store the results of the module operation
@@ -83,55 +88,36 @@ class AzureRMServersFacts(AzureRMModuleBase):
         )
         self.resource_group_name = None
         self.server_name = None
-        super(AzureRMServersFacts, self).__init__(self.module_arg_spec)
+        self.backup_long_term_retention_vault_name = None
+        super(AzureRMBackupLongTermRetentionVaultsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
 
         if (self.resource_group_name is not None and
-                self.server_name is not None):
+                self.server_name is not None and
+                self.backup_long_term_retention_vault_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
         return self.results
 
     def get(self):
         '''
-        Gets facts of the specified Servers.
+        Gets facts of the specified BackupLongTermRetentionVaults.
 
-        :return: deserialized Serversinstance state dictionary
+        :return: deserialized BackupLongTermRetentionVaultsinstance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
+        self.log("Checking if the BackupLongTermRetentionVaults instance {0} is present".format(self.backup_long_term_retention_vault_name))
         found = False
         try:
-            response = self.mgmt_client.servers.get(self.resource_group_name,
-                                                    self.server_name)
+            response = self.mgmt_client.backup_long_term_retention_vaults.get(self.resource_group_name,
+                                                                              self.server_name,
+                                                                              self.backup_long_term_retention_vault_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
+            self.log("BackupLongTermRetentionVaults instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
-        if found is True:
-            return response.as_dict()
-
-        return False
-
-    def list_by_resource_group(self):
-        '''
-        Gets facts of the specified Servers.
-
-        :return: deserialized Serversinstance state dictionary
-        '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
-        found = False
-        try:
-            response = self.mgmt_client.servers.list_by_resource_group(self.resource_group_name)
-            found = True
-            self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
-        except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Did not find the BackupLongTermRetentionVaults instance.')
         if found is True:
             return response.as_dict()
 
@@ -139,6 +125,6 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMServersFacts()
+    AzureRMBackupLongTermRetentionVaultsFacts()
 if __name__ == '__main__':
     main()
