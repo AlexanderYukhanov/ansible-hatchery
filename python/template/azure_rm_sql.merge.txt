@@ -1,5 +1,4 @@
 Used existing template file
-OLD : azure_rm_sql_databases
 Option 'resource_group_name' NameAlt - KEEPING OLD
 Option 'resource_group_name' DefaultValueTest - KEEPING OLD
 Option 'server_name' DefaultValueTest - KEEPING OLD
@@ -9,10 +8,8 @@ Option 'location' DefaultValueTest - KEEPING OLD
 Option 'azure_rm_sql_databases' ModuleNameAlt - KEEPING OLD
 Option 'azure_rm_sql_databases' AssertStateVariable - KEEPING OLD
 Option 'azure_rm_sql_databases' AssertStateExpectedValue - KEEPING OLD
-OLD : azure_rm_sql_databases_facts
 Option 'database_name' Documentation - KEEPING OLD
 Option 'filter' Documentation - KEEPING OLD
-OLD : azure_rm_sql_elasticpools
 Option 'resource_group_name' NameAlt - KEEPING OLD
 Option 'resource_group_name' DefaultValueTest - KEEPING OLD
 Option 'server_name' DefaultValueTest - KEEPING OLD
@@ -20,189 +17,13 @@ Option 'elastic_pool_name' NameAlt - KEEPING OLD
 Option 'elastic_pool_name' DefaultValueTest - KEEPING OLD
 Option 'location' DefaultValueTest - KEEPING OLD
 Option 'azure_rm_sql_elasticpools' ModuleNameAlt - KEEPING OLD
-OLD : azure_rm_sql_elasticpools_facts
 Option 'elastic_pool_name' Documentation - KEEPING OLD
-OLD : azure_rm_sql_elasticpoolactivities_facts
-OLD : azure_rm_sql_elasticpooldatabaseactivities_facts
-OLD : azure_rm_sql_recommendedelasticpools_facts
-OLD : azure_rm_sql_servicetieradvisors_facts
-OLD : azure_rm_sql_transparentdataencryptions
 Option 'parameters' in old template only - KEEPING
 Option 'status' Disposition - KEEPING OLD
-OLD : azure_rm_sql_transparentdataencryptions_facts
-OLD : azure_rm_sql_transparentdataencryptionactivities_facts
-OLD : azure_rm_sql_backuplongtermretentionpolicies
-OLD : azure_rm_sql_backuplongtermretentionpolicies_facts
-OLD : azure_rm_sql_backuplongtermretentionvaults
-OLD : azure_rm_sql_backuplongtermretentionvaults_facts
-OLD : azure_rm_sql_restorepoints_facts
-OLD : azure_rm_sql_recoverabledatabases_facts
-OLD : azure_rm_sql_restorabledroppeddatabases_facts
-OLD : azure_rm_sql_capabilities_facts
-OLD : azure_rm_sql_serverconnectionpolicies
-OLD : azure_rm_sql_serverconnectionpolicies_facts
-OLD : azure_rm_sql_databasethreatdetectionpolicies
-OLD : azure_rm_sql_databasethreatdetectionpolicies_facts
-OLD : azure_rm_sql_datamaskingpolicies
-OLD : azure_rm_sql_datamaskingpolicies_facts
-OLD : azure_rm_sql_datamaskingrules
-OLD : azure_rm_sql_datamaskingrules_facts
-OLD : azure_rm_sql_firewallrules
-OLD : azure_rm_sql_firewallrules_facts
-OLD : azure_rm_sql_geobackuppolicies
-OLD : azure_rm_sql_geobackuppolicies_facts
-OLD : azure_rm_sql_replicationlinks_facts
-OLD : azure_rm_sql_serverazureadadministrators
-OLD : azure_rm_sql_serverazureadadministrators_facts
-OLD : azure_rm_sql_servercommunicationlinks
-OLD : azure_rm_sql_servercommunicationlinks_facts
-OLD : azure_rm_sql_serviceobjectives_facts
-OLD : azure_rm_sql_servers_facts
-OLD : azure_rm_sql_serverusages_facts
-OLD : azure_rm_sql_databaseusages_facts
-OLD : azure_rm_sql_databaseblobauditingpolicies
-OLD : azure_rm_sql_databaseblobauditingpolicies_facts
-OLD : azure_rm_sql_encryptionprotectors
-OLD : azure_rm_sql_encryptionprotectors_facts
-OLD : azure_rm_sql_failovergroups
-OLD : azure_rm_sql_failovergroups_facts
-OLD : azure_rm_sql_serverkeys
-OLD : azure_rm_sql_serverkeys_facts
-OLD : azure_rm_sql_syncagents
-OLD : azure_rm_sql_syncagents_facts
-OLD : azure_rm_sql_syncgroups
-OLD : azure_rm_sql_syncgroups_facts
-OLD : azure_rm_sql_syncmembers
 Option 'server_name' Disposition - KEEPING OLD
 Option 'server_name' Documentation - KEEPING OLD
 Option 'server_name' Required - KEEPING OLD
 Option 'database_name' Disposition - KEEPING OLD
 Option 'database_name' Documentation - KEEPING OLD
 Option 'database_name' Required - KEEPING OLD
-OLD : azure_rm_sql_syncmembers_facts
-OLD : azure_rm_sql_virtualnetworkrules
-OLD : azure_rm_sql_virtualnetworkrules_facts
-OLD : azure_rm_sql_databaseoperations_facts
-OLD : azure_rm_sql_serverdnsaliases
-OLD : azure_rm_sql_serverdnsaliases_facts
-NEW : azure_rm_sql_backuplongtermretentionpolicies
-NEW : azure_rm_sql_backuplongtermretentionpolicies_facts
-NEW : azure_rm_sql_backuplongtermretentionvaults
-NEW : azure_rm_sql_backuplongtermretentionvaults_facts
-NEW : azure_rm_sql_restorepoints_facts
-NEW : azure_rm_sql_recoverabledatabases_facts
-NEW : azure_rm_sql_restorabledroppeddatabases_facts
-NEW : azure_rm_sql_capabilities_facts
-NEW : azure_rm_sql_serverconnectionpolicies
-NEW : azure_rm_sql_serverconnectionpolicies_facts
-NEW : azure_rm_sql_databasethreatdetectionpolicies
-NEW : azure_rm_sql_databasethreatdetectionpolicies_facts
-NEW : azure_rm_sql_datamaskingpolicies
-NEW : azure_rm_sql_datamaskingpolicies_facts
-NEW : azure_rm_sql_datamaskingrules
-NEW : azure_rm_sql_datamaskingrules_facts
-NEW : azure_rm_sql_firewallrules
-NEW : azure_rm_sql_firewallrules_facts
-NEW : azure_rm_sql_geobackuppolicies
-NEW : azure_rm_sql_geobackuppolicies_facts
-NEW : azure_rm_sql_databases
-NEW : azure_rm_sql_databases_facts
-NEW : azure_rm_sql_elasticpools
-NEW : azure_rm_sql_elasticpools_facts
-NEW : azure_rm_sql_replicationlinks_facts
-NEW : azure_rm_sql_serverazureadadministrators
-NEW : azure_rm_sql_serverazureadadministrators_facts
-NEW : azure_rm_sql_servercommunicationlinks
-NEW : azure_rm_sql_servercommunicationlinks_facts
-NEW : azure_rm_sql_serviceobjectives_facts
-NEW : azure_rm_sql_servers
 Module 'azure_rm_sql_servers' in new template only - ADDING
-NEW : azure_rm_sql_servers_facts
-NEW : azure_rm_sql_elasticpoolactivities_facts
-NEW : azure_rm_sql_elasticpooldatabaseactivities_facts
-NEW : azure_rm_sql_recommendedelasticpools_facts
-NEW : azure_rm_sql_servicetieradvisors_facts
-NEW : azure_rm_sql_transparentdataencryptions
-NEW : azure_rm_sql_transparentdataencryptions_facts
-NEW : azure_rm_sql_transparentdataencryptionactivities_facts
-NEW : azure_rm_sql_serverusages_facts
-NEW : azure_rm_sql_databaseusages_facts
-NEW : azure_rm_sql_databaseblobauditingpolicies
-NEW : azure_rm_sql_databaseblobauditingpolicies_facts
-NEW : azure_rm_sql_encryptionprotectors
-NEW : azure_rm_sql_encryptionprotectors_facts
-NEW : azure_rm_sql_failovergroups
-NEW : azure_rm_sql_failovergroups_facts
-NEW : azure_rm_sql_serverkeys
-NEW : azure_rm_sql_serverkeys_facts
-NEW : azure_rm_sql_syncagents
-NEW : azure_rm_sql_syncagents_facts
-NEW : azure_rm_sql_syncgroups
-NEW : azure_rm_sql_syncgroups_facts
-NEW : azure_rm_sql_syncmembers
-NEW : azure_rm_sql_syncmembers_facts
-NEW : azure_rm_sql_virtualnetworkrules
-NEW : azure_rm_sql_virtualnetworkrules_facts
-NEW : azure_rm_sql_databaseoperations_facts
-NEW : azure_rm_sql_serverdnsaliases
-NEW : azure_rm_sql_serverdnsaliases_facts
-GENERATED: azure_rm_sql_databases
-GENERATED: azure_rm_sql_databases_facts
-GENERATED: azure_rm_sql_elasticpools
-GENERATED: azure_rm_sql_elasticpools_facts
-GENERATED: azure_rm_sql_elasticpoolactivities_facts
-GENERATED: azure_rm_sql_elasticpooldatabaseactivities_facts
-GENERATED: azure_rm_sql_recommendedelasticpools_facts
-GENERATED: azure_rm_sql_servicetieradvisors_facts
-GENERATED: azure_rm_sql_transparentdataencryptions
-GENERATED: azure_rm_sql_transparentdataencryptions_facts
-GENERATED: azure_rm_sql_transparentdataencryptionactivities_facts
-GENERATED: azure_rm_sql_backuplongtermretentionpolicies
-GENERATED: azure_rm_sql_backuplongtermretentionpolicies_facts
-GENERATED: azure_rm_sql_backuplongtermretentionvaults
-GENERATED: azure_rm_sql_backuplongtermretentionvaults_facts
-GENERATED: azure_rm_sql_restorepoints_facts
-GENERATED: azure_rm_sql_recoverabledatabases_facts
-GENERATED: azure_rm_sql_restorabledroppeddatabases_facts
-GENERATED: azure_rm_sql_capabilities_facts
-GENERATED: azure_rm_sql_serverconnectionpolicies
-GENERATED: azure_rm_sql_serverconnectionpolicies_facts
-GENERATED: azure_rm_sql_databasethreatdetectionpolicies
-GENERATED: azure_rm_sql_databasethreatdetectionpolicies_facts
-GENERATED: azure_rm_sql_datamaskingpolicies
-GENERATED: azure_rm_sql_datamaskingpolicies_facts
-GENERATED: azure_rm_sql_datamaskingrules
-GENERATED: azure_rm_sql_datamaskingrules_facts
-GENERATED: azure_rm_sql_firewallrules
-GENERATED: azure_rm_sql_firewallrules_facts
-GENERATED: azure_rm_sql_geobackuppolicies
-GENERATED: azure_rm_sql_geobackuppolicies_facts
-GENERATED: azure_rm_sql_replicationlinks_facts
-GENERATED: azure_rm_sql_serverazureadadministrators
-GENERATED: azure_rm_sql_serverazureadadministrators_facts
-GENERATED: azure_rm_sql_servercommunicationlinks
-GENERATED: azure_rm_sql_servercommunicationlinks_facts
-GENERATED: azure_rm_sql_serviceobjectives_facts
-GENERATED: azure_rm_sql_servers_facts
-GENERATED: azure_rm_sql_serverusages_facts
-GENERATED: azure_rm_sql_databaseusages_facts
-GENERATED: azure_rm_sql_databaseblobauditingpolicies
-GENERATED: azure_rm_sql_databaseblobauditingpolicies_facts
-GENERATED: azure_rm_sql_encryptionprotectors
-GENERATED: azure_rm_sql_encryptionprotectors_facts
-GENERATED: azure_rm_sql_failovergroups
-GENERATED: azure_rm_sql_failovergroups_facts
-GENERATED: azure_rm_sql_serverkeys
-GENERATED: azure_rm_sql_serverkeys_facts
-GENERATED: azure_rm_sql_syncagents
-GENERATED: azure_rm_sql_syncagents_facts
-GENERATED: azure_rm_sql_syncgroups
-GENERATED: azure_rm_sql_syncgroups_facts
-GENERATED: azure_rm_sql_syncmembers
-GENERATED: azure_rm_sql_syncmembers_facts
-GENERATED: azure_rm_sql_virtualnetworkrules
-GENERATED: azure_rm_sql_virtualnetworkrules_facts
-GENERATED: azure_rm_sql_databaseoperations_facts
-GENERATED: azure_rm_sql_serverdnsaliases
-GENERATED: azure_rm_sql_serverdnsaliases_facts
-GENERATED: azure_rm_sql_servers
