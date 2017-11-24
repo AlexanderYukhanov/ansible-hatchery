@@ -45,10 +45,10 @@ options:
                 description:
                     - "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for th
                        e resource. Possible values include: 'SystemAssigned'"
-    administrator_login:
+    admin_username:
         description:
             - Administrator username for the server. Once created it cannot be changed.
-    administrator_login_password:
+    admin_password:
         description:
             - The administrator login password (required for server creation).
     version:
@@ -73,8 +73,8 @@ EXAMPLES = '''
       tags: "{{ tags }}"
       identity:
         type: "{{ type }}"
-      administrator_login: mylogin
-      administrator_login_password: Testpasswordxyz12!
+      admin_username: mylogin
+      admin_password: Testpasswordxyz12!
       version: "{{ version }}"
 '''
 
@@ -122,11 +122,11 @@ class AzureRMServers(AzureRMModuleBase):
                 type='dict',
                 required=False
             ),
-            administrator_login=dict(
+            admin_username=dict(
                 type='str',
                 required=False
             ),
-            administrator_login_password=dict(
+            admin_password=dict(
                 type='str',
                 required=False
             ),
@@ -166,9 +166,9 @@ class AzureRMServers(AzureRMModuleBase):
                 self.parameters["tags"] = kwargs[key]
             elif key == "identity":
                 self.parameters["identity"] = kwargs[key]
-            elif key == "administrator_login":
+            elif key == "admin_username":
                 self.parameters["administrator_login"] = kwargs[key]
-            elif key == "administrator_login_password":
+            elif key == "admin_password":
                 self.parameters["administrator_login_password"] = kwargs[key]
             elif key == "version":
                 self.parameters["version"] = kwargs[key]
