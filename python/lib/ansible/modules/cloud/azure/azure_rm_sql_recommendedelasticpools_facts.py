@@ -33,7 +33,6 @@ options:
     recommended_elastic_pool_name:
         description:
             - The name of the recommended elastic pool to be retrieved.
-        required: False
 
 extends_documentation_fragment:
     - azure

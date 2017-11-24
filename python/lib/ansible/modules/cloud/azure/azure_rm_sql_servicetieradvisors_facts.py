@@ -37,7 +37,6 @@ options:
     service_tier_advisor_name:
         description:
             - The name of service tier advisor.
-        required: False
 
 extends_documentation_fragment:
     - azure

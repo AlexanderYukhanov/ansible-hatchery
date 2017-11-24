@@ -37,7 +37,6 @@ options:
     link_id:
         description:
             - The replication link ID to be retrieved.
-        required: False
 
 extends_documentation_fragment:
     - azure

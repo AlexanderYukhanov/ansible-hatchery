@@ -37,7 +37,6 @@ options:
     tags:
         description:
             - Resource tags.
-        required: False
     location:
         description:
             - Resource location.
@@ -45,28 +44,22 @@ options:
     edition:
         description:
             - "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'
-        required: False
     dtu:
         description:
             - The total shared DTU for the database elastic pool.
-        required: False
     database_dtu_max:
         description:
             - The maximum DTU any one database can consume.
-        required: False
     database_dtu_min:
         description:
             - The minimum DTU all databases are guaranteed.
-        required: False
     storage_mb:
         description:
             - Gets storage limit for the database elastic pool in MB.
-        required: False
     zone_redundant:
         description:
             - "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availabi
                lity zones."
-        required: False
 
 extends_documentation_fragment:
     - azure

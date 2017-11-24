@@ -45,13 +45,11 @@ options:
     alias_name:
         description:
             - The alias name. This is a legacy parameter and is no longer used.
-        required: False
     rule_state:
         description:
             - "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify
                 ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless of the
                provided value of ruleState. Possible values include: 'Disabled', 'Enabled'"
-        required: False
     schema_name:
         description:
             - The schema name on which the data masking rule is applied.
@@ -71,24 +69,19 @@ options:
     number_from:
         description:
             - The numberFrom property of the masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.
-        required: False
     number_to:
         description:
             - The numberTo property of the data masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.
-        required: False
     prefix_size:
         description:
             - "If maskingFunction is set to Text, the number of characters to show unmasked in the beginning of the string. Otherwise, this parameter will be
                 ignored."
-        required: False
     suffix_size:
         description:
             - If maskingFunction is set to Text, the number of characters to show unmasked at the end of the string. Otherwise, this parameter will be ignored.
-        required: False
     replacement_string:
         description:
             - If maskingFunction is set to Text, the character to use for masking the unexposed part of the string. Otherwise, this parameter will be ignored.
-        required: False
 
 extends_documentation_fragment:
     - azure

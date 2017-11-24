@@ -33,7 +33,6 @@ options:
     restorable_droppeded_database_id:
         description:
             - The id of the deleted database in the form of databaseName,deletionTimeInFileTimeFormat
-        required: False
 
 extends_documentation_fragment:
     - azure

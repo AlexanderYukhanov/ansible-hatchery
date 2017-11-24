@@ -33,7 +33,6 @@ options:
     dns_alias_name:
         description:
             - The name of the server DNS alias.
-        required: False
 
 extends_documentation_fragment:
     - azure

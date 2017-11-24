@@ -46,27 +46,21 @@ options:
     storage_endpoint:
         description:
             - Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required.
-        required: False
     storage_account_access_key:
         description:
             - Specifies the identifier key of the auditing storage account. If state is Enabled, storageAccountAccessKey is required.
-        required: False
     retention_days:
         description:
             - Specifies the number of days to keep in the audit logs.
-        required: False
     audit_actions_and_groups:
         description:
             - Specifies the Actions and Actions-Groups to audit.
-        required: False
     storage_account_subscription_id:
         description:
             - Specifies the blob storage subscription Id.
-        required: False
     is_storage_secondary_key_in_use:
         description:
             - "Specifies whether storageAccountAccessKey value is the storage's secondary key.
-        required: False
 
 extends_documentation_fragment:
     - azure

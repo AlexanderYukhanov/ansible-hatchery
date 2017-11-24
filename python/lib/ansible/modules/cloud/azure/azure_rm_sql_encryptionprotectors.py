@@ -37,11 +37,9 @@ options:
     kind:
         description:
             - Kind of encryption protector. This is metadata used for the Azure portal experience.
-        required: False
     server_key_name:
         description:
             - The name of the server key.
-        required: False
     server_key_type:
         description:
             - "The encryption protector type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'

@@ -33,7 +33,6 @@ options:
     virtual_network_rule_name:
         description:
             - The name of the virtual network rule.
-        required: False
 
 extends_documentation_fragment:
     - azure

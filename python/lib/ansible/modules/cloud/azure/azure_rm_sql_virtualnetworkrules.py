@@ -41,7 +41,6 @@ options:
     ignore_missing_vnet_service_endpoint:
         description:
             - Create firewall rule before the virtual network has vnet service endpoint enabled.
-        required: False
 
 extends_documentation_fragment:
     - azure

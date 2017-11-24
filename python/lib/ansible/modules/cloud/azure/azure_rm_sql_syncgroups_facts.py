@@ -25,39 +25,30 @@ options:
     resource_group_name:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
-        required: False
     server_name:
         description:
             - The name of the server.
-        required: False
     database_name:
         description:
             - The name of the database on which the sync group is hosted.
-        required: False
     sync_group_name:
         description:
             - The name of the sync group.
-        required: False
     start_time:
         description:
             - Get logs generated after this time.
-        required: False
     end_time:
         description:
             - Get logs generated before this time.
-        required: False
     type:
         description:
             - The types of logs to retrieve.
-        required: False
     continuation_token:
         description:
             - The continuation token for this operation.
-        required: False
     location_name:
         description:
             - The name of the region where the resource is located.
-        required: False
 
 extends_documentation_fragment:
     - azure

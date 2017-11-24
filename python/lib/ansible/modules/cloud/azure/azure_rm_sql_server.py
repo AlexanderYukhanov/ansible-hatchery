@@ -37,29 +37,23 @@ options:
     tags:
         description:
             - Resource tags.
-        required: False
     identity:
         description:
             - The Azure Active Directory identity of the server.
-        required: False
         suboptions:
             type:
                 description:
                     - "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for th
                        e resource. Possible values include: 'SystemAssigned'"
-                required: False
     administrator_login:
         description:
             - Administrator username for the server. Once created it cannot be changed.
-        required: False
     administrator_login_password:
         description:
             - The administrator login password (required for server creation).
-        required: False
     version:
         description:
             - The version of the server.
-        required: False
 
 extends_documentation_fragment:
     - azure

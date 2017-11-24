@@ -33,7 +33,6 @@ options:
     administrator_name:
         description:
             - Name of the server administrator resource.
-        required: False
 
 extends_documentation_fragment:
     - azure

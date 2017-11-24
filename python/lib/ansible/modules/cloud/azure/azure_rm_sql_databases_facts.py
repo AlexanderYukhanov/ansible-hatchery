@@ -33,23 +33,18 @@ options:
     database_name:
         description:
             - The name of the database to be retrieved.
-        required: False
     expand:
         description:
             - A comma separated list of child objects to expand in the response. Possible properties: serviceTierAdvisors, transparentDataEncryption.
-        required: False
     filter:
         description:
             - An OData filter expression that describes a subset of databases to return.
-        required: False
     elastic_pool_name:
         description:
             - The name of the elastic pool to be retrieved.
-        required: False
     recommended_elastic_pool_name:
         description:
             - The name of the recommended elastic pool to be retrieved.
-        required: False
 
 extends_documentation_fragment:
     - azure

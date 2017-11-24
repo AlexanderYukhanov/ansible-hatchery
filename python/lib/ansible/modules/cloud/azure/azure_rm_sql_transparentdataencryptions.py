@@ -41,7 +41,6 @@ options:
     status:
         description:
             - "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'
-        required: False
 
 extends_documentation_fragment:
     - azure

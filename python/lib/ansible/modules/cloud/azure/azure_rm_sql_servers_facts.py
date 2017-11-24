@@ -29,7 +29,6 @@ options:
     server_name:
         description:
             - The name of the server.
-        required: False
 
 extends_documentation_fragment:
     - azure

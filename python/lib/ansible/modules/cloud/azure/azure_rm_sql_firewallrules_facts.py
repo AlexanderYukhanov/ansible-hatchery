@@ -33,7 +33,6 @@ options:
     firewall_rule_name:
         description:
             - The name of the firewall rule.
-        required: False
 
 extends_documentation_fragment:
     - azure

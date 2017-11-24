@@ -39,7 +39,6 @@ options:
     kind:
         description:
             - Kind of encryption protector. This is metadata used for the Azure portal experience.
-        required: False
     server_key_type:
         description:
             - "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'
@@ -47,15 +46,12 @@ options:
     uri:
         description:
             - The URI of the server key.
-        required: False
     thumbprint:
         description:
             - Thumbprint of the server key.
-        required: False
     creation_date:
         description:
             - The server key creation date.
-        required: False
 
 extends_documentation_fragment:
     - azure

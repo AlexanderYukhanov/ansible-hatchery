@@ -33,7 +33,6 @@ options:
     sync_agent_name:
         description:
             - The name of the sync agent.
-        required: False
 
 extends_documentation_fragment:
     - azure

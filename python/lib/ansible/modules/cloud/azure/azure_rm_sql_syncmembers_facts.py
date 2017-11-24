@@ -41,7 +41,6 @@ options:
     sync_member_name:
         description:
             - The name of the sync member.
-        required: False
 
 extends_documentation_fragment:
     - azure

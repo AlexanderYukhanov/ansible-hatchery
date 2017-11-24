@@ -33,7 +33,6 @@ options:
     database_name:
         description:
             - The name of the database
-        required: False
 
 extends_documentation_fragment:
     - azure

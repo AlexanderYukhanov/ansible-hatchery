@@ -37,7 +37,6 @@ options:
     sync_database_id:
         description:
             - ARM resource id of the sync database in the sync agent.
-        required: False
 
 extends_documentation_fragment:
     - azure

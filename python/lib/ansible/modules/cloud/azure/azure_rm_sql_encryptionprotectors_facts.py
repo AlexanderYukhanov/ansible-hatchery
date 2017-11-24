@@ -33,7 +33,6 @@ options:
     encryption_protector_name:
         description:
             - The name of the encryption protector to be retrieved.
-        required: False
 
 extends_documentation_fragment:
     - azure

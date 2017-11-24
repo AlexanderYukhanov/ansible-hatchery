@@ -33,7 +33,6 @@ options:
     communication_link_name:
         description:
             - The name of the server communication link.
-        required: False
 
 extends_documentation_fragment:
     - azure

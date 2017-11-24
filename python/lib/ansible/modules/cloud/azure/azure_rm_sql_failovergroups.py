@@ -37,7 +37,6 @@ options:
     tags:
         description:
             - Resource tags.
-        required: False
     read_write_endpoint:
         description:
             - Read-write endpoint of the failover group instance.
@@ -52,16 +51,13 @@ options:
                 description:
                     - "Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWith
                        DataLossGracePeriodMinutes is required."
-                required: False
     read_only_endpoint:
         description:
             - Read-only endpoint of the failover group instance.
-        required: False
         suboptions:
             failover_policy:
                 description:
                     - "Failover policy of the read-only endpoint for the failover group. Possible values include: 'Disabled', 'Enabled'
-                required: False
     partner_servers:
         description:
             - List of partner server information for the failover group.
@@ -74,7 +70,6 @@ options:
     databases:
         description:
             - List of databases in the failover group.
-        required: False
 
 extends_documentation_fragment:
     - azure

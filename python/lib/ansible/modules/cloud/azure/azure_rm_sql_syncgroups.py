@@ -41,58 +41,45 @@ options:
     interval:
         description:
             - Sync interval of the sync group.
-        required: False
     conflict_resolution_policy:
         description:
             - "Conflict resolution policy of the sync group. Possible values include: 'HubWin', 'MemberWin'
-        required: False
     sync_database_id:
         description:
             - ARM resource id of the sync database in the sync group.
-        required: False
     hub_database_user_name:
         description:
             - User name for the sync group hub database credential.
-        required: False
     hub_database_password:
         description:
             - Password for the sync group hub database credential.
-        required: False
     schema:
         description:
             - Sync schema of the sync group.
-        required: False
         suboptions:
             tables:
                 description:
                     - List of tables in sync group schema.
-                required: False
                 suboptions:
                     columns:
                         description:
                             - List of columns in sync group schema.
-                        required: False
                         suboptions:
                             quoted_name:
                                 description:
                                     - Quoted name of sync group table column.
-                                required: False
                             data_size:
                                 description:
                                     - Data size of the column.
-                                required: False
                             data_type:
                                 description:
                                     - Data type of the column.
-                                required: False
                     quoted_name:
                         description:
                             - Quoted name of sync group schema table.
-                        required: False
             master_sync_member_name:
                 description:
                     - Name of master sync member where the schema is from.
-                required: False
 
 extends_documentation_fragment:
     - azure

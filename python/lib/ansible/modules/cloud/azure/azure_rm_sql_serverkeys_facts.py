@@ -33,7 +33,6 @@ options:
     key_name:
         description:
             - The name of the server key to be retrieved.
-        required: False
 
 extends_documentation_fragment:
     - azure

@@ -37,7 +37,6 @@ options:
     geo_backup_policy_name:
         description:
             - The name of the geo backup policy.
-        required: False
 
 extends_documentation_fragment:
     - azure

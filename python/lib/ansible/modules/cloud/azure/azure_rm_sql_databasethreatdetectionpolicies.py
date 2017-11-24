@@ -41,7 +41,6 @@ options:
     location:
         description:
             - The geo-location where the resource lives
-        required: False
     state:
         description:
             - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Ne
@@ -51,32 +50,25 @@ options:
         description:
             - "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection; Sql_
                Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
-        required: False
     email_addresses:
         description:
             - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
-        required: False
     email_account_admins:
         description:
             - "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'
-        required: False
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
                s. If state is Enabled, storageEndpoint is required."
-        required: False
     storage_account_access_key:
         description:
             - Specifies the identifier key of the Threat Detection audit storage account. If state is Enabled, storageAccountAccessKey is required.
-        required: False
     retention_days:
         description:
             - Specifies the number of days to keep in the Threat Detection audit logs.
-        required: False
     use_server_default:
         description:
             - "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'
-        required: False
 
 extends_documentation_fragment:
     - azure

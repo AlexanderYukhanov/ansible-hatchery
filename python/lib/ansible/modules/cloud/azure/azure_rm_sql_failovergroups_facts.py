@@ -33,7 +33,6 @@ options:
     failover_group_name:
         description:
             - The name of the failover group.
-        required: False
 
 extends_documentation_fragment:
     - azure

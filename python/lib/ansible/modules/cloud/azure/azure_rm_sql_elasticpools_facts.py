@@ -33,11 +33,9 @@ options:
     elastic_pool_name:
         description:
             - The name of the elastic pool to be retrieved.
-        required: False
     filter:
         description:
             - An OData filter expression that describes a subset of metrics to return.
-        required: False
 
 extends_documentation_fragment:
     - azure

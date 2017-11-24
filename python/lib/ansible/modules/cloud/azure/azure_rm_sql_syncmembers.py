@@ -45,35 +45,27 @@ options:
     database_type:
         description:
             - "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'
-        required: False
     sync_agent_id:
         description:
             - ARM resource id of the sync agent in the sync member.
-        required: False
     sql_server_database_id:
         description:
             - SQL Server database id of the sync member.
-        required: False
     server_name:
         description:
             - Server name of the member database in the sync member
-        required: False
     database_name:
         description:
             - Database name of the member database in the sync member.
-        required: False
     user_name:
         description:
             - User name of the member database in the sync member.
-        required: False
     password:
         description:
             - Password of the member database in the sync member.
-        required: False
     sync_direction:
         description:
             - "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'
-        required: False
 
 extends_documentation_fragment:
     - azure

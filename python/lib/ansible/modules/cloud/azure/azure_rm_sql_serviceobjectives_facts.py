@@ -33,7 +33,6 @@ options:
     service_objective_name:
         description:
             - The name of the service objective to retrieve.
-        required: False
 
 extends_documentation_fragment:
     - azure
