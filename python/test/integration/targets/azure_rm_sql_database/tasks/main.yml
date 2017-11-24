@@ -5,12 +5,6 @@
     location: westus
     administrator_login: mylogin
     administrator_login_password: Testpasswordxyz12!
-  register: output
-- name: Assert the resource instance is well created
-  assert:
-    that:
-      - output.changed
-      - output.state.state == 'Ready'
 - name: Create instance of Database
   azure_rm_sql_database:
     resource_group: "{{ resource_group }}"
