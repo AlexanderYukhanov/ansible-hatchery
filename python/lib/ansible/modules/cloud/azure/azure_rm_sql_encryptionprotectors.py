@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_encryptionprotectors
 version_added: "2.5"
-short_description: Manage an EncryptionProtectors.
+short_description: Manage EncryptionProtectors instance
 description:
-    - Create, update and delete an instance of EncryptionProtectors.
+    - Create, update and delete instance of EncryptionProtectors
 
 options:
     resource_group_name:

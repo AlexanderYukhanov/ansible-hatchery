@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_serverazureadadministrators
 version_added: "2.5"
-short_description: Manage an ServerAzureADAdministrators.
+short_description: Manage ServerAzureADAdministrators instance
 description:
-    - Create, update and delete an instance of ServerAzureADAdministrators.
+    - Create, update and delete instance of ServerAzureADAdministrators
 
 options:
     resource_group_name:

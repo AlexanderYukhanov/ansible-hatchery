@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_elasticpool
 version_added: "2.5"
-short_description: Manage an ElasticPool.
+short_description: Manage ElasticPool instance
 description:
-    - Create, update and delete an instance of ElasticPool.
+    - Create, update and delete instance of ElasticPool
 
 options:
     resource_group:

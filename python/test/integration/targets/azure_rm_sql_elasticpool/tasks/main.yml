@@ -1,4 +1,4 @@
-- name: Create instance of Server
+- name: Create instance of SQL Server
   azure_rm_sql_server:
     resource_group: "{{ resource_group }}"
     name: zims-server

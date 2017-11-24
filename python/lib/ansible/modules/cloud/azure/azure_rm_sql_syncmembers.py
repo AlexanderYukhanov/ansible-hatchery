@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_syncmembers
 version_added: "2.5"
-short_description: Manage an SyncMembers.
+short_description: Manage SyncMembers instance
 description:
-    - Create, update and delete an instance of SyncMembers.
+    - Create, update and delete instance of SyncMembers
 
 options:
     resource_group_name:

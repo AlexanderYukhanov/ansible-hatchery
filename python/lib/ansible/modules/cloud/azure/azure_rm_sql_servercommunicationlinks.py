@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_servercommunicationlinks
 version_added: "2.5"
-short_description: Manage an ServerCommunicationLinks.
+short_description: Manage ServerCommunicationLinks instance
 description:
-    - Create, update and delete an instance of ServerCommunicationLinks.
+    - Create, update and delete instance of ServerCommunicationLinks
 
 options:
     resource_group_name:

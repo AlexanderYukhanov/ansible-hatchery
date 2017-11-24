@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_failovergroups
 version_added: "2.5"
-short_description: Manage an FailoverGroups.
+short_description: Manage FailoverGroups instance
 description:
-    - Create, update and delete an instance of FailoverGroups.
+    - Create, update and delete instance of FailoverGroups
 
 options:
     resource_group_name:

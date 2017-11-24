@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_firewallrules
 version_added: "2.5"
-short_description: Manage an FirewallRules.
+short_description: Manage FirewallRules instance
 description:
-    - Create, update and delete an instance of FirewallRules.
+    - Create, update and delete instance of FirewallRules
 
 options:
     resource_group_name:

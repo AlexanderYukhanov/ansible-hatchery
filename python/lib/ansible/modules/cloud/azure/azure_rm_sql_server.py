@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_server
 version_added: "2.5"
-short_description: Manage an Server.
+short_description: Manage SQL Server instance
 description:
-    - Create, update and delete an instance of Server.
+    - Create, update and delete instance of SQL Server
 
 options:
     resource_group:
@@ -65,7 +65,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Server
+  - name: Create (or update) SQL Server
     azure_rm_sql_server:
       resource_group: "{{ resource_group }}"
       name: zims-server
@@ -80,7 +80,7 @@ EXAMPLES = '''
 
 RETURN = '''
 state:
-    description: Current state of Server
+    description: Current state of SQL Server
     returned: always
     type: dict
 '''
@@ -98,7 +98,7 @@ except ImportError:
 
 
 class AzureRMServers(AzureRMModuleBase):
-    """Configuration class for an Azure RM Server resource"""
+    """Configuration class for an Azure RM SQL Server resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -185,33 +185,33 @@ class AzureRMServers(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_server()
+        response = self.get_sqlserver()
 
         if not response:
-            self.log("Server instance doesn't exist")
+            self.log("SQL Server instance doesn't exist")
             if self.state == 'absent':
                 self.log("Nothing to delete")
             else:
                 to_be_updated = True
         else:
-            self.log("Server instance already exists")
+            self.log("SQL Server instance already exists")
             if self.state == 'absent':
-                self.delete_server()
+                self.delete_sqlserver()
                 self.results['changed'] = True
-                self.log("Server instance deleted")
+                self.log("SQL Server instance deleted")
             elif self.state == 'present':
-                self.log("Need to check if Server instance has to be deleted or may be updated")
+                self.log("Need to check if SQL Server instance has to be deleted or may be updated")
                 to_be_updated = True
 
         if self.state == 'present':
 
-            self.log("Need to Create / Update the Server instance")
+            self.log("Need to Create / Update the SQL Server instance")
 
             if self.check_mode:
                 return self.results
 
             if to_be_updated:
-                self.results['state'] = self.create_update_server()
+                self.results['state'] = self.create_update_sqlserver()
                 self.results['changed'] = True
             else:
                 self.results['state'] = response
@@ -220,13 +220,13 @@ class AzureRMServers(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_server(self):
+    def create_update_sqlserver(self):
         '''
-        Creates or updates Server with the specified configuration.
+        Creates or updates SQL Server with the specified configuration.
 
-        :return: deserialized Server instance state dictionary
+        :return: deserialized SQL Server instance state dictionary
         '''
-        self.log("Creating / Updating the Server instance {0}".format(self.name))
+        self.log("Creating / Updating the SQL Server instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.servers.create_or_update(self.resource_group,
@@ -236,42 +236,42 @@ class AzureRMServers(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Server instance.')
-            self.fail("Error creating the Server instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the SQL Server instance.')
+            self.fail("Error creating the SQL Server instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_server(self):
+    def delete_sqlserver(self):
         '''
-        Deletes specified Server instance in the specified subscription and resource group.
+        Deletes specified SQL Server instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Server instance {0}".format(self.name))
+        self.log("Deleting the SQL Server instance {0}".format(self.name))
         try:
             response = self.mgmt_client.servers.delete(self.resource_group,
                                                        self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the Server instance.')
-            self.fail("Error deleting the Server instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the SQL Server instance.')
+            self.fail("Error deleting the SQL Server instance: {0}".format(str(e)))
 
         return True
 
-    def get_server(self):
+    def get_sqlserver(self):
         '''
-        Gets the properties of the specified Server.
+        Gets the properties of the specified SQL Server.
 
-        :return: deserialized Server instance state dictionary
+        :return: deserialized SQL Server instance state dictionary
         '''
-        self.log("Checking if the Server instance {0} is present".format(self.name))
+        self.log("Checking if the SQL Server instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.servers.get(self.resource_group,
                                                     self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Server instance : {0} found".format(response.name))
+            self.log("SQL Server instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Server instance.')
+            self.log('Did not find the SQL Server instance.')
         if found is True:
             return response.as_dict()
 

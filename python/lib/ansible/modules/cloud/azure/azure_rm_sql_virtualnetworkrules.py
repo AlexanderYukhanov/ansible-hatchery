@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_virtualnetworkrules
 version_added: "2.5"
-short_description: Manage an VirtualNetworkRules.
+short_description: Manage VirtualNetworkRules instance
 description:
-    - Create, update and delete an instance of VirtualNetworkRules.
+    - Create, update and delete instance of VirtualNetworkRules
 
 options:
     resource_group_name:

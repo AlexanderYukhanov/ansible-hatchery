@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_syncagents
 version_added: "2.5"
-short_description: Manage an SyncAgents.
+short_description: Manage SyncAgents instance
 description:
-    - Create, update and delete an instance of SyncAgents.
+    - Create, update and delete instance of SyncAgents
 
 options:
     resource_group_name:

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_backuplongtermretentionpolicies
 version_added: "2.5"
-short_description: Manage an BackupLongTermRetentionPolicies.
+short_description: Manage BackupLongTermRetentionPolicies instance
 description:
-    - Create, update and delete an instance of BackupLongTermRetentionPolicies.
+    - Create, update and delete instance of BackupLongTermRetentionPolicies
 
 options:
     resource_group_name:

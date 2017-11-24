@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_database
 version_added: "2.5"
-short_description: Manage an Database.
+short_description: Manage Database instance
 description:
-    - Create, update and delete an instance of Database.
+    - Create, update and delete instance of Database
 
 options:
     resource_group:

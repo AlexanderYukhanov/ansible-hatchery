@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_serverdnsaliases
 version_added: "2.5"
-short_description: Manage an ServerDnsAliases.
+short_description: Manage ServerDnsAliases instance
 description:
-    - Create, update and delete an instance of ServerDnsAliases.
+    - Create, update and delete instance of ServerDnsAliases
 
 options:
     resource_group_name:

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_geobackuppolicies
 version_added: "2.5"
-short_description: Manage an GeoBackupPolicies.
+short_description: Manage GeoBackupPolicies instance
 description:
-    - Create, update and delete an instance of GeoBackupPolicies.
+    - Create, update and delete instance of GeoBackupPolicies
 
 options:
     resource_group_name:

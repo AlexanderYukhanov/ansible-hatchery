@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_transparentdataencryptions
 version_added: "2.5"
-short_description: Manage an TransparentDataEncryptions.
+short_description: Manage TransparentDataEncryptions instance
 description:
-    - Create, update and delete an instance of TransparentDataEncryptions.
+    - Create, update and delete instance of TransparentDataEncryptions
 
 options:
     resource_group_name:

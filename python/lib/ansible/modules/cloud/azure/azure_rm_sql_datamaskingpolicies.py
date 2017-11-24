@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_datamaskingpolicies
 version_added: "2.5"
-short_description: Manage an DataMaskingPolicies.
+short_description: Manage DataMaskingPolicies instance
 description:
-    - Create, update and delete an instance of DataMaskingPolicies.
+    - Create, update and delete instance of DataMaskingPolicies
 
 options:
     resource_group_name:

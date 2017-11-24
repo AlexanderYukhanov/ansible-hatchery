@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_databasethreatdetectionpolicies
 version_added: "2.5"
-short_description: Manage an DatabaseThreatDetectionPolicies.
+short_description: Manage DatabaseThreatDetectionPolicies instance
 description:
-    - Create, update and delete an instance of DatabaseThreatDetectionPolicies.
+    - Create, update and delete instance of DatabaseThreatDetectionPolicies
 
 options:
     resource_group_name:

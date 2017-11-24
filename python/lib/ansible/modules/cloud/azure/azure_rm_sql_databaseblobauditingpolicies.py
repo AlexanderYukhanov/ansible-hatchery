@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_databaseblobauditingpolicies
 version_added: "2.5"
-short_description: Manage an DatabaseBlobAuditingPolicies.
+short_description: Manage DatabaseBlobAuditingPolicies instance
 description:
-    - Create, update and delete an instance of DatabaseBlobAuditingPolicies.
+    - Create, update and delete instance of DatabaseBlobAuditingPolicies
 
 options:
     resource_group_name:

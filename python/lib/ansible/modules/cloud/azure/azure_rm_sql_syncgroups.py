@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_syncgroups
 version_added: "2.5"
-short_description: Manage an SyncGroups.
+short_description: Manage SyncGroups instance
 description:
-    - Create, update and delete an instance of SyncGroups.
+    - Create, update and delete instance of SyncGroups
 
 options:
     resource_group_name:

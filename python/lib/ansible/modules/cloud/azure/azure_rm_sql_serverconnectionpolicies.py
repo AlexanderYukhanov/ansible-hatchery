@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_serverconnectionpolicies
 version_added: "2.5"
-short_description: Manage an ServerConnectionPolicies.
+short_description: Manage ServerConnectionPolicies instance
 description:
-    - Create, update and delete an instance of ServerConnectionPolicies.
+    - Create, update and delete instance of ServerConnectionPolicies
 
 options:
     resource_group_name:

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_serverkeys
 version_added: "2.5"
-short_description: Manage an ServerKeys.
+short_description: Manage ServerKeys instance
 description:
-    - Create, update and delete an instance of ServerKeys.
+    - Create, update and delete instance of ServerKeys
 
 options:
     resource_group_name:
