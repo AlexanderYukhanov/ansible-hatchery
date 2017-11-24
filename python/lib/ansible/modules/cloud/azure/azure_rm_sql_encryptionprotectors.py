@@ -55,14 +55,14 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) EncryptionProtectors
-        azure_rm_sql_encryptionprotectors:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          encryption_protector_name: "{{ encryption_protector_name }}"
-          kind: "{{ kind }}"
-          server_key_name: "{{ server_key_name }}"
-          server_key_type: "{{ server_key_type }}"
+  - name: Create (or update) EncryptionProtectors
+    azure_rm_sql_encryptionprotectors:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      encryption_protector_name: "{{ encryption_protector_name }}"
+      kind: "{{ kind }}"
+      server_key_name: "{{ server_key_name }}"
+      server_key_type: "{{ server_key_type }}"
 '''
 
 RETURN = '''

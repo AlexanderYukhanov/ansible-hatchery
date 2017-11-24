@@ -44,16 +44,16 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of FailoverGroups
-        azure_rm_sql_failovergroups_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          failover_group_name: "{{ failover_group_name }}"
+  - name: Get instance of FailoverGroups
+    azure_rm_sql_failovergroups_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      failover_group_name: "{{ failover_group_name }}"
 
-      - name: List instances of FailoverGroups
-        azure_rm_sql_failovergroups_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+  - name: List instances of FailoverGroups
+    azure_rm_sql_failovergroups_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

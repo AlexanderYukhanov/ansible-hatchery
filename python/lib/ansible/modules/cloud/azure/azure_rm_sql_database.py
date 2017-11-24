@@ -128,27 +128,27 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) Database
-        azure_rm_sql_database:
-          resource_group: "{{ resource_group }}"
-          server_name: zims-server
-          name: test-database
-          tags: "{{ tags }}"
-          location: westus
-          collation: "{{ collation }}"
-          create_mode: "{{ create_mode }}"
-          source_database_id: "{{ source_database_id }}"
-          source_database_deletion_date: "{{ source_database_deletion_date }}"
-          restore_point_in_time: "{{ restore_point_in_time }}"
-          recovery_services_recovery_point_resource_id: "{{ recovery_services_recovery_point_resource_id }}"
-          edition: "{{ edition }}"
-          max_size_bytes: "{{ max_size_bytes }}"
-          requested_service_objective_id: "{{ requested_service_objective_id }}"
-          requested_service_objective_name: "{{ requested_service_objective_name }}"
-          elastic_pool_name: "{{ elastic_pool_name }}"
-          read_scale: "{{ read_scale }}"
-          sample_name: "{{ sample_name }}"
-          zone_redundant: "{{ zone_redundant }}"
+  - name: Create (or update) Database
+    azure_rm_sql_database:
+      resource_group: "{{ resource_group }}"
+      server_name: zims-server
+      name: test-database
+      tags: "{{ tags }}"
+      location: westus
+      collation: "{{ collation }}"
+      create_mode: "{{ create_mode }}"
+      source_database_id: "{{ source_database_id }}"
+      source_database_deletion_date: "{{ source_database_deletion_date }}"
+      restore_point_in_time: "{{ restore_point_in_time }}"
+      recovery_services_recovery_point_resource_id: "{{ recovery_services_recovery_point_resource_id }}"
+      edition: "{{ edition }}"
+      max_size_bytes: "{{ max_size_bytes }}"
+      requested_service_objective_id: "{{ requested_service_objective_id }}"
+      requested_service_objective_name: "{{ requested_service_objective_name }}"
+      elastic_pool_name: "{{ elastic_pool_name }}"
+      read_scale: "{{ read_scale }}"
+      sample_name: "{{ sample_name }}"
+      zone_redundant: "{{ zone_redundant }}"
 '''
 
 RETURN = '''

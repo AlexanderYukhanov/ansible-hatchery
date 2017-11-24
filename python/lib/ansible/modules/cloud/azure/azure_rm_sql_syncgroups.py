@@ -91,25 +91,25 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) SyncGroups
-        azure_rm_sql_syncgroups:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          sync_group_name: "{{ sync_group_name }}"
-          interval: "{{ interval }}"
-          conflict_resolution_policy: "{{ conflict_resolution_policy }}"
-          sync_database_id: "{{ sync_database_id }}"
-          hub_database_user_name: "{{ hub_database_user_name }}"
-          hub_database_password: "{{ hub_database_password }}"
-          schema:
-            tables:
-              columns:
-                quoted_name: "{{ quoted_name }}"
-                data_size: "{{ data_size }}"
-                data_type: "{{ data_type }}"
-              quoted_name: "{{ quoted_name }}"
-            master_sync_member_name: "{{ master_sync_member_name }}"
+  - name: Create (or update) SyncGroups
+    azure_rm_sql_syncgroups:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      sync_group_name: "{{ sync_group_name }}"
+      interval: "{{ interval }}"
+      conflict_resolution_policy: "{{ conflict_resolution_policy }}"
+      sync_database_id: "{{ sync_database_id }}"
+      hub_database_user_name: "{{ hub_database_user_name }}"
+      hub_database_password: "{{ hub_database_password }}"
+      schema:
+        tables:
+          columns:
+            quoted_name: "{{ quoted_name }}"
+            data_size: "{{ data_size }}"
+            data_type: "{{ data_type }}"
+          quoted_name: "{{ quoted_name }}"
+        master_sync_member_name: "{{ master_sync_member_name }}"
 '''
 
 RETURN = '''

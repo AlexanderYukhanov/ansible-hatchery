@@ -45,11 +45,11 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: List instances of RestorePoints
-        azure_rm_sql_restorepoints_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
+  - name: List instances of RestorePoints
+    azure_rm_sql_restorepoints_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

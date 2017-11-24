@@ -49,12 +49,12 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: List instances of TransparentDataEncryptionActivities
-        azure_rm_sql_transparentdataencryptionactivities_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          transparent_data_encryption_name: "{{ transparent_data_encryption_name }}"
+  - name: List instances of TransparentDataEncryptionActivities
+    azure_rm_sql_transparentdataencryptionactivities_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      transparent_data_encryption_name: "{{ transparent_data_encryption_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -77,21 +77,21 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) SyncMembers
-        azure_rm_sql_syncmembers:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          sync_group_name: "{{ sync_group_name }}"
-          sync_member_name: "{{ sync_member_name }}"
-          database_type: "{{ database_type }}"
-          sync_agent_id: "{{ sync_agent_id }}"
-          sql_server_database_id: "{{ sql_server_database_id }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          user_name: "{{ user_name }}"
-          password: "{{ password }}"
-          sync_direction: "{{ sync_direction }}"
+  - name: Create (or update) SyncMembers
+    azure_rm_sql_syncmembers:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      sync_group_name: "{{ sync_group_name }}"
+      sync_member_name: "{{ sync_member_name }}"
+      database_type: "{{ database_type }}"
+      sync_agent_id: "{{ sync_agent_id }}"
+      sql_server_database_id: "{{ sql_server_database_id }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      user_name: "{{ user_name }}"
+      password: "{{ password }}"
+      sync_direction: "{{ sync_direction }}"
 '''
 
 RETURN = '''

@@ -44,16 +44,16 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of RecoverableDatabases
-        azure_rm_sql_recoverabledatabases_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
+  - name: Get instance of RecoverableDatabases
+    azure_rm_sql_recoverabledatabases_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
 
-      - name: List instances of RecoverableDatabases
-        azure_rm_sql_recoverabledatabases_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+  - name: List instances of RecoverableDatabases
+    azure_rm_sql_recoverabledatabases_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

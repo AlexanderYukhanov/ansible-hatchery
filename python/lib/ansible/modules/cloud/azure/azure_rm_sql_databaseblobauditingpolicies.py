@@ -72,20 +72,20 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) DatabaseBlobAuditingPolicies
-        azure_rm_sql_databaseblobauditingpolicies:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          blob_auditing_policy_name: "{{ blob_auditing_policy_name }}"
-          state: "{{ state }}"
-          storage_endpoint: "{{ storage_endpoint }}"
-          storage_account_access_key: "{{ storage_account_access_key }}"
-          retention_days: "{{ retention_days }}"
-          audit_actions_and_groups:
-            - XXXX - list of values -- not implemented str
-          storage_account_subscription_id: "{{ storage_account_subscription_id }}"
-          is_storage_secondary_key_in_use: "{{ is_storage_secondary_key_in_use }}"
+  - name: Create (or update) DatabaseBlobAuditingPolicies
+    azure_rm_sql_databaseblobauditingpolicies:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      blob_auditing_policy_name: "{{ blob_auditing_policy_name }}"
+      state: "{{ state }}"
+      storage_endpoint: "{{ storage_endpoint }}"
+      storage_account_access_key: "{{ storage_account_access_key }}"
+      retention_days: "{{ retention_days }}"
+      audit_actions_and_groups:
+        - XXXX - list of values -- not implemented str
+      storage_account_subscription_id: "{{ storage_account_subscription_id }}"
+      is_storage_secondary_key_in_use: "{{ is_storage_secondary_key_in_use }}"
 '''
 
 RETURN = '''

@@ -93,24 +93,24 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) DataMaskingRules
-        azure_rm_sql_datamaskingrules:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          data_masking_policy_name: "{{ data_masking_policy_name }}"
-          data_masking_rule_name: "{{ data_masking_rule_name }}"
-          alias_name: "{{ alias_name }}"
-          rule_state: "{{ rule_state }}"
-          schema_name: "{{ schema_name }}"
-          table_name: "{{ table_name }}"
-          column_name: "{{ column_name }}"
-          masking_function: "{{ masking_function }}"
-          number_from: "{{ number_from }}"
-          number_to: "{{ number_to }}"
-          prefix_size: "{{ prefix_size }}"
-          suffix_size: "{{ suffix_size }}"
-          replacement_string: "{{ replacement_string }}"
+  - name: Create (or update) DataMaskingRules
+    azure_rm_sql_datamaskingrules:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      data_masking_policy_name: "{{ data_masking_policy_name }}"
+      data_masking_rule_name: "{{ data_masking_rule_name }}"
+      alias_name: "{{ alias_name }}"
+      rule_state: "{{ rule_state }}"
+      schema_name: "{{ schema_name }}"
+      table_name: "{{ table_name }}"
+      column_name: "{{ column_name }}"
+      masking_function: "{{ masking_function }}"
+      number_from: "{{ number_from }}"
+      number_to: "{{ number_to }}"
+      prefix_size: "{{ prefix_size }}"
+      suffix_size: "{{ suffix_size }}"
+      replacement_string: "{{ replacement_string }}"
 '''
 
 RETURN = '''

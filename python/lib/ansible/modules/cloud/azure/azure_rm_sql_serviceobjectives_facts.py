@@ -44,16 +44,16 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of ServiceObjectives
-        azure_rm_sql_serviceobjectives_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          service_objective_name: "{{ service_objective_name }}"
+  - name: Get instance of ServiceObjectives
+    azure_rm_sql_serviceobjectives_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      service_objective_name: "{{ service_objective_name }}"
 
-      - name: List instances of ServiceObjectives
-        azure_rm_sql_serviceobjectives_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+  - name: List instances of ServiceObjectives
+    azure_rm_sql_serviceobjectives_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

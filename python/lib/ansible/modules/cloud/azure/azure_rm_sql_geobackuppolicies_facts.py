@@ -48,18 +48,18 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of GeoBackupPolicies
-        azure_rm_sql_geobackuppolicies_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          geo_backup_policy_name: "{{ geo_backup_policy_name }}"
+  - name: Get instance of GeoBackupPolicies
+    azure_rm_sql_geobackuppolicies_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      geo_backup_policy_name: "{{ geo_backup_policy_name }}"
 
-      - name: List instances of GeoBackupPolicies
-        azure_rm_sql_geobackuppolicies_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
+  - name: List instances of GeoBackupPolicies
+    azure_rm_sql_geobackuppolicies_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

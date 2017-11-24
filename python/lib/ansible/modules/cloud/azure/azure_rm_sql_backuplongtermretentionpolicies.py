@@ -57,14 +57,14 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) BackupLongTermRetentionPolicies
-        azure_rm_sql_backuplongtermretentionpolicies:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          backup_long_term_retention_policy_name: "{{ backup_long_term_retention_policy_name }}"
-          state: "{{ state }}"
-          recovery_services_backup_policy_resource_id: "{{ recovery_services_backup_policy_resource_id }}"
+  - name: Create (or update) BackupLongTermRetentionPolicies
+    azure_rm_sql_backuplongtermretentionpolicies:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      backup_long_term_retention_policy_name: "{{ backup_long_term_retention_policy_name }}"
+      state: "{{ state }}"
+      recovery_services_backup_policy_resource_id: "{{ recovery_services_backup_policy_resource_id }}"
 '''
 
 RETURN = '''

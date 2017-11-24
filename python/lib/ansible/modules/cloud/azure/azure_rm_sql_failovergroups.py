@@ -81,21 +81,21 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) FailoverGroups
-        azure_rm_sql_failovergroups:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          failover_group_name: "{{ failover_group_name }}"
-          tags: "{{ tags }}"
-          read_write_endpoint:
-            failover_policy: "{{ failover_policy }}"
-            failover_with_data_loss_grace_period_minutes: "{{ failover_with_data_loss_grace_period_minutes }}"
-          read_only_endpoint:
-            failover_policy: "{{ failover_policy }}"
-          partner_servers:
-            id: "{{ id }}"
-          databases:
-            - XXXX - list of values -- not implemented str
+  - name: Create (or update) FailoverGroups
+    azure_rm_sql_failovergroups:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      failover_group_name: "{{ failover_group_name }}"
+      tags: "{{ tags }}"
+      read_write_endpoint:
+        failover_policy: "{{ failover_policy }}"
+        failover_with_data_loss_grace_period_minutes: "{{ failover_with_data_loss_grace_period_minutes }}"
+      read_only_endpoint:
+        failover_policy: "{{ failover_policy }}"
+      partner_servers:
+        id: "{{ id }}"
+      databases:
+        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

@@ -48,18 +48,18 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of ReplicationLinks
-        azure_rm_sql_replicationlinks_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          link_id: "{{ link_id }}"
+  - name: Get instance of ReplicationLinks
+    azure_rm_sql_replicationlinks_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      link_id: "{{ link_id }}"
 
-      - name: List instances of ReplicationLinks
-        azure_rm_sql_replicationlinks_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
+  - name: List instances of ReplicationLinks
+    azure_rm_sql_replicationlinks_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

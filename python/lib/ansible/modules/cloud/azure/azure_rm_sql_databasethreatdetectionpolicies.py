@@ -80,21 +80,21 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) DatabaseThreatDetectionPolicies
-        azure_rm_sql_databasethreatdetectionpolicies:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          security_alert_policy_name: "{{ security_alert_policy_name }}"
-          location: "{{ location }}"
-          state: "{{ state }}"
-          disabled_alerts: "{{ disabled_alerts }}"
-          email_addresses: "{{ email_addresses }}"
-          email_account_admins: "{{ email_account_admins }}"
-          storage_endpoint: "{{ storage_endpoint }}"
-          storage_account_access_key: "{{ storage_account_access_key }}"
-          retention_days: "{{ retention_days }}"
-          use_server_default: "{{ use_server_default }}"
+  - name: Create (or update) DatabaseThreatDetectionPolicies
+    azure_rm_sql_databasethreatdetectionpolicies:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      security_alert_policy_name: "{{ security_alert_policy_name }}"
+      location: "{{ location }}"
+      state: "{{ state }}"
+      disabled_alerts: "{{ disabled_alerts }}"
+      email_addresses: "{{ email_addresses }}"
+      email_account_admins: "{{ email_account_admins }}"
+      storage_endpoint: "{{ storage_endpoint }}"
+      storage_account_access_key: "{{ storage_account_access_key }}"
+      retention_days: "{{ retention_days }}"
+      use_server_default: "{{ use_server_default }}"
 '''
 
 RETURN = '''

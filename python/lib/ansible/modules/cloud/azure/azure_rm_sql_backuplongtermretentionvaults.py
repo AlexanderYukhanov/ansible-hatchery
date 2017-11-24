@@ -49,12 +49,12 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) BackupLongTermRetentionVaults
-        azure_rm_sql_backuplongtermretentionvaults:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          backup_long_term_retention_vault_name: "{{ backup_long_term_retention_vault_name }}"
-          recovery_services_vault_resource_id: "{{ recovery_services_vault_resource_id }}"
+  - name: Create (or update) BackupLongTermRetentionVaults
+    azure_rm_sql_backuplongtermretentionvaults:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      backup_long_term_retention_vault_name: "{{ backup_long_term_retention_vault_name }}"
+      recovery_services_vault_resource_id: "{{ recovery_services_vault_resource_id }}"
 '''
 
 RETURN = '''

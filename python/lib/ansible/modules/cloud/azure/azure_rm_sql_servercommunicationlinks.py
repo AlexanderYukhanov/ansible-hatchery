@@ -49,12 +49,12 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) ServerCommunicationLinks
-        azure_rm_sql_servercommunicationlinks:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          communication_link_name: "{{ communication_link_name }}"
-          partner_server: "{{ partner_server }}"
+  - name: Create (or update) ServerCommunicationLinks
+    azure_rm_sql_servercommunicationlinks:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      communication_link_name: "{{ communication_link_name }}"
+      partner_server: "{{ partner_server }}"
 '''
 
 RETURN = '''
