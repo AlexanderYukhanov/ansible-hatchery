@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysql_databases
 version_added: "2.5"
-short_description: Manage an Databases.
+short_description: Manage Databases instance
 description:
-    - Create, update and delete an instance of Databases.
+    - Create, update and delete instance of Databases
 
 options:
     resource_group_name:
@@ -37,11 +37,9 @@ options:
     charset:
         description:
             - The charset of the database.
-        required: False
     collation:
         description:
             - The collation of the database.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -53,13 +51,13 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) Databases
-        azure_rm_mysql_databases:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          charset: "{{ charset }}"
-          collation: "{{ collation }}"
+  - name: Create (or update) Databases
+    azure_rm_mysql_databases:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      charset: "{{ charset }}"
+      collation: "{{ collation }}"
 '''
 
 RETURN = '''

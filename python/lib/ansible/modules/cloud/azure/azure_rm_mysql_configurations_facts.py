@@ -33,7 +33,6 @@ options:
     configuration_name:
         description:
             - The name of the server configuration.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -45,16 +44,16 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of Configurations
-        azure_rm_mysql_configurations_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          configuration_name: "{{ configuration_name }}"
+  - name: Get instance of Configurations
+    azure_rm_mysql_configurations_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      configuration_name: "{{ configuration_name }}"
 
-      - name: List instances of Configurations
-        azure_rm_mysql_configurations_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+  - name: List instances of Configurations
+    azure_rm_mysql_configurations_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

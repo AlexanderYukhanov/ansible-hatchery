@@ -33,7 +33,6 @@ options:
     database_name:
         description:
             - The name of the database.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -45,16 +44,16 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of Databases
-        azure_rm_mysql_databases_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
+  - name: Get instance of Databases
+    azure_rm_mysql_databases_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
 
-      - name: List instances of Databases
-        azure_rm_mysql_databases_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+  - name: List instances of Databases
+    azure_rm_mysql_databases_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

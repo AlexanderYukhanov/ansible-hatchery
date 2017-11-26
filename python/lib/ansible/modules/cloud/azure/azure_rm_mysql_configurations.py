@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysql_configurations
 version_added: "2.5"
-short_description: Manage an Configurations.
+short_description: Manage Configurations instance
 description:
-    - Create, update and delete an instance of Configurations.
+    - Create, update and delete instance of Configurations
 
 options:
     resource_group_name:
@@ -37,11 +37,9 @@ options:
     value:
         description:
             - Value of the configuration.
-        required: False
     source:
         description:
             - Source of the configuration.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -53,13 +51,13 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) Configurations
-        azure_rm_mysql_configurations:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          configuration_name: "{{ configuration_name }}"
-          value: "{{ value }}"
-          source: "{{ source }}"
+  - name: Create (or update) Configurations
+    azure_rm_mysql_configurations:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      configuration_name: "{{ configuration_name }}"
+      value: "{{ value }}"
+      source: "{{ source }}"
 '''
 
 RETURN = '''

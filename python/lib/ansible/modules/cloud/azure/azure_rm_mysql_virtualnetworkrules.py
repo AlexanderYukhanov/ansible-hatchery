@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysql_virtualnetworkrules
 version_added: "2.5"
-short_description: Manage an VirtualNetworkRules.
+short_description: Manage VirtualNetworkRules instance
 description:
-    - Create, update and delete an instance of VirtualNetworkRules.
+    - Create, update and delete instance of VirtualNetworkRules
 
 options:
     resource_group_name:
@@ -41,7 +41,6 @@ options:
     ignore_missing_vnet_service_endpoint:
         description:
             - Create firewall rule before the virtual network has vnet service endpoint enabled.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -53,13 +52,13 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) VirtualNetworkRules
-        azure_rm_mysql_virtualnetworkrules:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          virtual_network_rule_name: "{{ virtual_network_rule_name }}"
-          virtual_network_subnet_id: "{{ virtual_network_subnet_id }}"
-          ignore_missing_vnet_service_endpoint: "{{ ignore_missing_vnet_service_endpoint }}"
+  - name: Create (or update) VirtualNetworkRules
+    azure_rm_mysql_virtualnetworkrules:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      virtual_network_rule_name: "{{ virtual_network_rule_name }}"
+      virtual_network_subnet_id: "{{ virtual_network_subnet_id }}"
+      ignore_missing_vnet_service_endpoint: "{{ ignore_missing_vnet_service_endpoint }}"
 '''
 
 RETURN = '''

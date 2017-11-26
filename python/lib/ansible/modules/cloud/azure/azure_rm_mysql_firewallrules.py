@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysql_firewallrules
 version_added: "2.5"
-short_description: Manage an FirewallRules.
+short_description: Manage FirewallRules instance
 description:
-    - Create, update and delete an instance of FirewallRules.
+    - Create, update and delete instance of FirewallRules
 
 options:
     resource_group_name:
@@ -53,13 +53,13 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) FirewallRules
-        azure_rm_mysql_firewallrules:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          firewall_rule_name: "{{ firewall_rule_name }}"
-          start_ip_address: "{{ start_ip_address }}"
-          end_ip_address: "{{ end_ip_address }}"
+  - name: Create (or update) FirewallRules
+    azure_rm_mysql_firewallrules:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      firewall_rule_name: "{{ firewall_rule_name }}"
+      start_ip_address: "{{ start_ip_address }}"
+      end_ip_address: "{{ end_ip_address }}"
 '''
 
 RETURN = '''

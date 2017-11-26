@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysql_servers
 version_added: "2.5"
-short_description: Manage an Servers.
+short_description: Manage Servers instance
 description:
-    - Create, update and delete an instance of Servers.
+    - Create, update and delete instance of Servers
 
 options:
     resource_group_name:
@@ -33,28 +33,22 @@ options:
     sku:
         description:
             - The SKU (pricing tier) of the server.
-        required: False
         suboptions:
             name:
                 description:
                     - The name of the sku, typically, a letter + Number code, e.g. P3.
-                required: False
             tier:
                 description:
                     - "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'
-                required: False
             capacity:
                 description:
                     - "The scale up/out capacity, representing server's compute units.
-                required: False
             size:
                 description:
                     - The size code, to be interpreted by resource as appropriate.
-                required: False
             family:
                 description:
                     - The family of hardware.
-                required: False
     properties:
         description:
             - Properties of the server.
@@ -63,15 +57,12 @@ options:
             storage_mb:
                 description:
                     - The maximum storage allowed for a server.
-                required: False
             version:
                 description:
                     - "Server version. Possible values include: '5.6', '5.7'
-                required: False
             ssl_enforcement:
                 description:
                     - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'
-                required: False
             create_mode:
                 description:
                     - Constant filled by server.
@@ -83,7 +74,6 @@ options:
     tags:
         description:
             - Application-specific metadata in the form of key-value pairs.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -95,23 +85,23 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) Servers
-        azure_rm_mysql_servers:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          sku:
-            name: "{{ name }}"
-            tier: "{{ tier }}"
-            capacity: "{{ capacity }}"
-            size: "{{ size }}"
-            family: "{{ family }}"
-          properties:
-            storage_mb: "{{ storage_mb }}"
-            version: "{{ version }}"
-            ssl_enforcement: "{{ ssl_enforcement }}"
-            create_mode: "{{ create_mode }}"
-          location: "{{ location }}"
-          tags: "{{ tags }}"
+  - name: Create (or update) Servers
+    azure_rm_mysql_servers:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      sku:
+        name: "{{ name }}"
+        tier: "{{ tier }}"
+        capacity: "{{ capacity }}"
+        size: "{{ size }}"
+        family: "{{ family }}"
+      properties:
+        storage_mb: "{{ storage_mb }}"
+        version: "{{ version }}"
+        ssl_enforcement: "{{ ssl_enforcement }}"
+        create_mode: "{{ create_mode }}"
+      location: "{{ location }}"
+      tags: "{{ tags }}"
 '''
 
 RETURN = '''
