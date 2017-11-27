@@ -173,9 +173,8 @@ class AzureRMServers(AzureRMModuleBase):
             elif key == "version":
                 self.parameters["version"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -185,14 +184,12 @@ class AzureRMServers(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_sqlserver()
+        old_response = self.get_sqlserver()
 
-        if not response:
+        if not old_response:
             self.log("SQL Server instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("SQL Server instance already exists")
             if self.state == 'absent':
@@ -201,7 +198,6 @@ class AzureRMServers(AzureRMModuleBase):
                 self.log("SQL Server instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if SQL Server instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -210,11 +206,11 @@ class AzureRMServers(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_sqlserver()
+            self.results['state'] = self.create_update_sqlserver()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 

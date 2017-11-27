@@ -39,10 +39,10 @@ options:
                     - The name of the sku, typically, a letter + Number code, e.g. P3.
             tier:
                 description:
-                    - "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'
+                    - "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'"
             capacity:
                 description:
-                    - "The scale up/out capacity, representing server's compute units.
+                    - "The scale up/out capacity, representing server's compute units."
             size:
                 description:
                     - The size code, to be interpreted by resource as appropriate.
@@ -59,10 +59,10 @@ options:
                     - The maximum storage allowed for a server.
             version:
                 description:
-                    - "Server version. Possible values include: '5.6', '5.7'
+                    - "Server version. Possible values include: '5.6', '5.7'"
             ssl_enforcement:
                 description:
-                    - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'
+                    - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'"
             create_mode:
                 description:
                     - Constant filled by server.
@@ -187,9 +187,8 @@ class AzureRMServers(AzureRMModuleBase):
             elif key == "tags":
                 self.parameters["tags"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(mysql,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -199,14 +198,12 @@ class AzureRMServers(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_servers()
+        old_response = self.get_servers()
 
-        if not response:
+        if not old_response:
             self.log("Servers instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("Servers instance already exists")
             if self.state == 'absent':
@@ -215,7 +212,6 @@ class AzureRMServers(AzureRMModuleBase):
                 self.log("Servers instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if Servers instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -224,11 +220,11 @@ class AzureRMServers(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_servers()
+            self.results['state'] = self.create_update_servers()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 

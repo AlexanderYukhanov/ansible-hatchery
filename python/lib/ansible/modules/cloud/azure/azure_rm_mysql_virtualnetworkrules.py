@@ -137,9 +137,8 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             elif key == "ignore_missing_vnet_service_endpoint":
                 self.parameters["ignore_missing_vnet_service_endpoint"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(mysql,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -149,14 +148,12 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_virtualnetworkrules()
+        old_response = self.get_virtualnetworkrules()
 
-        if not response:
+        if not old_response:
             self.log("VirtualNetworkRules instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("VirtualNetworkRules instance already exists")
             if self.state == 'absent':
@@ -165,7 +162,6 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
                 self.log("VirtualNetworkRules instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if VirtualNetworkRules instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -174,11 +170,11 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_virtualnetworkrules()
+            self.results['state'] = self.create_update_virtualnetworkrules()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 

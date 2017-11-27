@@ -136,9 +136,8 @@ class AzureRMConfigurations(AzureRMModuleBase):
             elif key == "source":
                 self.parameters["source"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(mysql,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -148,14 +147,12 @@ class AzureRMConfigurations(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_configurations()
+        old_response = self.get_configurations()
 
-        if not response:
+        if not old_response:
             self.log("Configurations instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("Configurations instance already exists")
             if self.state == 'absent':
@@ -164,7 +161,6 @@ class AzureRMConfigurations(AzureRMModuleBase):
                 self.log("Configurations instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if Configurations instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -173,11 +169,11 @@ class AzureRMConfigurations(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_configurations()
+            self.results['state'] = self.create_update_configurations()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 

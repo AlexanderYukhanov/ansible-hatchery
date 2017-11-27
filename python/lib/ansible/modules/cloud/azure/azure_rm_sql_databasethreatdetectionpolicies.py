@@ -55,7 +55,7 @@ options:
             - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
     email_account_admins:
         description:
-            - "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'
+            - "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'"
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
@@ -68,7 +68,7 @@ options:
             - Specifies the number of days to keep in the Threat Detection audit logs.
     use_server_default:
         description:
-            - "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'
+            - "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'"
 
 extends_documentation_fragment:
     - azure
@@ -220,9 +220,8 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             elif key == "use_server_default":
                 self.parameters["use_server_default"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -232,14 +231,12 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_databasethreatdetectionpolicies()
+        old_response = self.get_databasethreatdetectionpolicies()
 
-        if not response:
+        if not old_response:
             self.log("DatabaseThreatDetectionPolicies instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("DatabaseThreatDetectionPolicies instance already exists")
             if self.state == 'absent':
@@ -248,7 +245,6 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 self.log("DatabaseThreatDetectionPolicies instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if DatabaseThreatDetectionPolicies instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -257,11 +253,11 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_databasethreatdetectionpolicies()
+            self.results['state'] = self.create_update_databasethreatdetectionpolicies()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 

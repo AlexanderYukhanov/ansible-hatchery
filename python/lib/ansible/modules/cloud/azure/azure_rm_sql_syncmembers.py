@@ -44,7 +44,7 @@ options:
         required: True
     database_type:
         description:
-            - "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'
+            - "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'"
     sync_agent_id:
         description:
             - ARM resource id of the sync agent in the sync member.
@@ -65,7 +65,7 @@ options:
             - Password of the member database in the sync member.
     sync_direction:
         description:
-            - "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'
+            - "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'"
 
 extends_documentation_fragment:
     - azure
@@ -216,9 +216,8 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             elif key == "sync_direction":
                 self.parameters["sync_direction"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -228,14 +227,12 @@ class AzureRMSyncMembers(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_syncmembers()
+        old_response = self.get_syncmembers()
 
-        if not response:
+        if not old_response:
             self.log("SyncMembers instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("SyncMembers instance already exists")
             if self.state == 'absent':
@@ -244,7 +241,6 @@ class AzureRMSyncMembers(AzureRMModuleBase):
                 self.log("SyncMembers instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if SyncMembers instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -253,11 +249,11 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_syncmembers()
+            self.results['state'] = self.create_update_syncmembers()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 

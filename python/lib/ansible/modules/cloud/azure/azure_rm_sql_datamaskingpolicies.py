@@ -40,7 +40,7 @@ options:
         required: True
     data_masking_state:
         description:
-            - "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'
+            - "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'"
         required: True
     exempt_principals:
         description:
@@ -145,9 +145,8 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -157,14 +156,12 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_datamaskingpolicies()
+        old_response = self.get_datamaskingpolicies()
 
-        if not response:
+        if not old_response:
             self.log("DataMaskingPolicies instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("DataMaskingPolicies instance already exists")
             if self.state == 'absent':
@@ -173,7 +170,6 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
                 self.log("DataMaskingPolicies instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if DataMaskingPolicies instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -182,11 +178,11 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_datamaskingpolicies()
+            self.results['state'] = self.create_update_datamaskingpolicies()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 

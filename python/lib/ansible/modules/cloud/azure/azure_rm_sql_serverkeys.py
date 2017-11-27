@@ -41,7 +41,7 @@ options:
             - Kind of encryption protector. This is metadata used for the Azure portal experience.
     server_key_type:
         description:
-            - "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'
+            - "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'"
         required: True
     uri:
         description:
@@ -169,9 +169,8 @@ class AzureRMServerKeys(AzureRMModuleBase):
             elif key == "creation_date":
                 self.parameters["creation_date"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
@@ -181,14 +180,12 @@ class AzureRMServerKeys(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_serverkeys()
+        old_response = self.get_serverkeys()
 
-        if not response:
+        if not old_response:
             self.log("ServerKeys instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("ServerKeys instance already exists")
             if self.state == 'absent':
@@ -197,7 +194,6 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 self.log("ServerKeys instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if ServerKeys instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -206,11 +202,11 @@ class AzureRMServerKeys(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_serverkeys()
+            self.results['state'] = self.create_update_serverkeys()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = cmp(old_response, self.results['state'])
 
             self.log("Creation / Update done")
 
