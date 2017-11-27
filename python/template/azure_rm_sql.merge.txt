@@ -5,6 +5,38 @@ Option 'server_name' DefaultValueTest - KEEPING OLD
 Option 'database_name' NameAlt - KEEPING OLD
 Option 'database_name' DefaultValueTest - KEEPING OLD
 Option 'location' DefaultValueTest - KEEPING OLD
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'tags' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'collation' in new template only - ADDING
+Option 'creation_date' in new template only - ADDING
+Option 'containment_state' in new template only - ADDING
+Option 'current_service_objective_id' in new template only - ADDING
+Option 'database_id' in new template only - ADDING
+Option 'earliest_restore_date' in new template only - ADDING
+Option 'create_mode' in new template only - ADDING
+Option 'source_database_id' in new template only - ADDING
+Option 'source_database_deletion_date' in new template only - ADDING
+Option 'restore_point_in_time' in new template only - ADDING
+Option 'recovery_services_recovery_point_resource_id' in new template only - ADDING
+Option 'edition' in new template only - ADDING
+Option 'max_size_bytes' in new template only - ADDING
+Option 'requested_service_objective_id' in new template only - ADDING
+Option 'requested_service_objective_name' in new template only - ADDING
+Option 'service_level_objective' in new template only - ADDING
+Option 'status' in new template only - ADDING
+Option 'elastic_pool_name' in new template only - ADDING
+Option 'default_secondary_location' in new template only - ADDING
+Option 'service_tier_advisors' in new template only - ADDING
+Option 'transparent_data_encryption' in new template only - ADDING
+Option 'recommended_index' in new template only - ADDING
+Option 'failover_group_id' in new template only - ADDING
+Option 'read_scale' in new template only - ADDING
+Option 'sample_name' in new template only - ADDING
+Option 'zone_redundant' in new template only - ADDING
 Option 'azure_rm_sql_databases' ModuleNameAlt - KEEPING OLD
 Option 'azure_rm_sql_databases' AssertStateVariable - KEEPING OLD
 Option 'azure_rm_sql_databases' AssertStateExpectedValue - KEEPING OLD
@@ -16,10 +48,113 @@ Option 'server_name' DefaultValueTest - KEEPING OLD
 Option 'elastic_pool_name' NameAlt - KEEPING OLD
 Option 'elastic_pool_name' DefaultValueTest - KEEPING OLD
 Option 'location' DefaultValueTest - KEEPING OLD
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'tags' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'creation_date' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'edition' in new template only - ADDING
+Option 'dtu' in new template only - ADDING
+Option 'database_dtu_max' in new template only - ADDING
+Option 'database_dtu_min' in new template only - ADDING
+Option 'storage_mb' in new template only - ADDING
+Option 'zone_redundant' in new template only - ADDING
+Option 'kind' in new template only - ADDING
 Option 'azure_rm_sql_elasticpools' ModuleNameAlt - KEEPING OLD
 Option 'elastic_pool_name' Documentation - KEEPING OLD
 Option 'parameters' in old template only - KEEPING
 Option 'status' Disposition - KEEPING OLD
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'status' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'recovery_services_backup_policy_resource_id' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'recovery_services_vault_resource_id' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'connection_type' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'disabled_alerts' in new template only - ADDING
+Option 'email_addresses' in new template only - ADDING
+Option 'email_account_admins' in new template only - ADDING
+Option 'storage_endpoint' in new template only - ADDING
+Option 'storage_account_access_key' in new template only - ADDING
+Option 'retention_days' in new template only - ADDING
+Option 'use_server_default' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'data_masking_state' in new template only - ADDING
+Option 'exempt_principals' in new template only - ADDING
+Option 'application_principals' in new template only - ADDING
+Option 'masking_level' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'data_masking_rule_id' in new template only - ADDING
+Option 'alias_name' in new template only - ADDING
+Option 'rule_state' in new template only - ADDING
+Option 'schema_name' in new template only - ADDING
+Option 'table_name' in new template only - ADDING
+Option 'column_name' in new template only - ADDING
+Option 'masking_function' in new template only - ADDING
+Option 'number_from' in new template only - ADDING
+Option 'number_to' in new template only - ADDING
+Option 'prefix_size' in new template only - ADDING
+Option 'suffix_size' in new template only - ADDING
+Option 'replacement_string' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'start_ip_address' in new template only - ADDING
+Option 'end_ip_address' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'storage_type' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'administrator_type' in new template only - ADDING
+Option 'login' in new template only - ADDING
+Option 'sid' in new template only - ADDING
+Option 'tenant_id' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'partner_server' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'kind' in new template only - ADDING
 Option 'resource_group_name' NameAlt - KEEPING OLD
 Option 'resource_group_name' DefaultValueSample - KEEPING OLD
 Option 'resource_group_name' DefaultValueTest - KEEPING OLD
@@ -30,10 +165,107 @@ Option 'administrator_login' NameAlt - KEEPING OLD
 Option 'administrator_login' DefaultValueTest - KEEPING OLD
 Option 'administrator_login_password' NameAlt - KEEPING OLD
 Option 'administrator_login_password' DefaultValueTest - KEEPING OLD
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'tags' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'identity' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'administrator_login' in new template only - ADDING
+Option 'administrator_login_password' in new template only - ADDING
+Option 'version' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'fully_qualified_domain_name' in new template only - ADDING
 Option 'azure_rm_sql_servers' ModuleNameAlt - KEEPING OLD
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'storage_endpoint' in new template only - ADDING
+Option 'storage_account_access_key' in new template only - ADDING
+Option 'retention_days' in new template only - ADDING
+Option 'audit_actions_and_groups' in new template only - ADDING
+Option 'storage_account_subscription_id' in new template only - ADDING
+Option 'is_storage_secondary_key_in_use' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'subregion' in new template only - ADDING
+Option 'server_key_name' in new template only - ADDING
+Option 'server_key_type' in new template only - ADDING
+Option 'uri' in new template only - ADDING
+Option 'thumbprint' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'tags' in new template only - ADDING
+Option 'read_write_endpoint' in new template only - ADDING
+Option 'read_only_endpoint' in new template only - ADDING
+Option 'replication_role' in new template only - ADDING
+Option 'replication_state' in new template only - ADDING
+Option 'partner_servers' in new template only - ADDING
+Option 'databases' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'kind' in new template only - ADDING
+Option 'location' in new template only - ADDING
+Option 'subregion' in new template only - ADDING
+Option 'server_key_type' in new template only - ADDING
+Option 'uri' in new template only - ADDING
+Option 'thumbprint' in new template only - ADDING
+Option 'creation_date' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'sync_agent_name' in new template only - ADDING
+Option 'sync_database_id' in new template only - ADDING
+Option 'last_alive_time' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'is_up_to_date' in new template only - ADDING
+Option 'expiry_time' in new template only - ADDING
+Option 'version' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'interval' in new template only - ADDING
+Option 'last_sync_time' in new template only - ADDING
+Option 'conflict_resolution_policy' in new template only - ADDING
+Option 'sync_database_id' in new template only - ADDING
+Option 'hub_database_user_name' in new template only - ADDING
+Option 'hub_database_password' in new template only - ADDING
+Option 'sync_state' in new template only - ADDING
+Option 'schema' in new template only - ADDING
 Option 'server_name' Disposition - KEEPING OLD
 Option 'server_name' Documentation - KEEPING OLD
 Option 'server_name' Required - KEEPING OLD
 Option 'database_name' Disposition - KEEPING OLD
 Option 'database_name' Documentation - KEEPING OLD
 Option 'database_name' Required - KEEPING OLD
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'database_type' in new template only - ADDING
+Option 'sync_agent_id' in new template only - ADDING
+Option 'sql_server_database_id' in new template only - ADDING
+Option 'server_name' in new template only - ADDING
+Option 'database_name' in new template only - ADDING
+Option 'user_name' in new template only - ADDING
+Option 'password' in new template only - ADDING
+Option 'sync_direction' in new template only - ADDING
+Option 'sync_state' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'virtual_network_subnet_id' in new template only - ADDING
+Option 'ignore_missing_vnet_service_endpoint' in new template only - ADDING
+Option 'state' in new template only - ADDING
+Option 'id' in new template only - ADDING
+Option 'name' in new template only - ADDING
+Option 'type' in new template only - ADDING
+Option 'azure_dns_record' in new template only - ADDING
