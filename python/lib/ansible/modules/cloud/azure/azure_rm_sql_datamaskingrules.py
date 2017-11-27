@@ -117,7 +117,115 @@ RETURN = '''
 state:
     description: Current state of DataMaskingRules
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        data_masking_rule_id:
+            description:
+                - The rule Id.
+            returned: always
+            type: str
+            sample: data_masking_rule_id
+        alias_name:
+            description:
+                - The alias name. This is a legacy parameter and is no longer used.
+            returned: always
+            type: str
+            sample: alias_name
+        rule_state:
+            description:
+                - "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and spe
+                   cify ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless
+                    of the provided value of ruleState. Possible values include: 'Disabled', 'Enabled'"
+            returned: always
+            type: str
+            sample: rule_state
+        schema_name:
+            description:
+                - The schema name on which the data masking rule is applied.
+            returned: always
+            type: str
+            sample: schema_name
+        table_name:
+            description:
+                - The table name on which the data masking rule is applied.
+            returned: always
+            type: str
+            sample: table_name
+        column_name:
+            description:
+                - The column name on which the data masking rule is applied.
+            returned: always
+            type: str
+            sample: column_name
+        masking_function:
+            description:
+                - "The masking function that is used for the data masking rule. Possible values include: 'Default', 'CCN', 'Email', 'Number', 'SSN', 'Text'"
+            returned: always
+            type: str
+            sample: masking_function
+        number_from:
+            description:
+                - The numberFrom property of the masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.
+            returned: always
+            type: str
+            sample: number_from
+        number_to:
+            description:
+                - The numberTo property of the data masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.
+            returned: always
+            type: str
+            sample: number_to
+        prefix_size:
+            description:
+                - "If maskingFunction is set to Text, the number of characters to show unmasked in the beginning of the string. Otherwise, this parameter wil
+                   l be ignored."
+            returned: always
+            type: str
+            sample: prefix_size
+        suffix_size:
+            description:
+                - "If maskingFunction is set to Text, the number of characters to show unmasked at the end of the string. Otherwise, this parameter will be i
+                   gnored."
+            returned: always
+            type: str
+            sample: suffix_size
+        replacement_string:
+            description:
+                - "If maskingFunction is set to Text, the character to use for masking the unexposed part of the string. Otherwise, this parameter will be ig
+                   nored."
+            returned: always
+            type: str
+            sample: replacement_string
+        location:
+            description:
+                - The location of the data masking rule.
+            returned: always
+            type: str
+            sample: location
+        kind:
+            description:
+                - The kind of Data Masking Rule. Metadata, used for Azure portal.
+            returned: always
+            type: str
+            sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

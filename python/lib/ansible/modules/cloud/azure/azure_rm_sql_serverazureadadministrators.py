@@ -76,7 +76,50 @@ RETURN = '''
 state:
     description: Current state of ServerAzureADAdministrators
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        administrator_type:
+            description:
+                - The type of administrator.
+            returned: always
+            type: str
+            sample: administrator_type
+        login:
+            description:
+                - The server administrator login value.
+            returned: always
+            type: str
+            sample: login
+        sid:
+            description:
+                - The server administrator Sid (Secure ID).
+            returned: always
+            type: str
+            sample: sid
+        tenant_id:
+            description:
+                - The server Active Directory Administrator tenant id.
+            returned: always
+            type: str
+            sample: tenant_id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -92,7 +92,75 @@ RETURN = '''
 state:
     description: Current state of DatabaseBlobAuditingPolicies
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        kind:
+            description:
+                - Resource kind.
+            returned: always
+            type: str
+            sample: kind
+        state:
+            description:
+                - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include:
+                    'Enabled', 'Disabled'"
+            returned: always
+            type: str
+            sample: state
+        storage_endpoint:
+            description:
+                - Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required.
+            returned: always
+            type: str
+            sample: storage_endpoint
+        storage_account_access_key:
+            description:
+                - Specifies the identifier key of the auditing storage account. If state is Enabled, storageAccountAccessKey is required.
+            returned: always
+            type: str
+            sample: storage_account_access_key
+        retention_days:
+            description:
+                - Specifies the number of days to keep in the audit logs.
+            returned: always
+            type: int
+            sample: retention_days
+        audit_actions_and_groups:
+            description:
+                - Specifies the Actions and Actions-Groups to audit.
+            returned: always
+            type: str
+            sample: audit_actions_and_groups
+        storage_account_subscription_id:
+            description:
+                - Specifies the blob storage subscription Id.
+            returned: always
+            type: str
+            sample: storage_account_subscription_id
+        is_storage_secondary_key_in_use:
+            description:
+                - "Specifies whether storageAccountAccessKey value is the storage's secondary key."
+            returned: always
+            type: str
+            sample: is_storage_secondary_key_in_use
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

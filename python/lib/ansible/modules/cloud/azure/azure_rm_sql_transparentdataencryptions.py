@@ -65,7 +65,38 @@ RETURN = '''
 state:
     description: Current state of TransparentDataEncryptions
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        location:
+            description:
+                - Resource location.
+            returned: always
+            type: str
+            sample: location
+        status:
+            description:
+                - "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'"
+            returned: always
+            type: str
+            sample: status
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

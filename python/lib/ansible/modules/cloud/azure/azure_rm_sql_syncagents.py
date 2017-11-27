@@ -60,7 +60,68 @@ RETURN = '''
 state:
     description: Current state of SyncAgents
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        sync_agent_name:
+            description:
+                - Name of the sync agent.
+            returned: always
+            type: str
+            sample: sync_agent_name
+        sync_database_id:
+            description:
+                - ARM resource id of the sync database in the sync agent.
+            returned: always
+            type: str
+            sample: sync_database_id
+        last_alive_time:
+            description:
+                - Last alive time of the sync agent.
+            returned: always
+            type: datetime
+            sample: last_alive_time
+        state:
+            description:
+                - "State of the sync agent. Possible values include: 'Online', 'Offline', 'NeverConnected'"
+            returned: always
+            type: str
+            sample: state
+        is_up_to_date:
+            description:
+                - If the sync agent version is up to date.
+            returned: always
+            type: str
+            sample: is_up_to_date
+        expiry_time:
+            description:
+                - Expiration time of the sync agent version.
+            returned: always
+            type: datetime
+            sample: expiry_time
+        version:
+            description:
+                - Version of the sync agent.
+            returned: always
+            type: str
+            sample: version
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -71,7 +71,44 @@ RETURN = '''
 state:
     description: Current state of BackupLongTermRetentionPolicies
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        location:
+            description:
+                - The geo-location where the resource lives
+            returned: always
+            type: str
+            sample: location
+        state:
+            description:
+                - "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'"
+            returned: always
+            type: str
+            sample: state
+        recovery_services_backup_policy_resource_id:
+            description:
+                - The azure recovery services backup protection policy resource id
+            returned: always
+            type: str
+            sample: recovery_services_backup_policy_resource_id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

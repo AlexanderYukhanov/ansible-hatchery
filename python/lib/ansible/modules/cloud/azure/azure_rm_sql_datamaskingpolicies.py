@@ -71,7 +71,63 @@ RETURN = '''
 state:
     description: Current state of DataMaskingPolicies
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        data_masking_state:
+            description:
+                - "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'"
+            returned: always
+            type: str
+            sample: data_masking_state
+        exempt_principals:
+            description:
+                - "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not app
+                   ly. The specified users receive data results without masking for all of the database queries."
+            returned: always
+            type: str
+            sample: exempt_principals
+        application_principals:
+            description:
+                - The list of the application principals. This is a legacy parameter and is no longer used.
+            returned: always
+            type: str
+            sample: application_principals
+        masking_level:
+            description:
+                - The masking level. This is a legacy parameter and is no longer used.
+            returned: always
+            type: str
+            sample: masking_level
+        location:
+            description:
+                - The location of the data masking policy.
+            returned: always
+            type: str
+            sample: location
+        kind:
+            description:
+                - The kind of data masking policy. Metadata, used for Azure portal.
+            returned: always
+            type: str
+            sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

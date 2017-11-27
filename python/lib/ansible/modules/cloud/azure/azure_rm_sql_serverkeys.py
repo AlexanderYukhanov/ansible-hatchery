@@ -79,7 +79,68 @@ RETURN = '''
 state:
     description: Current state of ServerKeys
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        kind:
+            description:
+                - Kind of encryption protector. This is metadata used for the Azure portal experience.
+            returned: always
+            type: str
+            sample: kind
+        location:
+            description:
+                - Resource location.
+            returned: always
+            type: str
+            sample: location
+        subregion:
+            description:
+                - Subregion of the server key.
+            returned: always
+            type: str
+            sample: subregion
+        server_key_type:
+            description:
+                - "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'"
+            returned: always
+            type: str
+            sample: server_key_type
+        uri:
+            description:
+                - The URI of the server key.
+            returned: always
+            type: str
+            sample: uri
+        thumbprint:
+            description:
+                - Thumbprint of the server key.
+            returned: always
+            type: str
+            sample: thumbprint
+        creation_date:
+            description:
+                - The server key creation date.
+            returned: always
+            type: datetime
+            sample: creation_date
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -361,7 +361,7 @@
           "Name": "tags",
           "NameAlt": "tags",
           "Description": "Resource tags.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
           "SubFields": []
@@ -559,7 +559,7 @@
           "Name": "service_tier_advisors",
           "NameAlt": "service_tier_advisors",
           "Description": "The list of service tier advisors for this database. Expanded property",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "service_tier_advisors",
           "SubFields": [
@@ -657,7 +657,7 @@
               "Name": "service_level_objective_usage_metrics",
               "NameAlt": "service_level_objective_usage_metrics",
               "Description": "Gets or sets serviceLevelObjectiveUsageMetrics for the service tier advisor.",
-              "Type": "dict",
+              "Type": "complex",
               "Returned": "always",
               "SampleValue": "service_level_objective_usage_metrics",
               "SubFields": [
@@ -795,7 +795,7 @@
           "Name": "transparent_data_encryption",
           "NameAlt": "transparent_data_encryption",
           "Description": "The transparent data encryption info for this database.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "transparent_data_encryption",
           "SubFields": [
@@ -850,7 +850,7 @@
           "Name": "recommended_index",
           "NameAlt": "recommended_index",
           "Description": "The recommended indices for this database.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "recommended_index",
           "SubFields": [
@@ -975,7 +975,7 @@
               "Name": "estimated_impact",
               "NameAlt": "estimated_impact",
               "Description": "The estimated impact of doing recommended index action.",
-              "Type": "dict",
+              "Type": "complex",
               "Returned": "always",
               "SampleValue": "estimated_impact",
               "SubFields": [
@@ -1021,7 +1021,7 @@
               "Name": "reported_impact",
               "NameAlt": "reported_impact",
               "Description": "The values reported after index action is complete.",
-              "Type": "dict",
+              "Type": "complex",
               "Returned": "always",
               "SampleValue": "reported_impact",
               "SubFields": [
@@ -1551,7 +1551,7 @@
           "Name": "tags",
           "NameAlt": "tags",
           "Description": "Resource tags.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
           "SubFields": []
@@ -6218,7 +6218,7 @@
           "Name": "tags",
           "NameAlt": "tags",
           "Description": "Resource tags.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
           "SubFields": []
@@ -6236,7 +6236,7 @@
           "Name": "identity",
           "NameAlt": "identity",
           "Description": "The Azure Active Directory identity of the server.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "identity",
           "SubFields": [
@@ -7506,7 +7506,7 @@
           "Name": "tags",
           "NameAlt": "tags",
           "Description": "Resource tags.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
           "SubFields": []
@@ -7515,7 +7515,7 @@
           "Name": "read_write_endpoint",
           "NameAlt": "read_write_endpoint",
           "Description": "Read-write endpoint of the failover group instance.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "read_write_endpoint",
           "SubFields": [
@@ -7543,7 +7543,7 @@
           "Name": "read_only_endpoint",
           "NameAlt": "read_only_endpoint",
           "Description": "Read-only endpoint of the failover group instance.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "read_only_endpoint",
           "SubFields": [
@@ -7580,7 +7580,7 @@
           "Name": "partner_servers",
           "NameAlt": "partner_servers",
           "Description": "List of partner server information for the failover group.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "partner_servers",
           "SubFields": [
@@ -8765,7 +8765,7 @@
           "Name": "schema",
           "NameAlt": "schema",
           "Description": "Sync schema of the sync group.",
-          "Type": "dict",
+          "Type": "complex",
           "Returned": "always",
           "SampleValue": "schema",
           "SubFields": [
@@ -8773,7 +8773,7 @@
               "Name": "tables",
               "NameAlt": "tables",
               "Description": "List of tables in sync group schema.",
-              "Type": "dict",
+              "Type": "complex",
               "Returned": "always",
               "SampleValue": "tables",
               "SubFields": [
@@ -8781,7 +8781,7 @@
                   "Name": "columns",
                   "NameAlt": "columns",
                   "Description": "List of columns in sync group schema.",
-                  "Type": "dict",
+                  "Type": "complex",
                   "Returned": "always",
                   "SampleValue": "columns",
                   "SubFields": [

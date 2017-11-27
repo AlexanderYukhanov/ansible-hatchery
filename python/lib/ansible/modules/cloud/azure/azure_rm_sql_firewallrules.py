@@ -67,7 +67,51 @@ RETURN = '''
 state:
     description: Current state of FirewallRules
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        kind:
+            description:
+                - Kind of server that contains this firewall rule.
+            returned: always
+            type: str
+            sample: kind
+        location:
+            description:
+                - Location of the server that contains this firewall rule.
+            returned: always
+            type: str
+            sample: location
+        start_ip_address:
+            description:
+                - "The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses."
+            returned: always
+            type: str
+            sample: start_ip_address
+        end_ip_address:
+            description:
+                - "The end IP address of the firewall rule. Must be IPv4 format. Must be greater than or equal to startIpAddress. Use value '0.0.0.0' to repr
+                   esent all Azure-internal IP addresses."
+            returned: always
+            type: str
+            sample: end_ip_address
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

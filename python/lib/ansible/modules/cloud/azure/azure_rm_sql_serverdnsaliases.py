@@ -56,7 +56,32 @@ RETURN = '''
 state:
     description: Current state of ServerDnsAliases
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        azure_dns_record:
+            description:
+                - The fully qualified DNS record for alias
+            returned: always
+            type: str
+            sample: azure_dns_record
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

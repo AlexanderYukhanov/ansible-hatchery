@@ -61,7 +61,44 @@ RETURN = '''
 state:
     description: Current state of ServerConnectionPolicies
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        kind:
+            description:
+                - Metadata used for the Azure portal experience.
+            returned: always
+            type: str
+            sample: kind
+        location:
+            description:
+                - Resource location.
+            returned: always
+            type: str
+            sample: location
+        connection_type:
+            description:
+                - "The server connection type. Possible values include: 'Default', 'Proxy', 'Redirect'"
+            returned: always
+            type: str
+            sample: connection_type
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

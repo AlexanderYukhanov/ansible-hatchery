@@ -101,7 +101,89 @@ RETURN = '''
 state:
     description: Current state of DatabaseThreatDetectionPolicies
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID.
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        location:
+            description:
+                - The geo-location where the resource lives
+            returned: always
+            type: str
+            sample: location
+        kind:
+            description:
+                - Resource kind.
+            returned: always
+            type: str
+            sample: kind
+        state:
+            description:
+                - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include:
+                    'New', 'Enabled', 'Disabled'"
+            returned: always
+            type: str
+            sample: state
+        disabled_alerts:
+            description:
+                - "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection;
+                   Sql_Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
+            returned: always
+            type: str
+            sample: disabled_alerts
+        email_addresses:
+            description:
+                - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
+            returned: always
+            type: str
+            sample: email_addresses
+        email_account_admins:
+            description:
+                - "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'"
+            returned: always
+            type: str
+            sample: email_account_admins
+        storage_endpoint:
+            description:
+                - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit
+                    logs. If state is Enabled, storageEndpoint is required."
+            returned: always
+            type: str
+            sample: storage_endpoint
+        storage_account_access_key:
+            description:
+                - Specifies the identifier key of the Threat Detection audit storage account. If state is Enabled, storageAccountAccessKey is required.
+            returned: always
+            type: str
+            sample: storage_account_access_key
+        retention_days:
+            description:
+                - Specifies the number of days to keep in the Threat Detection audit logs.
+            returned: always
+            type: int
+            sample: retention_days
+        use_server_default:
+            description:
+                - "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'"
+            returned: always
+            type: str
+            sample: use_server_default
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
