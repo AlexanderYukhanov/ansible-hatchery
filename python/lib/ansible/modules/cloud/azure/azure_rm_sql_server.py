@@ -89,93 +89,19 @@ state:
                 - Resource ID.
             returned: always
             type: str
-            sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        tags:
-            description:
-                - Resource tags.
-            returned: always
-            type: complex
-            sample: tags
-        location:
-            description:
-                - Resource location.
-            returned: always
-            type: str
-            sample: location
-        identity:
-            description:
-                - The Azure Active Directory identity of the server.
-            returned: always
-            type: complex
-            sample: identity
-            suboptions:
-                principal_id:
-                    description:
-                        - The Azure Active Directory principal id.
-                    returned: always
-                    type: str
-                    sample: principal_id
-                type:
-                    description:
-                        - "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal fo
-                           r the resource. Possible values include: 'SystemAssigned'"
-                    returned: always
-                    type: str
-                    sample: type
-                tenant_id:
-                    description:
-                        - The Azure Active Directory tenant id.
-                    returned: always
-                    type: str
-                    sample: tenant_id
-        kind:
-            description:
-                - Kind of sql server. This is metadata used for the Azure portal experience.
-            returned: always
-            type: str
-            sample: kind
-        administrator_login:
-            description:
-                - Administrator username for the server. Once created it cannot be changed.
-            returned: always
-            type: str
-            sample: administrator_login
-        administrator_login_password:
-            description:
-                - The administrator login password (required for server creation).
-            returned: always
-            type: str
-            sample: administrator_login_password
+            sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645
         version:
             description:
                 - The version of the server.
             returned: always
             type: str
-            sample: version
-        state:
-            description:
-                - The state of the server.
-            returned: always
-            type: str
-            sample: state
+            sample: 12.0
         fully_qualified_domain_name:
             description:
                 - The fully qualified domain name of the server.
             returned: always
             type: str
-            sample: fully_qualified_domain_name
+            sample: sqlcrudtest-4645.database.windows.net
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
