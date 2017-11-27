@@ -65,7 +65,44 @@ RETURN = '''
 state:
     description: Current state of VirtualNetworkRules
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        virtual_network_subnet_id:
+            description:
+                - The ARM resource id of the virtual network subnet.
+            returned: always
+            type: str
+            sample: virtual_network_subnet_id
+        ignore_missing_vnet_service_endpoint:
+            description:
+                - Create firewall rule before the virtual network has vnet service endpoint enabled.
+            returned: always
+            type: str
+            sample: ignore_missing_vnet_service_endpoint
+        state:
+            description:
+                - "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'"
+            returned: always
+            type: str
+            sample: state
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -174,7 +211,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = cmp(old_response, self.results['state'])
+                self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
             self.log("Creation / Update done")
 

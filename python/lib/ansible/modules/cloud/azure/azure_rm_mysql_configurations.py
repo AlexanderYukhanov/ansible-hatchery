@@ -64,7 +64,62 @@ RETURN = '''
 state:
     description: Current state of Configurations
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        value:
+            description:
+                - Value of the configuration.
+            returned: always
+            type: str
+            sample: value
+        description:
+            description:
+                - Description of the configuration.
+            returned: always
+            type: str
+            sample: description
+        default_value:
+            description:
+                - Default value of the configuration.
+            returned: always
+            type: str
+            sample: default_value
+        data_type:
+            description:
+                - Data type of the configuration.
+            returned: always
+            type: str
+            sample: data_type
+        allowed_values:
+            description:
+                - Allowed values of the configuration.
+            returned: always
+            type: str
+            sample: allowed_values
+        source:
+            description:
+                - Source of the configuration.
+            returned: always
+            type: str
+            sample: source
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -173,7 +228,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = cmp(old_response, self.results['state'])
+                self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
             self.log("Creation / Update done")
 

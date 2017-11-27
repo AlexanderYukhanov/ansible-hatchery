@@ -268,6 +268,162 @@
           ]
         }
       ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "location",
+          "NameAlt": "location",
+          "Description": "The location the resource resides in.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": []
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "tags",
+          "Description": "Application-specific metadata in the form of key-value pairs.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": []
+        },
+        {
+          "Name": "sku",
+          "NameAlt": "sku",
+          "Description": "The SKU (pricing tier) of the server.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "sku",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "name",
+              "Description": "The name of the sku, typically, a letter + Number code, e.g. P3.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": []
+            },
+            {
+              "Name": "tier",
+              "NameAlt": "tier",
+              "Description": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "tier",
+              "SubFields": []
+            },
+            {
+              "Name": "capacity",
+              "NameAlt": "capacity",
+              "Description": "The scale up/out capacity, representing server's compute units.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "capacity",
+              "SubFields": []
+            },
+            {
+              "Name": "size",
+              "NameAlt": "size",
+              "Description": "The size code, to be interpreted by resource as appropriate.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "size",
+              "SubFields": []
+            },
+            {
+              "Name": "family",
+              "NameAlt": "family",
+              "Description": "The family of hardware.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "family",
+              "SubFields": []
+            }
+          ]
+        },
+        {
+          "Name": "administrator_login",
+          "NameAlt": "administrator_login",
+          "Description": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "administrator_login",
+          "SubFields": []
+        },
+        {
+          "Name": "storage_mb",
+          "NameAlt": "storage_mb",
+          "Description": "The maximum storage allowed for a server.",
+          "Type": "long",
+          "Returned": "always",
+          "SampleValue": "storage_mb",
+          "SubFields": []
+        },
+        {
+          "Name": "version",
+          "NameAlt": "version",
+          "Description": "Server version. Possible values include: '5.6', '5.7'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "version",
+          "SubFields": []
+        },
+        {
+          "Name": "ssl_enforcement",
+          "NameAlt": "ssl_enforcement",
+          "Description": "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ssl_enforcement",
+          "SubFields": []
+        },
+        {
+          "Name": "user_visible_state",
+          "NameAlt": "user_visible_state",
+          "Description": "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "user_visible_state",
+          "SubFields": []
+        },
+        {
+          "Name": "fully_qualified_domain_name",
+          "NameAlt": "fully_qualified_domain_name",
+          "Description": "The fully qualified domain name of a server.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "fully_qualified_domain_name",
+          "SubFields": []
+        }
+      ],
       "TestPrerequisitesModule": "",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -330,6 +486,7 @@
           ]
         }
       ],
+      "ResponseFields": null,
       "TestPrerequisitesModule": null,
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -469,6 +626,53 @@
           ]
         }
       ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "start_ip_address",
+          "NameAlt": "start_ip_address",
+          "Description": "The start IP address of the server firewall rule. Must be IPv4 format.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "start_ip_address",
+          "SubFields": []
+        },
+        {
+          "Name": "end_ip_address",
+          "NameAlt": "end_ip_address",
+          "Description": "The end IP address of the server firewall rule. Must be IPv4 format.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "end_ip_address",
+          "SubFields": []
+        }
+      ],
       "TestPrerequisitesModule": "",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -549,6 +753,7 @@
           ]
         }
       ],
+      "ResponseFields": null,
       "TestPrerequisitesModule": null,
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -688,6 +893,62 @@
           ]
         }
       ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "virtual_network_subnet_id",
+          "NameAlt": "virtual_network_subnet_id",
+          "Description": "The ARM resource id of the virtual network subnet.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "virtual_network_subnet_id",
+          "SubFields": []
+        },
+        {
+          "Name": "ignore_missing_vnet_service_endpoint",
+          "NameAlt": "ignore_missing_vnet_service_endpoint",
+          "Description": "Create firewall rule before the virtual network has vnet service endpoint enabled.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ignore_missing_vnet_service_endpoint",
+          "SubFields": []
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "state",
+          "SubFields": []
+        }
+      ],
       "TestPrerequisitesModule": "",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -768,6 +1029,7 @@
           ]
         }
       ],
+      "ResponseFields": null,
       "TestPrerequisitesModule": null,
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -907,6 +1169,53 @@
           ]
         }
       ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "charset",
+          "NameAlt": "charset",
+          "Description": "The charset of the database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "charset",
+          "SubFields": []
+        },
+        {
+          "Name": "collation",
+          "NameAlt": "collation",
+          "Description": "The collation of the database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "collation",
+          "SubFields": []
+        }
+      ],
       "TestPrerequisitesModule": "",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -987,6 +1296,7 @@
           ]
         }
       ],
+      "ResponseFields": null,
       "TestPrerequisitesModule": null,
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -1113,6 +1423,89 @@
           ]
         }
       ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "value",
+          "NameAlt": "value",
+          "Description": "Value of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "value",
+          "SubFields": []
+        },
+        {
+          "Name": "description",
+          "NameAlt": "description",
+          "Description": "Description of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "description",
+          "SubFields": []
+        },
+        {
+          "Name": "default_value",
+          "NameAlt": "default_value",
+          "Description": "Default value of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "default_value",
+          "SubFields": []
+        },
+        {
+          "Name": "data_type",
+          "NameAlt": "data_type",
+          "Description": "Data type of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "data_type",
+          "SubFields": []
+        },
+        {
+          "Name": "allowed_values",
+          "NameAlt": "allowed_values",
+          "Description": "Allowed values of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "allowed_values",
+          "SubFields": []
+        },
+        {
+          "Name": "source",
+          "NameAlt": "source",
+          "Description": "Source of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "source",
+          "SubFields": []
+        }
+      ],
       "TestPrerequisitesModule": "",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -1193,6 +1586,7 @@
           ]
         }
       ],
+      "ResponseFields": null,
       "TestPrerequisitesModule": null,
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
@@ -1246,6 +1640,7 @@
           ]
         }
       ],
+      "ResponseFields": null,
       "TestPrerequisitesModule": null,
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",

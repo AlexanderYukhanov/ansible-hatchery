@@ -66,7 +66,38 @@ RETURN = '''
 state:
     description: Current state of FirewallRules
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        start_ip_address:
+            description:
+                - The start IP address of the server firewall rule. Must be IPv4 format.
+            returned: always
+            type: str
+            sample: start_ip_address
+        end_ip_address:
+            description:
+                - The end IP address of the server firewall rule. Must be IPv4 format.
+            returned: always
+            type: str
+            sample: end_ip_address
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -175,7 +206,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = cmp(old_response, self.results['state'])
+                self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
             self.log("Creation / Update done")
 
