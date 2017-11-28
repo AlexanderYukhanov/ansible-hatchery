@@ -1,6 +1,6 @@
 - name: Create instance of Servers
   azure_rm_mysql_servers:
-    resource_group: "{{ resource_group }}"
+    resource_group: {{ resource_group }}
     name: test-mysql-server
     properties:
       version: 5.6

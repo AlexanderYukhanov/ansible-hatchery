@@ -231,7 +231,7 @@ class AzureRMServers(AzureRMModuleBase):
             else:
                 self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
-            #if self.results['state']:
+            # remove unnecessary fields from return state
             self.results['state'].pop('name', None)
             self.results['state'].pop('type', None)
             self.results['state'].pop('tags', None)
