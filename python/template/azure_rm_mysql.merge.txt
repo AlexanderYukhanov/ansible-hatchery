@@ -1,5 +1,7 @@
 Used existing template file
+Option 'resource_group_name' NameAlt - KEEPING OLD
 Option 'resource_group_name' DefaultValueTest - KEEPING OLD
+Option 'server_name' NameAlt - KEEPING OLD
 Option 'server_name' DefaultValueTest - KEEPING OLD
 Option 'properties' Required - KEEPING OLD
 Option 'location' DefaultValueTest - KEEPING OLD

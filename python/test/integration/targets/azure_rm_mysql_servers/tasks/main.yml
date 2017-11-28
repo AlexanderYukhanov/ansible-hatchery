@@ -1,7 +1,7 @@
 - name: Create instance of Servers
   azure_rm_mysql_servers:
-    resource_group_name: "{{ resource_group }}"
-    server_name: test-mysql-server
+    resource_group: "{{ resource_group }}"
+    name: test-mysql-server
     location: westus
   register: output
 - name: Assert the resource instance is well created

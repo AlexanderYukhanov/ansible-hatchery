@@ -22,11 +22,11 @@ description:
     - Create, update and delete instance of Servers
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
-    server_name:
+    name:
         description:
             - The name of the server.
         required: True
@@ -86,8 +86,8 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Servers
     azure_rm_mysql_servers:
-      resource_group_name: "{{ resource_group }}"
-      server_name: test-mysql-server
+      resource_group: "{{ resource_group }}"
+      name: test-mysql-server
       sku:
         name: "{{ name }}"
         tier: "{{ tier }}"
@@ -216,14 +216,14 @@ state:
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
-#try:
-from msrestazure.azure_exceptions import CloudError
-from msrestazure.azure_operation import AzureOperationPoller
-from azure.mgmt.rdbms.mysql import MySQLManagementClient
-from msrest.serialization import Model
-#except ImportError:
+try:
+    from msrestazure.azure_exceptions import CloudError
+    from msrestazure.azure_operation import AzureOperationPoller
+    from azure.mgmt.rdbms.mysql import MySQLManagementClient
+    from msrest.serialization import Model
+except ImportError:
     # This is handled in azure_rm_common
-#    pass
+    pass
 
 
 class AzureRMServers(AzureRMModuleBase):
@@ -231,11 +231,11 @@ class AzureRMServers(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
-            server_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
@@ -263,8 +263,8 @@ class AzureRMServers(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
-        self.server_name = None
+        self.resource_group = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
@@ -339,11 +339,11 @@ class AzureRMServers(AzureRMModuleBase):
 
         :return: deserialized Servers instance state dictionary
         '''
-        self.log("Creating / Updating the Servers instance {0}".format(self.server_name))
+        self.log("Creating / Updating the Servers instance {0}".format(self.name))
 
         try:
-            response = self.mgmt_client.servers.create_or_update(self.resource_group_name,
-                                                                 self.server_name,
+            response = self.mgmt_client.servers.create_or_update(self.resource_group,
+                                                                 self.name,
                                                                  self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
@@ -359,10 +359,10 @@ class AzureRMServers(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the Servers instance {0}".format(self.server_name))
+        self.log("Deleting the Servers instance {0}".format(self.name))
         try:
-            response = self.mgmt_client.servers.delete(self.resource_group_name,
-                                                       self.server_name)
+            response = self.mgmt_client.servers.delete(self.resource_group,
+                                                       self.name)
         except CloudError as e:
             self.log('Error attempting to delete the Servers instance.')
             self.fail("Error deleting the Servers instance: {0}".format(str(e)))
@@ -375,11 +375,11 @@ class AzureRMServers(AzureRMModuleBase):
 
         :return: deserialized Servers instance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
+        self.log("Checking if the Servers instance {0} is present".format(self.name))
         found = False
         try:
-            response = self.mgmt_client.servers.get(self.resource_group_name,
-                                                    self.server_name)
+            response = self.mgmt_client.servers.get(self.resource_group,
+                                                    self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Servers instance : {0} found".format(response.name))
