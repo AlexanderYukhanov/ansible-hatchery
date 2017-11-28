@@ -3,6 +3,8 @@
     resource_group: "{{ resource_group }}"
     name: test-mysql-server
     location: westus
+    parameters:
+      version: 5.6
   register: output
 - name: Assert the resource instance is well created
   assert:
