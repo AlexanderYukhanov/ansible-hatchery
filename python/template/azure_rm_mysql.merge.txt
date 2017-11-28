@@ -1,1 +1,12 @@
-NOT SOURCE TEMPLATE
+Used existing template file
+Option 'resource_group_name' NameAlt - KEEPING OLD
+Option 'resource_group_name' DefaultValueTest - KEEPING OLD
+Option 'server_name' NameAlt - KEEPING OLD
+Option 'server_name' DefaultValueTest - KEEPING OLD
+Option 'version' DefaultValueTest - KEEPING OLD
+Option 'create_mode' DefaultValueTest - KEEPING OLD
+Option 'administrator_login' NameAlt - KEEPING OLD
+Option 'administrator_login' DefaultValueTest - KEEPING OLD
+Option 'administrator_login_password' NameAlt - KEEPING OLD
+Option 'administrator_login_password' DefaultValueTest - KEEPING OLD
+Option 'location' DefaultValueTest - KEEPING OLD

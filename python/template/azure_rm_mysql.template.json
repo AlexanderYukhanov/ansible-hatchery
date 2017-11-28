@@ -6,7 +6,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -14,13 +14,13 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "\"{{ resource_group_name }}\"",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "{{ resource_group }}",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "server_name",
-          "NameAlt": "server_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -28,7 +28,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "\"{{ server_name }}\"",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -167,7 +167,7 @@
               "VariableValue": "None",
               "Documentation": "Server version. Possible values include: '5.6', '5.7'",
               "DefaultValueSample": "\"{{ version }}\"",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "5.6",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -195,7 +195,35 @@
               "VariableValue": "None",
               "Documentation": "Constant filled by server.",
               "DefaultValueSample": "\"{{ create_mode }}\"",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Default",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "administrator_login",
+              "NameAlt": "admin_username",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
+              "DefaultValueSample": "\"{{ administrator_login }}\"",
+              "DefaultValueTest": "zimxyz",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "administrator_login_password",
+              "NameAlt": "admin_password",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The password of the administrator login.",
+              "DefaultValueSample": "\"{{ administrator_login_password }}\"",
+              "DefaultValueTest": "Testpasswordxyz12!",
               "SubOptions": [],
               "RequiredCount": 0
             }
@@ -212,7 +240,7 @@
           "VariableValue": "None",
           "Documentation": "The location the resource resides in.",
           "DefaultValueSample": "\"{{ location }}\"",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -447,7 +475,7 @@
           "DefaultValueSample": "\"{{ resource_group_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "server_name",
@@ -461,7 +489,7 @@
           "DefaultValueSample": "\"{{ server_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 0
         }
       ],
       "Methods": [
@@ -696,7 +724,7 @@
           "DefaultValueSample": "\"{{ resource_group_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "server_name",
@@ -710,7 +738,7 @@
           "DefaultValueSample": "\"{{ server_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "firewall_rule_name",
@@ -724,7 +752,7 @@
           "DefaultValueSample": "\"{{ firewall_rule_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 0
         }
       ],
       "Methods": [
@@ -972,7 +1000,7 @@
           "DefaultValueSample": "\"{{ resource_group_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "server_name",
@@ -986,7 +1014,7 @@
           "DefaultValueSample": "\"{{ server_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "virtual_network_rule_name",
@@ -1000,7 +1028,7 @@
           "DefaultValueSample": "\"{{ virtual_network_rule_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 0
         }
       ],
       "Methods": [
@@ -1239,7 +1267,7 @@
           "DefaultValueSample": "\"{{ resource_group_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "server_name",
@@ -1253,7 +1281,7 @@
           "DefaultValueSample": "\"{{ server_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "database_name",
@@ -1267,7 +1295,7 @@
           "DefaultValueSample": "\"{{ database_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 0
         }
       ],
       "Methods": [
@@ -1529,7 +1557,7 @@
           "DefaultValueSample": "\"{{ resource_group_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "server_name",
@@ -1543,7 +1571,7 @@
           "DefaultValueSample": "\"{{ server_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 0
         },
         {
           "Name": "configuration_name",
@@ -1557,7 +1585,7 @@
           "DefaultValueSample": "\"{{ configuration_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 0
         }
       ],
       "Methods": [
@@ -1610,7 +1638,7 @@
           "DefaultValueSample": "\"{{ resource_group_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 0
         },
         {
           "Name": "server_name",
@@ -1624,7 +1652,7 @@
           "DefaultValueSample": "\"{{ server_name }}\"",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 0
         }
       ],
       "Methods": [

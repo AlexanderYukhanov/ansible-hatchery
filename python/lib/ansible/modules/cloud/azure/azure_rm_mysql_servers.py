@@ -52,6 +52,7 @@ options:
     properties:
         description:
             - Properties of the server.
+        required: True
         suboptions:
             storage_mb:
                 description:
@@ -65,6 +66,14 @@ options:
             create_mode:
                 description:
                     - Constant filled by server.
+                required: True
+            admin_username:
+                description:
+                    - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
+                required: True
+            admin_password:
+                description:
+                    - The password of the administrator login.
                 required: True
     location:
         description:
@@ -86,7 +95,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Servers
     azure_rm_mysql_servers:
-      resource_group: "{{ resource_group }}"
+      resource_group: {{ resource_group }}
       name: test-mysql-server
       sku:
         name: "{{ name }}"
@@ -96,9 +105,11 @@ EXAMPLES = '''
         family: "{{ family }}"
       properties:
         storage_mb: "{{ storage_mb }}"
-        version: "{{ version }}"
+        version: 5.6
         ssl_enforcement: "{{ ssl_enforcement }}"
-        create_mode: "{{ create_mode }}"
+        create_mode: Default
+        admin_username: zimxyz
+        admin_password: Testpasswordxyz12!
       location: westus
       tags: "{{ tags }}"
 '''
@@ -245,7 +256,7 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             properties=dict(
                 type='dict',
-                required=False
+                required=True
             ),
             location=dict(
                 type='str',
