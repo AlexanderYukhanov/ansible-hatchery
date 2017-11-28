@@ -1,1 +1,5 @@
-NOT SOURCE TEMPLATE
+Used existing template file
+Option 'resource_group_name' DefaultValueTest - KEEPING OLD
+Option 'server_name' DefaultValueTest - KEEPING OLD
+Option 'properties' Required - KEEPING OLD
+Option 'location' DefaultValueTest - KEEPING OLD
