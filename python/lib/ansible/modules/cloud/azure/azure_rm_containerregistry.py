@@ -93,7 +93,7 @@ state:
                 - Resource ID
             returned: always
             type: str
-            sample: XXXXXX
+            sample: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
         name:
             description:
                 - Registry name
@@ -117,13 +117,19 @@ state:
                 - SKU
             returned: always
             type: str
-            sample: XXXXX
-        sku:
-            provisioning_state:
+            sample: Standard
+        provisioning_state:
+            description:
                 - Provisioning state
             returned: always
             type: str
             sample: Succeeded
+        login_server:
+            description:
+                - Registry login server
+            returned: always
+            type: str
+            sample: myregistry.azurecr.io
         credentials:
             provisioning_state:
                 - Credentials
@@ -158,8 +164,7 @@ state:
             provisioning_state:
                 - Tags
             returned: always
-            type: complex
-        
+            type: complex        
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -200,6 +205,7 @@ def create_containerregistry_dict(registry, credentials):
         admin_user_enabled=registry.admin_user_enabled if registry is not None else "",
         sku=registry.sku.name if registry is not None else "",
         provisioning_state=registry.provisioning_state if registry is not None else "",
+        login_server=registry.login_server if registry is not None else "",
         credentials=dict(
             password_name=credentials.passwords[0].name.value if credentials is not None else "",
             password_value=credentials.passwords[0].value if credentials is not None else "",
@@ -398,13 +404,16 @@ class AzureRMContainerRegistry(AzureRMModuleBase):
             self.log("Response : {0}".format(response))
             self.log("Container registry instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the container registry instance: {0}'.format(str(e)))
+            if e.error.error == 'ResourceNotFound':
+                self.log('Did not find the container registry instance: {0}'.format(str(e)))
+            else 
+                self.fail('Error while trying to get container registry instance: {0}'.format(str(e)))
             response = None
         if found is True and self.admin_user_enabled is True:
             try:
                 credentials = self.containerregistry_mgmt_client.registries.list_credentials(self.resource_group, self.name)
             except CloudError as e:
-                self.log('List registry credentials failed: {0}'.format(str(e)))
+                self.fail('List registry credentials failed: {0}'.format(str(e)))
                 credentials = None
         elif found is True and self.admin_user_enabled is False:
             credentials = None
