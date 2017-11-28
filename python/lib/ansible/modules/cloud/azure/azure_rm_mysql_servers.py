@@ -52,7 +52,6 @@ options:
     properties:
         description:
             - Properties of the server.
-        required: True
         suboptions:
             storage_mb:
                 description:
@@ -87,8 +86,8 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Servers
     azure_rm_mysql_servers:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: "{{ resource_group }}"
+      server_name: test-mysql-server
       sku:
         name: "{{ name }}"
         tier: "{{ tier }}"
@@ -100,7 +99,7 @@ EXAMPLES = '''
         version: "{{ version }}"
         ssl_enforcement: "{{ ssl_enforcement }}"
         create_mode: "{{ create_mode }}"
-      location: "{{ location }}"
+      location: westus
       tags: "{{ tags }}"
 '''
 
@@ -217,14 +216,14 @@ state:
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
-try:
-    from msrestazure.azure_exceptions import CloudError
-    from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.mysql import mysql
-    from msrest.serialization import Model
-except ImportError:
+#try:
+from msrestazure.azure_exceptions import CloudError
+from msrestazure.azure_operation import AzureOperationPoller
+from azure.mgmt.rdbms.mysql import MySQLManagementClient
+from msrest.serialization import Model
+#except ImportError:
     # This is handled in azure_rm_common
-    pass
+#    pass
 
 
 class AzureRMServers(AzureRMModuleBase):
@@ -246,7 +245,7 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             properties=dict(
                 type='dict',
-                required=True
+                required=False
             ),
             location=dict(
                 type='str',
@@ -294,7 +293,7 @@ class AzureRMServers(AzureRMModuleBase):
         old_response = None
         results = dict()
 
-        self.mgmt_client = self.get_mgmt_svc_client(mysql,
+        self.mgmt_client = self.get_mgmt_svc_client(MySQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         try:
