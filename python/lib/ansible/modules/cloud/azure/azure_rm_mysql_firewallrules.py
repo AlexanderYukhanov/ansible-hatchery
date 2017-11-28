@@ -105,7 +105,7 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.mysql import mysql
+    from azure.mgmt.rdbms.mysql import MySQLManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common
@@ -172,7 +172,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         old_response = None
         results = dict()
 
-        self.mgmt_client = self.get_mgmt_svc_client(mysql,
+        self.mgmt_client = self.get_mgmt_svc_client(MySQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         try:
