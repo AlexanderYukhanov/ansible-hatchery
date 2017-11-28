@@ -231,16 +231,16 @@ class AzureRMServers(AzureRMModuleBase):
             else:
                 self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
-            if self.results['state']:
-                del self.results['state']['name']
-                del self.results['state']['type']
-                del self.results['state']['tags']
-                del self.results['state']['location']
-                del self.results['state']['identity']
-                del self.results['state']['kind']
-                del self.results['state']['administrator_login']
-                del self.results['state']['administrator_login_password']
-                del self.results['state']['state']
+            #if self.results['state']:
+            del self.results['state']['name']
+            del self.results['state']['type']
+            del self.results['state']['tags']
+            del self.results['state']['location']
+            del self.results['state']['identity']
+            del self.results['state']['kind']
+            del self.results['state']['administrator_login']
+            del self.results['state']['administrator_login_password']
+            del self.results['state']['state']
             self.log("Creation / Update done")
 
         return self.results
