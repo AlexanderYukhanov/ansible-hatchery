@@ -7,7 +7,7 @@
       version: 5.6
       create_mode: Default
       administrator_login: zimxyz
-      administrator_login_password: testpassword123
+      administrator_login_password: Testpasswordxyz12!
   register: output
 - name: Assert the resource instance is well created
   assert:
