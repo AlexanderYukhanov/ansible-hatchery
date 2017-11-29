@@ -352,10 +352,10 @@ class AzureRMServers(AzureRMModuleBase):
           self.rename_key(self.parameters['properties'], 'admin_password', 'administrator_login_password')
 
     def rename_key(self, d, old_name, new_name):
-        old_value = dict.get(old_name, None)
+        old_value = d.get(old_name, None)
         if old_value is not None:
-            dict.pop(old_name, None)
-            dict[new_name] = old_value;
+            d.pop(old_name, None)
+            d[new_name] = old_value;
 
     def create_update_servers(self):
         '''
