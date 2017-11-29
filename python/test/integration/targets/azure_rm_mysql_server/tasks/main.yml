@@ -13,7 +13,7 @@
   assert:
     that:
       - output.changed
-      - output.state.state == 'Ready'
+      - output.state.user_visible_state == 'Ready'
 - name: Create instance of Servers
   azure_rm_mysql_server:
     resource_group: "{{ resource_group }}"
@@ -29,4 +29,16 @@
   assert:
     that:
       - output.changed == false
-      - output.state.state == 'Ready'
+      - output.state.user_visible_state == 'Ready'
+
+- name: Delete instance of Servers
+  azure_rm_mysql_server:
+    resource_group: "{{ resource_group }}"
+    name: test-mysql-server
+    state: absent
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == true
+      - output.state == None
