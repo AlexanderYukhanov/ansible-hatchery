@@ -25,6 +25,7 @@ Option 'resource_group_name' DefaultValueSample - KEEPING OLD
 Option 'resource_group_name' DefaultValueTest - KEEPING OLD
 Option 'server_name' NameAlt - KEEPING OLD
 Option 'server_name' DefaultValueTest - KEEPING OLD
+Option 'location' Required - KEEPING OLD
 Option 'location' DefaultValueTest - KEEPING OLD
 Option 'administrator_login' NameAlt - KEEPING OLD
 Option 'administrator_login' DefaultValueTest - KEEPING OLD
@@ -40,7 +41,6 @@ Option 'kind' NameAlt - KEEPING OLD
 Option 'administrator_login' NameAlt - KEEPING OLD
 Option 'administrator_login_password' NameAlt - KEEPING OLD
 Option 'version' SampleValue - KEEPING OLD
-Option 'state' NameAlt - KEEPING OLD
 Option 'fully_qualified_domain_name' SampleValue - KEEPING OLD
 Option 'azure_rm_sql_servers' ModuleNameAlt - KEEPING OLD
 Option 'server_name' Disposition - KEEPING OLD

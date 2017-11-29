@@ -33,7 +33,6 @@ options:
     location:
         description:
             - Resource location.
-        required: True
     tags:
         description:
             - Resource tags.
@@ -96,6 +95,12 @@ state:
             returned: always
             type: str
             sample: 12.0
+        state:
+            description:
+                - The state of the server.
+            returned: always
+            type: str
+            sample: state
         fully_qualified_domain_name:
             description:
                 - The fully qualified domain name of the server.
@@ -131,7 +136,7 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             location=dict(
                 type='str',
-                required=True
+                required=False
             ),
             tags=dict(
                 type='dict',
@@ -240,7 +245,6 @@ class AzureRMServers(AzureRMModuleBase):
             self.results['state'].pop('kind', None)
             self.results['state'].pop('administrator_login', None)
             self.results['state'].pop('administrator_login_password', None)
-            self.results['state'].pop('state', None)
             self.log("Creation / Update done")
 
         return self.results
