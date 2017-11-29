@@ -14,7 +14,8 @@
     that:
       - output.changed
       - output.state.user_visible_state == 'Ready'
-- name: Create instance of Servers
+
+- name: Update instance of Servers
   azure_rm_mysql_server:
     resource_group: "{{ resource_group }}"
     name: test-mysql-server
@@ -37,7 +38,7 @@
     name: test-mysql-server
     state: absent
   register: output
-- name: Assert the state has not changed
+- name: Assert the state has changed
   assert:
     that:
-      - output.changed == true
+      - output.changed

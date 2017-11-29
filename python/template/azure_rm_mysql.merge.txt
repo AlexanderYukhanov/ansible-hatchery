@@ -9,5 +9,15 @@ Option 'administrator_login' NameAlt - KEEPING OLD
 Option 'administrator_login' DefaultValueTest - KEEPING OLD
 Option 'administrator_login_password' NameAlt - KEEPING OLD
 Option 'administrator_login_password' DefaultValueTest - KEEPING OLD
+Option 'properties' Required - KEEPING OLD
+Option 'location' Required - KEEPING OLD
 Option 'location' DefaultValueTest - KEEPING OLD
 Option 'azure_rm_mysql_servers' ModuleNameAlt - KEEPING OLD
+Option 'azure_rm_mysql_servers' AssertStateVariable - KEEPING OLD
+EXCEPTION WHILE GENERATING: azure_rm_mysql_servers_facts
+EXCEPTION WHILE GENERATING: azure_rm_mysql_firewallrules_facts
+EXCEPTION WHILE GENERATING: azure_rm_mysql_virtualnetworkrules_facts
+EXCEPTION WHILE GENERATING: azure_rm_mysql_databases_facts
+EXCEPTION WHILE GENERATING: azure_rm_mysql_configurations
+EXCEPTION WHILE GENERATING: azure_rm_mysql_configurations_facts
+EXCEPTION WHILE GENERATING: azure_rm_mysql_logfiles_facts

@@ -52,7 +52,6 @@ options:
     properties:
         description:
             - Properties of the server.
-        required: False
         suboptions:
             storage_mb:
                 description:
@@ -78,7 +77,6 @@ options:
     location:
         description:
             - The location the resource resides in.
-        required: False
     tags:
         description:
             - Application-specific metadata in the form of key-value pairs.

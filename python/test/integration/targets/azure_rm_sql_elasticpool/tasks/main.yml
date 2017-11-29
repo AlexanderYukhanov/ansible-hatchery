@@ -1,4 +1,4 @@
-- name: Create instance of SQL Server
+- name:  SQL Server
   azure_rm_sql_server:
     resource_group: "{{ resource_group }}"
     name: zims-server
@@ -17,14 +17,15 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
-- name: Create instance of SQL Server
+
+- name:  SQL Server
   azure_rm_sql_server:
     resource_group: "{{ resource_group }}"
     name: zims-server
     location: westus
     admin_username: mylogin
     admin_password: Testpasswordxyz12!
-- name: Create instance of ElasticPool
+- name: Update instance of ElasticPool
   azure_rm_sql_elasticpool:
     resource_group: "{{ resource_group }}"
     server_name: zims-server
@@ -36,3 +37,22 @@
     that:
       - output.changed == false
       - output.state.state == 'Ready'
+
+- name:  SQL Server
+  azure_rm_sql_server:
+    resource_group: "{{ resource_group }}"
+    name: zims-server
+    location: westus
+    admin_username: mylogin
+    admin_password: Testpasswordxyz12!
+- name: Delete instance of ElasticPool
+  azure_rm_sql_elasticpool:
+    resource_group: "{{ resource_group }}"
+    server_name: zims-server
+    name: test-elastic-pool
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed

@@ -8,7 +8,8 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
-- name: Create instance of FailoverGroups
+
+- name: Update instance of FailoverGroups
   azure_rm_sql_failovergroups:
     databases:
       - XXXX - list of values -- not implemented str
@@ -18,3 +19,12 @@
     that:
       - output.changed == false
       - output.state.state == 'Ready'
+
+- name: Delete instance of FailoverGroups
+  azure_rm_sql_failovergroups:
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed

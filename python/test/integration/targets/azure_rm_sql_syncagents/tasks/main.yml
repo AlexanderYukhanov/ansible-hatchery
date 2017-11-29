@@ -6,7 +6,8 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
-- name: Create instance of SyncAgents
+
+- name: Update instance of SyncAgents
   azure_rm_sql_syncagents:
   register: output
 - name: Assert the state has not changed
@@ -14,3 +15,12 @@
     that:
       - output.changed == false
       - output.state.state == 'Ready'
+
+- name: Delete instance of SyncAgents
+  azure_rm_sql_syncagents:
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed
