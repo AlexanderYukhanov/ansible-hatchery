@@ -52,7 +52,7 @@ options:
     properties:
         description:
             - Properties of the server.
-        required: True
+        required: False
         suboptions:
             storage_mb:
                 description:
@@ -78,7 +78,7 @@ options:
     location:
         description:
             - The location the resource resides in.
-        required: True
+        required: False
     tags:
         description:
             - Application-specific metadata in the form of key-value pairs.
@@ -256,11 +256,11 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             properties=dict(
                 type='dict',
-                required=True
+                required=False
             ),
             location=dict(
                 type='str',
-                required=True
+                required=False
             ),
             tags=dict(
                 type='dict',
