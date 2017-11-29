@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_mysql_servers
+module: azure_rm_mysql_server
 version_added: "2.5"
 short_description: Manage Servers instance
 description:
@@ -94,7 +94,7 @@ author:
 
 EXAMPLES = '''
   - name: Create (or update) Servers
-    azure_rm_mysql_servers:
+    azure_rm_mysql_server:
       resource_group: "{{ resource_group }}"
       name: test-mysql-server
       sku:

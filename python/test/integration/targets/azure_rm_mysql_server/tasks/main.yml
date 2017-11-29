@@ -1,5 +1,5 @@
 - name: Create instance of Servers
-  azure_rm_mysql_servers:
+  azure_rm_mysql_server:
     resource_group: "{{ resource_group }}"
     name: test-mysql-server
     properties:
