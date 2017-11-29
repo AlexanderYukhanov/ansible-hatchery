@@ -348,10 +348,10 @@ class AzureRMServers(AzureRMModuleBase):
 
     def adjust_parameters(self):
         if self.parameters.has_key('properties'):
-          rename_key(self.parameters['properties'], administrator_login, admin_username)
-          rename_key(self.parameters['properties'], administrator_login_password, admin_password)
+          self.rename_key(self.parameters['properties'], administrator_login, admin_username)
+          self.rename_key(self.parameters['properties'], administrator_login_password, admin_password)
 
-    def rename_key(d, old_name, new_name):
+    def rename_key(self, d, old_name, new_name):
         old_value = dict.get(old_name, None)
         if old_value is not None:
             dict.pop(old_name, None)
