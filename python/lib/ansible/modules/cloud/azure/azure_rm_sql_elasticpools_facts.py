@@ -49,27 +49,27 @@ author:
 EXAMPLES = '''
   - name: List instances of ElasticPools
     azure_rm_sql_elasticpools_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      elastic_pool_name: "{{ elastic_pool_name }}"
-      filter: "{{ filter }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      elastic_pool_name: elastic_pool_name
+      filter: filter
 
   - name: List instances of ElasticPools
     azure_rm_sql_elasticpools_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      elastic_pool_name: "{{ elastic_pool_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      elastic_pool_name: elastic_pool_name
 
   - name: Get instance of ElasticPools
     azure_rm_sql_elasticpools_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      elastic_pool_name: "{{ elastic_pool_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      elastic_pool_name: elastic_pool_name
 
   - name: List instances of ElasticPools
     azure_rm_sql_elasticpools_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -51,10 +51,10 @@ author:
 EXAMPLES = '''
   - name: Get instance of DatabaseBlobAuditingPolicies
     azure_rm_sql_databaseblobauditingpolicies_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      blob_auditing_policy_name: "{{ blob_auditing_policy_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      blob_auditing_policy_name: blob_auditing_policy_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

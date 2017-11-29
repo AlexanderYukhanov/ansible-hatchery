@@ -58,42 +58,42 @@ author:
 EXAMPLES = '''
   - name: List instances of Databases
     azure_rm_sql_databases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      filter: "{{ filter }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      filter: filter
 
   - name: Get instance of Databases
     azure_rm_sql_databases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      expand: "{{ expand }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      expand: expand
 
   - name: List instances of Databases
     azure_rm_sql_databases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      expand: "{{ expand }}"
-      filter: "{{ filter }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      expand: expand
+      filter: filter
 
   - name: List instances of Databases
     azure_rm_sql_databases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
 
   - name: List instances of Databases
     azure_rm_sql_databases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      elastic_pool_name: "{{ elastic_pool_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      elastic_pool_name: elastic_pool_name
 
   - name: List instances of Databases
     azure_rm_sql_databases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      recommended_elastic_pool_name: "{{ recommended_elastic_pool_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      recommended_elastic_pool_name: recommended_elastic_pool_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

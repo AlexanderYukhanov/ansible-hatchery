@@ -65,14 +65,14 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerKeys
     azure_rm_sql_serverkeys:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      key_name: "{{ key_name }}"
-      kind: "{{ kind }}"
-      server_key_type: "{{ server_key_type }}"
-      uri: "{{ uri }}"
-      thumbprint: "{{ thumbprint }}"
-      creation_date: "{{ creation_date }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      key_name: key_name
+      kind: kind
+      server_key_type: server_key_type
+      uri: uri
+      thumbprint: thumbprint
+      creation_date: creation_date
 '''
 
 RETURN = '''

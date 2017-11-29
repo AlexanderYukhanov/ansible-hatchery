@@ -54,11 +54,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) TransparentDataEncryptions
     azure_rm_sql_transparentdataencryptions:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      transparent_data_encryption_name: "{{ transparent_data_encryption_name }}"
-      status: "{{ status }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      transparent_data_encryption_name: transparent_data_encryption_name
+      status: status
 '''
 
 RETURN = '''

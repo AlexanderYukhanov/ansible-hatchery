@@ -46,14 +46,14 @@ author:
 EXAMPLES = '''
   - name: Get instance of RestorableDroppedDatabases
     azure_rm_sql_restorabledroppeddatabases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      restorable_droppeded_database_id: "{{ restorable_droppeded_database_id }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      restorable_droppeded_database_id: restorable_droppeded_database_id
 
   - name: List instances of RestorableDroppedDatabases
     azure_rm_sql_restorabledroppeddatabases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

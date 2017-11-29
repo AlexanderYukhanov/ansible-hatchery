@@ -46,14 +46,14 @@ author:
 EXAMPLES = '''
   - name: Get instance of ServerCommunicationLinks
     azure_rm_sql_servercommunicationlinks_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      communication_link_name: "{{ communication_link_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      communication_link_name: communication_link_name
 
   - name: List instances of ServerCommunicationLinks
     azure_rm_sql_servercommunicationlinks_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

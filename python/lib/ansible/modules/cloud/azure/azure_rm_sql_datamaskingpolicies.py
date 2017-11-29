@@ -59,12 +59,12 @@ author:
 EXAMPLES = '''
   - name: Create (or update) DataMaskingPolicies
     azure_rm_sql_datamaskingpolicies:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      data_masking_policy_name: "{{ data_masking_policy_name }}"
-      data_masking_state: "{{ data_masking_state }}"
-      exempt_principals: "{{ exempt_principals }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      data_masking_policy_name: data_masking_policy_name
+      data_masking_state: data_masking_state
+      exempt_principals: exempt_principals
 '''
 
 RETURN = '''

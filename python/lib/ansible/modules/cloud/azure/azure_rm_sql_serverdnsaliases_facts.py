@@ -46,14 +46,14 @@ author:
 EXAMPLES = '''
   - name: Get instance of ServerDnsAliases
     azure_rm_sql_serverdnsaliases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      dns_alias_name: "{{ dns_alias_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      dns_alias_name: dns_alias_name
 
   - name: List instances of ServerDnsAliases
     azure_rm_sql_serverdnsaliases_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

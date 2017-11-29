@@ -47,9 +47,9 @@ author:
 EXAMPLES = '''
   - name: Get instance of ServerConnectionPolicies
     azure_rm_sql_serverconnectionpolicies_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      connection_policy_name: "{{ connection_policy_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      connection_policy_name: connection_policy_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

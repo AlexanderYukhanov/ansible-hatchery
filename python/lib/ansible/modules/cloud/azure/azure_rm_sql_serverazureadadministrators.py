@@ -63,13 +63,13 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerAzureADAdministrators
     azure_rm_sql_serverazureadadministrators:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      administrator_name: "{{ administrator_name }}"
-      administrator_type: "{{ administrator_type }}"
-      login: "{{ login }}"
-      sid: "{{ sid }}"
-      tenant_id: "{{ tenant_id }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      administrator_name: administrator_name
+      administrator_type: administrator_type
+      login: login
+      sid: sid
+      tenant_id: tenant_id
 '''
 
 RETURN = '''

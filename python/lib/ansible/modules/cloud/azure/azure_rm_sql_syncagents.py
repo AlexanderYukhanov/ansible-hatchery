@@ -50,10 +50,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) SyncAgents
     azure_rm_sql_syncagents:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      sync_agent_name: "{{ sync_agent_name }}"
-      sync_database_id: "{{ sync_database_id }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      sync_agent_name: sync_agent_name
+      sync_database_id: sync_database_id
 '''
 
 RETURN = '''

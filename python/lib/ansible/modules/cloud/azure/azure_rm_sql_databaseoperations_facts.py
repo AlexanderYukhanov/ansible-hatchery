@@ -47,9 +47,9 @@ author:
 EXAMPLES = '''
   - name: List instances of DatabaseOperations
     azure_rm_sql_databaseoperations_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

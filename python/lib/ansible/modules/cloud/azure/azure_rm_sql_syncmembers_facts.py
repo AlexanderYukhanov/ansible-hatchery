@@ -54,26 +54,26 @@ author:
 EXAMPLES = '''
   - name: Get instance of SyncMembers
     azure_rm_sql_syncmembers_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      sync_group_name: "{{ sync_group_name }}"
-      sync_member_name: "{{ sync_member_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      sync_group_name: sync_group_name
+      sync_member_name: sync_member_name
 
   - name: List instances of SyncMembers
     azure_rm_sql_syncmembers_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      sync_group_name: "{{ sync_group_name }}"
-      sync_member_name: "{{ sync_member_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      sync_group_name: sync_group_name
+      sync_member_name: sync_member_name
 
   - name: List instances of SyncMembers
     azure_rm_sql_syncmembers_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      sync_group_name: "{{ sync_group_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      sync_group_name: sync_group_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

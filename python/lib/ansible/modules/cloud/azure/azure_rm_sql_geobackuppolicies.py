@@ -55,11 +55,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) GeoBackupPolicies
     azure_rm_sql_geobackuppolicies:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      geo_backup_policy_name: "{{ geo_backup_policy_name }}"
-      state: "{{ state }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      geo_backup_policy_name: geo_backup_policy_name
+      state: state
 '''
 
 RETURN = '''

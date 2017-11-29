@@ -39,7 +39,7 @@ author:
 EXAMPLES = '''
   - name: List instances of Capabilities
     azure_rm_sql_capabilities_facts:
-      location_id: "{{ location_id }}"
+      location_id: location_id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

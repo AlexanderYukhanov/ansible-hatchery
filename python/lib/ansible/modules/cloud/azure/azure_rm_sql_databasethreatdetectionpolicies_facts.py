@@ -51,10 +51,10 @@ author:
 EXAMPLES = '''
   - name: Get instance of DatabaseThreatDetectionPolicies
     azure_rm_sql_databasethreatdetectionpolicies_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      security_alert_policy_name: "{{ security_alert_policy_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      security_alert_policy_name: security_alert_policy_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

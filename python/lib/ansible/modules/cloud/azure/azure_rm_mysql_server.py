@@ -93,23 +93,23 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Servers
     azure_rm_mysql_server:
-      resource_group: "{{ resource_group }}"
-      name: test-mysql-server
+      resource_group: resource_group_name
+      name: server_name
       sku:
-        name: "{{ name }}"
-        tier: "{{ tier }}"
-        capacity: "{{ capacity }}"
-        size: "{{ size }}"
-        family: "{{ family }}"
+        name: name
+        tier: tier
+        capacity: capacity
+        size: size
+        family: family
       properties:
-        storage_mb: "{{ storage_mb }}"
-        version: 5.6
-        ssl_enforcement: "{{ ssl_enforcement }}"
-        create_mode: Default
-        admin_username: zimxyz
-        admin_password: Testpasswordxyz12!
-      location: westus
-      tags: "{{ tags }}"
+        storage_mb: storage_mb
+        version: version
+        ssl_enforcement: ssl_enforcement
+        create_mode: create_mode
+        admin_username: administrator_login
+        admin_password: administrator_login_password
+      location: location
+      tags: tags
 '''
 
 RETURN = '''

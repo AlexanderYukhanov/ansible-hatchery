@@ -62,38 +62,38 @@ author:
 EXAMPLES = '''
   - name: List instances of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      sync_group_name: "{{ sync_group_name }}"
-      start_time: "{{ start_time }}"
-      end_time: "{{ end_time }}"
-      type: "{{ type }}"
-      continuation_token: "{{ continuation_token }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      sync_group_name: sync_group_name
+      start_time: start_time
+      end_time: end_time
+      type: type
+      continuation_token: continuation_token
 
   - name: List instances of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      sync_group_name: "{{ sync_group_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      sync_group_name: sync_group_name
 
   - name: Get instance of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      sync_group_name: "{{ sync_group_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      sync_group_name: sync_group_name
 
   - name: List instances of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
 
   - name: List instances of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      location_name: "{{ location_name }}"
+      location_name: location_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

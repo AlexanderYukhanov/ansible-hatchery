@@ -46,14 +46,14 @@ author:
 EXAMPLES = '''
   - name: Get instance of ServerKeys
     azure_rm_sql_serverkeys_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      key_name: "{{ key_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      key_name: key_name
 
   - name: List instances of ServerKeys
     azure_rm_sql_serverkeys_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

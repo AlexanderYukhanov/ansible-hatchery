@@ -47,9 +47,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerDnsAliases
     azure_rm_sql_serverdnsaliases:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      dns_alias_name: "{{ dns_alias_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      dns_alias_name: dns_alias_name
 '''
 
 RETURN = '''

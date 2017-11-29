@@ -53,11 +53,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Configurations
     azure_rm_mysql_configurations:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      configuration_name: "{{ configuration_name }}"
-      value: "{{ value }}"
-      source: "{{ source }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      configuration_name: configuration_name
+      value: value
+      source: source
 '''
 
 RETURN = '''

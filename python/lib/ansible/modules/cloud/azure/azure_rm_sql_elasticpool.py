@@ -73,17 +73,17 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ElasticPool
     azure_rm_sql_elasticpool:
-      resource_group: "{{ resource_group }}"
-      server_name: zims-server
-      name: test-elastic-pool
-      tags: "{{ tags }}"
-      location: westus
-      edition: "{{ edition }}"
-      dtu: "{{ dtu }}"
-      database_dtu_max: "{{ database_dtu_max }}"
-      database_dtu_min: "{{ database_dtu_min }}"
-      storage_mb: "{{ storage_mb }}"
-      zone_redundant: "{{ zone_redundant }}"
+      resource_group: resource_group_name
+      server_name: server_name
+      name: elastic_pool_name
+      tags: tags
+      location: location
+      edition: edition
+      dtu: dtu
+      database_dtu_max: database_dtu_max
+      database_dtu_min: database_dtu_min
+      storage_mb: storage_mb
+      zone_redundant: zone_redundant
 '''
 
 RETURN = '''

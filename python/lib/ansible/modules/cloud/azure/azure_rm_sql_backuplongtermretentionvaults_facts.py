@@ -47,9 +47,9 @@ author:
 EXAMPLES = '''
   - name: Get instance of BackupLongTermRetentionVaults
     azure_rm_sql_backuplongtermretentionvaults_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      backup_long_term_retention_vault_name: "{{ backup_long_term_retention_vault_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      backup_long_term_retention_vault_name: backup_long_term_retention_vault_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

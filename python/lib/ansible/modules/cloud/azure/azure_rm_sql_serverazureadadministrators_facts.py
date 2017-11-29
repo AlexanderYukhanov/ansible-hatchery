@@ -46,14 +46,14 @@ author:
 EXAMPLES = '''
   - name: Get instance of ServerAzureADAdministrators
     azure_rm_sql_serverazureadadministrators_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      administrator_name: "{{ administrator_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      administrator_name: administrator_name
 
   - name: List instances of ServerAzureADAdministrators
     azure_rm_sql_serverazureadadministrators_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
