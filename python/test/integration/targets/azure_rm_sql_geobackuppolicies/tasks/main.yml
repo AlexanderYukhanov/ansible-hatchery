@@ -6,3 +6,11 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
+- name: Create instance of GeoBackupPolicies
+  azure_rm_sql_geobackuppolicies:
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state.state == 'Ready'

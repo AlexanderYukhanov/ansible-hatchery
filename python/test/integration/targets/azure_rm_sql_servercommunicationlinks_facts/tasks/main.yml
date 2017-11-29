@@ -6,3 +6,11 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
+- name: Create instance of ServerCommunicationLinks
+  azure_rm_sql_servercommunicationlinks_facts:
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state.state == 'Ready'

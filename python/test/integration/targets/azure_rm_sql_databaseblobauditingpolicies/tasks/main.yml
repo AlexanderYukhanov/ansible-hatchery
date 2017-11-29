@@ -8,3 +8,13 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
+- name: Create instance of DatabaseBlobAuditingPolicies
+  azure_rm_sql_databaseblobauditingpolicies:
+    audit_actions_and_groups:
+      - XXXX - list of values -- not implemented str
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state.state == 'Ready'
