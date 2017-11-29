@@ -68,13 +68,9 @@ EXAMPLES = '''
     azure_rm_sql_server:
       resource_group: resource_group
       name: server_name
-      location: location
-      tags: tags
-      identity:
-        type: type
-      admin_username: administrator_login
-      admin_password: administrator_login_password
-      version: version
+      location: westus
+      admin_username: mylogin
+      admin_password: Testpasswordxyz12!
 '''
 
 RETURN = '''
