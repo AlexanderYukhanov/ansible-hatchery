@@ -95,7 +95,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Servers
     azure_rm_mysql_servers:
-      resource_group: {{ resource_group }}
+      resource_group: "{{ resource_group }}"
       name: test-mysql-server
       sku:
         name: "{{ name }}"
