@@ -346,7 +346,7 @@ class AzureRMServers(AzureRMModuleBase):
 
         return self.results
 
-    def adjust_parameters(self)
+    def adjust_parameters(self):
         if self.parameters.has_key('properties'):
           rename_key(self.parameters['properties'], administrator_login, admin_username)
           rename_key(self.parameters['properties'], administrator_login_password, admin_password)
