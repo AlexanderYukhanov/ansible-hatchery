@@ -41,10 +41,10 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: List instances of LogFiles
-        azure_rm_postgresql_logfiles_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+  - name: List instances of LogFiles
+    azure_rm_postgresql_logfiles_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -52,7 +52,7 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.postgresql import postgresql
+    from azure.mgmt.postgresql import PostgreSQLManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common

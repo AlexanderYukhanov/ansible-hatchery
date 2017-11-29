@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_postgresql_configurations
 version_added: "2.5"
-short_description: Manage an Configurations.
+short_description: Manage Configurations instance
 description:
-    - Create, update and delete an instance of Configurations.
+    - Create, update and delete instance of Configurations
 
 options:
     resource_group_name:
@@ -37,11 +37,9 @@ options:
     value:
         description:
             - Value of the configuration.
-        required: False
     source:
         description:
             - Source of the configuration.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -53,20 +51,75 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) Configurations
-        azure_rm_postgresql_configurations:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          configuration_name: "{{ configuration_name }}"
-          value: "{{ value }}"
-          source: "{{ source }}"
+  - name: Create (or update) Configurations
+    azure_rm_postgresql_configurations:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      configuration_name: "{{ configuration_name }}"
+      value: "{{ value }}"
+      source: "{{ source }}"
 '''
 
 RETURN = '''
 state:
     description: Current state of Configurations
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        value:
+            description:
+                - Value of the configuration.
+            returned: always
+            type: str
+            sample: value
+        description:
+            description:
+                - Description of the configuration.
+            returned: always
+            type: str
+            sample: description
+        default_value:
+            description:
+                - Default value of the configuration.
+            returned: always
+            type: str
+            sample: default_value
+        data_type:
+            description:
+                - Data type of the configuration.
+            returned: always
+            type: str
+            sample: data_type
+        allowed_values:
+            description:
+                - Allowed values of the configuration.
+            returned: always
+            type: str
+            sample: allowed_values
+        source:
+            description:
+                - Source of the configuration.
+            returned: always
+            type: str
+            sample: source
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -74,7 +127,7 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.postgresql import postgresql
+    from azure.mgmt.postgresql import PostgreSQLManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common
@@ -138,11 +191,10 @@ class AzureRMConfigurations(AzureRMModuleBase):
             elif key == "source":
                 self.parameters["source"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
-        self.mgmt_client = self.get_mgmt_svc_client(postgresql,
+        self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         try:
@@ -150,14 +202,12 @@ class AzureRMConfigurations(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_configurations()
+        old_response = self.get_configurations()
 
-        if not response:
+        if not old_response:
             self.log("Configurations instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("Configurations instance already exists")
             if self.state == 'absent':
@@ -166,7 +216,6 @@ class AzureRMConfigurations(AzureRMModuleBase):
                 self.log("Configurations instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if Configurations instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -175,11 +224,11 @@ class AzureRMConfigurations(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_configurations()
+            self.results['state'] = self.create_update_configurations()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
             self.log("Creation / Update done")
 

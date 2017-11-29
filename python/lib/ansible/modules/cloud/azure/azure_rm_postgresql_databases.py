@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_postgresql_databases
 version_added: "2.5"
-short_description: Manage an Databases.
+short_description: Manage Databases instance
 description:
-    - Create, update and delete an instance of Databases.
+    - Create, update and delete instance of Databases
 
 options:
     resource_group_name:
@@ -37,11 +37,9 @@ options:
     charset:
         description:
             - The charset of the database.
-        required: False
     collation:
         description:
             - The collation of the database.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -53,20 +51,51 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) Databases
-        azure_rm_postgresql_databases:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          database_name: "{{ database_name }}"
-          charset: "{{ charset }}"
-          collation: "{{ collation }}"
+  - name: Create (or update) Databases
+    azure_rm_postgresql_databases:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      database_name: "{{ database_name }}"
+      charset: "{{ charset }}"
+      collation: "{{ collation }}"
 '''
 
 RETURN = '''
 state:
     description: Current state of Databases
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        charset:
+            description:
+                - The charset of the database.
+            returned: always
+            type: str
+            sample: charset
+        collation:
+            description:
+                - The collation of the database.
+            returned: always
+            type: str
+            sample: collation
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -74,7 +103,7 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.postgresql import postgresql
+    from azure.mgmt.postgresql import PostgreSQLManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common
@@ -138,11 +167,10 @@ class AzureRMDatabases(AzureRMModuleBase):
             elif key == "collation":
                 self.parameters["collation"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
-        self.mgmt_client = self.get_mgmt_svc_client(postgresql,
+        self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         try:
@@ -150,14 +178,12 @@ class AzureRMDatabases(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_databases()
+        old_response = self.get_databases()
 
-        if not response:
+        if not old_response:
             self.log("Databases instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("Databases instance already exists")
             if self.state == 'absent':
@@ -166,7 +192,6 @@ class AzureRMDatabases(AzureRMModuleBase):
                 self.log("Databases instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if Databases instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -175,11 +200,11 @@ class AzureRMDatabases(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_databases()
+            self.results['state'] = self.create_update_databases()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
             self.log("Creation / Update done")
 

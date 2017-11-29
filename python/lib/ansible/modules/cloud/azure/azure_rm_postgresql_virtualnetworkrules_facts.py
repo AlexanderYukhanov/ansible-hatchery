@@ -33,7 +33,6 @@ options:
     virtual_network_rule_name:
         description:
             - The name of the virtual network rule.
-        required: False
 
 extends_documentation_fragment:
     - azure
@@ -45,16 +44,16 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Get instance of VirtualNetworkRules
-        azure_rm_postgresql_virtualnetworkrules_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          virtual_network_rule_name: "{{ virtual_network_rule_name }}"
+  - name: Get instance of VirtualNetworkRules
+    azure_rm_postgresql_virtualnetworkrules_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      virtual_network_rule_name: "{{ virtual_network_rule_name }}"
 
-      - name: List instances of VirtualNetworkRules
-        azure_rm_postgresql_virtualnetworkrules_facts:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
+  - name: List instances of VirtualNetworkRules
+    azure_rm_postgresql_virtualnetworkrules_facts:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -62,7 +61,7 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.postgresql import postgresql
+    from azure.mgmt.postgresql import PostgreSQLManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common

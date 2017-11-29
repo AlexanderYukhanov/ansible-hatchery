@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_postgresql_firewallrules
 version_added: "2.5"
-short_description: Manage an FirewallRules.
+short_description: Manage FirewallRules instance
 description:
-    - Create, update and delete an instance of FirewallRules.
+    - Create, update and delete instance of FirewallRules
 
 options:
     resource_group_name:
@@ -53,20 +53,51 @@ author:
 '''
 
 EXAMPLES = '''
-      - name: Create (or update) FirewallRules
-        azure_rm_postgresql_firewallrules:
-          resource_group_name: "{{ resource_group_name }}"
-          server_name: "{{ server_name }}"
-          firewall_rule_name: "{{ firewall_rule_name }}"
-          start_ip_address: "{{ start_ip_address }}"
-          end_ip_address: "{{ end_ip_address }}"
+  - name: Create (or update) FirewallRules
+    azure_rm_postgresql_firewallrules:
+      resource_group_name: "{{ resource_group_name }}"
+      server_name: "{{ server_name }}"
+      firewall_rule_name: "{{ firewall_rule_name }}"
+      start_ip_address: "{{ start_ip_address }}"
+      end_ip_address: "{{ end_ip_address }}"
 '''
 
 RETURN = '''
 state:
     description: Current state of FirewallRules
     returned: always
-    type: dict
+    type: complex
+    contains:
+        id:
+            description:
+                - Resource ID
+            returned: always
+            type: str
+            sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
+        type:
+            description:
+                - Resource type.
+            returned: always
+            type: str
+            sample: type
+        start_ip_address:
+            description:
+                - The start IP address of the server firewall rule. Must be IPv4 format.
+            returned: always
+            type: str
+            sample: start_ip_address
+        end_ip_address:
+            description:
+                - The end IP address of the server firewall rule. Must be IPv4 format.
+            returned: always
+            type: str
+            sample: end_ip_address
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -74,7 +105,7 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.postgresql import postgresql
+    from azure.mgmt.postgresql import PostgreSQLManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common
@@ -138,11 +169,10 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             elif key == "end_ip_address":
                 self.parameters["end_ip_address"] = kwargs[key]
 
-        response = None
+        old_response = None
         results = dict()
-        to_be_updated = False
 
-        self.mgmt_client = self.get_mgmt_svc_client(postgresql,
+        self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         try:
@@ -150,14 +180,12 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        response = self.get_firewallrules()
+        old_response = self.get_firewallrules()
 
-        if not response:
+        if not old_response:
             self.log("FirewallRules instance doesn't exist")
             if self.state == 'absent':
-                self.log("Nothing to delete")
-            else:
-                to_be_updated = True
+                self.log("Old instance didn't exist")
         else:
             self.log("FirewallRules instance already exists")
             if self.state == 'absent':
@@ -166,7 +194,6 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 self.log("FirewallRules instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if FirewallRules instance has to be deleted or may be updated")
-                to_be_updated = True
 
         if self.state == 'present':
 
@@ -175,11 +202,11 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            if to_be_updated:
-                self.results['state'] = self.create_update_firewallrules()
+            self.results['state'] = self.create_update_firewallrules()
+            if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['state'] = response
+                self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
 
             self.log("Creation / Update done")
 
