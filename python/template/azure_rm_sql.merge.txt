@@ -1,239 +1,238 @@
 Used existing template file
-Option 'resource_group_name' NameAlt - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueTest - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueTest - KEEPING OLD
-Option 'database_name' NameAlt - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueTest - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'tags' DefaultValueSample - KEEPING OLD
-Option 'location' DefaultValueSample - KEEPING OLD
-Option 'location' DefaultValueTest - KEEPING OLD
-Option 'collation' DefaultValueSample - KEEPING OLD
-Option 'create_mode' DefaultValueSample - KEEPING OLD
-Option 'source_database_id' DefaultValueSample - KEEPING OLD
-Option 'source_database_deletion_date' DefaultValueSample - KEEPING OLD
-Option 'restore_point_in_time' DefaultValueSample - KEEPING OLD
-Option 'recovery_services_recovery_point_resource_id' DefaultValueSample - KEEPING OLD
-Option 'edition' DefaultValueSample - KEEPING OLD
-Option 'max_size_bytes' DefaultValueSample - KEEPING OLD
-Option 'requested_service_objective_id' DefaultValueSample - KEEPING OLD
-Option 'requested_service_objective_name' DefaultValueSample - KEEPING OLD
-Option 'elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'read_scale' DefaultValueSample - KEEPING OLD
-Option 'sample_name' DefaultValueSample - KEEPING OLD
-Option 'zone_redundant' DefaultValueSample - KEEPING OLD
-Option 'azure_rm_sql_databases' ModuleNameAlt - KEEPING OLD
-Option 'azure_rm_sql_databases' AssertStateVariable - KEEPING OLD
-Option 'azure_rm_sql_databases' AssertStateExpectedValue - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' Documentation - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'expand' DefaultValueSample - KEEPING OLD
-Option 'filter' Documentation - KEEPING OLD
-Option 'filter' DefaultValueSample - KEEPING OLD
-Option 'elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'recommended_elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' NameAlt - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueTest - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueTest - KEEPING OLD
-Option 'elastic_pool_name' NameAlt - KEEPING OLD
-Option 'elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'elastic_pool_name' DefaultValueTest - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'tags' DefaultValueSample - KEEPING OLD
-Option 'location' DefaultValueSample - KEEPING OLD
-Option 'location' DefaultValueTest - KEEPING OLD
-Option 'edition' DefaultValueSample - KEEPING OLD
-Option 'dtu' DefaultValueSample - KEEPING OLD
-Option 'database_dtu_max' DefaultValueSample - KEEPING OLD
-Option 'database_dtu_min' DefaultValueSample - KEEPING OLD
-Option 'storage_mb' DefaultValueSample - KEEPING OLD
-Option 'zone_redundant' DefaultValueSample - KEEPING OLD
-Option 'azure_rm_sql_elasticpools' ModuleNameAlt - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'elastic_pool_name' Documentation - KEEPING OLD
-Option 'elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'filter' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'recommended_elastic_pool_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'service_tier_advisor_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'transparent_data_encryption_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' in old template only - KEEPING
-Option 'status' Disposition - KEEPING OLD
-Option 'status' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'transparent_data_encryption_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'transparent_data_encryption_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'backup_long_term_retention_policy_name' DefaultValueSample - KEEPING OLD
-Option 'state' DefaultValueSample - KEEPING OLD
-Option 'recovery_services_backup_policy_resource_id' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'backup_long_term_retention_policy_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'backup_long_term_retention_vault_name' DefaultValueSample - KEEPING OLD
-Option 'recovery_services_vault_resource_id' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'backup_long_term_retention_vault_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'restorable_droppeded_database_id' DefaultValueSample - KEEPING OLD
-Option 'location_id' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'connection_policy_name' DefaultValueSample - KEEPING OLD
-Option 'connection_type' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'connection_policy_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'security_alert_policy_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'location' DefaultValueSample - KEEPING OLD
-Option 'state' DefaultValueSample - KEEPING OLD
-Option 'disabled_alerts' DefaultValueSample - KEEPING OLD
-Option 'email_addresses' DefaultValueSample - KEEPING OLD
-Option 'email_account_admins' DefaultValueSample - KEEPING OLD
-Option 'storage_endpoint' DefaultValueSample - KEEPING OLD
-Option 'storage_account_access_key' DefaultValueSample - KEEPING OLD
-Option 'retention_days' DefaultValueSample - KEEPING OLD
-Option 'use_server_default' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'security_alert_policy_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'data_masking_policy_name' DefaultValueSample - KEEPING OLD
-Option 'data_masking_state' DefaultValueSample - KEEPING OLD
-Option 'exempt_principals' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'data_masking_policy_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'data_masking_policy_name' DefaultValueSample - KEEPING OLD
-Option 'data_masking_rule_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'alias_name' DefaultValueSample - KEEPING OLD
-Option 'rule_state' DefaultValueSample - KEEPING OLD
-Option 'schema_name' DefaultValueSample - KEEPING OLD
-Option 'table_name' DefaultValueSample - KEEPING OLD
-Option 'column_name' DefaultValueSample - KEEPING OLD
-Option 'masking_function' DefaultValueSample - KEEPING OLD
-Option 'number_from' DefaultValueSample - KEEPING OLD
-Option 'number_to' DefaultValueSample - KEEPING OLD
-Option 'prefix_size' DefaultValueSample - KEEPING OLD
-Option 'suffix_size' DefaultValueSample - KEEPING OLD
-Option 'replacement_string' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'data_masking_policy_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'firewall_rule_name' DefaultValueSample - KEEPING OLD
-Option 'start_ip_address' DefaultValueSample - KEEPING OLD
-Option 'end_ip_address' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'firewall_rule_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'geo_backup_policy_name' DefaultValueSample - KEEPING OLD
-Option 'state' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'geo_backup_policy_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'link_id' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'administrator_name' DefaultValueSample - KEEPING OLD
-Option 'properties' DefaultValueSample - KEEPING OLD
-Option 'administrator_type' DefaultValueSample - KEEPING OLD
-Option 'login' DefaultValueSample - KEEPING OLD
-Option 'sid' DefaultValueSample - KEEPING OLD
-Option 'tenant_id' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'administrator_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'communication_link_name' DefaultValueSample - KEEPING OLD
-Option 'partner_server' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'communication_link_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'service_objective_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' NameAlt - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueTest - KEEPING OLD
-Option 'server_name' NameAlt - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueTest - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'location' Required - KEEPING OLD
-Option 'location' DefaultValueSample - KEEPING OLD
-Option 'location' DefaultValueTest - KEEPING OLD
-Option 'tags' DefaultValueSample - KEEPING OLD
-Option 'type' DefaultValueSample - KEEPING OLD
-Option 'identity' DefaultValueSample - KEEPING OLD
-Option 'administrator_login' NameAlt - KEEPING OLD
-Option 'administrator_login' DefaultValueSample - KEEPING OLD
-Option 'administrator_login' DefaultValueTest - KEEPING OLD
-Option 'administrator_login_password' NameAlt - KEEPING OLD
-Option 'administrator_login_password' DefaultValueSample - KEEPING OLD
-Option 'administrator_login_password' DefaultValueTest - KEEPING OLD
-Option 'version' DefaultValueSample - KEEPING OLD
+Modules[azure_rm_sql_databases]:Options[resource_group_name] > resource_group
+Modules[azure_rm_sql_databases]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databases]:Options[resource_group_name] > "{{ resource_group }}"
+Modules[azure_rm_sql_databases]:Options[server_name] > server_name
+Modules[azure_rm_sql_databases]:Options[server_name] > zims-server
+Modules[azure_rm_sql_databases]:Options[database_name] > name
+Modules[azure_rm_sql_databases]:Options[database_name] > database_name
+Modules[azure_rm_sql_databases]:Options[database_name] > test-database
+Modules[azure_rm_sql_databases]:Options[parameters] > parameters
+Modules[azure_rm_sql_databases]:Options[tags] > tags
+Modules[azure_rm_sql_databases]:Options[location] > location
+Modules[azure_rm_sql_databases]:Options[location] > westus
+Modules[azure_rm_sql_databases]:Options[collation] > collation
+Modules[azure_rm_sql_databases]:Options[create_mode] > create_mode
+Modules[azure_rm_sql_databases]:Options[source_database_id] > source_database_id
+Modules[azure_rm_sql_databases]:Options[source_database_deletion_date] > source_database_deletion_date
+Modules[azure_rm_sql_databases]:Options[restore_point_in_time] > restore_point_in_time
+Modules[azure_rm_sql_databases]:Options[recovery_services_recovery_point_resource_id] > recovery_services_recovery_point_resource_id
+Modules[azure_rm_sql_databases]:Options[edition] > edition
+Modules[azure_rm_sql_databases]:Options[max_size_bytes] > max_size_bytes
+Modules[azure_rm_sql_databases]:Options[requested_service_objective_id] > requested_service_objective_id
+Modules[azure_rm_sql_databases]:Options[requested_service_objective_name] > requested_service_objective_name
+Modules[azure_rm_sql_databases]:Options[elastic_pool_name] > elastic_pool_name
+Modules[azure_rm_sql_databases]:Options[read_scale] > read_scale
+Modules[azure_rm_sql_databases]:Options[sample_name] > sample_name
+Modules[azure_rm_sql_databases]:Options[zone_redundant] > zone_redundant
+Modules[azure_rm_sql_databases]:ModuleNameAlt > azure_rm_sql_databases
+Modules[azure_rm_sql_databases]:AssertStateVariable > status
+Modules[azure_rm_sql_databases]:AssertStateExpectedValue > Online
+Modules[azure_rm_sql_databases_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databases_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_databases_facts]:Options[database_name] > The name of the database to be retrieved.
+Modules[azure_rm_sql_databases_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_databases_facts]:Options[expand] > expand
+Modules[azure_rm_sql_databases_facts]:Options[filter] > An OData filter expression that describes a subset of databases to return.
+Modules[azure_rm_sql_databases_facts]:Options[filter] > filter
+Modules[azure_rm_sql_databases_facts]:Options[elastic_pool_name] > elastic_pool_name
+Modules[azure_rm_sql_databases_facts]:Options[recommended_elastic_pool_name] > recommended_elastic_pool_name
+Modules[azure_rm_sql_elasticpools]:Options[resource_group_name] > resource_group
+Modules[azure_rm_sql_elasticpools]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_elasticpools]:Options[resource_group_name] > resource_group
+Modules[azure_rm_sql_elasticpools]:Options[server_name] > server_name
+Modules[azure_rm_sql_elasticpools]:Options[server_name] > zims-server
+Modules[azure_rm_sql_elasticpools]:Options[elastic_pool_name] > name
+Modules[azure_rm_sql_elasticpools]:Options[elastic_pool_name] > elastic_pool_name
+Modules[azure_rm_sql_elasticpools]:Options[elastic_pool_name] > test-elastic-pool
+Modules[azure_rm_sql_elasticpools]:Options[parameters] > parameters
+Modules[azure_rm_sql_elasticpools]:Options[tags] > tags
+Modules[azure_rm_sql_elasticpools]:Options[location] > location
+Modules[azure_rm_sql_elasticpools]:Options[location] > westus
+Modules[azure_rm_sql_elasticpools]:Options[edition] > edition
+Modules[azure_rm_sql_elasticpools]:Options[dtu] > dtu
+Modules[azure_rm_sql_elasticpools]:Options[database_dtu_max] > database_dtu_max
+Modules[azure_rm_sql_elasticpools]:Options[database_dtu_min] > database_dtu_min
+Modules[azure_rm_sql_elasticpools]:Options[storage_mb] > storage_mb
+Modules[azure_rm_sql_elasticpools]:Options[zone_redundant] > zone_redundant
+Modules[azure_rm_sql_elasticpools]:ModuleNameAlt > azure_rm_sql_elasticpools
+Modules[azure_rm_sql_elasticpools_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_elasticpools_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_elasticpools_facts]:Options[elastic_pool_name] > The name of the elastic pool to be retrieved.
+Modules[azure_rm_sql_elasticpools_facts]:Options[elastic_pool_name] > elastic_pool_name
+Modules[azure_rm_sql_elasticpools_facts]:Options[filter] > filter
+Modules[azure_rm_sql_elasticpoolactivities_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_elasticpoolactivities_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_elasticpoolactivities_facts]:Options[elastic_pool_name] > elastic_pool_name
+Modules[azure_rm_sql_elasticpooldatabaseactivities_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_elasticpooldatabaseactivities_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_elasticpooldatabaseactivities_facts]:Options[elastic_pool_name] > elastic_pool_name
+Modules[azure_rm_sql_recommendedelasticpools_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_recommendedelasticpools_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_recommendedelasticpools_facts]:Options[recommended_elastic_pool_name] > recommended_elastic_pool_name
+Modules[azure_rm_sql_servicetieradvisors_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_servicetieradvisors_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_servicetieradvisors_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_servicetieradvisors_facts]:Options[service_tier_advisor_name] > service_tier_advisor_name
+Modules[azure_rm_sql_transparentdataencryptions]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_transparentdataencryptions]:Options[server_name] > server_name
+Modules[azure_rm_sql_transparentdataencryptions]:Options[database_name] > database_name
+Modules[azure_rm_sql_transparentdataencryptions]:Options[transparent_data_encryption_name] > transparent_data_encryption_name
+Modules[azure_rm_sql_transparentdataencryptions]:Options[status] > parameters
+Modules[azure_rm_sql_transparentdataencryptions]:Options[status] > status
+Modules[azure_rm_sql_transparentdataencryptions_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_transparentdataencryptions_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_transparentdataencryptions_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_transparentdataencryptions_facts]:Options[transparent_data_encryption_name] > transparent_data_encryption_name
+Modules[azure_rm_sql_transparentdataencryptionactivities_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_transparentdataencryptionactivities_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_transparentdataencryptionactivities_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_transparentdataencryptionactivities_facts]:Options[transparent_data_encryption_name] > transparent_data_encryption_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies]:Options[server_name] > server_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies]:Options[database_name] > database_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies]:Options[backup_long_term_retention_policy_name] > backup_long_term_retention_policy_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies]:Options[state] > state
+Modules[azure_rm_sql_backuplongtermretentionpolicies]:Options[recovery_services_backup_policy_resource_id] > recovery_services_backup_policy_resource_id
+Modules[azure_rm_sql_backuplongtermretentionpolicies_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_backuplongtermretentionpolicies_facts]:Options[backup_long_term_retention_policy_name] > backup_long_term_retention_policy_name
+Modules[azure_rm_sql_backuplongtermretentionvaults]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_backuplongtermretentionvaults]:Options[server_name] > server_name
+Modules[azure_rm_sql_backuplongtermretentionvaults]:Options[backup_long_term_retention_vault_name] > backup_long_term_retention_vault_name
+Modules[azure_rm_sql_backuplongtermretentionvaults]:Options[recovery_services_vault_resource_id] > recovery_services_vault_resource_id
+Modules[azure_rm_sql_backuplongtermretentionvaults_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_backuplongtermretentionvaults_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_backuplongtermretentionvaults_facts]:Options[backup_long_term_retention_vault_name] > backup_long_term_retention_vault_name
+Modules[azure_rm_sql_restorepoints_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_restorepoints_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_restorepoints_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_recoverabledatabases_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_recoverabledatabases_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_recoverabledatabases_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_restorabledroppeddatabases_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_restorabledroppeddatabases_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_restorabledroppeddatabases_facts]:Options[restorable_droppeded_database_id] > restorable_droppeded_database_id
+Modules[azure_rm_sql_capabilities_facts]:Options[location_id] > location_id
+Modules[azure_rm_sql_serverconnectionpolicies]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverconnectionpolicies]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverconnectionpolicies]:Options[connection_policy_name] > connection_policy_name
+Modules[azure_rm_sql_serverconnectionpolicies]:Options[connection_type] > connection_type
+Modules[azure_rm_sql_serverconnectionpolicies_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverconnectionpolicies_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverconnectionpolicies_facts]:Options[connection_policy_name] > connection_policy_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[server_name] > server_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[database_name] > database_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[security_alert_policy_name] > security_alert_policy_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[parameters] > parameters
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[location] > location
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[state] > state
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[disabled_alerts] > disabled_alerts
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[email_addresses] > email_addresses
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[email_account_admins] > email_account_admins
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[storage_endpoint] > storage_endpoint
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[storage_account_access_key] > storage_account_access_key
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[retention_days] > retention_days
+Modules[azure_rm_sql_databasethreatdetectionpolicies]:Options[use_server_default] > use_server_default
+Modules[azure_rm_sql_databasethreatdetectionpolicies_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_databasethreatdetectionpolicies_facts]:Options[security_alert_policy_name] > security_alert_policy_name
+Modules[azure_rm_sql_datamaskingpolicies]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_datamaskingpolicies]:Options[server_name] > server_name
+Modules[azure_rm_sql_datamaskingpolicies]:Options[database_name] > database_name
+Modules[azure_rm_sql_datamaskingpolicies]:Options[data_masking_policy_name] > data_masking_policy_name
+Modules[azure_rm_sql_datamaskingpolicies]:Options[data_masking_state] > data_masking_state
+Modules[azure_rm_sql_datamaskingpolicies]:Options[exempt_principals] > exempt_principals
+Modules[azure_rm_sql_datamaskingpolicies_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_datamaskingpolicies_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_datamaskingpolicies_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_datamaskingpolicies_facts]:Options[data_masking_policy_name] > data_masking_policy_name
+Modules[azure_rm_sql_datamaskingrules]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_datamaskingrules]:Options[server_name] > server_name
+Modules[azure_rm_sql_datamaskingrules]:Options[database_name] > database_name
+Modules[azure_rm_sql_datamaskingrules]:Options[data_masking_policy_name] > data_masking_policy_name
+Modules[azure_rm_sql_datamaskingrules]:Options[data_masking_rule_name] > data_masking_rule_name
+Modules[azure_rm_sql_datamaskingrules]:Options[parameters] > parameters
+Modules[azure_rm_sql_datamaskingrules]:Options[alias_name] > alias_name
+Modules[azure_rm_sql_datamaskingrules]:Options[rule_state] > rule_state
+Modules[azure_rm_sql_datamaskingrules]:Options[schema_name] > schema_name
+Modules[azure_rm_sql_datamaskingrules]:Options[table_name] > table_name
+Modules[azure_rm_sql_datamaskingrules]:Options[column_name] > column_name
+Modules[azure_rm_sql_datamaskingrules]:Options[masking_function] > masking_function
+Modules[azure_rm_sql_datamaskingrules]:Options[number_from] > number_from
+Modules[azure_rm_sql_datamaskingrules]:Options[number_to] > number_to
+Modules[azure_rm_sql_datamaskingrules]:Options[prefix_size] > prefix_size
+Modules[azure_rm_sql_datamaskingrules]:Options[suffix_size] > suffix_size
+Modules[azure_rm_sql_datamaskingrules]:Options[replacement_string] > replacement_string
+Modules[azure_rm_sql_datamaskingrules_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_datamaskingrules_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_datamaskingrules_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_datamaskingrules_facts]:Options[data_masking_policy_name] > data_masking_policy_name
+Modules[azure_rm_sql_firewallrules]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_firewallrules]:Options[server_name] > server_name
+Modules[azure_rm_sql_firewallrules]:Options[firewall_rule_name] > firewall_rule_name
+Modules[azure_rm_sql_firewallrules]:Options[start_ip_address] > start_ip_address
+Modules[azure_rm_sql_firewallrules]:Options[end_ip_address] > end_ip_address
+Modules[azure_rm_sql_firewallrules_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_firewallrules_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_firewallrules_facts]:Options[firewall_rule_name] > firewall_rule_name
+Modules[azure_rm_sql_geobackuppolicies]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_geobackuppolicies]:Options[server_name] > server_name
+Modules[azure_rm_sql_geobackuppolicies]:Options[database_name] > database_name
+Modules[azure_rm_sql_geobackuppolicies]:Options[geo_backup_policy_name] > geo_backup_policy_name
+Modules[azure_rm_sql_geobackuppolicies]:Options[state] > state
+Modules[azure_rm_sql_geobackuppolicies_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_geobackuppolicies_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_geobackuppolicies_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_geobackuppolicies_facts]:Options[geo_backup_policy_name] > geo_backup_policy_name
+Modules[azure_rm_sql_replicationlinks_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_replicationlinks_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_replicationlinks_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_replicationlinks_facts]:Options[link_id] > link_id
+Modules[azure_rm_sql_serverazureadadministrators]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverazureadadministrators]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverazureadadministrators]:Options[administrator_name] > administrator_name
+Modules[azure_rm_sql_serverazureadadministrators]:Options[properties] > properties
+Modules[azure_rm_sql_serverazureadadministrators]:Options[administrator_type] > administrator_type
+Modules[azure_rm_sql_serverazureadadministrators]:Options[login] > login
+Modules[azure_rm_sql_serverazureadadministrators]:Options[sid] > sid
+Modules[azure_rm_sql_serverazureadadministrators]:Options[tenant_id] > tenant_id
+Modules[azure_rm_sql_serverazureadadministrators_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverazureadadministrators_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverazureadadministrators_facts]:Options[administrator_name] > administrator_name
+Modules[azure_rm_sql_servercommunicationlinks]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_servercommunicationlinks]:Options[server_name] > server_name
+Modules[azure_rm_sql_servercommunicationlinks]:Options[communication_link_name] > communication_link_name
+Modules[azure_rm_sql_servercommunicationlinks]:Options[partner_server] > partner_server
+Modules[azure_rm_sql_servercommunicationlinks_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_servercommunicationlinks_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_servercommunicationlinks_facts]:Options[communication_link_name] > communication_link_name
+Modules[azure_rm_sql_serviceobjectives_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serviceobjectives_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_serviceobjectives_facts]:Options[service_objective_name] > service_objective_name
+Modules[azure_rm_sql_servers]:Options[resource_group_name] > resource_group
+Modules[azure_rm_sql_servers]:Options[resource_group_name] > resource_group
+Modules[azure_rm_sql_servers]:Options[resource_group_name] > "{{ resource_group }}"
+Modules[azure_rm_sql_servers]:Options[server_name] > name
+Modules[azure_rm_sql_servers]:Options[server_name] > server_name
+Modules[azure_rm_sql_servers]:Options[server_name] > zims-server
+Modules[azure_rm_sql_servers]:Options[parameters] > parameters
+Modules[azure_rm_sql_servers]:Options[location] > False
+Modules[azure_rm_sql_servers]:Options[location] > westus
+Modules[azure_rm_sql_servers]:Options[location] > westus
+Modules[azure_rm_sql_servers]:Options[tags] >
+Modules[azure_rm_sql_servers]:Options[identity]:SubOptions[type] >
+Modules[azure_rm_sql_servers]:Options[identity] >
+Modules[azure_rm_sql_servers]:Options[administrator_login] > admin_username
+Modules[azure_rm_sql_servers]:Options[administrator_login] > mylogin
+Modules[azure_rm_sql_servers]:Options[administrator_login] > mylogin
+Modules[azure_rm_sql_servers]:Options[administrator_login_password] > admin_password
+Modules[azure_rm_sql_servers]:Options[administrator_login_password] > Testpasswordxyz12!
+Modules[azure_rm_sql_servers]:Options[administrator_login_password] > Testpasswordxyz12!
+Modules[azure_rm_sql_servers]:Options[version] >
 Option 'id' SampleValue - KEEPING OLD
 Option 'name' NameAlt - KEEPING OLD
 Option 'type' NameAlt - KEEPING OLD
@@ -245,144 +244,144 @@ Option 'administrator_login' NameAlt - KEEPING OLD
 Option 'administrator_login_password' NameAlt - KEEPING OLD
 Option 'version' SampleValue - KEEPING OLD
 Option 'fully_qualified_domain_name' SampleValue - KEEPING OLD
-Option 'azure_rm_sql_servers' ModuleNameAlt - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'blob_auditing_policy_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'state' DefaultValueSample - KEEPING OLD
-Option 'storage_endpoint' DefaultValueSample - KEEPING OLD
-Option 'storage_account_access_key' DefaultValueSample - KEEPING OLD
-Option 'retention_days' DefaultValueSample - KEEPING OLD
-Option 'audit_actions_and_groups' DefaultValueSample - KEEPING OLD
-Option 'storage_account_subscription_id' DefaultValueSample - KEEPING OLD
-Option 'is_storage_secondary_key_in_use' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'blob_auditing_policy_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'encryption_protector_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'kind' DefaultValueSample - KEEPING OLD
-Option 'server_key_name' DefaultValueSample - KEEPING OLD
-Option 'server_key_type' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'encryption_protector_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'failover_group_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'tags' DefaultValueSample - KEEPING OLD
-Option 'failover_policy' DefaultValueSample - KEEPING OLD
-Option 'failover_with_data_loss_grace_period_minutes' DefaultValueSample - KEEPING OLD
-Option 'read_write_endpoint' DefaultValueSample - KEEPING OLD
-Option 'failover_policy' DefaultValueSample - KEEPING OLD
-Option 'read_only_endpoint' DefaultValueSample - KEEPING OLD
-Option 'id' DefaultValueSample - KEEPING OLD
-Option 'partner_servers' DefaultValueSample - KEEPING OLD
-Option 'databases' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'failover_group_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'key_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'kind' DefaultValueSample - KEEPING OLD
-Option 'server_key_type' DefaultValueSample - KEEPING OLD
-Option 'uri' DefaultValueSample - KEEPING OLD
-Option 'thumbprint' DefaultValueSample - KEEPING OLD
-Option 'creation_date' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'key_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'sync_agent_name' DefaultValueSample - KEEPING OLD
-Option 'sync_database_id' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'sync_agent_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'sync_group_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'interval' DefaultValueSample - KEEPING OLD
-Option 'conflict_resolution_policy' DefaultValueSample - KEEPING OLD
-Option 'sync_database_id' DefaultValueSample - KEEPING OLD
-Option 'hub_database_user_name' DefaultValueSample - KEEPING OLD
-Option 'hub_database_password' DefaultValueSample - KEEPING OLD
-Option 'quoted_name' DefaultValueSample - KEEPING OLD
-Option 'data_size' DefaultValueSample - KEEPING OLD
-Option 'data_type' DefaultValueSample - KEEPING OLD
-Option 'columns' DefaultValueSample - KEEPING OLD
-Option 'quoted_name' DefaultValueSample - KEEPING OLD
-Option 'tables' DefaultValueSample - KEEPING OLD
-Option 'master_sync_member_name' DefaultValueSample - KEEPING OLD
-Option 'schema' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'sync_group_name' DefaultValueSample - KEEPING OLD
-Option 'start_time' DefaultValueSample - KEEPING OLD
-Option 'end_time' DefaultValueSample - KEEPING OLD
-Option 'type' DefaultValueSample - KEEPING OLD
-Option 'continuation_token' DefaultValueSample - KEEPING OLD
-Option 'location_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'sync_group_name' DefaultValueSample - KEEPING OLD
-Option 'sync_member_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'database_type' DefaultValueSample - KEEPING OLD
-Option 'sync_agent_id' DefaultValueSample - KEEPING OLD
-Option 'sql_server_database_id' DefaultValueSample - KEEPING OLD
-Option 'server_name' Disposition - KEEPING OLD
-Option 'server_name' Documentation - KEEPING OLD
-Option 'server_name' Required - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' Disposition - KEEPING OLD
-Option 'database_name' Documentation - KEEPING OLD
-Option 'database_name' Required - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'user_name' DefaultValueSample - KEEPING OLD
-Option 'password' DefaultValueSample - KEEPING OLD
-Option 'sync_direction' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'sync_group_name' DefaultValueSample - KEEPING OLD
-Option 'sync_member_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'virtual_network_rule_name' DefaultValueSample - KEEPING OLD
-Option 'virtual_network_subnet_id' DefaultValueSample - KEEPING OLD
-Option 'ignore_missing_vnet_service_endpoint' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'virtual_network_rule_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'dns_alias_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'dns_alias_name' DefaultValueSample - KEEPING OLD
+Modules[azure_rm_sql_servers]:ModuleNameAlt > azure_rm_sql_servers
+Modules[azure_rm_sql_servers_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_servers_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverusages_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverusages_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_databaseusages_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databaseusages_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_databaseusages_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[server_name] > server_name
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[database_name] > database_name
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[blob_auditing_policy_name] > blob_auditing_policy_name
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[parameters] > parameters
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[state] > state
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[storage_endpoint] > storage_endpoint
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[storage_account_access_key] > storage_account_access_key
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[retention_days] > retention_days
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[audit_actions_and_groups] > audit_actions_and_groups
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[storage_account_subscription_id] > storage_account_subscription_id
+Modules[azure_rm_sql_databaseblobauditingpolicies]:Options[is_storage_secondary_key_in_use] > is_storage_secondary_key_in_use
+Modules[azure_rm_sql_databaseblobauditingpolicies_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databaseblobauditingpolicies_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_databaseblobauditingpolicies_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_databaseblobauditingpolicies_facts]:Options[blob_auditing_policy_name] > blob_auditing_policy_name
+Modules[azure_rm_sql_encryptionprotectors]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_encryptionprotectors]:Options[server_name] > server_name
+Modules[azure_rm_sql_encryptionprotectors]:Options[encryption_protector_name] > encryption_protector_name
+Modules[azure_rm_sql_encryptionprotectors]:Options[parameters] > parameters
+Modules[azure_rm_sql_encryptionprotectors]:Options[kind] > kind
+Modules[azure_rm_sql_encryptionprotectors]:Options[server_key_name] > server_key_name
+Modules[azure_rm_sql_encryptionprotectors]:Options[server_key_type] > server_key_type
+Modules[azure_rm_sql_encryptionprotectors_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_encryptionprotectors_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_encryptionprotectors_facts]:Options[encryption_protector_name] > encryption_protector_name
+Modules[azure_rm_sql_failovergroups]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_failovergroups]:Options[server_name] > server_name
+Modules[azure_rm_sql_failovergroups]:Options[failover_group_name] > failover_group_name
+Modules[azure_rm_sql_failovergroups]:Options[parameters] > parameters
+Modules[azure_rm_sql_failovergroups]:Options[tags] > tags
+Modules[azure_rm_sql_failovergroups]:Options[read_write_endpoint]:SubOptions[failover_policy] > failover_policy
+Modules[azure_rm_sql_failovergroups]:Options[read_write_endpoint]:SubOptions[failover_with_data_loss_grace_period_minutes] > failover_with_data_loss_grace_period_minutes
+Modules[azure_rm_sql_failovergroups]:Options[read_write_endpoint] > read_write_endpoint
+Modules[azure_rm_sql_failovergroups]:Options[read_only_endpoint]:SubOptions[failover_policy] > failover_policy
+Modules[azure_rm_sql_failovergroups]:Options[read_only_endpoint] > read_only_endpoint
+Modules[azure_rm_sql_failovergroups]:Options[partner_servers]:SubOptions[id] > id
+Modules[azure_rm_sql_failovergroups]:Options[partner_servers] > partner_servers
+Modules[azure_rm_sql_failovergroups]:Options[databases] > databases
+Modules[azure_rm_sql_failovergroups_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_failovergroups_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_failovergroups_facts]:Options[failover_group_name] > failover_group_name
+Modules[azure_rm_sql_serverkeys]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverkeys]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverkeys]:Options[key_name] > key_name
+Modules[azure_rm_sql_serverkeys]:Options[parameters] > parameters
+Modules[azure_rm_sql_serverkeys]:Options[kind] > kind
+Modules[azure_rm_sql_serverkeys]:Options[server_key_type] > server_key_type
+Modules[azure_rm_sql_serverkeys]:Options[uri] > uri
+Modules[azure_rm_sql_serverkeys]:Options[thumbprint] > thumbprint
+Modules[azure_rm_sql_serverkeys]:Options[creation_date] > creation_date
+Modules[azure_rm_sql_serverkeys_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverkeys_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverkeys_facts]:Options[key_name] > key_name
+Modules[azure_rm_sql_syncagents]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_syncagents]:Options[server_name] > server_name
+Modules[azure_rm_sql_syncagents]:Options[sync_agent_name] > sync_agent_name
+Modules[azure_rm_sql_syncagents]:Options[sync_database_id] > sync_database_id
+Modules[azure_rm_sql_syncagents_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_syncagents_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_syncagents_facts]:Options[sync_agent_name] > sync_agent_name
+Modules[azure_rm_sql_syncgroups]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_syncgroups]:Options[server_name] > server_name
+Modules[azure_rm_sql_syncgroups]:Options[database_name] > database_name
+Modules[azure_rm_sql_syncgroups]:Options[sync_group_name] > sync_group_name
+Modules[azure_rm_sql_syncgroups]:Options[parameters] > parameters
+Modules[azure_rm_sql_syncgroups]:Options[interval] > interval
+Modules[azure_rm_sql_syncgroups]:Options[conflict_resolution_policy] > conflict_resolution_policy
+Modules[azure_rm_sql_syncgroups]:Options[sync_database_id] > sync_database_id
+Modules[azure_rm_sql_syncgroups]:Options[hub_database_user_name] > hub_database_user_name
+Modules[azure_rm_sql_syncgroups]:Options[hub_database_password] > hub_database_password
+Modules[azure_rm_sql_syncgroups]:Options[schema]:SubOptions[tables]:SubOptions[columns]:SubOptions[quoted_name] > quoted_name
+Modules[azure_rm_sql_syncgroups]:Options[schema]:SubOptions[tables]:SubOptions[columns]:SubOptions[data_size] > data_size
+Modules[azure_rm_sql_syncgroups]:Options[schema]:SubOptions[tables]:SubOptions[columns]:SubOptions[data_type] > data_type
+Modules[azure_rm_sql_syncgroups]:Options[schema]:SubOptions[tables]:SubOptions[columns] > columns
+Modules[azure_rm_sql_syncgroups]:Options[schema]:SubOptions[tables]:SubOptions[quoted_name] > quoted_name
+Modules[azure_rm_sql_syncgroups]:Options[schema]:SubOptions[tables] > tables
+Modules[azure_rm_sql_syncgroups]:Options[schema]:SubOptions[master_sync_member_name] > master_sync_member_name
+Modules[azure_rm_sql_syncgroups]:Options[schema] > schema
+Modules[azure_rm_sql_syncgroups_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_syncgroups_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_syncgroups_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_syncgroups_facts]:Options[sync_group_name] > sync_group_name
+Modules[azure_rm_sql_syncgroups_facts]:Options[start_time] > start_time
+Modules[azure_rm_sql_syncgroups_facts]:Options[end_time] > end_time
+Modules[azure_rm_sql_syncgroups_facts]:Options[type] > type
+Modules[azure_rm_sql_syncgroups_facts]:Options[continuation_token] > continuation_token
+Modules[azure_rm_sql_syncgroups_facts]:Options[location_name] > location_name
+Modules[azure_rm_sql_syncmembers]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_syncmembers]:Options[server_name] > server_name
+Modules[azure_rm_sql_syncmembers]:Options[database_name] > database_name
+Modules[azure_rm_sql_syncmembers]:Options[sync_group_name] > sync_group_name
+Modules[azure_rm_sql_syncmembers]:Options[sync_member_name] > sync_member_name
+Modules[azure_rm_sql_syncmembers]:Options[parameters] > parameters
+Modules[azure_rm_sql_syncmembers]:Options[database_type] > database_type
+Modules[azure_rm_sql_syncmembers]:Options[sync_agent_id] > sync_agent_id
+Modules[azure_rm_sql_syncmembers]:Options[sql_server_database_id] > sql_server_database_id
+Modules[azure_rm_sql_syncmembers]:Options[server_name] > parameters
+Modules[azure_rm_sql_syncmembers]:Options[server_name] > Server name of the member database in the sync member
+Modules[azure_rm_sql_syncmembers]:Options[server_name] > False
+Modules[azure_rm_sql_syncmembers]:Options[server_name] > server_name
+Modules[azure_rm_sql_syncmembers]:Options[database_name] > parameters
+Modules[azure_rm_sql_syncmembers]:Options[database_name] > Database name of the member database in the sync member.
+Modules[azure_rm_sql_syncmembers]:Options[database_name] > False
+Modules[azure_rm_sql_syncmembers]:Options[database_name] > database_name
+Modules[azure_rm_sql_syncmembers]:Options[user_name] > user_name
+Modules[azure_rm_sql_syncmembers]:Options[password] > password
+Modules[azure_rm_sql_syncmembers]:Options[sync_direction] > sync_direction
+Modules[azure_rm_sql_syncmembers_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_syncmembers_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_syncmembers_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_syncmembers_facts]:Options[sync_group_name] > sync_group_name
+Modules[azure_rm_sql_syncmembers_facts]:Options[sync_member_name] > sync_member_name
+Modules[azure_rm_sql_virtualnetworkrules]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_virtualnetworkrules]:Options[server_name] > server_name
+Modules[azure_rm_sql_virtualnetworkrules]:Options[virtual_network_rule_name] > virtual_network_rule_name
+Modules[azure_rm_sql_virtualnetworkrules]:Options[virtual_network_subnet_id] > virtual_network_subnet_id
+Modules[azure_rm_sql_virtualnetworkrules]:Options[ignore_missing_vnet_service_endpoint] > ignore_missing_vnet_service_endpoint
+Modules[azure_rm_sql_virtualnetworkrules_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_virtualnetworkrules_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_virtualnetworkrules_facts]:Options[virtual_network_rule_name] > virtual_network_rule_name
+Modules[azure_rm_sql_databaseoperations_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_databaseoperations_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_databaseoperations_facts]:Options[database_name] > database_name
+Modules[azure_rm_sql_serverdnsaliases]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverdnsaliases]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverdnsaliases]:Options[dns_alias_name] > dns_alias_name
+Modules[azure_rm_sql_serverdnsaliases_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_sql_serverdnsaliases_facts]:Options[server_name] > server_name
+Modules[azure_rm_sql_serverdnsaliases_facts]:Options[dns_alias_name] > dns_alias_name
 EXCEPTION WHILE GENERATING: azure_rm_sql_databases_facts
 EXCEPTION WHILE GENERATING: azure_rm_sql_elasticpools_facts
 EXCEPTION WHILE GENERATING: azure_rm_sql_elasticpoolactivities_facts

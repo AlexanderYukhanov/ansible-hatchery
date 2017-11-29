@@ -1,77 +1,77 @@
 Used existing template file
-Option 'resource_group_name' NameAlt - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueTest - KEEPING OLD
-Option 'server_name' NameAlt - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueTest - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'name' DefaultValueSample - KEEPING OLD
-Option 'tier' DefaultValueSample - KEEPING OLD
-Option 'capacity' DefaultValueSample - KEEPING OLD
-Option 'size' DefaultValueSample - KEEPING OLD
-Option 'family' DefaultValueSample - KEEPING OLD
-Option 'sku' DefaultValueSample - KEEPING OLD
-Option 'storage_mb' DefaultValueSample - KEEPING OLD
-Option 'version' DefaultValueSample - KEEPING OLD
-Option 'version' DefaultValueTest - KEEPING OLD
-Option 'ssl_enforcement' DefaultValueSample - KEEPING OLD
-Option 'create_mode' DefaultValueSample - KEEPING OLD
-Option 'create_mode' DefaultValueTest - KEEPING OLD
-Option 'administrator_login' NameAlt - KEEPING OLD
-Option 'administrator_login' DefaultValueSample - KEEPING OLD
-Option 'administrator_login' DefaultValueTest - KEEPING OLD
-Option 'administrator_login_password' NameAlt - KEEPING OLD
-Option 'administrator_login_password' DefaultValueSample - KEEPING OLD
-Option 'administrator_login_password' DefaultValueTest - KEEPING OLD
-Option 'properties' Required - KEEPING OLD
-Option 'properties' DefaultValueSample - KEEPING OLD
-Option 'location' Required - KEEPING OLD
-Option 'location' DefaultValueSample - KEEPING OLD
-Option 'location' DefaultValueTest - KEEPING OLD
-Option 'tags' DefaultValueSample - KEEPING OLD
-Option 'azure_rm_mysql_servers' ModuleNameAlt - KEEPING OLD
-Option 'azure_rm_mysql_servers' AssertStateVariable - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'firewall_rule_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'start_ip_address' DefaultValueSample - KEEPING OLD
-Option 'end_ip_address' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'firewall_rule_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'virtual_network_rule_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'virtual_network_subnet_id' DefaultValueSample - KEEPING OLD
-Option 'ignore_missing_vnet_service_endpoint' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'virtual_network_rule_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'charset' DefaultValueSample - KEEPING OLD
-Option 'collation' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'database_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'configuration_name' DefaultValueSample - KEEPING OLD
-Option 'parameters' DefaultValueSample - KEEPING OLD
-Option 'value' DefaultValueSample - KEEPING OLD
-Option 'source' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
-Option 'configuration_name' DefaultValueSample - KEEPING OLD
-Option 'resource_group_name' DefaultValueSample - KEEPING OLD
-Option 'server_name' DefaultValueSample - KEEPING OLD
+Modules[azure_rm_mysql_servers]:Options[resource_group_name] > resource_group
+Modules[azure_rm_mysql_servers]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_servers]:Options[resource_group_name] > "{{ resource_group }}"
+Modules[azure_rm_mysql_servers]:Options[server_name] > name
+Modules[azure_rm_mysql_servers]:Options[server_name] > server_name
+Modules[azure_rm_mysql_servers]:Options[server_name] > test-mysql-server
+Modules[azure_rm_mysql_servers]:Options[parameters] > parameters
+Modules[azure_rm_mysql_servers]:Options[sku]:SubOptions[name] > name
+Modules[azure_rm_mysql_servers]:Options[sku]:SubOptions[tier] > tier
+Modules[azure_rm_mysql_servers]:Options[sku]:SubOptions[capacity] > capacity
+Modules[azure_rm_mysql_servers]:Options[sku]:SubOptions[size] > size
+Modules[azure_rm_mysql_servers]:Options[sku]:SubOptions[family] > family
+Modules[azure_rm_mysql_servers]:Options[sku] > sku
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[storage_mb] > storage_mb
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[version] > version
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[version] > 5.6
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[ssl_enforcement] > ssl_enforcement
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[create_mode] > create_mode
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[create_mode] > Default
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[administrator_login] > admin_username
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[administrator_login] > administrator_login
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[administrator_login] > zimxyz
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[administrator_login_password] > admin_password
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[administrator_login_password] > administrator_login_password
+Modules[azure_rm_mysql_servers]:Options[properties]:SubOptions[administrator_login_password] > Testpasswordxyz12!
+Modules[azure_rm_mysql_servers]:Options[properties] > False
+Modules[azure_rm_mysql_servers]:Options[properties] > properties
+Modules[azure_rm_mysql_servers]:Options[location] > False
+Modules[azure_rm_mysql_servers]:Options[location] > location
+Modules[azure_rm_mysql_servers]:Options[location] > westus
+Modules[azure_rm_mysql_servers]:Options[tags] > tags
+Modules[azure_rm_mysql_servers]:ModuleNameAlt > azure_rm_mysql_servers
+Modules[azure_rm_mysql_servers]:AssertStateVariable > user_visible_state
+Modules[azure_rm_mysql_servers_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_servers_facts]:Options[server_name] > server_name
+Modules[azure_rm_mysql_firewallrules]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_firewallrules]:Options[server_name] > server_name
+Modules[azure_rm_mysql_firewallrules]:Options[firewall_rule_name] > firewall_rule_name
+Modules[azure_rm_mysql_firewallrules]:Options[parameters] > parameters
+Modules[azure_rm_mysql_firewallrules]:Options[start_ip_address] > start_ip_address
+Modules[azure_rm_mysql_firewallrules]:Options[end_ip_address] > end_ip_address
+Modules[azure_rm_mysql_firewallrules_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_firewallrules_facts]:Options[server_name] > server_name
+Modules[azure_rm_mysql_firewallrules_facts]:Options[firewall_rule_name] > firewall_rule_name
+Modules[azure_rm_mysql_virtualnetworkrules]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_virtualnetworkrules]:Options[server_name] > server_name
+Modules[azure_rm_mysql_virtualnetworkrules]:Options[virtual_network_rule_name] > virtual_network_rule_name
+Modules[azure_rm_mysql_virtualnetworkrules]:Options[parameters] > parameters
+Modules[azure_rm_mysql_virtualnetworkrules]:Options[virtual_network_subnet_id] > virtual_network_subnet_id
+Modules[azure_rm_mysql_virtualnetworkrules]:Options[ignore_missing_vnet_service_endpoint] > ignore_missing_vnet_service_endpoint
+Modules[azure_rm_mysql_virtualnetworkrules_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_virtualnetworkrules_facts]:Options[server_name] > server_name
+Modules[azure_rm_mysql_virtualnetworkrules_facts]:Options[virtual_network_rule_name] > virtual_network_rule_name
+Modules[azure_rm_mysql_databases]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_databases]:Options[server_name] > server_name
+Modules[azure_rm_mysql_databases]:Options[database_name] > database_name
+Modules[azure_rm_mysql_databases]:Options[parameters] > parameters
+Modules[azure_rm_mysql_databases]:Options[charset] > charset
+Modules[azure_rm_mysql_databases]:Options[collation] > collation
+Modules[azure_rm_mysql_databases_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_databases_facts]:Options[server_name] > server_name
+Modules[azure_rm_mysql_databases_facts]:Options[database_name] > database_name
+Modules[azure_rm_mysql_configurations]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_configurations]:Options[server_name] > server_name
+Modules[azure_rm_mysql_configurations]:Options[configuration_name] > configuration_name
+Modules[azure_rm_mysql_configurations]:Options[parameters] > parameters
+Modules[azure_rm_mysql_configurations]:Options[value] > value
+Modules[azure_rm_mysql_configurations]:Options[source] > source
+Modules[azure_rm_mysql_configurations_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_configurations_facts]:Options[server_name] > server_name
+Modules[azure_rm_mysql_configurations_facts]:Options[configuration_name] > configuration_name
+Modules[azure_rm_mysql_logfiles_facts]:Options[resource_group_name] > resource_group_name
+Modules[azure_rm_mysql_logfiles_facts]:Options[server_name] > server_name
 EXCEPTION WHILE GENERATING: azure_rm_mysql_servers_facts
 EXCEPTION WHILE GENERATING: azure_rm_mysql_firewallrules_facts
 EXCEPTION WHILE GENERATING: azure_rm_mysql_virtualnetworkrules_facts
