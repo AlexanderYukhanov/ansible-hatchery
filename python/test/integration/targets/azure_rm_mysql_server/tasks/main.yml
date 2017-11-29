@@ -41,4 +41,3 @@
   assert:
     that:
       - output.changed == true
-      - output.state == None
