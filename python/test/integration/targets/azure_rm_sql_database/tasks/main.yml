@@ -1,4 +1,4 @@
-- name:  SQL Server
+- name: Create SQL Server
   azure_rm_sql_server:
     resource_group: "{{ resource_group }}"
     name: zims-server
@@ -18,13 +18,6 @@
       - output.changed
       - output.state.status == 'Online'
 
-- name:  SQL Server
-  azure_rm_sql_server:
-    resource_group: "{{ resource_group }}"
-    name: zims-server
-    location: westus
-    admin_username: mylogin
-    admin_password: Testpasswordxyz12!
 - name: Update instance of Database
   azure_rm_sql_database:
     resource_group: "{{ resource_group }}"
@@ -38,13 +31,6 @@
       - output.changed == false
       - output.state.status == 'Online'
 
-- name:  SQL Server
-  azure_rm_sql_server:
-    resource_group: "{{ resource_group }}"
-    name: zims-server
-    location: westus
-    admin_username: mylogin
-    admin_password: Testpasswordxyz12!
 - name: Delete instance of Database
   azure_rm_sql_database:
     resource_group: "{{ resource_group }}"
