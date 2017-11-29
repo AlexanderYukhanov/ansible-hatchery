@@ -301,6 +301,8 @@ class AzureRMServers(AzureRMModuleBase):
             elif key == "tags":
                 self.parameters["tags"] = kwargs[key]
 
+        self.adjust_parameters()
+
         old_response = None
         results = dict()
 
@@ -343,6 +345,17 @@ class AzureRMServers(AzureRMModuleBase):
             self.log("Creation / Update done")
 
         return self.results
+
+    def adjust_parameters(self)
+        if self.parameters.has_key(properties):
+          rename_key(self.parameters['properties'], administrator_login, admin_username)
+          rename_key(self.parameters['properties'], administrator_login_password, admin_password)
+
+    def rename_key(d, old_name, new_name):
+        old_value = dict.get(old_name, None)
+        if old_value is not None:
+            dict.pop(old_name, None)
+            dict[new_name] = old_value;
 
     def create_update_servers(self):
         '''
