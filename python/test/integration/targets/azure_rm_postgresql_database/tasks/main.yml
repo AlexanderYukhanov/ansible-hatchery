@@ -1,0 +1,26 @@
+- name: Create instance of Databases
+  azure_rm_postgresql_database:
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state.state == 'Ready'
+
+- name: Update instance of Databases
+  azure_rm_postgresql_database:
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state.state == 'Ready'
+
+- name: Delete instance of Databases
+  azure_rm_postgresql_database:
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed

@@ -461,7 +461,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_servers_facts",
-      "ModuleNameAlt": "azure_rm_mysql_servers_facts",
+      "ModuleNameAlt": "azure_rm_mysql_server_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -524,7 +524,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_firewallrules",
-      "ModuleNameAlt": "azure_rm_mysql_firewallrules",
+      "ModuleNameAlt": "azure_rm_mysql_firewallrule",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -710,7 +710,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_firewallrules_facts",
-      "ModuleNameAlt": "azure_rm_mysql_firewallrules_facts",
+      "ModuleNameAlt": "azure_rm_mysql_firewallrule_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -791,7 +791,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_virtualnetworkrules",
-      "ModuleNameAlt": "azure_rm_mysql_virtualnetworkrules",
+      "ModuleNameAlt": "azure_rm_mysql_virtualnetworkrule",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -986,7 +986,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_virtualnetworkrules_facts",
-      "ModuleNameAlt": "azure_rm_mysql_virtualnetworkrules_facts",
+      "ModuleNameAlt": "azure_rm_mysql_virtualnetworkrule_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1067,7 +1067,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_databases",
-      "ModuleNameAlt": "azure_rm_mysql_databases",
+      "ModuleNameAlt": "azure_rm_mysql_database",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1253,7 +1253,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_databases_facts",
-      "ModuleNameAlt": "azure_rm_mysql_databases_facts",
+      "ModuleNameAlt": "azure_rm_mysql_database_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1334,7 +1334,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_configurations",
-      "ModuleNameAlt": "azure_rm_mysql_configurations",
+      "ModuleNameAlt": "azure_rm_mysql_configuration",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1543,7 +1543,7 @@
     },
     {
       "ModuleName": "azure_rm_mysql_configurations_facts",
-      "ModuleNameAlt": "azure_rm_mysql_configurations_facts",
+      "ModuleNameAlt": "azure_rm_mysql_configuration_facts",
       "Options": [
         {
           "Name": "resource_group_name",

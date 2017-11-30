@@ -25,7 +25,6 @@ Modules[azure_rm_sql_databases]:Options[elastic_pool_name] > elastic_pool_name
 Modules[azure_rm_sql_databases]:Options[read_scale] > read_scale
 Modules[azure_rm_sql_databases]:Options[sample_name] > sample_name
 Modules[azure_rm_sql_databases]:Options[zone_redundant] > zone_redundant
-Modules[azure_rm_sql_databases]:ModuleNameAlt > azure_rm_sql_databases
 Modules[azure_rm_sql_databases]:AssertStateVariable > status
 Modules[azure_rm_sql_databases]:AssertStateExpectedValue > Online
 Modules[azure_rm_sql_databases_facts]:Options[resource_group_name] > resource_group_name
@@ -55,7 +54,6 @@ Modules[azure_rm_sql_elasticpools]:Options[database_dtu_max] > database_dtu_max
 Modules[azure_rm_sql_elasticpools]:Options[database_dtu_min] > database_dtu_min
 Modules[azure_rm_sql_elasticpools]:Options[storage_mb] > storage_mb
 Modules[azure_rm_sql_elasticpools]:Options[zone_redundant] > zone_redundant
-Modules[azure_rm_sql_elasticpools]:ModuleNameAlt > azure_rm_sql_elasticpools
 Modules[azure_rm_sql_elasticpools_facts]:Options[resource_group_name] > resource_group_name
 Modules[azure_rm_sql_elasticpools_facts]:Options[server_name] > server_name
 Modules[azure_rm_sql_elasticpools_facts]:Options[elastic_pool_name] > The name of the elastic pool to be retrieved.
@@ -244,7 +242,6 @@ Option 'administrator_login' NameAlt - KEEPING OLD
 Option 'administrator_login_password' NameAlt - KEEPING OLD
 Option 'version' SampleValue - KEEPING OLD
 Option 'fully_qualified_domain_name' SampleValue - KEEPING OLD
-Modules[azure_rm_sql_servers]:ModuleNameAlt > azure_rm_sql_servers
 Modules[azure_rm_sql_servers_facts]:Options[resource_group_name] > resource_group_name
 Modules[azure_rm_sql_servers_facts]:Options[server_name] > server_name
 Modules[azure_rm_sql_serverusages_facts]:Options[resource_group_name] > resource_group_name
