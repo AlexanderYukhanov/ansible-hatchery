@@ -2,7 +2,7 @@
   azure_rm_sql_server:
     resource_group: "{{ resource_group }}"
     name: zims-server
-    location: westus
+    location: eastus
     admin_username: mylogin
     admin_password: Testpasswordxyz12!
 - name: Create instance of Database
