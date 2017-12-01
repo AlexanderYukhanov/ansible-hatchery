@@ -7,7 +7,7 @@
     admin_password: Testpasswordxyz12!
 - name: Create instance of ElasticPool
   azure_rm_sql_elasticpool:
-    resource_group: resource_group
+    resource_group: "{{ resource_group }}"
     server_name: zims-server
     name: test-elastic-pool
     location: westus
@@ -20,7 +20,7 @@
 
 - name: Update instance of ElasticPool
   azure_rm_sql_elasticpool:
-    resource_group: resource_group
+    resource_group: "{{ resource_group }}"
     server_name: zims-server
     name: test-elastic-pool
     location: westus
@@ -33,7 +33,7 @@
 
 - name: Delete instance of ElasticPool
   azure_rm_sql_elasticpool:
-    resource_group: resource_group
+    resource_group: "{{ resource_group }}"
     server_name: zims-server
     name: test-elastic-pool
     state: absent

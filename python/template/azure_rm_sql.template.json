@@ -2801,7 +2801,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -2809,7 +2809,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -2823,13 +2823,13 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "zims-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "database_name",
-          "NameAlt": "database_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -2837,7 +2837,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the database to be operated on (updated or created).",
           "DefaultValueSample": "database_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-database",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -2879,7 +2879,7 @@
           "VariableValue": "None",
           "Documentation": "Resource location.",
           "DefaultValueSample": "location",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -3897,12 +3897,12 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
-      "AssertStateVariable": "state",
-      "AssertStateExpectedValue": "Ready",
+      "TestPrerequisitesModule": "azure_rm_sql_servers",
+      "AssertStateVariable": "status",
+      "AssertStateExpectedValue": "Online",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases"
+      "ObjectName": "Database"
     },
     {
       "ModuleName": "azure_rm_sql_databases_facts",
@@ -4104,7 +4104,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -4112,7 +4112,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -4126,13 +4126,13 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "zims-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "elastic_pool_name",
-          "NameAlt": "elastic_pool_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -4140,7 +4140,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the elastic pool to be operated on (updated or created).",
           "DefaultValueSample": "elastic_pool_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-elastic-pool",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -4182,7 +4182,7 @@
           "VariableValue": "None",
           "Documentation": "Resource location.",
           "DefaultValueSample": "location",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -4442,12 +4442,12 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_sql_servers",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
-      "ObjectName": "ElasticPools"
+      "ObjectName": "ElasticPool"
     },
     {
       "ModuleName": "azure_rm_sql_elasticpools_facts",
@@ -5328,21 +5328,21 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
-          "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueSample": "resource_group",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "server_name",
-          "NameAlt": "server_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5350,7 +5350,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "zims-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -5377,7 +5377,7 @@
           "Required": "False",
           "VariableValue": "None",
           "Documentation": "Resource tags.",
-          "DefaultValueSample": "tags",
+          "DefaultValueSample": "",
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0
@@ -5388,11 +5388,11 @@
           "Disposition": "parameters",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Resource location.",
-          "DefaultValueSample": "location",
-          "DefaultValueTest": "",
+          "DefaultValueSample": "westus",
+          "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -5405,7 +5405,7 @@
           "Required": "False",
           "VariableValue": "None",
           "Documentation": "The Azure Active Directory identity of the server.",
-          "DefaultValueSample": "identity",
+          "DefaultValueSample": "",
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -5417,7 +5417,7 @@
               "Required": "False",
               "VariableValue": "None",
               "Documentation": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource. Possible values include: 'SystemAssigned'",
-              "DefaultValueSample": "type",
+              "DefaultValueSample": "",
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0
@@ -5427,29 +5427,29 @@
         },
         {
           "Name": "administrator_login",
-          "NameAlt": "administrator_login",
+          "NameAlt": "admin_username",
           "Disposition": "parameters",
           "Type": "str",
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
           "Documentation": "Administrator username for the server. Once created it cannot be changed.",
-          "DefaultValueSample": "administrator_login",
-          "DefaultValueTest": "",
+          "DefaultValueSample": "mylogin",
+          "DefaultValueTest": "mylogin",
           "SubOptions": [],
           "RequiredCount": 0
         },
         {
           "Name": "administrator_login_password",
-          "NameAlt": "administrator_login_password",
+          "NameAlt": "admin_password",
           "Disposition": "parameters",
           "Type": "str",
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
           "Documentation": "The administrator login password (required for server creation).",
-          "DefaultValueSample": "administrator_login_password",
-          "DefaultValueTest": "",
+          "DefaultValueSample": "Testpasswordxyz12!",
+          "DefaultValueTest": "Testpasswordxyz12!",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -5462,7 +5462,7 @@
           "Required": "False",
           "VariableValue": "None",
           "Documentation": "The version of the server.",
-          "DefaultValueSample": "version",
+          "DefaultValueSample": "",
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0
@@ -5512,12 +5512,12 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645",
           "SubFields": []
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -5526,7 +5526,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -5535,7 +5535,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "Resource tags.",
           "Type": "complex",
           "Returned": "always",
@@ -5544,7 +5544,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -5553,7 +5553,7 @@
         },
         {
           "Name": "identity",
-          "NameAlt": "identity",
+          "NameAlt": "x",
           "Description": "The Azure Active Directory identity of the server.",
           "Type": "complex",
           "Returned": "always",
@@ -5590,7 +5590,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Kind of sql server. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -5599,7 +5599,7 @@
         },
         {
           "Name": "administrator_login",
-          "NameAlt": "administrator_login",
+          "NameAlt": "x",
           "Description": "Administrator username for the server. Once created it cannot be changed.",
           "Type": "str",
           "Returned": "always",
@@ -5608,7 +5608,7 @@
         },
         {
           "Name": "administrator_login_password",
-          "NameAlt": "administrator_login_password",
+          "NameAlt": "x",
           "Description": "The administrator login password (required for server creation).",
           "Type": "str",
           "Returned": "always",
@@ -5621,7 +5621,7 @@
           "Description": "The version of the server.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "version",
+          "SampleValue": "12.0",
           "SubFields": []
         },
         {
@@ -5639,7 +5639,7 @@
           "Description": "The fully qualified domain name of the server.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "fully_qualified_domain_name",
+          "SampleValue": "sqlcrudtest-4645.database.windows.net",
           "SubFields": []
         }
       ],
@@ -5648,7 +5648,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "Servers"
+      "ObjectName": "SQL Server"
     },
     {
       "ModuleName": "azure_rm_sql_servers_facts",
@@ -5711,7 +5711,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "Servers"
+      "ObjectName": "SQL Server"
     },
     {
       "ModuleName": "azure_rm_sql_elasticpoolactivities_facts",

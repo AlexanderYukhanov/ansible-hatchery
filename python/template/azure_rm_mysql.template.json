@@ -14,7 +14,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -28,7 +28,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -167,7 +167,7 @@
               "VariableValue": "None",
               "Documentation": "Server version. Possible values include: '5.6', '5.7'",
               "DefaultValueSample": "version",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "5.6",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -195,7 +195,7 @@
               "VariableValue": "None",
               "Documentation": "Constant filled by server.",
               "DefaultValueSample": "create_mode",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Default",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -209,7 +209,7 @@
               "VariableValue": "None",
               "Documentation": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
               "DefaultValueSample": "administrator_login",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "zimxyz",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -223,7 +223,7 @@
               "VariableValue": "None",
               "Documentation": "The password of the administrator login.",
               "DefaultValueSample": "administrator_login_password",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Testpasswordxyz12!",
               "SubOptions": [],
               "RequiredCount": 0
             }
@@ -240,7 +240,7 @@
           "VariableValue": "None",
           "Documentation": "The location the resource resides in.",
           "DefaultValueSample": "location",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -453,7 +453,7 @@
         }
       ],
       "TestPrerequisitesModule": "",
-      "AssertStateVariable": "state",
+      "AssertStateVariable": "user_visible_state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
@@ -1079,7 +1079,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -1093,7 +1093,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },

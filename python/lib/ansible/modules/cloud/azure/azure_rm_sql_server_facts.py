@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sql_server_facts
 version_added: "2.5"
-short_description: Get Servers facts.
+short_description: Get SQL Server facts.
 description:
-    - Get facts of Servers.
+    - Get facts of SQL Server.
 
 options:
     resource_group_name:
@@ -40,12 +40,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of Servers
+  - name: Get instance of SQL Server
     azure_rm_sql_server_facts:
       resource_group_name: resource_group_name
       server_name: server_name
 
-  - name: List instances of Servers
+  - name: List instances of SQL Server
     azure_rm_sql_server_facts:
       resource_group_name: resource_group_name
 '''
@@ -97,18 +97,18 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified Servers.
+        Gets facts of the specified SQL Server.
 
-        :return: deserialized Serversinstance state dictionary
+        :return: deserialized SQL Serverinstance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
+        self.log("Checking if the SQL Server instance {0} is present".format(self.server_name))
         found = False
         try:
             response = self.mgmt_client.servers.get(self.resource_group_name,
                                                     self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
+            self.log("SQL Server instance : {0} found".format(response.name))
         except CloudError as e:
             self.log('Did not find the Servers instance.')
         if found is True:
@@ -118,17 +118,17 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified Servers.
+        Gets facts of the specified SQL Server.
 
-        :return: deserialized Serversinstance state dictionary
+        :return: deserialized SQL Serverinstance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
+        self.log("Checking if the SQL Server instance {0} is present".format(self.server_name))
         found = False
         try:
             response = self.mgmt_client.servers.list_by_resource_group(self.resource_group_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
+            self.log("SQL Server instance : {0} found".format(response.name))
         except CloudError as e:
             self.log('Did not find the Servers instance.')
         if found is True:
@@ -138,6 +138,6 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMServersFacts()
+    AzureRMSQL ServerFacts()
 if __name__ == '__main__':
     main()

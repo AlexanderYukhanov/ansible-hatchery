@@ -148,7 +148,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
         self.server_name = None
         self.database_name = None
         self.transparent_data_encryption_name = None
-        self.parameters = dict()
+        self.status = None
 
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
@@ -164,8 +164,6 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "status":
-                self.parameters["status"] = kwargs[key]
 
         old_response = None
         results = dict()

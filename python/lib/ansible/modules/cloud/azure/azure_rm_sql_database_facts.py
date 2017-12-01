@@ -32,13 +32,13 @@ options:
         required: True
     database_name:
         description:
-            - The name of the database to be retrieved.
+            - The name of the database.
+    filter:
+        description:
+            - An OData filter expression that describes a subset of metrics to return.
     expand:
         description:
             - A comma separated list of child objects to expand in the response. Possible properties: serviceTierAdvisors, transparentDataEncryption.
-    filter:
-        description:
-            - An OData filter expression that describes a subset of databases to return.
     elastic_pool_name:
         description:
             - The name of the elastic pool to be retrieved.
@@ -124,11 +124,11 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
                 type='str',
                 required=False
             ),
-            expand=dict(
+            filter=dict(
                 type='str',
                 required=False
             ),
-            filter=dict(
+            expand=dict(
                 type='str',
                 required=False
             ),
@@ -149,8 +149,8 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.resource_group_name = None
         self.server_name = None
         self.database_name = None
-        self.expand = None
         self.filter = None
+        self.expand = None
         self.elastic_pool_name = None
         self.recommended_elastic_pool_name = None
         super(AzureRMDatabasesFacts, self).__init__(self.module_arg_spec)
