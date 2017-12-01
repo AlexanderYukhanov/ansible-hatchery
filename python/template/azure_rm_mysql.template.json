@@ -1099,7 +1099,7 @@
         },
         {
           "Name": "database_name",
-          "NameAlt": "database_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1107,7 +1107,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValueSample": "database_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-database",
           "SubOptions": null,
           "RequiredCount": 0
         },
