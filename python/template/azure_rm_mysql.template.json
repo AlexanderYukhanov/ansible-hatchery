@@ -14,7 +14,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "\"{{ resource_group }}\"",
+          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -28,7 +28,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "test-mysql-server",
+          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -167,7 +167,7 @@
               "VariableValue": "None",
               "Documentation": "Server version. Possible values include: '5.6', '5.7'",
               "DefaultValueSample": "version",
-              "DefaultValueTest": "5.6",
+              "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -195,7 +195,7 @@
               "VariableValue": "None",
               "Documentation": "Constant filled by server.",
               "DefaultValueSample": "create_mode",
-              "DefaultValueTest": "Default",
+              "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -209,7 +209,7 @@
               "VariableValue": "None",
               "Documentation": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
               "DefaultValueSample": "administrator_login",
-              "DefaultValueTest": "zimxyz",
+              "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -223,7 +223,7 @@
               "VariableValue": "None",
               "Documentation": "The password of the administrator login.",
               "DefaultValueSample": "administrator_login_password",
-              "DefaultValueTest": "Testpasswordxyz12!",
+              "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0
             }
@@ -240,7 +240,7 @@
           "VariableValue": "None",
           "Documentation": "The location the resource resides in.",
           "DefaultValueSample": "location",
-          "DefaultValueTest": "westus",
+          "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -453,7 +453,7 @@
         }
       ],
       "TestPrerequisitesModule": "",
-      "AssertStateVariable": "user_visible_state",
+      "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
@@ -475,7 +475,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "server_name",
@@ -489,7 +489,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 1
         }
       ],
       "Methods": [
@@ -724,7 +724,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "server_name",
@@ -738,7 +738,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "firewall_rule_name",
@@ -752,7 +752,7 @@
           "DefaultValueSample": "firewall_rule_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 1
         }
       ],
       "Methods": [
@@ -1000,7 +1000,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "server_name",
@@ -1014,7 +1014,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "virtual_network_rule_name",
@@ -1028,7 +1028,7 @@
           "DefaultValueSample": "virtual_network_rule_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 1
         }
       ],
       "Methods": [
@@ -1267,7 +1267,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "server_name",
@@ -1281,7 +1281,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "database_name",
@@ -1295,7 +1295,7 @@
           "DefaultValueSample": "database_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 1
         }
       ],
       "Methods": [
@@ -1557,7 +1557,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "server_name",
@@ -1571,7 +1571,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 2
         },
         {
           "Name": "configuration_name",
@@ -1585,7 +1585,7 @@
           "DefaultValueSample": "configuration_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 1
         }
       ],
       "Methods": [
@@ -1638,7 +1638,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 1
         },
         {
           "Name": "server_name",
@@ -1652,7 +1652,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 1
         }
       ],
       "Methods": [
