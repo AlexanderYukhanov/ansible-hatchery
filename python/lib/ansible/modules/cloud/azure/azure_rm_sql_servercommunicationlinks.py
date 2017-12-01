@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of ServerCommunicationLinks
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -51,7 +51,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerCommunicationLinks
     azure_rm_sql_servercommunicationlinks:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       communication_link_name: communication_link_name
       partner_server: partner_server
@@ -124,7 +124,7 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -148,7 +148,7 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.communication_link_name = None
         self.partner_server = None
@@ -220,7 +220,7 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
         self.log("Creating / Updating the ServerCommunicationLinks instance {0}".format(self.communication_link_name))
 
         try:
-            response = self.mgmt_client.server_communication_links.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.server_communication_links.create_or_update(self.resource_group,
                                                                                     self.server_name,
                                                                                     self.communication_link_name,
                                                                                     self.partner_server)
@@ -240,7 +240,7 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
         '''
         self.log("Deleting the ServerCommunicationLinks instance {0}".format(self.communication_link_name))
         try:
-            response = self.mgmt_client.server_communication_links.delete(self.resource_group_name,
+            response = self.mgmt_client.server_communication_links.delete(self.resource_group,
                                                                           self.server_name,
                                                                           self.communication_link_name)
         except CloudError as e:
@@ -258,7 +258,7 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
         self.log("Checking if the ServerCommunicationLinks instance {0} is present".format(self.communication_link_name))
         found = False
         try:
-            response = self.mgmt_client.server_communication_links.get(self.resource_group_name,
+            response = self.mgmt_client.server_communication_links.get(self.resource_group,
                                                                        self.server_name,
                                                                        self.communication_link_name)
             found = True

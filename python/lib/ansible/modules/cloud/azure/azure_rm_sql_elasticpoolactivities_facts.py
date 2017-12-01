@@ -22,7 +22,7 @@ description:
     - Get facts of ElasticPoolActivities.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -47,7 +47,7 @@ author:
 EXAMPLES = '''
   - name: List instances of ElasticPoolActivities
     azure_rm_sql_elasticpoolactivities_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       elastic_pool_name: elastic_pool_name
 '''
@@ -68,7 +68,7 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -86,7 +86,7 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.elastic_pool_name = None
         super(AzureRMElasticPoolActivitiesFacts, self).__init__(self.module_arg_spec)
@@ -110,7 +110,7 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
         self.log("Checking if the ElasticPoolActivities instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.elastic_pool_activities.list_by_elastic_pool(self.resource_group_name,
+            response = self.mgmt_client.elastic_pool_activities.list_by_elastic_pool(self.resource_group,
                                                                                      self.server_name,
                                                                                      self.elastic_pool_name)
             found = True

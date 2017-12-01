@@ -22,7 +22,7 @@ description:
     - Get facts of VirtualNetworkRules.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -46,13 +46,13 @@ author:
 EXAMPLES = '''
   - name: Get instance of VirtualNetworkRules
     azure_rm_mysql_virtualnetworkrule_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       virtual_network_rule_name: virtual_network_rule_name
 
   - name: List instances of VirtualNetworkRules
     azure_rm_mysql_virtualnetworkrule_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
 '''
 
@@ -72,7 +72,7 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -90,7 +90,7 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.virtual_network_rule_name = None
         super(AzureRMVirtualNetworkRulesFacts, self).__init__(self.module_arg_spec)
@@ -117,7 +117,7 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
         self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.virtual_network_rule_name))
         found = False
         try:
-            response = self.mgmt_client.virtual_network_rules.get(self.resource_group_name,
+            response = self.mgmt_client.virtual_network_rules.get(self.resource_group,
                                                                   self.server_name,
                                                                   self.virtual_network_rule_name)
             found = True
@@ -139,7 +139,7 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
         self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.virtual_network_rule_name))
         found = False
         try:
-            response = self.mgmt_client.virtual_network_rules.list_by_server(self.resource_group_name,
+            response = self.mgmt_client.virtual_network_rules.list_by_server(self.resource_group,
                                                                              self.server_name)
             found = True
             self.log("Response : {0}".format(response))

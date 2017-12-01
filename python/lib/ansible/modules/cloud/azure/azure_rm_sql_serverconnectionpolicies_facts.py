@@ -22,7 +22,7 @@ description:
     - Get facts of ServerConnectionPolicies.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -47,7 +47,7 @@ author:
 EXAMPLES = '''
   - name: Get instance of ServerConnectionPolicies
     azure_rm_sql_serverconnectionpolicies_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       connection_policy_name: connection_policy_name
 '''
@@ -68,7 +68,7 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -86,7 +86,7 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.connection_policy_name = None
         super(AzureRMServerConnectionPoliciesFacts, self).__init__(self.module_arg_spec)
@@ -110,7 +110,7 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
         self.log("Checking if the ServerConnectionPolicies instance {0} is present".format(self.connection_policy_name))
         found = False
         try:
-            response = self.mgmt_client.server_connection_policies.get(self.resource_group_name,
+            response = self.mgmt_client.server_connection_policies.get(self.resource_group,
                                                                        self.server_name,
                                                                        self.connection_policy_name)
             found = True

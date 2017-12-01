@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of VirtualNetworkRules
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -54,7 +54,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) VirtualNetworkRules
     azure_rm_postgresql_virtualnetworkrule:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       virtual_network_rule_name: virtual_network_rule_name
       virtual_network_subnet_id: virtual_network_subnet_id
@@ -122,7 +122,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -150,7 +150,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.virtual_network_rule_name = None
         self.parameters = dict()
@@ -226,7 +226,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.log("Creating / Updating the VirtualNetworkRules instance {0}".format(self.virtual_network_rule_name))
 
         try:
-            response = self.mgmt_client.virtual_network_rules.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.virtual_network_rules.create_or_update(self.resource_group,
                                                                                self.server_name,
                                                                                self.virtual_network_rule_name,
                                                                                self.parameters)
@@ -246,7 +246,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         '''
         self.log("Deleting the VirtualNetworkRules instance {0}".format(self.virtual_network_rule_name))
         try:
-            response = self.mgmt_client.virtual_network_rules.delete(self.resource_group_name,
+            response = self.mgmt_client.virtual_network_rules.delete(self.resource_group,
                                                                      self.server_name,
                                                                      self.virtual_network_rule_name)
         except CloudError as e:
@@ -264,7 +264,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.virtual_network_rule_name))
         found = False
         try:
-            response = self.mgmt_client.virtual_network_rules.get(self.resource_group_name,
+            response = self.mgmt_client.virtual_network_rules.get(self.resource_group,
                                                                   self.server_name,
                                                                   self.virtual_network_rule_name)
             found = True

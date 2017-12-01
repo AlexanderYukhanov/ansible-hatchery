@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of DataMaskingRules
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -95,7 +95,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) DataMaskingRules
     azure_rm_sql_datamaskingrules:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       data_masking_policy_name: data_masking_policy_name
@@ -245,7 +245,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -317,7 +317,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         self.data_masking_policy_name = None
@@ -413,7 +413,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
         self.log("Creating / Updating the DataMaskingRules instance {0}".format(self.))
 
         try:
-            response = self.mgmt_client.data_masking_rules.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.data_masking_rules.create_or_update(self.resource_group,
                                                                             self.server_name,
                                                                             self.database_name,
                                                                             self.data_masking_policy_name,

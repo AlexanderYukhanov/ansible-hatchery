@@ -6,7 +6,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -194,7 +194,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -280,7 +280,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -425,7 +425,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -495,7 +495,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -565,7 +565,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -646,7 +646,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -765,7 +765,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -919,7 +919,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -989,7 +989,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1350,7 +1350,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1436,7 +1436,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1650,7 +1650,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1736,7 +1736,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -2162,7 +2162,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -2248,7 +2248,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -2440,7 +2440,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -2521,7 +2521,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -2702,7 +2702,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -3910,7 +3910,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -4455,7 +4455,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -4578,7 +4578,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -4677,7 +4677,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -4909,7 +4909,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -4990,7 +4990,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5166,7 +5166,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5247,7 +5247,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5656,7 +5656,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5719,7 +5719,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5789,7 +5789,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5859,7 +5859,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -5953,7 +5953,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6052,7 +6052,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6214,7 +6214,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6300,7 +6300,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6386,7 +6386,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6440,7 +6440,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6510,7 +6510,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6825,7 +6825,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -6911,7 +6911,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -7143,7 +7143,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -7224,7 +7224,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -7622,7 +7622,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -7703,7 +7703,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -7976,7 +7976,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -8057,7 +8057,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -8259,7 +8259,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -8353,7 +8353,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -8836,7 +8836,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -9051,7 +9051,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -9424,7 +9424,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -9558,7 +9558,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -9740,7 +9740,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -9821,7 +9821,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -9891,7 +9891,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -10024,7 +10024,7 @@
       "Options": [
         {
           "Name": "resource_group_name",
-          "NameAlt": "resource_group_name",
+          "NameAlt": "resource_group",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,

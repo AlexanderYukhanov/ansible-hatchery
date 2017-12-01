@@ -22,7 +22,7 @@ description:
     - Get facts of Databases.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -58,40 +58,40 @@ author:
 EXAMPLES = '''
   - name: List instances of Databases
     azure_rm_sql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       filter: filter
 
   - name: Get instance of Databases
     azure_rm_sql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       expand: expand
 
   - name: List instances of Databases
     azure_rm_sql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       expand: expand
       filter: filter
 
   - name: List instances of Databases
     azure_rm_sql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
 
   - name: List instances of Databases
     azure_rm_sql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       elastic_pool_name: elastic_pool_name
 
   - name: List instances of Databases
     azure_rm_sql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       recommended_elastic_pool_name: recommended_elastic_pool_name
 '''
@@ -112,7 +112,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -146,7 +146,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         self.filter = None
@@ -194,7 +194,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.databases.list_metrics(self.resource_group_name,
+            response = self.mgmt_client.databases.list_metrics(self.resource_group,
                                                                self.server_name,
                                                                self.database_name,
                                                                self.filter)
@@ -217,7 +217,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.databases.get(self.resource_group_name,
+            response = self.mgmt_client.databases.get(self.resource_group,
                                                       self.server_name,
                                                       self.database_name)
             found = True
@@ -239,7 +239,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.databases.list_by_server(self.resource_group_name,
+            response = self.mgmt_client.databases.list_by_server(self.resource_group,
                                                                  self.server_name)
             found = True
             self.log("Response : {0}".format(response))
@@ -260,7 +260,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.databases.list_metric_definitions(self.resource_group_name,
+            response = self.mgmt_client.databases.list_metric_definitions(self.resource_group,
                                                                           self.server_name,
                                                                           self.database_name)
             found = True
@@ -282,7 +282,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.databases.list_by_elastic_pool(self.resource_group_name,
+            response = self.mgmt_client.databases.list_by_elastic_pool(self.resource_group,
                                                                        self.server_name,
                                                                        self.elastic_pool_name)
             found = True
@@ -304,7 +304,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.databases.list_by_recommended_elastic_pool(self.resource_group_name,
+            response = self.mgmt_client.databases.list_by_recommended_elastic_pool(self.resource_group,
                                                                                    self.server_name,
                                                                                    self.recommended_elastic_pool_name)
             found = True

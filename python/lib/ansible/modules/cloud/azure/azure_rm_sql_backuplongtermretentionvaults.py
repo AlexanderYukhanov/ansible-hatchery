@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of BackupLongTermRetentionVaults
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -51,7 +51,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) BackupLongTermRetentionVaults
     azure_rm_sql_backuplongtermretentionvaults:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       backup_long_term_retention_vault_name: backup_long_term_retention_vault_name
       recovery_services_vault_resource_id: recovery_services_vault_resource_id
@@ -112,7 +112,7 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -136,7 +136,7 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.backup_long_term_retention_vault_name = None
         self.recovery_services_vault_resource_id = None
@@ -208,7 +208,7 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
         self.log("Creating / Updating the BackupLongTermRetentionVaults instance {0}".format(self.backup_long_term_retention_vault_name))
 
         try:
-            response = self.mgmt_client.backup_long_term_retention_vaults.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.backup_long_term_retention_vaults.create_or_update(self.resource_group,
                                                                                            self.server_name,
                                                                                            self.backup_long_term_retention_vault_name,
                                                                                            self.recovery_services_vault_resource_id)
@@ -244,7 +244,7 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
         self.log("Checking if the BackupLongTermRetentionVaults instance {0} is present".format(self.backup_long_term_retention_vault_name))
         found = False
         try:
-            response = self.mgmt_client.backup_long_term_retention_vaults.get(self.resource_group_name,
+            response = self.mgmt_client.backup_long_term_retention_vaults.get(self.resource_group,
                                                                               self.server_name,
                                                                               self.backup_long_term_retention_vault_name)
             found = True

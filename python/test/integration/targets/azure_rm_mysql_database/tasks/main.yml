@@ -1,6 +1,6 @@
 - name: Create instance of Databases
   azure_rm_mysql_database:
-    resource_group_name: "{{ resource_group }}"
+    resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
   register: output
 - name: Assert the resource instance is well created
@@ -11,7 +11,7 @@
 
 - name: Update instance of Databases
   azure_rm_mysql_database:
-    resource_group_name: "{{ resource_group }}"
+    resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
   register: output
 - name: Assert the state has not changed
@@ -22,7 +22,7 @@
 
 - name: Delete instance of Databases
   azure_rm_mysql_database:
-    resource_group_name: "{{ resource_group }}"
+    resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
     state: absent
   register: output

@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of ServerKeys
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -65,7 +65,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerKeys
     azure_rm_sql_serverkeys:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       key_name: key_name
       kind: kind
@@ -160,7 +160,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -200,7 +200,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.key_name = None
         self.parameters = dict()
@@ -282,7 +282,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
         self.log("Creating / Updating the ServerKeys instance {0}".format(self.key_name))
 
         try:
-            response = self.mgmt_client.server_keys.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.server_keys.create_or_update(self.resource_group,
                                                                      self.server_name,
                                                                      self.key_name,
                                                                      self.parameters)
@@ -302,7 +302,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
         '''
         self.log("Deleting the ServerKeys instance {0}".format(self.key_name))
         try:
-            response = self.mgmt_client.server_keys.delete(self.resource_group_name,
+            response = self.mgmt_client.server_keys.delete(self.resource_group,
                                                            self.server_name,
                                                            self.key_name)
         except CloudError as e:
@@ -320,7 +320,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
         self.log("Checking if the ServerKeys instance {0} is present".format(self.key_name))
         found = False
         try:
-            response = self.mgmt_client.server_keys.get(self.resource_group_name,
+            response = self.mgmt_client.server_keys.get(self.resource_group,
                                                         self.server_name,
                                                         self.key_name)
             found = True

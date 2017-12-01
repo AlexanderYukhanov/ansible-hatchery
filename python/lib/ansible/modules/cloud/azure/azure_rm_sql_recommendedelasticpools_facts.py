@@ -22,7 +22,7 @@ description:
     - Get facts of RecommendedElasticPools.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -46,19 +46,19 @@ author:
 EXAMPLES = '''
   - name: Get instance of RecommendedElasticPools
     azure_rm_sql_recommendedelasticpools_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       recommended_elastic_pool_name: recommended_elastic_pool_name
 
   - name: List instances of RecommendedElasticPools
     azure_rm_sql_recommendedelasticpools_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       recommended_elastic_pool_name: recommended_elastic_pool_name
 
   - name: List instances of RecommendedElasticPools
     azure_rm_sql_recommendedelasticpools_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
 '''
 
@@ -78,7 +78,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -96,7 +96,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.recommended_elastic_pool_name = None
         super(AzureRMRecommendedElasticPoolsFacts, self).__init__(self.module_arg_spec)
@@ -127,7 +127,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         self.log("Checking if the RecommendedElasticPools instance {0} is present".format(self.recommended_elastic_pool_name))
         found = False
         try:
-            response = self.mgmt_client.recommended_elastic_pools.get(self.resource_group_name,
+            response = self.mgmt_client.recommended_elastic_pools.get(self.resource_group,
                                                                       self.server_name,
                                                                       self.recommended_elastic_pool_name)
             found = True
@@ -149,7 +149,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         self.log("Checking if the RecommendedElasticPools instance {0} is present".format(self.recommended_elastic_pool_name))
         found = False
         try:
-            response = self.mgmt_client.recommended_elastic_pools.list_metrics(self.resource_group_name,
+            response = self.mgmt_client.recommended_elastic_pools.list_metrics(self.resource_group,
                                                                                self.server_name,
                                                                                self.recommended_elastic_pool_name)
             found = True
@@ -171,7 +171,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         self.log("Checking if the RecommendedElasticPools instance {0} is present".format(self.recommended_elastic_pool_name))
         found = False
         try:
-            response = self.mgmt_client.recommended_elastic_pools.list_by_server(self.resource_group_name,
+            response = self.mgmt_client.recommended_elastic_pools.list_by_server(self.resource_group,
                                                                                  self.server_name)
             found = True
             self.log("Response : {0}".format(response))

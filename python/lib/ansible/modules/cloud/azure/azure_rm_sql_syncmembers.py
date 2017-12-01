@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of SyncMembers
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -79,7 +79,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) SyncMembers
     azure_rm_sql_syncmembers:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       sync_group_name: sync_group_name
@@ -193,7 +193,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -253,7 +253,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         self.sync_group_name = None
@@ -343,7 +343,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
         self.log("Creating / Updating the SyncMembers instance {0}".format(self.sync_member_name))
 
         try:
-            response = self.mgmt_client.sync_members.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.sync_members.create_or_update(self.resource_group,
                                                                       self.server_name,
                                                                       self.database_name,
                                                                       self.sync_group_name,
@@ -365,7 +365,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
         '''
         self.log("Deleting the SyncMembers instance {0}".format(self.sync_member_name))
         try:
-            response = self.mgmt_client.sync_members.delete(self.resource_group_name,
+            response = self.mgmt_client.sync_members.delete(self.resource_group,
                                                             self.server_name,
                                                             self.database_name,
                                                             self.sync_group_name,
@@ -385,7 +385,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
         self.log("Checking if the SyncMembers instance {0} is present".format(self.sync_member_name))
         found = False
         try:
-            response = self.mgmt_client.sync_members.get(self.resource_group_name,
+            response = self.mgmt_client.sync_members.get(self.resource_group,
                                                          self.server_name,
                                                          self.database_name,
                                                          self.sync_group_name,

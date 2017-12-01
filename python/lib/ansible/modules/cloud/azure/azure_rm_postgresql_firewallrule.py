@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of FirewallRules
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -55,7 +55,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) FirewallRules
     azure_rm_postgresql_firewallrule:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       firewall_rule_name: firewall_rule_name
       start_ip_address: start_ip_address
@@ -117,7 +117,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -145,7 +145,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.firewall_rule_name = None
         self.parameters = dict()
@@ -221,7 +221,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.log("Creating / Updating the FirewallRules instance {0}".format(self.firewall_rule_name))
 
         try:
-            response = self.mgmt_client.firewall_rules.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.firewall_rules.create_or_update(self.resource_group,
                                                                         self.server_name,
                                                                         self.firewall_rule_name,
                                                                         self.parameters)
@@ -241,7 +241,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         '''
         self.log("Deleting the FirewallRules instance {0}".format(self.firewall_rule_name))
         try:
-            response = self.mgmt_client.firewall_rules.delete(self.resource_group_name,
+            response = self.mgmt_client.firewall_rules.delete(self.resource_group,
                                                               self.server_name,
                                                               self.firewall_rule_name)
         except CloudError as e:
@@ -259,7 +259,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.log("Checking if the FirewallRules instance {0} is present".format(self.firewall_rule_name))
         found = False
         try:
-            response = self.mgmt_client.firewall_rules.get(self.resource_group_name,
+            response = self.mgmt_client.firewall_rules.get(self.resource_group,
                                                            self.server_name,
                                                            self.firewall_rule_name)
             found = True

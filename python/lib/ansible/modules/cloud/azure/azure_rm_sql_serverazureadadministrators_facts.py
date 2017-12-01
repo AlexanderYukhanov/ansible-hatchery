@@ -22,7 +22,7 @@ description:
     - Get facts of ServerAzureADAdministrators.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -46,13 +46,13 @@ author:
 EXAMPLES = '''
   - name: Get instance of ServerAzureADAdministrators
     azure_rm_sql_serverazureadadministrators_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       administrator_name: administrator_name
 
   - name: List instances of ServerAzureADAdministrators
     azure_rm_sql_serverazureadadministrators_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
 '''
 
@@ -72,7 +72,7 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -90,7 +90,7 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.administrator_name = None
         super(AzureRMServerAzureADAdministratorsFacts, self).__init__(self.module_arg_spec)
@@ -117,7 +117,7 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
         self.log("Checking if the ServerAzureADAdministrators instance {0} is present".format(self.administrator_name))
         found = False
         try:
-            response = self.mgmt_client.server_azure_ad_administrators.get(self.resource_group_name,
+            response = self.mgmt_client.server_azure_ad_administrators.get(self.resource_group,
                                                                            self.server_name,
                                                                            self.administrator_name)
             found = True
@@ -139,7 +139,7 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
         self.log("Checking if the ServerAzureADAdministrators instance {0} is present".format(self.administrator_name))
         found = False
         try:
-            response = self.mgmt_client.server_azure_ad_administrators.list_by_server(self.resource_group_name,
+            response = self.mgmt_client.server_azure_ad_administrators.list_by_server(self.resource_group,
                                                                                       self.server_name)
             found = True
             self.log("Response : {0}".format(response))

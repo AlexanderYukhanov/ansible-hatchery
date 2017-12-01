@@ -22,7 +22,7 @@ description:
     - Get facts of LogFiles.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -43,7 +43,7 @@ author:
 EXAMPLES = '''
   - name: List instances of LogFiles
     azure_rm_mysql_logfiles_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
 '''
 
@@ -63,7 +63,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -77,7 +77,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         super(AzureRMLogFilesFacts, self).__init__(self.module_arg_spec)
 
@@ -99,7 +99,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
         self.log("Checking if the LogFiles instance {0} is present".format(self.))
         found = False
         try:
-            response = self.mgmt_client.log_files.list_by_server(self.resource_group_name,
+            response = self.mgmt_client.log_files.list_by_server(self.resource_group,
                                                                  self.server_name)
             found = True
             self.log("Response : {0}".format(response))

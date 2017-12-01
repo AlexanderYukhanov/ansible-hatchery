@@ -22,7 +22,7 @@ description:
     - Get facts of TransparentDataEncryptions.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -51,7 +51,7 @@ author:
 EXAMPLES = '''
   - name: Get instance of TransparentDataEncryptions
     azure_rm_sql_transparentdataencryptions_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       transparent_data_encryption_name: transparent_data_encryption_name
@@ -73,7 +73,7 @@ class AzureRMTransparentDataEncryptionsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -95,7 +95,7 @@ class AzureRMTransparentDataEncryptionsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         self.transparent_data_encryption_name = None
@@ -121,7 +121,7 @@ class AzureRMTransparentDataEncryptionsFacts(AzureRMModuleBase):
         self.log("Checking if the TransparentDataEncryptions instance {0} is present".format(self.transparent_data_encryption_name))
         found = False
         try:
-            response = self.mgmt_client.transparent_data_encryptions.get(self.resource_group_name,
+            response = self.mgmt_client.transparent_data_encryptions.get(self.resource_group,
                                                                          self.server_name,
                                                                          self.database_name,
                                                                          self.transparent_data_encryption_name)

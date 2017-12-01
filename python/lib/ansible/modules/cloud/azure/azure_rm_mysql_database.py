@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of Databases
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -53,7 +53,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Databases
     azure_rm_mysql_database:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       charset: charset
@@ -115,7 +115,7 @@ class AzureRMDatabases(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -143,7 +143,7 @@ class AzureRMDatabases(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         self.parameters = dict()
@@ -219,7 +219,7 @@ class AzureRMDatabases(AzureRMModuleBase):
         self.log("Creating / Updating the Databases instance {0}".format(self.database_name))
 
         try:
-            response = self.mgmt_client.databases.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.databases.create_or_update(self.resource_group,
                                                                    self.server_name,
                                                                    self.database_name,
                                                                    self.parameters)
@@ -239,7 +239,7 @@ class AzureRMDatabases(AzureRMModuleBase):
         '''
         self.log("Deleting the Databases instance {0}".format(self.database_name))
         try:
-            response = self.mgmt_client.databases.delete(self.resource_group_name,
+            response = self.mgmt_client.databases.delete(self.resource_group,
                                                          self.server_name,
                                                          self.database_name)
         except CloudError as e:
@@ -257,7 +257,7 @@ class AzureRMDatabases(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.database_name))
         found = False
         try:
-            response = self.mgmt_client.databases.get(self.resource_group_name,
+            response = self.mgmt_client.databases.get(self.resource_group,
                                                       self.server_name,
                                                       self.database_name)
             found = True

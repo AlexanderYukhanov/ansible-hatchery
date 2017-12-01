@@ -22,7 +22,7 @@ description:
     - Get facts of Databases.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -46,13 +46,13 @@ author:
 EXAMPLES = '''
   - name: Get instance of Databases
     azure_rm_postgresql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
 
   - name: List instances of Databases
     azure_rm_postgresql_database_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
 '''
 
@@ -72,7 +72,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -90,7 +90,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         super(AzureRMDatabasesFacts, self).__init__(self.module_arg_spec)
@@ -117,7 +117,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.database_name))
         found = False
         try:
-            response = self.mgmt_client.databases.get(self.resource_group_name,
+            response = self.mgmt_client.databases.get(self.resource_group,
                                                       self.server_name,
                                                       self.database_name)
             found = True
@@ -139,7 +139,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         self.log("Checking if the Databases instance {0} is present".format(self.database_name))
         found = False
         try:
-            response = self.mgmt_client.databases.list_by_server(self.resource_group_name,
+            response = self.mgmt_client.databases.list_by_server(self.resource_group,
                                                                  self.server_name)
             found = True
             self.log("Response : {0}".format(response))

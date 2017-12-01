@@ -22,7 +22,7 @@ description:
     - Create, update and delete instance of DatabaseBlobAuditingPolicies
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -74,7 +74,7 @@ author:
 EXAMPLES = '''
   - name: Create (or update) DatabaseBlobAuditingPolicies
     azure_rm_sql_databaseblobauditingpolicies:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       blob_auditing_policy_name: blob_auditing_policy_name
@@ -180,7 +180,7 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
 
     def __init__(self):
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -232,7 +232,7 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
             )
         )
 
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         self.blob_auditing_policy_name = None
@@ -319,7 +319,7 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
         self.log("Creating / Updating the DatabaseBlobAuditingPolicies instance {0}".format(self.blob_auditing_policy_name))
 
         try:
-            response = self.mgmt_client.database_blob_auditing_policies.create_or_update(self.resource_group_name,
+            response = self.mgmt_client.database_blob_auditing_policies.create_or_update(self.resource_group,
                                                                                          self.server_name,
                                                                                          self.database_name,
                                                                                          self.blob_auditing_policy_name,
@@ -356,7 +356,7 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
         self.log("Checking if the DatabaseBlobAuditingPolicies instance {0} is present".format(self.blob_auditing_policy_name))
         found = False
         try:
-            response = self.mgmt_client.database_blob_auditing_policies.get(self.resource_group_name,
+            response = self.mgmt_client.database_blob_auditing_policies.get(self.resource_group,
                                                                             self.server_name,
                                                                             self.database_name,
                                                                             self.blob_auditing_policy_name)

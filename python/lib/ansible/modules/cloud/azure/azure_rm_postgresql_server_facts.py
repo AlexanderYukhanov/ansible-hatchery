@@ -22,7 +22,7 @@ description:
     - Get facts of Servers.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
@@ -42,12 +42,12 @@ author:
 EXAMPLES = '''
   - name: Get instance of Servers
     azure_rm_postgresql_server_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
 
   - name: List instances of Servers
     azure_rm_postgresql_server_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -66,7 +66,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=True
             ),
@@ -80,7 +80,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         super(AzureRMServersFacts, self).__init__(self.module_arg_spec)
 
@@ -104,7 +104,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
         self.log("Checking if the Servers instance {0} is present".format(self.server_name))
         found = False
         try:
-            response = self.mgmt_client.servers.get(self.resource_group_name,
+            response = self.mgmt_client.servers.get(self.resource_group,
                                                     self.server_name)
             found = True
             self.log("Response : {0}".format(response))
@@ -125,7 +125,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
         self.log("Checking if the Servers instance {0} is present".format(self.server_name))
         found = False
         try:
-            response = self.mgmt_client.servers.list_by_resource_group(self.resource_group_name)
+            response = self.mgmt_client.servers.list_by_resource_group(self.resource_group)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Servers instance : {0} found".format(response.name))

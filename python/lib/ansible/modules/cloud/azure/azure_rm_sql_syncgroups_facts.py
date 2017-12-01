@@ -22,7 +22,7 @@ description:
     - Get facts of SyncGroups.
 
 options:
-    resource_group_name:
+    resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
     server_name:
@@ -62,7 +62,7 @@ author:
 EXAMPLES = '''
   - name: List instances of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       sync_group_name: sync_group_name
@@ -73,21 +73,21 @@ EXAMPLES = '''
 
   - name: List instances of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       sync_group_name: sync_group_name
 
   - name: Get instance of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       sync_group_name: sync_group_name
 
   - name: List instances of SyncGroups
     azure_rm_sql_syncgroups_facts:
-      resource_group_name: resource_group_name
+      resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
 
@@ -112,7 +112,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group_name=dict(
+            resource_group=dict(
                 type='str',
                 required=False
             ),
@@ -154,7 +154,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict(azure_dnsrecordset=[])
         )
-        self.resource_group_name = None
+        self.resource_group = None
         self.server_name = None
         self.database_name = None
         self.sync_group_name = None
@@ -204,7 +204,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
-            response = self.mgmt_client.sync_groups.list_logs(self.resource_group_name,
+            response = self.mgmt_client.sync_groups.list_logs(self.resource_group,
                                                               self.server_name,
                                                               self.database_name,
                                                               self.sync_group_name,
@@ -230,7 +230,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
-            response = self.mgmt_client.sync_groups.list_hub_schemas(self.resource_group_name,
+            response = self.mgmt_client.sync_groups.list_hub_schemas(self.resource_group,
                                                                      self.server_name,
                                                                      self.database_name,
                                                                      self.sync_group_name)
@@ -253,7 +253,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
-            response = self.mgmt_client.sync_groups.get(self.resource_group_name,
+            response = self.mgmt_client.sync_groups.get(self.resource_group,
                                                         self.server_name,
                                                         self.database_name,
                                                         self.sync_group_name)
@@ -276,7 +276,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
-            response = self.mgmt_client.sync_groups.list_by_database(self.resource_group_name,
+            response = self.mgmt_client.sync_groups.list_by_database(self.resource_group,
                                                                      self.server_name,
                                                                      self.database_name)
             found = True
