@@ -2823,7 +2823,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "zims-server",
+          "DefaultValueTest": "sql-test-server-dauih",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -2879,7 +2879,7 @@
           "VariableValue": "None",
           "Documentation": "Resource location.",
           "DefaultValueSample": "location",
-          "DefaultValueTest": "westus",
+          "DefaultValueTest": "eastus",
           "SubOptions": [],
           "RequiredCount": 0
         },

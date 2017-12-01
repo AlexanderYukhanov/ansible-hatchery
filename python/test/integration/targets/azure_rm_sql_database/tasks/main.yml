@@ -8,9 +8,9 @@
 - name: Create instance of Database
   azure_rm_sql_database:
     resource_group: "{{ resource_group }}"
-    server_name: zims-server
+    server_name: sql-test-server-dauih
     name: test-database
-    location: westus
+    location: eastus
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -21,9 +21,9 @@
 - name: Update instance of Database
   azure_rm_sql_database:
     resource_group: "{{ resource_group }}"
-    server_name: zims-server
+    server_name: sql-test-server-dauih
     name: test-database
-    location: westus
+    location: eastus
   register: output
 - name: Assert the state has not changed
   assert:
@@ -34,7 +34,7 @@
 - name: Delete instance of Database
   azure_rm_sql_database:
     resource_group: "{{ resource_group }}"
-    server_name: zims-server
+    server_name: sql-test-server-dauih
     name: test-database
     state: absent
   register: output
