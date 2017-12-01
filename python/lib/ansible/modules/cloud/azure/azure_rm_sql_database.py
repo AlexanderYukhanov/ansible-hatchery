@@ -40,7 +40,6 @@ options:
     location:
         description:
             - Resource location.
-        required: True
     collation:
         description:
             - The collation of the database. If createMode is not Default, this value is ignored.
@@ -749,7 +748,7 @@ class AzureRMDatabases(AzureRMModuleBase):
             ),
             location=dict(
                 type='str',
-                required=True
+                required=False
             ),
             collation=dict(
                 type='str',
