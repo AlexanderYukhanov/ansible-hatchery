@@ -93,7 +93,7 @@ state:
                 - Resource ID
             returned: always
             type: str
-            sample: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+            sample: /subscriptions/00000000-0000-0000-0000-000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
         name:
             description:
                 - Registry name
@@ -164,7 +164,7 @@ state:
             provisioning_state:
                 - Tags
             returned: always
-            type: complex        
+            type: complex
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -305,7 +305,7 @@ class AzureRMContainerRegistry(AzureRMModuleBase):
 
             self.results['state'] = self.create_update_containerregistry(to_do)
             if to_do != Actions.NoAction:
-                self.results['changed'] = (cmp(response, self.results['state']) != 0)
+                self.results['changed'] = (response is None) or (self.results['state'].__ne__(response))
             else:
                 self.results['changed'] = False
 
@@ -406,7 +406,7 @@ class AzureRMContainerRegistry(AzureRMModuleBase):
         except CloudError as e:
             if e.error.error == 'ResourceNotFound':
                 self.log('Did not find the container registry instance: {0}'.format(str(e)))
-            else 
+            else:
                 self.fail('Error while trying to get container registry instance: {0}'.format(str(e)))
             response = None
         if found is True and self.admin_user_enabled is True:
