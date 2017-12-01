@@ -30,12 +30,12 @@ options:
         description:
             - The name of the server.
         required: True
-    location:
-        description:
-            - Resource location.
     tags:
         description:
             - Resource tags.
+    location:
+        description:
+            - Resource location.
     identity:
         description:
             - The Azure Active Directory identity of the server.
@@ -130,12 +130,12 @@ class AzureRMServers(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            location=dict(
-                type='str',
-                required=False
-            ),
             tags=dict(
                 type='dict',
+                required=False
+            ),
+            location=dict(
+                type='str',
                 required=False
             ),
             identity=dict(
@@ -180,10 +180,10 @@ class AzureRMServers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "location":
-                self.parameters["location"] = kwargs[key]
             elif key == "tags":
                 self.parameters["tags"] = kwargs[key]
+            elif key == "location":
+                self.parameters["location"] = kwargs[key]
             elif key == "identity":
                 self.parameters["identity"] = kwargs[key]
             elif key == "admin_username":
