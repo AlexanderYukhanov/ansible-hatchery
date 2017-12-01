@@ -18,7 +18,7 @@
   assert:
     that:
       - output.changed
-      - output.state.state == 'Ready'
+      - output.state.name == 'testdatabase'
 
 - name: Update instance of Databases
   azure_rm_mysql_database:
@@ -30,7 +30,7 @@
   assert:
     that:
       - output.changed == false
-      - output.state.state == 'Ready'
+      - output.state.name == 'testdatabase'
 
 - name: Delete instance of Databases
   azure_rm_mysql_database:

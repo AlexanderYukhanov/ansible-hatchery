@@ -1245,8 +1245,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysql_servers",
-      "AssertStateVariable": "state",
-      "AssertStateExpectedValue": "Ready",
+      "AssertStateVariable": "name",
+      "AssertStateExpectedValue": "testdatabase",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "Databases"
