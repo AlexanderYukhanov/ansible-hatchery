@@ -205,7 +205,7 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = (cmp(old_response, self.results['state']) != 0)
+                self.results['changed'] = old_response.__ne__(self.results['state'])
 
             self.log("Creation / Update done")
 
