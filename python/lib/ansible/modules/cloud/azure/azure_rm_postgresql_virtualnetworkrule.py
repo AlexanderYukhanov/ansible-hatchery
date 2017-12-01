@@ -54,11 +54,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) VirtualNetworkRules
     azure_rm_postgresql_virtualnetworkrule:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      virtual_network_rule_name: "{{ virtual_network_rule_name }}"
-      virtual_network_subnet_id: "{{ virtual_network_subnet_id }}"
-      ignore_missing_vnet_service_endpoint: "{{ ignore_missing_vnet_service_endpoint }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      virtual_network_rule_name: virtual_network_rule_name
+      virtual_network_subnet_id: virtual_network_subnet_id
+      ignore_missing_vnet_service_endpoint: ignore_missing_vnet_service_endpoint
 '''
 
 RETURN = '''

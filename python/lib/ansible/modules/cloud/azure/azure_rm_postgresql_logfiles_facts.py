@@ -43,8 +43,8 @@ author:
 EXAMPLES = '''
   - name: List instances of LogFiles
     azure_rm_postgresql_logfiles_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -55,11 +55,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) FirewallRules
     azure_rm_postgresql_firewallrule:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      firewall_rule_name: "{{ firewall_rule_name }}"
-      start_ip_address: "{{ start_ip_address }}"
-      end_ip_address: "{{ end_ip_address }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      firewall_rule_name: firewall_rule_name
+      start_ip_address: start_ip_address
+      end_ip_address: end_ip_address
 '''
 
 RETURN = '''

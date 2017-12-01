@@ -46,14 +46,14 @@ author:
 EXAMPLES = '''
   - name: Get instance of FirewallRules
     azure_rm_postgresql_firewallrule_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      firewall_rule_name: "{{ firewall_rule_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      firewall_rule_name: firewall_rule_name
 
   - name: List instances of FirewallRules
     azure_rm_postgresql_firewallrule_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

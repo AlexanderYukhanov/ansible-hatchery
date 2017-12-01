@@ -53,11 +53,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Databases
     azure_rm_postgresql_database:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      database_name: "{{ database_name }}"
-      charset: "{{ charset }}"
-      collation: "{{ collation }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      database_name: database_name
+      charset: charset
+      collation: collation
 '''
 
 RETURN = '''
