@@ -53,11 +53,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Configurations
     azure_rm_postgresql_configuration:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      configuration_name: "{{ configuration_name }}"
-      value: "{{ value }}"
-      source: "{{ source }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      configuration_name: configuration_name
+      value: value
+      source: source
 '''
 
 RETURN = '''

@@ -46,14 +46,14 @@ author:
 EXAMPLES = '''
   - name: Get instance of Configurations
     azure_rm_postgresql_configuration_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
-      configuration_name: "{{ configuration_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
+      configuration_name: configuration_name
 
   - name: List instances of Configurations
     azure_rm_postgresql_configuration_facts:
-      resource_group_name: "{{ resource_group_name }}"
-      server_name: "{{ server_name }}"
+      resource_group_name: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
