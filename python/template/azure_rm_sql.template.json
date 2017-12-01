@@ -5350,7 +5350,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "sql-test-server",
+          "DefaultValueTest": "sql-test-server-dauih",
           "SubOptions": null,
           "RequiredCount": 0
         },
