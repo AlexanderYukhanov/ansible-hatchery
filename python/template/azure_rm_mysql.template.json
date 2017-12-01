@@ -1107,7 +1107,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValueSample": "database_name",
-          "DefaultValueTest": "test-database",
+          "DefaultValueTest": "testdatabase",
           "SubOptions": null,
           "RequiredCount": 0
         },
