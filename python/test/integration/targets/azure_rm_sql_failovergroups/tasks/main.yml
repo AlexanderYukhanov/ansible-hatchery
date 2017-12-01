@@ -1,5 +1,6 @@
 - name: Create instance of FailoverGroups
   azure_rm_sql_failovergroups:
+    resource_group: "{{ resource_group }}"
     databases:
       - XXXX - list of values -- not implemented str
   register: output
@@ -11,6 +12,7 @@
 
 - name: Update instance of FailoverGroups
   azure_rm_sql_failovergroups:
+    resource_group: "{{ resource_group }}"
     databases:
       - XXXX - list of values -- not implemented str
   register: output
@@ -22,6 +24,7 @@
 
 - name: Delete instance of FailoverGroups
   azure_rm_sql_failovergroups:
+    resource_group: "{{ resource_group }}"
     state: absent
   register: output
 - name: Assert the state has changed

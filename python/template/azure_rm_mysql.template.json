@@ -473,7 +473,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2
         },
@@ -536,7 +536,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -722,7 +722,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2
         },
@@ -803,7 +803,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -998,7 +998,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2
         },
@@ -1265,7 +1265,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2
         },
@@ -1346,7 +1346,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -1555,7 +1555,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2
         },
@@ -1636,7 +1636,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValueSample": "resource_group_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1
         },
