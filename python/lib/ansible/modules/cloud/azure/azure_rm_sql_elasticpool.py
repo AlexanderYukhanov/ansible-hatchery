@@ -40,7 +40,6 @@ options:
     location:
         description:
             - Resource location.
-        required: True
     edition:
         description:
             - "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'"
@@ -214,7 +213,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
             ),
             location=dict(
                 type='str',
-                required=True
+                required=False
             ),
             edition=dict(
                 type='str',

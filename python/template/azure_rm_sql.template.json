@@ -4178,7 +4178,7 @@
           "Disposition": "parameters",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Resource location.",
           "DefaultValueSample": "location",
