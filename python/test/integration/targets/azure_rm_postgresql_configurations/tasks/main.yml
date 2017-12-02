@@ -1,8 +1,0 @@
-- name: Create instance of Configurations
-  azure_rm_postgresql_configurations:
-  register: output
-- name: Assert the resource instance is well created
-  assert:
-    that:
-      - output.changed
-      - output.state.state == 'Ready'
