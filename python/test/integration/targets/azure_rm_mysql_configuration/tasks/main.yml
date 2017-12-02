@@ -8,13 +8,11 @@
       admin_username: zimxyz
       admin_password: Testpasswordxyz12!
     location: westus
-- name: Create instance of FirewallRules
-  azure_rm_mysql_firewallrule:
+- name: Create instance of VirtualNetworkRules
+  azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: test-firewall-rule
-    start_ip_address: 172.28.10.136
-    end_ip_address: 172.28.10.138
+    name: test-virtual-network-rule
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -22,13 +20,11 @@
       - output.changed
       - output.state.state == 'Ready'
 
-- name: Update instance of FirewallRules
-  azure_rm_mysql_firewallrule:
+- name: Update instance of VirtualNetworkRules
+  azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: test-firewall-rule
-    start_ip_address: 172.28.10.136
-    end_ip_address: 172.28.10.138
+    name: test-virtual-network-rule
   register: output
 - name: Assert the state has not changed
   assert:
@@ -36,11 +32,11 @@
       - output.changed == false
       - output.state.state == 'Ready'
 
-- name: Delete instance of FirewallRules
-  azure_rm_mysql_firewallrule:
+- name: Delete instance of VirtualNetworkRules
+  azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: test-firewall-rule
+    name: test-virtual-network-rule
     state: absent
   register: output
 - name: Assert the state has changed

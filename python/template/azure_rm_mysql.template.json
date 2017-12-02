@@ -550,13 +550,13 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "firewall_rule_name",
-          "NameAlt": "firewall_rule_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -564,7 +564,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server firewall rule.",
           "DefaultValueSample": "firewall_rule_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-firewall-rule",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -592,7 +592,7 @@
           "VariableValue": "None",
           "Documentation": "The start IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValueSample": "start_ip_address",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "172.28.10.136",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -606,7 +606,7 @@
           "VariableValue": "None",
           "Documentation": "The end IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValueSample": "end_ip_address",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "172.28.10.138",
           "SubOptions": [],
           "RequiredCount": 0
         }
@@ -701,7 +701,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_mysql_servers",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
@@ -817,13 +817,13 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "virtual_network_rule_name",
-          "NameAlt": "virtual_network_rule_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -831,7 +831,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the virtual network rule.",
           "DefaultValueSample": "virtual_network_rule_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-virtual-network-rule",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -977,7 +977,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_mysql_servers",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
@@ -1360,13 +1360,13 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "configuration_name",
-          "NameAlt": "configuration_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1374,7 +1374,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server configuration.",
           "DefaultValueSample": "configuration_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-configuration",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -1534,7 +1534,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_mysql_servers",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",

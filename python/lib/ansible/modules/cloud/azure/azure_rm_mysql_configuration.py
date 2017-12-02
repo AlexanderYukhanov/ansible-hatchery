@@ -30,7 +30,7 @@ options:
         description:
             - The name of the server.
         required: True
-    configuration_name:
+    name:
         description:
             - The name of the server configuration.
         required: True
@@ -55,7 +55,7 @@ EXAMPLES = '''
     azure_rm_mysql_configuration:
       resource_group: resource_group_name
       server_name: server_name
-      configuration_name: configuration_name
+      name: configuration_name
       value: value
       source: source
 '''
@@ -147,7 +147,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            configuration_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
@@ -169,7 +169,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         self.resource_group = None
         self.server_name = None
-        self.configuration_name = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
@@ -240,12 +240,12 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         :return: deserialized Configurations instance state dictionary
         '''
-        self.log("Creating / Updating the Configurations instance {0}".format(self.configuration_name))
+        self.log("Creating / Updating the Configurations instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.configurations.create_or_update(self.resource_group,
                                                                         self.server_name,
-                                                                        self.configuration_name,
+                                                                        self.name,
                                                                         self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
@@ -261,7 +261,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the Configurations instance {0}".format(self.configuration_name))
+        self.log("Deleting the Configurations instance {0}".format(self.name))
         try:
             response = self.mgmt_client.configurations.delete()
         except CloudError as e:
@@ -276,12 +276,12 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         :return: deserialized Configurations instance state dictionary
         '''
-        self.log("Checking if the Configurations instance {0} is present".format(self.configuration_name))
+        self.log("Checking if the Configurations instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.configurations.get(self.resource_group,
                                                            self.server_name,
-                                                           self.configuration_name)
+                                                           self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Configurations instance : {0} found".format(response.name))

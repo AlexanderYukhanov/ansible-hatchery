@@ -30,7 +30,7 @@ options:
         description:
             - The name of the server.
         required: True
-    firewall_rule_name:
+    name:
         description:
             - The name of the server firewall rule.
         required: True
@@ -57,7 +57,7 @@ EXAMPLES = '''
     azure_rm_mysql_firewallrule:
       resource_group: resource_group_name
       server_name: server_name
-      firewall_rule_name: firewall_rule_name
+      name: firewall_rule_name
       start_ip_address: start_ip_address
       end_ip_address: end_ip_address
 '''
@@ -125,7 +125,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            firewall_rule_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
@@ -147,7 +147,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         self.resource_group = None
         self.server_name = None
-        self.firewall_rule_name = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
@@ -218,12 +218,12 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         :return: deserialized FirewallRules instance state dictionary
         '''
-        self.log("Creating / Updating the FirewallRules instance {0}".format(self.firewall_rule_name))
+        self.log("Creating / Updating the FirewallRules instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.firewall_rules.create_or_update(self.resource_group,
                                                                         self.server_name,
-                                                                        self.firewall_rule_name,
+                                                                        self.name,
                                                                         self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
@@ -239,11 +239,11 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the FirewallRules instance {0}".format(self.firewall_rule_name))
+        self.log("Deleting the FirewallRules instance {0}".format(self.name))
         try:
             response = self.mgmt_client.firewall_rules.delete(self.resource_group,
                                                               self.server_name,
-                                                              self.firewall_rule_name)
+                                                              self.name)
         except CloudError as e:
             self.log('Error attempting to delete the FirewallRules instance.')
             self.fail("Error deleting the FirewallRules instance: {0}".format(str(e)))
@@ -256,12 +256,12 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         :return: deserialized FirewallRules instance state dictionary
         '''
-        self.log("Checking if the FirewallRules instance {0} is present".format(self.firewall_rule_name))
+        self.log("Checking if the FirewallRules instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.firewall_rules.get(self.resource_group,
                                                            self.server_name,
-                                                           self.firewall_rule_name)
+                                                           self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("FirewallRules instance : {0} found".format(response.name))

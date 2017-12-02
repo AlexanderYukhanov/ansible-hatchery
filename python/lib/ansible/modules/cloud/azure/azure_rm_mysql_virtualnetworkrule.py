@@ -30,7 +30,7 @@ options:
         description:
             - The name of the server.
         required: True
-    virtual_network_rule_name:
+    name:
         description:
             - The name of the virtual network rule.
         required: True
@@ -56,7 +56,7 @@ EXAMPLES = '''
     azure_rm_mysql_virtualnetworkrule:
       resource_group: resource_group_name
       server_name: server_name
-      virtual_network_rule_name: virtual_network_rule_name
+      name: virtual_network_rule_name
       virtual_network_subnet_id: virtual_network_subnet_id
       ignore_missing_vnet_service_endpoint: ignore_missing_vnet_service_endpoint
 '''
@@ -130,7 +130,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            virtual_network_rule_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
@@ -152,7 +152,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
 
         self.resource_group = None
         self.server_name = None
-        self.virtual_network_rule_name = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
@@ -223,12 +223,12 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkRules instance state dictionary
         '''
-        self.log("Creating / Updating the VirtualNetworkRules instance {0}".format(self.virtual_network_rule_name))
+        self.log("Creating / Updating the VirtualNetworkRules instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.virtual_network_rules.create_or_update(self.resource_group,
                                                                                self.server_name,
-                                                                               self.virtual_network_rule_name,
+                                                                               self.name,
                                                                                self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
@@ -244,11 +244,11 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the VirtualNetworkRules instance {0}".format(self.virtual_network_rule_name))
+        self.log("Deleting the VirtualNetworkRules instance {0}".format(self.name))
         try:
             response = self.mgmt_client.virtual_network_rules.delete(self.resource_group,
                                                                      self.server_name,
-                                                                     self.virtual_network_rule_name)
+                                                                     self.name)
         except CloudError as e:
             self.log('Error attempting to delete the VirtualNetworkRules instance.')
             self.fail("Error deleting the VirtualNetworkRules instance: {0}".format(str(e)))
@@ -261,12 +261,12 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkRules instance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.virtual_network_rule_name))
+        self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_rules.get(self.resource_group,
                                                                   self.server_name,
-                                                                  self.virtual_network_rule_name)
+                                                                  self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("VirtualNetworkRules instance : {0} found".format(response.name))
