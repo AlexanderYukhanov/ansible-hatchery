@@ -1,5 +1,5 @@
-- name: Create instance of ElasticPools
-  azure_rm_sql_elasticpools_facts:
+- name: Create instance of FirewallRules
+  azure_rm_sql_firewallrule_facts:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the resource instance is well created
@@ -8,8 +8,8 @@
       - output.changed
       - output.state.state == 'Ready'
 
-- name: Update instance of ElasticPools
-  azure_rm_sql_elasticpools_facts:
+- name: Update instance of FirewallRules
+  azure_rm_sql_firewallrule_facts:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the state has not changed
