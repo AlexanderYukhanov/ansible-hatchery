@@ -703,8 +703,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysql_servers",
-      "AssertStateVariable": "state",
-      "AssertStateExpectedValue": "Ready",
+      "AssertStateVariable": "name",
+      "AssertStateExpectedValue": "test-firewall-rule",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules"
