@@ -171,6 +171,8 @@ class AzureRMConfigurations(AzureRMModuleBase):
         self.server_name = None
         self.name = None
         self.parameters = dict()
+        self.value = None
+        self.source = None
 
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
@@ -186,10 +188,6 @@ class AzureRMConfigurations(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "value":
-                self.parameters["value"] = kwargs[key]
-            elif key == "source":
-                self.parameters["source"] = kwargs[key]
 
         old_response = None
         results = dict()

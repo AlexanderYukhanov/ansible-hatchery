@@ -1395,7 +1395,7 @@
         {
           "Name": "value",
           "NameAlt": "value",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
           "Required": "False",
@@ -1409,7 +1409,7 @@
         {
           "Name": "source",
           "NameAlt": "source",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
           "Required": "False",

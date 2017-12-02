@@ -12,8 +12,8 @@
   azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: character_set_server
-    value: LATIN1
+    name: event_scheduler
+    value: ON
     source: user-override
   register: output
 - name: Assert the resource instance is well created
