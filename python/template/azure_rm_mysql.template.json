@@ -571,7 +571,7 @@
         {
           "Name": "parameters",
           "NameAlt": "parameters",
-          "Disposition": "dictionary",
+          "Disposition": "none",
           "Type": "dict",
           "IsList": false,
           "Required": "False",
@@ -585,7 +585,7 @@
         {
           "Name": "start_ip_address",
           "NameAlt": "start_ip_address",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
           "Required": "True",
@@ -599,7 +599,7 @@
         {
           "Name": "end_ip_address",
           "NameAlt": "end_ip_address",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
           "Required": "True",
@@ -637,7 +637,8 @@
             "resource_group_name",
             "server_name",
             "firewall_rule_name",
-            "parameters"
+            "start_ip_address",
+            "end_ip_address"
           ]
         },
         {
@@ -1402,7 +1403,7 @@
           "VariableValue": "None",
           "Documentation": "Value of the configuration.",
           "DefaultValueSample": "value",
-          "DefaultValueTest": "ON",
+          "DefaultValueTest": "\"ON\"",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -1536,8 +1537,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysql_servers",
-      "AssertStateVariable": "state",
-      "AssertStateExpectedValue": "Ready",
+      "AssertStateVariable": "value",
+      "AssertStateExpectedValue": "\"ON\"",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations"

@@ -34,6 +34,9 @@ options:
         description:
             - The name of the server firewall rule.
         required: True
+    parameters:
+        description:
+            - The required parameters for creating or updating a firewall rule.
     start_ip_address:
         description:
             - The start IP address of the server firewall rule. Must be IPv4 format.
@@ -58,6 +61,7 @@ EXAMPLES = '''
       resource_group: resource_group_name
       server_name: server_name
       name: firewall_rule_name
+      parameters: parameters
       start_ip_address: start_ip_address
       end_ip_address: end_ip_address
 '''
@@ -129,6 +133,10 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
+            parameters=dict(
+                type='dict',
+                required=False
+            ),
             start_ip_address=dict(
                 type='str',
                 required=True
@@ -148,7 +156,8 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.resource_group = None
         self.server_name = None
         self.name = None
-        self.parameters = dict()
+        self.start_ip_address = None
+        self.end_ip_address = None
 
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
@@ -164,10 +173,6 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "start_ip_address":
-                self.parameters["start_ip_address"] = kwargs[key]
-            elif key == "end_ip_address":
-                self.parameters["end_ip_address"] = kwargs[key]
 
         old_response = None
         results = dict()
@@ -224,7 +229,8 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             response = self.mgmt_client.firewall_rules.create_or_update(self.resource_group,
                                                                         self.server_name,
                                                                         self.name,
-                                                                        self.parameters)
+                                                                        self.start_ip_address,
+                                                                        self.end_ip_address)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

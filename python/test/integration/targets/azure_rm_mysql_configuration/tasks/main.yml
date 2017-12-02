@@ -20,18 +20,18 @@
   assert:
     that:
       - output.changed
-      - output.state.state == 'Ready'
+      - output.state.value == '"ON"'
 
 - name: Update instance of Configurations
   azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
     name: event_scheduler
-    value: ON
+    value: "ON"
     source: user-override
   register: output
 - name: Assert the state has not changed
   assert:
     that:
       - output.changed == false
-      - output.state.state == 'Ready'
+      - output.state.value == '"ON"'
