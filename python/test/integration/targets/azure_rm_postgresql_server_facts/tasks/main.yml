@@ -1,0 +1,19 @@
+- name: Create instance of Servers
+  azure_rm_postgresql_server_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state.state == 'Ready'
+
+- name: Update instance of Servers
+  azure_rm_postgresql_server_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state.state == 'Ready'

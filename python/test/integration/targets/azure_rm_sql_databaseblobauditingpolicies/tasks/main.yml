@@ -1,5 +1,6 @@
 - name: Create instance of DatabaseBlobAuditingPolicies
   azure_rm_sql_databaseblobauditingpolicies:
+    resource_group: "{{ resource_group }}"
     audit_actions_and_groups:
       - XXXX - list of values -- not implemented str
   register: output
@@ -8,8 +9,10 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
-- name: Create instance of DatabaseBlobAuditingPolicies
+
+- name: Update instance of DatabaseBlobAuditingPolicies
   azure_rm_sql_databaseblobauditingpolicies:
+    resource_group: "{{ resource_group }}"
     audit_actions_and_groups:
       - XXXX - list of values -- not implemented str
   register: output

@@ -1,8 +1,19 @@
 - name: Create instance of LogFiles
   azure_rm_postgresql_logfiles_facts:
+    resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the resource instance is well created
   assert:
     that:
       - output.changed
+      - output.state.state == 'Ready'
+
+- name: Update instance of LogFiles
+  azure_rm_postgresql_logfiles_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
       - output.state.state == 'Ready'

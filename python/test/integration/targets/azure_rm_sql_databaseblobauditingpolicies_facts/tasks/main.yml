@@ -1,13 +1,16 @@
 - name: Create instance of DatabaseBlobAuditingPolicies
   azure_rm_sql_databaseblobauditingpolicies_facts:
+    resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the resource instance is well created
   assert:
     that:
       - output.changed
       - output.state.state == 'Ready'
-- name: Create instance of DatabaseBlobAuditingPolicies
+
+- name: Update instance of DatabaseBlobAuditingPolicies
   azure_rm_sql_databaseblobauditingpolicies_facts:
+    resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the state has not changed
   assert:

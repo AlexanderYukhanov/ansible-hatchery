@@ -1,13 +1,16 @@
 - name: Create instance of ServerConnectionPolicies
   azure_rm_sql_serverconnectionpolicies:
+    resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the resource instance is well created
   assert:
     that:
       - output.changed
       - output.state.state == 'Ready'
-- name: Create instance of ServerConnectionPolicies
+
+- name: Update instance of ServerConnectionPolicies
   azure_rm_sql_serverconnectionpolicies:
+    resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the state has not changed
   assert:

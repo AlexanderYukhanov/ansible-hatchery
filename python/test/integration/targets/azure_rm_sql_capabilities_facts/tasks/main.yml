@@ -6,7 +6,8 @@
     that:
       - output.changed
       - output.state.state == 'Ready'
-- name: Create instance of Capabilities
+
+- name: Update instance of Capabilities
   azure_rm_sql_capabilities_facts:
   register: output
 - name: Assert the state has not changed
