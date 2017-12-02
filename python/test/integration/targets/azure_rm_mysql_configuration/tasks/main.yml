@@ -8,11 +8,13 @@
       admin_username: zimxyz
       admin_password: Testpasswordxyz12!
     location: westus
-- name: Create instance of VirtualNetworkRules
+- name: Create instance of Configurations
   azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: test-virtual-network-rule
+    name: event_scheduler
+    value: ON
+    source: user-override
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -20,26 +22,16 @@
       - output.changed
       - output.state.state == 'Ready'
 
-- name: Update instance of VirtualNetworkRules
+- name: Update instance of Configurations
   azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: test-virtual-network-rule
+    name: event_scheduler
+    value: ON
+    source: user-override
   register: output
 - name: Assert the state has not changed
   assert:
     that:
       - output.changed == false
       - output.state.state == 'Ready'
-
-- name: Delete instance of VirtualNetworkRules
-  azure_rm_mysql_configuration:
-    resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
-    name: test-virtual-network-rule
-    state: absent
-  register: output
-- name: Assert the state has changed
-  assert:
-    that:
-      - output.changed
