@@ -12,8 +12,8 @@
   azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: event_scheduler
-    value: "ON"
+    name: long_query_time
+    value: 100
     source: user-override
   register: output
 - name: Assert the resource instance is well created
