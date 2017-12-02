@@ -1538,7 +1538,7 @@
       ],
       "TestPrerequisitesModule": "azure_rm_mysql_servers",
       "AssertStateVariable": "value",
-      "AssertStateExpectedValue": "\"ON\"",
+      "AssertStateExpectedValue": "ON",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations"
