@@ -34,6 +34,9 @@ options:
         description:
             - The name of the server configuration.
         required: True
+    parameters:
+        description:
+            - The required parameters for updating a server configuration.
     value:
         description:
             - Value of the configuration.
@@ -56,6 +59,7 @@ EXAMPLES = '''
       resource_group: resource_group_name
       server_name: server_name
       name: configuration_name
+      parameters: parameters
       value: value
       source: source
 '''
@@ -151,6 +155,10 @@ class AzureRMConfigurations(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
+            parameters=dict(
+                type='dict',
+                required=False
+            ),
             value=dict(
                 type='str',
                 required=False
@@ -170,7 +178,6 @@ class AzureRMConfigurations(AzureRMModuleBase):
         self.resource_group = None
         self.server_name = None
         self.name = None
-        self.parameters = dict()
         self.value = None
         self.source = None
 
@@ -244,7 +251,8 @@ class AzureRMConfigurations(AzureRMModuleBase):
             response = self.mgmt_client.configurations.create_or_update(self.resource_group,
                                                                         self.server_name,
                                                                         self.name,
-                                                                        self.parameters)
+                                                                        self.value,
+                                                                        self.source)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

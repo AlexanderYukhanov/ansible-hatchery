@@ -1381,7 +1381,7 @@
         {
           "Name": "parameters",
           "NameAlt": "parameters",
-          "Disposition": "dictionary",
+          "Disposition": "none",
           "Type": "dict",
           "IsList": false,
           "Required": "False",
@@ -1447,7 +1447,8 @@
             "resource_group_name",
             "server_name",
             "configuration_name",
-            "parameters"
+            "value",
+            "source"
           ]
         }
       ],
