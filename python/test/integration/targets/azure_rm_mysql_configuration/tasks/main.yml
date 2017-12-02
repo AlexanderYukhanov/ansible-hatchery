@@ -13,7 +13,7 @@
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
     name: event_scheduler
-    value: ON
+    value: "ON"
     source: user-override
   register: output
 - name: Assert the resource instance is well created
