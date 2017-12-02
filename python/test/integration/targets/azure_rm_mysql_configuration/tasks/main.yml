@@ -12,8 +12,8 @@
   azure_rm_mysql_configuration:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
-    name: long_query_time
-    value: 100
+    name: character_set_server
+    value: LATIN1
     source: user-override
   register: output
 - name: Assert the resource instance is well created
