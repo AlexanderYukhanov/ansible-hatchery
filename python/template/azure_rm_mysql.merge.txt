@@ -1,8 +1,1 @@
 NOT SOURCE TEMPLATE
-EXCEPTION WHILE GENERATING: azure_rm_mysql_servers_facts
-EXCEPTION WHILE GENERATING: azure_rm_mysql_firewallrules_facts
-EXCEPTION WHILE GENERATING: azure_rm_mysql_virtualnetworkrules_facts
-EXCEPTION WHILE GENERATING: azure_rm_mysql_databases_facts
-EXCEPTION WHILE GENERATING: azure_rm_mysql_configurations
-EXCEPTION WHILE GENERATING: azure_rm_mysql_configurations_facts
-EXCEPTION WHILE GENERATING: azure_rm_mysql_logfiles_facts

@@ -1,8 +1,1 @@
 NOT SOURCE TEMPLATE
-EXCEPTION WHILE GENERATING: azure_rm_postgresql_servers_facts
-EXCEPTION WHILE GENERATING: azure_rm_postgresql_firewallrules_facts
-EXCEPTION WHILE GENERATING: azure_rm_postgresql_virtualnetworkrules_facts
-EXCEPTION WHILE GENERATING: azure_rm_postgresql_databases_facts
-EXCEPTION WHILE GENERATING: azure_rm_postgresql_configurations
-EXCEPTION WHILE GENERATING: azure_rm_postgresql_configurations_facts
-EXCEPTION WHILE GENERATING: azure_rm_postgresql_logfiles_facts

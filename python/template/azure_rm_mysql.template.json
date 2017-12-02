@@ -1374,7 +1374,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server configuration.",
           "DefaultValueSample": "configuration_name",
-          "DefaultValueTest": "test-configuration",
+          "DefaultValueTest": "event_scheduler",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -1402,7 +1402,7 @@
           "VariableValue": "None",
           "Documentation": "Value of the configuration.",
           "DefaultValueSample": "value",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "ON",
           "SubOptions": [],
           "RequiredCount": 0
         },
@@ -1416,7 +1416,7 @@
           "VariableValue": "None",
           "Documentation": "Source of the configuration.",
           "DefaultValueSample": "source",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "user-override",
           "SubOptions": [],
           "RequiredCount": 0
         }
