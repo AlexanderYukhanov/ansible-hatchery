@@ -294,6 +294,9 @@ class AzureRMElasticPools(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
+        if not parameters.has_key("location"):
+            parameters["location"] = resource_group.location
+
         old_response = self.get_elasticpool()
 
         if not old_response:
