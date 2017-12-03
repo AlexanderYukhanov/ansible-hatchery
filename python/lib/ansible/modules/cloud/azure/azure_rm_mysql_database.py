@@ -192,6 +192,7 @@ class AzureRMDatabases(AzureRMModuleBase):
                 self.log("Databases instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if Databases instance has to be deleted or may be updated")
+                self.delete_databases()
 
         if self.state == 'present':
 

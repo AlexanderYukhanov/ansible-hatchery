@@ -186,7 +186,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "BackupLongTermRetentionPolicies",
       "ModuleOperationName": "backup_long_term_retention_policies",
-      "ObjectName": "BackupLongTermRetentionPolicies"
+      "ObjectName": "BackupLongTermRetentionPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_backuplongtermretentionpolicies_facts",
@@ -272,7 +273,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "BackupLongTermRetentionPolicies",
       "ModuleOperationName": "backup_long_term_retention_policies",
-      "ObjectName": "BackupLongTermRetentionPolicies"
+      "ObjectName": "BackupLongTermRetentionPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_backuplongtermretentionvaults",
@@ -417,7 +419,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "BackupLongTermRetentionVaults",
       "ModuleOperationName": "backup_long_term_retention_vaults",
-      "ObjectName": "BackupLongTermRetentionVaults"
+      "ObjectName": "BackupLongTermRetentionVaults",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_backuplongtermretentionvaults_facts",
@@ -487,7 +490,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "BackupLongTermRetentionVaults",
       "ModuleOperationName": "backup_long_term_retention_vaults",
-      "ObjectName": "BackupLongTermRetentionVaults"
+      "ObjectName": "BackupLongTermRetentionVaults",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_restorepoints_facts",
@@ -557,7 +561,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RestorePoints",
       "ModuleOperationName": "restore_points",
-      "ObjectName": "RestorePoints"
+      "ObjectName": "RestorePoints",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_recoverabledatabases_facts",
@@ -638,7 +643,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RecoverableDatabases",
       "ModuleOperationName": "recoverable_databases",
-      "ObjectName": "RecoverableDatabases"
+      "ObjectName": "RecoverableDatabases",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_restorabledroppeddatabases_facts",
@@ -719,7 +725,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RestorableDroppedDatabases",
       "ModuleOperationName": "restorable_dropped_databases",
-      "ObjectName": "RestorableDroppedDatabases"
+      "ObjectName": "RestorableDroppedDatabases",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_capabilities_facts",
@@ -757,7 +764,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Capabilities",
       "ModuleOperationName": "capabilities",
-      "ObjectName": "Capabilities"
+      "ObjectName": "Capabilities",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverconnectionpolicies",
@@ -911,7 +919,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerConnectionPolicies",
       "ModuleOperationName": "server_connection_policies",
-      "ObjectName": "ServerConnectionPolicies"
+      "ObjectName": "ServerConnectionPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverconnectionpolicies_facts",
@@ -981,7 +990,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerConnectionPolicies",
       "ModuleOperationName": "server_connection_policies",
-      "ObjectName": "ServerConnectionPolicies"
+      "ObjectName": "ServerConnectionPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databasethreatdetectionpolicies",
@@ -1342,7 +1352,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DatabaseThreatDetectionPolicies",
       "ModuleOperationName": "database_threat_detection_policies",
-      "ObjectName": "DatabaseThreatDetectionPolicies"
+      "ObjectName": "DatabaseThreatDetectionPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databasethreatdetectionpolicies_facts",
@@ -1428,7 +1439,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DatabaseThreatDetectionPolicies",
       "ModuleOperationName": "database_threat_detection_policies",
-      "ObjectName": "DatabaseThreatDetectionPolicies"
+      "ObjectName": "DatabaseThreatDetectionPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingpolicies",
@@ -1642,7 +1654,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DataMaskingPolicies",
       "ModuleOperationName": "data_masking_policies",
-      "ObjectName": "DataMaskingPolicies"
+      "ObjectName": "DataMaskingPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingpolicies_facts",
@@ -1728,7 +1741,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DataMaskingPolicies",
       "ModuleOperationName": "data_masking_policies",
-      "ObjectName": "DataMaskingPolicies"
+      "ObjectName": "DataMaskingPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingrules",
@@ -2154,7 +2168,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DataMaskingRules",
       "ModuleOperationName": "data_masking_rules",
-      "ObjectName": "DataMaskingRules"
+      "ObjectName": "DataMaskingRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingrules_facts",
@@ -2240,7 +2255,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DataMaskingRules",
       "ModuleOperationName": "data_masking_rules",
-      "ObjectName": "DataMaskingRules"
+      "ObjectName": "DataMaskingRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_firewallrules",
@@ -2432,7 +2448,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules"
+      "ObjectName": "FirewallRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_firewallrules_facts",
@@ -2513,7 +2530,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules"
+      "ObjectName": "FirewallRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_geobackuppolicies",
@@ -2694,7 +2712,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "GeoBackupPolicies",
       "ModuleOperationName": "geo_backup_policies",
-      "ObjectName": "GeoBackupPolicies"
+      "ObjectName": "GeoBackupPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_geobackuppolicies_facts",
@@ -2793,7 +2812,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "GeoBackupPolicies",
       "ModuleOperationName": "geo_backup_policies",
-      "ObjectName": "GeoBackupPolicies"
+      "ObjectName": "GeoBackupPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databases",
@@ -3902,7 +3922,8 @@
       "AssertStateExpectedValue": "Online",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Database"
+      "ObjectName": "Database",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databases_facts",
@@ -4096,7 +4117,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases"
+      "ObjectName": "Databases",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_elasticpools",
@@ -4447,7 +4469,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
-      "ObjectName": "ElasticPool"
+      "ObjectName": "ElasticPool",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_elasticpools_facts",
@@ -4570,7 +4593,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
-      "ObjectName": "ElasticPools"
+      "ObjectName": "ElasticPools",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_replicationlinks_facts",
@@ -4669,7 +4693,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ReplicationLinks",
       "ModuleOperationName": "replication_links",
-      "ObjectName": "ReplicationLinks"
+      "ObjectName": "ReplicationLinks",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverazureadadministrators",
@@ -4901,7 +4926,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerAzureADAdministrators",
       "ModuleOperationName": "server_azure_ad_administrators",
-      "ObjectName": "ServerAzureADAdministrators"
+      "ObjectName": "ServerAzureADAdministrators",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverazureadadministrators_facts",
@@ -4982,7 +5008,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerAzureADAdministrators",
       "ModuleOperationName": "server_azure_ad_administrators",
-      "ObjectName": "ServerAzureADAdministrators"
+      "ObjectName": "ServerAzureADAdministrators",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_servercommunicationlinks",
@@ -5158,7 +5185,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerCommunicationLinks",
       "ModuleOperationName": "server_communication_links",
-      "ObjectName": "ServerCommunicationLinks"
+      "ObjectName": "ServerCommunicationLinks",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_servercommunicationlinks_facts",
@@ -5239,7 +5267,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerCommunicationLinks",
       "ModuleOperationName": "server_communication_links",
-      "ObjectName": "ServerCommunicationLinks"
+      "ObjectName": "ServerCommunicationLinks",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serviceobjectives_facts",
@@ -5320,7 +5349,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServiceObjectives",
       "ModuleOperationName": "service_objectives",
-      "ObjectName": "ServiceObjectives"
+      "ObjectName": "ServiceObjectives",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_servers",
@@ -5648,7 +5678,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "SQL Server"
+      "ObjectName": "SQL Server",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_servers_facts",
@@ -5711,7 +5742,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "SQL Server"
+      "ObjectName": "SQL Server",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_elasticpoolactivities_facts",
@@ -5781,7 +5813,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ElasticPoolActivities",
       "ModuleOperationName": "elastic_pool_activities",
-      "ObjectName": "ElasticPoolActivities"
+      "ObjectName": "ElasticPoolActivities",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_elasticpooldatabaseactivities_facts",
@@ -5851,7 +5884,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ElasticPoolDatabaseActivities",
       "ModuleOperationName": "elastic_pool_database_activities",
-      "ObjectName": "ElasticPoolDatabaseActivities"
+      "ObjectName": "ElasticPoolDatabaseActivities",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_recommendedelasticpools_facts",
@@ -5945,7 +5979,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RecommendedElasticPools",
       "ModuleOperationName": "recommended_elastic_pools",
-      "ObjectName": "RecommendedElasticPools"
+      "ObjectName": "RecommendedElasticPools",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_servicetieradvisors_facts",
@@ -6044,7 +6079,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServiceTierAdvisors",
       "ModuleOperationName": "service_tier_advisors",
-      "ObjectName": "ServiceTierAdvisors"
+      "ObjectName": "ServiceTierAdvisors",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_transparentdataencryptions",
@@ -6206,7 +6242,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "TransparentDataEncryptions",
       "ModuleOperationName": "transparent_data_encryptions",
-      "ObjectName": "TransparentDataEncryptions"
+      "ObjectName": "TransparentDataEncryptions",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_transparentdataencryptions_facts",
@@ -6292,7 +6329,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "TransparentDataEncryptions",
       "ModuleOperationName": "transparent_data_encryptions",
-      "ObjectName": "TransparentDataEncryptions"
+      "ObjectName": "TransparentDataEncryptions",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_transparentdataencryptionactivities_facts",
@@ -6378,7 +6416,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "TransparentDataEncryptionActivities",
       "ModuleOperationName": "transparent_data_encryption_activities",
-      "ObjectName": "TransparentDataEncryptionActivities"
+      "ObjectName": "TransparentDataEncryptionActivities",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverusages_facts",
@@ -6432,7 +6471,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerUsages",
       "ModuleOperationName": "server_usages",
-      "ObjectName": "ServerUsages"
+      "ObjectName": "ServerUsages",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databaseusages_facts",
@@ -6502,7 +6542,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DatabaseUsages",
       "ModuleOperationName": "database_usages",
-      "ObjectName": "DatabaseUsages"
+      "ObjectName": "DatabaseUsages",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databaseblobauditingpolicies",
@@ -6817,7 +6858,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DatabaseBlobAuditingPolicies",
       "ModuleOperationName": "database_blob_auditing_policies",
-      "ObjectName": "DatabaseBlobAuditingPolicies"
+      "ObjectName": "DatabaseBlobAuditingPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databaseblobauditingpolicies_facts",
@@ -6903,7 +6945,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DatabaseBlobAuditingPolicies",
       "ModuleOperationName": "database_blob_auditing_policies",
-      "ObjectName": "DatabaseBlobAuditingPolicies"
+      "ObjectName": "DatabaseBlobAuditingPolicies",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_encryptionprotectors",
@@ -7135,7 +7178,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "EncryptionProtectors",
       "ModuleOperationName": "encryption_protectors",
-      "ObjectName": "EncryptionProtectors"
+      "ObjectName": "EncryptionProtectors",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_encryptionprotectors_facts",
@@ -7216,7 +7260,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "EncryptionProtectors",
       "ModuleOperationName": "encryption_protectors",
-      "ObjectName": "EncryptionProtectors"
+      "ObjectName": "EncryptionProtectors",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_failovergroups",
@@ -7614,7 +7659,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FailoverGroups",
       "ModuleOperationName": "failover_groups",
-      "ObjectName": "FailoverGroups"
+      "ObjectName": "FailoverGroups",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_failovergroups_facts",
@@ -7695,7 +7741,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FailoverGroups",
       "ModuleOperationName": "failover_groups",
-      "ObjectName": "FailoverGroups"
+      "ObjectName": "FailoverGroups",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverkeys",
@@ -7968,7 +8015,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerKeys",
       "ModuleOperationName": "server_keys",
-      "ObjectName": "ServerKeys"
+      "ObjectName": "ServerKeys",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverkeys_facts",
@@ -8049,7 +8097,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerKeys",
       "ModuleOperationName": "server_keys",
-      "ObjectName": "ServerKeys"
+      "ObjectName": "ServerKeys",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_syncagents",
@@ -8251,7 +8300,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SyncAgents",
       "ModuleOperationName": "sync_agents",
-      "ObjectName": "SyncAgents"
+      "ObjectName": "SyncAgents",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_syncagents_facts",
@@ -8345,7 +8395,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SyncAgents",
       "ModuleOperationName": "sync_agents",
-      "ObjectName": "SyncAgents"
+      "ObjectName": "SyncAgents",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_syncgroups",
@@ -8828,7 +8879,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SyncGroups",
       "ModuleOperationName": "sync_groups",
-      "ObjectName": "SyncGroups"
+      "ObjectName": "SyncGroups",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_syncgroups_facts",
@@ -9043,7 +9095,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SyncGroups",
       "ModuleOperationName": "sync_groups",
-      "ObjectName": "SyncGroups"
+      "ObjectName": "SyncGroups",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_syncmembers",
@@ -9416,7 +9469,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SyncMembers",
       "ModuleOperationName": "sync_members",
-      "ObjectName": "SyncMembers"
+      "ObjectName": "SyncMembers",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_syncmembers_facts",
@@ -9550,7 +9604,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SyncMembers",
       "ModuleOperationName": "sync_members",
-      "ObjectName": "SyncMembers"
+      "ObjectName": "SyncMembers",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_virtualnetworkrules",
@@ -9732,7 +9787,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
-      "ObjectName": "VirtualNetworkRules"
+      "ObjectName": "VirtualNetworkRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_virtualnetworkrules_facts",
@@ -9813,7 +9869,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
-      "ObjectName": "VirtualNetworkRules"
+      "ObjectName": "VirtualNetworkRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_databaseoperations_facts",
@@ -9883,7 +9940,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DatabaseOperations",
       "ModuleOperationName": "database_operations",
-      "ObjectName": "DatabaseOperations"
+      "ObjectName": "DatabaseOperations",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverdnsaliases",
@@ -10016,7 +10074,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerDnsAliases",
       "ModuleOperationName": "server_dns_aliases",
-      "ObjectName": "ServerDnsAliases"
+      "ObjectName": "ServerDnsAliases",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_sql_serverdnsaliases_facts",
@@ -10097,7 +10156,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ServerDnsAliases",
       "ModuleOperationName": "server_dns_aliases",
-      "ObjectName": "ServerDnsAliases"
+      "ObjectName": "ServerDnsAliases",
+      "NeedsDeleteBeforeUpdate": false
     }
   ],
   "Namespace": "sql",

@@ -457,7 +457,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "Servers"
+      "ObjectName": "Servers",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_servers_facts",
@@ -520,7 +521,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "Servers"
+      "ObjectName": "Servers",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_firewallrules",
@@ -707,7 +709,8 @@
       "AssertStateExpectedValue": "test-firewall-rule",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules"
+      "ObjectName": "FirewallRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_firewallrules_facts",
@@ -788,7 +791,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules"
+      "ObjectName": "FirewallRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_virtualnetworkrules",
@@ -983,7 +987,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
-      "ObjectName": "VirtualNetworkRules"
+      "ObjectName": "VirtualNetworkRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_virtualnetworkrules_facts",
@@ -1064,7 +1069,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
-      "ObjectName": "VirtualNetworkRules"
+      "ObjectName": "VirtualNetworkRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_databases",
@@ -1250,7 +1256,8 @@
       "AssertStateExpectedValue": "testdatabase",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases"
+      "ObjectName": "Databases",
+      "NeedsDeleteBeforeUpdate": true
     },
     {
       "ModuleName": "azure_rm_mysql_databases_facts",
@@ -1331,7 +1338,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases"
+      "ObjectName": "Databases",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_configurations",
@@ -1541,7 +1549,8 @@
       "AssertStateExpectedValue": "ON",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
-      "ObjectName": "Configurations"
+      "ObjectName": "Configurations",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_configurations_facts",
@@ -1622,7 +1631,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
-      "ObjectName": "Configurations"
+      "ObjectName": "Configurations",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_mysql_logfiles_facts",
@@ -1676,7 +1686,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LogFiles",
       "ModuleOperationName": "log_files",
-      "ObjectName": "LogFiles"
+      "ObjectName": "LogFiles",
+      "NeedsDeleteBeforeUpdate": false
     }
   ],
   "Namespace": "mysql",

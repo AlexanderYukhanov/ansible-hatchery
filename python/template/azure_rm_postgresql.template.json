@@ -61,7 +61,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "Servers"
+      "ObjectName": "Servers",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_firewallrules",
@@ -247,7 +248,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules"
+      "ObjectName": "FirewallRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_firewallrules_facts",
@@ -328,7 +330,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules"
+      "ObjectName": "FirewallRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_virtualnetworkrules",
@@ -523,7 +526,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
-      "ObjectName": "VirtualNetworkRules"
+      "ObjectName": "VirtualNetworkRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_virtualnetworkrules_facts",
@@ -604,7 +608,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
-      "ObjectName": "VirtualNetworkRules"
+      "ObjectName": "VirtualNetworkRules",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_databases",
@@ -790,7 +795,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases"
+      "ObjectName": "Databases",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_databases_facts",
@@ -871,7 +877,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases"
+      "ObjectName": "Databases",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_configurations",
@@ -1080,7 +1087,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
-      "ObjectName": "Configurations"
+      "ObjectName": "Configurations",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_configurations_facts",
@@ -1161,7 +1169,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
-      "ObjectName": "Configurations"
+      "ObjectName": "Configurations",
+      "NeedsDeleteBeforeUpdate": false
     },
     {
       "ModuleName": "azure_rm_postgresql_logfiles_facts",
@@ -1215,7 +1224,8 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LogFiles",
       "ModuleOperationName": "log_files",
-      "ObjectName": "LogFiles"
+      "ObjectName": "LogFiles",
+      "NeedsDeleteBeforeUpdate": false
     }
   ],
   "Namespace": "postgresql",
