@@ -187,7 +187,8 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionPolicies",
       "ModuleOperationName": "backup_long_term_retention_policies",
       "ObjectName": "BackupLongTermRetentionPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_backuplongtermretentionpolicies_facts",
@@ -274,7 +275,8 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionPolicies",
       "ModuleOperationName": "backup_long_term_retention_policies",
       "ObjectName": "BackupLongTermRetentionPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_backuplongtermretentionvaults",
@@ -420,7 +422,8 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionVaults",
       "ModuleOperationName": "backup_long_term_retention_vaults",
       "ObjectName": "BackupLongTermRetentionVaults",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_backuplongtermretentionvaults_facts",
@@ -491,7 +494,8 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionVaults",
       "ModuleOperationName": "backup_long_term_retention_vaults",
       "ObjectName": "BackupLongTermRetentionVaults",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_restorepoints_facts",
@@ -562,7 +566,8 @@
       "ModuleOperationNameUpper": "RestorePoints",
       "ModuleOperationName": "restore_points",
       "ObjectName": "RestorePoints",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_recoverabledatabases_facts",
@@ -644,7 +649,8 @@
       "ModuleOperationNameUpper": "RecoverableDatabases",
       "ModuleOperationName": "recoverable_databases",
       "ObjectName": "RecoverableDatabases",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_restorabledroppeddatabases_facts",
@@ -726,7 +732,8 @@
       "ModuleOperationNameUpper": "RestorableDroppedDatabases",
       "ModuleOperationName": "restorable_dropped_databases",
       "ObjectName": "RestorableDroppedDatabases",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_capabilities_facts",
@@ -765,7 +772,8 @@
       "ModuleOperationNameUpper": "Capabilities",
       "ModuleOperationName": "capabilities",
       "ObjectName": "Capabilities",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverconnectionpolicies",
@@ -920,7 +928,8 @@
       "ModuleOperationNameUpper": "ServerConnectionPolicies",
       "ModuleOperationName": "server_connection_policies",
       "ObjectName": "ServerConnectionPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverconnectionpolicies_facts",
@@ -991,7 +1000,8 @@
       "ModuleOperationNameUpper": "ServerConnectionPolicies",
       "ModuleOperationName": "server_connection_policies",
       "ObjectName": "ServerConnectionPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databasethreatdetectionpolicies",
@@ -1353,7 +1363,8 @@
       "ModuleOperationNameUpper": "DatabaseThreatDetectionPolicies",
       "ModuleOperationName": "database_threat_detection_policies",
       "ObjectName": "DatabaseThreatDetectionPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databasethreatdetectionpolicies_facts",
@@ -1440,7 +1451,8 @@
       "ModuleOperationNameUpper": "DatabaseThreatDetectionPolicies",
       "ModuleOperationName": "database_threat_detection_policies",
       "ObjectName": "DatabaseThreatDetectionPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingpolicies",
@@ -1655,7 +1667,8 @@
       "ModuleOperationNameUpper": "DataMaskingPolicies",
       "ModuleOperationName": "data_masking_policies",
       "ObjectName": "DataMaskingPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingpolicies_facts",
@@ -1742,7 +1755,8 @@
       "ModuleOperationNameUpper": "DataMaskingPolicies",
       "ModuleOperationName": "data_masking_policies",
       "ObjectName": "DataMaskingPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingrules",
@@ -2169,7 +2183,8 @@
       "ModuleOperationNameUpper": "DataMaskingRules",
       "ModuleOperationName": "data_masking_rules",
       "ObjectName": "DataMaskingRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_datamaskingrules_facts",
@@ -2256,7 +2271,8 @@
       "ModuleOperationNameUpper": "DataMaskingRules",
       "ModuleOperationName": "data_masking_rules",
       "ObjectName": "DataMaskingRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_firewallrules",
@@ -2449,7 +2465,8 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_firewallrules_facts",
@@ -2531,7 +2548,8 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_geobackuppolicies",
@@ -2713,7 +2731,8 @@
       "ModuleOperationNameUpper": "GeoBackupPolicies",
       "ModuleOperationName": "geo_backup_policies",
       "ObjectName": "GeoBackupPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_geobackuppolicies_facts",
@@ -2813,7 +2832,8 @@
       "ModuleOperationNameUpper": "GeoBackupPolicies",
       "ModuleOperationName": "geo_backup_policies",
       "ObjectName": "GeoBackupPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databases",
@@ -3923,7 +3943,8 @@
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "Database",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databases_facts",
@@ -4118,7 +4139,8 @@
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "Databases",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_elasticpools",
@@ -4470,7 +4492,8 @@
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
       "ObjectName": "ElasticPool",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_elasticpools_facts",
@@ -4594,7 +4617,8 @@
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
       "ObjectName": "ElasticPools",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_replicationlinks_facts",
@@ -4694,7 +4718,8 @@
       "ModuleOperationNameUpper": "ReplicationLinks",
       "ModuleOperationName": "replication_links",
       "ObjectName": "ReplicationLinks",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverazureadadministrators",
@@ -4927,7 +4952,8 @@
       "ModuleOperationNameUpper": "ServerAzureADAdministrators",
       "ModuleOperationName": "server_azure_ad_administrators",
       "ObjectName": "ServerAzureADAdministrators",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverazureadadministrators_facts",
@@ -5009,7 +5035,8 @@
       "ModuleOperationNameUpper": "ServerAzureADAdministrators",
       "ModuleOperationName": "server_azure_ad_administrators",
       "ObjectName": "ServerAzureADAdministrators",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_servercommunicationlinks",
@@ -5186,7 +5213,8 @@
       "ModuleOperationNameUpper": "ServerCommunicationLinks",
       "ModuleOperationName": "server_communication_links",
       "ObjectName": "ServerCommunicationLinks",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_servercommunicationlinks_facts",
@@ -5268,7 +5296,8 @@
       "ModuleOperationNameUpper": "ServerCommunicationLinks",
       "ModuleOperationName": "server_communication_links",
       "ObjectName": "ServerCommunicationLinks",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serviceobjectives_facts",
@@ -5350,7 +5379,8 @@
       "ModuleOperationNameUpper": "ServiceObjectives",
       "ModuleOperationName": "service_objectives",
       "ObjectName": "ServiceObjectives",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_servers",
@@ -5679,7 +5709,8 @@
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
       "ObjectName": "SQL Server",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_servers_facts",
@@ -5743,7 +5774,8 @@
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
       "ObjectName": "SQL Server",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_elasticpoolactivities_facts",
@@ -5814,7 +5846,8 @@
       "ModuleOperationNameUpper": "ElasticPoolActivities",
       "ModuleOperationName": "elastic_pool_activities",
       "ObjectName": "ElasticPoolActivities",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_elasticpooldatabaseactivities_facts",
@@ -5885,7 +5918,8 @@
       "ModuleOperationNameUpper": "ElasticPoolDatabaseActivities",
       "ModuleOperationName": "elastic_pool_database_activities",
       "ObjectName": "ElasticPoolDatabaseActivities",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_recommendedelasticpools_facts",
@@ -5980,7 +6014,8 @@
       "ModuleOperationNameUpper": "RecommendedElasticPools",
       "ModuleOperationName": "recommended_elastic_pools",
       "ObjectName": "RecommendedElasticPools",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_servicetieradvisors_facts",
@@ -6080,7 +6115,8 @@
       "ModuleOperationNameUpper": "ServiceTierAdvisors",
       "ModuleOperationName": "service_tier_advisors",
       "ObjectName": "ServiceTierAdvisors",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_transparentdataencryptions",
@@ -6243,7 +6279,8 @@
       "ModuleOperationNameUpper": "TransparentDataEncryptions",
       "ModuleOperationName": "transparent_data_encryptions",
       "ObjectName": "TransparentDataEncryptions",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_transparentdataencryptions_facts",
@@ -6330,7 +6367,8 @@
       "ModuleOperationNameUpper": "TransparentDataEncryptions",
       "ModuleOperationName": "transparent_data_encryptions",
       "ObjectName": "TransparentDataEncryptions",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_transparentdataencryptionactivities_facts",
@@ -6417,7 +6455,8 @@
       "ModuleOperationNameUpper": "TransparentDataEncryptionActivities",
       "ModuleOperationName": "transparent_data_encryption_activities",
       "ObjectName": "TransparentDataEncryptionActivities",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverusages_facts",
@@ -6472,7 +6511,8 @@
       "ModuleOperationNameUpper": "ServerUsages",
       "ModuleOperationName": "server_usages",
       "ObjectName": "ServerUsages",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databaseusages_facts",
@@ -6543,7 +6583,8 @@
       "ModuleOperationNameUpper": "DatabaseUsages",
       "ModuleOperationName": "database_usages",
       "ObjectName": "DatabaseUsages",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databaseblobauditingpolicies",
@@ -6859,7 +6900,8 @@
       "ModuleOperationNameUpper": "DatabaseBlobAuditingPolicies",
       "ModuleOperationName": "database_blob_auditing_policies",
       "ObjectName": "DatabaseBlobAuditingPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databaseblobauditingpolicies_facts",
@@ -6946,7 +6988,8 @@
       "ModuleOperationNameUpper": "DatabaseBlobAuditingPolicies",
       "ModuleOperationName": "database_blob_auditing_policies",
       "ObjectName": "DatabaseBlobAuditingPolicies",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_encryptionprotectors",
@@ -7179,7 +7222,8 @@
       "ModuleOperationNameUpper": "EncryptionProtectors",
       "ModuleOperationName": "encryption_protectors",
       "ObjectName": "EncryptionProtectors",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_encryptionprotectors_facts",
@@ -7261,7 +7305,8 @@
       "ModuleOperationNameUpper": "EncryptionProtectors",
       "ModuleOperationName": "encryption_protectors",
       "ObjectName": "EncryptionProtectors",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_failovergroups",
@@ -7660,7 +7705,8 @@
       "ModuleOperationNameUpper": "FailoverGroups",
       "ModuleOperationName": "failover_groups",
       "ObjectName": "FailoverGroups",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_failovergroups_facts",
@@ -7742,7 +7788,8 @@
       "ModuleOperationNameUpper": "FailoverGroups",
       "ModuleOperationName": "failover_groups",
       "ObjectName": "FailoverGroups",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverkeys",
@@ -8016,7 +8063,8 @@
       "ModuleOperationNameUpper": "ServerKeys",
       "ModuleOperationName": "server_keys",
       "ObjectName": "ServerKeys",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverkeys_facts",
@@ -8098,7 +8146,8 @@
       "ModuleOperationNameUpper": "ServerKeys",
       "ModuleOperationName": "server_keys",
       "ObjectName": "ServerKeys",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_syncagents",
@@ -8301,7 +8350,8 @@
       "ModuleOperationNameUpper": "SyncAgents",
       "ModuleOperationName": "sync_agents",
       "ObjectName": "SyncAgents",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_syncagents_facts",
@@ -8396,7 +8446,8 @@
       "ModuleOperationNameUpper": "SyncAgents",
       "ModuleOperationName": "sync_agents",
       "ObjectName": "SyncAgents",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_syncgroups",
@@ -8880,7 +8931,8 @@
       "ModuleOperationNameUpper": "SyncGroups",
       "ModuleOperationName": "sync_groups",
       "ObjectName": "SyncGroups",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_syncgroups_facts",
@@ -9096,7 +9148,8 @@
       "ModuleOperationNameUpper": "SyncGroups",
       "ModuleOperationName": "sync_groups",
       "ObjectName": "SyncGroups",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_syncmembers",
@@ -9470,7 +9523,8 @@
       "ModuleOperationNameUpper": "SyncMembers",
       "ModuleOperationName": "sync_members",
       "ObjectName": "SyncMembers",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_syncmembers_facts",
@@ -9605,7 +9659,8 @@
       "ModuleOperationNameUpper": "SyncMembers",
       "ModuleOperationName": "sync_members",
       "ObjectName": "SyncMembers",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_virtualnetworkrules",
@@ -9788,7 +9843,8 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_virtualnetworkrules_facts",
@@ -9870,7 +9926,8 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_databaseoperations_facts",
@@ -9941,7 +9998,8 @@
       "ModuleOperationNameUpper": "DatabaseOperations",
       "ModuleOperationName": "database_operations",
       "ObjectName": "DatabaseOperations",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverdnsaliases",
@@ -10075,7 +10133,8 @@
       "ModuleOperationNameUpper": "ServerDnsAliases",
       "ModuleOperationName": "server_dns_aliases",
       "ObjectName": "ServerDnsAliases",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_sql_serverdnsaliases_facts",
@@ -10157,7 +10216,8 @@
       "ModuleOperationNameUpper": "ServerDnsAliases",
       "ModuleOperationName": "server_dns_aliases",
       "ObjectName": "ServerDnsAliases",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     }
   ],
   "Namespace": "sql",

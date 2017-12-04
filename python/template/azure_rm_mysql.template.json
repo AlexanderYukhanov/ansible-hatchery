@@ -458,7 +458,8 @@
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
       "ObjectName": "Servers",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_servers_facts",
@@ -522,7 +523,8 @@
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
       "ObjectName": "Servers",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_firewallrules",
@@ -590,7 +592,7 @@
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The start IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValueSample": "start_ip_address",
@@ -604,7 +606,7 @@
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The end IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValueSample": "end_ip_address",
@@ -710,7 +712,8 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_firewallrules_facts",
@@ -792,7 +795,8 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_virtualnetworkrules",
@@ -988,7 +992,8 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_virtualnetworkrules_facts",
@@ -1070,7 +1075,8 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_databases",
@@ -1257,7 +1263,8 @@
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "Databases",
-      "NeedsDeleteBeforeUpdate": true
+      "NeedsDeleteBeforeUpdate": true,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_databases_facts",
@@ -1339,7 +1346,8 @@
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "Databases",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_configurations",
@@ -1550,7 +1558,8 @@
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_configurations_facts",
@@ -1632,7 +1641,8 @@
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     },
     {
       "ModuleName": "azure_rm_mysql_logfiles_facts",
@@ -1687,7 +1697,8 @@
       "ModuleOperationNameUpper": "LogFiles",
       "ModuleOperationName": "log_files",
       "ObjectName": "LogFiles",
-      "NeedsDeleteBeforeUpdate": false
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
     }
   ],
   "Namespace": "mysql",
