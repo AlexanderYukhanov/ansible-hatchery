@@ -114,6 +114,10 @@ except ImportError:
     pass
 
 
+class Actions:
+    NoAction, Create, Update = range(3)
+
+
 class AzureRMFirewallRules(AzureRMModuleBase):
     """Configuration class for an Azure RM FirewallRules resource"""
 
@@ -160,6 +164,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
         self.state = None
+        self.to_do = Actions.NoAction
 
         super(AzureRMFirewallRules, self).__init__(derived_arg_spec=self.module_arg_spec,
                                                    supports_check_mode=True,
@@ -189,6 +194,8 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             self.log("FirewallRules instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
+            else:
+                self.to_do = Actions.Create
         else:
             self.log("FirewallRules instance already exists")
             if self.state == 'absent':
@@ -197,8 +204,12 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 self.log("FirewallRules instance deleted")
             elif self.state == 'present':
                 self.log("Need to check if FirewallRules instance has to be deleted or may be updated")
+                if (self.start_ip_address is not None) and (self.start_ip_address != old_response['start_ip_address']):
+                    self.to_do = Actions.Update 
+                if (self.end_ip_address is not None) and (self.end_ip_address != old_response['start_ip_address']):
+                    self.to_do = Actions.Update 
 
-        if self.state == 'present':
+        if self.to_do != Actions.NoAction:
 
             self.log("Need to Create / Update the FirewallRules instance")
 
