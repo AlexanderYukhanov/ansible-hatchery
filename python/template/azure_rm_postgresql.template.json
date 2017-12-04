@@ -1,6 +1,480 @@
 {
   "Modules": [
     {
+      "ModuleName": "azure_rm_postgresql_servers",
+      "ModuleNameAlt": "azure_rm_postgresql_server",
+      "Options": [
+        {
+          "Name": "resource_group_name",
+          "NameAlt": "resource_group",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+          "DefaultValueSample": "resource_group_name",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "server_name",
+          "NameAlt": "server_name",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the server.",
+          "DefaultValueSample": "server_name",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "parameters",
+          "NameAlt": "parameters",
+          "Disposition": "dictionary",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "dict()",
+          "Documentation": "The required parameters for creating or updating a server.",
+          "DefaultValueSample": "parameters",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "sku",
+          "NameAlt": "sku",
+          "Disposition": "parameters",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The SKU (pricing tier) of the server.",
+          "DefaultValueSample": "sku",
+          "DefaultValueTest": "",
+          "SubOptions": [
+            {
+              "Name": "name",
+              "NameAlt": "name",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The name of the sku, typically, a letter + Number code, e.g. P3.",
+              "DefaultValueSample": "name",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "tier",
+              "NameAlt": "tier",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
+              "DefaultValueSample": "tier",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "capacity",
+              "NameAlt": "capacity",
+              "Disposition": "default",
+              "Type": "int",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The scale up/out capacity, representing server's compute units.",
+              "DefaultValueSample": "capacity",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "size",
+              "NameAlt": "size",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The size code, to be interpreted by resource as appropriate.",
+              "DefaultValueSample": "size",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "family",
+              "NameAlt": "family",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The family of hardware.",
+              "DefaultValueSample": "family",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            }
+          ],
+          "RequiredCount": 0
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "properties",
+          "Disposition": "parameters",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "Properties of the server.",
+          "DefaultValueSample": "properties",
+          "DefaultValueTest": "",
+          "SubOptions": [
+            {
+              "Name": "storage_mb",
+              "NameAlt": "storage_mb",
+              "Disposition": "default",
+              "Type": "long",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The maximum storage allowed for a server.",
+              "DefaultValueSample": "storage_mb",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "version",
+              "NameAlt": "version",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "Server version. Possible values include: '9.5', '9.6'",
+              "DefaultValueSample": "version",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "ssl_enforcement",
+              "NameAlt": "ssl_enforcement",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'",
+              "DefaultValueSample": "ssl_enforcement",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "create_mode",
+              "NameAlt": "create_mode",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "Constant filled by server.",
+              "DefaultValueSample": "create_mode",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "administrator_login",
+              "NameAlt": "administrator_login",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
+              "DefaultValueSample": "administrator_login",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "administrator_login_password",
+              "NameAlt": "administrator_login_password",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The password of the administrator login.",
+              "DefaultValueSample": "administrator_login_password",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            }
+          ],
+          "RequiredCount": 0
+        },
+        {
+          "Name": "location",
+          "NameAlt": "location",
+          "Disposition": "parameters",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The location the resource resides in.",
+          "DefaultValueSample": "location",
+          "DefaultValueTest": "",
+          "SubOptions": [],
+          "RequiredCount": 0
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "tags",
+          "Disposition": "parameters",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Application-specific metadata in the form of key-value pairs.",
+          "DefaultValueSample": "tags",
+          "DefaultValueTest": "",
+          "SubOptions": [],
+          "RequiredCount": 0
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "resource_group_name",
+            "server_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name"
+          ]
+        },
+        {
+          "Name": "create",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ]
+        },
+        {
+          "Name": "update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ]
+        },
+        {
+          "Name": "delete",
+          "Options": [
+            "resource_group_name",
+            "server_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name"
+          ]
+        }
+      ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "location",
+          "NameAlt": "location",
+          "Description": "The location the resource resides in.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": []
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "tags",
+          "Description": "Application-specific metadata in the form of key-value pairs.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": []
+        },
+        {
+          "Name": "sku",
+          "NameAlt": "sku",
+          "Description": "The SKU (pricing tier) of the server.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "sku",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "name",
+              "Description": "The name of the sku, typically, a letter + Number code, e.g. P3.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": []
+            },
+            {
+              "Name": "tier",
+              "NameAlt": "tier",
+              "Description": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "tier",
+              "SubFields": []
+            },
+            {
+              "Name": "capacity",
+              "NameAlt": "capacity",
+              "Description": "The scale up/out capacity, representing server's compute units.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "capacity",
+              "SubFields": []
+            },
+            {
+              "Name": "size",
+              "NameAlt": "size",
+              "Description": "The size code, to be interpreted by resource as appropriate.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "size",
+              "SubFields": []
+            },
+            {
+              "Name": "family",
+              "NameAlt": "family",
+              "Description": "The family of hardware.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "family",
+              "SubFields": []
+            }
+          ]
+        },
+        {
+          "Name": "administrator_login",
+          "NameAlt": "administrator_login",
+          "Description": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "administrator_login",
+          "SubFields": []
+        },
+        {
+          "Name": "storage_mb",
+          "NameAlt": "storage_mb",
+          "Description": "The maximum storage allowed for a server.",
+          "Type": "long",
+          "Returned": "always",
+          "SampleValue": "storage_mb",
+          "SubFields": []
+        },
+        {
+          "Name": "version",
+          "NameAlt": "version",
+          "Description": "Server version. Possible values include: '9.5', '9.6'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "version",
+          "SubFields": []
+        },
+        {
+          "Name": "ssl_enforcement",
+          "NameAlt": "ssl_enforcement",
+          "Description": "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ssl_enforcement",
+          "SubFields": []
+        },
+        {
+          "Name": "user_visible_state",
+          "NameAlt": "user_visible_state",
+          "Description": "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "user_visible_state",
+          "SubFields": []
+        },
+        {
+          "Name": "fully_qualified_domain_name",
+          "NameAlt": "fully_qualified_domain_name",
+          "Description": "The fully qualified domain name of a server.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "fully_qualified_domain_name",
+          "SubFields": []
+        }
+      ],
+      "TestPrerequisitesModule": "",
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "Servers",
+      "ModuleOperationName": "servers",
+      "ObjectName": "Servers",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    },
+    {
       "ModuleName": "azure_rm_postgresql_servers_facts",
       "ModuleNameAlt": "azure_rm_postgresql_server_facts",
       "Options": [
@@ -1242,7 +1716,7 @@
   "NamespaceUpper": "Postgresql",
   "Name": "PostgreSQLManagementClient",
   "Operations": [
-    "Servers[ create update delete get list_by_resource_group list FACTS ]",
+    "Servers[ create update delete get list_by_resource_group list MAIN FACTS ]",
     "FirewallRules[ create_or_update delete get list_by_server MAIN FACTS ]",
     "VirtualNetworkRules[ get create_or_update delete list_by_server MAIN FACTS ]",
     "Databases[ create_or_update delete get list_by_server MAIN FACTS ]",

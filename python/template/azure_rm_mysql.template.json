@@ -285,6 +285,19 @@
           ]
         },
         {
+          "Name": "update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ]
+        },
+        {
           "Name": "delete",
           "Options": [
             "resource_group_name",

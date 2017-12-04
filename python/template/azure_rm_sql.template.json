@@ -3151,6 +3151,21 @@
           ]
         },
         {
+          "Name": "update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "database_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "database_name",
+            "parameters"
+          ]
+        },
+        {
           "Name": "delete",
           "Options": [
             "resource_group_name",
@@ -4331,6 +4346,21 @@
         },
         {
           "Name": "create_or_update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "elastic_pool_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "elastic_pool_name",
+            "parameters"
+          ]
+        },
+        {
+          "Name": "update",
           "Options": [
             "resource_group_name",
             "server_name",
@@ -5542,6 +5572,19 @@
         },
         {
           "Name": "create_or_update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "parameters"
+          ]
+        },
+        {
+          "Name": "update",
           "Options": [
             "resource_group_name",
             "server_name",
@@ -7528,6 +7571,21 @@
           ]
         },
         {
+          "Name": "update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "failover_group_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "failover_group_name",
+            "parameters"
+          ]
+        },
+        {
           "Name": "delete",
           "Options": [
             "resource_group_name",
@@ -8743,6 +8801,23 @@
           ]
         },
         {
+          "Name": "update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "database_name",
+            "sync_group_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "database_name",
+            "sync_group_name",
+            "parameters"
+          ]
+        },
+        {
           "Name": "delete",
           "Options": [
             "resource_group_name",
@@ -9372,6 +9447,25 @@
         },
         {
           "Name": "create_or_update",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "database_name",
+            "sync_group_name",
+            "sync_member_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "database_name",
+            "sync_group_name",
+            "sync_member_name",
+            "parameters"
+          ]
+        },
+        {
+          "Name": "update",
           "Options": [
             "resource_group_name",
             "server_name",
