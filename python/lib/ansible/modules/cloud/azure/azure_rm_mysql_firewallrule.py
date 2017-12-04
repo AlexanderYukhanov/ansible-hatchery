@@ -115,7 +115,7 @@ except ImportError:
 
 
 class Actions:
-    NoAction, Create, Update = range(3)
+    NoAction, Create, Update, Delete = range(4)
 
 
 class AzureRMFirewallRules(AzureRMModuleBase):
@@ -199,9 +199,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         else:
             self.log("FirewallRules instance already exists")
             if self.state == 'absent':
-                self.delete_firewallrules()
-                self.results['changed'] = True
-                self.log("FirewallRules instance deleted")
+                self.to_do = Actions.Delete
             elif self.state == 'present':
                 self.log("Need to check if FirewallRules instance has to be deleted or may be updated")
                 if (self.start_ip_address is not None) and (self.start_ip_address != old_response['start_ip_address']):
@@ -222,7 +220,12 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
             self.log("Creation / Update done")
+        elif self.to_do == Actions.Delete:
+            self.log("FirewallRules instance deleted")
+            self.delete_firewallrules()
+            self.results['changed'] = True
         else:
+            self.log("FirewallRules instance unchanged")
             self.results['state'] = old_response
             self.results['changed'] = False
 
