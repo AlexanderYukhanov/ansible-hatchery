@@ -210,7 +210,6 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                     self.to_do = Actions.Update 
 
         if self.to_do != Actions.NoAction:
-
             self.log("Need to Create / Update the FirewallRules instance")
 
             if self.check_mode:
@@ -223,6 +222,9 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
             self.log("Creation / Update done")
+        else:
+            self.results['state'] = old_response
+            self.results['changed'] = False
 
         return self.results
 
