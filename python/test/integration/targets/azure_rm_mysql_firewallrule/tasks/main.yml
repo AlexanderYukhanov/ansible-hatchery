@@ -47,3 +47,8 @@
   assert:
     that:
       - output.changed
+
+- name: Delete instance of Servers
+  azure_rm_mysql_server:
+    resource_group: "{{ resource_group }}"
+    name: test-mysql-server

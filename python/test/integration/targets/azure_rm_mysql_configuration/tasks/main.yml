@@ -35,3 +35,8 @@
     that:
       - output.changed == false
       - output.state.value == 'ON'
+
+- name: Delete instance of Servers
+  azure_rm_mysql_server:
+    resource_group: "{{ resource_group }}"
+    name: test-mysql-server

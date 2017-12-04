@@ -42,3 +42,8 @@
   assert:
     that:
       - output.changed
+
+- name: Delete instance of SQL Server
+  azure_rm_sql_server:
+    resource_group: "{{ resource_group }}"
+    name: sql-test-server-dauih
