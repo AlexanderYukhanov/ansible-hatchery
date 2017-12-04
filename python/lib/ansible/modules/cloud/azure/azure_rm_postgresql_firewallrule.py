@@ -112,6 +112,10 @@ except ImportError:
     pass
 
 
+class Actions:
+    NoAction, Create, Update, Delete = range(4)
+
+
 class AzureRMFirewallRules(AzureRMModuleBase):
     """Configuration class for an Azure RM FirewallRules resource"""
 
@@ -153,6 +157,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
         self.state = None
+        self.to_do = Actions.NoAction
 
         super(AzureRMFirewallRules, self).__init__(derived_arg_spec=self.module_arg_spec,
                                                    supports_check_mode=True,
@@ -186,17 +191,17 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             self.log("FirewallRules instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
+            else:
+                self.to_do = Actions.Create
         else:
             self.log("FirewallRules instance already exists")
             if self.state == 'absent':
-                self.delete_firewallrules()
-                self.results['changed'] = True
-                self.log("FirewallRules instance deleted")
+                self.to_do = Actions.Delete
             elif self.state == 'present':
                 self.log("Need to check if FirewallRules instance has to be deleted or may be updated")
+                self.to_do = Actions.Update
 
-        if self.state == 'present':
-
+        if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
             self.log("Need to Create / Update the FirewallRules instance")
 
             if self.check_mode:
@@ -209,6 +214,14 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
             self.log("Creation / Update done")
+        elif self.to_do == Actions.Delete:
+            self.log("FirewallRules instance deleted")
+            self.delete_firewallrules()
+            self.results['changed'] = True
+        else:
+            self.log("FirewallRules instance unchanged")
+            self.results['state'] = old_response
+            self.results['changed'] = False
 
         return self.results
 

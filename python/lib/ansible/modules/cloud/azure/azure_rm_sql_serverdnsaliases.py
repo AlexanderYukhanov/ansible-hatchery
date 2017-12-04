@@ -96,6 +96,10 @@ except ImportError:
     pass
 
 
+class Actions:
+    NoAction, Create, Update, Delete = range(4)
+
+
 class AzureRMServerDnsAliases(AzureRMModuleBase):
     """Configuration class for an Azure RM ServerDnsAliases resource"""
 
@@ -128,6 +132,7 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
         self.state = None
+        self.to_do = Actions.NoAction
 
         super(AzureRMServerDnsAliases, self).__init__(derived_arg_spec=self.module_arg_spec,
                                                       supports_check_mode=True,
@@ -157,17 +162,17 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
             self.log("ServerDnsAliases instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
+            else:
+                self.to_do = Actions.Create
         else:
             self.log("ServerDnsAliases instance already exists")
             if self.state == 'absent':
-                self.delete_serverdnsaliases()
-                self.results['changed'] = True
-                self.log("ServerDnsAliases instance deleted")
+                self.to_do = Actions.Delete
             elif self.state == 'present':
                 self.log("Need to check if ServerDnsAliases instance has to be deleted or may be updated")
+                self.to_do = Actions.Update
 
-        if self.state == 'present':
-
+        if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
             self.log("Need to Create / Update the ServerDnsAliases instance")
 
             if self.check_mode:
@@ -180,6 +185,14 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
             self.log("Creation / Update done")
+        elif self.to_do == Actions.Delete:
+            self.log("ServerDnsAliases instance deleted")
+            self.delete_serverdnsaliases()
+            self.results['changed'] = True
+        else:
+            self.log("ServerDnsAliases instance unchanged")
+            self.results['state'] = old_response
+            self.results['changed'] = False
 
         return self.results
 

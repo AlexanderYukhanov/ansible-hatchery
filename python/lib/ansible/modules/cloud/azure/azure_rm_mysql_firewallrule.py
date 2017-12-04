@@ -203,9 +203,9 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             elif self.state == 'present':
                 self.log("Need to check if FirewallRules instance has to be deleted or may be updated")
                 if (self.start_ip_address is not None) and (self.start_ip_address != old_response['start_ip_address']):
-                    self.to_do = Actions.Update 
-                if (self.end_ip_address is not None) and (self.end_ip_address != old_response['start_ip_address']):
-                    self.to_do = Actions.Update 
+                    self.to_do = Actions.Update
+                if (self.end_ip_address is not None) and (self.end_ip_address != old_response['end_ip_address']):
+                    self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
             self.log("Need to Create / Update the FirewallRules instance")

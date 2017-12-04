@@ -713,7 +713,24 @@
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": [
+        {
+          "Option": [
+            "start_ip_address"
+          ],
+          "ReturnField": [
+            "start_ip_address"
+          ]
+        },
+        {
+          "Option": [
+            "end_ip_address"
+          ],
+          "ReturnField": [
+            "end_ip_address"
+          ]
+        }
+      ]
     },
     {
       "ModuleName": "azure_rm_mysql_firewallrules_facts",
