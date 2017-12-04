@@ -207,7 +207,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 if (self.end_ip_address is not None) and (self.end_ip_address != old_response['start_ip_address']):
                     self.to_do = Actions.Update 
 
-        if self.to_do != Actions.NoAction:
+        if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
             self.log("Need to Create / Update the FirewallRules instance")
 
             if self.check_mode:
