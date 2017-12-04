@@ -47,3 +47,4 @@
   azure_rm_sql_server:
     resource_group: "{{ resource_group }}"
     name: sql-test-server-dauih
+    state: absent
