@@ -1,0 +1,17 @@
+- name: Create instance of RoleDefinitions
+  azure_rm_authorization_roledefinitions_facts:
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state.state == 'Ready'
+
+- name: Update instance of RoleDefinitions
+  azure_rm_authorization_roledefinitions_facts:
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state.state == 'Ready'

@@ -1,0 +1,970 @@
+{
+  "Modules": [
+    {
+      "ModuleName": "azure_rm_authorization_permissions_facts",
+      "ModuleNameAlt": "azure_rm_authorization_permissions_facts",
+      "Options": [
+        {
+          "Name": "resource_group_name",
+          "NameAlt": "resource_group",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource group containing the resource. The name is case insensitive.",
+          "DefaultValueSample": "resource_group_name",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
+          "SubOptions": null,
+          "RequiredCount": 2
+        },
+        {
+          "Name": "resource_provider_namespace",
+          "NameAlt": "resource_provider_namespace",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The namespace of the resource provider.",
+          "DefaultValueSample": "resource_provider_namespace",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "parent_resource_path",
+          "NameAlt": "parent_resource_path",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The parent resource identity.",
+          "DefaultValueSample": "parent_resource_path",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "resource_type",
+          "NameAlt": "resource_type",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The resource type of the resource.",
+          "DefaultValueSample": "resource_type",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "resource_name",
+          "NameAlt": "resource_name",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource to get the permissions for.",
+          "DefaultValueSample": "resource_name",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "list_for_resource",
+          "Options": [
+            "resource_group_name",
+            "resource_provider_namespace",
+            "parent_resource_path",
+            "resource_type",
+            "resource_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "resource_provider_namespace",
+            "parent_resource_path",
+            "resource_type",
+            "resource_name"
+          ]
+        },
+        {
+          "Name": "list_for_resource_group",
+          "Options": [
+            "resource_group_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "Permissions",
+      "ModuleOperationName": "permissions",
+      "ObjectName": "Permissions",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    },
+    {
+      "ModuleName": "azure_rm_authorization_provideroperationsmetadata_facts",
+      "ModuleNameAlt": "azure_rm_authorization_provideroperationsmetadata_facts",
+      "Options": [
+        {
+          "Name": "resource_provider_namespace",
+          "NameAlt": "resource_provider_namespace",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The namespace of the resource provider.",
+          "DefaultValueSample": "resource_provider_namespace",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "expand",
+          "NameAlt": "expand",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Specifies whether to expand the values.",
+          "DefaultValueSample": "expand",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "resource_provider_namespace",
+            "expand"
+          ],
+          "RequiredOptions": [
+            "resource_provider_namespace"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "ProviderOperationsMetadata",
+      "ModuleOperationName": "provider_operations_metadata",
+      "ObjectName": "ProviderOperationsMetadata",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    },
+    {
+      "ModuleName": "azure_rm_authorization_roleassignments",
+      "ModuleNameAlt": "azure_rm_authorization_roleassignments",
+      "Options": [
+        {
+          "Name": "scope",
+          "NameAlt": "scope",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.",
+          "DefaultValueSample": "scope",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "role_assignment_name",
+          "NameAlt": "role_assignment_name",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the role assignment to create. It can be any valid GUID.",
+          "DefaultValueSample": "role_assignment_name",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "parameters",
+          "NameAlt": "parameters",
+          "Disposition": "dictionary",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "dict()",
+          "Documentation": "Parameters for the role assignment.",
+          "DefaultValueSample": "parameters",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "properties",
+          "Disposition": "parameters",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Role assignment properties.",
+          "DefaultValueSample": "properties",
+          "DefaultValueTest": "",
+          "SubOptions": [
+            {
+              "Name": "role_definition_id",
+              "NameAlt": "role_definition_id",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The role definition ID used in the role assignment.",
+              "DefaultValueSample": "role_definition_id",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "principal_id",
+              "NameAlt": "principal_id",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.",
+              "DefaultValueSample": "principal_id",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            }
+          ],
+          "RequiredCount": 0
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "scope",
+            "role_assignment_name"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_assignment_name"
+          ]
+        },
+        {
+          "Name": "create",
+          "Options": [
+            "scope",
+            "role_assignment_name",
+            "parameters"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_assignment_name",
+            "parameters"
+          ]
+        },
+        {
+          "Name": "delete",
+          "Options": [
+            "scope",
+            "role_assignment_name"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_assignment_name"
+          ]
+        }
+      ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The role assignment ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "The role assignment name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "The role assignment type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "properties",
+          "Description": "Role assignment properties.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "properties",
+          "SubFields": [
+            {
+              "Name": "scope",
+              "NameAlt": "scope",
+              "Description": "The role assignment scope.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "scope",
+              "SubFields": []
+            },
+            {
+              "Name": "role_definition_id",
+              "NameAlt": "role_definition_id",
+              "Description": "The role definition ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "role_definition_id",
+              "SubFields": []
+            },
+            {
+              "Name": "principal_id",
+              "NameAlt": "principal_id",
+              "Description": "The principal ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "principal_id",
+              "SubFields": []
+            }
+          ]
+        }
+      ],
+      "TestPrerequisitesModule": "",
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "RoleAssignments",
+      "ModuleOperationName": "role_assignments",
+      "ObjectName": "RoleAssignments",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    },
+    {
+      "ModuleName": "azure_rm_authorization_roleassignments_facts",
+      "ModuleNameAlt": "azure_rm_authorization_roleassignments_facts",
+      "Options": [
+        {
+          "Name": "resource_group_name",
+          "NameAlt": "resource_group",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource group.",
+          "DefaultValueSample": "resource_group_name",
+          "DefaultValueTest": "\"{{ resource_group }}\"",
+          "SubOptions": null,
+          "RequiredCount": 2
+        },
+        {
+          "Name": "resource_provider_namespace",
+          "NameAlt": "resource_provider_namespace",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The namespace of the resource provider.",
+          "DefaultValueSample": "resource_provider_namespace",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "parent_resource_path",
+          "NameAlt": "parent_resource_path",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The parent resource identity.",
+          "DefaultValueSample": "parent_resource_path",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "resource_type",
+          "NameAlt": "resource_type",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The resource type of the resource.",
+          "DefaultValueSample": "resource_type",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "resource_name",
+          "NameAlt": "resource_name",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource to get role assignments for.",
+          "DefaultValueSample": "resource_name",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "filter",
+          "NameAlt": "filter",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.",
+          "DefaultValueSample": "filter",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "scope",
+          "NameAlt": "scope",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The scope of the role assignment.",
+          "DefaultValueSample": "scope",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 2
+        },
+        {
+          "Name": "role_assignment_name",
+          "NameAlt": "role_assignment_name",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The name of the role assignment to get.",
+          "DefaultValueSample": "role_assignment_name",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "list_for_resource",
+          "Options": [
+            "resource_group_name",
+            "resource_provider_namespace",
+            "parent_resource_path",
+            "resource_type",
+            "resource_name",
+            "filter"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "resource_provider_namespace",
+            "parent_resource_path",
+            "resource_type",
+            "resource_name"
+          ]
+        },
+        {
+          "Name": "list_for_resource_group",
+          "Options": [
+            "resource_group_name",
+            "filter"
+          ],
+          "RequiredOptions": [
+            "resource_group_name"
+          ]
+        },
+        {
+          "Name": "get",
+          "Options": [
+            "scope",
+            "role_assignment_name"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_assignment_name"
+          ]
+        },
+        {
+          "Name": "list_for_scope",
+          "Options": [
+            "scope",
+            "filter"
+          ],
+          "RequiredOptions": [
+            "scope"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "RoleAssignments",
+      "ModuleOperationName": "role_assignments",
+      "ObjectName": "RoleAssignments",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    },
+    {
+      "ModuleName": "azure_rm_authorization_roledefinitions",
+      "ModuleNameAlt": "azure_rm_authorization_roledefinitions",
+      "Options": [
+        {
+          "Name": "scope",
+          "NameAlt": "scope",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The scope of the role definition.",
+          "DefaultValueSample": "scope",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "role_definition_id",
+          "NameAlt": "role_definition_id",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The ID of the role definition.",
+          "DefaultValueSample": "role_definition_id",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "role_definition",
+          "NameAlt": "role_definition",
+          "Disposition": "dictionary",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "dict()",
+          "Documentation": "The values for the role definition.",
+          "DefaultValueSample": "role_definition",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Disposition": "role_definition",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The role definition ID.",
+          "DefaultValueSample": "id",
+          "DefaultValueTest": "",
+          "SubOptions": [],
+          "RequiredCount": 0
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Disposition": "role_definition",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The role definition name.",
+          "DefaultValueSample": "name",
+          "DefaultValueTest": "",
+          "SubOptions": [],
+          "RequiredCount": 0
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Disposition": "role_definition",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The role definition type.",
+          "DefaultValueSample": "type",
+          "DefaultValueTest": "",
+          "SubOptions": [],
+          "RequiredCount": 0
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "properties",
+          "Disposition": "role_definition",
+          "Type": "dict",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Role definition properties.",
+          "DefaultValueSample": "properties",
+          "DefaultValueTest": "",
+          "SubOptions": [
+            {
+              "Name": "role_name",
+              "NameAlt": "role_name",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The role name.",
+              "DefaultValueSample": "role_name",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "description",
+              "NameAlt": "description",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The role definition description.",
+              "DefaultValueSample": "description",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "type",
+              "NameAlt": "type",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The role type.",
+              "DefaultValueSample": "type",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "permissions",
+              "NameAlt": "permissions",
+              "Disposition": "default",
+              "Type": "dict",
+              "IsList": true,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "Role definition permissions.",
+              "DefaultValueSample": "permissions",
+              "DefaultValueTest": "",
+              "SubOptions": [
+                {
+                  "Name": "actions",
+                  "NameAlt": "actions",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "IsList": true,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "Allowed actions.",
+                  "DefaultValueSample": "actions",
+                  "DefaultValueTest": "",
+                  "SubOptions": [],
+                  "RequiredCount": 0
+                },
+                {
+                  "Name": "not_actions",
+                  "NameAlt": "not_actions",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "IsList": true,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "Denied actions.",
+                  "DefaultValueSample": "not_actions",
+                  "DefaultValueTest": "",
+                  "SubOptions": [],
+                  "RequiredCount": 0
+                }
+              ],
+              "RequiredCount": 0
+            },
+            {
+              "Name": "assignable_scopes",
+              "NameAlt": "assignable_scopes",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": true,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "Role definition assignable scopes.",
+              "DefaultValueSample": "assignable_scopes",
+              "DefaultValueTest": "",
+              "SubOptions": [],
+              "RequiredCount": 0
+            }
+          ],
+          "RequiredCount": 0
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "scope",
+            "role_definition_id"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_definition_id"
+          ]
+        },
+        {
+          "Name": "create_or_update",
+          "Options": [
+            "scope",
+            "role_definition_id",
+            "role_definition"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_definition_id",
+            "role_definition"
+          ]
+        },
+        {
+          "Name": "delete",
+          "Options": [
+            "scope",
+            "role_definition_id"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_definition_id"
+          ]
+        }
+      ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The role definition ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Description": "The role definition name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "type",
+          "Description": "The role definition type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "properties",
+          "Description": "Role definition properties.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "properties",
+          "SubFields": [
+            {
+              "Name": "role_name",
+              "NameAlt": "role_name",
+              "Description": "The role name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "role_name",
+              "SubFields": []
+            },
+            {
+              "Name": "description",
+              "NameAlt": "description",
+              "Description": "The role definition description.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "description",
+              "SubFields": []
+            },
+            {
+              "Name": "type",
+              "NameAlt": "type",
+              "Description": "The role type.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": []
+            },
+            {
+              "Name": "permissions",
+              "NameAlt": "permissions",
+              "Description": "Role definition permissions.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "permissions",
+              "SubFields": [
+                {
+                  "Name": "actions",
+                  "NameAlt": "actions",
+                  "Description": "Allowed actions.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "actions",
+                  "SubFields": []
+                },
+                {
+                  "Name": "not_actions",
+                  "NameAlt": "not_actions",
+                  "Description": "Denied actions.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "not_actions",
+                  "SubFields": []
+                }
+              ]
+            },
+            {
+              "Name": "assignable_scopes",
+              "NameAlt": "assignable_scopes",
+              "Description": "Role definition assignable scopes.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "assignable_scopes",
+              "SubFields": []
+            }
+          ]
+        }
+      ],
+      "TestPrerequisitesModule": "",
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "RoleDefinitions",
+      "ModuleOperationName": "role_definitions",
+      "ObjectName": "RoleDefinitions",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    },
+    {
+      "ModuleName": "azure_rm_authorization_roledefinitions_facts",
+      "ModuleNameAlt": "azure_rm_authorization_roledefinitions_facts",
+      "Options": [
+        {
+          "Name": "scope",
+          "NameAlt": "scope",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The scope of the role definition.",
+          "DefaultValueSample": "scope",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        },
+        {
+          "Name": "role_definition_id",
+          "NameAlt": "role_definition_id",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The ID of the role definition.",
+          "DefaultValueSample": "role_definition_id",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "scope",
+            "role_definition_id"
+          ],
+          "RequiredOptions": [
+            "scope",
+            "role_definition_id"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "RoleDefinitions",
+      "ModuleOperationName": "role_definitions",
+      "ObjectName": "RoleDefinitions",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    }
+  ],
+  "Namespace": "authorization",
+  "NamespaceUpper": "Authorization",
+  "Name": "AuthorizationManagementClient",
+  "Operations": [
+    "ClassicAdministrators[ list ]",
+    "Permissions[ list_for_resource_group list_for_resource FACTS ]",
+    "ProviderOperationsMetadata[ get list FACTS ]",
+    "RoleAssignments[ list_for_resource list_for_resource_group delete create get delete_by_id create_by_id get_by_id list list_for_scope MAIN FACTS ]",
+    "RoleDefinitions[ delete get create_or_update get_by_id list MAIN FACTS ]"
+  ]
+}
