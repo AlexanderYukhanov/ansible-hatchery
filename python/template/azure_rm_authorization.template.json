@@ -2,7 +2,7 @@
   "Modules": [
     {
       "ModuleName": "azure_rm_authorization_permissions_facts",
-      "ModuleNameAlt": "azure_rm_authorization_permissions_facts",
+      "ModuleNameAlt": "azure_rm_authorizationpermissions_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -115,7 +115,7 @@
     },
     {
       "ModuleName": "azure_rm_authorization_provideroperationsmetadata_facts",
-      "ModuleNameAlt": "azure_rm_authorization_provideroperationsmetadata_facts",
+      "ModuleNameAlt": "azure_rm_authorizationprovideroperationsmetadata_facts",
       "Options": [
         {
           "Name": "resource_provider_namespace",
@@ -170,7 +170,7 @@
     },
     {
       "ModuleName": "azure_rm_authorization_roleassignments",
-      "ModuleNameAlt": "azure_rm_authorization_roleassignments",
+      "ModuleNameAlt": "azure_rm_authorizationroleassignment",
       "Options": [
         {
           "Name": "scope",
@@ -372,7 +372,7 @@
     },
     {
       "ModuleName": "azure_rm_authorization_roleassignments_facts",
-      "ModuleNameAlt": "azure_rm_authorization_roleassignments_facts",
+      "ModuleNameAlt": "azure_rm_authorizationroleassignment_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -550,7 +550,7 @@
     },
     {
       "ModuleName": "azure_rm_authorization_roledefinitions",
-      "ModuleNameAlt": "azure_rm_authorization_roledefinitions",
+      "ModuleNameAlt": "azure_rm_authorizationroledefinition",
       "Options": [
         {
           "Name": "scope",
@@ -902,7 +902,7 @@
     },
     {
       "ModuleName": "azure_rm_authorization_roledefinitions_facts",
-      "ModuleNameAlt": "azure_rm_authorization_roledefinitions_facts",
+      "ModuleNameAlt": "azure_rm_authorizationroledefinition_facts",
       "Options": [
         {
           "Name": "scope",

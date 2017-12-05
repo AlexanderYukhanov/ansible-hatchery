@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_authorization_roledefinitions
+module: azure_rm_authorizationroledefinition
 version_added: "2.5"
 short_description: Manage RoleDefinitions instance
 description:
@@ -77,7 +77,7 @@ author:
 
 EXAMPLES = '''
   - name: Create (or update) RoleDefinitions
-    azure_rm_authorization_roledefinitions:
+    azure_rm_authorizationroledefinition:
       scope: scope
       role_definition_id: role_definition_id
       id: id

@@ -1,6 +1,5 @@
 - name: Create instance of RoleAssignments
-  azure_rm_authorization_roleassignments_facts:
-    resource_group: "{{ resource_group }}"
+  azure_rm_authorizationroleassignment:
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -9,11 +8,19 @@
       - output.state.state == 'Ready'
 
 - name: Update instance of RoleAssignments
-  azure_rm_authorization_roleassignments_facts:
-    resource_group: "{{ resource_group }}"
+  azure_rm_authorizationroleassignment:
   register: output
 - name: Assert the state has not changed
   assert:
     that:
       - output.changed == false
       - output.state.state == 'Ready'
+
+- name: Delete instance of RoleAssignments
+  azure_rm_authorizationroleassignment:
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed

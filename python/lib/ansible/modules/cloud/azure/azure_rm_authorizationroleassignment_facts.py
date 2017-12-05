@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_authorization_roleassignments_facts
+module: azure_rm_authorizationroleassignment_facts
 version_added: "2.5"
 short_description: Get RoleAssignments facts.
 description:
@@ -59,7 +59,7 @@ author:
 
 EXAMPLES = '''
   - name: List instances of RoleAssignments
-    azure_rm_authorization_roleassignments_facts:
+    azure_rm_authorizationroleassignment_facts:
       resource_group: resource_group_name
       resource_provider_namespace: resource_provider_namespace
       parent_resource_path: parent_resource_path
@@ -68,17 +68,17 @@ EXAMPLES = '''
       filter: filter
 
   - name: List instances of RoleAssignments
-    azure_rm_authorization_roleassignments_facts:
+    azure_rm_authorizationroleassignment_facts:
       resource_group: resource_group_name
       filter: filter
 
   - name: Get instance of RoleAssignments
-    azure_rm_authorization_roleassignments_facts:
+    azure_rm_authorizationroleassignment_facts:
       scope: scope
       role_assignment_name: role_assignment_name
 
   - name: List instances of RoleAssignments
-    azure_rm_authorization_roleassignments_facts:
+    azure_rm_authorizationroleassignment_facts:
       scope: scope
       filter: filter
 '''

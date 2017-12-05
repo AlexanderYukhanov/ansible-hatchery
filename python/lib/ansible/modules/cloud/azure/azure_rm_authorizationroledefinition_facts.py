@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_authorization_roledefinitions_facts
+module: azure_rm_authorizationroledefinition_facts
 version_added: "2.5"
 short_description: Get RoleDefinitions facts.
 description:
@@ -42,7 +42,7 @@ author:
 
 EXAMPLES = '''
   - name: Get instance of RoleDefinitions
-    azure_rm_authorization_roledefinitions_facts:
+    azure_rm_authorizationroledefinition_facts:
       scope: scope
       role_definition_id: role_definition_id
 '''

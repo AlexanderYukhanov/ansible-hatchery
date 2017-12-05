@@ -1,6 +1,5 @@
-- name: Create instance of Permissions
-  azure_rm_authorization_permissions_facts:
-    resource_group: "{{ resource_group }}"
+- name: Create instance of ProviderOperationsMetadata
+  azure_rm_authorizationprovideroperationsmetadata_facts:
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -8,9 +7,8 @@
       - output.changed
       - output.state.state == 'Ready'
 
-- name: Update instance of Permissions
-  azure_rm_authorization_permissions_facts:
-    resource_group: "{{ resource_group }}"
+- name: Update instance of ProviderOperationsMetadata
+  azure_rm_authorizationprovideroperationsmetadata_facts:
   register: output
 - name: Assert the state has not changed
   assert:

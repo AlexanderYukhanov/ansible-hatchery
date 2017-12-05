@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_authorization_roleassignments
+module: azure_rm_authorizationroleassignment
 version_added: "2.5"
 short_description: Manage RoleAssignments instance
 description:
@@ -55,7 +55,7 @@ author:
 
 EXAMPLES = '''
   - name: Create (or update) RoleAssignments
-    azure_rm_authorization_roleassignments:
+    azure_rm_authorizationroleassignment:
       scope: scope
       role_assignment_name: role_assignment_name
       properties:

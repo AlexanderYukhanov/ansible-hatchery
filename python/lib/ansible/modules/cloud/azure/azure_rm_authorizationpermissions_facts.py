@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_authorization_permissions_facts
+module: azure_rm_authorizationpermissions_facts
 version_added: "2.5"
 short_description: Get Permissions facts.
 description:
@@ -50,7 +50,7 @@ author:
 
 EXAMPLES = '''
   - name: List instances of Permissions
-    azure_rm_authorization_permissions_facts:
+    azure_rm_authorizationpermissions_facts:
       resource_group: resource_group_name
       resource_provider_namespace: resource_provider_namespace
       parent_resource_path: parent_resource_path
@@ -58,7 +58,7 @@ EXAMPLES = '''
       resource_name: resource_name
 
   - name: List instances of Permissions
-    azure_rm_authorization_permissions_facts:
+    azure_rm_authorizationpermissions_facts:
       resource_group: resource_group_name
 '''
 

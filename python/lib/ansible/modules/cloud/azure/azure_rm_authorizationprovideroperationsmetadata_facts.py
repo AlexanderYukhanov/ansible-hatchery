@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_authorization_provideroperationsmetadata_facts
+module: azure_rm_authorizationprovideroperationsmetadata_facts
 version_added: "2.5"
 short_description: Get ProviderOperationsMetadata facts.
 description:
@@ -41,7 +41,7 @@ author:
 
 EXAMPLES = '''
   - name: Get instance of ProviderOperationsMetadata
-    azure_rm_authorization_provideroperationsmetadata_facts:
+    azure_rm_authorizationprovideroperationsmetadata_facts:
       resource_provider_namespace: resource_provider_namespace
       expand: expand
 '''
