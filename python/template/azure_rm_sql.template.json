@@ -2276,7 +2276,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_firewallrules",
-      "ModuleNameAlt": "azure_rm_sql_firewallrule",
+      "ModuleNameAlt": "azure_rm_sqlfirewallrule",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -2470,7 +2470,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_firewallrules_facts",
-      "ModuleNameAlt": "azure_rm_sql_firewallrule_facts",
+      "ModuleNameAlt": "azure_rm_sqlfirewallrule_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -2837,7 +2837,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_databases",
-      "ModuleNameAlt": "azure_rm_sql_database",
+      "ModuleNameAlt": "azure_rm_sqldatabase",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -3963,7 +3963,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_databases_facts",
-      "ModuleNameAlt": "azure_rm_sql_database_facts",
+      "ModuleNameAlt": "azure_rm_sqldatabase_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -4159,7 +4159,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_elasticpools",
-      "ModuleNameAlt": "azure_rm_sql_elasticpool",
+      "ModuleNameAlt": "azure_rm_sqlelasticpool",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -5414,7 +5414,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_servers",
-      "ModuleNameAlt": "azure_rm_sql_server",
+      "ModuleNameAlt": "azure_rm_sqlserver",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -5757,7 +5757,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_servers_facts",
-      "ModuleNameAlt": "azure_rm_sql_server_facts",
+      "ModuleNameAlt": "azure_rm_sqlserver_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -9758,7 +9758,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_virtualnetworkrules",
-      "ModuleNameAlt": "azure_rm_sql_virtualnetworkrule",
+      "ModuleNameAlt": "azure_rm_sqlvirtualnetworkrule",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -9942,7 +9942,7 @@
     },
     {
       "ModuleName": "azure_rm_sql_virtualnetworkrules_facts",
-      "ModuleNameAlt": "azure_rm_sql_virtualnetworkrule_facts",
+      "ModuleNameAlt": "azure_rm_sqlvirtualnetworkrule_facts",
       "Options": [
         {
           "Name": "resource_group_name",

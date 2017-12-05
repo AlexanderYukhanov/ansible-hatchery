@@ -2,7 +2,7 @@
   "Modules": [
     {
       "ModuleName": "azure_rm_postgresql_servers",
-      "ModuleNameAlt": "azure_rm_postgresql_server",
+      "ModuleNameAlt": "azure_rm_postgresqlserver",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -476,7 +476,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_servers_facts",
-      "ModuleNameAlt": "azure_rm_postgresql_server_facts",
+      "ModuleNameAlt": "azure_rm_postgresqlserver_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -541,7 +541,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_firewallrules",
-      "ModuleNameAlt": "azure_rm_postgresql_firewallrule",
+      "ModuleNameAlt": "azure_rm_postgresqlfirewallrule",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -729,7 +729,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_firewallrules_facts",
-      "ModuleNameAlt": "azure_rm_postgresql_firewallrule_facts",
+      "ModuleNameAlt": "azure_rm_postgresqlfirewallrule_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -812,7 +812,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_virtualnetworkrules",
-      "ModuleNameAlt": "azure_rm_postgresql_virtualnetworkrule",
+      "ModuleNameAlt": "azure_rm_postgresqlvirtualnetworkrule",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1009,7 +1009,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_virtualnetworkrules_facts",
-      "ModuleNameAlt": "azure_rm_postgresql_virtualnetworkrule_facts",
+      "ModuleNameAlt": "azure_rm_postgresqlvirtualnetworkrule_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1092,7 +1092,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_databases",
-      "ModuleNameAlt": "azure_rm_postgresql_database",
+      "ModuleNameAlt": "azure_rm_postgresqldatabase",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1280,7 +1280,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_databases_facts",
-      "ModuleNameAlt": "azure_rm_postgresql_database_facts",
+      "ModuleNameAlt": "azure_rm_postgresqldatabase_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1363,7 +1363,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_configurations",
-      "ModuleNameAlt": "azure_rm_postgresql_configuration",
+      "ModuleNameAlt": "azure_rm_postgresqlconfiguration",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1574,7 +1574,7 @@
     },
     {
       "ModuleName": "azure_rm_postgresql_configurations_facts",
-      "ModuleNameAlt": "azure_rm_postgresql_configuration_facts",
+      "ModuleNameAlt": "azure_rm_postgresqlconfiguration_facts",
       "Options": [
         {
           "Name": "resource_group_name",

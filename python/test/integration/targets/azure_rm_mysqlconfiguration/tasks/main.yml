@@ -1,0 +1,43 @@
+- name: Create Servers
+  azure_rm_mysqlserver:
+    resource_group: "{{ resource_group }}"
+    name: test-mysql-server
+    properties:
+      version: 5.6
+      create_mode: Default
+      admin_username: zimxyz
+      admin_password: Testpasswordxyz12!
+    location: westus
+- name: Create instance of Configurations
+  azure_rm_mysqlconfiguration:
+    resource_group: "{{ resource_group }}"
+    server_name: test-mysql-server
+    name: event_scheduler
+    value: "ON"
+    source: user-override
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state.value == 'ON'
+
+- name: Update instance of Configurations
+  azure_rm_mysqlconfiguration:
+    resource_group: "{{ resource_group }}"
+    server_name: test-mysql-server
+    name: event_scheduler
+    value: "ON"
+    source: user-override
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state.value == 'ON'
+
+- name: Delete instance of Servers
+  azure_rm_mysqlserver:
+    resource_group: "{{ resource_group }}"
+    name: test-mysql-server
+    state: absent
