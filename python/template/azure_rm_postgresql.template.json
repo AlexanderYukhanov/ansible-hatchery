@@ -20,7 +20,7 @@
         },
         {
           "Name": "server_name",
-          "NameAlt": "server_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -28,7 +28,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-postgresql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -137,7 +137,7 @@
           "Disposition": "parameters",
           "Type": "dict",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Properties of the server.",
           "DefaultValueSample": "properties",
@@ -201,7 +201,7 @@
             },
             {
               "Name": "administrator_login",
-              "NameAlt": "administrator_login",
+              "NameAlt": "admin_username",
               "Disposition": "default",
               "Type": "str",
               "IsList": false,
@@ -209,13 +209,13 @@
               "VariableValue": "None",
               "Documentation": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
               "DefaultValueSample": "administrator_login",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "zimxyz",
               "SubOptions": [],
               "RequiredCount": 0
             },
             {
               "Name": "administrator_login_password",
-              "NameAlt": "administrator_login_password",
+              "NameAlt": "admin_password",
               "Disposition": "default",
               "Type": "str",
               "IsList": false,
@@ -223,7 +223,7 @@
               "VariableValue": "None",
               "Documentation": "The password of the administrator login.",
               "DefaultValueSample": "administrator_login_password",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Testpasswordxyz12!",
               "SubOptions": [],
               "RequiredCount": 0
             }
@@ -1118,13 +1118,13 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-postgresql-server",
           "SubOptions": null,
           "RequiredCount": 0
         },
         {
           "Name": "database_name",
-          "NameAlt": "database_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1132,7 +1132,7 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValueSample": "database_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "testdatabase",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -1269,9 +1269,9 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
-      "AssertStateVariable": "state",
-      "AssertStateExpectedValue": "Ready",
+      "TestPrerequisitesModule": "azure_rm_postgresql_servers",
+      "AssertStateVariable": "name",
+      "AssertStateExpectedValue": "testdatabase",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "PostgreSQL Database",

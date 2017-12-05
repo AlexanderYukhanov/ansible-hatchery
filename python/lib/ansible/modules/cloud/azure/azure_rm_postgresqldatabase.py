@@ -30,7 +30,7 @@ options:
         description:
             - The name of the server.
         required: True
-    database_name:
+    name:
         description:
             - The name of the database.
         required: True
@@ -55,7 +55,7 @@ EXAMPLES = '''
     azure_rm_postgresqldatabase:
       resource_group: resource_group_name
       server_name: server_name
-      database_name: database_name
+      name: database_name
       charset: charset
       collation: collation
 '''
@@ -103,7 +103,7 @@ class AzureRMDatabases(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            database_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
@@ -125,7 +125,7 @@ class AzureRMDatabases(AzureRMModuleBase):
 
         self.resource_group = None
         self.server_name = None
-        self.database_name = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
@@ -210,12 +210,12 @@ class AzureRMDatabases(AzureRMModuleBase):
 
         :return: deserialized PostgreSQL Database instance state dictionary
         '''
-        self.log("Creating / Updating the PostgreSQL Database instance {0}".format(self.database_name))
+        self.log("Creating / Updating the PostgreSQL Database instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.databases.create_or_update(self.resource_group,
                                                                    self.server_name,
-                                                                   self.database_name,
+                                                                   self.name,
                                                                    self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
@@ -231,11 +231,11 @@ class AzureRMDatabases(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the PostgreSQL Database instance {0}".format(self.database_name))
+        self.log("Deleting the PostgreSQL Database instance {0}".format(self.name))
         try:
             response = self.mgmt_client.databases.delete(self.resource_group,
                                                          self.server_name,
-                                                         self.database_name)
+                                                         self.name)
         except CloudError as e:
             self.log('Error attempting to delete the PostgreSQL Database instance.')
             self.fail("Error deleting the PostgreSQL Database instance: {0}".format(str(e)))
@@ -248,12 +248,12 @@ class AzureRMDatabases(AzureRMModuleBase):
 
         :return: deserialized PostgreSQL Database instance state dictionary
         '''
-        self.log("Checking if the PostgreSQL Database instance {0} is present".format(self.database_name))
+        self.log("Checking if the PostgreSQL Database instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.databases.get(self.resource_group,
                                                       self.server_name,
-                                                      self.database_name)
+                                                      self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("PostgreSQL Database instance : {0} found".format(response.name))

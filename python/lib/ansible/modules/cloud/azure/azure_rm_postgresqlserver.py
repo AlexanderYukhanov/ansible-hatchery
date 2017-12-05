@@ -26,7 +26,7 @@ options:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
         required: True
-    server_name:
+    name:
         description:
             - The name of the server.
         required: True
@@ -52,7 +52,6 @@ options:
     properties:
         description:
             - Properties of the server.
-        required: True
         suboptions:
             storage_mb:
                 description:
@@ -67,11 +66,11 @@ options:
                 description:
                     - Constant filled by server.
                 required: True
-            administrator_login:
+            admin_username:
                 description:
                     - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
                 required: True
-            administrator_login_password:
+            admin_password:
                 description:
                     - The password of the administrator login.
                 required: True
@@ -95,7 +94,7 @@ EXAMPLES = '''
   - name: Create (or update) PostgreSQL Server
     azure_rm_postgresqlserver:
       resource_group: resource_group_name
-      server_name: server_name
+      name: server_name
       sku:
         name: name
         tier: tier
@@ -107,8 +106,8 @@ EXAMPLES = '''
         version: version
         ssl_enforcement: ssl_enforcement
         create_mode: create_mode
-        administrator_login: administrator_login
-        administrator_login_password: administrator_login_password
+        admin_username: administrator_login
+        admin_password: administrator_login_password
       location: location
       tags: tags
 '''
@@ -170,7 +169,7 @@ class AzureRMServers(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            server_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
@@ -180,7 +179,7 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             properties=dict(
                 type='dict',
-                required=True
+                required=False
             ),
             location=dict(
                 type='str',
@@ -199,7 +198,7 @@ class AzureRMServers(AzureRMModuleBase):
         )
 
         self.resource_group = None
-        self.server_name = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False, state=dict())
@@ -225,6 +224,8 @@ class AzureRMServers(AzureRMModuleBase):
                 self.parameters["location"] = kwargs[key]
             elif key == "tags":
                 self.parameters["tags"] = kwargs[key]
+
+        self.adjust_parameters()
 
         old_response = None
         results = dict()
@@ -289,22 +290,33 @@ class AzureRMServers(AzureRMModuleBase):
 
         return self.results
 
+    def adjust_parameters(self):
+        if self.parameters.get('properties', None) is not None:
+            self.rename_key(self.parameters['properties'], 'admin_username', 'administrator_login')
+            self.rename_key(self.parameters['properties'], 'admin_password', 'administrator_login_password')
+
+    def rename_key(self, d, old_name, new_name):
+        old_value = d.get(old_name, None)
+        if old_value is not None:
+            d.pop(old_name, None)
+            d[new_name] = old_value;
+
     def create_update_postgresqlserver(self):
         '''
         Creates or updates PostgreSQL Server with the specified configuration.
 
         :return: deserialized PostgreSQL Server instance state dictionary
         '''
-        self.log("Creating / Updating the PostgreSQL Server instance {0}".format(self.server_name))
+        self.log("Creating / Updating the PostgreSQL Server instance {0}".format(self.name))
 
         try:
             if self.to_do == Actions.Create:
                 response = self.mgmt_client.servers.create(self.resource_group,
-                                                           self.server_name,
+                                                           self.name,
                                                            self.parameters)
             else:
                 response = self.mgmt_client.servers.update(self.resource_group,
-                                                           self.server_name,
+                                                           self.name,
                                                            self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
@@ -320,10 +332,10 @@ class AzureRMServers(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the PostgreSQL Server instance {0}".format(self.server_name))
+        self.log("Deleting the PostgreSQL Server instance {0}".format(self.name))
         try:
             response = self.mgmt_client.servers.delete(self.resource_group,
-                                                       self.server_name)
+                                                       self.name)
         except CloudError as e:
             self.log('Error attempting to delete the PostgreSQL Server instance.')
             self.fail("Error deleting the PostgreSQL Server instance: {0}".format(str(e)))
@@ -336,11 +348,11 @@ class AzureRMServers(AzureRMModuleBase):
 
         :return: deserialized PostgreSQL Server instance state dictionary
         '''
-        self.log("Checking if the PostgreSQL Server instance {0} is present".format(self.server_name))
+        self.log("Checking if the PostgreSQL Server instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.servers.get(self.resource_group,
-                                                    self.server_name)
+                                                    self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("PostgreSQL Server instance : {0} found".format(response.name))

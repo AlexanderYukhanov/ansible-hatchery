@@ -1,6 +1,10 @@
 - name: Create instance of PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
+    name: test-postgresql-server
+    properties:
+      admin_username: zimxyz
+      admin_password: Testpasswordxyz12!
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -11,6 +15,10 @@
 - name: Update instance of PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
+    name: test-postgresql-server
+    properties:
+      admin_username: zimxyz
+      admin_password: Testpasswordxyz12!
   register: output
 - name: Assert the state has not changed
   assert:
@@ -21,6 +29,7 @@
 - name: Delete instance of PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
+    name: test-postgresql-server
     state: absent
   register: output
 - name: Assert the state has changed
