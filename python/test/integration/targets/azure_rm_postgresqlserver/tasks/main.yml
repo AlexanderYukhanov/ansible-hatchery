@@ -12,7 +12,7 @@
   assert:
     that:
       - output.changed
-      - output.state.state == 'Ready'
+      - output.state.user_visible_state == 'Ready'
 
 - name: Update instance of PostgreSQL Server
   azure_rm_postgresqlserver:
@@ -28,7 +28,7 @@
   assert:
     that:
       - output.changed == false
-      - output.state.state == 'Ready'
+      - output.state.user_visible_state == 'Ready'
 
 - name: Delete instance of PostgreSQL Server
   azure_rm_postgresqlserver:

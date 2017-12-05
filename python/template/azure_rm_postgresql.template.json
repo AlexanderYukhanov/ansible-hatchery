@@ -466,7 +466,7 @@
         }
       ],
       "TestPrerequisitesModule": "",
-      "AssertStateVariable": "state",
+      "AssertStateVariable": "user_visible_state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
