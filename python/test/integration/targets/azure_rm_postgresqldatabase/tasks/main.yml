@@ -3,8 +3,10 @@
     resource_group: "{{ resource_group }}"
     name: test-postgresql-server
     properties:
+      create_mode: Default
       admin_username: zimxyz
       admin_password: Testpasswordxyz12!
+    location: westus
 - name: Create instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"

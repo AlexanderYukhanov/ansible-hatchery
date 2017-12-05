@@ -3,10 +3,10 @@
     resource_group: "{{ resource_group }}"
     name: test-postgresql-server
     properties:
+      create_mode: Default
       admin_username: zimxyz
       admin_password: Testpasswordxyz12!
-      create_mode: Default
-      location: eastus
+    location: westus
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -19,8 +19,10 @@
     resource_group: "{{ resource_group }}"
     name: test-postgresql-server
     properties:
+      create_mode: Default
       admin_username: zimxyz
       admin_password: Testpasswordxyz12!
+    location: westus
   register: output
 - name: Assert the state has not changed
   assert:

@@ -195,7 +195,7 @@
               "VariableValue": "None",
               "Documentation": "Constant filled by server.",
               "DefaultValueSample": "create_mode",
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Default",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -240,7 +240,7 @@
           "VariableValue": "None",
           "Documentation": "The location the resource resides in.",
           "DefaultValueSample": "location",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0
         },
