@@ -562,7 +562,7 @@
           "VariableValue": "None",
           "Documentation": "The scope of the role definition.",
           "DefaultValueSample": "scope",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "myscope",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -576,7 +576,7 @@
           "VariableValue": "None",
           "Documentation": "The ID of the role definition.",
           "DefaultValueSample": "role_definition_id",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "rolexyz",
           "SubOptions": null,
           "RequiredCount": 0
         },

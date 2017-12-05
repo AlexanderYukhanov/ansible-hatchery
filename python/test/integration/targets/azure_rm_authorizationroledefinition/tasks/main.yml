@@ -1,5 +1,7 @@
 - name: Create instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
+    scope: myscope
+    role_definition_id: rolexyz
     properties:
       permissions:
         actions:
@@ -17,6 +19,8 @@
 
 - name: Update instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
+    scope: myscope
+    role_definition_id: rolexyz
     properties:
       permissions:
         actions:
@@ -34,6 +38,8 @@
 
 - name: Delete instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
+    scope: myscope
+    role_definition_id: rolexyz
     state: absent
   register: output
 - name: Assert the state has changed
