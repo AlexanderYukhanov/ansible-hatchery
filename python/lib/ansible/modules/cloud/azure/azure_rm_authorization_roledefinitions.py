@@ -108,68 +108,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - The role definition name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - The role definition type.
-            returned: always
-            type: str
-            sample: type
-        properties:
-            description:
-                - Role definition properties.
-            returned: always
-            type: complex
-            sample: properties
-            suboptions:
-                role_name:
-                    description:
-                        - The role name.
-                    returned: always
-                    type: str
-                    sample: role_name
-                description:
-                    description:
-                        - The role definition description.
-                    returned: always
-                    type: str
-                    sample: description
-                type:
-                    description:
-                        - The role type.
-                    returned: always
-                    type: str
-                    sample: type
-                permissions:
-                    description:
-                        - Role definition permissions.
-                    returned: always
-                    type: complex
-                    sample: permissions
-                    suboptions:
-                        actions:
-                            description:
-                                - Allowed actions.
-                            returned: always
-                            type: str
-                            sample: actions
-                        not_actions:
-                            description:
-                                - Denied actions.
-                            returned: always
-                            type: str
-                            sample: not_actions
-                assignable_scopes:
-                    description:
-                        - Role definition assignable scopes.
-                    returned: always
-                    type: str
-                    sample: assignable_scopes
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -292,6 +230,10 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('properties', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("RoleDefinitions instance deleted")

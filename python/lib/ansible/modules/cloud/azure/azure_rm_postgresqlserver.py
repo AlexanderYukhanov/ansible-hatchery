@@ -125,91 +125,12 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        location:
-            description:
-                - The location the resource resides in.
-            returned: always
-            type: str
-            sample: location
-        tags:
-            description:
-                - Application-specific metadata in the form of key-value pairs.
-            returned: always
-            type: complex
-            sample: tags
-        sku:
-            description:
-                - The SKU (pricing tier) of the server.
-            returned: always
-            type: complex
-            sample: sku
-            suboptions:
-                name:
-                    description:
-                        - The name of the sku, typically, a letter + Number code, e.g. P3.
-                    returned: always
-                    type: str
-                    sample: name
-                tier:
-                    description:
-                        - "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'"
-                    returned: always
-                    type: str
-                    sample: tier
-                capacity:
-                    description:
-                        - "The scale up/out capacity, representing server's compute units."
-                    returned: always
-                    type: int
-                    sample: capacity
-                size:
-                    description:
-                        - The size code, to be interpreted by resource as appropriate.
-                    returned: always
-                    type: str
-                    sample: size
-                family:
-                    description:
-                        - The family of hardware.
-                    returned: always
-                    type: str
-                    sample: family
-        administrator_login:
-            description:
-                - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
-            returned: always
-            type: str
-            sample: administrator_login
-        storage_mb:
-            description:
-                - The maximum storage allowed for a server.
-            returned: always
-            type: long
-            sample: storage_mb
         version:
             description:
                 - "Server version. Possible values include: '9.5', '9.6'"
             returned: always
             type: str
             sample: version
-        ssl_enforcement:
-            description:
-                - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'"
-            returned: always
-            type: str
-            sample: ssl_enforcement
         user_visible_state:
             description:
                 - "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'"
@@ -347,6 +268,15 @@ class AzureRMServers(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('tags', None)
+            self.results['state'].pop('sku', None)
+            self.results['state'].pop('administrator_login', None)
+            self.results['state'].pop('storage_mb', None)
+            self.results['state'].pop('ssl_enforcement', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("Servers instance deleted")

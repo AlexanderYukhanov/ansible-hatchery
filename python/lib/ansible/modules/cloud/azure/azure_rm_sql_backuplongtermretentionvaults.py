@@ -69,30 +69,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        location:
-            description:
-                - The geo-location where the resource lives
-            returned: always
-            type: str
-            sample: location
-        recovery_services_vault_resource_id:
-            description:
-                - The azure recovery services vault resource id
-            returned: always
-            type: str
-            sample: recovery_services_vault_resource_id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -200,6 +176,11 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('recovery_services_vault_resource_id', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("BackupLongTermRetentionVaults instance deleted")

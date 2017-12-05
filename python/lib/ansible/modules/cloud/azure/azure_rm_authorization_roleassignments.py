@@ -75,43 +75,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - The role assignment name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - The role assignment type.
-            returned: always
-            type: str
-            sample: type
-        properties:
-            description:
-                - Role assignment properties.
-            returned: always
-            type: complex
-            sample: properties
-            suboptions:
-                scope:
-                    description:
-                        - The role assignment scope.
-                    returned: always
-                    type: str
-                    sample: scope
-                role_definition_id:
-                    description:
-                        - The role definition ID.
-                    returned: always
-                    type: str
-                    sample: role_definition_id
-                principal_id:
-                    description:
-                        - The principal ID.
-                    returned: always
-                    type: str
-                    sample: principal_id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -216,6 +179,10 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('properties', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("RoleAssignments instance deleted")

@@ -137,7 +137,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -146,7 +146,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -155,7 +155,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
@@ -173,7 +173,7 @@
         },
         {
           "Name": "recovery_services_backup_policy_resource_id",
-          "NameAlt": "recovery_services_backup_policy_resource_id",
+          "NameAlt": "x",
           "Description": "The azure recovery services backup protection policy resource id",
           "Type": "str",
           "Returned": "always",
@@ -381,7 +381,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -390,7 +390,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -399,7 +399,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
@@ -408,7 +408,7 @@
         },
         {
           "Name": "recovery_services_vault_resource_id",
-          "NameAlt": "recovery_services_vault_resource_id",
+          "NameAlt": "x",
           "Description": "The azure recovery services vault resource id",
           "Type": "str",
           "Returned": "always",
@@ -878,7 +878,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -887,7 +887,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -896,7 +896,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -905,7 +905,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -914,7 +914,7 @@
         },
         {
           "Name": "connection_type",
-          "NameAlt": "connection_type",
+          "NameAlt": "x",
           "Description": "The server connection type. Possible values include: 'Default', 'Proxy', 'Redirect'",
           "Type": "str",
           "Returned": "always",
@@ -1250,7 +1250,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1259,7 +1259,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1268,7 +1268,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
@@ -1277,7 +1277,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Resource kind.",
           "Type": "str",
           "Returned": "always",
@@ -1295,7 +1295,7 @@
         },
         {
           "Name": "disabled_alerts",
-          "NameAlt": "disabled_alerts",
+          "NameAlt": "x",
           "Description": "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection; Sql_Injection_Vulnerability; Access_Anomaly; Usage_Anomaly.",
           "Type": "str",
           "Returned": "always",
@@ -1304,7 +1304,7 @@
         },
         {
           "Name": "email_addresses",
-          "NameAlt": "email_addresses",
+          "NameAlt": "x",
           "Description": "Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.",
           "Type": "str",
           "Returned": "always",
@@ -1313,7 +1313,7 @@
         },
         {
           "Name": "email_account_admins",
-          "NameAlt": "email_account_admins",
+          "NameAlt": "x",
           "Description": "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'",
           "Type": "str",
           "Returned": "always",
@@ -1322,7 +1322,7 @@
         },
         {
           "Name": "storage_endpoint",
-          "NameAlt": "storage_endpoint",
+          "NameAlt": "x",
           "Description": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. If state is Enabled, storageEndpoint is required.",
           "Type": "str",
           "Returned": "always",
@@ -1331,7 +1331,7 @@
         },
         {
           "Name": "storage_account_access_key",
-          "NameAlt": "storage_account_access_key",
+          "NameAlt": "x",
           "Description": "Specifies the identifier key of the Threat Detection audit storage account. If state is Enabled, storageAccountAccessKey is required.",
           "Type": "str",
           "Returned": "always",
@@ -1340,7 +1340,7 @@
         },
         {
           "Name": "retention_days",
-          "NameAlt": "retention_days",
+          "NameAlt": "x",
           "Description": "Specifies the number of days to keep in the Threat Detection audit logs.",
           "Type": "int",
           "Returned": "always",
@@ -1349,7 +1349,7 @@
         },
         {
           "Name": "use_server_default",
-          "NameAlt": "use_server_default",
+          "NameAlt": "x",
           "Description": "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'",
           "Type": "str",
           "Returned": "always",
@@ -1590,7 +1590,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1599,7 +1599,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1608,7 +1608,7 @@
         },
         {
           "Name": "data_masking_state",
-          "NameAlt": "data_masking_state",
+          "NameAlt": "x",
           "Description": "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'",
           "Type": "str",
           "Returned": "always",
@@ -1617,7 +1617,7 @@
         },
         {
           "Name": "exempt_principals",
-          "NameAlt": "exempt_principals",
+          "NameAlt": "x",
           "Description": "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not apply. The specified users receive data results without masking for all of the database queries.",
           "Type": "str",
           "Returned": "always",
@@ -1626,7 +1626,7 @@
         },
         {
           "Name": "application_principals",
-          "NameAlt": "application_principals",
+          "NameAlt": "x",
           "Description": "The list of the application principals. This is a legacy parameter and is no longer used.",
           "Type": "str",
           "Returned": "always",
@@ -1635,7 +1635,7 @@
         },
         {
           "Name": "masking_level",
-          "NameAlt": "masking_level",
+          "NameAlt": "x",
           "Description": "The masking level. This is a legacy parameter and is no longer used.",
           "Type": "str",
           "Returned": "always",
@@ -1644,7 +1644,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "The location of the data masking policy.",
           "Type": "str",
           "Returned": "always",
@@ -1653,7 +1653,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "The kind of data masking policy. Metadata, used for Azure portal.",
           "Type": "str",
           "Returned": "always",
@@ -2034,7 +2034,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -2043,7 +2043,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -2052,7 +2052,7 @@
         },
         {
           "Name": "data_masking_rule_id",
-          "NameAlt": "data_masking_rule_id",
+          "NameAlt": "x",
           "Description": "The rule Id.",
           "Type": "str",
           "Returned": "always",
@@ -2061,7 +2061,7 @@
         },
         {
           "Name": "alias_name",
-          "NameAlt": "alias_name",
+          "NameAlt": "x",
           "Description": "The alias name. This is a legacy parameter and is no longer used.",
           "Type": "str",
           "Returned": "always",
@@ -2070,7 +2070,7 @@
         },
         {
           "Name": "rule_state",
-          "NameAlt": "rule_state",
+          "NameAlt": "x",
           "Description": "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless of the provided value of ruleState. Possible values include: 'Disabled', 'Enabled'",
           "Type": "str",
           "Returned": "always",
@@ -2079,7 +2079,7 @@
         },
         {
           "Name": "schema_name",
-          "NameAlt": "schema_name",
+          "NameAlt": "x",
           "Description": "The schema name on which the data masking rule is applied.",
           "Type": "str",
           "Returned": "always",
@@ -2088,7 +2088,7 @@
         },
         {
           "Name": "table_name",
-          "NameAlt": "table_name",
+          "NameAlt": "x",
           "Description": "The table name on which the data masking rule is applied.",
           "Type": "str",
           "Returned": "always",
@@ -2097,7 +2097,7 @@
         },
         {
           "Name": "column_name",
-          "NameAlt": "column_name",
+          "NameAlt": "x",
           "Description": "The column name on which the data masking rule is applied.",
           "Type": "str",
           "Returned": "always",
@@ -2106,7 +2106,7 @@
         },
         {
           "Name": "masking_function",
-          "NameAlt": "masking_function",
+          "NameAlt": "x",
           "Description": "The masking function that is used for the data masking rule. Possible values include: 'Default', 'CCN', 'Email', 'Number', 'SSN', 'Text'",
           "Type": "str",
           "Returned": "always",
@@ -2115,7 +2115,7 @@
         },
         {
           "Name": "number_from",
-          "NameAlt": "number_from",
+          "NameAlt": "x",
           "Description": "The numberFrom property of the masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.",
           "Type": "str",
           "Returned": "always",
@@ -2124,7 +2124,7 @@
         },
         {
           "Name": "number_to",
-          "NameAlt": "number_to",
+          "NameAlt": "x",
           "Description": "The numberTo property of the data masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.",
           "Type": "str",
           "Returned": "always",
@@ -2133,7 +2133,7 @@
         },
         {
           "Name": "prefix_size",
-          "NameAlt": "prefix_size",
+          "NameAlt": "x",
           "Description": "If maskingFunction is set to Text, the number of characters to show unmasked in the beginning of the string. Otherwise, this parameter will be ignored.",
           "Type": "str",
           "Returned": "always",
@@ -2142,7 +2142,7 @@
         },
         {
           "Name": "suffix_size",
-          "NameAlt": "suffix_size",
+          "NameAlt": "x",
           "Description": "If maskingFunction is set to Text, the number of characters to show unmasked at the end of the string. Otherwise, this parameter will be ignored.",
           "Type": "str",
           "Returned": "always",
@@ -2151,7 +2151,7 @@
         },
         {
           "Name": "replacement_string",
-          "NameAlt": "replacement_string",
+          "NameAlt": "x",
           "Description": "If maskingFunction is set to Text, the character to use for masking the unexposed part of the string. Otherwise, this parameter will be ignored.",
           "Type": "str",
           "Returned": "always",
@@ -2160,7 +2160,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "The location of the data masking rule.",
           "Type": "str",
           "Returned": "always",
@@ -2169,7 +2169,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "The kind of Data Masking Rule. Metadata, used for Azure portal.",
           "Type": "str",
           "Returned": "always",
@@ -2406,7 +2406,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -2415,7 +2415,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -2424,7 +2424,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Kind of server that contains this firewall rule.",
           "Type": "str",
           "Returned": "always",
@@ -2433,7 +2433,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Location of the server that contains this firewall rule.",
           "Type": "str",
           "Returned": "always",
@@ -2442,7 +2442,7 @@
         },
         {
           "Name": "start_ip_address",
-          "NameAlt": "start_ip_address",
+          "NameAlt": "x",
           "Description": "The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
           "Type": "str",
           "Returned": "always",
@@ -2451,7 +2451,7 @@
         },
         {
           "Name": "end_ip_address",
-          "NameAlt": "end_ip_address",
+          "NameAlt": "x",
           "Description": "The end IP address of the firewall rule. Must be IPv4 format. Must be greater than or equal to startIpAddress. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
           "Type": "str",
           "Returned": "always",
@@ -2672,7 +2672,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -2681,7 +2681,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -2699,7 +2699,7 @@
         },
         {
           "Name": "storage_type",
-          "NameAlt": "storage_type",
+          "NameAlt": "x",
           "Description": "The storage type of the geo backup policy.",
           "Type": "str",
           "Returned": "always",
@@ -2708,7 +2708,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Kind of geo backup policy.  This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -2717,7 +2717,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Backup policy location.",
           "Type": "str",
           "Returned": "always",
@@ -3191,7 +3191,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -3200,7 +3200,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -3209,7 +3209,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "Resource tags.",
           "Type": "complex",
           "Returned": "always",
@@ -3218,7 +3218,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -3227,7 +3227,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Kind of database.  This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -3415,7 +3415,7 @@
           "SubFields": [
             {
               "Name": "id",
-              "NameAlt": "id",
+              "NameAlt": "x",
               "Description": "Resource ID.",
               "Type": "str",
               "Returned": "always",
@@ -3424,7 +3424,7 @@
             },
             {
               "Name": "name",
-              "NameAlt": "name",
+              "NameAlt": "x",
               "Description": "Resource name.",
               "Type": "str",
               "Returned": "always",
@@ -3433,7 +3433,7 @@
             },
             {
               "Name": "type",
-              "NameAlt": "type",
+              "NameAlt": "x",
               "Description": "Resource type.",
               "Type": "str",
               "Returned": "always",
@@ -3442,7 +3442,7 @@
             },
             {
               "Name": "observation_period_start",
-              "NameAlt": "observation_period_start",
+              "NameAlt": "x",
               "Description": "The observation period start (ISO8601 format).",
               "Type": "datetime",
               "Returned": "always",
@@ -3451,7 +3451,7 @@
             },
             {
               "Name": "observation_period_end",
-              "NameAlt": "observation_period_end",
+              "NameAlt": "x",
               "Description": "The observation period start (ISO8601 format).",
               "Type": "datetime",
               "Returned": "always",
@@ -3460,7 +3460,7 @@
             },
             {
               "Name": "active_time_ratio",
-              "NameAlt": "active_time_ratio",
+              "NameAlt": "x",
               "Description": "The activeTimeRatio for service tier advisor.",
               "Type": "float",
               "Returned": "always",
@@ -3469,7 +3469,7 @@
             },
             {
               "Name": "min_dtu",
-              "NameAlt": "min_dtu",
+              "NameAlt": "x",
               "Description": "Gets or sets minDtu for service tier advisor.",
               "Type": "float",
               "Returned": "always",
@@ -3478,7 +3478,7 @@
             },
             {
               "Name": "avg_dtu",
-              "NameAlt": "avg_dtu",
+              "NameAlt": "x",
               "Description": "Gets or sets avgDtu for service tier advisor.",
               "Type": "float",
               "Returned": "always",
@@ -3487,7 +3487,7 @@
             },
             {
               "Name": "max_dtu",
-              "NameAlt": "max_dtu",
+              "NameAlt": "x",
               "Description": "Gets or sets maxDtu for service tier advisor.",
               "Type": "float",
               "Returned": "always",
@@ -3496,7 +3496,7 @@
             },
             {
               "Name": "max_size_in_gb",
-              "NameAlt": "max_size_in_gb",
+              "NameAlt": "x",
               "Description": "Gets or sets maxSizeInGB for service tier advisor.",
               "Type": "float",
               "Returned": "always",
@@ -3505,7 +3505,7 @@
             },
             {
               "Name": "service_level_objective_usage_metrics",
-              "NameAlt": "service_level_objective_usage_metrics",
+              "NameAlt": "x",
               "Description": "Gets or sets serviceLevelObjectiveUsageMetrics for the service tier advisor.",
               "Type": "complex",
               "Returned": "always",
@@ -3513,7 +3513,7 @@
               "SubFields": [
                 {
                   "Name": "service_level_objective",
-                  "NameAlt": "service_level_objective",
+                  "NameAlt": "x",
                   "Description": "The serviceLevelObjective for SLO usage metric. Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
                   "Type": "str",
                   "Returned": "always",
@@ -3522,7 +3522,7 @@
                 },
                 {
                   "Name": "service_level_objective_id",
-                  "NameAlt": "service_level_objective_id",
+                  "NameAlt": "x",
                   "Description": "The serviceLevelObjectiveId for SLO usage metric.",
                   "Type": "str",
                   "Returned": "always",
@@ -3531,7 +3531,7 @@
                 },
                 {
                   "Name": "in_range_time_ratio",
-                  "NameAlt": "in_range_time_ratio",
+                  "NameAlt": "x",
                   "Description": "Gets or sets inRangeTimeRatio for SLO usage metric.",
                   "Type": "float",
                   "Returned": "always",
@@ -3542,7 +3542,7 @@
             },
             {
               "Name": "current_service_level_objective",
-              "NameAlt": "current_service_level_objective",
+              "NameAlt": "x",
               "Description": "Gets or sets currentServiceLevelObjective for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3551,7 +3551,7 @@
             },
             {
               "Name": "current_service_level_objective_id",
-              "NameAlt": "current_service_level_objective_id",
+              "NameAlt": "x",
               "Description": "Gets or sets currentServiceLevelObjectiveId for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3560,7 +3560,7 @@
             },
             {
               "Name": "usage_based_recommendation_service_level_objective",
-              "NameAlt": "usage_based_recommendation_service_level_objective",
+              "NameAlt": "x",
               "Description": "Gets or sets usageBasedRecommendationServiceLevelObjective for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3569,7 +3569,7 @@
             },
             {
               "Name": "usage_based_recommendation_service_level_objective_id",
-              "NameAlt": "usage_based_recommendation_service_level_objective_id",
+              "NameAlt": "x",
               "Description": "Gets or sets usageBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3578,7 +3578,7 @@
             },
             {
               "Name": "database_size_based_recommendation_service_level_objective",
-              "NameAlt": "database_size_based_recommendation_service_level_objective",
+              "NameAlt": "x",
               "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjective for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3587,7 +3587,7 @@
             },
             {
               "Name": "database_size_based_recommendation_service_level_objective_id",
-              "NameAlt": "database_size_based_recommendation_service_level_objective_id",
+              "NameAlt": "x",
               "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3596,7 +3596,7 @@
             },
             {
               "Name": "disaster_plan_based_recommendation_service_level_objective",
-              "NameAlt": "disaster_plan_based_recommendation_service_level_objective",
+              "NameAlt": "x",
               "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjective for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3605,7 +3605,7 @@
             },
             {
               "Name": "disaster_plan_based_recommendation_service_level_objective_id",
-              "NameAlt": "disaster_plan_based_recommendation_service_level_objective_id",
+              "NameAlt": "x",
               "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3614,7 +3614,7 @@
             },
             {
               "Name": "overall_recommendation_service_level_objective",
-              "NameAlt": "overall_recommendation_service_level_objective",
+              "NameAlt": "x",
               "Description": "Gets or sets overallRecommendationServiceLevelObjective for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3623,7 +3623,7 @@
             },
             {
               "Name": "overall_recommendation_service_level_objective_id",
-              "NameAlt": "overall_recommendation_service_level_objective_id",
+              "NameAlt": "x",
               "Description": "Gets or sets overallRecommendationServiceLevelObjectiveId for service tier advisor.",
               "Type": "str",
               "Returned": "always",
@@ -3632,7 +3632,7 @@
             },
             {
               "Name": "confidence",
-              "NameAlt": "confidence",
+              "NameAlt": "x",
               "Description": "Gets or sets confidence for service tier advisor.",
               "Type": "float",
               "Returned": "always",
@@ -3651,7 +3651,7 @@
           "SubFields": [
             {
               "Name": "id",
-              "NameAlt": "id",
+              "NameAlt": "x",
               "Description": "Resource ID.",
               "Type": "str",
               "Returned": "always",
@@ -3660,7 +3660,7 @@
             },
             {
               "Name": "name",
-              "NameAlt": "name",
+              "NameAlt": "x",
               "Description": "Resource name.",
               "Type": "str",
               "Returned": "always",
@@ -3669,7 +3669,7 @@
             },
             {
               "Name": "type",
-              "NameAlt": "type",
+              "NameAlt": "x",
               "Description": "Resource type.",
               "Type": "str",
               "Returned": "always",
@@ -3678,7 +3678,7 @@
             },
             {
               "Name": "location",
-              "NameAlt": "location",
+              "NameAlt": "x",
               "Description": "Resource location.",
               "Type": "str",
               "Returned": "always",
@@ -3687,7 +3687,7 @@
             },
             {
               "Name": "status",
-              "NameAlt": "status",
+              "NameAlt": "x",
               "Description": "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'",
               "Type": "str",
               "Returned": "always",
@@ -3706,7 +3706,7 @@
           "SubFields": [
             {
               "Name": "id",
-              "NameAlt": "id",
+              "NameAlt": "x",
               "Description": "Resource ID.",
               "Type": "str",
               "Returned": "always",
@@ -3715,7 +3715,7 @@
             },
             {
               "Name": "name",
-              "NameAlt": "name",
+              "NameAlt": "x",
               "Description": "Resource name.",
               "Type": "str",
               "Returned": "always",
@@ -3724,7 +3724,7 @@
             },
             {
               "Name": "type",
-              "NameAlt": "type",
+              "NameAlt": "x",
               "Description": "Resource type.",
               "Type": "str",
               "Returned": "always",
@@ -3733,7 +3733,7 @@
             },
             {
               "Name": "action",
-              "NameAlt": "action",
+              "NameAlt": "x",
               "Description": "The proposed index action. You can create a missing index, drop an unused index, or rebuild an existing index to improve its performance. Possible values include: 'Create', 'Drop', 'Rebuild'",
               "Type": "str",
               "Returned": "always",
@@ -3742,7 +3742,7 @@
             },
             {
               "Name": "state",
-              "NameAlt": "state",
+              "NameAlt": "x",
               "Description": "The current recommendation state. Possible values include: 'Active', 'Pending', 'Executing', 'Verifying', 'Pending Revert', 'Reverting', 'Reverted', 'Ignored', 'Expired', 'Blocked', 'Success'",
               "Type": "str",
               "Returned": "always",
@@ -3751,7 +3751,7 @@
             },
             {
               "Name": "created",
-              "NameAlt": "created",
+              "NameAlt": "x",
               "Description": "The UTC datetime showing when this resource was created (ISO8601 format).",
               "Type": "datetime",
               "Returned": "always",
@@ -3760,7 +3760,7 @@
             },
             {
               "Name": "last_modified",
-              "NameAlt": "last_modified",
+              "NameAlt": "x",
               "Description": "The UTC datetime of when was this resource last changed (ISO8601 format).",
               "Type": "datetime",
               "Returned": "always",
@@ -3769,7 +3769,7 @@
             },
             {
               "Name": "index_type",
-              "NameAlt": "index_type",
+              "NameAlt": "x",
               "Description": "The type of index (CLUSTERED, NONCLUSTERED, COLUMNSTORE, CLUSTERED COLUMNSTORE). Possible values include: 'CLUSTERED', 'NONCLUSTERED', 'COLUMNSTORE', 'CLUSTERED COLUMNSTORE'",
               "Type": "str",
               "Returned": "always",
@@ -3778,7 +3778,7 @@
             },
             {
               "Name": "schema",
-              "NameAlt": "schema",
+              "NameAlt": "x",
               "Description": "The schema where table to build index over resides",
               "Type": "str",
               "Returned": "always",
@@ -3787,7 +3787,7 @@
             },
             {
               "Name": "table",
-              "NameAlt": "table",
+              "NameAlt": "x",
               "Description": "The table on which to build index.",
               "Type": "str",
               "Returned": "always",
@@ -3796,7 +3796,7 @@
             },
             {
               "Name": "columns",
-              "NameAlt": "columns",
+              "NameAlt": "x",
               "Description": "Columns over which to build index",
               "Type": "str",
               "Returned": "always",
@@ -3805,7 +3805,7 @@
             },
             {
               "Name": "included_columns",
-              "NameAlt": "included_columns",
+              "NameAlt": "x",
               "Description": "The list of column names to be included in the index",
               "Type": "str",
               "Returned": "always",
@@ -3814,7 +3814,7 @@
             },
             {
               "Name": "index_script",
-              "NameAlt": "index_script",
+              "NameAlt": "x",
               "Description": "The full build index script",
               "Type": "str",
               "Returned": "always",
@@ -3823,7 +3823,7 @@
             },
             {
               "Name": "estimated_impact",
-              "NameAlt": "estimated_impact",
+              "NameAlt": "x",
               "Description": "The estimated impact of doing recommended index action.",
               "Type": "complex",
               "Returned": "always",
@@ -3831,7 +3831,7 @@
               "SubFields": [
                 {
                   "Name": "name",
-                  "NameAlt": "name",
+                  "NameAlt": "x",
                   "Description": "The name of the impact dimension.",
                   "Type": "str",
                   "Returned": "always",
@@ -3840,7 +3840,7 @@
                 },
                 {
                   "Name": "unit",
-                  "NameAlt": "unit",
+                  "NameAlt": "x",
                   "Description": "The unit in which estimated impact to dimension is measured.",
                   "Type": "str",
                   "Returned": "always",
@@ -3849,7 +3849,7 @@
                 },
                 {
                   "Name": "change_value_absolute",
-                  "NameAlt": "change_value_absolute",
+                  "NameAlt": "x",
                   "Description": "The absolute impact to dimension.",
                   "Type": "float",
                   "Returned": "always",
@@ -3858,7 +3858,7 @@
                 },
                 {
                   "Name": "change_value_relative",
-                  "NameAlt": "change_value_relative",
+                  "NameAlt": "x",
                   "Description": "The relative impact to dimension (null if not applicable)",
                   "Type": "float",
                   "Returned": "always",
@@ -3869,7 +3869,7 @@
             },
             {
               "Name": "reported_impact",
-              "NameAlt": "reported_impact",
+              "NameAlt": "x",
               "Description": "The values reported after index action is complete.",
               "Type": "complex",
               "Returned": "always",
@@ -3877,7 +3877,7 @@
               "SubFields": [
                 {
                   "Name": "name",
-                  "NameAlt": "name",
+                  "NameAlt": "x",
                   "Description": "The name of the impact dimension.",
                   "Type": "str",
                   "Returned": "always",
@@ -3886,7 +3886,7 @@
                 },
                 {
                   "Name": "unit",
-                  "NameAlt": "unit",
+                  "NameAlt": "x",
                   "Description": "The unit in which estimated impact to dimension is measured.",
                   "Type": "str",
                   "Returned": "always",
@@ -3895,7 +3895,7 @@
                 },
                 {
                   "Name": "change_value_absolute",
-                  "NameAlt": "change_value_absolute",
+                  "NameAlt": "x",
                   "Description": "The absolute impact to dimension.",
                   "Type": "float",
                   "Returned": "always",
@@ -3904,7 +3904,7 @@
                 },
                 {
                   "Name": "change_value_relative",
-                  "NameAlt": "change_value_relative",
+                  "NameAlt": "x",
                   "Description": "The relative impact to dimension (null if not applicable)",
                   "Type": "float",
                   "Returned": "always",
@@ -4400,7 +4400,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -4409,7 +4409,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -4418,7 +4418,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "Resource tags.",
           "Type": "complex",
           "Returned": "always",
@@ -4427,7 +4427,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -4436,7 +4436,7 @@
         },
         {
           "Name": "creation_date",
-          "NameAlt": "creation_date",
+          "NameAlt": "x",
           "Description": "The creation date of the elastic pool (ISO8601 format).",
           "Type": "datetime",
           "Returned": "always",
@@ -4454,7 +4454,7 @@
         },
         {
           "Name": "edition",
-          "NameAlt": "edition",
+          "NameAlt": "x",
           "Description": "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'",
           "Type": "str",
           "Returned": "always",
@@ -4463,7 +4463,7 @@
         },
         {
           "Name": "dtu",
-          "NameAlt": "dtu",
+          "NameAlt": "x",
           "Description": "The total shared DTU for the database elastic pool.",
           "Type": "int",
           "Returned": "always",
@@ -4472,7 +4472,7 @@
         },
         {
           "Name": "database_dtu_max",
-          "NameAlt": "database_dtu_max",
+          "NameAlt": "x",
           "Description": "The maximum DTU any one database can consume.",
           "Type": "int",
           "Returned": "always",
@@ -4481,7 +4481,7 @@
         },
         {
           "Name": "database_dtu_min",
-          "NameAlt": "database_dtu_min",
+          "NameAlt": "x",
           "Description": "The minimum DTU all databases are guaranteed.",
           "Type": "int",
           "Returned": "always",
@@ -4490,7 +4490,7 @@
         },
         {
           "Name": "storage_mb",
-          "NameAlt": "storage_mb",
+          "NameAlt": "x",
           "Description": "Gets storage limit for the database elastic pool in MB.",
           "Type": "int",
           "Returned": "always",
@@ -4499,7 +4499,7 @@
         },
         {
           "Name": "zone_redundant",
-          "NameAlt": "zone_redundant",
+          "NameAlt": "x",
           "Description": "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availability zones.",
           "Type": "str",
           "Returned": "always",
@@ -4508,7 +4508,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Kind of elastic pool.  This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -4923,7 +4923,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -4932,7 +4932,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -4941,7 +4941,7 @@
         },
         {
           "Name": "administrator_type",
-          "NameAlt": "administrator_type",
+          "NameAlt": "x",
           "Description": "The type of administrator.",
           "Type": "str",
           "Returned": "always",
@@ -4950,7 +4950,7 @@
         },
         {
           "Name": "login",
-          "NameAlt": "login",
+          "NameAlt": "x",
           "Description": "The server administrator login value.",
           "Type": "str",
           "Returned": "always",
@@ -4959,7 +4959,7 @@
         },
         {
           "Name": "sid",
-          "NameAlt": "sid",
+          "NameAlt": "x",
           "Description": "The server administrator Sid (Secure ID).",
           "Type": "str",
           "Returned": "always",
@@ -4968,7 +4968,7 @@
         },
         {
           "Name": "tenant_id",
-          "NameAlt": "tenant_id",
+          "NameAlt": "x",
           "Description": "The server Active Directory Administrator tenant id.",
           "Type": "str",
           "Returned": "always",
@@ -5184,7 +5184,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -5193,7 +5193,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -5211,7 +5211,7 @@
         },
         {
           "Name": "partner_server",
-          "NameAlt": "partner_server",
+          "NameAlt": "x",
           "Description": "The name of the partner server.",
           "Type": "str",
           "Returned": "always",
@@ -5220,7 +5220,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Communication link location.",
           "Type": "str",
           "Returned": "always",
@@ -5229,7 +5229,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Communication link kind.  This property is used for Azure Portal metadata.",
           "Type": "str",
           "Returned": "always",
@@ -5664,7 +5664,7 @@
           "SubFields": [
             {
               "Name": "principal_id",
-              "NameAlt": "principal_id",
+              "NameAlt": "x",
               "Description": "The Azure Active Directory principal id.",
               "Type": "str",
               "Returned": "always",
@@ -5673,7 +5673,7 @@
             },
             {
               "Name": "type",
-              "NameAlt": "type",
+              "NameAlt": "x",
               "Description": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource. Possible values include: 'SystemAssigned'",
               "Type": "str",
               "Returned": "always",
@@ -5682,7 +5682,7 @@
             },
             {
               "Name": "tenant_id",
-              "NameAlt": "tenant_id",
+              "NameAlt": "x",
               "Description": "The Azure Active Directory tenant id.",
               "Type": "str",
               "Returned": "always",
@@ -6281,7 +6281,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -6290,7 +6290,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -6299,7 +6299,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -6848,7 +6848,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -6857,7 +6857,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -6866,7 +6866,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Resource kind.",
           "Type": "str",
           "Returned": "always",
@@ -6884,7 +6884,7 @@
         },
         {
           "Name": "storage_endpoint",
-          "NameAlt": "storage_endpoint",
+          "NameAlt": "x",
           "Description": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required.",
           "Type": "str",
           "Returned": "always",
@@ -6893,7 +6893,7 @@
         },
         {
           "Name": "storage_account_access_key",
-          "NameAlt": "storage_account_access_key",
+          "NameAlt": "x",
           "Description": "Specifies the identifier key of the auditing storage account. If state is Enabled, storageAccountAccessKey is required.",
           "Type": "str",
           "Returned": "always",
@@ -6902,7 +6902,7 @@
         },
         {
           "Name": "retention_days",
-          "NameAlt": "retention_days",
+          "NameAlt": "x",
           "Description": "Specifies the number of days to keep in the audit logs.",
           "Type": "int",
           "Returned": "always",
@@ -6911,7 +6911,7 @@
         },
         {
           "Name": "audit_actions_and_groups",
-          "NameAlt": "audit_actions_and_groups",
+          "NameAlt": "x",
           "Description": "Specifies the Actions and Actions-Groups to audit.",
           "Type": "str",
           "Returned": "always",
@@ -6920,7 +6920,7 @@
         },
         {
           "Name": "storage_account_subscription_id",
-          "NameAlt": "storage_account_subscription_id",
+          "NameAlt": "x",
           "Description": "Specifies the blob storage subscription Id.",
           "Type": "str",
           "Returned": "always",
@@ -6929,7 +6929,7 @@
         },
         {
           "Name": "is_storage_secondary_key_in_use",
-          "NameAlt": "is_storage_secondary_key_in_use",
+          "NameAlt": "x",
           "Description": "Specifies whether storageAccountAccessKey value is the storage’s secondary key.",
           "Type": "str",
           "Returned": "always",
@@ -7179,7 +7179,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -7188,7 +7188,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -7197,7 +7197,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -7206,7 +7206,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -7215,7 +7215,7 @@
         },
         {
           "Name": "subregion",
-          "NameAlt": "subregion",
+          "NameAlt": "x",
           "Description": "Subregion of the encryption protector.",
           "Type": "str",
           "Returned": "always",
@@ -7224,7 +7224,7 @@
         },
         {
           "Name": "server_key_name",
-          "NameAlt": "server_key_name",
+          "NameAlt": "x",
           "Description": "The name of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -7233,7 +7233,7 @@
         },
         {
           "Name": "server_key_type",
-          "NameAlt": "server_key_type",
+          "NameAlt": "x",
           "Description": "The encryption protector type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
           "Type": "str",
           "Returned": "always",
@@ -7242,7 +7242,7 @@
         },
         {
           "Name": "uri",
-          "NameAlt": "uri",
+          "NameAlt": "x",
           "Description": "The URI of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -7251,7 +7251,7 @@
         },
         {
           "Name": "thumbprint",
-          "NameAlt": "thumbprint",
+          "NameAlt": "x",
           "Description": "Thumbprint of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -7611,7 +7611,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -7620,7 +7620,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -7629,7 +7629,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -7638,7 +7638,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "Resource tags.",
           "Type": "complex",
           "Returned": "always",
@@ -7647,7 +7647,7 @@
         },
         {
           "Name": "read_write_endpoint",
-          "NameAlt": "read_write_endpoint",
+          "NameAlt": "x",
           "Description": "Read-write endpoint of the failover group instance.",
           "Type": "complex",
           "Returned": "always",
@@ -7655,7 +7655,7 @@
           "SubFields": [
             {
               "Name": "failover_policy",
-              "NameAlt": "failover_policy",
+              "NameAlt": "x",
               "Description": "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required. Possible values include: 'Manual', 'Automatic'",
               "Type": "str",
               "Returned": "always",
@@ -7664,7 +7664,7 @@
             },
             {
               "Name": "failover_with_data_loss_grace_period_minutes",
-              "NameAlt": "failover_with_data_loss_grace_period_minutes",
+              "NameAlt": "x",
               "Description": "Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.",
               "Type": "int",
               "Returned": "always",
@@ -7675,7 +7675,7 @@
         },
         {
           "Name": "read_only_endpoint",
-          "NameAlt": "read_only_endpoint",
+          "NameAlt": "x",
           "Description": "Read-only endpoint of the failover group instance.",
           "Type": "complex",
           "Returned": "always",
@@ -7683,7 +7683,7 @@
           "SubFields": [
             {
               "Name": "failover_policy",
-              "NameAlt": "failover_policy",
+              "NameAlt": "x",
               "Description": "Failover policy of the read-only endpoint for the failover group. Possible values include: 'Disabled', 'Enabled'",
               "Type": "str",
               "Returned": "always",
@@ -7694,7 +7694,7 @@
         },
         {
           "Name": "replication_role",
-          "NameAlt": "replication_role",
+          "NameAlt": "x",
           "Description": "Local replication role of the failover group instance. Possible values include: 'Primary', 'Secondary'",
           "Type": "str",
           "Returned": "always",
@@ -7703,7 +7703,7 @@
         },
         {
           "Name": "replication_state",
-          "NameAlt": "replication_state",
+          "NameAlt": "x",
           "Description": "Replication state of the failover group instance.",
           "Type": "str",
           "Returned": "always",
@@ -7712,7 +7712,7 @@
         },
         {
           "Name": "partner_servers",
-          "NameAlt": "partner_servers",
+          "NameAlt": "x",
           "Description": "List of partner server information for the failover group.",
           "Type": "complex",
           "Returned": "always",
@@ -7720,7 +7720,7 @@
           "SubFields": [
             {
               "Name": "id",
-              "NameAlt": "id",
+              "NameAlt": "x",
               "Description": "Resource identifier of the partner server.",
               "Type": "str",
               "Returned": "always",
@@ -7729,7 +7729,7 @@
             },
             {
               "Name": "location",
-              "NameAlt": "location",
+              "NameAlt": "x",
               "Description": "Geo location of the partner server.",
               "Type": "str",
               "Returned": "always",
@@ -7738,7 +7738,7 @@
             },
             {
               "Name": "replication_role",
-              "NameAlt": "replication_role",
+              "NameAlt": "x",
               "Description": "Replication role of the partner server. Possible values include: 'Primary', 'Secondary'",
               "Type": "str",
               "Returned": "always",
@@ -7749,7 +7749,7 @@
         },
         {
           "Name": "databases",
-          "NameAlt": "databases",
+          "NameAlt": "x",
           "Description": "List of databases in the failover group.",
           "Type": "str",
           "Returned": "always",
@@ -8035,7 +8035,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -8044,7 +8044,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -8053,7 +8053,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "kind",
+          "NameAlt": "x",
           "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -8062,7 +8062,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -8071,7 +8071,7 @@
         },
         {
           "Name": "subregion",
-          "NameAlt": "subregion",
+          "NameAlt": "x",
           "Description": "Subregion of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -8080,7 +8080,7 @@
         },
         {
           "Name": "server_key_type",
-          "NameAlt": "server_key_type",
+          "NameAlt": "x",
           "Description": "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
           "Type": "str",
           "Returned": "always",
@@ -8089,7 +8089,7 @@
         },
         {
           "Name": "uri",
-          "NameAlt": "uri",
+          "NameAlt": "x",
           "Description": "The URI of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -8098,7 +8098,7 @@
         },
         {
           "Name": "thumbprint",
-          "NameAlt": "thumbprint",
+          "NameAlt": "x",
           "Description": "Thumbprint of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -8107,7 +8107,7 @@
         },
         {
           "Name": "creation_date",
-          "NameAlt": "creation_date",
+          "NameAlt": "x",
           "Description": "The server key creation date.",
           "Type": "datetime",
           "Returned": "always",
@@ -8322,7 +8322,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -8331,7 +8331,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -8340,7 +8340,7 @@
         },
         {
           "Name": "sync_agent_name",
-          "NameAlt": "sync_agent_name",
+          "NameAlt": "x",
           "Description": "Name of the sync agent.",
           "Type": "str",
           "Returned": "always",
@@ -8349,7 +8349,7 @@
         },
         {
           "Name": "sync_database_id",
-          "NameAlt": "sync_database_id",
+          "NameAlt": "x",
           "Description": "ARM resource id of the sync database in the sync agent.",
           "Type": "str",
           "Returned": "always",
@@ -8358,7 +8358,7 @@
         },
         {
           "Name": "last_alive_time",
-          "NameAlt": "last_alive_time",
+          "NameAlt": "x",
           "Description": "Last alive time of the sync agent.",
           "Type": "datetime",
           "Returned": "always",
@@ -8376,7 +8376,7 @@
         },
         {
           "Name": "is_up_to_date",
-          "NameAlt": "is_up_to_date",
+          "NameAlt": "x",
           "Description": "If the sync agent version is up to date.",
           "Type": "str",
           "Returned": "always",
@@ -8385,7 +8385,7 @@
         },
         {
           "Name": "expiry_time",
-          "NameAlt": "expiry_time",
+          "NameAlt": "x",
           "Description": "Expiration time of the sync agent version.",
           "Type": "datetime",
           "Returned": "always",
@@ -8845,7 +8845,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -8854,7 +8854,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -8863,7 +8863,7 @@
         },
         {
           "Name": "interval",
-          "NameAlt": "interval",
+          "NameAlt": "x",
           "Description": "Sync interval of the sync group.",
           "Type": "int",
           "Returned": "always",
@@ -8872,7 +8872,7 @@
         },
         {
           "Name": "last_sync_time",
-          "NameAlt": "last_sync_time",
+          "NameAlt": "x",
           "Description": "Last sync time of the sync group.",
           "Type": "datetime",
           "Returned": "always",
@@ -8881,7 +8881,7 @@
         },
         {
           "Name": "conflict_resolution_policy",
-          "NameAlt": "conflict_resolution_policy",
+          "NameAlt": "x",
           "Description": "Conflict resolution policy of the sync group. Possible values include: 'HubWin', 'MemberWin'",
           "Type": "str",
           "Returned": "always",
@@ -8890,7 +8890,7 @@
         },
         {
           "Name": "sync_database_id",
-          "NameAlt": "sync_database_id",
+          "NameAlt": "x",
           "Description": "ARM resource id of the sync database in the sync group.",
           "Type": "str",
           "Returned": "always",
@@ -8899,7 +8899,7 @@
         },
         {
           "Name": "hub_database_user_name",
-          "NameAlt": "hub_database_user_name",
+          "NameAlt": "x",
           "Description": "User name for the sync group hub database credential.",
           "Type": "str",
           "Returned": "always",
@@ -8908,7 +8908,7 @@
         },
         {
           "Name": "hub_database_password",
-          "NameAlt": "hub_database_password",
+          "NameAlt": "x",
           "Description": "Password for the sync group hub database credential.",
           "Type": "str",
           "Returned": "always",
@@ -8917,7 +8917,7 @@
         },
         {
           "Name": "sync_state",
-          "NameAlt": "sync_state",
+          "NameAlt": "x",
           "Description": "Sync state of the sync group. Possible values include: 'NotReady', 'Error', 'Warning', 'Progressing', 'Good'",
           "Type": "str",
           "Returned": "always",
@@ -8926,7 +8926,7 @@
         },
         {
           "Name": "schema",
-          "NameAlt": "schema",
+          "NameAlt": "x",
           "Description": "Sync schema of the sync group.",
           "Type": "complex",
           "Returned": "always",
@@ -8934,7 +8934,7 @@
           "SubFields": [
             {
               "Name": "tables",
-              "NameAlt": "tables",
+              "NameAlt": "x",
               "Description": "List of tables in sync group schema.",
               "Type": "complex",
               "Returned": "always",
@@ -8942,7 +8942,7 @@
               "SubFields": [
                 {
                   "Name": "columns",
-                  "NameAlt": "columns",
+                  "NameAlt": "x",
                   "Description": "List of columns in sync group schema.",
                   "Type": "complex",
                   "Returned": "always",
@@ -8950,7 +8950,7 @@
                   "SubFields": [
                     {
                       "Name": "quoted_name",
-                      "NameAlt": "quoted_name",
+                      "NameAlt": "x",
                       "Description": "Quoted name of sync group table column.",
                       "Type": "str",
                       "Returned": "always",
@@ -8959,7 +8959,7 @@
                     },
                     {
                       "Name": "data_size",
-                      "NameAlt": "data_size",
+                      "NameAlt": "x",
                       "Description": "Data size of the column.",
                       "Type": "str",
                       "Returned": "always",
@@ -8968,7 +8968,7 @@
                     },
                     {
                       "Name": "data_type",
-                      "NameAlt": "data_type",
+                      "NameAlt": "x",
                       "Description": "Data type of the column.",
                       "Type": "str",
                       "Returned": "always",
@@ -8979,7 +8979,7 @@
                 },
                 {
                   "Name": "quoted_name",
-                  "NameAlt": "quoted_name",
+                  "NameAlt": "x",
                   "Description": "Quoted name of sync group schema table.",
                   "Type": "str",
                   "Returned": "always",
@@ -8990,7 +8990,7 @@
             },
             {
               "Name": "master_sync_member_name",
-              "NameAlt": "master_sync_member_name",
+              "NameAlt": "x",
               "Description": "Name of master sync member where the schema is from.",
               "Type": "str",
               "Returned": "always",
@@ -9513,7 +9513,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -9522,7 +9522,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -9531,7 +9531,7 @@
         },
         {
           "Name": "database_type",
-          "NameAlt": "database_type",
+          "NameAlt": "x",
           "Description": "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'",
           "Type": "str",
           "Returned": "always",
@@ -9540,7 +9540,7 @@
         },
         {
           "Name": "sync_agent_id",
-          "NameAlt": "sync_agent_id",
+          "NameAlt": "x",
           "Description": "ARM resource id of the sync agent in the sync member.",
           "Type": "str",
           "Returned": "always",
@@ -9549,7 +9549,7 @@
         },
         {
           "Name": "sql_server_database_id",
-          "NameAlt": "sql_server_database_id",
+          "NameAlt": "x",
           "Description": "SQL Server database id of the sync member.",
           "Type": "str",
           "Returned": "always",
@@ -9558,7 +9558,7 @@
         },
         {
           "Name": "server_name",
-          "NameAlt": "server_name",
+          "NameAlt": "x",
           "Description": "Server name of the member database in the sync member",
           "Type": "str",
           "Returned": "always",
@@ -9567,7 +9567,7 @@
         },
         {
           "Name": "database_name",
-          "NameAlt": "database_name",
+          "NameAlt": "x",
           "Description": "Database name of the member database in the sync member.",
           "Type": "str",
           "Returned": "always",
@@ -9576,7 +9576,7 @@
         },
         {
           "Name": "user_name",
-          "NameAlt": "user_name",
+          "NameAlt": "x",
           "Description": "User name of the member database in the sync member.",
           "Type": "str",
           "Returned": "always",
@@ -9585,7 +9585,7 @@
         },
         {
           "Name": "password",
-          "NameAlt": "password",
+          "NameAlt": "x",
           "Description": "Password of the member database in the sync member.",
           "Type": "str",
           "Returned": "always",
@@ -9594,7 +9594,7 @@
         },
         {
           "Name": "sync_direction",
-          "NameAlt": "sync_direction",
+          "NameAlt": "x",
           "Description": "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'",
           "Type": "str",
           "Returned": "always",
@@ -9603,7 +9603,7 @@
         },
         {
           "Name": "sync_state",
-          "NameAlt": "sync_state",
+          "NameAlt": "x",
           "Description": "Sync state of the sync member. Possible values include: 'SyncInProgress', 'SyncSucceeded', 'SyncFailed', 'DisabledTombstoneCleanup', 'DisabledBackupRestore', 'SyncSucceededWithWarnings', 'SyncCancelling', 'SyncCancelled', 'UnProvisioned', 'Provisioning', 'Provisioned', 'ProvisionFailed', 'DeProvisioning', 'DeProvisioned', 'DeProvisionFailed', 'Reprovisioning', 'ReprovisionFailed', 'UnReprovisioned'",
           "Type": "str",
           "Returned": "always",
@@ -9887,7 +9887,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -9896,7 +9896,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -9905,7 +9905,7 @@
         },
         {
           "Name": "virtual_network_subnet_id",
-          "NameAlt": "virtual_network_subnet_id",
+          "NameAlt": "x",
           "Description": "The ARM resource id of the virtual network subnet.",
           "Type": "str",
           "Returned": "always",
@@ -9914,7 +9914,7 @@
         },
         {
           "Name": "ignore_missing_vnet_service_endpoint",
-          "NameAlt": "ignore_missing_vnet_service_endpoint",
+          "NameAlt": "x",
           "Description": "Create firewall rule before the virtual network has vnet service endpoint enabled.",
           "Type": "str",
           "Returned": "always",
@@ -10195,7 +10195,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -10204,7 +10204,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -10213,7 +10213,7 @@
         },
         {
           "Name": "azure_dns_record",
-          "NameAlt": "azure_dns_record",
+          "NameAlt": "x",
           "Description": "The fully qualified DNS record for alias",
           "Type": "str",
           "Returned": "always",

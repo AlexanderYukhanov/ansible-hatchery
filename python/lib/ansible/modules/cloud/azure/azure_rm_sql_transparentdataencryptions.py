@@ -73,24 +73,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        location:
-            description:
-                - Resource location.
-            returned: always
-            type: str
-            sample: location
         status:
             description:
                 - "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'"
@@ -209,6 +191,10 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('location', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("TransparentDataEncryptions instance deleted")

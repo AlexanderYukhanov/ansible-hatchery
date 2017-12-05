@@ -97,85 +97,12 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        tags:
-            description:
-                - Resource tags.
-            returned: always
-            type: complex
-            sample: tags
-        location:
-            description:
-                - Resource location.
-            returned: always
-            type: str
-            sample: location
-        creation_date:
-            description:
-                - The creation date of the elastic pool (ISO8601 format).
-            returned: always
-            type: datetime
-            sample: creation_date
         state:
             description:
                 - "The state of the elastic pool. Possible values include: 'Creating', 'Ready', 'Disabled'"
             returned: always
             type: str
             sample: state
-        edition:
-            description:
-                - "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'"
-            returned: always
-            type: str
-            sample: edition
-        dtu:
-            description:
-                - The total shared DTU for the database elastic pool.
-            returned: always
-            type: int
-            sample: dtu
-        database_dtu_max:
-            description:
-                - The maximum DTU any one database can consume.
-            returned: always
-            type: int
-            sample: database_dtu_max
-        database_dtu_min:
-            description:
-                - The minimum DTU all databases are guaranteed.
-            returned: always
-            type: int
-            sample: database_dtu_min
-        storage_mb:
-            description:
-                - Gets storage limit for the database elastic pool in MB.
-            returned: always
-            type: int
-            sample: storage_mb
-        zone_redundant:
-            description:
-                - "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple avai
-                   lability zones."
-            returned: always
-            type: str
-            sample: zone_redundant
-        kind:
-            description:
-                - Kind of elastic pool.  This is metadata used for the Azure portal experience.
-            returned: always
-            type: str
-            sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -330,6 +257,19 @@ class AzureRMElasticPools(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('tags', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('creation_date', None)
+            self.results['state'].pop('edition', None)
+            self.results['state'].pop('dtu', None)
+            self.results['state'].pop('database_dtu_max', None)
+            self.results['state'].pop('database_dtu_min', None)
+            self.results['state'].pop('storage_mb', None)
+            self.results['state'].pop('zone_redundant', None)
+            self.results['state'].pop('kind', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ElasticPool instance deleted")

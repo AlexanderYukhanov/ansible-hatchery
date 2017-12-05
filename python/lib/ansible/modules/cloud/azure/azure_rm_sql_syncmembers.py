@@ -106,74 +106,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        database_type:
-            description:
-                - "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'"
-            returned: always
-            type: str
-            sample: database_type
-        sync_agent_id:
-            description:
-                - ARM resource id of the sync agent in the sync member.
-            returned: always
-            type: str
-            sample: sync_agent_id
-        sql_server_database_id:
-            description:
-                - SQL Server database id of the sync member.
-            returned: always
-            type: str
-            sample: sql_server_database_id
-        server_name:
-            description:
-                - Server name of the member database in the sync member
-            returned: always
-            type: str
-            sample: server_name
-        database_name:
-            description:
-                - Database name of the member database in the sync member.
-            returned: always
-            type: str
-            sample: database_name
-        user_name:
-            description:
-                - User name of the member database in the sync member.
-            returned: always
-            type: str
-            sample: user_name
-        password:
-            description:
-                - Password of the member database in the sync member.
-            returned: always
-            type: str
-            sample: password
-        sync_direction:
-            description:
-                - "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'"
-            returned: always
-            type: str
-            sample: sync_direction
-        sync_state:
-            description:
-                - "Sync state of the sync member. Possible values include: 'SyncInProgress', 'SyncSucceeded', 'SyncFailed', 'DisabledTombstoneCleanup', 'Disa
-                   bledBackupRestore', 'SyncSucceededWithWarnings', 'SyncCancelling', 'SyncCancelled', 'UnProvisioned', 'Provisioning', 'Provisioned', 'Provi
-                   sionFailed', 'DeProvisioning', 'DeProvisioned', 'DeProvisionFailed', 'Reprovisioning', 'ReprovisionFailed', 'UnReprovisioned'"
-            returned: always
-            type: str
-            sample: sync_state
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -335,6 +267,18 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('database_type', None)
+            self.results['state'].pop('sync_agent_id', None)
+            self.results['state'].pop('sql_server_database_id', None)
+            self.results['state'].pop('server_name', None)
+            self.results['state'].pop('database_name', None)
+            self.results['state'].pop('user_name', None)
+            self.results['state'].pop('password', None)
+            self.results['state'].pop('sync_direction', None)
+            self.results['state'].pop('sync_state', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncMembers instance deleted")

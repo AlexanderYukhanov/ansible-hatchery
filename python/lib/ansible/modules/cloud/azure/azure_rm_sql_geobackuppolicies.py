@@ -74,42 +74,12 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
         state:
             description:
                 - "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'"
             returned: always
             type: str
             sample: state
-        storage_type:
-            description:
-                - The storage type of the geo backup policy.
-            returned: always
-            type: str
-            sample: storage_type
-        kind:
-            description:
-                - Kind of geo backup policy.  This is metadata used for the Azure portal experience.
-            returned: always
-            type: str
-            sample: kind
-        location:
-            description:
-                - Backup policy location.
-            returned: always
-            type: str
-            sample: location
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -222,6 +192,12 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('storage_type', None)
+            self.results['state'].pop('kind', None)
+            self.results['state'].pop('location', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("GeoBackupPolicies instance deleted")

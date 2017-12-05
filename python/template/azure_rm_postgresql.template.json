@@ -321,7 +321,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -330,7 +330,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -339,7 +339,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "location",
+          "NameAlt": "x",
           "Description": "The location the resource resides in.",
           "Type": "str",
           "Returned": "always",
@@ -348,7 +348,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "Application-specific metadata in the form of key-value pairs.",
           "Type": "complex",
           "Returned": "always",
@@ -357,7 +357,7 @@
         },
         {
           "Name": "sku",
-          "NameAlt": "sku",
+          "NameAlt": "x",
           "Description": "The SKU (pricing tier) of the server.",
           "Type": "complex",
           "Returned": "always",
@@ -365,7 +365,7 @@
           "SubFields": [
             {
               "Name": "name",
-              "NameAlt": "name",
+              "NameAlt": "x",
               "Description": "The name of the sku, typically, a letter + Number code, e.g. P3.",
               "Type": "str",
               "Returned": "always",
@@ -374,7 +374,7 @@
             },
             {
               "Name": "tier",
-              "NameAlt": "tier",
+              "NameAlt": "x",
               "Description": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
               "Type": "str",
               "Returned": "always",
@@ -383,7 +383,7 @@
             },
             {
               "Name": "capacity",
-              "NameAlt": "capacity",
+              "NameAlt": "x",
               "Description": "The scale up/out capacity, representing server's compute units.",
               "Type": "int",
               "Returned": "always",
@@ -392,7 +392,7 @@
             },
             {
               "Name": "size",
-              "NameAlt": "size",
+              "NameAlt": "x",
               "Description": "The size code, to be interpreted by resource as appropriate.",
               "Type": "str",
               "Returned": "always",
@@ -401,7 +401,7 @@
             },
             {
               "Name": "family",
-              "NameAlt": "family",
+              "NameAlt": "x",
               "Description": "The family of hardware.",
               "Type": "str",
               "Returned": "always",
@@ -412,7 +412,7 @@
         },
         {
           "Name": "administrator_login",
-          "NameAlt": "administrator_login",
+          "NameAlt": "x",
           "Description": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
           "Type": "str",
           "Returned": "always",
@@ -421,7 +421,7 @@
         },
         {
           "Name": "storage_mb",
-          "NameAlt": "storage_mb",
+          "NameAlt": "x",
           "Description": "The maximum storage allowed for a server.",
           "Type": "long",
           "Returned": "always",
@@ -439,7 +439,7 @@
         },
         {
           "Name": "ssl_enforcement",
-          "NameAlt": "ssl_enforcement",
+          "NameAlt": "x",
           "Description": "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'",
           "Type": "str",
           "Returned": "always",
@@ -683,7 +683,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -692,7 +692,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -701,7 +701,7 @@
         },
         {
           "Name": "start_ip_address",
-          "NameAlt": "start_ip_address",
+          "NameAlt": "x",
           "Description": "The start IP address of the server firewall rule. Must be IPv4 format.",
           "Type": "str",
           "Returned": "always",
@@ -710,7 +710,7 @@
         },
         {
           "Name": "end_ip_address",
-          "NameAlt": "end_ip_address",
+          "NameAlt": "x",
           "Description": "The end IP address of the server firewall rule. Must be IPv4 format.",
           "Type": "str",
           "Returned": "always",
@@ -954,7 +954,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -963,7 +963,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -972,7 +972,7 @@
         },
         {
           "Name": "virtual_network_subnet_id",
-          "NameAlt": "virtual_network_subnet_id",
+          "NameAlt": "x",
           "Description": "The ARM resource id of the virtual network subnet.",
           "Type": "str",
           "Returned": "always",
@@ -981,7 +981,7 @@
         },
         {
           "Name": "ignore_missing_vnet_service_endpoint",
-          "NameAlt": "ignore_missing_vnet_service_endpoint",
+          "NameAlt": "x",
           "Description": "Create firewall rule before the virtual network has vnet service endpoint enabled.",
           "Type": "str",
           "Returned": "always",
@@ -1234,7 +1234,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1243,7 +1243,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1252,7 +1252,7 @@
         },
         {
           "Name": "charset",
-          "NameAlt": "charset",
+          "NameAlt": "x",
           "Description": "The charset of the database.",
           "Type": "str",
           "Returned": "always",
@@ -1261,7 +1261,7 @@
         },
         {
           "Name": "collation",
-          "NameAlt": "collation",
+          "NameAlt": "x",
           "Description": "The collation of the database.",
           "Type": "str",
           "Returned": "always",
@@ -1492,7 +1492,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1501,7 +1501,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1510,7 +1510,7 @@
         },
         {
           "Name": "value",
-          "NameAlt": "value",
+          "NameAlt": "x",
           "Description": "Value of the configuration.",
           "Type": "str",
           "Returned": "always",
@@ -1519,7 +1519,7 @@
         },
         {
           "Name": "description",
-          "NameAlt": "description",
+          "NameAlt": "x",
           "Description": "Description of the configuration.",
           "Type": "str",
           "Returned": "always",
@@ -1528,7 +1528,7 @@
         },
         {
           "Name": "default_value",
-          "NameAlt": "default_value",
+          "NameAlt": "x",
           "Description": "Default value of the configuration.",
           "Type": "str",
           "Returned": "always",
@@ -1537,7 +1537,7 @@
         },
         {
           "Name": "data_type",
-          "NameAlt": "data_type",
+          "NameAlt": "x",
           "Description": "Data type of the configuration.",
           "Type": "str",
           "Returned": "always",
@@ -1546,7 +1546,7 @@
         },
         {
           "Name": "allowed_values",
-          "NameAlt": "allowed_values",
+          "NameAlt": "x",
           "Description": "Allowed values of the configuration.",
           "Type": "str",
           "Returned": "always",
@@ -1555,7 +1555,7 @@
         },
         {
           "Name": "source",
-          "NameAlt": "source",
+          "NameAlt": "x",
           "Description": "Source of the configuration.",
           "Type": "str",
           "Returned": "always",

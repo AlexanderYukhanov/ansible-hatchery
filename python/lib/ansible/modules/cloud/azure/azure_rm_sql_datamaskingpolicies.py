@@ -79,55 +79,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        data_masking_state:
-            description:
-                - "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'"
-            returned: always
-            type: str
-            sample: data_masking_state
-        exempt_principals:
-            description:
-                - "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not app
-                   ly. The specified users receive data results without masking for all of the database queries."
-            returned: always
-            type: str
-            sample: exempt_principals
-        application_principals:
-            description:
-                - The list of the application principals. This is a legacy parameter and is no longer used.
-            returned: always
-            type: str
-            sample: application_principals
-        masking_level:
-            description:
-                - The masking level. This is a legacy parameter and is no longer used.
-            returned: always
-            type: str
-            sample: masking_level
-        location:
-            description:
-                - The location of the data masking policy.
-            returned: always
-            type: str
-            sample: location
-        kind:
-            description:
-                - The kind of data masking policy. Metadata, used for Azure portal.
-            returned: always
-            type: str
-            sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -245,6 +196,15 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('data_masking_state', None)
+            self.results['state'].pop('exempt_principals', None)
+            self.results['state'].pop('application_principals', None)
+            self.results['state'].pop('masking_level', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('kind', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DataMaskingPolicies instance deleted")

@@ -162,36 +162,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        tags:
-            description:
-                - Resource tags.
-            returned: always
-            type: complex
-            sample: tags
-        location:
-            description:
-                - Resource location.
-            returned: always
-            type: str
-            sample: location
-        kind:
-            description:
-                - Kind of database.  This is metadata used for the Azure portal experience.
-            returned: always
-            type: str
-            sample: kind
         database_id:
             description:
                 - The ID of the database.
@@ -407,6 +377,11 @@ class AzureRMDatabases(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
             # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('tags', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('kind', None)
             self.results['state'].pop('collation', None)
             self.results['state'].pop('creation_date', None)
             self.results['state'].pop('containment_state', None)

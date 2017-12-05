@@ -124,111 +124,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        interval:
-            description:
-                - Sync interval of the sync group.
-            returned: always
-            type: int
-            sample: interval
-        last_sync_time:
-            description:
-                - Last sync time of the sync group.
-            returned: always
-            type: datetime
-            sample: last_sync_time
-        conflict_resolution_policy:
-            description:
-                - "Conflict resolution policy of the sync group. Possible values include: 'HubWin', 'MemberWin'"
-            returned: always
-            type: str
-            sample: conflict_resolution_policy
-        sync_database_id:
-            description:
-                - ARM resource id of the sync database in the sync group.
-            returned: always
-            type: str
-            sample: sync_database_id
-        hub_database_user_name:
-            description:
-                - User name for the sync group hub database credential.
-            returned: always
-            type: str
-            sample: hub_database_user_name
-        hub_database_password:
-            description:
-                - Password for the sync group hub database credential.
-            returned: always
-            type: str
-            sample: hub_database_password
-        sync_state:
-            description:
-                - "Sync state of the sync group. Possible values include: 'NotReady', 'Error', 'Warning', 'Progressing', 'Good'"
-            returned: always
-            type: str
-            sample: sync_state
-        schema:
-            description:
-                - Sync schema of the sync group.
-            returned: always
-            type: complex
-            sample: schema
-            suboptions:
-                tables:
-                    description:
-                        - List of tables in sync group schema.
-                    returned: always
-                    type: complex
-                    sample: tables
-                    suboptions:
-                        columns:
-                            description:
-                                - List of columns in sync group schema.
-                            returned: always
-                            type: complex
-                            sample: columns
-                            suboptions:
-                                quoted_name:
-                                    description:
-                                        - Quoted name of sync group table column.
-                                    returned: always
-                                    type: str
-                                    sample: quoted_name
-                                data_size:
-                                    description:
-                                        - Data size of the column.
-                                    returned: always
-                                    type: str
-                                    sample: data_size
-                                data_type:
-                                    description:
-                                        - Data type of the column.
-                                    returned: always
-                                    type: str
-                                    sample: data_type
-                        quoted_name:
-                            description:
-                                - Quoted name of sync group schema table.
-                            returned: always
-                            type: str
-                            sample: quoted_name
-                master_sync_member_name:
-                    description:
-                        - Name of master sync member where the schema is from.
-                    returned: always
-                    type: str
-                    sample: master_sync_member_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -373,6 +268,17 @@ class AzureRMSyncGroups(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('interval', None)
+            self.results['state'].pop('last_sync_time', None)
+            self.results['state'].pop('conflict_resolution_policy', None)
+            self.results['state'].pop('sync_database_id', None)
+            self.results['state'].pop('hub_database_user_name', None)
+            self.results['state'].pop('hub_database_password', None)
+            self.results['state'].pop('sync_state', None)
+            self.results['state'].pop('schema', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncGroups instance deleted")

@@ -110,107 +110,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        location:
-            description:
-                - Resource location.
-            returned: always
-            type: str
-            sample: location
-        tags:
-            description:
-                - Resource tags.
-            returned: always
-            type: complex
-            sample: tags
-        read_write_endpoint:
-            description:
-                - Read-write endpoint of the failover group instance.
-            returned: always
-            type: complex
-            sample: read_write_endpoint
-            suboptions:
-                failover_policy:
-                    description:
-                        - "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePe
-                           riodMinutes is required. Possible values include: 'Manual', 'Automatic'"
-                    returned: always
-                    type: str
-                    sample: failover_policy
-                failover_with_data_loss_grace_period_minutes:
-                    description:
-                        - "Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failover
-                           WithDataLossGracePeriodMinutes is required."
-                    returned: always
-                    type: int
-                    sample: failover_with_data_loss_grace_period_minutes
-        read_only_endpoint:
-            description:
-                - Read-only endpoint of the failover group instance.
-            returned: always
-            type: complex
-            sample: read_only_endpoint
-            suboptions:
-                failover_policy:
-                    description:
-                        - "Failover policy of the read-only endpoint for the failover group. Possible values include: 'Disabled', 'Enabled'"
-                    returned: always
-                    type: str
-                    sample: failover_policy
-        replication_role:
-            description:
-                - "Local replication role of the failover group instance. Possible values include: 'Primary', 'Secondary'"
-            returned: always
-            type: str
-            sample: replication_role
-        replication_state:
-            description:
-                - Replication state of the failover group instance.
-            returned: always
-            type: str
-            sample: replication_state
-        partner_servers:
-            description:
-                - List of partner server information for the failover group.
-            returned: always
-            type: complex
-            sample: partner_servers
-            suboptions:
-                id:
-                    description:
-                        - Resource identifier of the partner server.
-                    returned: always
-                    type: str
-                    sample: id
-                location:
-                    description:
-                        - Geo location of the partner server.
-                    returned: always
-                    type: str
-                    sample: location
-                replication_role:
-                    description:
-                        - "Replication role of the partner server. Possible values include: 'Primary', 'Secondary'"
-                    returned: always
-                    type: str
-                    sample: replication_role
-        databases:
-            description:
-                - List of databases in the failover group.
-            returned: always
-            type: str
-            sample: databases
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -344,6 +243,17 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('tags', None)
+            self.results['state'].pop('read_write_endpoint', None)
+            self.results['state'].pop('read_only_endpoint', None)
+            self.results['state'].pop('replication_role', None)
+            self.results['state'].pop('replication_state', None)
+            self.results['state'].pop('partner_servers', None)
+            self.results['state'].pop('databases', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("FailoverGroups instance deleted")

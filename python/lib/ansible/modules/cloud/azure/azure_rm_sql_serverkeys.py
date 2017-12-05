@@ -87,60 +87,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        kind:
-            description:
-                - Kind of encryption protector. This is metadata used for the Azure portal experience.
-            returned: always
-            type: str
-            sample: kind
-        location:
-            description:
-                - Resource location.
-            returned: always
-            type: str
-            sample: location
-        subregion:
-            description:
-                - Subregion of the server key.
-            returned: always
-            type: str
-            sample: subregion
-        server_key_type:
-            description:
-                - "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'"
-            returned: always
-            type: str
-            sample: server_key_type
-        uri:
-            description:
-                - The URI of the server key.
-            returned: always
-            type: str
-            sample: uri
-        thumbprint:
-            description:
-                - Thumbprint of the server key.
-            returned: always
-            type: str
-            sample: thumbprint
-        creation_date:
-            description:
-                - The server key creation date.
-            returned: always
-            type: datetime
-            sample: creation_date
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -274,6 +220,16 @@ class AzureRMServerKeys(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('kind', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('subregion', None)
+            self.results['state'].pop('server_key_type', None)
+            self.results['state'].pop('uri', None)
+            self.results['state'].pop('thumbprint', None)
+            self.results['state'].pop('creation_date', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerKeys instance deleted")

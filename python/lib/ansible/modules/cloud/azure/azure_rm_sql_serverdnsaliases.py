@@ -64,24 +64,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        azure_dns_record:
-            description:
-                - The fully qualified DNS record for alias
-            returned: always
-            type: str
-            sample: azure_dns_record
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -184,6 +166,10 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('azure_dns_record', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerDnsAliases instance deleted")

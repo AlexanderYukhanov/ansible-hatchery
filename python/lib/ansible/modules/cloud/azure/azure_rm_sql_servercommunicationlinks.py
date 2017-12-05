@@ -69,42 +69,12 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
         state:
             description:
                 - The state.
             returned: always
             type: str
             sample: state
-        partner_server:
-            description:
-                - The name of the partner server.
-            returned: always
-            type: str
-            sample: partner_server
-        location:
-            description:
-                - Communication link location.
-            returned: always
-            type: str
-            sample: location
-        kind:
-            description:
-                - Communication link kind.  This property is used for Azure Portal metadata.
-            returned: always
-            type: str
-            sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -212,6 +182,12 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('partner_server', None)
+            self.results['state'].pop('location', None)
+            self.results['state'].pop('kind', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerCommunicationLinks instance deleted")

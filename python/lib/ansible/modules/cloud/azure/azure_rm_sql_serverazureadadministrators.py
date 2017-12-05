@@ -84,42 +84,6 @@ state:
             returned: always
             type: str
             sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
-        type:
-            description:
-                - Resource type.
-            returned: always
-            type: str
-            sample: type
-        administrator_type:
-            description:
-                - The type of administrator.
-            returned: always
-            type: str
-            sample: administrator_type
-        login:
-            description:
-                - The server administrator login value.
-            returned: always
-            type: str
-            sample: login
-        sid:
-            description:
-                - The server administrator Sid (Secure ID).
-            returned: always
-            type: str
-            sample: sid
-        tenant_id:
-            description:
-                - The server Active Directory Administrator tenant id.
-            returned: always
-            type: str
-            sample: tenant_id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -247,6 +211,13 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
+            # remove unnecessary fields from return state
+            self.results['state'].pop('name', None)
+            self.results['state'].pop('type', None)
+            self.results['state'].pop('administrator_type', None)
+            self.results['state'].pop('login', None)
+            self.results['state'].pop('sid', None)
+            self.results['state'].pop('tenant_id', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerAzureADAdministrators instance deleted")

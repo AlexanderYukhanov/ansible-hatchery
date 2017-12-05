@@ -307,7 +307,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "The role assignment name.",
           "Type": "str",
           "Returned": "always",
@@ -316,7 +316,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "The role assignment type.",
           "Type": "str",
           "Returned": "always",
@@ -325,7 +325,7 @@
         },
         {
           "Name": "properties",
-          "NameAlt": "properties",
+          "NameAlt": "x",
           "Description": "Role assignment properties.",
           "Type": "complex",
           "Returned": "always",
@@ -333,7 +333,7 @@
           "SubFields": [
             {
               "Name": "scope",
-              "NameAlt": "scope",
+              "NameAlt": "x",
               "Description": "The role assignment scope.",
               "Type": "str",
               "Returned": "always",
@@ -342,7 +342,7 @@
             },
             {
               "Name": "role_definition_id",
-              "NameAlt": "role_definition_id",
+              "NameAlt": "x",
               "Description": "The role definition ID.",
               "Type": "str",
               "Returned": "always",
@@ -351,7 +351,7 @@
             },
             {
               "Name": "principal_id",
-              "NameAlt": "principal_id",
+              "NameAlt": "x",
               "Description": "The principal ID.",
               "Type": "str",
               "Returned": "always",
@@ -800,7 +800,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "name",
+          "NameAlt": "x",
           "Description": "The role definition name.",
           "Type": "str",
           "Returned": "always",
@@ -809,7 +809,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "type",
+          "NameAlt": "x",
           "Description": "The role definition type.",
           "Type": "str",
           "Returned": "always",
@@ -818,7 +818,7 @@
         },
         {
           "Name": "properties",
-          "NameAlt": "properties",
+          "NameAlt": "x",
           "Description": "Role definition properties.",
           "Type": "complex",
           "Returned": "always",
@@ -826,7 +826,7 @@
           "SubFields": [
             {
               "Name": "role_name",
-              "NameAlt": "role_name",
+              "NameAlt": "x",
               "Description": "The role name.",
               "Type": "str",
               "Returned": "always",
@@ -835,7 +835,7 @@
             },
             {
               "Name": "description",
-              "NameAlt": "description",
+              "NameAlt": "x",
               "Description": "The role definition description.",
               "Type": "str",
               "Returned": "always",
@@ -844,7 +844,7 @@
             },
             {
               "Name": "type",
-              "NameAlt": "type",
+              "NameAlt": "x",
               "Description": "The role type.",
               "Type": "str",
               "Returned": "always",
@@ -853,7 +853,7 @@
             },
             {
               "Name": "permissions",
-              "NameAlt": "permissions",
+              "NameAlt": "x",
               "Description": "Role definition permissions.",
               "Type": "complex",
               "Returned": "always",
@@ -861,7 +861,7 @@
               "SubFields": [
                 {
                   "Name": "actions",
-                  "NameAlt": "actions",
+                  "NameAlt": "x",
                   "Description": "Allowed actions.",
                   "Type": "str",
                   "Returned": "always",
@@ -870,7 +870,7 @@
                 },
                 {
                   "Name": "not_actions",
-                  "NameAlt": "not_actions",
+                  "NameAlt": "x",
                   "Description": "Denied actions.",
                   "Type": "str",
                   "Returned": "always",
@@ -881,7 +881,7 @@
             },
             {
               "Name": "assignable_scopes",
-              "NameAlt": "assignable_scopes",
+              "NameAlt": "x",
               "Description": "Role definition assignable scopes.",
               "Type": "str",
               "Returned": "always",
