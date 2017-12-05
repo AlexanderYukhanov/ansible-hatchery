@@ -1275,7 +1275,7 @@
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "PostgreSQL Database",
-      "NeedsDeleteBeforeUpdate": false,
+      "NeedsDeleteBeforeUpdate": true,
       "UpdateComparisonRules": null
     },
     {
