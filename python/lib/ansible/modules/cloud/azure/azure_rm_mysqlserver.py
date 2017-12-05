@@ -317,7 +317,7 @@ class AzureRMServers(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        if not self.parameters.has_key("location"):
+        if not ("location" in self.parameters):
             self.parameters["location"] = resource_group.location
 
         old_response = self.get_servers()
