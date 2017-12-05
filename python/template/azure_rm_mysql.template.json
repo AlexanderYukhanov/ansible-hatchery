@@ -1252,7 +1252,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",

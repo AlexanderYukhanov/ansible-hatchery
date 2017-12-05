@@ -72,6 +72,12 @@ state:
             returned: always
             type: str
             sample: id
+        name:
+            description:
+                - Resource name.
+            returned: always
+            type: str
+            sample: name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -188,7 +194,6 @@ class AzureRMDatabases(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(self.results['state'])
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
             self.results['state'].pop('type', None)
             self.results['state'].pop('charset', None)
             self.results['state'].pop('collation', None)
