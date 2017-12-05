@@ -6,6 +6,7 @@
       admin_username: zimxyz
       admin_password: Testpasswordxyz12!
       create_mode: Default
+      location: eastus
   register: output
 - name: Assert the resource instance is well created
   assert:
