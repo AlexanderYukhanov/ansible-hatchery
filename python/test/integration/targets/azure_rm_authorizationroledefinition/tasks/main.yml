@@ -4,10 +4,10 @@
     role_definition_id: rolexyz
     properties:
       permissions:
-        actions:
-          - XXXX - list of values -- not implemented str
-        not_actions:
-          - XXXX - list of values -- not implemented str
+        - actions:
+            - action1
+          not_actions:
+            - notaction1
       assignable_scopes:
         - XXXX - list of values -- not implemented str
   register: output
