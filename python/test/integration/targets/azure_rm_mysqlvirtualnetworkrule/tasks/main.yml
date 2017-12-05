@@ -1,4 +1,4 @@
-- name: Create Servers
+- name: Create MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
     name: test-mysql-server
@@ -44,7 +44,7 @@
     that:
       - output.changed
 
-- name: Delete instance of Servers
+- name: Delete instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
     name: test-mysql-server

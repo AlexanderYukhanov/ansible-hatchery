@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_postgresqlserver
 version_added: "2.5"
-short_description: Manage Servers instance
+short_description: Manage PostgreSQL Server instance
 description:
-    - Create, update and delete instance of Servers
+    - Create, update and delete instance of PostgreSQL Server
 
 options:
     resource_group:
@@ -92,7 +92,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Servers
+  - name: Create (or update) PostgreSQL Server
     azure_rm_postgresqlserver:
       resource_group: resource_group_name
       server_name: server_name
@@ -115,7 +115,7 @@ EXAMPLES = '''
 
 RETURN = '''
 state:
-    description: Current state of Servers
+    description: Current state of PostgreSQL Server
     returned: always
     type: complex
     contains:
@@ -162,7 +162,7 @@ class Actions:
 
 
 class AzureRMServers(AzureRMModuleBase):
-    """Configuration class for an Azure RM Servers resource"""
+    """Configuration class for an Azure RM PostgreSQL Server resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -240,29 +240,29 @@ class AzureRMServers(AzureRMModuleBase):
         if not ("location" in self.parameters):
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_servers()
+        old_response = self.get_postgresqlserver()
 
         if not old_response:
-            self.log("Servers instance doesn't exist")
+            self.log("PostgreSQL Server instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("Servers instance already exists")
+            self.log("PostgreSQL Server instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if Servers instance has to be deleted or may be updated")
+                self.log("Need to check if PostgreSQL Server instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the Servers instance")
+            self.log("Need to Create / Update the PostgreSQL Server instance")
 
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_servers()
+            self.results['state'] = self.create_update_postgresqlserver()
             if not old_response:
                 self.results['changed'] = True
             else:
@@ -279,23 +279,23 @@ class AzureRMServers(AzureRMModuleBase):
             self.results['state'].pop('ssl_enforcement', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("Servers instance deleted")
-            self.delete_servers()
+            self.log("PostgreSQL Server instance deleted")
+            self.delete_postgresqlserver()
             self.results['changed'] = True
         else:
-            self.log("Servers instance unchanged")
+            self.log("PostgreSQL Server instance unchanged")
             self.results['state'] = old_response
             self.results['changed'] = False
 
         return self.results
 
-    def create_update_servers(self):
+    def create_update_postgresqlserver(self):
         '''
-        Creates or updates Servers with the specified configuration.
+        Creates or updates PostgreSQL Server with the specified configuration.
 
-        :return: deserialized Servers instance state dictionary
+        :return: deserialized PostgreSQL Server instance state dictionary
         '''
-        self.log("Creating / Updating the Servers instance {0}".format(self.server_name))
+        self.log("Creating / Updating the PostgreSQL Server instance {0}".format(self.server_name))
 
         try:
             if self.to_do == Actions.Create:
@@ -310,42 +310,42 @@ class AzureRMServers(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Servers instance.')
-            self.fail("Error creating the Servers instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the PostgreSQL Server instance.')
+            self.fail("Error creating the PostgreSQL Server instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_servers(self):
+    def delete_postgresqlserver(self):
         '''
-        Deletes specified Servers instance in the specified subscription and resource group.
+        Deletes specified PostgreSQL Server instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Servers instance {0}".format(self.server_name))
+        self.log("Deleting the PostgreSQL Server instance {0}".format(self.server_name))
         try:
             response = self.mgmt_client.servers.delete(self.resource_group,
                                                        self.server_name)
         except CloudError as e:
-            self.log('Error attempting to delete the Servers instance.')
-            self.fail("Error deleting the Servers instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the PostgreSQL Server instance.')
+            self.fail("Error deleting the PostgreSQL Server instance: {0}".format(str(e)))
 
         return True
 
-    def get_servers(self):
+    def get_postgresqlserver(self):
         '''
-        Gets the properties of the specified Servers.
+        Gets the properties of the specified PostgreSQL Server.
 
-        :return: deserialized Servers instance state dictionary
+        :return: deserialized PostgreSQL Server instance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
+        self.log("Checking if the PostgreSQL Server instance {0} is present".format(self.server_name))
         found = False
         try:
             response = self.mgmt_client.servers.get(self.resource_group,
                                                     self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
+            self.log("PostgreSQL Server instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Did not find the PostgreSQL Server instance.')
         if found is True:
             return response.as_dict()
 

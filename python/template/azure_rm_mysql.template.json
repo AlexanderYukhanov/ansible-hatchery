@@ -470,7 +470,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "Servers",
+      "ObjectName": "MySQL Server",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -1292,7 +1292,7 @@
       "AssertStateExpectedValue": "testdatabase",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases",
+      "ObjectName": "MySQL Database",
       "NeedsDeleteBeforeUpdate": true,
       "UpdateComparisonRules": null
     },

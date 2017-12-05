@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_postgresqldatabase
 version_added: "2.5"
-short_description: Manage Databases instance
+short_description: Manage PostgreSQL Database instance
 description:
-    - Create, update and delete instance of Databases
+    - Create, update and delete instance of PostgreSQL Database
 
 options:
     resource_group:
@@ -51,7 +51,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Databases
+  - name: Create (or update) PostgreSQL Database
     azure_rm_postgresqldatabase:
       resource_group: resource_group_name
       server_name: server_name
@@ -62,7 +62,7 @@ EXAMPLES = '''
 
 RETURN = '''
 state:
-    description: Current state of Databases
+    description: Current state of PostgreSQL Database
     returned: always
     type: complex
     contains:
@@ -91,7 +91,7 @@ class Actions:
 
 
 class AzureRMDatabases(AzureRMModuleBase):
-    """Configuration class for an Azure RM Databases resource"""
+    """Configuration class for an Azure RM PostgreSQL Database resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -159,29 +159,29 @@ class AzureRMDatabases(AzureRMModuleBase):
         except CloudError:
             self.fail('resource group {0} not found'.format(self.resource_group))
 
-        old_response = self.get_databases()
+        old_response = self.get_postgresqldatabase()
 
         if not old_response:
-            self.log("Databases instance doesn't exist")
+            self.log("PostgreSQL Database instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("Databases instance already exists")
+            self.log("PostgreSQL Database instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if Databases instance has to be deleted or may be updated")
+                self.log("Need to check if PostgreSQL Database instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the Databases instance")
+            self.log("Need to Create / Update the PostgreSQL Database instance")
 
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_databases()
+            self.results['state'] = self.create_update_postgresqldatabase()
             if not old_response:
                 self.results['changed'] = True
             else:
@@ -194,23 +194,23 @@ class AzureRMDatabases(AzureRMModuleBase):
             self.results['state'].pop('collation', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("Databases instance deleted")
-            self.delete_databases()
+            self.log("PostgreSQL Database instance deleted")
+            self.delete_postgresqldatabase()
             self.results['changed'] = True
         else:
-            self.log("Databases instance unchanged")
+            self.log("PostgreSQL Database instance unchanged")
             self.results['state'] = old_response
             self.results['changed'] = False
 
         return self.results
 
-    def create_update_databases(self):
+    def create_update_postgresqldatabase(self):
         '''
-        Creates or updates Databases with the specified configuration.
+        Creates or updates PostgreSQL Database with the specified configuration.
 
-        :return: deserialized Databases instance state dictionary
+        :return: deserialized PostgreSQL Database instance state dictionary
         '''
-        self.log("Creating / Updating the Databases instance {0}".format(self.database_name))
+        self.log("Creating / Updating the PostgreSQL Database instance {0}".format(self.database_name))
 
         try:
             response = self.mgmt_client.databases.create_or_update(self.resource_group,
@@ -221,34 +221,34 @@ class AzureRMDatabases(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Databases instance.')
-            self.fail("Error creating the Databases instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the PostgreSQL Database instance.')
+            self.fail("Error creating the PostgreSQL Database instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_databases(self):
+    def delete_postgresqldatabase(self):
         '''
-        Deletes specified Databases instance in the specified subscription and resource group.
+        Deletes specified PostgreSQL Database instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Databases instance {0}".format(self.database_name))
+        self.log("Deleting the PostgreSQL Database instance {0}".format(self.database_name))
         try:
             response = self.mgmt_client.databases.delete(self.resource_group,
                                                          self.server_name,
                                                          self.database_name)
         except CloudError as e:
-            self.log('Error attempting to delete the Databases instance.')
-            self.fail("Error deleting the Databases instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the PostgreSQL Database instance.')
+            self.fail("Error deleting the PostgreSQL Database instance: {0}".format(str(e)))
 
         return True
 
-    def get_databases(self):
+    def get_postgresqldatabase(self):
         '''
-        Gets the properties of the specified Databases.
+        Gets the properties of the specified PostgreSQL Database.
 
-        :return: deserialized Databases instance state dictionary
+        :return: deserialized PostgreSQL Database instance state dictionary
         '''
-        self.log("Checking if the Databases instance {0} is present".format(self.database_name))
+        self.log("Checking if the PostgreSQL Database instance {0} is present".format(self.database_name))
         found = False
         try:
             response = self.mgmt_client.databases.get(self.resource_group,
@@ -256,9 +256,9 @@ class AzureRMDatabases(AzureRMModuleBase):
                                                       self.database_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Databases instance : {0} found".format(response.name))
+            self.log("PostgreSQL Database instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Databases instance.')
+            self.log('Did not find the PostgreSQL Database instance.')
         if found is True:
             return response.as_dict()
 

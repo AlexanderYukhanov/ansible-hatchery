@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabase
 version_added: "2.5"
-short_description: Manage Database instance
+short_description: Manage SQL Database instance
 description:
-    - Create, update and delete instance of Database
+    - Create, update and delete instance of SQL Database
 
 options:
     resource_group:
@@ -127,7 +127,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Database
+  - name: Create (or update) SQL Database
     azure_rm_sqldatabase:
       resource_group: resource_group_name
       server_name: server_name
@@ -152,7 +152,7 @@ EXAMPLES = '''
 
 RETURN = '''
 state:
-    description: Current state of Database
+    description: Current state of SQL Database
     returned: always
     type: complex
     contains:
@@ -193,7 +193,7 @@ class Actions:
 
 
 class AzureRMDatabases(AzureRMModuleBase):
-    """Configuration class for an Azure RM Database resource"""
+    """Configuration class for an Azure RM SQL Database resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -348,29 +348,29 @@ class AzureRMDatabases(AzureRMModuleBase):
         if not ("location" in self.parameters):
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_database()
+        old_response = self.get_sqldatabase()
 
         if not old_response:
-            self.log("Database instance doesn't exist")
+            self.log("SQL Database instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("Database instance already exists")
+            self.log("SQL Database instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if Database instance has to be deleted or may be updated")
+                self.log("Need to check if SQL Database instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the Database instance")
+            self.log("Need to Create / Update the SQL Database instance")
 
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_database()
+            self.results['state'] = self.create_update_sqldatabase()
             if not old_response:
                 self.results['changed'] = True
             else:
@@ -408,23 +408,23 @@ class AzureRMDatabases(AzureRMModuleBase):
             self.results['state'].pop('zone_redundant', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("Database instance deleted")
-            self.delete_database()
+            self.log("SQL Database instance deleted")
+            self.delete_sqldatabase()
             self.results['changed'] = True
         else:
-            self.log("Database instance unchanged")
+            self.log("SQL Database instance unchanged")
             self.results['state'] = old_response
             self.results['changed'] = False
 
         return self.results
 
-    def create_update_database(self):
+    def create_update_sqldatabase(self):
         '''
-        Creates or updates Database with the specified configuration.
+        Creates or updates SQL Database with the specified configuration.
 
-        :return: deserialized Database instance state dictionary
+        :return: deserialized SQL Database instance state dictionary
         '''
-        self.log("Creating / Updating the Database instance {0}".format(self.name))
+        self.log("Creating / Updating the SQL Database instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.databases.create_or_update(self.resource_group,
@@ -435,34 +435,34 @@ class AzureRMDatabases(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Database instance.')
-            self.fail("Error creating the Database instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the SQL Database instance.')
+            self.fail("Error creating the SQL Database instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_database(self):
+    def delete_sqldatabase(self):
         '''
-        Deletes specified Database instance in the specified subscription and resource group.
+        Deletes specified SQL Database instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Database instance {0}".format(self.name))
+        self.log("Deleting the SQL Database instance {0}".format(self.name))
         try:
             response = self.mgmt_client.databases.delete(self.resource_group,
                                                          self.server_name,
                                                          self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the Database instance.')
-            self.fail("Error deleting the Database instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the SQL Database instance.')
+            self.fail("Error deleting the SQL Database instance: {0}".format(str(e)))
 
         return True
 
-    def get_database(self):
+    def get_sqldatabase(self):
         '''
-        Gets the properties of the specified Database.
+        Gets the properties of the specified SQL Database.
 
-        :return: deserialized Database instance state dictionary
+        :return: deserialized SQL Database instance state dictionary
         '''
-        self.log("Checking if the Database instance {0} is present".format(self.name))
+        self.log("Checking if the SQL Database instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.databases.get(self.resource_group,
@@ -470,9 +470,9 @@ class AzureRMDatabases(AzureRMModuleBase):
                                                       self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Database instance : {0} found".format(response.name))
+            self.log("SQL Database instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Database instance.')
+            self.log('Did not find the SQL Database instance.')
         if found is True:
             return response.as_dict()
 

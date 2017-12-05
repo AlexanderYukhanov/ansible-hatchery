@@ -470,7 +470,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
-      "ObjectName": "Servers",
+      "ObjectName": "PostgreSQL Server",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -1274,7 +1274,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases",
+      "ObjectName": "PostgreSQL Database",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },

@@ -1,4 +1,4 @@
-- name: Create Servers
+- name: Create MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
     name: test-mysql-server
@@ -8,7 +8,7 @@
       admin_username: zimxyz
       admin_password: Testpasswordxyz12!
     location: westus
-- name: Create instance of Databases
+- name: Create instance of MySQL Database
   azure_rm_mysqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
@@ -20,7 +20,7 @@
       - output.changed
       - output.state.name == 'testdatabase'
 
-- name: Update instance of Databases
+- name: Update instance of MySQL Database
   azure_rm_mysqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
@@ -32,7 +32,7 @@
       - output.changed == false
       - output.state.name == 'testdatabase'
 
-- name: Delete instance of Databases
+- name: Delete instance of MySQL Database
   azure_rm_mysqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
@@ -44,7 +44,7 @@
     that:
       - output.changed
 
-- name: Delete instance of Servers
+- name: Delete instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
     name: test-mysql-server

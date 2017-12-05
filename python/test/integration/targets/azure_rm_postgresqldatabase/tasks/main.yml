@@ -1,4 +1,4 @@
-- name: Create instance of Databases
+- name: Create instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
   register: output
@@ -8,7 +8,7 @@
       - output.changed
       - output.state.state == 'Ready'
 
-- name: Update instance of Databases
+- name: Update instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
   register: output
@@ -18,7 +18,7 @@
       - output.changed == false
       - output.state.state == 'Ready'
 
-- name: Delete instance of Databases
+- name: Delete instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
     state: absent

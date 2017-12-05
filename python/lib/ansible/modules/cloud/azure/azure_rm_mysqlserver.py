@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysqlserver
 version_added: "2.5"
-short_description: Manage Servers instance
+short_description: Manage MySQL Server instance
 description:
-    - Create, update and delete instance of Servers
+    - Create, update and delete instance of MySQL Server
 
 options:
     resource_group:
@@ -91,7 +91,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Servers
+  - name: Create (or update) MySQL Server
     azure_rm_mysqlserver:
       resource_group: resource_group_name
       name: server_name
@@ -114,7 +114,7 @@ EXAMPLES = '''
 
 RETURN = '''
 state:
-    description: Current state of Servers
+    description: Current state of MySQL Server
     returned: always
     type: complex
     contains:
@@ -161,7 +161,7 @@ class Actions:
 
 
 class AzureRMServers(AzureRMModuleBase):
-    """Configuration class for an Azure RM Servers resource"""
+    """Configuration class for an Azure RM MySQL Server resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -241,29 +241,29 @@ class AzureRMServers(AzureRMModuleBase):
         if not ("location" in self.parameters):
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_servers()
+        old_response = self.get_mysqlserver()
 
         if not old_response:
-            self.log("Servers instance doesn't exist")
+            self.log("MySQL Server instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("Servers instance already exists")
+            self.log("MySQL Server instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if Servers instance has to be deleted or may be updated")
+                self.log("Need to check if MySQL Server instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the Servers instance")
+            self.log("Need to Create / Update the MySQL Server instance")
 
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_servers()
+            self.results['state'] = self.create_update_mysqlserver()
             if not old_response:
                 self.results['changed'] = True
             else:
@@ -280,11 +280,11 @@ class AzureRMServers(AzureRMModuleBase):
             self.results['state'].pop('ssl_enforcement', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("Servers instance deleted")
-            self.delete_servers()
+            self.log("MySQL Server instance deleted")
+            self.delete_mysqlserver()
             self.results['changed'] = True
         else:
-            self.log("Servers instance unchanged")
+            self.log("MySQL Server instance unchanged")
             self.results['state'] = old_response
             self.results['changed'] = False
 
@@ -301,13 +301,13 @@ class AzureRMServers(AzureRMModuleBase):
             d.pop(old_name, None)
             d[new_name] = old_value;
 
-    def create_update_servers(self):
+    def create_update_mysqlserver(self):
         '''
-        Creates or updates Servers with the specified configuration.
+        Creates or updates MySQL Server with the specified configuration.
 
-        :return: deserialized Servers instance state dictionary
+        :return: deserialized MySQL Server instance state dictionary
         '''
-        self.log("Creating / Updating the Servers instance {0}".format(self.name))
+        self.log("Creating / Updating the MySQL Server instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.servers.create_or_update(self.resource_group,
@@ -317,42 +317,42 @@ class AzureRMServers(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Servers instance.')
-            self.fail("Error creating the Servers instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the MySQL Server instance.')
+            self.fail("Error creating the MySQL Server instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_servers(self):
+    def delete_mysqlserver(self):
         '''
-        Deletes specified Servers instance in the specified subscription and resource group.
+        Deletes specified MySQL Server instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Servers instance {0}".format(self.name))
+        self.log("Deleting the MySQL Server instance {0}".format(self.name))
         try:
             response = self.mgmt_client.servers.delete(self.resource_group,
                                                        self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the Servers instance.')
-            self.fail("Error deleting the Servers instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the MySQL Server instance.')
+            self.fail("Error deleting the MySQL Server instance: {0}".format(str(e)))
 
         return True
 
-    def get_servers(self):
+    def get_mysqlserver(self):
         '''
-        Gets the properties of the specified Servers.
+        Gets the properties of the specified MySQL Server.
 
-        :return: deserialized Servers instance state dictionary
+        :return: deserialized MySQL Server instance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.name))
+        self.log("Checking if the MySQL Server instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.servers.get(self.resource_group,
                                                     self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
+            self.log("MySQL Server instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Did not find the MySQL Server instance.')
         if found is True:
             return response.as_dict()
 

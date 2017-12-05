@@ -3957,7 +3957,7 @@
       "AssertStateExpectedValue": "Online",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Database",
+      "ObjectName": "SQL Database",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
