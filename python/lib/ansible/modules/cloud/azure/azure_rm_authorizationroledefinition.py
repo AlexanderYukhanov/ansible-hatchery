@@ -197,11 +197,6 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        try:
-            resource_group = self.get_resource_group(self.resource_group)
-        except CloudError:
-            self.fail('resource group {0} not found'.format(self.resource_group))
-
         old_response = self.get_roledefinitions()
 
         if not old_response:
