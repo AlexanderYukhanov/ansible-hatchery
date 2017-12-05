@@ -9,7 +9,7 @@
           not_actions:
             - notaction1
       assignable_scopes:
-        - "/subscriptions/{{ AZURE_SUBSCRIPTION_ID }}"
+        - "/subscriptions/{{ azure_subscription_id }}"
   register: output
 - name: Assert the resource instance is well created
   assert:
