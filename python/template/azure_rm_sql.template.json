@@ -187,6 +187,7 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionPolicies",
       "ModuleOperationName": "backup_long_term_retention_policies",
       "ObjectName": "BackupLongTermRetentionPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -275,6 +276,7 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionPolicies",
       "ModuleOperationName": "backup_long_term_retention_policies",
       "ObjectName": "BackupLongTermRetentionPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -422,6 +424,7 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionVaults",
       "ModuleOperationName": "backup_long_term_retention_vaults",
       "ObjectName": "BackupLongTermRetentionVaults",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -494,6 +497,7 @@
       "ModuleOperationNameUpper": "BackupLongTermRetentionVaults",
       "ModuleOperationName": "backup_long_term_retention_vaults",
       "ObjectName": "BackupLongTermRetentionVaults",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -566,6 +570,7 @@
       "ModuleOperationNameUpper": "RestorePoints",
       "ModuleOperationName": "restore_points",
       "ObjectName": "RestorePoints",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -649,6 +654,7 @@
       "ModuleOperationNameUpper": "RecoverableDatabases",
       "ModuleOperationName": "recoverable_databases",
       "ObjectName": "RecoverableDatabases",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -732,6 +738,7 @@
       "ModuleOperationNameUpper": "RestorableDroppedDatabases",
       "ModuleOperationName": "restorable_dropped_databases",
       "ObjectName": "RestorableDroppedDatabases",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -772,6 +779,7 @@
       "ModuleOperationNameUpper": "Capabilities",
       "ModuleOperationName": "capabilities",
       "ObjectName": "Capabilities",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -928,6 +936,7 @@
       "ModuleOperationNameUpper": "ServerConnectionPolicies",
       "ModuleOperationName": "server_connection_policies",
       "ObjectName": "ServerConnectionPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -1000,6 +1009,7 @@
       "ModuleOperationNameUpper": "ServerConnectionPolicies",
       "ModuleOperationName": "server_connection_policies",
       "ObjectName": "ServerConnectionPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -1363,6 +1373,7 @@
       "ModuleOperationNameUpper": "DatabaseThreatDetectionPolicies",
       "ModuleOperationName": "database_threat_detection_policies",
       "ObjectName": "DatabaseThreatDetectionPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -1451,6 +1462,7 @@
       "ModuleOperationNameUpper": "DatabaseThreatDetectionPolicies",
       "ModuleOperationName": "database_threat_detection_policies",
       "ObjectName": "DatabaseThreatDetectionPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -1667,6 +1679,7 @@
       "ModuleOperationNameUpper": "DataMaskingPolicies",
       "ModuleOperationName": "data_masking_policies",
       "ObjectName": "DataMaskingPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -1755,6 +1768,7 @@
       "ModuleOperationNameUpper": "DataMaskingPolicies",
       "ModuleOperationName": "data_masking_policies",
       "ObjectName": "DataMaskingPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -2183,6 +2197,7 @@
       "ModuleOperationNameUpper": "DataMaskingRules",
       "ModuleOperationName": "data_masking_rules",
       "ObjectName": "DataMaskingRules",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -2271,6 +2286,7 @@
       "ModuleOperationNameUpper": "DataMaskingRules",
       "ModuleOperationName": "data_masking_rules",
       "ObjectName": "DataMaskingRules",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -2465,6 +2481,7 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -2548,6 +2565,7 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -2731,6 +2749,7 @@
       "ModuleOperationNameUpper": "GeoBackupPolicies",
       "ModuleOperationName": "geo_backup_policies",
       "ObjectName": "GeoBackupPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -2832,6 +2851,7 @@
       "ModuleOperationNameUpper": "GeoBackupPolicies",
       "ModuleOperationName": "geo_backup_policies",
       "ObjectName": "GeoBackupPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -3958,6 +3978,7 @@
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "SQL Database",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -4154,6 +4175,7 @@
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
       "ObjectName": "Databases",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -4522,6 +4544,7 @@
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
       "ObjectName": "ElasticPool",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -4647,6 +4670,7 @@
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
       "ObjectName": "ElasticPools",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -4748,6 +4772,7 @@
       "ModuleOperationNameUpper": "ReplicationLinks",
       "ModuleOperationName": "replication_links",
       "ObjectName": "ReplicationLinks",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -4982,6 +5007,7 @@
       "ModuleOperationNameUpper": "ServerAzureADAdministrators",
       "ModuleOperationName": "server_azure_ad_administrators",
       "ObjectName": "ServerAzureADAdministrators",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5065,6 +5091,7 @@
       "ModuleOperationNameUpper": "ServerAzureADAdministrators",
       "ModuleOperationName": "server_azure_ad_administrators",
       "ObjectName": "ServerAzureADAdministrators",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5243,6 +5270,7 @@
       "ModuleOperationNameUpper": "ServerCommunicationLinks",
       "ModuleOperationName": "server_communication_links",
       "ObjectName": "ServerCommunicationLinks",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5326,6 +5354,7 @@
       "ModuleOperationNameUpper": "ServerCommunicationLinks",
       "ModuleOperationName": "server_communication_links",
       "ObjectName": "ServerCommunicationLinks",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5409,6 +5438,7 @@
       "ModuleOperationNameUpper": "ServiceObjectives",
       "ModuleOperationName": "service_objectives",
       "ObjectName": "ServiceObjectives",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5752,6 +5782,7 @@
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
       "ObjectName": "SQL Server",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5817,6 +5848,7 @@
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
       "ObjectName": "SQL Server",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5889,6 +5921,7 @@
       "ModuleOperationNameUpper": "ElasticPoolActivities",
       "ModuleOperationName": "elastic_pool_activities",
       "ObjectName": "ElasticPoolActivities",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -5961,6 +5994,7 @@
       "ModuleOperationNameUpper": "ElasticPoolDatabaseActivities",
       "ModuleOperationName": "elastic_pool_database_activities",
       "ObjectName": "ElasticPoolDatabaseActivities",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6057,6 +6091,7 @@
       "ModuleOperationNameUpper": "RecommendedElasticPools",
       "ModuleOperationName": "recommended_elastic_pools",
       "ObjectName": "RecommendedElasticPools",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6158,6 +6193,7 @@
       "ModuleOperationNameUpper": "ServiceTierAdvisors",
       "ModuleOperationName": "service_tier_advisors",
       "ObjectName": "ServiceTierAdvisors",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6322,6 +6358,7 @@
       "ModuleOperationNameUpper": "TransparentDataEncryptions",
       "ModuleOperationName": "transparent_data_encryptions",
       "ObjectName": "TransparentDataEncryptions",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6410,6 +6447,7 @@
       "ModuleOperationNameUpper": "TransparentDataEncryptions",
       "ModuleOperationName": "transparent_data_encryptions",
       "ObjectName": "TransparentDataEncryptions",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6498,6 +6536,7 @@
       "ModuleOperationNameUpper": "TransparentDataEncryptionActivities",
       "ModuleOperationName": "transparent_data_encryption_activities",
       "ObjectName": "TransparentDataEncryptionActivities",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6554,6 +6593,7 @@
       "ModuleOperationNameUpper": "ServerUsages",
       "ModuleOperationName": "server_usages",
       "ObjectName": "ServerUsages",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6626,6 +6666,7 @@
       "ModuleOperationNameUpper": "DatabaseUsages",
       "ModuleOperationName": "database_usages",
       "ObjectName": "DatabaseUsages",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -6943,6 +6984,7 @@
       "ModuleOperationNameUpper": "DatabaseBlobAuditingPolicies",
       "ModuleOperationName": "database_blob_auditing_policies",
       "ObjectName": "DatabaseBlobAuditingPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -7031,6 +7073,7 @@
       "ModuleOperationNameUpper": "DatabaseBlobAuditingPolicies",
       "ModuleOperationName": "database_blob_auditing_policies",
       "ObjectName": "DatabaseBlobAuditingPolicies",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -7265,6 +7308,7 @@
       "ModuleOperationNameUpper": "EncryptionProtectors",
       "ModuleOperationName": "encryption_protectors",
       "ObjectName": "EncryptionProtectors",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -7348,6 +7392,7 @@
       "ModuleOperationNameUpper": "EncryptionProtectors",
       "ModuleOperationName": "encryption_protectors",
       "ObjectName": "EncryptionProtectors",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -7763,6 +7808,7 @@
       "ModuleOperationNameUpper": "FailoverGroups",
       "ModuleOperationName": "failover_groups",
       "ObjectName": "FailoverGroups",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -7846,6 +7892,7 @@
       "ModuleOperationNameUpper": "FailoverGroups",
       "ModuleOperationName": "failover_groups",
       "ObjectName": "FailoverGroups",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -8121,6 +8168,7 @@
       "ModuleOperationNameUpper": "ServerKeys",
       "ModuleOperationName": "server_keys",
       "ObjectName": "ServerKeys",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -8204,6 +8252,7 @@
       "ModuleOperationNameUpper": "ServerKeys",
       "ModuleOperationName": "server_keys",
       "ObjectName": "ServerKeys",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -8408,6 +8457,7 @@
       "ModuleOperationNameUpper": "SyncAgents",
       "ModuleOperationName": "sync_agents",
       "ObjectName": "SyncAgents",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -8504,6 +8554,7 @@
       "ModuleOperationNameUpper": "SyncAgents",
       "ModuleOperationName": "sync_agents",
       "ObjectName": "SyncAgents",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -9006,6 +9057,7 @@
       "ModuleOperationNameUpper": "SyncGroups",
       "ModuleOperationName": "sync_groups",
       "ObjectName": "SyncGroups",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -9223,6 +9275,7 @@
       "ModuleOperationNameUpper": "SyncGroups",
       "ModuleOperationName": "sync_groups",
       "ObjectName": "SyncGroups",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -9617,6 +9670,7 @@
       "ModuleOperationNameUpper": "SyncMembers",
       "ModuleOperationName": "sync_members",
       "ObjectName": "SyncMembers",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -9753,6 +9807,7 @@
       "ModuleOperationNameUpper": "SyncMembers",
       "ModuleOperationName": "sync_members",
       "ObjectName": "SyncMembers",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -9937,6 +9992,7 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -10020,6 +10076,7 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -10092,6 +10149,7 @@
       "ModuleOperationNameUpper": "DatabaseOperations",
       "ModuleOperationName": "database_operations",
       "ObjectName": "DatabaseOperations",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -10227,6 +10285,7 @@
       "ModuleOperationNameUpper": "ServerDnsAliases",
       "ModuleOperationName": "server_dns_aliases",
       "ObjectName": "ServerDnsAliases",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -10310,6 +10369,7 @@
       "ModuleOperationNameUpper": "ServerDnsAliases",
       "ModuleOperationName": "server_dns_aliases",
       "ObjectName": "ServerDnsAliases",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     }

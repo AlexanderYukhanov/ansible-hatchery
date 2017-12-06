@@ -110,6 +110,7 @@
       "ModuleOperationNameUpper": "Permissions",
       "ModuleOperationName": "permissions",
       "ObjectName": "Permissions",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -165,6 +166,7 @@
       "ModuleOperationNameUpper": "ProviderOperationsMetadata",
       "ModuleOperationName": "provider_operations_metadata",
       "ObjectName": "ProviderOperationsMetadata",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -367,6 +369,7 @@
       "ModuleOperationNameUpper": "RoleAssignments",
       "ModuleOperationName": "role_assignments",
       "ObjectName": "RoleAssignments",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -545,6 +548,7 @@
       "ModuleOperationNameUpper": "RoleAssignments",
       "ModuleOperationName": "role_assignments",
       "ObjectName": "RoleAssignments",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -897,6 +901,7 @@
       "ModuleOperationNameUpper": "RoleDefinitions",
       "ModuleOperationName": "role_definitions",
       "ObjectName": "RoleDefinitions",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     },
@@ -953,6 +958,7 @@
       "ModuleOperationNameUpper": "RoleDefinitions",
       "ModuleOperationName": "role_definitions",
       "ObjectName": "RoleDefinitions",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null
     }
