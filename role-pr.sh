@@ -1,3 +1,5 @@
+cd ~/ansible-hatchery
+git pull
 
 cd ~/preview-modules
 git checkout hatchery-pr-branch 2>/dev/null || git checkout -b hatchery-pr-branch;
