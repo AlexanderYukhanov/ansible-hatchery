@@ -1,6 +1,6 @@
 - name: Create instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
-    scope: myscope
+    scope: /subscriptions/{{ azure_subscription_id }}
     role_definition_id: rolexyz
     properties:
       permissions:
