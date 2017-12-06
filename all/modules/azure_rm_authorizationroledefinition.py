@@ -88,10 +88,10 @@ EXAMPLES = '''
         description: description
         type: type
         permissions:
-          actions:
-            - XXXX - list of values -- not implemented str
-          not_actions:
-            - XXXX - list of values -- not implemented str
+          - actions:
+              - XXXX - list of values -- not implemented str
+            not_actions:
+              - XXXX - list of values -- not implemented str
         assignable_scopes:
           - XXXX - list of values -- not implemented str
 '''

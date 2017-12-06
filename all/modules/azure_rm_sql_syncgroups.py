@@ -104,11 +104,11 @@ EXAMPLES = '''
       hub_database_password: hub_database_password
       schema:
         tables:
-          columns:
+          - columns:
+              - quoted_name: quoted_name
+                data_size: data_size
+                data_type: data_type
             quoted_name: quoted_name
-            data_size: data_size
-            data_type: data_type
-          quoted_name: quoted_name
         master_sync_member_name: master_sync_member_name
 '''
 

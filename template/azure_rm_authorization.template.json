@@ -566,7 +566,7 @@
           "VariableValue": "None",
           "Documentation": "The scope of the role definition.",
           "DefaultValueSample": "scope",
-          "DefaultValueTest": "myscope",
+          "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },

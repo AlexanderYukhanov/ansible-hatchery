@@ -93,7 +93,7 @@ EXAMPLES = '''
       read_only_endpoint:
         failover_policy: failover_policy
       partner_servers:
-        id: id
+        - id: id
       databases:
         - XXXX - list of values -- not implemented str
 '''

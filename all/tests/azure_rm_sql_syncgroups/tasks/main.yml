@@ -1,6 +1,9 @@
 - name: Create instance of SyncGroups
   azure_rm_sql_syncgroups:
     resource_group: "{{ resource_group }}"
+    schema:
+      tables:
+        - columns:
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -11,6 +14,9 @@
 - name: Update instance of SyncGroups
   azure_rm_sql_syncgroups:
     resource_group: "{{ resource_group }}"
+    schema:
+      tables:
+        - columns:
   register: output
 - name: Assert the state has not changed
   assert:
