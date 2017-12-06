@@ -185,6 +185,7 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         self.scope = None
         self.role_definition_id = None
         self.role_definition = dict()
+        self.role_definition['properties'] = dict()
 
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
