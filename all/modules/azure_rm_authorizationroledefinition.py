@@ -208,18 +208,16 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 self.role_definition["name"] = kwargs[key]
             elif key == "type":
                 self.role_definition["type"] = kwargs[key]
-            elif key == "properties":
-                self.role_definition:dictionary["properties"] = kwargs[key]
             elif key == "properties_role_name":
-                self.role_definition:properties["role_name"] = kwargs[key]
+                self.role_definition['properties']["role_name"] = kwargs[key]
             elif key == "properties_description":
-                self.role_definition:properties["description"] = kwargs[key]
+                self.role_definition['properties']["description"] = kwargs[key]
             elif key == "properties_type":
-                self.role_definition:properties["type"] = kwargs[key]
+                self.role_definition['properties']["type"] = kwargs[key]
             elif key == "properties_permissions":
-                self.role_definition:properties["permissions"] = kwargs[key]
+                self.role_definition['properties']["permissions"] = kwargs[key]
             elif key == "properties_assignable_scopes":
-                self.role_definition:properties["assignable_scopes"] = kwargs[key]
+                self.role_definition['properties']["assignable_scopes"] = kwargs[key]
 
         old_response = None
         results = dict()
