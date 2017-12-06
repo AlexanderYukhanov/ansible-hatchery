@@ -57,29 +57,24 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of SyncAgents
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
-        state:
-            description:
-                - "State of the sync agent. Possible values include: 'Online', 'Offline', 'NeverConnected'"
-            returned: always
-            type: str
-            sample: state
-        version:
-            description:
-                - Version of the sync agent.
-            returned: always
-            type: str
-            sample: version
+    type: str
+    sample: id
+state:
+    description:
+        - "State of the sync agent. Possible values include: 'Online', 'Offline', 'NeverConnected'"
+    returned: always
+    type: str
+    sample: state
+version:
+    description:
+        - Version of the sync agent.
+    returned: always
+    type: str
+    sample: version
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -181,20 +176,21 @@ class AzureRMSyncAgents(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_syncagents()
+            response = self.create_update_syncagents()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('sync_agent_name', None)
-            self.results['state'].pop('sync_database_id', None)
-            self.results['state'].pop('last_alive_time', None)
-            self.results['state'].pop('is_up_to_date', None)
-            self.results['state'].pop('expiry_time', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('sync_agent_name', None)
+            self.results.pop('sync_database_id', None)
+            self.results.pop('last_alive_time', None)
+            self.results.pop('is_up_to_date', None)
+            self.results.pop('expiry_time', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncAgents instance deleted")

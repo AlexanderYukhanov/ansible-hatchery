@@ -61,17 +61,12 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of Configurations
+id:
+    description:
+        - Resource ID
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID
-            returned: always
-            type: str
-            sample: id
+    type: str
+    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -181,21 +176,22 @@ class AzureRMConfigurations(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_configurations()
+            response = self.create_update_configurations()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('value', None)
-            self.results['state'].pop('description', None)
-            self.results['state'].pop('default_value', None)
-            self.results['state'].pop('data_type', None)
-            self.results['state'].pop('allowed_values', None)
-            self.results['state'].pop('source', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('value', None)
+            self.results.pop('description', None)
+            self.results.pop('default_value', None)
+            self.results.pop('data_type', None)
+            self.results.pop('allowed_values', None)
+            self.results.pop('source', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("Configurations instance deleted")

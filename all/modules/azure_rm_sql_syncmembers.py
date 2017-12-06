@@ -95,17 +95,12 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of SyncMembers
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
+    type: str
+    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -261,24 +256,25 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_syncmembers()
+            response = self.create_update_syncmembers()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('database_type', None)
-            self.results['state'].pop('sync_agent_id', None)
-            self.results['state'].pop('sql_server_database_id', None)
-            self.results['state'].pop('server_name', None)
-            self.results['state'].pop('database_name', None)
-            self.results['state'].pop('user_name', None)
-            self.results['state'].pop('password', None)
-            self.results['state'].pop('sync_direction', None)
-            self.results['state'].pop('sync_state', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('database_type', None)
+            self.results.pop('sync_agent_id', None)
+            self.results.pop('sql_server_database_id', None)
+            self.results.pop('server_name', None)
+            self.results.pop('database_name', None)
+            self.results.pop('user_name', None)
+            self.results.pop('password', None)
+            self.results.pop('sync_direction', None)
+            self.results.pop('sync_state', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncMembers instance deleted")

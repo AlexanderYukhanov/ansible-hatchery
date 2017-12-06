@@ -61,23 +61,18 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of MySQL Database
+id:
+    description:
+        - Resource ID
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID
-            returned: always
-            type: str
-            sample: id
-        name:
-            description:
-                - Resource name.
-            returned: always
-            type: str
-            sample: name
+    type: str
+    sample: id
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -188,16 +183,17 @@ class AzureRMDatabases(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_mysqldatabase()
+            response = self.create_update_mysqldatabase()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('charset', None)
-            self.results['state'].pop('collation', None)
+            self.results.pop('type', None)
+            self.results.pop('charset', None)
+            self.results.pop('collation', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("MySQL Database instance deleted")

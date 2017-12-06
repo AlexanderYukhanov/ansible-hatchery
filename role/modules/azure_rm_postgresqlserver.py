@@ -113,35 +113,30 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of PostgreSQL Server
+id:
+    description:
+        - Resource ID
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID
-            returned: always
-            type: str
-            sample: id
-        version:
-            description:
-                - "Server version. Possible values include: '9.5', '9.6'"
-            returned: always
-            type: str
-            sample: version
-        user_visible_state:
-            description:
-                - "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'"
-            returned: always
-            type: str
-            sample: user_visible_state
-        fully_qualified_domain_name:
-            description:
-                - The fully qualified domain name of a server.
-            returned: always
-            type: str
-            sample: fully_qualified_domain_name
+    type: str
+    sample: id
+version:
+    description:
+        - "Server version. Possible values include: '9.5', '9.6'"
+    returned: always
+    type: str
+    sample: version
+user_visible_state:
+    description:
+        - "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'"
+    returned: always
+    type: str
+    sample: user_visible_state
+fully_qualified_domain_name:
+    description:
+        - The fully qualified domain name of a server.
+    returned: always
+    type: str
+    sample: fully_qualified_domain_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -263,21 +258,22 @@ class AzureRMServers(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_postgresqlserver()
+            response = self.create_update_postgresqlserver()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('location', None)
-            self.results['state'].pop('tags', None)
-            self.results['state'].pop('sku', None)
-            self.results['state'].pop('administrator_login', None)
-            self.results['state'].pop('storage_mb', None)
-            self.results['state'].pop('ssl_enforcement', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('location', None)
+            self.results.pop('tags', None)
+            self.results.pop('sku', None)
+            self.results.pop('administrator_login', None)
+            self.results.pop('storage_mb', None)
+            self.results.pop('ssl_enforcement', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("PostgreSQL Server instance deleted")

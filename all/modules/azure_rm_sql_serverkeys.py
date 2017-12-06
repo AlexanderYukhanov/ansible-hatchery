@@ -76,17 +76,12 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of ServerKeys
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
+    type: str
+    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -214,22 +209,23 @@ class AzureRMServerKeys(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_serverkeys()
+            response = self.create_update_serverkeys()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('kind', None)
-            self.results['state'].pop('location', None)
-            self.results['state'].pop('subregion', None)
-            self.results['state'].pop('server_key_type', None)
-            self.results['state'].pop('uri', None)
-            self.results['state'].pop('thumbprint', None)
-            self.results['state'].pop('creation_date', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('kind', None)
+            self.results.pop('location', None)
+            self.results.pop('subregion', None)
+            self.results.pop('server_key_type', None)
+            self.results.pop('uri', None)
+            self.results.pop('thumbprint', None)
+            self.results.pop('creation_date', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerKeys instance deleted")

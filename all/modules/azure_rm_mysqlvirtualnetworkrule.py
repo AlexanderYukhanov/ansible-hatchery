@@ -62,23 +62,18 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of VirtualNetworkRules
+id:
+    description:
+        - Resource ID
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID
-            returned: always
-            type: str
-            sample: id
-        state:
-            description:
-                - "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'"
-            returned: always
-            type: str
-            sample: state
+    type: str
+    sample: id
+state:
+    description:
+        - "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'"
+    returned: always
+    type: str
+    sample: state
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -188,17 +183,18 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_virtualnetworkrules()
+            response = self.create_update_virtualnetworkrules()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('virtual_network_subnet_id', None)
-            self.results['state'].pop('ignore_missing_vnet_service_endpoint', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('virtual_network_subnet_id', None)
+            self.results.pop('ignore_missing_vnet_service_endpoint', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("VirtualNetworkRules instance deleted")

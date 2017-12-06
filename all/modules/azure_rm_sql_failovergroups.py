@@ -99,17 +99,12 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of FailoverGroups
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
+    type: str
+    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -237,23 +232,24 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_failovergroups()
+            response = self.create_update_failovergroups()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('location', None)
-            self.results['state'].pop('tags', None)
-            self.results['state'].pop('read_write_endpoint', None)
-            self.results['state'].pop('read_only_endpoint', None)
-            self.results['state'].pop('replication_role', None)
-            self.results['state'].pop('replication_state', None)
-            self.results['state'].pop('partner_servers', None)
-            self.results['state'].pop('databases', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('location', None)
+            self.results.pop('tags', None)
+            self.results.pop('read_write_endpoint', None)
+            self.results.pop('read_only_endpoint', None)
+            self.results.pop('replication_role', None)
+            self.results.pop('replication_state', None)
+            self.results.pop('partner_servers', None)
+            self.results.pop('databases', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("FailoverGroups instance deleted")

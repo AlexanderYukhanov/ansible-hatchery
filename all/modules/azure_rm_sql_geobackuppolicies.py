@@ -63,23 +63,18 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of GeoBackupPolicies
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
-        state:
-            description:
-                - "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'"
-            returned: always
-            type: str
-            sample: state
+    type: str
+    sample: id
+state:
+    description:
+        - "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'"
+    returned: always
+    type: str
+    sample: state
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -186,18 +181,19 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_geobackuppolicies()
+            response = self.create_update_geobackuppolicies()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('storage_type', None)
-            self.results['state'].pop('kind', None)
-            self.results['state'].pop('location', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('storage_type', None)
+            self.results.pop('kind', None)
+            self.results.pop('location', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("GeoBackupPolicies instance deleted")

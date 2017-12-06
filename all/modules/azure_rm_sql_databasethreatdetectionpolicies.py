@@ -98,24 +98,19 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of DatabaseThreatDetectionPolicies
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
-        state:
-            description:
-                - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include:
-                    'New', 'Enabled', 'Disabled'"
-            returned: always
-            type: str
-            sample: state
+    type: str
+    sample: id
+state:
+    description:
+        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'New',
+           'Enabled', 'Disabled'"
+    returned: always
+    type: str
+    sample: state
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -275,24 +270,25 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_databasethreatdetectionpolicies()
+            response = self.create_update_databasethreatdetectionpolicies()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('location', None)
-            self.results['state'].pop('kind', None)
-            self.results['state'].pop('disabled_alerts', None)
-            self.results['state'].pop('email_addresses', None)
-            self.results['state'].pop('email_account_admins', None)
-            self.results['state'].pop('storage_endpoint', None)
-            self.results['state'].pop('storage_account_access_key', None)
-            self.results['state'].pop('retention_days', None)
-            self.results['state'].pop('use_server_default', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('location', None)
+            self.results.pop('kind', None)
+            self.results.pop('disabled_alerts', None)
+            self.results.pop('email_addresses', None)
+            self.results.pop('email_account_admins', None)
+            self.results.pop('storage_endpoint', None)
+            self.results.pop('storage_account_access_key', None)
+            self.results.pop('retention_days', None)
+            self.results.pop('use_server_default', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DatabaseThreatDetectionPolicies instance deleted")

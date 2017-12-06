@@ -73,17 +73,12 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of ServerAzureADAdministrators
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
+    type: str
+    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -205,19 +200,20 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_serverazureadadministrators()
+            response = self.create_update_serverazureadadministrators()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('administrator_type', None)
-            self.results['state'].pop('login', None)
-            self.results['state'].pop('sid', None)
-            self.results['state'].pop('tenant_id', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('administrator_type', None)
+            self.results.pop('login', None)
+            self.results.pop('sid', None)
+            self.results.pop('tenant_id', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerAzureADAdministrators instance deleted")

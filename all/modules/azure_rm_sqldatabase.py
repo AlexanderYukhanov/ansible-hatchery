@@ -151,29 +151,24 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-state:
-    description: Current state of SQL Database
+id:
+    description:
+        - Resource ID.
     returned: always
-    type: complex
-    contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: id
-        database_id:
-            description:
-                - The ID of the database.
-            returned: always
-            type: str
-            sample: database_id
-        status:
-            description:
-                - The status of the database.
-            returned: always
-            type: str
-            sample: status
+    type: str
+    sample: id
+database_id:
+    description:
+        - The ID of the database.
+    returned: always
+    type: str
+    sample: database_id
+status:
+    description:
+        - The status of the database.
+    returned: always
+    type: str
+    sample: status
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -370,42 +365,43 @@ class AzureRMDatabases(AzureRMModuleBase):
             if self.check_mode:
                 return self.results
 
-            self.results['state'] = self.create_update_sqldatabase()
+            response = self.create_update_sqldatabase()
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(self.results['state'])
+                self.results['changed'] = old_response.__ne__(response)
+            self.results.update(response)
 
             # remove unnecessary fields from return state
-            self.results['state'].pop('name', None)
-            self.results['state'].pop('type', None)
-            self.results['state'].pop('tags', None)
-            self.results['state'].pop('location', None)
-            self.results['state'].pop('kind', None)
-            self.results['state'].pop('collation', None)
-            self.results['state'].pop('creation_date', None)
-            self.results['state'].pop('containment_state', None)
-            self.results['state'].pop('current_service_objective_id', None)
-            self.results['state'].pop('earliest_restore_date', None)
-            self.results['state'].pop('create_mode', None)
-            self.results['state'].pop('source_database_id', None)
-            self.results['state'].pop('source_database_deletion_date', None)
-            self.results['state'].pop('restore_point_in_time', None)
-            self.results['state'].pop('recovery_services_recovery_point_resource_id', None)
-            self.results['state'].pop('edition', None)
-            self.results['state'].pop('max_size_bytes', None)
-            self.results['state'].pop('requested_service_objective_id', None)
-            self.results['state'].pop('requested_service_objective_name', None)
-            self.results['state'].pop('service_level_objective', None)
-            self.results['state'].pop('elastic_pool_name', None)
-            self.results['state'].pop('default_secondary_location', None)
-            self.results['state'].pop('service_tier_advisors', None)
-            self.results['state'].pop('transparent_data_encryption', None)
-            self.results['state'].pop('recommended_index', None)
-            self.results['state'].pop('failover_group_id', None)
-            self.results['state'].pop('read_scale', None)
-            self.results['state'].pop('sample_name', None)
-            self.results['state'].pop('zone_redundant', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('tags', None)
+            self.results.pop('location', None)
+            self.results.pop('kind', None)
+            self.results.pop('collation', None)
+            self.results.pop('creation_date', None)
+            self.results.pop('containment_state', None)
+            self.results.pop('current_service_objective_id', None)
+            self.results.pop('earliest_restore_date', None)
+            self.results.pop('create_mode', None)
+            self.results.pop('source_database_id', None)
+            self.results.pop('source_database_deletion_date', None)
+            self.results.pop('restore_point_in_time', None)
+            self.results.pop('recovery_services_recovery_point_resource_id', None)
+            self.results.pop('edition', None)
+            self.results.pop('max_size_bytes', None)
+            self.results.pop('requested_service_objective_id', None)
+            self.results.pop('requested_service_objective_name', None)
+            self.results.pop('service_level_objective', None)
+            self.results.pop('elastic_pool_name', None)
+            self.results.pop('default_secondary_location', None)
+            self.results.pop('service_tier_advisors', None)
+            self.results.pop('transparent_data_encryption', None)
+            self.results.pop('recommended_index', None)
+            self.results.pop('failover_group_id', None)
+            self.results.pop('read_scale', None)
+            self.results.pop('sample_name', None)
+            self.results.pop('zone_redundant', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Database instance deleted")
