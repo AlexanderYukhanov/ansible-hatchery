@@ -2,14 +2,13 @@
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
-    properties:
-      permissions:
-        - actions:
-            - XXXX - list of values -- not implemented str
-          not_actions:
-            - XXXX - list of values -- not implemented str
-      assignable_scopes:
-        - XXXX - list of values -- not implemented str
+    properties_permissions:
+      - actions:
+          - XXXX - list of values -- not implemented str
+        not_actions:
+          - XXXX - list of values -- not implemented str
+    properties_assignable_scopes:
+      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -21,14 +20,13 @@
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
-    properties:
-      permissions:
-        - actions:
-            - XXXX - list of values -- not implemented str
-          not_actions:
-            - XXXX - list of values -- not implemented str
-      assignable_scopes:
-        - XXXX - list of values -- not implemented str
+    properties_permissions:
+      - actions:
+          - XXXX - list of values -- not implemented str
+        not_actions:
+          - XXXX - list of values -- not implemented str
+    properties_assignable_scopes:
+      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the state has not changed
   assert:

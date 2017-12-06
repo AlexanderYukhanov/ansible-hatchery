@@ -42,29 +42,28 @@ options:
     properties:
         description:
             - Role definition properties.
+    properties_role_name:
+        description:
+            - The role name.
+    properties_description:
+        description:
+            - The role definition description.
+    properties_type:
+        description:
+            - The role type.
+    properties_permissions:
+        description:
+            - Role definition permissions.
         suboptions:
-            role_name:
+            actions:
                 description:
-                    - The role name.
-            description:
+                    - Allowed actions.
+            not_actions:
                 description:
-                    - The role definition description.
-            type:
-                description:
-                    - The role type.
-            permissions:
-                description:
-                    - Role definition permissions.
-                suboptions:
-                    actions:
-                        description:
-                            - Allowed actions.
-                    not_actions:
-                        description:
-                            - Denied actions.
-            assignable_scopes:
-                description:
-                    - Role definition assignable scopes.
+                    - Denied actions.
+    properties_assignable_scopes:
+        description:
+            - Role definition assignable scopes.
 
 extends_documentation_fragment:
     - azure
@@ -83,17 +82,17 @@ EXAMPLES = '''
       id: id
       name: name
       type: type
-      properties:
-        role_name: role_name
-        description: description
-        type: type
-        permissions:
-          - actions:
-              - XXXX - list of values -- not implemented str
-            not_actions:
-              - XXXX - list of values -- not implemented str
-        assignable_scopes:
-          - XXXX - list of values -- not implemented str
+      properties: properties
+      properties_role_name: role_name
+      properties_description: description
+      properties_type: type
+      properties_permissions:
+        - actions:
+            - XXXX - list of values -- not implemented str
+          not_actions:
+            - XXXX - list of values -- not implemented str
+      properties_assignable_scopes:
+        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''
@@ -155,6 +154,26 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 type='dict',
                 required=False
             ),
+            properties_role_name=dict(
+                type='str',
+                required=False
+            ),
+            properties_description=dict(
+                type='str',
+                required=False
+            ),
+            properties_type=dict(
+                type='str',
+                required=False
+            ),
+            properties_permissions=dict(
+                type='dict',
+                required=False
+            ),
+            properties_assignable_scopes=dict(
+                type='str',
+                required=False
+            ),
             state=dict(
                 type='str',
                 required=False,
@@ -189,7 +208,17 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
             elif key == "type":
                 self.role_definition["type"] = kwargs[key]
             elif key == "properties":
-                self.role_definition["properties"] = kwargs[key]
+                self.role_definition:dictionary["properties"] = kwargs[key]
+            elif key == "properties_role_name":
+                self.role_definition:properties["role_name"] = kwargs[key]
+            elif key == "properties_description":
+                self.role_definition:properties["description"] = kwargs[key]
+            elif key == "properties_type":
+                self.role_definition:properties["type"] = kwargs[key]
+            elif key == "properties_permissions":
+                self.role_definition:properties["permissions"] = kwargs[key]
+            elif key == "properties_assignable_scopes":
+                self.role_definition:properties["assignable_scopes"] = kwargs[key]
 
         old_response = None
         results = dict()
