@@ -20,7 +20,7 @@
   assert:
     that:
       - output.changed
-      - output.state.name == 'test-firewall-rule'
+      - output.name == 'test-firewall-rule'
 
 - name: Update instance of FirewallRules
   azure_rm_mysqlfirewallrule:
@@ -34,7 +34,7 @@
   assert:
     that:
       - output.changed == false
-      - output.state.name == 'test-firewall-rule'
+      - output.name == 'test-firewall-rule'
 
 - name: Delete instance of FirewallRules
   azure_rm_mysqlfirewallrule:

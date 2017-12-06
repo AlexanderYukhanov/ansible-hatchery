@@ -5,7 +5,7 @@
   assert:
     that:
       - output.changed
-      - output.state.state == 'Ready'
+      - output.state == 'Ready'
 
 - name: Update instance of RoleAssignments
   azure_rm_authorizationroleassignment:
@@ -14,7 +14,7 @@
   assert:
     that:
       - output.changed == false
-      - output.state.state == 'Ready'
+      - output.state == 'Ready'
 
 - name: Delete instance of RoleAssignments
   azure_rm_authorizationroleassignment:

@@ -16,7 +16,7 @@
   assert:
     that:
       - output.changed
-      - output.state.status == 'Online'
+      - output.status == 'Online'
 
 - name: Update instance of SQL Database
   azure_rm_sqldatabase:
@@ -29,7 +29,7 @@
   assert:
     that:
       - output.changed == false
-      - output.state.status == 'Online'
+      - output.status == 'Online'
 
 - name: Delete instance of SQL Database
   azure_rm_sqldatabase:

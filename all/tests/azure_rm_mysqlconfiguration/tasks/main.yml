@@ -20,7 +20,7 @@
   assert:
     that:
       - output.changed
-      - output.state.value == 'ON'
+      - output.value == 'ON'
 
 - name: Update instance of Configurations
   azure_rm_mysqlconfiguration:
@@ -34,7 +34,7 @@
   assert:
     that:
       - output.changed == false
-      - output.state.value == 'ON'
+      - output.value == 'ON'
 
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:

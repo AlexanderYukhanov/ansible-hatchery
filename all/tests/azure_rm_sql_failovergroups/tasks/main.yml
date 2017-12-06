@@ -9,7 +9,7 @@
   assert:
     that:
       - output.changed
-      - output.state.state == 'Ready'
+      - output.state == 'Ready'
 
 - name: Update instance of FailoverGroups
   azure_rm_sql_failovergroups:
@@ -22,7 +22,7 @@
   assert:
     that:
       - output.changed == false
-      - output.state.state == 'Ready'
+      - output.state == 'Ready'
 
 - name: Delete instance of FailoverGroups
   azure_rm_sql_failovergroups:
