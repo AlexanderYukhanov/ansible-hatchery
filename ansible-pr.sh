@@ -7,8 +7,8 @@ fi
 
 cd ~/$1
 git pull
-cp ~/ansible-hatchery/python/lib/ansible/modules/cloud/azure/$1.py ~/$1/lib/ansible/modules/cloud/azure/$1.py
-cp -v -r ~/ansible-hatchery/python/test/integration/targets/$1 ~/$1/test/integration/targets
+cp ~/ansible-hatchery/prs/modules/$1.py ~/$1/lib/ansible/modules/cloud/azure/$1.py
+cp -v -r ~/ansible-hatchery/prs/tests/$1 ~/$1/test/integration/targets
 git add -A
-git commit -m "[new module] Adding $1 /cloud/azure/$1"
+git commit -m "updates to $1"
 git push --set-upstream origin $1
