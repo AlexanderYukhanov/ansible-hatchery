@@ -3,7 +3,7 @@
     scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
     properties:
-      role_definition_id: "d3881f73-407a-4167-8283-e981cbba0404"
+      role_definition_id: "/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/EASTUS-VNET-01/subnets/Devices-Engineering-ProjectRND/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c"
       principal_id: "7a1586af-7bea-4083-8937-a39008590442"
   register: output
 - name: Assert the resource instance is well created
