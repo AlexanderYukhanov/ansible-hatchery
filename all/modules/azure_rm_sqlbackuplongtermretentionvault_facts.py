@@ -33,7 +33,6 @@ options:
     backup_long_term_retention_vault_name:
         description:
             - The name of the Azure SQL Server backup LongTermRetention vault
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -50,6 +49,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       server_name: server_name
       backup_long_term_retention_vault_name: backup_long_term_retention_vault_name
+
+  - name: List instances of BackupLongTermRetentionVaults
+    azure_rm_sqlbackuplongtermretentionvault_facts:
+      resource_group: resource_group_name
+      server_name: server_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -78,7 +82,7 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
             ),
             backup_long_term_retention_vault_name=dict(
                 type='str',
-                required=True
+                required=False
             ),
         )
         # store the results of the module operation
@@ -99,6 +103,9 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.backup_long_term_retention_vault_name is not None):
             self.results['ansible_facts']['get'] = self.get()
+        elif (self.resource_group_name is not None and
+              self.server_name is not None):
+            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -113,6 +120,27 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
             response = self.mgmt_client.backup_long_term_retention_vaults.get(self.resource_group,
                                                                               self.server_name,
                                                                               self.backup_long_term_retention_vault_name)
+            found = True
+            self.log("Response : {0}".format(response))
+            self.log("BackupLongTermRetentionVaults instance : {0} found".format(response.name))
+        except CloudError as e:
+            self.log('Did not find the BackupLongTermRetentionVaults instance.')
+        if found is True:
+            return response.as_dict()
+
+        return False
+
+    def list_by_server(self):
+        '''
+        Gets facts of the specified BackupLongTermRetentionVaults.
+
+        :return: deserialized BackupLongTermRetentionVaultsinstance state dictionary
+        '''
+        self.log("Checking if the BackupLongTermRetentionVaults instance {0} is present".format(self.backup_long_term_retention_vault_name))
+        found = False
+        try:
+            response = self.mgmt_client.backup_long_term_retention_vaults.list_by_server(self.resource_group,
+                                                                                         self.server_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("BackupLongTermRetentionVaults instance : {0} found".format(response.name))

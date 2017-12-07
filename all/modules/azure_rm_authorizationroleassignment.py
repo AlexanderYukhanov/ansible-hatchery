@@ -32,16 +32,20 @@ options:
         description:
             - The name of the role assignment to create. It can be any valid GUID.
         required: True
+    parameters:
+        description:
+            - Parameters for the role assignment.
     properties:
         description:
             - Role assignment properties.
-    properties_role_definition_id:
-        description:
-            - The role definition ID used in the role assignment.
-    properties_principal_id:
-        description:
-            - "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security
-                group."
+        suboptions:
+            role_definition_id:
+                description:
+                    - The role definition ID used in the role assignment.
+            principal_id:
+                description:
+                    - "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or
+                       security group."
 
 extends_documentation_fragment:
     - azure
@@ -57,9 +61,10 @@ EXAMPLES = '''
     azure_rm_authorizationroleassignment:
       scope: scope
       role_assignment_name: role_assignment_name
-      properties: properties
-      properties_role_definition_id: role_definition_id
-      properties_principal_id: principal_id
+      parameters: parameters
+      properties:
+        role_definition_id: role_definition_id
+        principal_id: principal_id
 '''
 
 RETURN = '''
@@ -100,16 +105,12 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            properties=dict(
+            parameters=dict(
                 type='dict',
                 required=False
             ),
-            properties_role_definition_id=dict(
-                type='str',
-                required=False
-            ),
-            properties_principal_id=dict(
-                type='str',
+            properties=dict(
+                type='dict',
                 required=False
             ),
             state=dict(
@@ -122,8 +123,7 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
 
         self.scope = None
         self.role_assignment_name = None
-        self.parameters = dict()
-        self.parameters['properties'] = dict()
+        self.properties = None
 
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
@@ -140,12 +140,6 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "properties_role_definition_id":
-                self.parameters['properties']["role_definition_id"] = kwargs[key]
-            elif key == "properties_principal_id":
-                self.parameters['properties']["principal_id"] = kwargs[key]
-
-            self.parameters['properties']["role_definition_id"] = "XYZ"
 
         old_response = None
         results = dict()
@@ -210,7 +204,7 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
             if self.to_do == Actions.Create:
                 response = self.mgmt_client.role_assignments.create(self.scope,
                                                                     self.role_assignment_name,
-                                                                    self.parameters)
+                                                                    self.properties)
             else:
                 response = self.mgmt_client.role_assignments.update()
             if isinstance(response, AzureOperationPoller):

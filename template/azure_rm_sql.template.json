@@ -214,7 +214,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 2
         },
         {
           "Name": "server_name",
@@ -229,7 +229,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 2
         },
         {
           "Name": "database_name",
@@ -244,7 +244,7 @@
           "DefaultValueSample": "database_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 2
         },
         {
           "Name": "backup_long_term_retention_policy_name",
@@ -252,7 +252,7 @@
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the backup long term retention policy",
           "DefaultValue": null,
@@ -276,6 +276,19 @@
             "server_name",
             "database_name",
             "backup_long_term_retention_policy_name"
+          ]
+        },
+        {
+          "Name": "list_by_database",
+          "Options": [
+            "resource_group_name",
+            "server_name",
+            "database_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name",
+            "database_name"
           ]
         }
       ],
@@ -459,7 +472,7 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 2
         },
         {
           "Name": "server_name",
@@ -474,7 +487,7 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 2
         },
         {
           "Name": "backup_long_term_retention_vault_name",
@@ -482,7 +495,7 @@
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the Azure SQL Server backup LongTermRetention vault",
           "DefaultValue": null,
@@ -504,6 +517,17 @@
             "resource_group_name",
             "server_name",
             "backup_long_term_retention_vault_name"
+          ]
+        },
+        {
+          "Name": "list_by_server",
+          "Options": [
+            "resource_group_name",
+            "server_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "server_name"
           ]
         }
       ],
@@ -10130,6 +10154,74 @@
       "UpdateComparisonRules": null
     },
     {
+      "ModuleName": "azure_rm_sqlsubscriptionusage_facts",
+      "ModuleNameAlt": "azure_rm_sqlsubscriptionusage_facts",
+      "Options": [
+        {
+          "Name": "location_name",
+          "NameAlt": "location_name",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the region where the resource is located.",
+          "DefaultValue": null,
+          "DefaultValueSample": "location_name",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 2
+        },
+        {
+          "Name": "usage_name",
+          "NameAlt": "usage_name",
+          "Disposition": "default",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Name of usage metric to return.",
+          "DefaultValue": null,
+          "DefaultValueSample": "usage_name",
+          "DefaultValueTest": "",
+          "SubOptions": null,
+          "RequiredCount": 1
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "location_name",
+            "usage_name"
+          ],
+          "RequiredOptions": [
+            "location_name",
+            "usage_name"
+          ]
+        },
+        {
+          "Name": "list_by_location",
+          "Options": [
+            "location_name"
+          ],
+          "RequiredOptions": [
+            "location_name"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "AssertStateVariable": "state",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "SubscriptionUsages",
+      "ModuleOperationName": "subscription_usages",
+      "ObjectName": "SubscriptionUsages",
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "UpdateComparisonRules": null
+    },
+    {
       "ModuleName": "azure_rm_sqlvirtualnetworkrule",
       "ModuleNameAlt": "azure_rm_sqlvirtualnetworkrule",
       "Options": [
@@ -10713,8 +10805,8 @@
   "NamespaceUpper": "sql",
   "Name": "SqlManagementClient",
   "Operations": [
-    "BackupLongTermRetentionPolicies[ get create_or_update MAIN FACTS ]",
-    "BackupLongTermRetentionVaults[ get create_or_update MAIN FACTS ]",
+    "BackupLongTermRetentionPolicies[ get create_or_update list_by_database MAIN FACTS ]",
+    "BackupLongTermRetentionVaults[ get create_or_update list_by_server MAIN FACTS ]",
     "RestorePoints[ list_by_database FACTS ]",
     "RecoverableDatabases[ get list_by_server FACTS ]",
     "RestorableDroppedDatabases[ get list_by_server FACTS ]",
@@ -10725,7 +10817,7 @@
     "DataMaskingRules[ create_or_update list_by_database MAIN FACTS ]",
     "FirewallRules[ create_or_update delete get list_by_server MAIN FACTS ]",
     "GeoBackupPolicies[ create_or_update get list_by_database MAIN FACTS ]",
-    "Databases[ import_method create_import_operation export list_metrics list_metric_definitions pause resume create_or_update update delete get list_by_server get_by_elastic_pool list_by_elastic_pool get_by_recommended_elastic_pool list_by_recommended_elastic_pool MAIN FACTS ]",
+    "Databases[ import_method create_import_operation export list_metrics list_metric_definitions pause resume create_or_update update delete get list_by_server get_by_elastic_pool list_by_elastic_pool get_by_recommended_elastic_pool list_by_recommended_elastic_pool rename MAIN FACTS ]",
     "ElasticPools[ list_metrics list_metric_definitions create_or_update update delete get list_by_server MAIN FACTS ]",
     "ReplicationLinks[ delete get failover failover_allow_data_loss list_by_database FACTS ]",
     "ServerAzureADAdministrators[ create_or_update delete get list_by_server MAIN FACTS ]",
@@ -10748,13 +10840,16 @@
     "SyncAgents[ get create_or_update delete list_by_server generate_key list_linked_databases MAIN FACTS ]",
     "SyncGroups[ list_sync_database_ids refresh_hub_schema list_hub_schemas list_logs cancel_sync trigger_sync get create_or_update delete update list_by_database MAIN FACTS ]",
     "SyncMembers[ get create_or_update delete update list_by_sync_group list_member_schemas refresh_member_schema MAIN FACTS ]",
+    "SubscriptionUsages[ list_by_location get FACTS ]",
     "VirtualNetworkRules[ get create_or_update delete list_by_server MAIN FACTS ]",
     "DatabaseOperations[ cancel list_by_database FACTS ]",
     "ServerDnsAliases[ get create_or_update delete list_by_server acquire MAIN FACTS ]",
     "EXAMPLE -- Get backup long term retention policy",
     "EXAMPLE -- Update backup long term retention policy",
+    "EXAMPLE -- Get backup long term retention policy",
     "EXAMPLE -- Get backup long term retention vault",
     "EXAMPLE -- Update backup long term retention vault",
+    "EXAMPLE -- Get backup long term retention vault",
     "EXAMPLE -- Get a database's restore points",
     "EXAMPLE -- Get a data warehouse's restore points",
     "EXAMPLE -- Get a recoverable database",
@@ -10819,6 +10914,7 @@
     "EXAMPLE -- Gets databases in an elastic pool",
     "EXAMPLE -- Get a database in a recommended elastic pool",
     "EXAMPLE -- Gets databases in an elastic pool",
+    "EXAMPLE -- Renames a database.",
     "EXAMPLE -- List database usage metrics",
     "EXAMPLE -- List database usage metrics",
     "EXAMPLE -- Create elastic pool max",
@@ -10911,6 +11007,8 @@
     "EXAMPLE -- List sync members under a sync group",
     "EXAMPLE -- Get a sync member schema",
     "EXAMPLE -- Refresh a sync member database schema",
+    "EXAMPLE -- List subscription usages in the given location.",
+    "EXAMPLE -- Get specific subscription usage in the given location.",
     "EXAMPLE -- Gets a virtual network rule",
     "EXAMPLE -- Create or update a virtual network rule",
     "EXAMPLE -- Delete a virtual network rule",

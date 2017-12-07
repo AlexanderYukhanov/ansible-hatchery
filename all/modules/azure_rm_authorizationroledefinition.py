@@ -30,15 +30,6 @@ options:
         description:
             - The ID of the role definition.
         required: True
-    id:
-        description:
-            - The role definition ID.
-    name:
-        description:
-            - The role definition name.
-    type:
-        description:
-            - The role definition type.
     properties:
         description:
             - Role definition properties.
@@ -79,9 +70,6 @@ EXAMPLES = '''
     azure_rm_authorizationroledefinition:
       scope: scope
       role_definition_id: role_definition_id
-      id: id
-      name: name
-      type: type
       properties: properties
       properties_role_name: role_name
       properties_description: description
@@ -132,18 +120,6 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
             role_definition_id=dict(
                 type='str',
                 required=True
-            ),
-            id=dict(
-                type='str',
-                required=False
-            ),
-            name=dict(
-                type='str',
-                required=False
-            ),
-            type=dict(
-                type='str',
-                required=False
             ),
             properties=dict(
                 type='dict',
@@ -197,12 +173,6 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "id":
-                self.role_definition["id"] = kwargs[key]
-            elif key == "name":
-                self.role_definition["name"] = kwargs[key]
-            elif key == "type":
-                self.role_definition["type"] = kwargs[key]
             elif key == "properties_role_name":
                 self.role_definition['properties']["role_name"] = kwargs[key]
             elif key == "properties_description":

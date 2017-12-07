@@ -37,7 +37,6 @@ options:
     backup_long_term_retention_policy_name:
         description:
             - The name of the backup long term retention policy
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -55,6 +54,12 @@ EXAMPLES = '''
       server_name: server_name
       database_name: database_name
       backup_long_term_retention_policy_name: backup_long_term_retention_policy_name
+
+  - name: List instances of BackupLongTermRetentionPolicies
+    azure_rm_sqlbackuplongtermretentionpolicy_facts:
+      resource_group: resource_group_name
+      server_name: server_name
+      database_name: database_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -87,7 +92,7 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
             ),
             backup_long_term_retention_policy_name=dict(
                 type='str',
-                required=True
+                required=False
             ),
         )
         # store the results of the module operation
@@ -110,6 +115,10 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
                 self.database_name is not None and
                 self.backup_long_term_retention_policy_name is not None):
             self.results['ansible_facts']['get'] = self.get()
+        elif (self.resource_group_name is not None and
+              self.server_name is not None and
+              self.database_name is not None):
+            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
         return self.results
 
     def get(self):
@@ -125,6 +134,28 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
                                                                                 self.server_name,
                                                                                 self.database_name,
                                                                                 self.backup_long_term_retention_policy_name)
+            found = True
+            self.log("Response : {0}".format(response))
+            self.log("BackupLongTermRetentionPolicies instance : {0} found".format(response.name))
+        except CloudError as e:
+            self.log('Did not find the BackupLongTermRetentionPolicies instance.')
+        if found is True:
+            return response.as_dict()
+
+        return False
+
+    def list_by_database(self):
+        '''
+        Gets facts of the specified BackupLongTermRetentionPolicies.
+
+        :return: deserialized BackupLongTermRetentionPoliciesinstance state dictionary
+        '''
+        self.log("Checking if the BackupLongTermRetentionPolicies instance {0} is present".format(self.backup_long_term_retention_policy_name))
+        found = False
+        try:
+            response = self.mgmt_client.backup_long_term_retention_policies.list_by_database(self.resource_group,
+                                                                                             self.server_name,
+                                                                                             self.database_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("BackupLongTermRetentionPolicies instance : {0} found".format(response.name))
