@@ -141,7 +141,7 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "properties_role_definition_id":
-                self.parameters['properties']["role_definition_id"] = kwargs[key]
+                self.parameters['properties']["roleDefinitionId"] = kwargs[key]
             elif key == "properties_principal_id":
                 self.parameters['properties']["principal_id"] = kwargs[key]
 
