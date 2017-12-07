@@ -207,7 +207,7 @@
           "Documentation": "The name of the role assignment to create. It can be any valid GUID.",
           "DefaultValue": null,
           "DefaultValueSample": "role_assignment_name",
-          "DefaultValueTest": "testroleassignment",
+          "DefaultValueTest": "d3881f73-7777-8888-8283-e981cbba0404",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -265,7 +265,7 @@
               "Documentation": "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.",
               "DefaultValue": null,
               "DefaultValueSample": "principal_id",
-              "DefaultValueTest": "\"{{ azure_client_id }}\"",
+              "DefaultValueTest": "7a1586af-7bea-4083-8937-a39008590442",
               "SubOptions": [],
               "RequiredCount": 0
             }
