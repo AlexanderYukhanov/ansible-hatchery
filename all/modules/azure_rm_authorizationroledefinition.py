@@ -162,11 +162,11 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 required=False
             ),
             properties_permissions=dict(
-                type='dict',
+                type='list',
                 required=False
             ),
             properties_assignable_scopes=dict(
-                type='str',
+                type='list',
                 required=False
             ),
             state=dict(

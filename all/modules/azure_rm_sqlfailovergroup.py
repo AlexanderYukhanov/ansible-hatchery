@@ -153,11 +153,11 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
                 required=False
             ),
             partner_servers=dict(
-                type='dict',
+                type='list',
                 required=True
             ),
             databases=dict(
-                type='str',
+                type='list',
                 required=False
             ),
             state=dict(

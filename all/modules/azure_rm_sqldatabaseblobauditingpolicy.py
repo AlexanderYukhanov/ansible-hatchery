@@ -158,7 +158,7 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
                 required=False
             ),
             audit_actions_and_groups=dict(
-                type='str',
+                type='list',
                 required=False
             ),
             storage_account_subscription_id=dict(
