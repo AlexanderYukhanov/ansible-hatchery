@@ -588,7 +588,7 @@
           "Documentation": "The scope of the role definition.",
           "DefaultValue": null,
           "DefaultValueSample": "scope",
-          "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
+          "DefaultValueTest": "\"/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
