@@ -1,8 +1,8 @@
 {
   "Modules": [
     {
-      "ModuleName": "azure_rm_authorization_permissions_facts",
-      "ModuleNameAlt": "azure_rm_authorizationpermissions_facts",
+      "ModuleName": "azure_rm_authorizationpermission_facts",
+      "ModuleNameAlt": "azure_rm_authorizationpermission_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -120,7 +120,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_authorization_provideroperationsmetadata_facts",
+      "ModuleName": "azure_rm_authorizationprovideroperationsmetadata_facts",
       "ModuleNameAlt": "azure_rm_authorizationprovideroperationsmetadata_facts",
       "Options": [
         {
@@ -178,7 +178,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_authorization_roleassignments",
+      "ModuleName": "azure_rm_authorizationroleassignment",
       "ModuleNameAlt": "azure_rm_authorizationroleassignment",
       "Options": [
         {
@@ -387,7 +387,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_authorization_roleassignments_facts",
+      "ModuleName": "azure_rm_authorizationroleassignment_facts",
       "ModuleNameAlt": "azure_rm_authorizationroleassignment_facts",
       "Options": [
         {
@@ -574,7 +574,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_authorization_roledefinitions",
+      "ModuleName": "azure_rm_authorizationroledefinition",
       "ModuleNameAlt": "azure_rm_authorizationroledefinition",
       "Options": [
         {
@@ -940,7 +940,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_authorization_roledefinitions_facts",
+      "ModuleName": "azure_rm_authorizationroledefinition_facts",
       "ModuleNameAlt": "azure_rm_authorizationroledefinition_facts",
       "Options": [
         {

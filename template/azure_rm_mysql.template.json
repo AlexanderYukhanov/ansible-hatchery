@@ -1,7 +1,7 @@
 {
   "Modules": [
     {
-      "ModuleName": "azure_rm_mysql_servers",
+      "ModuleName": "azure_rm_mysqlserver",
       "ModuleNameAlt": "azure_rm_mysqlserver",
       "Options": [
         {
@@ -494,7 +494,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_servers_facts",
+      "ModuleName": "azure_rm_mysqlserver_facts",
       "ModuleNameAlt": "azure_rm_mysqlserver_facts",
       "Options": [
         {
@@ -562,7 +562,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_firewallrules",
+      "ModuleName": "azure_rm_mysqlfirewallrule",
       "ModuleNameAlt": "azure_rm_mysqlfirewallrule",
       "Options": [
         {
@@ -747,7 +747,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "azure_rm_mysql_servers",
+      "TestPrerequisitesModule": "azure_rm_mysqlserver",
       "AssertStateVariable": "name",
       "AssertStateExpectedValue": "test-firewall-rule",
       "ModuleOperationNameUpper": "FirewallRules",
@@ -775,7 +775,7 @@
       ]
     },
     {
-      "ModuleName": "azure_rm_mysql_firewallrules_facts",
+      "ModuleName": "azure_rm_mysqlfirewallrule_facts",
       "ModuleNameAlt": "azure_rm_mysqlfirewallrule_facts",
       "Options": [
         {
@@ -862,7 +862,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_virtualnetworkrules",
+      "ModuleName": "azure_rm_mysqlvirtualnetworkrule",
       "ModuleNameAlt": "azure_rm_mysqlvirtualnetworkrule",
       "Options": [
         {
@@ -1055,7 +1055,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "azure_rm_mysql_servers",
+      "TestPrerequisitesModule": "azure_rm_mysqlserver",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
@@ -1066,7 +1066,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_virtualnetworkrules_facts",
+      "ModuleName": "azure_rm_mysqlvirtualnetworkrule_facts",
       "ModuleNameAlt": "azure_rm_mysqlvirtualnetworkrule_facts",
       "Options": [
         {
@@ -1153,7 +1153,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_databases",
+      "ModuleName": "azure_rm_mysqldatabase",
       "ModuleNameAlt": "azure_rm_mysqldatabase",
       "Options": [
         {
@@ -1337,7 +1337,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "azure_rm_mysql_servers",
+      "TestPrerequisitesModule": "azure_rm_mysqlserver",
       "AssertStateVariable": "name",
       "AssertStateExpectedValue": "testdatabase",
       "ModuleOperationNameUpper": "Databases",
@@ -1348,7 +1348,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_databases_facts",
+      "ModuleName": "azure_rm_mysqldatabase_facts",
       "ModuleNameAlt": "azure_rm_mysqldatabase_facts",
       "Options": [
         {
@@ -1435,7 +1435,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_configurations",
+      "ModuleName": "azure_rm_mysqlconfiguration",
       "ModuleNameAlt": "azure_rm_mysqlconfiguration",
       "Options": [
         {
@@ -1643,7 +1643,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "azure_rm_mysql_servers",
+      "TestPrerequisitesModule": "azure_rm_mysqlserver",
       "AssertStateVariable": "value",
       "AssertStateExpectedValue": "ON",
       "ModuleOperationNameUpper": "Configurations",
@@ -1654,7 +1654,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_configurations_facts",
+      "ModuleName": "azure_rm_mysqlconfiguration_facts",
       "ModuleNameAlt": "azure_rm_mysqlconfiguration_facts",
       "Options": [
         {
@@ -1741,8 +1741,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_mysql_logfiles_facts",
-      "ModuleNameAlt": "azure_rm_mysql_logfiles_facts",
+      "ModuleName": "azure_rm_mysqllogfile_facts",
+      "ModuleNameAlt": "azure_rm_mysqllogfile_facts",
       "Options": [
         {
           "Name": "resource_group_name",

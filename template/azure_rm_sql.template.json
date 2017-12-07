@@ -1,8 +1,8 @@
 {
   "Modules": [
     {
-      "ModuleName": "azure_rm_sql_backuplongtermretentionpolicies",
-      "ModuleNameAlt": "azure_rm_sql_backuplongtermretentionpolicies",
+      "ModuleName": "azure_rm_sqlbackuplongtermretentionpolicy",
+      "ModuleNameAlt": "azure_rm_sqlbackuplongtermretentionpolicy",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -198,8 +198,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_backuplongtermretentionpolicies_facts",
-      "ModuleNameAlt": "azure_rm_sql_backuplongtermretentionpolicies_facts",
+      "ModuleName": "azure_rm_sqlbackuplongtermretentionpolicy_facts",
+      "ModuleNameAlt": "azure_rm_sqlbackuplongtermretentionpolicy_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -291,8 +291,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_backuplongtermretentionvaults",
-      "ModuleNameAlt": "azure_rm_sql_backuplongtermretentionvaults",
+      "ModuleName": "azure_rm_sqlbackuplongtermretentionvault",
+      "ModuleNameAlt": "azure_rm_sqlbackuplongtermretentionvault",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -443,8 +443,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_backuplongtermretentionvaults_facts",
-      "ModuleNameAlt": "azure_rm_sql_backuplongtermretentionvaults_facts",
+      "ModuleName": "azure_rm_sqlbackuplongtermretentionvault_facts",
+      "ModuleNameAlt": "azure_rm_sqlbackuplongtermretentionvault_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -519,8 +519,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_restorepoints_facts",
-      "ModuleNameAlt": "azure_rm_sql_restorepoints_facts",
+      "ModuleName": "azure_rm_sqlrestorepoint_facts",
+      "ModuleNameAlt": "azure_rm_sqlrestorepoint_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -595,8 +595,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_recoverabledatabases_facts",
-      "ModuleNameAlt": "azure_rm_sql_recoverabledatabases_facts",
+      "ModuleName": "azure_rm_sqlrecoverabledatabase_facts",
+      "ModuleNameAlt": "azure_rm_sqlrecoverabledatabase_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -682,8 +682,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_restorabledroppeddatabases_facts",
-      "ModuleNameAlt": "azure_rm_sql_restorabledroppeddatabases_facts",
+      "ModuleName": "azure_rm_sqlrestorabledroppeddatabase_facts",
+      "ModuleNameAlt": "azure_rm_sqlrestorabledroppeddatabase_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -769,8 +769,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_capabilities_facts",
-      "ModuleNameAlt": "azure_rm_sql_capabilities_facts",
+      "ModuleName": "azure_rm_sqlcapabilitie_facts",
+      "ModuleNameAlt": "azure_rm_sqlcapabilitie_facts",
       "Options": [
         {
           "Name": "location_id",
@@ -811,8 +811,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverconnectionpolicies",
-      "ModuleNameAlt": "azure_rm_sql_serverconnectionpolicies",
+      "ModuleName": "azure_rm_sqlserverconnectionpolicy",
+      "ModuleNameAlt": "azure_rm_sqlserverconnectionpolicy",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -972,8 +972,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverconnectionpolicies_facts",
-      "ModuleNameAlt": "azure_rm_sql_serverconnectionpolicies_facts",
+      "ModuleName": "azure_rm_sqlserverconnectionpolicy_facts",
+      "ModuleNameAlt": "azure_rm_sqlserverconnectionpolicy_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1048,8 +1048,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databasethreatdetectionpolicies",
-      "ModuleNameAlt": "azure_rm_sql_databasethreatdetectionpolicies",
+      "ModuleName": "azure_rm_sqldatabasethreatdetectionpolicy",
+      "ModuleNameAlt": "azure_rm_sqldatabasethreatdetectionpolicy",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1426,8 +1426,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databasethreatdetectionpolicies_facts",
-      "ModuleNameAlt": "azure_rm_sql_databasethreatdetectionpolicies_facts",
+      "ModuleName": "azure_rm_sqldatabasethreatdetectionpolicy_facts",
+      "ModuleNameAlt": "azure_rm_sqldatabasethreatdetectionpolicy_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1519,8 +1519,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_datamaskingpolicies",
-      "ModuleNameAlt": "azure_rm_sql_datamaskingpolicies",
+      "ModuleName": "azure_rm_sqldatamaskingpolicy",
+      "ModuleNameAlt": "azure_rm_sqldatamaskingpolicy",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1742,8 +1742,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_datamaskingpolicies_facts",
-      "ModuleNameAlt": "azure_rm_sql_datamaskingpolicies_facts",
+      "ModuleName": "azure_rm_sqldatamaskingpolicy_facts",
+      "ModuleNameAlt": "azure_rm_sqldatamaskingpolicy_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -1835,8 +1835,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_datamaskingrules",
-      "ModuleNameAlt": "azure_rm_sql_datamaskingrules",
+      "ModuleName": "azure_rm_sqldatamaskingrule",
+      "ModuleNameAlt": "azure_rm_sqldatamaskingrule",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -2281,8 +2281,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_datamaskingrules_facts",
-      "ModuleNameAlt": "azure_rm_sql_datamaskingrules_facts",
+      "ModuleName": "azure_rm_sqldatamaskingrule_facts",
+      "ModuleNameAlt": "azure_rm_sqldatamaskingrule_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -2374,7 +2374,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_firewallrules",
+      "ModuleName": "azure_rm_sqlfirewallrule",
       "ModuleNameAlt": "azure_rm_sqlfirewallrule",
       "Options": [
         {
@@ -2574,7 +2574,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_firewallrules_facts",
+      "ModuleName": "azure_rm_sqlfirewallrule_facts",
       "ModuleNameAlt": "azure_rm_sqlfirewallrule_facts",
       "Options": [
         {
@@ -2661,8 +2661,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_geobackuppolicies",
-      "ModuleNameAlt": "azure_rm_sql_geobackuppolicies",
+      "ModuleName": "azure_rm_sqlgeobackuppolicy",
+      "ModuleNameAlt": "azure_rm_sqlgeobackuppolicy",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -2850,8 +2850,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_geobackuppolicies_facts",
-      "ModuleNameAlt": "azure_rm_sql_geobackuppolicies_facts",
+      "ModuleName": "azure_rm_sqlgeobackuppolicy_facts",
+      "ModuleNameAlt": "azure_rm_sqlgeobackuppolicy_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -2956,7 +2956,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databases",
+      "ModuleName": "azure_rm_sqldatabase",
       "ModuleNameAlt": "azure_rm_sqldatabase",
       "Options": [
         {
@@ -4092,7 +4092,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "azure_rm_sql_servers",
+      "TestPrerequisitesModule": "azure_rm_sqlserver",
       "AssertStateVariable": "status",
       "AssertStateExpectedValue": "Online",
       "ModuleOperationNameUpper": "Databases",
@@ -4103,7 +4103,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databases_facts",
+      "ModuleName": "azure_rm_sqldatabase_facts",
       "ModuleNameAlt": "azure_rm_sqldatabase_facts",
       "Options": [
         {
@@ -4307,7 +4307,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_elasticpools",
+      "ModuleName": "azure_rm_sqlelasticpool",
       "ModuleNameAlt": "azure_rm_sqlelasticpool",
       "Options": [
         {
@@ -4677,7 +4677,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "azure_rm_sql_servers",
+      "TestPrerequisitesModule": "azure_rm_sqlserver",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ElasticPools",
@@ -4688,8 +4688,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_elasticpools_facts",
-      "ModuleNameAlt": "azure_rm_sql_elasticpools_facts",
+      "ModuleName": "azure_rm_sqlelasticpool_facts",
+      "ModuleNameAlt": "azure_rm_sqlelasticpool_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -4818,8 +4818,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_replicationlinks_facts",
-      "ModuleNameAlt": "azure_rm_sql_replicationlinks_facts",
+      "ModuleName": "azure_rm_sqlreplicationlink_facts",
+      "ModuleNameAlt": "azure_rm_sqlreplicationlink_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -4924,8 +4924,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverazureadadministrators",
-      "ModuleNameAlt": "azure_rm_sql_serverazureadadministrators",
+      "ModuleName": "azure_rm_sqlserverazureadadministrator",
+      "ModuleNameAlt": "azure_rm_sqlserverazureadadministrator",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -5167,8 +5167,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverazureadadministrators_facts",
-      "ModuleNameAlt": "azure_rm_sql_serverazureadadministrators_facts",
+      "ModuleName": "azure_rm_sqlserverazureadadministrator_facts",
+      "ModuleNameAlt": "azure_rm_sqlserverazureadadministrator_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -5254,8 +5254,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_servercommunicationlinks",
-      "ModuleNameAlt": "azure_rm_sql_servercommunicationlinks",
+      "ModuleName": "azure_rm_sqlservercommunicationlink",
+      "ModuleNameAlt": "azure_rm_sqlservercommunicationlink",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -5437,8 +5437,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_servercommunicationlinks_facts",
-      "ModuleNameAlt": "azure_rm_sql_servercommunicationlinks_facts",
+      "ModuleName": "azure_rm_sqlservercommunicationlink_facts",
+      "ModuleNameAlt": "azure_rm_sqlservercommunicationlink_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -5524,8 +5524,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serviceobjectives_facts",
-      "ModuleNameAlt": "azure_rm_sql_serviceobjectives_facts",
+      "ModuleName": "azure_rm_sqlserviceobjective_facts",
+      "ModuleNameAlt": "azure_rm_sqlserviceobjective_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -5611,7 +5611,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_servers",
+      "ModuleName": "azure_rm_sqlserver",
       "ModuleNameAlt": "azure_rm_sqlserver",
       "Options": [
         {
@@ -5965,7 +5965,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_servers_facts",
+      "ModuleName": "azure_rm_sqlserver_facts",
       "ModuleNameAlt": "azure_rm_sqlserver_facts",
       "Options": [
         {
@@ -6033,8 +6033,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_elasticpoolactivities_facts",
-      "ModuleNameAlt": "azure_rm_sql_elasticpoolactivities_facts",
+      "ModuleName": "azure_rm_sqlelasticpoolactivitie_facts",
+      "ModuleNameAlt": "azure_rm_sqlelasticpoolactivitie_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6109,8 +6109,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_elasticpooldatabaseactivities_facts",
-      "ModuleNameAlt": "azure_rm_sql_elasticpooldatabaseactivities_facts",
+      "ModuleName": "azure_rm_sqlelasticpooldatabaseactivitie_facts",
+      "ModuleNameAlt": "azure_rm_sqlelasticpooldatabaseactivitie_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6185,8 +6185,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_recommendedelasticpools_facts",
-      "ModuleNameAlt": "azure_rm_sql_recommendedelasticpools_facts",
+      "ModuleName": "azure_rm_sqlrecommendedelasticpool_facts",
+      "ModuleNameAlt": "azure_rm_sqlrecommendedelasticpool_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6285,8 +6285,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_servicetieradvisors_facts",
-      "ModuleNameAlt": "azure_rm_sql_servicetieradvisors_facts",
+      "ModuleName": "azure_rm_sqlservicetieradvisor_facts",
+      "ModuleNameAlt": "azure_rm_sqlservicetieradvisor_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6391,8 +6391,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_transparentdataencryptions",
-      "ModuleNameAlt": "azure_rm_sql_transparentdataencryptions",
+      "ModuleName": "azure_rm_sqltransparentdataencryption",
+      "ModuleNameAlt": "azure_rm_sqltransparentdataencryption",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6561,8 +6561,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_transparentdataencryptions_facts",
-      "ModuleNameAlt": "azure_rm_sql_transparentdataencryptions_facts",
+      "ModuleName": "azure_rm_sqltransparentdataencryption_facts",
+      "ModuleNameAlt": "azure_rm_sqltransparentdataencryption_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6654,8 +6654,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_transparentdataencryptionactivities_facts",
-      "ModuleNameAlt": "azure_rm_sql_transparentdataencryptionactivities_facts",
+      "ModuleName": "azure_rm_sqltransparentdataencryptionactivitie_facts",
+      "ModuleNameAlt": "azure_rm_sqltransparentdataencryptionactivitie_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6747,8 +6747,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverusages_facts",
-      "ModuleNameAlt": "azure_rm_sql_serverusages_facts",
+      "ModuleName": "azure_rm_sqlserverusage_facts",
+      "ModuleNameAlt": "azure_rm_sqlserverusage_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6806,8 +6806,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databaseusages_facts",
-      "ModuleNameAlt": "azure_rm_sql_databaseusages_facts",
+      "ModuleName": "azure_rm_sqldatabaseusage_facts",
+      "ModuleNameAlt": "azure_rm_sqldatabaseusage_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -6882,8 +6882,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databaseblobauditingpolicies",
-      "ModuleNameAlt": "azure_rm_sql_databaseblobauditingpolicies",
+      "ModuleName": "azure_rm_sqldatabaseblobauditingpolicy",
+      "ModuleNameAlt": "azure_rm_sqldatabaseblobauditingpolicy",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -7212,8 +7212,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databaseblobauditingpolicies_facts",
-      "ModuleNameAlt": "azure_rm_sql_databaseblobauditingpolicies_facts",
+      "ModuleName": "azure_rm_sqldatabaseblobauditingpolicy_facts",
+      "ModuleNameAlt": "azure_rm_sqldatabaseblobauditingpolicy_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -7305,8 +7305,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_encryptionprotectors",
-      "ModuleNameAlt": "azure_rm_sql_encryptionprotectors",
+      "ModuleName": "azure_rm_sqlencryptionprotector",
+      "ModuleNameAlt": "azure_rm_sqlencryptionprotector",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -7547,8 +7547,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_encryptionprotectors_facts",
-      "ModuleNameAlt": "azure_rm_sql_encryptionprotectors_facts",
+      "ModuleName": "azure_rm_sqlencryptionprotector_facts",
+      "ModuleNameAlt": "azure_rm_sqlencryptionprotector_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -7634,8 +7634,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_failovergroups",
-      "ModuleNameAlt": "azure_rm_sql_failovergroups",
+      "ModuleName": "azure_rm_sqlfailovergroup",
+      "ModuleNameAlt": "azure_rm_sqlfailovergroup",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8063,8 +8063,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_failovergroups_facts",
-      "ModuleNameAlt": "azure_rm_sql_failovergroups_facts",
+      "ModuleName": "azure_rm_sqlfailovergroup_facts",
+      "ModuleNameAlt": "azure_rm_sqlfailovergroup_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8150,8 +8150,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverkeys",
-      "ModuleNameAlt": "azure_rm_sql_serverkeys",
+      "ModuleName": "azure_rm_sqlserverkey",
+      "ModuleNameAlt": "azure_rm_sqlserverkey",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8435,8 +8435,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverkeys_facts",
-      "ModuleNameAlt": "azure_rm_sql_serverkeys_facts",
+      "ModuleName": "azure_rm_sqlserverkey_facts",
+      "ModuleNameAlt": "azure_rm_sqlserverkey_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8522,8 +8522,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_syncagents",
-      "ModuleNameAlt": "azure_rm_sql_syncagents",
+      "ModuleName": "azure_rm_sqlsyncagent",
+      "ModuleNameAlt": "azure_rm_sqlsyncagent",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8731,8 +8731,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_syncagents_facts",
-      "ModuleNameAlt": "azure_rm_sql_syncagents_facts",
+      "ModuleName": "azure_rm_sqlsyncagent_facts",
+      "ModuleNameAlt": "azure_rm_sqlsyncagent_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8831,8 +8831,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_syncgroups",
-      "ModuleNameAlt": "azure_rm_sql_syncgroups",
+      "ModuleName": "azure_rm_sqlsyncgroup",
+      "ModuleNameAlt": "azure_rm_sqlsyncgroup",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -9352,8 +9352,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_syncgroups_facts",
-      "ModuleNameAlt": "azure_rm_sql_syncgroups_facts",
+      "ModuleName": "azure_rm_sqlsyncgroup_facts",
+      "ModuleNameAlt": "azure_rm_sqlsyncgroup_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -9579,8 +9579,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_syncmembers",
-      "ModuleNameAlt": "azure_rm_sql_syncmembers",
+      "ModuleName": "azure_rm_sqlsyncmember",
+      "ModuleNameAlt": "azure_rm_sqlsyncmember",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -9988,8 +9988,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_syncmembers_facts",
-      "ModuleNameAlt": "azure_rm_sql_syncmembers_facts",
+      "ModuleName": "azure_rm_sqlsyncmember_facts",
+      "ModuleNameAlt": "azure_rm_sqlsyncmember_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -10130,7 +10130,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_virtualnetworkrules",
+      "ModuleName": "azure_rm_sqlvirtualnetworkrule",
       "ModuleNameAlt": "azure_rm_sqlvirtualnetworkrule",
       "Options": [
         {
@@ -10320,7 +10320,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_virtualnetworkrules_facts",
+      "ModuleName": "azure_rm_sqlvirtualnetworkrule_facts",
       "ModuleNameAlt": "azure_rm_sqlvirtualnetworkrule_facts",
       "Options": [
         {
@@ -10407,8 +10407,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_databaseoperations_facts",
-      "ModuleNameAlt": "azure_rm_sql_databaseoperations_facts",
+      "ModuleName": "azure_rm_sqldatabaseoperation_facts",
+      "ModuleNameAlt": "azure_rm_sqldatabaseoperation_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -10483,8 +10483,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverdnsaliases",
-      "ModuleNameAlt": "azure_rm_sql_serverdnsaliases",
+      "ModuleName": "azure_rm_sqlserverdnsaliase",
+      "ModuleNameAlt": "azure_rm_sqlserverdnsaliase",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -10622,8 +10622,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_sql_serverdnsaliases_facts",
-      "ModuleNameAlt": "azure_rm_sql_serverdnsaliases_facts",
+      "ModuleName": "azure_rm_sqlserverdnsaliase_facts",
+      "ModuleNameAlt": "azure_rm_sqlserverdnsaliase_facts",
       "Options": [
         {
           "Name": "resource_group_name",

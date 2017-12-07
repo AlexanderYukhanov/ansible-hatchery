@@ -1,0 +1,19 @@
+- name: Create instance of BackupLongTermRetentionPolicies
+  azure_rm_sqlbackuplongtermretentionpolicy_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+      - output.state == 'Ready'
+
+- name: Update instance of BackupLongTermRetentionPolicies
+  azure_rm_sqlbackuplongtermretentionpolicy_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+      - output.state == 'Ready'

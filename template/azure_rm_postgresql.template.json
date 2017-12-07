@@ -1,7 +1,7 @@
 {
   "Modules": [
     {
-      "ModuleName": "azure_rm_postgresql_servers",
+      "ModuleName": "azure_rm_postgresqlserver",
       "ModuleNameAlt": "azure_rm_postgresqlserver",
       "Options": [
         {
@@ -494,7 +494,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_servers_facts",
+      "ModuleName": "azure_rm_postgresqlserver_facts",
       "ModuleNameAlt": "azure_rm_postgresqlserver_facts",
       "Options": [
         {
@@ -562,7 +562,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_firewallrules",
+      "ModuleName": "azure_rm_postgresqlfirewallrule",
       "ModuleNameAlt": "azure_rm_postgresqlfirewallrule",
       "Options": [
         {
@@ -757,7 +757,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_firewallrules_facts",
+      "ModuleName": "azure_rm_postgresqlfirewallrule_facts",
       "ModuleNameAlt": "azure_rm_postgresqlfirewallrule_facts",
       "Options": [
         {
@@ -844,7 +844,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_virtualnetworkrules",
+      "ModuleName": "azure_rm_postgresqlvirtualnetworkrule",
       "ModuleNameAlt": "azure_rm_postgresqlvirtualnetworkrule",
       "Options": [
         {
@@ -1048,7 +1048,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_virtualnetworkrules_facts",
+      "ModuleName": "azure_rm_postgresqlvirtualnetworkrule_facts",
       "ModuleNameAlt": "azure_rm_postgresqlvirtualnetworkrule_facts",
       "Options": [
         {
@@ -1135,7 +1135,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_databases",
+      "ModuleName": "azure_rm_postgresqldatabase",
       "ModuleNameAlt": "azure_rm_postgresqldatabase",
       "Options": [
         {
@@ -1319,7 +1319,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "azure_rm_postgresql_servers",
+      "TestPrerequisitesModule": "azure_rm_postgresqlserver",
       "AssertStateVariable": "name",
       "AssertStateExpectedValue": "testdatabase",
       "ModuleOperationNameUpper": "Databases",
@@ -1330,7 +1330,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_databases_facts",
+      "ModuleName": "azure_rm_postgresqldatabase_facts",
       "ModuleNameAlt": "azure_rm_postgresqldatabase_facts",
       "Options": [
         {
@@ -1417,7 +1417,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_configurations",
+      "ModuleName": "azure_rm_postgresqlconfiguration",
       "ModuleNameAlt": "azure_rm_postgresqlconfiguration",
       "Options": [
         {
@@ -1635,7 +1635,7 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_configurations_facts",
+      "ModuleName": "azure_rm_postgresqlconfiguration_facts",
       "ModuleNameAlt": "azure_rm_postgresqlconfiguration_facts",
       "Options": [
         {
@@ -1722,8 +1722,8 @@
       "UpdateComparisonRules": null
     },
     {
-      "ModuleName": "azure_rm_postgresql_logfiles_facts",
-      "ModuleNameAlt": "azure_rm_postgresql_logfiles_facts",
+      "ModuleName": "azure_rm_postgresqllogfile_facts",
+      "ModuleNameAlt": "azure_rm_postgresqllogfile_facts",
       "Options": [
         {
           "Name": "resource_group_name",
