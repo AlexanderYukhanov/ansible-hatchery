@@ -1,5 +1,9 @@
 - name: Create instance of RoleAssignments
   azure_rm_authorizationroleassignment:
+    scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
+    role_assignment_name: testroleassignment
+    properties_role_definition_id: d3881f73-407a-4167-8283-e981cbba0404
+    properties_principal_id: "{{ azure_client_id }}"
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -9,6 +13,10 @@
 
 - name: Update instance of RoleAssignments
   azure_rm_authorizationroleassignment:
+    scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
+    role_assignment_name: testroleassignment
+    properties_role_definition_id: d3881f73-407a-4167-8283-e981cbba0404
+    properties_principal_id: "{{ azure_client_id }}"
   register: output
 - name: Assert the state has not changed
   assert:
@@ -18,6 +26,8 @@
 
 - name: Delete instance of RoleAssignments
   azure_rm_authorizationroleassignment:
+    scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
+    role_assignment_name: testroleassignment
     state: absent
   register: output
 - name: Assert the state has changed

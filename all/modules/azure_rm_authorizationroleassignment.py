@@ -35,14 +35,13 @@ options:
     properties:
         description:
             - Role assignment properties.
-        suboptions:
-            role_definition_id:
-                description:
-                    - The role definition ID used in the role assignment.
-            principal_id:
-                description:
-                    - "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or
-                       security group."
+    properties_role_definition_id:
+        description:
+            - The role definition ID used in the role assignment.
+    properties_principal_id:
+        description:
+            - "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security
+                group."
 
 extends_documentation_fragment:
     - azure
@@ -58,9 +57,9 @@ EXAMPLES = '''
     azure_rm_authorizationroleassignment:
       scope: scope
       role_assignment_name: role_assignment_name
-      properties:
-        role_definition_id: role_definition_id
-        principal_id: principal_id
+      properties: properties
+      properties_role_definition_id: role_definition_id
+      properties_principal_id: principal_id
 '''
 
 RETURN = '''
@@ -105,6 +104,14 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
                 type='dict',
                 required=False
             ),
+            properties_role_definition_id=dict(
+                type='str',
+                required=False
+            ),
+            properties_principal_id=dict(
+                type='str',
+                required=False
+            ),
             state=dict(
                 type='str',
                 required=False,
@@ -116,6 +123,7 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         self.scope = None
         self.role_assignment_name = None
         self.parameters = dict()
+        self.parameters['properties'] = dict()
 
         self.results = dict(changed=False, state=dict())
         self.mgmt_client = None
@@ -132,8 +140,10 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "properties":
-                self.parameters["properties"] = kwargs[key]
+            elif key == "properties_role_definition_id":
+                self.parameters['properties']["role_definition_id"] = kwargs[key]
+            elif key == "properties_principal_id":
+                self.parameters['properties']["principal_id"] = kwargs[key]
 
         old_response = None
         results = dict()

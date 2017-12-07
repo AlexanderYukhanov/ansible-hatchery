@@ -192,7 +192,7 @@
           "Documentation": "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.",
           "DefaultValue": null,
           "DefaultValueSample": "scope",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -207,7 +207,7 @@
           "Documentation": "The name of the role assignment to create. It can be any valid GUID.",
           "DefaultValue": null,
           "DefaultValueSample": "role_assignment_name",
-          "DefaultValueTest": "",
+          "DefaultValueTest": "testroleassignment",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -229,7 +229,7 @@
         {
           "Name": "properties",
           "NameAlt": "properties",
-          "Disposition": "parameters",
+          "Disposition": "parameters:dictionary",
           "Type": "dict",
           "IsList": false,
           "Required": "False",
@@ -238,38 +238,37 @@
           "DefaultValue": null,
           "DefaultValueSample": "properties",
           "DefaultValueTest": "",
-          "SubOptions": [
-            {
-              "Name": "role_definition_id",
-              "NameAlt": "role_definition_id",
-              "Disposition": "default",
-              "Type": "str",
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "The role definition ID used in the role assignment.",
-              "DefaultValue": null,
-              "DefaultValueSample": "role_definition_id",
-              "DefaultValueTest": "",
-              "SubOptions": [],
-              "RequiredCount": 0
-            },
-            {
-              "Name": "principal_id",
-              "NameAlt": "principal_id",
-              "Disposition": "default",
-              "Type": "str",
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.",
-              "DefaultValue": null,
-              "DefaultValueSample": "principal_id",
-              "DefaultValueTest": "",
-              "SubOptions": [],
-              "RequiredCount": 0
-            }
-          ],
+          "SubOptions": null,
+          "RequiredCount": 0
+        },
+        {
+          "Name": "role_definition_id",
+          "NameAlt": "properties_role_definition_id",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The role definition ID used in the role assignment.",
+          "DefaultValue": null,
+          "DefaultValueSample": "role_definition_id",
+          "DefaultValueTest": "d3881f73-407a-4167-8283-e981cbba0404",
+          "SubOptions": [],
+          "RequiredCount": 0
+        },
+        {
+          "Name": "principal_id",
+          "NameAlt": "properties_principal_id",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.",
+          "DefaultValue": null,
+          "DefaultValueSample": "principal_id",
+          "DefaultValueTest": "\"{{ azure_client_id }}\"",
+          "SubOptions": [],
           "RequiredCount": 0
         }
       ],
