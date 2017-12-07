@@ -3,7 +3,7 @@
     scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
     properties:
-      role_definition_id: "Microsoft.ApiManagement/Service/*/read"
+      role_definition_id: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/Microsoft.ApiManagement/Service/*/read"
       principal_id: "98b422c6-7bea-4706-b6f3-920a782746d4"
   register: output
 - name: Assert the resource instance is well created
