@@ -5724,7 +5724,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
