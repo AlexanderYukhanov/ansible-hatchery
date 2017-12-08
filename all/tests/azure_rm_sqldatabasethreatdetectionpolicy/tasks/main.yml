@@ -1,3 +1,7 @@
+- name: Prepare random number
+  set_fact:
+    random_postfix: "{{ 100 | random }}"
+  run_once: yes
 - name: Create instance of DatabaseThreatDetectionPolicies
   azure_rm_sqldatabasethreatdetectionpolicy:
     resource_group: "{{ resource_group }}"

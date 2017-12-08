@@ -1,7 +1,11 @@
+- name: Prepare random number
+  set_fact:
+    random_postfix: "{{ 100 | random }}"
+  run_once: yes
 - name: Create PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
-    name: "postgresqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     properties:
       create_mode: Default
       admin_username: zimxyz
@@ -10,7 +14,7 @@
 - name: Create instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: testdatabase
   register: output
 - name: Assert the resource instance is well created
@@ -22,7 +26,7 @@
 - name: Update instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: testdatabase
   register: output
 - name: Assert the state has not changed
@@ -34,7 +38,7 @@
 - name: Delete instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: testdatabase
     state: absent
   register: output
@@ -46,5 +50,5 @@
 - name: Delete instance of PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
-    name: "postgresqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     state: absent

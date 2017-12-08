@@ -3049,7 +3049,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "\"sqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -4165,8 +4165,8 @@
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": "sqlsrv",
-      "TestReplaceStringTo": "sqlsrvdb"
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabase_facts",
@@ -4754,8 +4754,8 @@
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": "sqlsrv",
-      "TestReplaceStringTo": "sqlsrvep"
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlelasticpool_facts",
@@ -5724,7 +5724,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "\"sqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },

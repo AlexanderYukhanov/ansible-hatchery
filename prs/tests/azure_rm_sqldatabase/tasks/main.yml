@@ -1,14 +1,18 @@
+- name: Prepare random number
+  set_fact:
+    random_postfix: "{{ 100 | random }}"
+  run_once: yes
 - name: Create SQL Server
   azure_rm_sqlserver:
     resource_group: "{{ resource_group }}"
-    name: "sqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: "sqlsrv{{ random_postfix }}{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     location: eastus
     admin_username: mylogin
     admin_password: Testpasswordxyz12!
 - name: Create instance of SQL Database
   azure_rm_sqldatabase:
     resource_group: "{{ resource_group }}"
-    server_name: "sqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    server_name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-database
     location: eastus
   register: output
@@ -21,7 +25,7 @@
 - name: Update instance of SQL Database
   azure_rm_sqldatabase:
     resource_group: "{{ resource_group }}"
-    server_name: "sqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    server_name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-database
     location: eastus
   register: output
@@ -34,7 +38,7 @@
 - name: Delete instance of SQL Database
   azure_rm_sqldatabase:
     resource_group: "{{ resource_group }}"
-    server_name: "sqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    server_name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-database
     state: absent
   register: output
@@ -46,5 +50,5 @@
 - name: Delete instance of SQL Server
   azure_rm_sqlserver:
     resource_group: "{{ resource_group }}"
-    name: "sqlsrvdb{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: "sqlsrv{{ random_postfix }}{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     state: absent

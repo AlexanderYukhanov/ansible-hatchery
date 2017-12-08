@@ -30,7 +30,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "\"mysqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -777,8 +777,8 @@
           ]
         }
       ],
-      "TestReplaceStringFrom": "sqlsrv",
-      "TestReplaceStringTo": "sqlsrvfr"
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_mysqlfirewallrule_facts",
@@ -1072,8 +1072,8 @@
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": "sqlsrv",
-      "TestReplaceStringTo": "sqlsrvvn"
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_mysqlvirtualnetworkrule_facts",
@@ -1194,7 +1194,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "\"mysqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -1358,8 +1358,8 @@
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": true,
       "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": "sqlsrv",
-      "TestReplaceStringTo": "sqlsrvdb"
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_mysqldatabase_facts",
@@ -1668,8 +1668,8 @@
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": "sqlsrv",
-      "TestReplaceStringTo": "sqlsrvcfg"
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_mysqlconfiguration_facts",

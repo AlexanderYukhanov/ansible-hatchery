@@ -196,7 +196,7 @@
           "Documentation": "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.",
           "DefaultValue": null,
           "DefaultValueSample": "scope",
-          "DefaultValueTest": "\"/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a\"",
+          "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -254,7 +254,7 @@
               "Documentation": "The role definition ID used in the role assignment.",
               "DefaultValue": null,
               "DefaultValueSample": "role_definition_id",
-              "DefaultValueTest": "\"/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c\"",
+              "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c\"",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -596,7 +596,7 @@
           "Documentation": "The scope of the role definition.",
           "DefaultValue": null,
           "DefaultValueSample": "scope",
-          "DefaultValueTest": "\"/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a\"",
+          "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },

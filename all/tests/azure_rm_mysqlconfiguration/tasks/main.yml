@@ -1,7 +1,11 @@
+- name: Prepare random number
+  set_fact:
+    random_postfix: "{{ 100 | random }}"
+  run_once: yes
 - name: Create MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: "mysqlsrvcfg{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     properties:
       version: 5.6
       create_mode: Default
@@ -39,5 +43,5 @@
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: "mysqlsrvcfg{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     state: absent

@@ -1,6 +1,10 @@
+- name: Prepare random number
+  set_fact:
+    random_postfix: "{{ 100 | random }}"
+  run_once: yes
 - name: Create instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
-    scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
+    scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
     properties_permissions:
       - actions:
@@ -18,7 +22,7 @@
 
 - name: Update instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
-    scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
+    scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
     properties_permissions:
       - actions:
@@ -36,7 +40,7 @@
 
 - name: Delete instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
-    scope: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a"
+    scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
     state: absent
   register: output
