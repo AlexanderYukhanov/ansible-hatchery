@@ -30,7 +30,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "test-postgresql-server",
+          "DefaultValueTest": "\"postgresqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -491,7 +491,9 @@
       "ObjectName": "PostgreSQL Server",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqlserver_facts",
@@ -559,7 +561,9 @@
       "ObjectName": "Servers",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqlfirewallrule",
@@ -754,7 +758,9 @@
       "ObjectName": "FirewallRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqlfirewallrule_facts",
@@ -841,7 +847,9 @@
       "ObjectName": "FirewallRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqlvirtualnetworkrule",
@@ -1045,7 +1053,9 @@
       "ObjectName": "VirtualNetworkRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqlvirtualnetworkrule_facts",
@@ -1132,7 +1142,9 @@
       "ObjectName": "VirtualNetworkRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqldatabase",
@@ -1164,7 +1176,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "test-postgresql-server",
+          "DefaultValueTest": "\"postgresqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -1327,7 +1339,9 @@
       "ObjectName": "PostgreSQL Database",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": true,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": "sqlsrv",
+      "TestReplaceStringTo": "sqlsrvdb"
     },
     {
       "ModuleName": "azure_rm_postgresqldatabase_facts",
@@ -1414,7 +1428,9 @@
       "ObjectName": "Databases",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqlconfiguration",
@@ -1632,7 +1648,9 @@
       "ObjectName": "Configurations",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqlconfiguration_facts",
@@ -1719,7 +1737,9 @@
       "ObjectName": "Configurations",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_postgresqllogfile_facts",
@@ -1778,7 +1798,9 @@
       "ObjectName": "LogFiles",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     }
   ],
   "Namespace": "postgresql",

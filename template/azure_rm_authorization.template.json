@@ -117,7 +117,9 @@
       "ObjectName": "Permissions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_authorizationprovideroperationsmetadata_facts",
@@ -175,7 +177,9 @@
       "ObjectName": "ProviderOperationsMetadata",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_authorizationroleassignment",
@@ -384,7 +388,9 @@
       "ObjectName": "RoleAssignments",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_authorizationroleassignment_facts",
@@ -571,7 +577,9 @@
       "ObjectName": "RoleAssignments",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_authorizationroledefinition",
@@ -892,7 +900,9 @@
       "ObjectName": "RoleDefinitions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_authorizationroledefinition_facts",
@@ -951,7 +961,9 @@
       "ObjectName": "RoleDefinitions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     }
   ],
   "Namespace": "authorization",

@@ -195,7 +195,9 @@
       "ObjectName": "BackupLongTermRetentionPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlbackuplongtermretentionpolicy_facts",
@@ -301,7 +303,9 @@
       "ObjectName": "BackupLongTermRetentionPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlbackuplongtermretentionvault",
@@ -453,7 +457,9 @@
       "ObjectName": "BackupLongTermRetentionVaults",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlbackuplongtermretentionvault_facts",
@@ -540,7 +546,9 @@
       "ObjectName": "BackupLongTermRetentionVaults",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlrestorepoint_facts",
@@ -616,7 +624,9 @@
       "ObjectName": "RestorePoints",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlrecoverabledatabase_facts",
@@ -703,7 +713,9 @@
       "ObjectName": "RecoverableDatabases",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlrestorabledroppeddatabase_facts",
@@ -790,7 +802,9 @@
       "ObjectName": "RestorableDroppedDatabases",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlcapabilitie_facts",
@@ -832,7 +846,9 @@
       "ObjectName": "Capabilities",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverconnectionpolicy",
@@ -993,7 +1009,9 @@
       "ObjectName": "ServerConnectionPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverconnectionpolicy_facts",
@@ -1069,7 +1087,9 @@
       "ObjectName": "ServerConnectionPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabasethreatdetectionpolicy",
@@ -1447,7 +1467,9 @@
       "ObjectName": "DatabaseThreatDetectionPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabasethreatdetectionpolicy_facts",
@@ -1540,7 +1562,9 @@
       "ObjectName": "DatabaseThreatDetectionPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatamaskingpolicy",
@@ -1763,7 +1787,9 @@
       "ObjectName": "DataMaskingPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatamaskingpolicy_facts",
@@ -1856,7 +1882,9 @@
       "ObjectName": "DataMaskingPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatamaskingrule",
@@ -2302,7 +2330,9 @@
       "ObjectName": "DataMaskingRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatamaskingrule_facts",
@@ -2395,7 +2425,9 @@
       "ObjectName": "DataMaskingRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlfirewallrule",
@@ -2595,7 +2627,9 @@
       "ObjectName": "FirewallRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlfirewallrule_facts",
@@ -2682,7 +2716,9 @@
       "ObjectName": "FirewallRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlgeobackuppolicy",
@@ -2871,7 +2907,9 @@
       "ObjectName": "GeoBackupPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlgeobackuppolicy_facts",
@@ -2977,7 +3015,9 @@
       "ObjectName": "GeoBackupPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabase",
@@ -3009,7 +3049,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "sql-test-server-dauih",
+          "DefaultValueTest": "\"sqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -4124,7 +4164,9 @@
       "ObjectName": "SQL Database",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": "sqlsrv",
+      "TestReplaceStringTo": "sqlsrvdb"
     },
     {
       "ModuleName": "azure_rm_sqldatabase_facts",
@@ -4328,7 +4370,9 @@
       "ObjectName": "Databases",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlelasticpool",
@@ -4709,7 +4753,9 @@
       "ObjectName": "ElasticPool",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": "sqlsrv",
+      "TestReplaceStringTo": "sqlsrvep"
     },
     {
       "ModuleName": "azure_rm_sqlelasticpool_facts",
@@ -4839,7 +4885,9 @@
       "ObjectName": "ElasticPools",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlreplicationlink_facts",
@@ -4945,7 +4993,9 @@
       "ObjectName": "ReplicationLinks",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverazureadadministrator",
@@ -5188,7 +5238,9 @@
       "ObjectName": "ServerAzureADAdministrators",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverazureadadministrator_facts",
@@ -5275,7 +5327,9 @@
       "ObjectName": "ServerAzureADAdministrators",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlservercommunicationlink",
@@ -5458,7 +5512,9 @@
       "ObjectName": "ServerCommunicationLinks",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlservercommunicationlink_facts",
@@ -5545,7 +5601,9 @@
       "ObjectName": "ServerCommunicationLinks",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserviceobjective_facts",
@@ -5632,7 +5690,9 @@
       "ObjectName": "ServiceObjectives",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserver",
@@ -5664,7 +5724,7 @@
           "Documentation": "The name of the server.",
           "DefaultValue": null,
           "DefaultValueSample": "server_name",
-          "DefaultValueTest": "sql-test-server-dauih",
+          "DefaultValueTest": "\"sqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -5986,7 +6046,9 @@
       "ObjectName": "SQL Server",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserver_facts",
@@ -6054,7 +6116,9 @@
       "ObjectName": "SQL Server",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlelasticpoolactivitie_facts",
@@ -6130,7 +6194,9 @@
       "ObjectName": "ElasticPoolActivities",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlelasticpooldatabaseactivitie_facts",
@@ -6206,7 +6272,9 @@
       "ObjectName": "ElasticPoolDatabaseActivities",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlrecommendedelasticpool_facts",
@@ -6306,7 +6374,9 @@
       "ObjectName": "RecommendedElasticPools",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlservicetieradvisor_facts",
@@ -6412,7 +6482,9 @@
       "ObjectName": "ServiceTierAdvisors",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqltransparentdataencryption",
@@ -6582,7 +6654,9 @@
       "ObjectName": "TransparentDataEncryptions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqltransparentdataencryption_facts",
@@ -6675,7 +6749,9 @@
       "ObjectName": "TransparentDataEncryptions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqltransparentdataencryptionactivitie_facts",
@@ -6768,7 +6844,9 @@
       "ObjectName": "TransparentDataEncryptionActivities",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverusage_facts",
@@ -6827,7 +6905,9 @@
       "ObjectName": "ServerUsages",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabaseusage_facts",
@@ -6903,7 +6983,9 @@
       "ObjectName": "DatabaseUsages",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabaseblobauditingpolicy",
@@ -7233,7 +7315,9 @@
       "ObjectName": "DatabaseBlobAuditingPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabaseblobauditingpolicy_facts",
@@ -7326,7 +7410,9 @@
       "ObjectName": "DatabaseBlobAuditingPolicies",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlencryptionprotector",
@@ -7568,7 +7654,9 @@
       "ObjectName": "EncryptionProtectors",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlencryptionprotector_facts",
@@ -7655,7 +7743,9 @@
       "ObjectName": "EncryptionProtectors",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlfailovergroup",
@@ -8084,7 +8174,9 @@
       "ObjectName": "FailoverGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlfailovergroup_facts",
@@ -8171,7 +8263,9 @@
       "ObjectName": "FailoverGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverkey",
@@ -8456,7 +8550,9 @@
       "ObjectName": "ServerKeys",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverkey_facts",
@@ -8543,7 +8639,9 @@
       "ObjectName": "ServerKeys",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlsyncagent",
@@ -8752,7 +8850,9 @@
       "ObjectName": "SyncAgents",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlsyncagent_facts",
@@ -8852,7 +8952,9 @@
       "ObjectName": "SyncAgents",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlsyncgroup",
@@ -9373,7 +9475,9 @@
       "ObjectName": "SyncGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlsyncgroup_facts",
@@ -9600,7 +9704,9 @@
       "ObjectName": "SyncGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlsyncmember",
@@ -10009,7 +10115,9 @@
       "ObjectName": "SyncMembers",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlsyncmember_facts",
@@ -10151,7 +10259,9 @@
       "ObjectName": "SyncMembers",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlsubscriptionusage_facts",
@@ -10219,7 +10329,9 @@
       "ObjectName": "SubscriptionUsages",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlvirtualnetworkrule",
@@ -10409,7 +10521,9 @@
       "ObjectName": "VirtualNetworkRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlvirtualnetworkrule_facts",
@@ -10496,7 +10610,9 @@
       "ObjectName": "VirtualNetworkRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqldatabaseoperation_facts",
@@ -10572,7 +10688,9 @@
       "ObjectName": "DatabaseOperations",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverdnsaliase",
@@ -10711,7 +10829,9 @@
       "ObjectName": "ServerDnsAliases",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     },
     {
       "ModuleName": "azure_rm_sqlserverdnsaliase_facts",
@@ -10798,7 +10918,9 @@
       "ObjectName": "ServerDnsAliases",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
     }
   ],
   "Namespace": "sql",

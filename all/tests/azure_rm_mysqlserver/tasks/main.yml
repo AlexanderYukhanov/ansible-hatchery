@@ -1,7 +1,7 @@
 - name: Create instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: test-mysql-server
+    name: "mysqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     properties:
       version: 5.6
       create_mode: Default
@@ -18,7 +18,7 @@
 - name: Update instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: test-mysql-server
+    name: "mysqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     properties:
       version: 5.6
       create_mode: Default
@@ -35,7 +35,7 @@
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: test-mysql-server
+    name: "mysqlsrv{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     state: absent
   register: output
 - name: Assert the state has changed
