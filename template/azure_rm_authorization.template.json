@@ -211,7 +211,7 @@
           "Documentation": "The name of the role assignment to create. It can be any valid GUID.",
           "DefaultValue": null,
           "DefaultValueSample": "role_assignment_name",
-          "DefaultValueTest": "d3881f73-7777-8888-8283-e981cbba0404",
+          "DefaultValueTest": "\"d3881f73-7777-8888-8283-e981cbba0404\"",
           "SubOptions": null,
           "RequiredCount": 0
         },
@@ -254,7 +254,7 @@
               "Documentation": "The role definition ID used in the role assignment.",
               "DefaultValue": null,
               "DefaultValueSample": "role_definition_id",
-              "DefaultValueTest": "d3881f73-407a-4167-8283-e981cbba0404",
+              "DefaultValueTest": "\"/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c\"",
               "SubOptions": [],
               "RequiredCount": 0
             },
@@ -269,7 +269,7 @@
               "Documentation": "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.",
               "DefaultValue": null,
               "DefaultValueSample": "principal_id",
-              "DefaultValueTest": "7a1586af-7bea-4083-8937-a39008590442",
+              "DefaultValueTest": "\"98b422c6-7bea-4706-b6f3-920a782746d4\"",
               "SubOptions": [],
               "RequiredCount": 0
             }
