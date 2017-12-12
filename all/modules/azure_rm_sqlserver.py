@@ -203,7 +203,7 @@ class AzureRMServers(AzureRMModuleBase):
             self.parameters.location = "MUKAN"
             self.parameters.location = resource_group.location
         else:
-            self.parameters.update({"huj": self.parameters})
+            self.parameters.update({"location": "A-" + self.parameters["location"] + "-" + ("location" not in self.parameters)})
 
         old_response = self.get_sqlserver()
 
