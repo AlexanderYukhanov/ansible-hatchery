@@ -261,20 +261,8 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('database_type', None)
-            self.results.pop('sync_agent_id', None)
-            self.results.pop('sql_server_database_id', None)
-            self.results.pop('server_name', None)
-            self.results.pop('database_name', None)
-            self.results.pop('user_name', None)
-            self.results.pop('password', None)
-            self.results.pop('sync_direction', None)
-            self.results.pop('sync_state', None)
+            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncMembers instance deleted")

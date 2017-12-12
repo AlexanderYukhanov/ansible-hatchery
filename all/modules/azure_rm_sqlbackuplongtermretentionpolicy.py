@@ -195,13 +195,9 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('location', None)
-            self.results.pop('recovery_services_backup_policy_resource_id', None)
+            self.results["id"] = response["id"]
+            self.results["state"] = response["state"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("BackupLongTermRetentionPolicies instance deleted")

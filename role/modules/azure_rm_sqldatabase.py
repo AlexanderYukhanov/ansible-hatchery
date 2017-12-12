@@ -34,9 +34,6 @@ options:
         description:
             - The name of the database to be operated on (updated or created).
         required: True
-    tags:
-        description:
-            - Resource tags.
     location:
         description:
             - Resource location.
@@ -132,7 +129,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       server_name: server_name
       name: database_name
-      tags: tags
       location: location
       collation: collation
       create_mode: create_mode
@@ -203,10 +199,6 @@ class AzureRMDatabases(AzureRMModuleBase):
             name=dict(
                 type='str',
                 required=True
-            ),
-            tags=dict(
-                type='dict',
-                required=False
             ),
             location=dict(
                 type='str',
@@ -296,8 +288,6 @@ class AzureRMDatabases(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags" and kwargs[key] is not None:
-                self.parameters.update({"tags": kwargs[key]})
             elif key == "location" and kwargs[key] is not None:
                 self.parameters.update({"location": kwargs[key]})
             elif key == "collation" and kwargs[key] is not None:
@@ -369,38 +359,10 @@ class AzureRMDatabases(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('tags', None)
-            self.results.pop('location', None)
-            self.results.pop('kind', None)
-            self.results.pop('collation', None)
-            self.results.pop('creation_date', None)
-            self.results.pop('containment_state', None)
-            self.results.pop('current_service_objective_id', None)
-            self.results.pop('earliest_restore_date', None)
-            self.results.pop('create_mode', None)
-            self.results.pop('source_database_id', None)
-            self.results.pop('source_database_deletion_date', None)
-            self.results.pop('restore_point_in_time', None)
-            self.results.pop('recovery_services_recovery_point_resource_id', None)
-            self.results.pop('edition', None)
-            self.results.pop('max_size_bytes', None)
-            self.results.pop('requested_service_objective_id', None)
-            self.results.pop('requested_service_objective_name', None)
-            self.results.pop('service_level_objective', None)
-            self.results.pop('elastic_pool_name', None)
-            self.results.pop('default_secondary_location', None)
-            self.results.pop('service_tier_advisors', None)
-            self.results.pop('transparent_data_encryption', None)
-            self.results.pop('recommended_index', None)
-            self.results.pop('failover_group_id', None)
-            self.results.pop('read_scale', None)
-            self.results.pop('sample_name', None)
-            self.results.pop('zone_redundant', None)
+            self.results["id"] = response["id"]
+            self.results["database_id"] = response["database_id"]
+            self.results["status"] = response["status"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Database instance deleted")

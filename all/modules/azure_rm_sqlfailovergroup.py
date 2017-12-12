@@ -34,9 +34,6 @@ options:
         description:
             - The name of the failover group.
         required: True
-    tags:
-        description:
-            - Resource tags.
     read_write_endpoint:
         description:
             - Read-write endpoint of the failover group instance.
@@ -86,7 +83,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       server_name: server_name
       failover_group_name: failover_group_name
-      tags: tags
       read_write_endpoint:
         failover_policy: failover_policy
         failover_with_data_loss_grace_period_minutes: failover_with_data_loss_grace_period_minutes
@@ -140,10 +136,6 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            tags=dict(
-                type='dict',
-                required=False
-            ),
             read_write_endpoint=dict(
                 type='dict',
                 required=True
@@ -188,8 +180,6 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags" and kwargs[key] is not None:
-                self.parameters.update({"tags": kwargs[key]})
             elif key == "read_write_endpoint" and kwargs[key] is not None:
                 self.parameters.update({"read_write_endpoint": kwargs[key]})
             elif key == "read_only_endpoint" and kwargs[key] is not None:
@@ -236,19 +226,8 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('location', None)
-            self.results.pop('tags', None)
-            self.results.pop('read_write_endpoint', None)
-            self.results.pop('read_only_endpoint', None)
-            self.results.pop('replication_role', None)
-            self.results.pop('replication_state', None)
-            self.results.pop('partner_servers', None)
-            self.results.pop('databases', None)
+            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("FailoverGroups instance deleted")

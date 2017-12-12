@@ -187,12 +187,9 @@ class AzureRMDatabases(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('type', None)
-            self.results.pop('charset', None)
-            self.results.pop('collation', None)
+            self.results["id"] = response["id"]
+            self.results["name"] = response["name"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("PostgreSQL Database instance deleted")

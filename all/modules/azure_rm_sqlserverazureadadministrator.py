@@ -204,15 +204,8 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('administrator_type', None)
-            self.results.pop('login', None)
-            self.results.pop('sid', None)
-            self.results.pop('tenant_id', None)
+            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerAzureADAdministrators instance deleted")

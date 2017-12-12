@@ -180,16 +180,10 @@ class AzureRMSyncAgents(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('sync_agent_name', None)
-            self.results.pop('sync_database_id', None)
-            self.results.pop('last_alive_time', None)
-            self.results.pop('is_up_to_date', None)
-            self.results.pop('expiry_time', None)
+            self.results["id"] = response["id"]
+            self.results["state"] = response["state"]
+            self.results["version"] = response["version"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncAgents instance deleted")

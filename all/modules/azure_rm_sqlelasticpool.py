@@ -34,9 +34,6 @@ options:
         description:
             - The name of the elastic pool to be operated on (updated or created).
         required: True
-    tags:
-        description:
-            - Resource tags.
     location:
         description:
             - Resource location.
@@ -75,7 +72,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       server_name: server_name
       name: elastic_pool_name
-      tags: tags
       location: location
       edition: edition
       dtu: dtu
@@ -133,10 +129,6 @@ class AzureRMElasticPools(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            tags=dict(
-                type='dict',
-                required=False
-            ),
             location=dict(
                 type='str',
                 required=False
@@ -193,8 +185,6 @@ class AzureRMElasticPools(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags" and kwargs[key] is not None:
-                self.parameters.update({"tags": kwargs[key]})
             elif key == "location" and kwargs[key] is not None:
                 self.parameters.update({"location": kwargs[key]})
             elif key == "edition" and kwargs[key] is not None:
@@ -250,21 +240,9 @@ class AzureRMElasticPools(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('tags', None)
-            self.results.pop('location', None)
-            self.results.pop('creation_date', None)
-            self.results.pop('edition', None)
-            self.results.pop('dtu', None)
-            self.results.pop('database_dtu_max', None)
-            self.results.pop('database_dtu_min', None)
-            self.results.pop('storage_mb', None)
-            self.results.pop('zone_redundant', None)
-            self.results.pop('kind', None)
+            self.results["id"] = response["id"]
+            self.results["state"] = response["state"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ElasticPool instance deleted")

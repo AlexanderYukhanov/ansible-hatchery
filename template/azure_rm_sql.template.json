@@ -3188,22 +3188,6 @@
           "NoLog": false
         },
         {
-          "Name": "tags",
-          "NameAlt": "tags",
-          "Disposition": "parameters",
-          "Type": "dict",
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Resource tags.",
-          "DefaultValue": null,
-          "DefaultValueSample": "tags",
-          "DefaultValueTest": "",
-          "SubOptions": [],
-          "RequiredCount": 0,
-          "NoLog": false
-        },
-        {
           "Name": "location",
           "NameAlt": "location",
           "Disposition": "parameters",
@@ -4570,22 +4554,6 @@
           "NoLog": false
         },
         {
-          "Name": "tags",
-          "NameAlt": "tags",
-          "Disposition": "parameters",
-          "Type": "dict",
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Resource tags.",
-          "DefaultValue": null,
-          "DefaultValueSample": "tags",
-          "DefaultValueTest": "",
-          "SubOptions": [],
-          "RequiredCount": 0,
-          "NoLog": false
-        },
-        {
           "Name": "location",
           "NameAlt": "location",
           "Disposition": "parameters",
@@ -5911,22 +5879,6 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false
-        },
-        {
-          "Name": "tags",
-          "NameAlt": "tags",
-          "Disposition": "parameters",
-          "Type": "dict",
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Resource tags.",
-          "DefaultValue": null,
-          "DefaultValueSample": "",
-          "DefaultValueTest": "",
-          "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
         },
@@ -8048,22 +8000,6 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false
-        },
-        {
-          "Name": "tags",
-          "NameAlt": "tags",
-          "Disposition": "parameters",
-          "Type": "dict",
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Resource tags.",
-          "DefaultValue": null,
-          "DefaultValueSample": "tags",
-          "DefaultValueTest": "",
-          "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
         },

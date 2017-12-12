@@ -262,19 +262,8 @@ class AzureRMSyncGroups(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('interval', None)
-            self.results.pop('last_sync_time', None)
-            self.results.pop('conflict_resolution_policy', None)
-            self.results.pop('sync_database_id', None)
-            self.results.pop('hub_database_user_name', None)
-            self.results.pop('hub_database_password', None)
-            self.results.pop('sync_state', None)
-            self.results.pop('schema', None)
+            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncGroups instance deleted")

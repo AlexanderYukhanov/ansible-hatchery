@@ -185,14 +185,9 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('storage_type', None)
-            self.results.pop('kind', None)
-            self.results.pop('location', None)
+            self.results["id"] = response["id"]
+            self.results["state"] = response["state"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("GeoBackupPolicies instance deleted")

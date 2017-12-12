@@ -185,17 +185,8 @@ class AzureRMConfigurations(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('value', None)
-            self.results.pop('description', None)
-            self.results.pop('default_value', None)
-            self.results.pop('data_type', None)
-            self.results.pop('allowed_values', None)
-            self.results.pop('source', None)
+            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("Configurations instance deleted")

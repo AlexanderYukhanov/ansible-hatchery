@@ -169,14 +169,8 @@ class AzureRMServerConnectionPolicies(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('kind', None)
-            self.results.pop('location', None)
-            self.results.pop('connection_type', None)
+            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerConnectionPolicies instance deleted")

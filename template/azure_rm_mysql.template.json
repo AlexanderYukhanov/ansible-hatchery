@@ -277,22 +277,6 @@
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
-        },
-        {
-          "Name": "tags",
-          "NameAlt": "tags",
-          "Disposition": "parameters",
-          "Type": "dict",
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Application-specific metadata in the form of key-value pairs.",
-          "DefaultValue": null,
-          "DefaultValueSample": "tags",
-          "DefaultValueTest": "",
-          "SubOptions": [],
-          "RequiredCount": 0,
-          "NoLog": false
         }
       ],
       "Methods": [

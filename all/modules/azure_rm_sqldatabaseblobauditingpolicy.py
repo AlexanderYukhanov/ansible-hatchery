@@ -250,18 +250,9 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('kind', None)
-            self.results.pop('storage_endpoint', None)
-            self.results.pop('storage_account_access_key', None)
-            self.results.pop('retention_days', None)
-            self.results.pop('audit_actions_and_groups', None)
-            self.results.pop('storage_account_subscription_id', None)
-            self.results.pop('is_storage_secondary_key_in_use', None)
+            self.results["id"] = response["id"]
+            self.results["state"] = response["state"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DatabaseBlobAuditingPolicies instance deleted")

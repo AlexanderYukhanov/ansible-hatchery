@@ -297,25 +297,8 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('data_masking_rule_id', None)
-            self.results.pop('alias_name', None)
-            self.results.pop('rule_state', None)
-            self.results.pop('schema_name', None)
-            self.results.pop('table_name', None)
-            self.results.pop('column_name', None)
-            self.results.pop('masking_function', None)
-            self.results.pop('number_from', None)
-            self.results.pop('number_to', None)
-            self.results.pop('prefix_size', None)
-            self.results.pop('suffix_size', None)
-            self.results.pop('replacement_string', None)
-            self.results.pop('location', None)
-            self.results.pop('kind', None)
+            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DataMaskingRules instance deleted")

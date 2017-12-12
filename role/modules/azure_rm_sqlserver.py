@@ -30,9 +30,6 @@ options:
         description:
             - The name of the server.
         required: True
-    tags:
-        description:
-            - Resource tags.
     location:
         description:
             - Resource location.
@@ -125,10 +122,6 @@ class AzureRMServers(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            tags=dict(
-                type='dict',
-                required=False
-            ),
             location=dict(
                 type='str',
                 required=False
@@ -177,8 +170,6 @@ class AzureRMServers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags" and kwargs[key] is not None:
-                self.parameters.update({"tags": kwargs[key]})
             elif key == "location" and kwargs[key] is not None:
                 self.parameters.update({"location": kwargs[key]})
             elif key == "admin_username" and kwargs[key] is not None:
@@ -231,16 +222,11 @@ class AzureRMServers(AzureRMModuleBase):
             else:
                 self.results['changed'] = old_response.__ne__(response)
 
-            self.results.update(response)
-
             # remove unnecessary fields from return state
-            self.results.pop('name', None)
-            self.results.pop('type', None)
-            self.results.pop('tags', None)
-            self.results.pop('location', None)
-            self.results.pop('identity', None)
-            self.results.pop('kind', None)
-            self.results.pop('administrator_login', None)
+            self.results["id"] = response["id"]
+            self.results["version"] = response["version"]
+            self.results["state"] = response["state"]
+            self.results["fully_qualified_domain_name"] = response["fully_qualified_domain_name"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Server instance deleted")
