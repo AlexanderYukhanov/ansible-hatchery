@@ -199,7 +199,7 @@ class AzureRMServers(AzureRMModuleBase):
         resource_group = self.get_resource_group(self.resource_group)
 
         if self.parameters["location"] is None:
-            self.parameters.location = resource_group.location
+            self.parameters["location"] = resource_group.location
 
         old_response = self.get_sqlserver()
 
