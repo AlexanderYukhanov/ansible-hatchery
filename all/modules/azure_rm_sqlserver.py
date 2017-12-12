@@ -198,12 +198,12 @@ class AzureRMServers(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        if "location" not in self.parameters:
+        if self.parameters["location"] is None:
             self.parameters.update({"location": "KUKAN"})
             self.parameters.location = "MUKAN"
             self.parameters.location = resource_group.location
         else:
-            self.parameters.update({"location": "A-" + self.parameters["location"] + "-" + ("location" not in self.parameters)})
+            self.parameters.update({"location": "GRRR")})
 
         old_response = self.get_sqlserver()
 
