@@ -30,9 +30,6 @@ options:
         description:
             - The ID of the role definition.
         required: True
-    properties:
-        description:
-            - Role definition properties.
     properties_role_name:
         description:
             - The role name.
@@ -70,7 +67,6 @@ EXAMPLES = '''
     azure_rm_authorizationroledefinition:
       scope: scope
       role_definition_id: role_definition_id
-      properties: properties
       properties_role_name: role_name
       properties_description: description
       properties_type: type
@@ -120,10 +116,6 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
             role_definition_id=dict(
                 type='str',
                 required=True
-            ),
-            properties=dict(
-                type='dict',
-                required=False
             ),
             properties_role_name=dict(
                 type='str',

@@ -5949,7 +5949,7 @@
         {
           "Name": "identity",
           "NameAlt": "identity",
-          "Disposition": "parameters",
+          "Disposition": "parameters:dictionary",
           "Type": "dict",
           "IsList": false,
           "Required": "False",
@@ -5958,24 +5958,7 @@
           "DefaultValue": null,
           "DefaultValueSample": "",
           "DefaultValueTest": "",
-          "SubOptions": [
-            {
-              "Name": "type",
-              "NameAlt": "type",
-              "Disposition": "default",
-              "Type": "str",
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource. Possible values include: 'SystemAssigned'",
-              "DefaultValue": null,
-              "DefaultValueSample": "",
-              "DefaultValueTest": "",
-              "SubOptions": [],
-              "RequiredCount": 0,
-              "NoLog": false
-            }
-          ],
+          "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
         },
@@ -6020,6 +6003,22 @@
           "Required": "False",
           "VariableValue": "None",
           "Documentation": "The version of the server.",
+          "DefaultValue": null,
+          "DefaultValueSample": "",
+          "DefaultValueTest": "",
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false
+        },
+        {
+          "Name": "type",
+          "NameAlt": "identity",
+          "Disposition": "parameters:identity",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource. Possible values include: 'SystemAssigned'",
           "DefaultValue": null,
           "DefaultValueSample": "",
           "DefaultValueTest": "",
