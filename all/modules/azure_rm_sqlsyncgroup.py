@@ -197,7 +197,7 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         self.sync_group_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -213,17 +213,17 @@ class AzureRMSyncGroups(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "interval":
-                self.parameters["interval"] = kwargs[key]
+                self.parameters.update({"interval": kwargs[key]})
             elif key == "conflict_resolution_policy":
-                self.parameters["conflict_resolution_policy"] = kwargs[key]
+                self.parameters.update({"conflict_resolution_policy": kwargs[key]})
             elif key == "sync_database_id":
-                self.parameters["sync_database_id"] = kwargs[key]
+                self.parameters.update({"sync_database_id": kwargs[key]})
             elif key == "hub_database_user_name":
-                self.parameters["hub_database_user_name"] = kwargs[key]
+                self.parameters.update({"hub_database_user_name": kwargs[key]})
             elif key == "hub_database_password":
-                self.parameters["hub_database_password"] = kwargs[key]
+                self.parameters.update({"hub_database_password": kwargs[key]})
             elif key == "schema":
-                self.parameters["schema"] = kwargs[key]
+                self.parameters.update({"schema": kwargs[key]})
 
         old_response = None
         results = dict()

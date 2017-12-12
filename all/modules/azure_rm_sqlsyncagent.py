@@ -127,7 +127,7 @@ class AzureRMSyncAgents(AzureRMModuleBase):
         self.sync_agent_name = None
         self.sync_database_id = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

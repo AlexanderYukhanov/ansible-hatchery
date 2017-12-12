@@ -131,7 +131,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
         self.transparent_data_encryption_name = None
         self.status = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

@@ -222,7 +222,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
         self.data_masking_rule_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -238,27 +238,27 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "alias_name":
-                self.parameters["alias_name"] = kwargs[key]
+                self.parameters.update({"alias_name": kwargs[key]})
             elif key == "rule_state":
-                self.parameters["rule_state"] = kwargs[key]
+                self.parameters.update({"rule_state": kwargs[key]})
             elif key == "schema_name":
-                self.parameters["schema_name"] = kwargs[key]
+                self.parameters.update({"schema_name": kwargs[key]})
             elif key == "table_name":
-                self.parameters["table_name"] = kwargs[key]
+                self.parameters.update({"table_name": kwargs[key]})
             elif key == "column_name":
-                self.parameters["column_name"] = kwargs[key]
+                self.parameters.update({"column_name": kwargs[key]})
             elif key == "masking_function":
-                self.parameters["masking_function"] = kwargs[key]
+                self.parameters.update({"masking_function": kwargs[key]})
             elif key == "number_from":
-                self.parameters["number_from"] = kwargs[key]
+                self.parameters.update({"number_from": kwargs[key]})
             elif key == "number_to":
-                self.parameters["number_to"] = kwargs[key]
+                self.parameters.update({"number_to": kwargs[key]})
             elif key == "prefix_size":
-                self.parameters["prefix_size"] = kwargs[key]
+                self.parameters.update({"prefix_size": kwargs[key]})
             elif key == "suffix_size":
-                self.parameters["suffix_size"] = kwargs[key]
+                self.parameters.update({"suffix_size": kwargs[key]})
             elif key == "replacement_string":
-                self.parameters["replacement_string"] = kwargs[key]
+                self.parameters.update({"replacement_string": kwargs[key]})
 
         old_response = None
         results = dict()

@@ -116,7 +116,7 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
         self.backup_long_term_retention_vault_name = None
         self.recovery_services_vault_resource_id = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

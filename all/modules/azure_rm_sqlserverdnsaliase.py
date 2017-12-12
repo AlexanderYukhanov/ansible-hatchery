@@ -106,7 +106,7 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
         self.server_name = None
         self.dns_alias_name = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

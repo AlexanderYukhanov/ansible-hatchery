@@ -143,7 +143,7 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
         self.administrator_name = None
         self.properties = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -159,13 +159,13 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "administrator_type":
-                self.properties["administrator_type"] = kwargs[key]
+                self.properties.update({"administrator_type": kwargs[key]})
             elif key == "login":
-                self.properties["login"] = kwargs[key]
+                self.properties.update({"login": kwargs[key]})
             elif key == "sid":
-                self.properties["sid"] = kwargs[key]
+                self.properties.update({"sid": kwargs[key]})
             elif key == "tenant_id":
-                self.properties["tenant_id"] = kwargs[key]
+                self.properties.update({"tenant_id": kwargs[key]})
 
         old_response = None
         results = dict()

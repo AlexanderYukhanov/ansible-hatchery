@@ -125,7 +125,7 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         self.role_assignment_name = None
         self.properties = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

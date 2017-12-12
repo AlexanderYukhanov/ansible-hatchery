@@ -116,7 +116,7 @@ class AzureRMServerConnectionPolicies(AzureRMModuleBase):
         self.connection_policy_name = None
         self.connection_type = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

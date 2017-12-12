@@ -132,7 +132,7 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
         self.encryption_protector_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -148,11 +148,11 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "kind":
-                self.parameters["kind"] = kwargs[key]
+                self.parameters.update({"kind": kwargs[key]})
             elif key == "server_key_name":
-                self.parameters["server_key_name"] = kwargs[key]
+                self.parameters.update({"server_key_name": kwargs[key]})
             elif key == "server_key_type":
-                self.parameters["server_key_type"] = kwargs[key]
+                self.parameters.update({"server_key_type": kwargs[key]})
 
         old_response = None
         results = dict()

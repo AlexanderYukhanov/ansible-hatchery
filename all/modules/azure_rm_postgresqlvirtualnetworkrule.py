@@ -130,7 +130,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.virtual_network_rule_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -146,9 +146,9 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "virtual_network_subnet_id":
-                self.parameters["virtual_network_subnet_id"] = kwargs[key]
+                self.parameters.update({"virtual_network_subnet_id": kwargs[key]})
             elif key == "ignore_missing_vnet_service_endpoint":
-                self.parameters["ignore_missing_vnet_service_endpoint"] = kwargs[key]
+                self.parameters.update({"ignore_missing_vnet_service_endpoint": kwargs[key]})
 
         old_response = None
         results = dict()

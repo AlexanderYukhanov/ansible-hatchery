@@ -200,7 +200,7 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
         self.security_alert_policy_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -216,23 +216,23 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "location":
-                self.parameters["location"] = kwargs[key]
+                self.parameters.update({"location": kwargs[key]})
             elif key == "state":
-                self.parameters["state"] = kwargs[key]
+                self.parameters.update({"state": kwargs[key]})
             elif key == "disabled_alerts":
-                self.parameters["disabled_alerts"] = kwargs[key]
+                self.parameters.update({"disabled_alerts": kwargs[key]})
             elif key == "email_addresses":
-                self.parameters["email_addresses"] = kwargs[key]
+                self.parameters.update({"email_addresses": kwargs[key]})
             elif key == "email_account_admins":
-                self.parameters["email_account_admins"] = kwargs[key]
+                self.parameters.update({"email_account_admins": kwargs[key]})
             elif key == "storage_endpoint":
-                self.parameters["storage_endpoint"] = kwargs[key]
+                self.parameters.update({"storage_endpoint": kwargs[key]})
             elif key == "storage_account_access_key":
-                self.parameters["storage_account_access_key"] = kwargs[key]
+                self.parameters.update({"storage_account_access_key": kwargs[key]})
             elif key == "retention_days":
-                self.parameters["retention_days"] = kwargs[key]
+                self.parameters.update({"retention_days": kwargs[key]})
             elif key == "use_server_default":
-                self.parameters["use_server_default"] = kwargs[key]
+                self.parameters.update({"use_server_default": kwargs[key]})
 
         old_response = None
         results = dict()

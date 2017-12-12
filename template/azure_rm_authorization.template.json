@@ -399,7 +399,7 @@
       "ModuleOperationNameUpper": "RoleAssignments",
       "ModuleOperationName": "role_assignments",
       "ObjectName": "RoleAssignments",
-      "ReleaseStatus": "RP",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,

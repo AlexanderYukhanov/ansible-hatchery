@@ -125,7 +125,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.firewall_rule_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -141,9 +141,9 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "start_ip_address":
-                self.parameters["start_ip_address"] = kwargs[key]
+                self.parameters.update({"start_ip_address": kwargs[key]})
             elif key == "end_ip_address":
-                self.parameters["end_ip_address"] = kwargs[key]
+                self.parameters.update({"end_ip_address": kwargs[key]})
 
         old_response = None
         results = dict()

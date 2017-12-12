@@ -123,7 +123,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
         self.configuration_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -139,9 +139,9 @@ class AzureRMConfigurations(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "value":
-                self.parameters["value"] = kwargs[key]
+                self.parameters.update({"value": kwargs[key]})
             elif key == "source":
-                self.parameters["source"] = kwargs[key]
+                self.parameters.update({"source": kwargs[key]})
 
         old_response = None
         results = dict()

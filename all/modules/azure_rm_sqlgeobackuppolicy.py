@@ -132,7 +132,7 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
         self.geo_backup_policy_name = None
         self.state = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

@@ -150,7 +150,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
         self.key_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -166,15 +166,15 @@ class AzureRMServerKeys(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "kind":
-                self.parameters["kind"] = kwargs[key]
+                self.parameters.update({"kind": kwargs[key]})
             elif key == "server_key_type":
-                self.parameters["server_key_type"] = kwargs[key]
+                self.parameters.update({"server_key_type": kwargs[key]})
             elif key == "uri":
-                self.parameters["uri"] = kwargs[key]
+                self.parameters.update({"uri": kwargs[key]})
             elif key == "thumbprint":
-                self.parameters["thumbprint"] = kwargs[key]
+                self.parameters.update({"thumbprint": kwargs[key]})
             elif key == "creation_date":
-                self.parameters["creation_date"] = kwargs[key]
+                self.parameters.update({"creation_date": kwargs[key]})
 
         old_response = None
         results = dict()

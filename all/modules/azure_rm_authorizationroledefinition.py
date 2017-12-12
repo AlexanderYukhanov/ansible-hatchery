@@ -148,9 +148,8 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         self.scope = None
         self.role_definition_id = None
         self.role_definition = dict()
-        self.role_definition['properties'] = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -166,15 +165,15 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "properties_role_name":
-                self.role_definition['properties']["role_name"] = kwargs[key]
+                self.role_definition.update({"properties": {"role_name": kwargs[key]}})
             elif key == "properties_description":
-                self.role_definition['properties']["description"] = kwargs[key]
+                self.role_definition.update({"properties": {"description": kwargs[key]}})
             elif key == "properties_type":
-                self.role_definition['properties']["type"] = kwargs[key]
+                self.role_definition.update({"properties": {"type": kwargs[key]}})
             elif key == "properties_permissions":
-                self.role_definition['properties']["permissions"] = kwargs[key]
+                self.role_definition.update({"properties": {"permissions": kwargs[key]}})
             elif key == "properties_assignable_scopes":
-                self.role_definition['properties']["assignable_scopes"] = kwargs[key]
+                self.role_definition.update({"properties": {"assignable_scopes": kwargs[key]}})
 
         old_response = None
         results = dict()

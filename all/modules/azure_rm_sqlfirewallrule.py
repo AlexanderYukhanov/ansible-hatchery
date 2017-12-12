@@ -127,7 +127,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.start_ip_address = None
         self.end_ip_address = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

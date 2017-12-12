@@ -173,7 +173,7 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
         self.failover_group_name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -189,15 +189,15 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "tags":
-                self.parameters["tags"] = kwargs[key]
+                self.parameters.update({"tags": kwargs[key]})
             elif key == "read_write_endpoint":
-                self.parameters["read_write_endpoint"] = kwargs[key]
+                self.parameters.update({"read_write_endpoint": kwargs[key]})
             elif key == "read_only_endpoint":
-                self.parameters["read_only_endpoint"] = kwargs[key]
+                self.parameters.update({"read_only_endpoint": kwargs[key]})
             elif key == "partner_servers":
-                self.parameters["partner_servers"] = kwargs[key]
+                self.parameters.update({"partner_servers": kwargs[key]})
             elif key == "databases":
-                self.parameters["databases"] = kwargs[key]
+                self.parameters.update({"databases": kwargs[key]})
 
         old_response = None
         results = dict()

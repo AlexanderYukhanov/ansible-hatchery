@@ -142,7 +142,7 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
         self.state = None
         self.recovery_services_backup_policy_resource_id = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

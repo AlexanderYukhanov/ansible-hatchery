@@ -136,7 +136,7 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
         self.data_masking_state = None
         self.exempt_principals = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction

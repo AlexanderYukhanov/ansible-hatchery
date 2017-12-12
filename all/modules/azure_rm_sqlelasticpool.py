@@ -178,7 +178,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
         self.name = None
         self.parameters = dict()
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
@@ -194,21 +194,21 @@ class AzureRMElasticPools(AzureRMModuleBase):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
             elif key == "tags":
-                self.parameters["tags"] = kwargs[key]
+                self.parameters.update({"tags": kwargs[key]})
             elif key == "location":
-                self.parameters["location"] = kwargs[key]
+                self.parameters.update({"location": kwargs[key]})
             elif key == "edition":
-                self.parameters["edition"] = kwargs[key]
+                self.parameters.update({"edition": kwargs[key]})
             elif key == "dtu":
-                self.parameters["dtu"] = kwargs[key]
+                self.parameters.update({"dtu": kwargs[key]})
             elif key == "database_dtu_max":
-                self.parameters["database_dtu_max"] = kwargs[key]
+                self.parameters.update({"database_dtu_max": kwargs[key]})
             elif key == "database_dtu_min":
-                self.parameters["database_dtu_min"] = kwargs[key]
+                self.parameters.update({"database_dtu_min": kwargs[key]})
             elif key == "storage_mb":
-                self.parameters["storage_mb"] = kwargs[key]
+                self.parameters.update({"storage_mb": kwargs[key]})
             elif key == "zone_redundant":
-                self.parameters["zone_redundant"] = kwargs[key]
+                self.parameters.update({"zone_redundant": kwargs[key]})
 
         old_response = None
         results = dict()

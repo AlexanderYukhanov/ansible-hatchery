@@ -131,7 +131,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.virtual_network_subnet_id = None
         self.ignore_missing_vnet_service_endpoint = None
 
-        self.results = dict(changed=False, state=dict())
+        self.results = dict(changed=False)
         self.mgmt_client = None
         self.state = None
         self.to_do = Actions.NoAction
