@@ -2,6 +2,7 @@
 rmdir /S /Q c:\dev\ansible-hatchery\prs
 rmdir /S /Q c:\dev\ansible-hatchery\role
 rmdir /S /Q c:\dev\ansible-hatchery\all
+rmdir /S /Q c:\dev\ansible-hatchery\template
 
 
 cd c:\dev\azure-rest-api-specs\specification\sql\resource-manager

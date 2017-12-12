@@ -164,16 +164,17 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "properties_role_name" and kwargs[key] is not None:
-                self.role_definition.update({"properties": {"role_name": kwargs[key]}})
-            elif key == "properties_description" and kwargs[key] is not None:
-                self.role_definition.update({"properties": {"description": kwargs[key]}})
-            elif key == "properties_type" and kwargs[key] is not None:
-                self.role_definition.update({"properties": {"type": kwargs[key]}})
-            elif key == "properties_permissions" and kwargs[key] is not None:
-                self.role_definition.update({"properties": {"permissions": kwargs[key]}})
-            elif key == "properties_assignable_scopes" and kwargs[key] is not None:
-                self.role_definition.update({"properties": {"assignable_scopes": kwargs[key]}})
+            elif kwargs[key] is not None:
+                if key == "properties_role_name":
+                    self.role_definition.update({"properties": {"role_name": kwargs[key]}})
+                elif key == "properties_description":
+                    self.role_definition.update({"properties": {"description": kwargs[key]}})
+                elif key == "properties_type":
+                    self.role_definition.update({"properties": {"type": kwargs[key]}})
+                elif key == "properties_permissions":
+                    self.role_definition.update({"properties": {"permissions": kwargs[key]}})
+                elif key == "properties_assignable_scopes":
+                    self.role_definition.update({"properties": {"assignable_scopes": kwargs[key]}})
 
         old_response = None
         results = dict()
@@ -209,18 +210,21 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("RoleDefinitions instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_roledefinitions()
             self.results['changed'] = True
         else:
             self.log("RoleDefinitions instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

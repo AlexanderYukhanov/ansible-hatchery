@@ -237,28 +237,29 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "alias_name" and kwargs[key] is not None:
-                self.parameters.update({"alias_name": kwargs[key]})
-            elif key == "rule_state" and kwargs[key] is not None:
-                self.parameters.update({"rule_state": kwargs[key]})
-            elif key == "schema_name" and kwargs[key] is not None:
-                self.parameters.update({"schema_name": kwargs[key]})
-            elif key == "table_name" and kwargs[key] is not None:
-                self.parameters.update({"table_name": kwargs[key]})
-            elif key == "column_name" and kwargs[key] is not None:
-                self.parameters.update({"column_name": kwargs[key]})
-            elif key == "masking_function" and kwargs[key] is not None:
-                self.parameters.update({"masking_function": kwargs[key]})
-            elif key == "number_from" and kwargs[key] is not None:
-                self.parameters.update({"number_from": kwargs[key]})
-            elif key == "number_to" and kwargs[key] is not None:
-                self.parameters.update({"number_to": kwargs[key]})
-            elif key == "prefix_size" and kwargs[key] is not None:
-                self.parameters.update({"prefix_size": kwargs[key]})
-            elif key == "suffix_size" and kwargs[key] is not None:
-                self.parameters.update({"suffix_size": kwargs[key]})
-            elif key == "replacement_string" and kwargs[key] is not None:
-                self.parameters.update({"replacement_string": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "alias_name":
+                    self.parameters.update({"alias_name": kwargs[key]})
+                elif key == "rule_state":
+                    self.parameters.update({"rule_state": kwargs[key]})
+                elif key == "schema_name":
+                    self.parameters.update({"schema_name": kwargs[key]})
+                elif key == "table_name":
+                    self.parameters.update({"table_name": kwargs[key]})
+                elif key == "column_name":
+                    self.parameters.update({"column_name": kwargs[key]})
+                elif key == "masking_function":
+                    self.parameters.update({"masking_function": kwargs[key]})
+                elif key == "number_from":
+                    self.parameters.update({"number_from": kwargs[key]})
+                elif key == "number_to":
+                    self.parameters.update({"number_to": kwargs[key]})
+                elif key == "prefix_size":
+                    self.parameters.update({"prefix_size": kwargs[key]})
+                elif key == "suffix_size":
+                    self.parameters.update({"suffix_size": kwargs[key]})
+                elif key == "replacement_string":
+                    self.parameters.update({"replacement_string": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -296,18 +297,21 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DataMaskingRules instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_datamaskingrules()
             self.results['changed'] = True
         else:
             self.log("DataMaskingRules instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

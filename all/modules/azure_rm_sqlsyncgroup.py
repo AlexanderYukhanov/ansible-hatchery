@@ -212,18 +212,19 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "interval" and kwargs[key] is not None:
-                self.parameters.update({"interval": kwargs[key]})
-            elif key == "conflict_resolution_policy" and kwargs[key] is not None:
-                self.parameters.update({"conflict_resolution_policy": kwargs[key]})
-            elif key == "sync_database_id" and kwargs[key] is not None:
-                self.parameters.update({"sync_database_id": kwargs[key]})
-            elif key == "hub_database_user_name" and kwargs[key] is not None:
-                self.parameters.update({"hub_database_user_name": kwargs[key]})
-            elif key == "hub_database_password" and kwargs[key] is not None:
-                self.parameters.update({"hub_database_password": kwargs[key]})
-            elif key == "schema" and kwargs[key] is not None:
-                self.parameters.update({"schema": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "interval":
+                    self.parameters.update({"interval": kwargs[key]})
+                elif key == "conflict_resolution_policy":
+                    self.parameters.update({"conflict_resolution_policy": kwargs[key]})
+                elif key == "sync_database_id":
+                    self.parameters.update({"sync_database_id": kwargs[key]})
+                elif key == "hub_database_user_name":
+                    self.parameters.update({"hub_database_user_name": kwargs[key]})
+                elif key == "hub_database_password":
+                    self.parameters.update({"hub_database_password": kwargs[key]})
+                elif key == "schema":
+                    self.parameters.update({"schema": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -261,18 +262,21 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncGroups instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_syncgroups()
             self.results['changed'] = True
         else:
             self.log("SyncGroups instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

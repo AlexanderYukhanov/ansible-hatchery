@@ -158,14 +158,15 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "administrator_type" and kwargs[key] is not None:
-                self.properties.update({"administrator_type": kwargs[key]})
-            elif key == "login" and kwargs[key] is not None:
-                self.properties.update({"login": kwargs[key]})
-            elif key == "sid" and kwargs[key] is not None:
-                self.properties.update({"sid": kwargs[key]})
-            elif key == "tenant_id" and kwargs[key] is not None:
-                self.properties.update({"tenant_id": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "administrator_type":
+                    self.properties.update({"administrator_type": kwargs[key]})
+                elif key == "login":
+                    self.properties.update({"login": kwargs[key]})
+                elif key == "sid":
+                    self.properties.update({"sid": kwargs[key]})
+                elif key == "tenant_id":
+                    self.properties.update({"tenant_id": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -203,18 +204,21 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerAzureADAdministrators instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_serverazureadadministrators()
             self.results['changed'] = True
         else:
             self.log("ServerAzureADAdministrators instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

@@ -180,14 +180,15 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "read_write_endpoint" and kwargs[key] is not None:
-                self.parameters.update({"read_write_endpoint": kwargs[key]})
-            elif key == "read_only_endpoint" and kwargs[key] is not None:
-                self.parameters.update({"read_only_endpoint": kwargs[key]})
-            elif key == "partner_servers" and kwargs[key] is not None:
-                self.parameters.update({"partner_servers": kwargs[key]})
-            elif key == "databases" and kwargs[key] is not None:
-                self.parameters.update({"databases": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "read_write_endpoint":
+                    self.parameters.update({"read_write_endpoint": kwargs[key]})
+                elif key == "read_only_endpoint":
+                    self.parameters.update({"read_only_endpoint": kwargs[key]})
+                elif key == "partner_servers":
+                    self.parameters.update({"partner_servers": kwargs[key]})
+                elif key == "databases":
+                    self.parameters.update({"databases": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -225,18 +226,21 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("FailoverGroups instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_failovergroups()
             self.results['changed'] = True
         else:
             self.log("FailoverGroups instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

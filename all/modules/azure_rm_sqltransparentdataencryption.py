@@ -146,6 +146,7 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
+            elif kwargs[key] is not None:
 
         old_response = None
         results = dict()
@@ -183,19 +184,22 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
-            self.results["status"] = response["status"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("TransparentDataEncryptions instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_transparentdataencryptions()
             self.results['changed'] = True
         else:
             self.log("TransparentDataEncryptions instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
+        self.results["status"] = response["status"]
 
         return self.results
 

@@ -165,16 +165,17 @@ class AzureRMServerKeys(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "kind" and kwargs[key] is not None:
-                self.parameters.update({"kind": kwargs[key]})
-            elif key == "server_key_type" and kwargs[key] is not None:
-                self.parameters.update({"server_key_type": kwargs[key]})
-            elif key == "uri" and kwargs[key] is not None:
-                self.parameters.update({"uri": kwargs[key]})
-            elif key == "thumbprint" and kwargs[key] is not None:
-                self.parameters.update({"thumbprint": kwargs[key]})
-            elif key == "creation_date" and kwargs[key] is not None:
-                self.parameters.update({"creation_date": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "kind":
+                    self.parameters.update({"kind": kwargs[key]})
+                elif key == "server_key_type":
+                    self.parameters.update({"server_key_type": kwargs[key]})
+                elif key == "uri":
+                    self.parameters.update({"uri": kwargs[key]})
+                elif key == "thumbprint":
+                    self.parameters.update({"thumbprint": kwargs[key]})
+                elif key == "creation_date":
+                    self.parameters.update({"creation_date": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -212,18 +213,21 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerKeys instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_serverkeys()
             self.results['changed'] = True
         else:
             self.log("ServerKeys instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

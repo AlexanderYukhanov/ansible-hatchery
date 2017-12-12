@@ -203,12 +203,13 @@ class AzureRMServers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "sku" and kwargs[key] is not None:
-                self.parameters.update({"sku": kwargs[key]})
-            elif key == "properties" and kwargs[key] is not None:
-                self.parameters.update({"properties": kwargs[key]})
-            elif key == "location" and kwargs[key] is not None:
-                self.parameters.update({"location": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "sku":
+                    self.parameters.update({"sku": kwargs[key]})
+                elif key == "properties":
+                    self.parameters.update({"properties": kwargs[key]})
+                elif key == "location":
+                    self.parameters.update({"location": kwargs[key]})
 
         self.adjust_parameters()
 
@@ -251,21 +252,24 @@ class AzureRMServers(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
-            self.results["version"] = response["version"]
-            self.results["user_visible_state"] = response["user_visible_state"]
-            self.results["fully_qualified_domain_name"] = response["fully_qualified_domain_name"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("PostgreSQL Server instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_postgresqlserver()
             self.results['changed'] = True
         else:
             self.log("PostgreSQL Server instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
+        self.results["version"] = response["version"]
+        self.results["user_visible_state"] = response["user_visible_state"]
+        self.results["fully_qualified_domain_name"] = response["fully_qualified_domain_name"]
 
         return self.results
 

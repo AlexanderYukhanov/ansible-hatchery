@@ -140,10 +140,11 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "start_ip_address" and kwargs[key] is not None:
-                self.parameters.update({"start_ip_address": kwargs[key]})
-            elif key == "end_ip_address" and kwargs[key] is not None:
-                self.parameters.update({"end_ip_address": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "start_ip_address":
+                    self.parameters.update({"start_ip_address": kwargs[key]})
+                elif key == "end_ip_address":
+                    self.parameters.update({"end_ip_address": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -181,18 +182,21 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("FirewallRules instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_firewallrules()
             self.results['changed'] = True
         else:
             self.log("FirewallRules instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

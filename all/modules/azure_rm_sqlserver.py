@@ -170,16 +170,17 @@ class AzureRMServers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "location" and kwargs[key] is not None:
-                self.parameters.update({"location": kwargs[key]})
-            elif key == "admin_username" and kwargs[key] is not None:
-                self.parameters.update({"administrator_login": kwargs[key]})
-            elif key == "admin_password" and kwargs[key] is not None:
-                self.parameters.update({"administrator_login_password": kwargs[key]})
-            elif key == "version" and kwargs[key] is not None:
-                self.parameters.update({"version": kwargs[key]})
-            elif key == "identity" and kwargs[key] is not None:
-                self.parameters.update({"identity": {"type": kwargs[key]}})
+            elif kwargs[key] is not None:
+                if key == "location":
+                    self.parameters.update({"location": kwargs[key]})
+                elif key == "admin_username":
+                    self.parameters.update({"administrator_login": kwargs[key]})
+                elif key == "admin_password":
+                    self.parameters.update({"administrator_login_password": kwargs[key]})
+                elif key == "version":
+                    self.parameters.update({"version": kwargs[key]})
+                elif key == "identity":
+                    self.parameters.update({"identity": {"type": kwargs[key]}})
 
         old_response = None
         results = dict()
@@ -221,21 +222,24 @@ class AzureRMServers(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
-            self.results["version"] = response["version"]
-            self.results["state"] = response["state"]
-            self.results["fully_qualified_domain_name"] = response["fully_qualified_domain_name"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Server instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_sqlserver()
             self.results['changed'] = True
         else:
             self.log("SQL Server instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
+        self.results["version"] = response["version"]
+        self.results["state"] = response["state"]
+        self.results["fully_qualified_domain_name"] = response["fully_qualified_domain_name"]
 
         return self.results
 

@@ -215,24 +215,25 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "location" and kwargs[key] is not None:
-                self.parameters.update({"location": kwargs[key]})
-            elif key == "state" and kwargs[key] is not None:
-                self.parameters.update({"state": kwargs[key]})
-            elif key == "disabled_alerts" and kwargs[key] is not None:
-                self.parameters.update({"disabled_alerts": kwargs[key]})
-            elif key == "email_addresses" and kwargs[key] is not None:
-                self.parameters.update({"email_addresses": kwargs[key]})
-            elif key == "email_account_admins" and kwargs[key] is not None:
-                self.parameters.update({"email_account_admins": kwargs[key]})
-            elif key == "storage_endpoint" and kwargs[key] is not None:
-                self.parameters.update({"storage_endpoint": kwargs[key]})
-            elif key == "storage_account_access_key" and kwargs[key] is not None:
-                self.parameters.update({"storage_account_access_key": kwargs[key]})
-            elif key == "retention_days" and kwargs[key] is not None:
-                self.parameters.update({"retention_days": kwargs[key]})
-            elif key == "use_server_default" and kwargs[key] is not None:
-                self.parameters.update({"use_server_default": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "location":
+                    self.parameters.update({"location": kwargs[key]})
+                elif key == "state":
+                    self.parameters.update({"state": kwargs[key]})
+                elif key == "disabled_alerts":
+                    self.parameters.update({"disabled_alerts": kwargs[key]})
+                elif key == "email_addresses":
+                    self.parameters.update({"email_addresses": kwargs[key]})
+                elif key == "email_account_admins":
+                    self.parameters.update({"email_account_admins": kwargs[key]})
+                elif key == "storage_endpoint":
+                    self.parameters.update({"storage_endpoint": kwargs[key]})
+                elif key == "storage_account_access_key":
+                    self.parameters.update({"storage_account_access_key": kwargs[key]})
+                elif key == "retention_days":
+                    self.parameters.update({"retention_days": kwargs[key]})
+                elif key == "use_server_default":
+                    self.parameters.update({"use_server_default": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -273,19 +274,22 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
-            self.results["state"] = response["state"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DatabaseThreatDetectionPolicies instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_databasethreatdetectionpolicies()
             self.results['changed'] = True
         else:
             self.log("DatabaseThreatDetectionPolicies instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
+        self.results["state"] = response["state"]
 
         return self.results
 

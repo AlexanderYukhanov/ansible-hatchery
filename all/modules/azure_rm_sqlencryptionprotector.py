@@ -147,12 +147,13 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "kind" and kwargs[key] is not None:
-                self.parameters.update({"kind": kwargs[key]})
-            elif key == "server_key_name" and kwargs[key] is not None:
-                self.parameters.update({"server_key_name": kwargs[key]})
-            elif key == "server_key_type" and kwargs[key] is not None:
-                self.parameters.update({"server_key_type": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "kind":
+                    self.parameters.update({"kind": kwargs[key]})
+                elif key == "server_key_name":
+                    self.parameters.update({"server_key_name": kwargs[key]})
+                elif key == "server_key_type":
+                    self.parameters.update({"server_key_type": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -190,18 +191,21 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("EncryptionProtectors instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_encryptionprotectors()
             self.results['changed'] = True
         else:
             self.log("EncryptionProtectors instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 

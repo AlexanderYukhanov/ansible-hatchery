@@ -185,20 +185,21 @@ class AzureRMElasticPools(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "location" and kwargs[key] is not None:
-                self.parameters.update({"location": kwargs[key]})
-            elif key == "edition" and kwargs[key] is not None:
-                self.parameters.update({"edition": kwargs[key]})
-            elif key == "dtu" and kwargs[key] is not None:
-                self.parameters.update({"dtu": kwargs[key]})
-            elif key == "database_dtu_max" and kwargs[key] is not None:
-                self.parameters.update({"database_dtu_max": kwargs[key]})
-            elif key == "database_dtu_min" and kwargs[key] is not None:
-                self.parameters.update({"database_dtu_min": kwargs[key]})
-            elif key == "storage_mb" and kwargs[key] is not None:
-                self.parameters.update({"storage_mb": kwargs[key]})
-            elif key == "zone_redundant" and kwargs[key] is not None:
-                self.parameters.update({"zone_redundant": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "location":
+                    self.parameters.update({"location": kwargs[key]})
+                elif key == "edition":
+                    self.parameters.update({"edition": kwargs[key]})
+                elif key == "dtu":
+                    self.parameters.update({"dtu": kwargs[key]})
+                elif key == "database_dtu_max":
+                    self.parameters.update({"database_dtu_max": kwargs[key]})
+                elif key == "database_dtu_min":
+                    self.parameters.update({"database_dtu_min": kwargs[key]})
+                elif key == "storage_mb":
+                    self.parameters.update({"storage_mb": kwargs[key]})
+                elif key == "zone_redundant":
+                    self.parameters.update({"zone_redundant": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -239,19 +240,22 @@ class AzureRMElasticPools(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
-            self.results["state"] = response["state"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ElasticPool instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_elasticpool()
             self.results['changed'] = True
         else:
             self.log("ElasticPool instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
+        self.results["state"] = response["state"]
 
         return self.results
 

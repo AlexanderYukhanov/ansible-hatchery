@@ -198,20 +198,21 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "state" and kwargs[key] is not None:
-                self.parameters.update({"state": kwargs[key]})
-            elif key == "storage_endpoint" and kwargs[key] is not None:
-                self.parameters.update({"storage_endpoint": kwargs[key]})
-            elif key == "storage_account_access_key" and kwargs[key] is not None:
-                self.parameters.update({"storage_account_access_key": kwargs[key]})
-            elif key == "retention_days" and kwargs[key] is not None:
-                self.parameters.update({"retention_days": kwargs[key]})
-            elif key == "audit_actions_and_groups" and kwargs[key] is not None:
-                self.parameters.update({"audit_actions_and_groups": kwargs[key]})
-            elif key == "storage_account_subscription_id" and kwargs[key] is not None:
-                self.parameters.update({"storage_account_subscription_id": kwargs[key]})
-            elif key == "is_storage_secondary_key_in_use" and kwargs[key] is not None:
-                self.parameters.update({"is_storage_secondary_key_in_use": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "state":
+                    self.parameters.update({"state": kwargs[key]})
+                elif key == "storage_endpoint":
+                    self.parameters.update({"storage_endpoint": kwargs[key]})
+                elif key == "storage_account_access_key":
+                    self.parameters.update({"storage_account_access_key": kwargs[key]})
+                elif key == "retention_days":
+                    self.parameters.update({"retention_days": kwargs[key]})
+                elif key == "audit_actions_and_groups":
+                    self.parameters.update({"audit_actions_and_groups": kwargs[key]})
+                elif key == "storage_account_subscription_id":
+                    self.parameters.update({"storage_account_subscription_id": kwargs[key]})
+                elif key == "is_storage_secondary_key_in_use":
+                    self.parameters.update({"is_storage_secondary_key_in_use": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -249,19 +250,22 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
-            self.results["state"] = response["state"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DatabaseBlobAuditingPolicies instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_databaseblobauditingpolicies()
             self.results['changed'] = True
         else:
             self.log("DatabaseBlobAuditingPolicies instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
+        self.results["state"] = response["state"]
 
         return self.results
 

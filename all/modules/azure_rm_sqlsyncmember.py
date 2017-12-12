@@ -207,22 +207,23 @@ class AzureRMSyncMembers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "database_type" and kwargs[key] is not None:
-                self.parameters.update({"database_type": kwargs[key]})
-            elif key == "sync_agent_id" and kwargs[key] is not None:
-                self.parameters.update({"sync_agent_id": kwargs[key]})
-            elif key == "sql_server_database_id" and kwargs[key] is not None:
-                self.parameters.update({"sql_server_database_id": kwargs[key]})
-            elif key == "server_name" and kwargs[key] is not None:
-                self.parameters.update({"server_name": kwargs[key]})
-            elif key == "database_name" and kwargs[key] is not None:
-                self.parameters.update({"database_name": kwargs[key]})
-            elif key == "user_name" and kwargs[key] is not None:
-                self.parameters.update({"user_name": kwargs[key]})
-            elif key == "password" and kwargs[key] is not None:
-                self.parameters.update({"password": kwargs[key]})
-            elif key == "sync_direction" and kwargs[key] is not None:
-                self.parameters.update({"sync_direction": kwargs[key]})
+            elif kwargs[key] is not None:
+                if key == "database_type":
+                    self.parameters.update({"database_type": kwargs[key]})
+                elif key == "sync_agent_id":
+                    self.parameters.update({"sync_agent_id": kwargs[key]})
+                elif key == "sql_server_database_id":
+                    self.parameters.update({"sql_server_database_id": kwargs[key]})
+                elif key == "server_name":
+                    self.parameters.update({"server_name": kwargs[key]})
+                elif key == "database_name":
+                    self.parameters.update({"database_name": kwargs[key]})
+                elif key == "user_name":
+                    self.parameters.update({"user_name": kwargs[key]})
+                elif key == "password":
+                    self.parameters.update({"password": kwargs[key]})
+                elif key == "sync_direction":
+                    self.parameters.update({"sync_direction": kwargs[key]})
 
         old_response = None
         results = dict()
@@ -260,18 +261,21 @@ class AzureRMSyncMembers(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
-
-            # remove unnecessary fields from return state
-            self.results["id"] = response["id"]
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncMembers instance deleted")
+
+            if self.check_mode:
+                return self.results
+
             self.delete_syncmembers()
             self.results['changed'] = True
         else:
             self.log("SyncMembers instance unchanged")
-            self.results['state'] = old_response
             self.results['changed'] = False
+            response = old_response
+
+        self.results["id"] = response["id"]
 
         return self.results
 
