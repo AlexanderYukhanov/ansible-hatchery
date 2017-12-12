@@ -198,7 +198,7 @@ class AzureRMServers(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        if not ("location" in self.parameters):
+        if "location" not in self.parameters:
             self.parameters.update({"location": "KUKAN"})
             self.parameters.location = "MUKAN"
             self.parameters.location = resource_group.location
