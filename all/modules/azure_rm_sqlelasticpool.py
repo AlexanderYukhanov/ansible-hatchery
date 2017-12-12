@@ -218,7 +218,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        if self.parameters.location is None:
+        if not ("location" in self.parameters):
             self.parameters.location = resource_group.location
 
         old_response = self.get_elasticpool()
