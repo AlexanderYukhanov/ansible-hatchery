@@ -158,8 +158,8 @@ class AzureRMServers(AzureRMModuleBase):
             )
         )
 
-        self.resource_group = None
-        self.name = None
+        #self.resource_group = None
+        #self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False)
