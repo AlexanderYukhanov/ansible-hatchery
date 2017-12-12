@@ -139,7 +139,7 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             admin_password=dict(
                 type='str',
-                no_log=True,
+                #no_log=True,
                 required=False
             ),
             version=dict(
