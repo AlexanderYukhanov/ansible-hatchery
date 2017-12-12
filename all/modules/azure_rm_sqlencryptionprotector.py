@@ -156,6 +156,7 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                     self.parameters.update({"server_key_type": kwargs[key]})
 
         old_response = None
+        response = None
         results = dict()
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
@@ -205,7 +206,8 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
             self.results['changed'] = False
             response = old_response
 
-        self.results["id"] = response["id"]
+        if response is not None:
+            self.results["id"] = response["id"]
 
         return self.results
 

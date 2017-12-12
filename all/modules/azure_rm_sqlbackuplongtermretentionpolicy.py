@@ -160,6 +160,7 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
             elif kwargs[key] is not None:
 
         old_response = None
+        response = None
         results = dict()
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
@@ -209,8 +210,9 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
             self.results['changed'] = False
             response = old_response
 
-        self.results["id"] = response["id"]
-        self.results["state"] = response["state"]
+        if response is not None:
+            self.results["id"] = response["id"]
+            self.results["state"] = response["state"]
 
         return self.results
 

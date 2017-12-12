@@ -145,6 +145,7 @@ class AzureRMSyncAgents(AzureRMModuleBase):
             elif kwargs[key] is not None:
 
         old_response = None
+        response = None
         results = dict()
 
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
@@ -194,9 +195,10 @@ class AzureRMSyncAgents(AzureRMModuleBase):
             self.results['changed'] = False
             response = old_response
 
-        self.results["id"] = response["id"]
-        self.results["state"] = response["state"]
-        self.results["version"] = response["version"]
+        if response is not None:
+            self.results["id"] = response["id"]
+            self.results["state"] = response["state"]
+            self.results["version"] = response["version"]
 
         return self.results
 

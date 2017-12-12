@@ -147,6 +147,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                     self.parameters.update({"end_ip_address": kwargs[key]})
 
         old_response = None
+        response = None
         results = dict()
 
         self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
@@ -196,7 +197,8 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             self.results['changed'] = False
             response = old_response
 
-        self.results["id"] = response["id"]
+        if response is not None:
+            self.results["id"] = response["id"]
 
         return self.results
 
