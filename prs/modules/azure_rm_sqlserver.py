@@ -44,7 +44,7 @@ options:
             - The administrator login password (required for server creation).
     version:
         description:
-            - The version of the server.
+            - "The version of the server. For example '12.0'."
     identity:
         description:
             - "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resour

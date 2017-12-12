@@ -6002,7 +6002,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The version of the server.",
+          "Documentation": "The version of the server. For example '12.0'.",
           "DefaultValue": null,
           "DefaultValueSample": "",
           "DefaultValueTest": "",
