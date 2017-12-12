@@ -147,11 +147,11 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "kind":
+            elif key == "kind" and kwargs[key] is not None:
                 self.parameters.update({"kind": kwargs[key]})
-            elif key == "server_key_name":
+            elif key == "server_key_name" and kwargs[key] is not None:
                 self.parameters.update({"server_key_name": kwargs[key]})
-            elif key == "server_key_type":
+            elif key == "server_key_type" and kwargs[key] is not None:
                 self.parameters.update({"server_key_type": kwargs[key]})
 
         old_response = None

@@ -193,21 +193,21 @@ class AzureRMElasticPools(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags":
+            elif key == "tags" and kwargs[key] is not None:
                 self.parameters.update({"tags": kwargs[key]})
-            elif key == "location":
+            elif key == "location" and kwargs[key] is not None:
                 self.parameters.update({"location": kwargs[key]})
-            elif key == "edition":
+            elif key == "edition" and kwargs[key] is not None:
                 self.parameters.update({"edition": kwargs[key]})
-            elif key == "dtu":
+            elif key == "dtu" and kwargs[key] is not None:
                 self.parameters.update({"dtu": kwargs[key]})
-            elif key == "database_dtu_max":
+            elif key == "database_dtu_max" and kwargs[key] is not None:
                 self.parameters.update({"database_dtu_max": kwargs[key]})
-            elif key == "database_dtu_min":
+            elif key == "database_dtu_min" and kwargs[key] is not None:
                 self.parameters.update({"database_dtu_min": kwargs[key]})
-            elif key == "storage_mb":
+            elif key == "storage_mb" and kwargs[key] is not None:
                 self.parameters.update({"storage_mb": kwargs[key]})
-            elif key == "zone_redundant":
+            elif key == "zone_redundant" and kwargs[key] is not None:
                 self.parameters.update({"zone_redundant": kwargs[key]})
 
         old_response = None
@@ -218,8 +218,8 @@ class AzureRMElasticPools(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        if not ("location" in self.parameters):
-            self.parameters.location = resource_group.location
+        if self.parameters["location"] is None:
+            self.parameters["location"] = resource_group.location
 
         old_response = self.get_elasticpool()
 

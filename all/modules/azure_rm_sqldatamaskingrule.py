@@ -237,27 +237,27 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "alias_name":
+            elif key == "alias_name" and kwargs[key] is not None:
                 self.parameters.update({"alias_name": kwargs[key]})
-            elif key == "rule_state":
+            elif key == "rule_state" and kwargs[key] is not None:
                 self.parameters.update({"rule_state": kwargs[key]})
-            elif key == "schema_name":
+            elif key == "schema_name" and kwargs[key] is not None:
                 self.parameters.update({"schema_name": kwargs[key]})
-            elif key == "table_name":
+            elif key == "table_name" and kwargs[key] is not None:
                 self.parameters.update({"table_name": kwargs[key]})
-            elif key == "column_name":
+            elif key == "column_name" and kwargs[key] is not None:
                 self.parameters.update({"column_name": kwargs[key]})
-            elif key == "masking_function":
+            elif key == "masking_function" and kwargs[key] is not None:
                 self.parameters.update({"masking_function": kwargs[key]})
-            elif key == "number_from":
+            elif key == "number_from" and kwargs[key] is not None:
                 self.parameters.update({"number_from": kwargs[key]})
-            elif key == "number_to":
+            elif key == "number_to" and kwargs[key] is not None:
                 self.parameters.update({"number_to": kwargs[key]})
-            elif key == "prefix_size":
+            elif key == "prefix_size" and kwargs[key] is not None:
                 self.parameters.update({"prefix_size": kwargs[key]})
-            elif key == "suffix_size":
+            elif key == "suffix_size" and kwargs[key] is not None:
                 self.parameters.update({"suffix_size": kwargs[key]})
-            elif key == "replacement_string":
+            elif key == "replacement_string" and kwargs[key] is not None:
                 self.parameters.update({"replacement_string": kwargs[key]})
 
         old_response = None

@@ -145,9 +145,9 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "virtual_network_subnet_id":
+            elif key == "virtual_network_subnet_id" and kwargs[key] is not None:
                 self.parameters.update({"virtual_network_subnet_id": kwargs[key]})
-            elif key == "ignore_missing_vnet_service_endpoint":
+            elif key == "ignore_missing_vnet_service_endpoint" and kwargs[key] is not None:
                 self.parameters.update({"ignore_missing_vnet_service_endpoint": kwargs[key]})
 
         old_response = None

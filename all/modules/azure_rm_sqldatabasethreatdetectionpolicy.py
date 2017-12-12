@@ -215,23 +215,23 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "location":
+            elif key == "location" and kwargs[key] is not None:
                 self.parameters.update({"location": kwargs[key]})
-            elif key == "state":
+            elif key == "state" and kwargs[key] is not None:
                 self.parameters.update({"state": kwargs[key]})
-            elif key == "disabled_alerts":
+            elif key == "disabled_alerts" and kwargs[key] is not None:
                 self.parameters.update({"disabled_alerts": kwargs[key]})
-            elif key == "email_addresses":
+            elif key == "email_addresses" and kwargs[key] is not None:
                 self.parameters.update({"email_addresses": kwargs[key]})
-            elif key == "email_account_admins":
+            elif key == "email_account_admins" and kwargs[key] is not None:
                 self.parameters.update({"email_account_admins": kwargs[key]})
-            elif key == "storage_endpoint":
+            elif key == "storage_endpoint" and kwargs[key] is not None:
                 self.parameters.update({"storage_endpoint": kwargs[key]})
-            elif key == "storage_account_access_key":
+            elif key == "storage_account_access_key" and kwargs[key] is not None:
                 self.parameters.update({"storage_account_access_key": kwargs[key]})
-            elif key == "retention_days":
+            elif key == "retention_days" and kwargs[key] is not None:
                 self.parameters.update({"retention_days": kwargs[key]})
-            elif key == "use_server_default":
+            elif key == "use_server_default" and kwargs[key] is not None:
                 self.parameters.update({"use_server_default": kwargs[key]})
 
         old_response = None
@@ -242,8 +242,8 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        if not ("location" in self.parameters):
-            self.parameters.location = resource_group.location
+        if self.parameters["location"] is None:
+            self.parameters["location"] = resource_group.location
 
         old_response = self.get_databasethreatdetectionpolicies()
 

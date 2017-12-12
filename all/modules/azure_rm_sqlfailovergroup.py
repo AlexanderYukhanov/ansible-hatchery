@@ -188,15 +188,15 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags":
+            elif key == "tags" and kwargs[key] is not None:
                 self.parameters.update({"tags": kwargs[key]})
-            elif key == "read_write_endpoint":
+            elif key == "read_write_endpoint" and kwargs[key] is not None:
                 self.parameters.update({"read_write_endpoint": kwargs[key]})
-            elif key == "read_only_endpoint":
+            elif key == "read_only_endpoint" and kwargs[key] is not None:
                 self.parameters.update({"read_only_endpoint": kwargs[key]})
-            elif key == "partner_servers":
+            elif key == "partner_servers" and kwargs[key] is not None:
                 self.parameters.update({"partner_servers": kwargs[key]})
-            elif key == "databases":
+            elif key == "databases" and kwargs[key] is not None:
                 self.parameters.update({"databases": kwargs[key]})
 
         old_response = None

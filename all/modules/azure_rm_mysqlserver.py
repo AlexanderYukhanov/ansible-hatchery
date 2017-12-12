@@ -211,13 +211,13 @@ class AzureRMServers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "sku":
+            elif key == "sku" and kwargs[key] is not None:
                 self.parameters.update({"sku": kwargs[key]})
-            elif key == "properties":
+            elif key == "properties" and kwargs[key] is not None:
                 self.parameters.update({"properties": kwargs[key]})
-            elif key == "location":
+            elif key == "location" and kwargs[key] is not None:
                 self.parameters.update({"location": kwargs[key]})
-            elif key == "tags":
+            elif key == "tags" and kwargs[key] is not None:
                 self.parameters.update({"tags": kwargs[key]})
 
         self.adjust_parameters()
@@ -230,8 +230,8 @@ class AzureRMServers(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        if not ("location" in self.parameters):
-            self.parameters.location = resource_group.location
+        if self.parameters["location"] is None:
+            self.parameters["location"] = resource_group.location
 
         old_response = self.get_mysqlserver()
 

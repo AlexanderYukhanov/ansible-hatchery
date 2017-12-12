@@ -138,9 +138,9 @@ class AzureRMConfigurations(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "value":
+            elif key == "value" and kwargs[key] is not None:
                 self.parameters.update({"value": kwargs[key]})
-            elif key == "source":
+            elif key == "source" and kwargs[key] is not None:
                 self.parameters.update({"source": kwargs[key]})
 
         old_response = None

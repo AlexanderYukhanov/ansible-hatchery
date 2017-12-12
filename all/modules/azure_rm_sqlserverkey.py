@@ -165,15 +165,15 @@ class AzureRMServerKeys(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "kind":
+            elif key == "kind" and kwargs[key] is not None:
                 self.parameters.update({"kind": kwargs[key]})
-            elif key == "server_key_type":
+            elif key == "server_key_type" and kwargs[key] is not None:
                 self.parameters.update({"server_key_type": kwargs[key]})
-            elif key == "uri":
+            elif key == "uri" and kwargs[key] is not None:
                 self.parameters.update({"uri": kwargs[key]})
-            elif key == "thumbprint":
+            elif key == "thumbprint" and kwargs[key] is not None:
                 self.parameters.update({"thumbprint": kwargs[key]})
-            elif key == "creation_date":
+            elif key == "creation_date" and kwargs[key] is not None:
                 self.parameters.update({"creation_date": kwargs[key]})
 
         old_response = None

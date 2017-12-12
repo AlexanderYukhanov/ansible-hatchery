@@ -177,17 +177,17 @@ class AzureRMServers(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "tags":
+            elif key == "tags" and kwargs[key] is not None:
                 self.parameters.update({"tags": kwargs[key]})
-            elif key == "location":
+            elif key == "location" and kwargs[key] is not None:
                 self.parameters.update({"location": kwargs[key]})
-            elif key == "admin_username":
+            elif key == "admin_username" and kwargs[key] is not None:
                 self.parameters.update({"administrator_login": kwargs[key]})
-            elif key == "admin_password":
+            elif key == "admin_password" and kwargs[key] is not None:
                 self.parameters.update({"administrator_login_password": kwargs[key]})
-            elif key == "version":
+            elif key == "version" and kwargs[key] is not None:
                 self.parameters.update({"version": kwargs[key]})
-            elif key == "identity":
+            elif key == "identity" and kwargs[key] is not None:
                 self.parameters.update({"identity": {"type": kwargs[key]}})
 
         old_response = None

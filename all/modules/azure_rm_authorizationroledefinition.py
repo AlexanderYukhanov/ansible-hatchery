@@ -164,15 +164,15 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "properties_role_name":
+            elif key == "properties_role_name" and kwargs[key] is not None:
                 self.role_definition.update({"properties": {"role_name": kwargs[key]}})
-            elif key == "properties_description":
+            elif key == "properties_description" and kwargs[key] is not None:
                 self.role_definition.update({"properties": {"description": kwargs[key]}})
-            elif key == "properties_type":
+            elif key == "properties_type" and kwargs[key] is not None:
                 self.role_definition.update({"properties": {"type": kwargs[key]}})
-            elif key == "properties_permissions":
+            elif key == "properties_permissions" and kwargs[key] is not None:
                 self.role_definition.update({"properties": {"permissions": kwargs[key]}})
-            elif key == "properties_assignable_scopes":
+            elif key == "properties_assignable_scopes" and kwargs[key] is not None:
                 self.role_definition.update({"properties": {"assignable_scopes": kwargs[key]}})
 
         old_response = None

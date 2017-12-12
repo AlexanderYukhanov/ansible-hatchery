@@ -140,9 +140,9 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "start_ip_address":
+            elif key == "start_ip_address" and kwargs[key] is not None:
                 self.parameters.update({"start_ip_address": kwargs[key]})
-            elif key == "end_ip_address":
+            elif key == "end_ip_address" and kwargs[key] is not None:
                 self.parameters.update({"end_ip_address": kwargs[key]})
 
         old_response = None

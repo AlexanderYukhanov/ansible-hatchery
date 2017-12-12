@@ -212,17 +212,17 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "interval":
+            elif key == "interval" and kwargs[key] is not None:
                 self.parameters.update({"interval": kwargs[key]})
-            elif key == "conflict_resolution_policy":
+            elif key == "conflict_resolution_policy" and kwargs[key] is not None:
                 self.parameters.update({"conflict_resolution_policy": kwargs[key]})
-            elif key == "sync_database_id":
+            elif key == "sync_database_id" and kwargs[key] is not None:
                 self.parameters.update({"sync_database_id": kwargs[key]})
-            elif key == "hub_database_user_name":
+            elif key == "hub_database_user_name" and kwargs[key] is not None:
                 self.parameters.update({"hub_database_user_name": kwargs[key]})
-            elif key == "hub_database_password":
+            elif key == "hub_database_password" and kwargs[key] is not None:
                 self.parameters.update({"hub_database_password": kwargs[key]})
-            elif key == "schema":
+            elif key == "schema" and kwargs[key] is not None:
                 self.parameters.update({"schema": kwargs[key]})
 
         old_response = None

@@ -144,9 +144,9 @@ class AzureRMDatabases(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif key == "charset":
+            elif key == "charset" and kwargs[key] is not None:
                 self.parameters.update({"charset": kwargs[key]})
-            elif key == "collation":
+            elif key == "collation" and kwargs[key] is not None:
                 self.parameters.update({"collation": kwargs[key]})
 
         old_response = None
