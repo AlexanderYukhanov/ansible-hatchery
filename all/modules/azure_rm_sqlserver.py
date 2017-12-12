@@ -196,10 +196,7 @@ class AzureRMServers(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        try:
-            resource_group = self.get_resource_group(self.resource_group)
-        except CloudError:
-            self.fail('resource group {0} not found'.format(self.resource_group))
+        resource_group = self.get_resource_group(self.resource_group)
 
         if not ("location" in self.parameters):
             self.parameters["location"] = resource_group.location
@@ -227,26 +224,24 @@ class AzureRMServers(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_sqlserver()
+            response.pop('administrator_login_password', None)
+
             if not old_response:
                 self.results['changed'] = True
             else:
-                response.pop('administrator_login_password', None)
                 self.results['changed'] = old_response.__ne__(response)
-                self.results['mukaaaa'] = old_response.__ne__(response)
-                self.results['OLD'] = old_response
-                self.results['NEW'] = response
                 
             self.results.update(response)
 
             # remove unnecessary fields from return state
-            #self.results.pop('name', None)
-            #self.results.pop('type', None)
-            #self.results.pop('tags', None)
-            #self.results.pop('location', None)
-            #self.results.pop('identity', None)
-            #self.results.pop('kind', None)
-            #self.results.pop('administrator_login', None)
-            #self.results.pop('administrator_login_password', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('tags', None)
+            self.results.pop('location', None)
+            self.results.pop('identity', None)
+            self.results.pop('kind', None)
+            self.results.pop('administrator_login', None)
+            self.results.pop('administrator_login_password', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Server instance deleted")
