@@ -231,6 +231,10 @@ class AzureRMServers(AzureRMModuleBase):
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+                self.results['mukaaaa'] = old_response.__ne__(response)
+                self.results['OLD'] = old_response
+                self.results['NEW'] = response
+                
             self.results.update(response)
 
             # remove unnecessary fields from return state
