@@ -170,6 +170,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             ),
             password=dict(
                 type='str',
+                no_log=True,
                 required=False
             ),
             sync_direction=dict(

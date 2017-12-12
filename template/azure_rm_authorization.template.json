@@ -17,7 +17,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "resource_provider_namespace",
@@ -32,7 +33,8 @@
           "DefaultValueSample": "resource_provider_namespace",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "parent_resource_path",
@@ -47,7 +49,8 @@
           "DefaultValueSample": "parent_resource_path",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "resource_type",
@@ -62,7 +65,8 @@
           "DefaultValueSample": "resource_type",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "resource_name",
@@ -77,7 +81,8 @@
           "DefaultValueSample": "resource_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -138,7 +143,8 @@
           "DefaultValueSample": "resource_provider_namespace",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "expand",
@@ -153,7 +159,8 @@
           "DefaultValueSample": "expand",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -198,7 +205,8 @@
           "DefaultValueSample": "scope",
           "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "role_assignment_name",
@@ -213,7 +221,8 @@
           "DefaultValueSample": "role_assignment_name",
           "DefaultValueTest": "\"d3881f73-7777-8888-8283-e981cbba0404\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "parameters",
@@ -228,7 +237,8 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "properties",
@@ -256,7 +266,8 @@
               "DefaultValueSample": "role_definition_id",
               "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c\"",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "principal_id",
@@ -271,10 +282,12 @@
               "DefaultValueSample": "principal_id",
               "DefaultValueTest": "\"98b422c6-7bea-4706-b6f3-920a782746d4\"",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             }
           ],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -409,7 +422,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "resource_provider_namespace",
@@ -424,7 +438,8 @@
           "DefaultValueSample": "resource_provider_namespace",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "parent_resource_path",
@@ -439,7 +454,8 @@
           "DefaultValueSample": "parent_resource_path",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "resource_type",
@@ -454,7 +470,8 @@
           "DefaultValueSample": "resource_type",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "resource_name",
@@ -469,7 +486,8 @@
           "DefaultValueSample": "resource_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "filter",
@@ -484,7 +502,8 @@
           "DefaultValueSample": "filter",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "scope",
@@ -499,7 +518,8 @@
           "DefaultValueSample": "scope",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "role_assignment_name",
@@ -514,7 +534,8 @@
           "DefaultValueSample": "role_assignment_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -598,7 +619,8 @@
           "DefaultValueSample": "scope",
           "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "role_definition_id",
@@ -613,7 +635,8 @@
           "DefaultValueSample": "role_definition_id",
           "DefaultValueTest": "rolexyz",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "role_definition",
@@ -628,7 +651,8 @@
           "DefaultValueSample": "role_definition",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "properties",
@@ -643,7 +667,8 @@
           "DefaultValueSample": "properties",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "role_name",
@@ -658,7 +683,8 @@
           "DefaultValueSample": "role_name",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "description",
@@ -673,7 +699,8 @@
           "DefaultValueSample": "description",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "type",
@@ -688,7 +715,8 @@
           "DefaultValueSample": "type",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "permissions",
@@ -716,7 +744,8 @@
               "DefaultValueSample": "actions",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "not_actions",
@@ -731,10 +760,12 @@
               "DefaultValueSample": "not_actions",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             }
           ],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "assignable_scopes",
@@ -749,7 +780,8 @@
           "DefaultValueSample": "assignable_scopes",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -921,7 +953,8 @@
           "DefaultValueSample": "scope",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "role_definition_id",
@@ -936,7 +969,8 @@
           "DefaultValueSample": "role_definition_id",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [

@@ -176,6 +176,7 @@ class AzureRMSyncGroups(AzureRMModuleBase):
             ),
             hub_database_password=dict(
                 type='str',
+                no_log=True,
                 required=False
             ),
             schema=dict(

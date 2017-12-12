@@ -17,7 +17,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -32,7 +33,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "parameters",
@@ -47,7 +49,8 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "sku",
@@ -75,7 +78,8 @@
               "DefaultValueSample": "name",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "tier",
@@ -90,7 +94,8 @@
               "DefaultValueSample": "tier",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "capacity",
@@ -105,7 +110,8 @@
               "DefaultValueSample": "capacity",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "size",
@@ -120,7 +126,8 @@
               "DefaultValueSample": "size",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "family",
@@ -135,10 +142,12 @@
               "DefaultValueSample": "family",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             }
           ],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "properties",
@@ -166,7 +175,8 @@
               "DefaultValueSample": "storage_mb",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "version",
@@ -181,7 +191,8 @@
               "DefaultValueSample": "version",
               "DefaultValueTest": "5.6",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "ssl_enforcement",
@@ -196,7 +207,8 @@
               "DefaultValueSample": "ssl_enforcement",
               "DefaultValueTest": "",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "create_mode",
@@ -211,7 +223,8 @@
               "DefaultValueSample": "create_mode",
               "DefaultValueTest": "Default",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "administrator_login",
@@ -226,7 +239,8 @@
               "DefaultValueSample": "administrator_login",
               "DefaultValueTest": "zimxyz",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": false
             },
             {
               "Name": "administrator_login_password",
@@ -241,10 +255,12 @@
               "DefaultValueSample": "administrator_login_password",
               "DefaultValueTest": "Testpasswordxyz12!",
               "SubOptions": [],
-              "RequiredCount": 0
+              "RequiredCount": 0,
+              "NoLog": true
             }
           ],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "location",
@@ -259,7 +275,8 @@
           "DefaultValueSample": "location",
           "DefaultValueTest": "westus",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "tags",
@@ -274,7 +291,8 @@
           "DefaultValueSample": "tags",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -512,7 +530,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -527,7 +546,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -582,7 +602,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -597,7 +618,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "firewall_rule_name",
@@ -612,7 +634,8 @@
           "DefaultValueSample": "firewall_rule_name",
           "DefaultValueTest": "test-firewall-rule",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "parameters",
@@ -627,7 +650,8 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "start_ip_address",
@@ -642,7 +666,8 @@
           "DefaultValueSample": "start_ip_address",
           "DefaultValueTest": "172.28.10.136",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "end_ip_address",
@@ -657,7 +682,8 @@
           "DefaultValueSample": "end_ip_address",
           "DefaultValueTest": "172.28.10.138",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -797,7 +823,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -812,7 +839,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "firewall_rule_name",
@@ -827,7 +855,8 @@
           "DefaultValueSample": "firewall_rule_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -886,7 +915,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -901,7 +931,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "virtual_network_rule_name",
@@ -916,7 +947,8 @@
           "DefaultValueSample": "virtual_network_rule_name",
           "DefaultValueTest": "test-virtual-network-rule",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "parameters",
@@ -931,7 +963,8 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "virtual_network_subnet_id",
@@ -946,7 +979,8 @@
           "DefaultValueSample": "virtual_network_subnet_id",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "ignore_missing_vnet_service_endpoint",
@@ -961,7 +995,8 @@
           "DefaultValueSample": "ignore_missing_vnet_service_endpoint",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -1092,7 +1127,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -1107,7 +1143,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "virtual_network_rule_name",
@@ -1122,7 +1159,8 @@
           "DefaultValueSample": "virtual_network_rule_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -1181,7 +1219,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -1196,7 +1235,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "database_name",
@@ -1211,7 +1251,8 @@
           "DefaultValueSample": "database_name",
           "DefaultValueTest": "testdatabase",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "parameters",
@@ -1226,7 +1267,8 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "charset",
@@ -1241,7 +1283,8 @@
           "DefaultValueSample": "charset",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "collation",
@@ -1256,7 +1299,8 @@
           "DefaultValueSample": "collation",
           "DefaultValueTest": "",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -1378,7 +1422,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -1393,7 +1438,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "database_name",
@@ -1408,7 +1454,8 @@
           "DefaultValueSample": "database_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -1467,7 +1514,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -1482,7 +1530,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "configuration_name",
@@ -1497,7 +1546,8 @@
           "DefaultValueSample": "configuration_name",
           "DefaultValueTest": "event_scheduler",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "parameters",
@@ -1512,7 +1562,8 @@
           "DefaultValueSample": "parameters",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "value",
@@ -1527,7 +1578,8 @@
           "DefaultValueSample": "value",
           "DefaultValueTest": "\"ON\"",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         },
         {
           "Name": "source",
@@ -1542,7 +1594,8 @@
           "DefaultValueSample": "source",
           "DefaultValueTest": "user-override",
           "SubOptions": [],
-          "RequiredCount": 0
+          "RequiredCount": 0,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -1688,7 +1741,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -1703,7 +1757,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 2
+          "RequiredCount": 2,
+          "NoLog": false
         },
         {
           "Name": "configuration_name",
@@ -1718,7 +1773,8 @@
           "DefaultValueSample": "configuration_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
@@ -1777,7 +1833,8 @@
           "DefaultValueSample": "resource_group_name",
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         },
         {
           "Name": "server_name",
@@ -1792,7 +1849,8 @@
           "DefaultValueSample": "server_name",
           "DefaultValueTest": "",
           "SubOptions": null,
-          "RequiredCount": 1
+          "RequiredCount": 1,
+          "NoLog": false
         }
       ],
       "Methods": [
