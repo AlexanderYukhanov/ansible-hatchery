@@ -139,7 +139,7 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             admin_password=dict(
                 type='str',
-                #no_log=True,
+                no_log=True,
                 required=False
             ),
             version=dict(
@@ -230,22 +230,20 @@ class AzureRMServers(AzureRMModuleBase):
             if not old_response:
                 self.results['changed'] = True
             else:
+                old_response.pop('administrator_login_password', None)
                 self.results['changed'] = old_response.__ne__(response)
-                self.results['mukaaaa'] = old_response.__ne__(response)
-                self.results['OLD'] = old_response
-                self.results['NEW'] = response
                 
             self.results.update(response)
 
             # remove unnecessary fields from return state
-            #self.results.pop('name', None)
-            #self.results.pop('type', None)
-            #self.results.pop('tags', None)
-            #self.results.pop('location', None)
-            #self.results.pop('identity', None)
-            #self.results.pop('kind', None)
-            #self.results.pop('administrator_login', None)
-            #self.results.pop('administrator_login_password', None)
+            self.results.pop('name', None)
+            self.results.pop('type', None)
+            self.results.pop('tags', None)
+            self.results.pop('location', None)
+            self.results.pop('identity', None)
+            self.results.pop('kind', None)
+            self.results.pop('administrator_login', None)
+            self.results.pop('administrator_login_password', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Server instance deleted")
