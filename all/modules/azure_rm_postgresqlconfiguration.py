@@ -136,7 +136,9 @@ class AzureRMConfigurations(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "value":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "value":
                 self.parameters.update({"value": kwargs[key]})
             elif key == "source":
                 self.parameters.update({"source": kwargs[key]})

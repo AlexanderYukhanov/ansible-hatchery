@@ -138,7 +138,9 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "start_ip_address":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "start_ip_address":
                 self.parameters.update({"start_ip_address": kwargs[key]})
             elif key == "end_ip_address":
                 self.parameters.update({"end_ip_address": kwargs[key]})

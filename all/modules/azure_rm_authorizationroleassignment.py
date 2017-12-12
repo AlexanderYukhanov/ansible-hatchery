@@ -138,6 +138,8 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
+            if hasattr(self, key):
+                setattr(self.key)
 
         old_response = None
         results = dict()

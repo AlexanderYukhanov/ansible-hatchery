@@ -294,7 +294,9 @@ class AzureRMDatabases(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "tags":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "tags":
                 self.parameters.update({"tags": kwargs[key]})
             elif key == "location":
                 self.parameters.update({"location": kwargs[key]})

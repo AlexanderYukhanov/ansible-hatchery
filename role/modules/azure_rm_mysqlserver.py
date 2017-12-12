@@ -209,7 +209,9 @@ class AzureRMServers(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "sku":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "sku":
                 self.parameters.update({"sku": kwargs[key]})
             elif key == "properties":
                 self.parameters.update({"properties": kwargs[key]})

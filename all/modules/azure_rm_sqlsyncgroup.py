@@ -210,7 +210,9 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "interval":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "interval":
                 self.parameters.update({"interval": kwargs[key]})
             elif key == "conflict_resolution_policy":
                 self.parameters.update({"conflict_resolution_policy": kwargs[key]})

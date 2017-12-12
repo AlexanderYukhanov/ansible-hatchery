@@ -145,7 +145,9 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "kind":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "kind":
                 self.parameters.update({"kind": kwargs[key]})
             elif key == "server_key_name":
                 self.parameters.update({"server_key_name": kwargs[key]})

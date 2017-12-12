@@ -196,7 +196,9 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "state":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "state":
                 self.parameters.update({"state": kwargs[key]})
             elif key == "storage_endpoint":
                 self.parameters.update({"storage_endpoint": kwargs[key]})

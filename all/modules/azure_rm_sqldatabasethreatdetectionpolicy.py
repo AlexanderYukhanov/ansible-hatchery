@@ -213,7 +213,9 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "location":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "location":
                 self.parameters.update({"location": kwargs[key]})
             elif key == "state":
                 self.parameters.update({"state": kwargs[key]})

@@ -156,7 +156,9 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if key == "administrator_type":
+            if hasattr(self, key):
+                setattr(self.key)
+            elif key == "administrator_type":
                 self.properties.update({"administrator_type": kwargs[key]})
             elif key == "login":
                 self.properties.update({"login": kwargs[key]})
