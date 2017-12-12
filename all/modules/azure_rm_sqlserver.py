@@ -230,7 +230,7 @@ class AzureRMServers(AzureRMModuleBase):
             if not old_response:
                 self.results['changed'] = True
             else:
-                old_response.pop('administrator_login_password', None)
+                response.pop('administrator_login_password', None)
                 self.results['changed'] = old_response.__ne__(response)
                 self.results['mukaaaa'] = old_response.__ne__(response)
                 self.results['OLD'] = old_response
