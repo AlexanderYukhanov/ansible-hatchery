@@ -141,7 +141,7 @@ class AzureRMSyncAgents(AzureRMModuleBase):
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
-                setattr(self.key)
+                setattr(self, key, kwargs[key])
 
         old_response = None
         results = dict()

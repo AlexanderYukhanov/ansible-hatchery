@@ -236,7 +236,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
-                setattr(self.key)
+                setattr(self, key, kwargs[key])
             elif key == "alias_name":
                 self.parameters.update({"alias_name": kwargs[key]})
             elif key == "rule_state":

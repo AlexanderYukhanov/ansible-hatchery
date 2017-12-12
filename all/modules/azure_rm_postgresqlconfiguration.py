@@ -137,7 +137,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
-                setattr(self.key)
+                setattr(self, key, kwargs[key])
             elif key == "value":
                 self.parameters.update({"value": kwargs[key]})
             elif key == "source":

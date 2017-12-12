@@ -163,7 +163,7 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
-                setattr(self.key)
+                setattr(self, key, kwargs[key])
             elif key == "properties_role_name":
                 self.role_definition.update({"properties": {"role_name": kwargs[key]}})
             elif key == "properties_description":

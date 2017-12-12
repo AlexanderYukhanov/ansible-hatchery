@@ -206,7 +206,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
-                setattr(self.key)
+                setattr(self, key, kwargs[key])
             elif key == "database_type":
                 self.parameters.update({"database_type": kwargs[key]})
             elif key == "sync_agent_id":

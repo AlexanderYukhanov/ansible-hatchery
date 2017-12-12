@@ -210,7 +210,7 @@ class AzureRMServers(AzureRMModuleBase):
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
-                setattr(self.key)
+                setattr(self, key, kwargs[key])
             elif key == "sku":
                 self.parameters.update({"sku": kwargs[key]})
             elif key == "properties":

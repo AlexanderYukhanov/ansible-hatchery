@@ -211,7 +211,7 @@ class AzureRMSyncGroups(AzureRMModuleBase):
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
-                setattr(self.key)
+                setattr(self, key, kwargs[key])
             elif key == "interval":
                 self.parameters.update({"interval": kwargs[key]})
             elif key == "conflict_resolution_policy":
