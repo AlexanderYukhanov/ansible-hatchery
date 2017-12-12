@@ -6180,7 +6180,7 @@
         },
         {
           "Name": "administrator_login_password",
-          "NameAlt": "x",
+          "NameAlt": "nl",
           "Description": "The administrator login password (required for server creation).",
           "Type": "str",
           "Returned": "always",

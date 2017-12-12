@@ -163,9 +163,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
-            elif key == "kind":
+            if key == "kind":
                 self.parameters.update({"kind": kwargs[key]})
             elif key == "server_key_type":
                 self.parameters.update({"server_key_type": kwargs[key]})
@@ -182,10 +180,7 @@ class AzureRMServerKeys(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        try:
-            resource_group = self.get_resource_group(self.resource_group)
-        except CloudError:
-            self.fail('resource group {0} not found'.format(self.resource_group))
+        resource_group = self.get_resource_group(self.resource_group)
 
         old_response = self.get_serverkeys()
 
@@ -210,10 +205,12 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_serverkeys()
+
             if not old_response:
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+
             self.results.update(response)
 
             # remove unnecessary fields from return state

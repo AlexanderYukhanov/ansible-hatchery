@@ -143,9 +143,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
-            elif key == "virtual_network_subnet_id":
+            if key == "virtual_network_subnet_id":
                 self.parameters.update({"virtual_network_subnet_id": kwargs[key]})
             elif key == "ignore_missing_vnet_service_endpoint":
                 self.parameters.update({"ignore_missing_vnet_service_endpoint": kwargs[key]})
@@ -156,10 +154,7 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        try:
-            resource_group = self.get_resource_group(self.resource_group)
-        except CloudError:
-            self.fail('resource group {0} not found'.format(self.resource_group))
+        resource_group = self.get_resource_group(self.resource_group)
 
         old_response = self.get_virtualnetworkrules()
 
@@ -184,10 +179,12 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_virtualnetworkrules()
+
             if not old_response:
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+
             self.results.update(response)
 
             # remove unnecessary fields from return state

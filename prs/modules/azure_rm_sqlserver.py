@@ -175,9 +175,7 @@ class AzureRMServers(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
-            elif key == "tags":
+            if key == "tags":
                 self.parameters.update({"tags": kwargs[key]})
             elif key == "location":
                 self.parameters.update({"location": kwargs[key]})
@@ -196,13 +194,10 @@ class AzureRMServers(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        try:
-            resource_group = self.get_resource_group(self.resource_group)
-        except CloudError:
-            self.fail('resource group {0} not found'.format(self.resource_group))
+        resource_group = self.get_resource_group(self.resource_group)
 
-        if not ("location" in self.parameters):
-            self.parameters["location"] = resource_group.location
+        if self.location is None:
+            self.location = resource_group.location
 
         old_response = self.get_sqlserver()
 
@@ -227,10 +222,13 @@ class AzureRMServers(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_sqlserver()
+            response.pop('administrator_login_password', None)
+
             if not old_response:
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+
             self.results.update(response)
 
             # remove unnecessary fields from return state
@@ -241,7 +239,6 @@ class AzureRMServers(AzureRMModuleBase):
             self.results.pop('identity', None)
             self.results.pop('kind', None)
             self.results.pop('administrator_login', None)
-            self.results.pop('administrator_login_password', None)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Server instance deleted")

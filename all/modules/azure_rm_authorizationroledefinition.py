@@ -162,9 +162,7 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
-            elif key == "properties_role_name":
+            if key == "properties_role_name":
                 self.role_definition.update({"properties": {"role_name": kwargs[key]}})
             elif key == "properties_description":
                 self.role_definition.update({"properties": {"description": kwargs[key]}})
@@ -204,10 +202,12 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_roledefinitions()
+
             if not old_response:
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+
             self.results.update(response)
 
             # remove unnecessary fields from return state

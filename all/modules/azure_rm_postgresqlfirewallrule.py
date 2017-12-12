@@ -138,9 +138,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
-            elif key == "start_ip_address":
+            if key == "start_ip_address":
                 self.parameters.update({"start_ip_address": kwargs[key]})
             elif key == "end_ip_address":
                 self.parameters.update({"end_ip_address": kwargs[key]})
@@ -151,10 +149,7 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        try:
-            resource_group = self.get_resource_group(self.resource_group)
-        except CloudError:
-            self.fail('resource group {0} not found'.format(self.resource_group))
+        resource_group = self.get_resource_group(self.resource_group)
 
         old_response = self.get_firewallrules()
 
@@ -179,10 +174,12 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_firewallrules()
+
             if not old_response:
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+
             self.results.update(response)
 
             # remove unnecessary fields from return state

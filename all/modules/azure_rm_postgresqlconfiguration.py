@@ -136,9 +136,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
-            elif key == "value":
+            if key == "value":
                 self.parameters.update({"value": kwargs[key]})
             elif key == "source":
                 self.parameters.update({"source": kwargs[key]})
@@ -149,10 +147,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        try:
-            resource_group = self.get_resource_group(self.resource_group)
-        except CloudError:
-            self.fail('resource group {0} not found'.format(self.resource_group))
+        resource_group = self.get_resource_group(self.resource_group)
 
         old_response = self.get_configurations()
 
@@ -177,10 +172,12 @@ class AzureRMConfigurations(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_configurations()
+
             if not old_response:
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+
             self.results.update(response)
 
             # remove unnecessary fields from return state

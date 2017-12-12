@@ -138,8 +138,6 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         """Main module execution method"""
 
         for key in list(self.module_arg_spec.keys()) + ['tags']:
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
 
         old_response = None
         results = dict()
@@ -170,10 +168,12 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
                 return self.results
 
             response = self.create_update_roleassignments()
+
             if not old_response:
                 self.results['changed'] = True
             else:
                 self.results['changed'] = old_response.__ne__(response)
+
             self.results.update(response)
 
             # remove unnecessary fields from return state
