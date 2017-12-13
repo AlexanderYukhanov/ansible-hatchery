@@ -200,7 +200,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
             self.results['changed'] = False
             response = old_response
 
-        if response is not None:
+        if response:
             self.results["id"] = response["id"]
 
         return self.results

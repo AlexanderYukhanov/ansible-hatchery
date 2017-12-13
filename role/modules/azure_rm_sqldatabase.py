@@ -374,7 +374,7 @@ class AzureRMDatabases(AzureRMModuleBase):
             self.results['changed'] = False
             response = old_response
 
-        if response is not None:
+        if response:
             self.results["id"] = response["id"]
             self.results["database_id"] = response["database_id"]
             self.results["status"] = response["status"]

@@ -210,7 +210,7 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
             self.results['changed'] = False
             response = old_response
 
-        if response is not None:
+        if response:
             self.results["id"] = response["id"]
             self.results["state"] = response["state"]
 
