@@ -3,6 +3,17 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
+- name: Delete unexisting instance of RoleDefinitions
+  azure_rm_authorizationroledefinition:
+    scope: "/subscriptions/{{ azure_subscription_id }}"
+    role_definition_id: rolexyz
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false
+
 - name: Create instance of RoleDefinitions -- check mode
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
@@ -79,14 +90,3 @@
   assert:
     that:
       - output.changed
-
-- name: Delete unexisting instance of RoleDefinitions
-  azure_rm_authorizationroledefinition:
-    scope: "/subscriptions/{{ azure_subscription_id }}"
-    role_definition_id: rolexyz
-    state: absent
-  register: output
-- name: Assert the state has changed
-  assert:
-    that:
-      - output.changed == false

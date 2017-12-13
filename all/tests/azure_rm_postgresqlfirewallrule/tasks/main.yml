@@ -3,6 +3,16 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
+- name: Delete unexisting instance of FirewallRules
+  azure_rm_postgresqlfirewallrule:
+    resource_group: "{{ resource_group }}"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false
+
 - name: Create instance of FirewallRules -- check mode
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
@@ -53,13 +63,3 @@
   assert:
     that:
       - output.changed
-
-- name: Delete unexisting instance of FirewallRules
-  azure_rm_postgresqlfirewallrule:
-    resource_group: "{{ resource_group }}"
-    state: absent
-  register: output
-- name: Assert the state has changed
-  assert:
-    that:
-      - output.changed == false
