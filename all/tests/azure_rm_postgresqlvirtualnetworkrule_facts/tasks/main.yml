@@ -23,15 +23,6 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Create again instance of VirtualNetworkRules -- check mode
-  azure_rm_postgresqlvirtualnetworkrule_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create again instance of VirtualNetworkRules
   azure_rm_postgresqlvirtualnetworkrule_facts:
     resource_group: "{{ resource_group }}"

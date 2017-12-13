@@ -23,15 +23,6 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Create again instance of DatabaseThreatDetectionPolicies -- check mode
-  azure_rm_sqldatabasethreatdetectionpolicy:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create again instance of DatabaseThreatDetectionPolicies
   azure_rm_sqldatabasethreatdetectionpolicy:
     resource_group: "{{ resource_group }}"

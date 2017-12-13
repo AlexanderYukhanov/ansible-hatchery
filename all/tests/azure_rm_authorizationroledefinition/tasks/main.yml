@@ -39,23 +39,6 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Create again instance of RoleDefinitions -- check mode
-  azure_rm_authorizationroledefinition:
-    scope: "/subscriptions/{{ azure_subscription_id }}"
-    role_definition_id: rolexyz
-    properties_permissions:
-      - actions:
-          - XXXX - list of values -- not implemented str
-        not_actions:
-          - XXXX - list of values -- not implemented str
-    properties_assignable_scopes:
-      - XXXX - list of values -- not implemented str
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create again instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"

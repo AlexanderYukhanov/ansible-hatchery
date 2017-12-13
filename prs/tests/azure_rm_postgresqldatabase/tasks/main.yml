@@ -45,26 +45,6 @@
       - output.changed
       - output.name == 'testdatabase'
 
-- name: Create PostgreSQL Server -- check mode
-  azure_rm_postgresqlserver:
-    resource_group: "{{ resource_group }}"
-    name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
-    properties:
-      create_mode: Default
-      admin_username: zimxyz
-      admin_password: Testpasswordxyz12!
-    location: westus
-- name: Create again instance of PostgreSQL Database -- check mode
-  azure_rm_postgresqldatabase:
-    resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
-    name: testdatabase
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"

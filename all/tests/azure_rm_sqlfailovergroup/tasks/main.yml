@@ -29,18 +29,6 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Create again instance of FailoverGroups -- check mode
-  azure_rm_sqlfailovergroup:
-    resource_group: "{{ resource_group }}"
-    partner_servers:
-    databases:
-      - XXXX - list of values -- not implemented str
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create again instance of FailoverGroups
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"

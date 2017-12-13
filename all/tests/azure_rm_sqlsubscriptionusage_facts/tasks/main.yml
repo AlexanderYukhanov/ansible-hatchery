@@ -21,14 +21,6 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Create again instance of SubscriptionUsages -- check mode
-  azure_rm_sqlsubscriptionusage_facts:
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create again instance of SubscriptionUsages
   azure_rm_sqlsubscriptionusage_facts:
   register: output

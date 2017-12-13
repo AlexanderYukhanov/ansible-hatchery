@@ -23,15 +23,6 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Create again instance of ServiceObjectives -- check mode
-  azure_rm_sqlserviceobjective_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create again instance of ServiceObjectives
   azure_rm_sqlserviceobjective_facts:
     resource_group: "{{ resource_group }}"
