@@ -254,12 +254,12 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DatabaseBlobAuditingPolicies instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_databaseblobauditingpolicies()
-            self.results['changed'] = True
         else:
             self.log("DatabaseBlobAuditingPolicies instance unchanged")
             self.results['changed'] = False

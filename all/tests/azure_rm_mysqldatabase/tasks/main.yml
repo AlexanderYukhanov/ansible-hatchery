@@ -36,7 +36,7 @@
       - output.changed == false
       - output.name == 'testdatabase'
 
-- name: Delete instance of MySQL Database
+- name: Delete instance of MySQL Database -- check mode
   azure_rm_mysqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
@@ -61,7 +61,7 @@
     that:
       - output.changed
 
-- name: Delete instance of MySQL Database
+- name: Delete unexisting instance of MySQL Database
   azure_rm_mysqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"

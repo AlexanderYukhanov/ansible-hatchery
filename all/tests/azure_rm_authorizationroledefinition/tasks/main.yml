@@ -38,7 +38,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of RoleDefinitions
+- name: Delete instance of RoleDefinitions -- check mode
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
@@ -61,7 +61,7 @@
     that:
       - output.changed
 
-- name: Delete instance of RoleDefinitions
+- name: Delete unexisting instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz

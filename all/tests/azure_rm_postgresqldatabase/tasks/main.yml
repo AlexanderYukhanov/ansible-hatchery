@@ -35,7 +35,7 @@
       - output.changed == false
       - output.name == 'testdatabase'
 
-- name: Delete instance of PostgreSQL Database
+- name: Delete instance of PostgreSQL Database -- check mode
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
@@ -60,7 +60,7 @@
     that:
       - output.changed
 
-- name: Delete instance of PostgreSQL Database
+- name: Delete unexisting instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"

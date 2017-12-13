@@ -214,12 +214,12 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("RoleDefinitions instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_roledefinitions()
-            self.results['changed'] = True
         else:
             self.log("RoleDefinitions instance unchanged")
             self.results['changed'] = False

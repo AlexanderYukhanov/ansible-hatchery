@@ -301,12 +301,12 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("DataMaskingRules instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_datamaskingrules()
-            self.results['changed'] = True
         else:
             self.log("DataMaskingRules instance unchanged")
             self.results['changed'] = False

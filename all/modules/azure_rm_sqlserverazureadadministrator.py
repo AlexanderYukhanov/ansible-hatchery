@@ -208,12 +208,12 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerAzureADAdministrators instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_serverazureadadministrators()
-            self.results['changed'] = True
         else:
             self.log("ServerAzureADAdministrators instance unchanged")
             self.results['changed'] = False

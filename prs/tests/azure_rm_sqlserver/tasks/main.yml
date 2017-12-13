@@ -30,7 +30,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of SQL Server
+- name: Delete instance of SQL Server -- check mode
   azure_rm_sqlserver:
     resource_group: "{{ resource_group }}"
     name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
@@ -53,7 +53,7 @@
     that:
       - output.changed
 
-- name: Delete instance of SQL Server
+- name: Delete unexisting instance of SQL Server
   azure_rm_sqlserver:
     resource_group: "{{ resource_group }}"
     name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"

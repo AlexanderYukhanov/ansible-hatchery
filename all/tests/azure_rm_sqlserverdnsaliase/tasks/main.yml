@@ -22,7 +22,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of ServerDnsAliases
+- name: Delete instance of ServerDnsAliases -- check mode
   azure_rm_sqlserverdnsaliase:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -43,7 +43,7 @@
     that:
       - output.changed
 
-- name: Delete instance of ServerDnsAliases
+- name: Delete unexisting instance of ServerDnsAliases
   azure_rm_sqlserverdnsaliase:
     resource_group: "{{ resource_group }}"
     state: absent

@@ -28,7 +28,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of FailoverGroups
+- name: Delete instance of FailoverGroups -- check mode
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -49,7 +49,7 @@
     that:
       - output.changed
 
-- name: Delete instance of FailoverGroups
+- name: Delete unexisting instance of FailoverGroups
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"
     state: absent

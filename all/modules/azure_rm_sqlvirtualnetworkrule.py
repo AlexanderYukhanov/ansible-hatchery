@@ -188,12 +188,12 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("VirtualNetworkRules instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_virtualnetworkrules()
-            self.results['changed'] = True
         else:
             self.log("VirtualNetworkRules instance unchanged")
             self.results['changed'] = False

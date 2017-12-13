@@ -22,7 +22,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of VirtualNetworkRules
+- name: Delete instance of VirtualNetworkRules -- check mode
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -43,7 +43,7 @@
     that:
       - output.changed
 
-- name: Delete instance of VirtualNetworkRules
+- name: Delete unexisting instance of VirtualNetworkRules
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     state: absent

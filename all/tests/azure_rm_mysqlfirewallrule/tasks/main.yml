@@ -40,7 +40,7 @@
       - output.changed == false
       - output.name == 'test-firewall-rule'
 
-- name: Delete instance of FirewallRules
+- name: Delete instance of FirewallRules -- check mode
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
@@ -65,7 +65,7 @@
     that:
       - output.changed
 
-- name: Delete instance of FirewallRules
+- name: Delete unexisting instance of FirewallRules
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server

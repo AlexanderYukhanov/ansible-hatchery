@@ -28,7 +28,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of SyncGroups
+- name: Delete instance of SyncGroups -- check mode
   azure_rm_sqlsyncgroup:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -49,7 +49,7 @@
     that:
       - output.changed
 
-- name: Delete instance of SyncGroups
+- name: Delete unexisting instance of SyncGroups
   azure_rm_sqlsyncgroup:
     resource_group: "{{ resource_group }}"
     state: absent

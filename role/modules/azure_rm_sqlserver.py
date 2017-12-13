@@ -226,12 +226,12 @@ class AzureRMServers(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SQL Server instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_sqlserver()
-            self.results['changed'] = True
         else:
             self.log("SQL Server instance unchanged")
             self.results['changed'] = False

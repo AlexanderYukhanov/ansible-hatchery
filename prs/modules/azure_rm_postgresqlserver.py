@@ -256,12 +256,12 @@ class AzureRMServers(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("PostgreSQL Server instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_postgresqlserver()
-            self.results['changed'] = True
         else:
             self.log("PostgreSQL Server instance unchanged")
             self.results['changed'] = False

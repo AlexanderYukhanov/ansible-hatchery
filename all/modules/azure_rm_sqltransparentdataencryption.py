@@ -188,12 +188,12 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("TransparentDataEncryptions instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_transparentdataencryptions()
-            self.results['changed'] = True
         else:
             self.log("TransparentDataEncryptions instance unchanged")
             self.results['changed'] = False

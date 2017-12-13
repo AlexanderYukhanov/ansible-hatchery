@@ -173,12 +173,12 @@ class AzureRMServerConnectionPolicies(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("ServerConnectionPolicies instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_serverconnectionpolicies()
-            self.results['changed'] = True
         else:
             self.log("ServerConnectionPolicies instance unchanged")
             self.results['changed'] = False

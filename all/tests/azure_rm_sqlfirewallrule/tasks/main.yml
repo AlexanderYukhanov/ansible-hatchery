@@ -22,7 +22,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of FirewallRules
+- name: Delete instance of FirewallRules -- check mode
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -43,7 +43,7 @@
     that:
       - output.changed
 
-- name: Delete instance of FirewallRules
+- name: Delete unexisting instance of FirewallRules
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
     state: absent

@@ -36,7 +36,7 @@
       - output.changed == false
       - output.user_visible_state == 'Ready'
 
-- name: Delete instance of MySQL Server
+- name: Delete instance of MySQL Server -- check mode
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
     name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
@@ -59,7 +59,7 @@
     that:
       - output.changed
 
-- name: Delete instance of MySQL Server
+- name: Delete unexisting instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
     name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"

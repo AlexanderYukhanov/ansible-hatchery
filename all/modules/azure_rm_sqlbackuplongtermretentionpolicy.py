@@ -199,12 +199,12 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("BackupLongTermRetentionPolicies instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_backuplongtermretentionpolicies()
-            self.results['changed'] = True
         else:
             self.log("BackupLongTermRetentionPolicies instance unchanged")
             self.results['changed'] = False

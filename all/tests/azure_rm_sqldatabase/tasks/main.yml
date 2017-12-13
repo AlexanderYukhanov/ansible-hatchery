@@ -35,7 +35,7 @@
       - output.changed == false
       - output.status == 'Online'
 
-- name: Delete instance of SQL Database
+- name: Delete instance of SQL Database -- check mode
   azure_rm_sqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
@@ -60,7 +60,7 @@
     that:
       - output.changed
 
-- name: Delete instance of SQL Database
+- name: Delete unexisting instance of SQL Database
   azure_rm_sqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"

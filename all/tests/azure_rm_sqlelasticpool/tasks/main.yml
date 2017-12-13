@@ -35,7 +35,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of ElasticPool
+- name: Delete instance of ElasticPool -- check mode
   azure_rm_sqlelasticpool:
     resource_group: "{{ resource_group }}"
     server_name: zims-server
@@ -60,7 +60,7 @@
     that:
       - output.changed
 
-- name: Delete instance of ElasticPool
+- name: Delete unexisting instance of ElasticPool
   azure_rm_sqlelasticpool:
     resource_group: "{{ resource_group }}"
     server_name: zims-server

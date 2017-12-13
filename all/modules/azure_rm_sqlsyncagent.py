@@ -184,12 +184,12 @@ class AzureRMSyncAgents(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("SyncAgents instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_syncagents()
-            self.results['changed'] = True
         else:
             self.log("SyncAgents instance unchanged")
             self.results['changed'] = False

@@ -189,12 +189,12 @@ class AzureRMConfigurations(AzureRMModuleBase):
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("Configurations instance deleted")
+            self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
             self.delete_configurations()
-            self.results['changed'] = True
         else:
             self.log("Configurations instance unchanged")
             self.results['changed'] = False

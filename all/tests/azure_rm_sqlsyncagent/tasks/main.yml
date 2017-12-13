@@ -22,7 +22,7 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of SyncAgents
+- name: Delete instance of SyncAgents -- check mode
   azure_rm_sqlsyncagent:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -43,7 +43,7 @@
     that:
       - output.changed
 
-- name: Delete instance of SyncAgents
+- name: Delete unexisting instance of SyncAgents
   azure_rm_sqlsyncagent:
     resource_group: "{{ resource_group }}"
     state: absent
