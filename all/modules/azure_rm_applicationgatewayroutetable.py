@@ -63,6 +63,9 @@ options:
             etag:
                 description:
                     - A unique read-only string that changes whenever the resource is updated.
+    disable_bgp_route_propagation:
+        description:
+            - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
     provisioning_state:
         description:
             - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -94,6 +97,7 @@ EXAMPLES = '''
           provisioning_state: provisioning_state
           name: name
           etag: etag
+      disable_bgp_route_propagation: disable_bgp_route_propagation
       provisioning_state: provisioning_state
       etag: etag
 '''
@@ -149,6 +153,10 @@ class AzureRMRouteTables(AzureRMModuleBase):
                 type='list',
                 required=False
             ),
+            disable_bgp_route_propagation=dict(
+                type='str',
+                required=False
+            ),
             provisioning_state=dict(
                 type='str',
                 required=False
@@ -191,6 +199,8 @@ class AzureRMRouteTables(AzureRMModuleBase):
                     self.parameters.update({"location": kwargs[key]})
                 elif key == "routes":
                     self.parameters.update({"routes": kwargs[key]})
+                elif key == "disable_bgp_route_propagation":
+                    self.parameters.update({"disable_bgp_route_propagation": kwargs[key]})
                 elif key == "provisioning_state":
                     self.parameters.update({"provisioning_state": kwargs[key]})
                 elif key == "etag":

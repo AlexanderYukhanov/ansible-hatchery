@@ -2220,6 +2220,22 @@
                           "NoLog": false
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "disable_bgp_route_propagation",
+                          "Disposition": "default",
+                          "Type": "str",
+                          "IsList": false,
+                          "Required": "False",
+                          "VariableValue": "None",
+                          "Documentation": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "DefaultValue": null,
+                          "DefaultValueSample": "disable_bgp_route_propagation",
+                          "DefaultValueTest": "",
+                          "SubOptions": [],
+                          "RequiredCount": 0,
+                          "NoLog": false
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "provisioning_state",
                           "Disposition": "default",
@@ -4656,6 +4672,22 @@
           "NoLog": false
         },
         {
+          "Name": "enable_http2",
+          "NameAlt": "enable_http2",
+          "Disposition": "parameters",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Whether HTTP2 is enabled on the application gateway resource.",
+          "DefaultValue": null,
+          "DefaultValueSample": "enable_http2",
+          "DefaultValueTest": "",
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false
+        },
+        {
           "Name": "resource_guid",
           "NameAlt": "resource_guid",
           "Disposition": "parameters",
@@ -6400,6 +6432,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -8048,6 +8089,15 @@
           ]
         },
         {
+          "Name": "enable_http2",
+          "NameAlt": "x",
+          "Description": "Whether HTTP2 is enabled on the application gateway resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "enable_http2",
+          "SubFields": []
+        },
+        {
           "Name": "resource_guid",
           "NameAlt": "x",
           "Description": "Resource GUID property of the application gateway resource.",
@@ -8923,7 +8973,7 @@
           "Name": "peer_asn",
           "NameAlt": "peer_asn",
           "Disposition": "peering_parameters",
-          "Type": "int",
+          "Type": "long",
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
@@ -9512,7 +9562,7 @@
                   "Name": "peer_asn",
                   "NameAlt": "peer_asn",
                   "Disposition": "default",
-                  "Type": "int",
+                  "Type": "long",
                   "IsList": false,
                   "Required": "False",
                   "VariableValue": "None",
@@ -10101,7 +10151,7 @@
                           "Name": "peer_asn",
                           "NameAlt": "peer_asn",
                           "Disposition": "default",
-                          "Type": "int",
+                          "Type": "long",
                           "IsList": false,
                           "Required": "False",
                           "VariableValue": "None",
@@ -11025,7 +11075,7 @@
                       "Name": "peer_asn",
                       "NameAlt": "peer_asn",
                       "Disposition": "default",
-                      "Type": "int",
+                      "Type": "long",
                       "IsList": false,
                       "Required": "False",
                       "VariableValue": "None",
@@ -11698,7 +11748,7 @@
           "Name": "peer_asn",
           "NameAlt": "x",
           "Description": "The peer ASN.",
-          "Type": "int",
+          "Type": "long",
           "Returned": "always",
           "SampleValue": "peer_asn",
           "SubFields": []
@@ -12086,7 +12136,7 @@
                   "Name": "peer_asn",
                   "NameAlt": "x",
                   "Description": "The peer ASN.",
-                  "Type": "int",
+                  "Type": "long",
                   "Returned": "always",
                   "SampleValue": "peer_asn",
                   "SubFields": []
@@ -12474,7 +12524,7 @@
                           "Name": "peer_asn",
                           "NameAlt": "x",
                           "Description": "The peer ASN.",
-                          "Type": "int",
+                          "Type": "long",
                           "Returned": "always",
                           "SampleValue": "peer_asn",
                           "SubFields": []
@@ -13150,7 +13200,7 @@
                       "Name": "peer_asn",
                       "NameAlt": "x",
                       "Description": "The peer ASN.",
-                      "Type": "int",
+                      "Type": "long",
                       "Returned": "always",
                       "SampleValue": "peer_asn",
                       "SubFields": []
@@ -14030,7 +14080,7 @@
               "Name": "peer_asn",
               "NameAlt": "peer_asn",
               "Disposition": "default",
-              "Type": "int",
+              "Type": "long",
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
@@ -14619,7 +14669,7 @@
                       "Name": "peer_asn",
                       "NameAlt": "peer_asn",
                       "Disposition": "default",
-                      "Type": "int",
+                      "Type": "long",
                       "IsList": false,
                       "Required": "False",
                       "VariableValue": "None",
@@ -15568,7 +15618,7 @@
                           "Name": "peer_asn",
                           "NameAlt": "peer_asn",
                           "Disposition": "default",
-                          "Type": "int",
+                          "Type": "long",
                           "IsList": false,
                           "Required": "False",
                           "VariableValue": "None",
@@ -16241,7 +16291,7 @@
               "Name": "peer_asn",
               "NameAlt": "x",
               "Description": "The peer ASN.",
-              "Type": "int",
+              "Type": "long",
               "Returned": "always",
               "SampleValue": "peer_asn",
               "SubFields": []
@@ -16629,7 +16679,7 @@
                       "Name": "peer_asn",
                       "NameAlt": "x",
                       "Description": "The peer ASN.",
-                      "Type": "int",
+                      "Type": "long",
                       "Returned": "always",
                       "SampleValue": "peer_asn",
                       "SubFields": []
@@ -17293,7 +17343,7 @@
                           "Name": "peer_asn",
                           "NameAlt": "x",
                           "Description": "The peer ASN.",
-                          "Type": "int",
+                          "Type": "long",
                           "Returned": "always",
                           "SampleValue": "peer_asn",
                           "SubFields": []
@@ -18859,6 +18909,22 @@
                           "NoLog": false
                         }
                       ],
+                      "RequiredCount": 0,
+                      "NoLog": false
+                    },
+                    {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "disable_bgp_route_propagation",
+                      "Disposition": "default",
+                      "Type": "str",
+                      "IsList": false,
+                      "Required": "False",
+                      "VariableValue": "None",
+                      "Documentation": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "DefaultValue": null,
+                      "DefaultValueSample": "disable_bgp_route_propagation",
+                      "DefaultValueTest": "",
+                      "SubOptions": [],
                       "RequiredCount": 0,
                       "NoLog": false
                     },
@@ -21722,6 +21788,15 @@
                       ]
                     },
                     {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
+                    },
+                    {
                       "Name": "provisioning_state",
                       "NameAlt": "x",
                       "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -23690,6 +23765,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -25627,6 +25711,15 @@
                           "Type": "complex",
                           "Returned": "always",
                           "SampleValue": "subnets",
+                          "SubFields": []
+                        },
+                        {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
                           "SubFields": []
                         },
                         {
@@ -30409,6 +30502,15 @@
                           "SubFields": []
                         }
                       ]
+                    },
+                    {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
                     },
                     {
                       "Name": "provisioning_state",
@@ -35240,6 +35342,22 @@
                       "NoLog": false
                     },
                     {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "disable_bgp_route_propagation",
+                      "Disposition": "default",
+                      "Type": "str",
+                      "IsList": false,
+                      "Required": "False",
+                      "VariableValue": "None",
+                      "Documentation": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "DefaultValue": null,
+                      "DefaultValueSample": "disable_bgp_route_propagation",
+                      "DefaultValueTest": "",
+                      "SubOptions": [],
+                      "RequiredCount": 0,
+                      "NoLog": false
+                    },
+                    {
                       "Name": "provisioning_state",
                       "NameAlt": "provisioning_state",
                       "Disposition": "default",
@@ -39399,6 +39517,15 @@
                       ]
                     },
                     {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
+                    },
+                    {
                       "Name": "provisioning_state",
                       "NameAlt": "x",
                       "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -43184,6 +43311,15 @@
                           "SubFields": []
                         }
                       ]
+                    },
+                    {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
                     },
                     {
                       "Name": "provisioning_state",
@@ -47740,6 +47876,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -48942,6 +49087,15 @@
                           "Type": "complex",
                           "Returned": "always",
                           "SampleValue": "subnets",
+                          "SubFields": []
+                        },
+                        {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
                           "SubFields": []
                         },
                         {
@@ -51076,6 +51230,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -51678,6 +51841,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -51908,6 +52080,15 @@
                       "SubFields": []
                     }
                   ]
+                },
+                {
+                  "Name": "disable_bgp_route_propagation",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "disable_bgp_route_propagation",
+                  "SubFields": []
                 },
                 {
                   "Name": "provisioning_state",
@@ -52214,6 +52395,15 @@
                           "Type": "complex",
                           "Returned": "always",
                           "SampleValue": "subnets",
+                          "SubFields": []
+                        },
+                        {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
                           "SubFields": []
                         },
                         {
@@ -56262,6 +56452,15 @@
                       ]
                     },
                     {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
+                    },
+                    {
                       "Name": "provisioning_state",
                       "NameAlt": "x",
                       "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -57818,7 +58017,7 @@
               "Name": "peer_asn",
               "NameAlt": "peer_asn",
               "Disposition": "default",
-              "Type": "int",
+              "Type": "long",
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
@@ -58407,7 +58606,7 @@
                       "Name": "peer_asn",
                       "NameAlt": "peer_asn",
                       "Disposition": "default",
-                      "Type": "int",
+                      "Type": "long",
                       "IsList": false,
                       "Required": "False",
                       "VariableValue": "None",
@@ -59356,7 +59555,7 @@
                           "Name": "peer_asn",
                           "NameAlt": "peer_asn",
                           "Disposition": "default",
-                          "Type": "int",
+                          "Type": "long",
                           "IsList": false,
                           "Required": "False",
                           "VariableValue": "None",
@@ -59877,7 +60076,7 @@
               "Name": "peer_asn",
               "NameAlt": "x",
               "Description": "The peer ASN.",
-              "Type": "int",
+              "Type": "long",
               "Returned": "always",
               "SampleValue": "peer_asn",
               "SubFields": []
@@ -60265,7 +60464,7 @@
                       "Name": "peer_asn",
                       "NameAlt": "x",
                       "Description": "The peer ASN.",
-                      "Type": "int",
+                      "Type": "long",
                       "Returned": "always",
                       "SampleValue": "peer_asn",
                       "SubFields": []
@@ -60929,7 +61128,7 @@
                           "Name": "peer_asn",
                           "NameAlt": "x",
                           "Description": "The peer ASN.",
-                          "Type": "int",
+                          "Type": "long",
                           "Returned": "always",
                           "SampleValue": "peer_asn",
                           "SubFields": []
@@ -61862,6 +62061,22 @@
               "NoLog": false
             }
           ],
+          "RequiredCount": 0,
+          "NoLog": false
+        },
+        {
+          "Name": "disable_bgp_route_propagation",
+          "NameAlt": "disable_bgp_route_propagation",
+          "Disposition": "parameters",
+          "Type": "str",
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+          "DefaultValue": null,
+          "DefaultValueSample": "disable_bgp_route_propagation",
+          "DefaultValueTest": "",
+          "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
         },
@@ -63450,6 +63665,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -64052,6 +64276,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -64282,6 +64515,15 @@
                       "SubFields": []
                     }
                   ]
+                },
+                {
+                  "Name": "disable_bgp_route_propagation",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "disable_bgp_route_propagation",
+                  "SubFields": []
                 },
                 {
                   "Name": "provisioning_state",
@@ -64588,6 +64830,15 @@
                           "Type": "complex",
                           "Returned": "always",
                           "SampleValue": "subnets",
+                          "SubFields": []
+                        },
+                        {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
                           "SubFields": []
                         },
                         {
@@ -65208,6 +65459,15 @@
               "SubFields": []
             }
           ]
+        },
+        {
+          "Name": "disable_bgp_route_propagation",
+          "NameAlt": "x",
+          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "disable_bgp_route_propagation",
+          "SubFields": []
         },
         {
           "Name": "provisioning_state",
@@ -66944,6 +67204,22 @@
                       "NoLog": false
                     }
                   ],
+                  "RequiredCount": 0,
+                  "NoLog": false
+                },
+                {
+                  "Name": "disable_bgp_route_propagation",
+                  "NameAlt": "disable_bgp_route_propagation",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "IsList": false,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": "disable_bgp_route_propagation",
+                  "DefaultValueTest": "",
+                  "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
                 },
@@ -69006,6 +69282,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -69608,6 +69893,15 @@
                           "SubFields": []
                         },
                         {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
+                          "SubFields": []
+                        },
+                        {
                           "Name": "provisioning_state",
                           "NameAlt": "x",
                           "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -69838,6 +70132,15 @@
                       "SubFields": []
                     }
                   ]
+                },
+                {
+                  "Name": "disable_bgp_route_propagation",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "disable_bgp_route_propagation",
+                  "SubFields": []
                 },
                 {
                   "Name": "provisioning_state",
@@ -70144,6 +70447,15 @@
                           "Type": "complex",
                           "Returned": "always",
                           "SampleValue": "subnets",
+                          "SubFields": []
+                        },
+                        {
+                          "Name": "disable_bgp_route_propagation",
+                          "NameAlt": "x",
+                          "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "disable_bgp_route_propagation",
                           "SubFields": []
                         },
                         {
@@ -72190,6 +72502,22 @@
                   "NoLog": false
                 }
               ],
+              "RequiredCount": 0,
+              "NoLog": false
+            },
+            {
+              "Name": "disable_bgp_route_propagation",
+              "NameAlt": "disable_bgp_route_propagation",
+              "Disposition": "default",
+              "Type": "str",
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+              "DefaultValue": null,
+              "DefaultValueSample": "disable_bgp_route_propagation",
+              "DefaultValueTest": "",
+              "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
             },
@@ -75708,6 +76036,15 @@
                       ]
                     },
                     {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
+                    },
+                    {
                       "Name": "provisioning_state",
                       "NameAlt": "x",
                       "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -77281,6 +77618,15 @@
                       ]
                     },
                     {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
+                    },
+                    {
                       "Name": "provisioning_state",
                       "NameAlt": "x",
                       "Description": "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
@@ -77747,6 +78093,15 @@
                   "SubFields": []
                 }
               ]
+            },
+            {
+              "Name": "disable_bgp_route_propagation",
+              "NameAlt": "x",
+              "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "disable_bgp_route_propagation",
+              "SubFields": []
             },
             {
               "Name": "provisioning_state",
@@ -78789,6 +79144,15 @@
                           "SubFields": []
                         }
                       ]
+                    },
+                    {
+                      "Name": "disable_bgp_route_propagation",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "disable_bgp_route_propagation",
+                      "SubFields": []
                     },
                     {
                       "Name": "provisioning_state",
@@ -85974,6 +86338,7 @@
     "EXAMPLE -- DefaultSecurityRuleList",
     "EXAMPLE -- DefaultSecurityRuleGet",
     "EXAMPLE -- Update network watcher tags",
+    "EXAMPLE -- Get Topology",
     "EXAMPLE -- Get Azure Reachability Report",
     "EXAMPLE -- Get Azure Reachability Report",
     "EXAMPLE -- Get a list of operations for a resource provider",
@@ -86012,7 +86377,6 @@
     "EXAMPLE -- List routes",
     "EXAMPLE -- ServiceCommunityList",
     "EXAMPLE -- List usages",
-    "EXAMPLE -- List usages spaced location",
     "EXAMPLE -- Delete virtual network",
     "EXAMPLE -- Get virtual network",
     "EXAMPLE -- Create virtual network",

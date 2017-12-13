@@ -472,6 +472,9 @@ options:
                                     routes:
                                         description:
                                             - Collection of routes contained within a route table.
+                                    disable_bgp_route_propagation:
+                                        description:
+                                            - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -970,6 +973,9 @@ options:
                     rules:
                         description:
                             - The list of rules that will be disabled. If null, all rules of the rule group will be disabled.
+    enable_http2:
+        description:
+            - Whether HTTP2 is enabled on the application gateway resource.
     resource_guid:
         description:
             - Resource GUID property of the application gateway resource.
@@ -1132,6 +1138,7 @@ EXAMPLES = '''
                   id: id
                   location: location
                   routes:
+                  disable_bgp_route_propagation: disable_bgp_route_propagation
                   provisioning_state: provisioning_state
                   etag: etag
                 service_endpoints:
@@ -1285,6 +1292,7 @@ EXAMPLES = '''
           - rule_group_name: rule_group_name
             rules:
               - XXXX - list of values -- not implemented int
+      enable_http2: enable_http2
       resource_guid: resource_guid
       provisioning_state: provisioning_state
       etag: etag
@@ -1397,6 +1405,10 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
                 type='dict',
                 required=False
             ),
+            enable_http2=dict(
+                type='str',
+                required=False
+            ),
             resource_guid=dict(
                 type='str',
                 required=False
@@ -1471,6 +1483,8 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
                     self.parameters.update({"redirect_configurations": kwargs[key]})
                 elif key == "web_application_firewall_configuration":
                     self.parameters.update({"web_application_firewall_configuration": kwargs[key]})
+                elif key == "enable_http2":
+                    self.parameters.update({"enable_http2": kwargs[key]})
                 elif key == "resource_guid":
                     self.parameters.update({"resource_guid": kwargs[key]})
                 elif key == "provisioning_state":
