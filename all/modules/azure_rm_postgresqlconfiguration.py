@@ -173,6 +173,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
             self.log("Need to Create / Update the Configurations instance")
 
             if self.check_mode:
+                self.results['changed'] = True
                 return self.results
 
             response = self.create_update_configurations()
