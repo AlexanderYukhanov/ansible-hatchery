@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of EncryptionProtectors
+- name: Create again instance of EncryptionProtectors -- check mode
+  azure_rm_sqlencryptionprotector_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of EncryptionProtectors
   azure_rm_sqlencryptionprotector_facts:
     resource_group: "{{ resource_group }}"
   register: output

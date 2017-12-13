@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of RestorePoints
+- name: Create again instance of RestorePoints -- check mode
+  azure_rm_sqlrestorepoint_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of RestorePoints
   azure_rm_sqlrestorepoint_facts:
     resource_group: "{{ resource_group }}"
   register: output

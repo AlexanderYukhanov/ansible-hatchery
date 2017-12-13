@@ -27,7 +27,18 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of DatabaseBlobAuditingPolicies
+- name: Create again instance of DatabaseBlobAuditingPolicies -- check mode
+  azure_rm_sqldatabaseblobauditingpolicy:
+    resource_group: "{{ resource_group }}"
+    audit_actions_and_groups:
+      - XXXX - list of values -- not implemented str
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of DatabaseBlobAuditingPolicies
   azure_rm_sqldatabaseblobauditingpolicy:
     resource_group: "{{ resource_group }}"
     audit_actions_and_groups:

@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of LogFiles
+- name: Create again instance of LogFiles -- check mode
+  azure_rm_mysqllogfile_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of LogFiles
   azure_rm_mysqllogfile_facts:
     resource_group: "{{ resource_group }}"
   register: output

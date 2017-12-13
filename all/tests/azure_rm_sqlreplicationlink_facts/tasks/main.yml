@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of ReplicationLinks
+- name: Create again instance of ReplicationLinks -- check mode
+  azure_rm_sqlreplicationlink_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of ReplicationLinks
   azure_rm_sqlreplicationlink_facts:
     resource_group: "{{ resource_group }}"
   register: output

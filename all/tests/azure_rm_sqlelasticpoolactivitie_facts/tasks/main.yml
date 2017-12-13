@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of ElasticPoolActivities
+- name: Create again instance of ElasticPoolActivities -- check mode
+  azure_rm_sqlelasticpoolactivitie_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of ElasticPoolActivities
   azure_rm_sqlelasticpoolactivitie_facts:
     resource_group: "{{ resource_group }}"
   register: output

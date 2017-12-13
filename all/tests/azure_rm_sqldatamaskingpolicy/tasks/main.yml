@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of DataMaskingPolicies
+- name: Create again instance of DataMaskingPolicies -- check mode
+  azure_rm_sqldatamaskingpolicy:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of DataMaskingPolicies
   azure_rm_sqldatamaskingpolicy:
     resource_group: "{{ resource_group }}"
   register: output

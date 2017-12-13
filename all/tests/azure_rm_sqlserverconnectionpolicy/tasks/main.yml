@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of ServerConnectionPolicies
+- name: Create again instance of ServerConnectionPolicies -- check mode
+  azure_rm_sqlserverconnectionpolicy:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of ServerConnectionPolicies
   azure_rm_sqlserverconnectionpolicy:
     resource_group: "{{ resource_group }}"
   register: output

@@ -3,6 +3,19 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
+- name: Delete unexisting instance of ElasticPool -- check mode
+  azure_rm_sqlelasticpool:
+    resource_group: "{{ resource_group }}"
+    server_name: zims-server
+    name: test-elastic-pool
+    state: absent
+  check_only: yes
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false
+
 - name: Delete unexisting instance of ElasticPool
   azure_rm_sqlelasticpool:
     resource_group: "{{ resource_group }}"
@@ -55,7 +68,33 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of ElasticPool
+- name: Create SQL Server -- check mode
+  azure_rm_sqlserver:
+    resource_group: "{{ resource_group }}"
+    name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    location: eastus
+    admin_username: mylogin
+    admin_password: Testpasswordxyz12!
+- name: Create again instance of ElasticPool -- check mode
+  azure_rm_sqlelasticpool:
+    resource_group: "{{ resource_group }}"
+    server_name: zims-server
+    name: test-elastic-pool
+    location: westus
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create SQL Server
+  azure_rm_sqlserver:
+    resource_group: "{{ resource_group }}"
+    name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    location: eastus
+    admin_username: mylogin
+    admin_password: Testpasswordxyz12!
+- name: Create again instance of ElasticPool
   azure_rm_sqlelasticpool:
     resource_group: "{{ resource_group }}"
     server_name: zims-server

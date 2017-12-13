@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of ServerCommunicationLinks
+- name: Create again instance of ServerCommunicationLinks -- check mode
+  azure_rm_sqlservercommunicationlink_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of ServerCommunicationLinks
   azure_rm_sqlservercommunicationlink_facts:
     resource_group: "{{ resource_group }}"
   register: output

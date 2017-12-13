@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of DatabaseUsages
+- name: Create again instance of DatabaseUsages -- check mode
+  azure_rm_sqldatabaseusage_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of DatabaseUsages
   azure_rm_sqldatabaseusage_facts:
     resource_group: "{{ resource_group }}"
   register: output

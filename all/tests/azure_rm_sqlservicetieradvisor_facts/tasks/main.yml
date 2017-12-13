@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of ServiceTierAdvisors
+- name: Create again instance of ServiceTierAdvisors -- check mode
+  azure_rm_sqlservicetieradvisor_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of ServiceTierAdvisors
   azure_rm_sqlservicetieradvisor_facts:
     resource_group: "{{ resource_group }}"
   register: output

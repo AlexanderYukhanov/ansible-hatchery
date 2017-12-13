@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of FirewallRules
+- name: Create again instance of FirewallRules -- check mode
+  azure_rm_postgresqlfirewallrule_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of FirewallRules
   azure_rm_postgresqlfirewallrule_facts:
     resource_group: "{{ resource_group }}"
   register: output

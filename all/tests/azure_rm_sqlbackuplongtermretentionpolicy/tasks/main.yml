@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of BackupLongTermRetentionPolicies
+- name: Create again instance of BackupLongTermRetentionPolicies -- check mode
+  azure_rm_sqlbackuplongtermretentionpolicy:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of BackupLongTermRetentionPolicies
   azure_rm_sqlbackuplongtermretentionpolicy:
     resource_group: "{{ resource_group }}"
   register: output

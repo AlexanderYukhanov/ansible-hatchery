@@ -21,7 +21,15 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of RoleDefinitions
+- name: Create again instance of RoleDefinitions -- check mode
+  azure_rm_authorizationroledefinition_facts:
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of RoleDefinitions
   azure_rm_authorizationroledefinition_facts:
   register: output
 - name: Assert the state has not changed

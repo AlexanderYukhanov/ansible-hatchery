@@ -21,7 +21,15 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of Capabilities
+- name: Create again instance of Capabilities -- check mode
+  azure_rm_sqlcapabilitie_facts:
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of Capabilities
   azure_rm_sqlcapabilitie_facts:
   register: output
 - name: Assert the state has not changed

@@ -23,7 +23,16 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Update instance of Databases
+- name: Create again instance of Databases -- check mode
+  azure_rm_postgresqldatabase_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert the state has not changed
+  assert:
+    that:
+      - output.changed == false
+
+- name: Create again instance of Databases
   azure_rm_postgresqldatabase_facts:
     resource_group: "{{ resource_group }}"
   register: output
