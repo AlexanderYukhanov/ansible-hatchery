@@ -1,4 +1,5 @@
-
+cd ~/ansible-hatchery
+git pull
 cd ~/ansible-hatchery/python/lib/ansible/modules/cloud/azure
 
 for f in $1*
