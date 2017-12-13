@@ -41,12 +41,37 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: testdatabase
+    check_mode: yes
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed
+
+- name: Delete instance of MySQL Database
+  azure_rm_mysqldatabase:
+    resource_group: "{{ resource_group }}"
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: testdatabase
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed
+
+- name: Delete instance of MySQL Database
+  azure_rm_mysqldatabase:
+    resource_group: "{{ resource_group }}"
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: testdatabase
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false
 
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:

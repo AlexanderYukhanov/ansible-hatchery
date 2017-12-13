@@ -34,9 +34,32 @@
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
+    check_mode: yes
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed
+
+- name: Delete instance of RoleAssignments
+  azure_rm_authorizationroleassignment:
+    scope: "/subscriptions/{{ azure_subscription_id }}"
+    role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed
+
+- name: Delete instance of RoleAssignments
+  azure_rm_authorizationroleassignment:
+    scope: "/subscriptions/{{ azure_subscription_id }}"
+    role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false

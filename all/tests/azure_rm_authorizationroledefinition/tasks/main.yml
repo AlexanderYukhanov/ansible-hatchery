@@ -42,9 +42,32 @@
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
+    check_mode: yes
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed
+
+- name: Delete instance of RoleDefinitions
+  azure_rm_authorizationroledefinition:
+    scope: "/subscriptions/{{ azure_subscription_id }}"
+    role_definition_id: rolexyz
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed
+
+- name: Delete instance of RoleDefinitions
+  azure_rm_authorizationroledefinition:
+    scope: "/subscriptions/{{ azure_subscription_id }}"
+    role_definition_id: rolexyz
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false

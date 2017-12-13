@@ -31,9 +31,30 @@
 - name: Delete instance of FailoverGroups
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"
+    check_mode: yes
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed
+
+- name: Delete instance of FailoverGroups
+  azure_rm_sqlfailovergroup:
+    resource_group: "{{ resource_group }}"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed
+
+- name: Delete instance of FailoverGroups
+  azure_rm_sqlfailovergroup:
+    resource_group: "{{ resource_group }}"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false

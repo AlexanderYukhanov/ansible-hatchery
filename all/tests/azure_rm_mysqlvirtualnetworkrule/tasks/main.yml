@@ -41,12 +41,37 @@
     resource_group: "{{ resource_group }}"
     server_name: test-mysql-server
     name: test-virtual-network-rule
+    check_mode: yes
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed
+
+- name: Delete instance of VirtualNetworkRules
+  azure_rm_mysqlvirtualnetworkrule:
+    resource_group: "{{ resource_group }}"
+    server_name: test-mysql-server
+    name: test-virtual-network-rule
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed
+
+- name: Delete instance of VirtualNetworkRules
+  azure_rm_mysqlvirtualnetworkrule:
+    resource_group: "{{ resource_group }}"
+    server_name: test-mysql-server
+    name: test-virtual-network-rule
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false
 
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:

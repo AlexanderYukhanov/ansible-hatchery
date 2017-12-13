@@ -25,9 +25,30 @@
 - name: Delete instance of FirewallRules
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
+    check_mode: yes
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed
+
+- name: Delete instance of FirewallRules
+  azure_rm_postgresqlfirewallrule:
+    resource_group: "{{ resource_group }}"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed
+
+- name: Delete instance of FirewallRules
+  azure_rm_postgresqlfirewallrule:
+    resource_group: "{{ resource_group }}"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false
