@@ -25,8 +25,8 @@
 - name: Delete instance of ServerCommunicationLinks
   azure_rm_sqlservercommunicationlink:
     resource_group: "{{ resource_group }}"
-    check_mode: yes
     state: absent
+  check_mode: yes
   register: output
 - name: Assert the state has changed
   assert:

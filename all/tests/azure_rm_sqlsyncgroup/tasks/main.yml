@@ -31,8 +31,8 @@
 - name: Delete instance of SyncGroups
   azure_rm_sqlsyncgroup:
     resource_group: "{{ resource_group }}"
-    check_mode: yes
     state: absent
+  check_mode: yes
   register: output
 - name: Assert the state has changed
   assert:

@@ -40,8 +40,8 @@
     resource_group: "{{ resource_group }}"
     server_name: zims-server
     name: test-elastic-pool
-    check_mode: yes
     state: absent
+  check_mode: yes
   register: output
 - name: Assert the state has changed
   assert:

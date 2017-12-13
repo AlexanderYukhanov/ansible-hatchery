@@ -34,8 +34,8 @@
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
-    check_mode: yes
     state: absent
+  check_mode: yes
   register: output
 - name: Assert the state has changed
   assert:

@@ -40,8 +40,8 @@
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-database
-    check_mode: yes
     state: absent
+  check_mode: yes
   register: output
 - name: Assert the state has changed
   assert:
