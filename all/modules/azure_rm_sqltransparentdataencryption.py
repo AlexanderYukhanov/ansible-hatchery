@@ -76,6 +76,7 @@ status:
     sample: status
 '''
 
+import time
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:
@@ -195,6 +196,10 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                 return self.results
 
             self.delete_transparentdataencryptions()
+            # make sure instance is actually deleted, for some Azure resources, instance is hanging around
+            # for some time after deletion -- this should be really fixed in Azure
+            while self.get_transparentdataencryptions():
+                time.sleep(20)
         else:
             self.log("TransparentDataEncryptions instance unchanged")
             self.results['changed'] = False

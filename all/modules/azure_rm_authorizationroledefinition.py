@@ -88,6 +88,7 @@ id:
     sample: id
 '''
 
+import time
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:
@@ -221,6 +222,10 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 return self.results
 
             self.delete_roledefinitions()
+            # make sure instance is actually deleted, for some Azure resources, instance is hanging around
+            # for some time after deletion -- this should be really fixed in Azure
+            while self.get_roledefinitions():
+                time.sleep(20)
         else:
             self.log("RoleDefinitions instance unchanged")
             self.results['changed'] = False

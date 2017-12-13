@@ -76,6 +76,7 @@ state:
     sample: state
 '''
 
+import time
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:
@@ -195,6 +196,10 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
                 return self.results
 
             self.delete_virtualnetworkrules()
+            # make sure instance is actually deleted, for some Azure resources, instance is hanging around
+            # for some time after deletion -- this should be really fixed in Azure
+            while self.get_virtualnetworkrules():
+                time.sleep(20)
         else:
             self.log("VirtualNetworkRules instance unchanged")
             self.results['changed'] = False

@@ -77,6 +77,7 @@ state:
     sample: state
 '''
 
+import time
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:
@@ -196,6 +197,10 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
                 return self.results
 
             self.delete_geobackuppolicies()
+            # make sure instance is actually deleted, for some Azure resources, instance is hanging around
+            # for some time after deletion -- this should be really fixed in Azure
+            while self.get_geobackuppolicies():
+                time.sleep(20)
         else:
             self.log("GeoBackupPolicies instance unchanged")
             self.results['changed'] = False

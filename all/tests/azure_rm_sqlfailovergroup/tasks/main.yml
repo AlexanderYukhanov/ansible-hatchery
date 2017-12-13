@@ -3,27 +3,6 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
-- name: Delete unexisting instance of FailoverGroups -- check mode
-  azure_rm_sqlfailovergroup:
-    resource_group: "{{ resource_group }}"
-    state: absent
-  check_only: yes
-  register: output
-- name: Assert the state has changed
-  assert:
-    that:
-      - output.changed == false
-
-- name: Delete unexisting instance of FailoverGroups
-  azure_rm_sqlfailovergroup:
-    resource_group: "{{ resource_group }}"
-    state: absent
-  register: output
-- name: Assert the state has changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create instance of FailoverGroups -- check mode
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"
@@ -95,3 +74,13 @@
   assert:
     that:
       - output.changed
+
+- name: Delete unexisting instance of FailoverGroups
+  azure_rm_sqlfailovergroup:
+    resource_group: "{{ resource_group }}"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false

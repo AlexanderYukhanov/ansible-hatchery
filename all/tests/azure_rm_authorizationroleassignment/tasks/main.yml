@@ -3,29 +3,6 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
-- name: Delete unexisting instance of RoleAssignments -- check mode
-  azure_rm_authorizationroleassignment:
-    scope: "/subscriptions/{{ azure_subscription_id }}"
-    role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
-    state: absent
-  check_only: yes
-  register: output
-- name: Assert the state has changed
-  assert:
-    that:
-      - output.changed == false
-
-- name: Delete unexisting instance of RoleAssignments
-  azure_rm_authorizationroleassignment:
-    scope: "/subscriptions/{{ azure_subscription_id }}"
-    role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
-    state: absent
-  register: output
-- name: Assert the state has changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Create instance of RoleAssignments -- check mode
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
@@ -103,3 +80,14 @@
   assert:
     that:
       - output.changed
+
+- name: Delete unexisting instance of RoleAssignments
+  azure_rm_authorizationroleassignment:
+    scope: "/subscriptions/{{ azure_subscription_id }}"
+    role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
+    state: absent
+  register: output
+- name: Assert the state has changed
+  assert:
+    that:
+      - output.changed == false

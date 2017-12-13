@@ -72,6 +72,7 @@ id:
     sample: id
 '''
 
+import time
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:
@@ -191,6 +192,10 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 return self.results
 
             self.delete_firewallrules()
+            # make sure instance is actually deleted, for some Azure resources, instance is hanging around
+            # for some time after deletion -- this should be really fixed in Azure
+            while self.get_firewallrules():
+                time.sleep(20)
         else:
             self.log("FirewallRules instance unchanged")
             self.results['changed'] = False
