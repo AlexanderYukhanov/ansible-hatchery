@@ -2,6 +2,25 @@
   set_fact:
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
+
+- name: Create instance of RoleDefinitions -- check mode
+  azure_rm_authorizationroledefinition:
+    scope: "/subscriptions/{{ azure_subscription_id }}"
+    role_definition_id: rolexyz
+    properties_permissions:
+      - actions:
+          - XXXX - list of values -- not implemented str
+        not_actions:
+          - XXXX - list of values -- not implemented str
+    properties_assignable_scopes:
+      - XXXX - list of values -- not implemented str
+  check_mode: yes
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+
 - name: Create instance of RoleDefinitions
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"

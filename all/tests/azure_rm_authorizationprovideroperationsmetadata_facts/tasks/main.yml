@@ -2,6 +2,16 @@
   set_fact:
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
+
+- name: Create instance of ProviderOperationsMetadata -- check mode
+  azure_rm_authorizationprovideroperationsmetadata_facts:
+  check_mode: yes
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+
 - name: Create instance of ProviderOperationsMetadata
   azure_rm_authorizationprovideroperationsmetadata_facts:
   register: output
