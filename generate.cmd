@@ -27,5 +27,5 @@ cd c:\dev\azure-rest-api-specs\specification\web\resource-manager
 call autorest --output-folder=c:\dev\ansible-hatchery\ --use=c:\dev\autorest.ansible\ --python --tag=package-2016-09
 
 cd c:\dev\azure-rest-api-specs\specification\network\resource-manager
-call autorest --output-folder=c:\dev\ansible-hatchery\ --use=c:\dev\autorest.ansible\ --python --tag=package-2017-10
+call autorest --output-folder=c:\dev\ansible-hatchery\ --use=c:\dev\autorest.ansible\ --python --tag=package-2017-09
 
