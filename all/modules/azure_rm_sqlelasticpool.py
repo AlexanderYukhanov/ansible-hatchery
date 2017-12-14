@@ -188,19 +188,19 @@ class AzureRMElasticPools(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "edition":
-                    self.parameters.update({"edition": kwargs[key]})
+                    self.parameters["edition"] = kwargs[key]
                 elif key == "dtu":
-                    self.parameters.update({"dtu": kwargs[key]})
+                    self.parameters["dtu"] = kwargs[key]
                 elif key == "database_dtu_max":
-                    self.parameters.update({"database_dtu_max": kwargs[key]})
+                    self.parameters["database_dtu_max"] = kwargs[key]
                 elif key == "database_dtu_min":
-                    self.parameters.update({"database_dtu_min": kwargs[key]})
+                    self.parameters["database_dtu_min"] = kwargs[key]
                 elif key == "storage_mb":
-                    self.parameters.update({"storage_mb": kwargs[key]})
+                    self.parameters["storage_mb"] = kwargs[key]
                 elif key == "zone_redundant":
-                    self.parameters.update({"zone_redundant": kwargs[key]})
+                    self.parameters["zone_redundant"] = kwargs[key]
 
         old_response = None
         response = None

@@ -527,23 +527,23 @@ class AzureRMSubnets(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.subnet_parameters.update({"id": kwargs[key]})
+                    self.subnet_parameters["id"] = kwargs[key]
                 elif key == "address_prefix":
-                    self.subnet_parameters.update({"address_prefix": kwargs[key]})
+                    self.subnet_parameters["address_prefix"] = kwargs[key]
                 elif key == "network_security_group":
-                    self.subnet_parameters.update({"network_security_group": kwargs[key]})
+                    self.subnet_parameters["network_security_group"] = kwargs[key]
                 elif key == "route_table":
-                    self.subnet_parameters.update({"route_table": kwargs[key]})
+                    self.subnet_parameters["route_table"] = kwargs[key]
                 elif key == "service_endpoints":
-                    self.subnet_parameters.update({"service_endpoints": kwargs[key]})
+                    self.subnet_parameters["service_endpoints"] = kwargs[key]
                 elif key == "resource_navigation_links":
-                    self.subnet_parameters.update({"resource_navigation_links": kwargs[key]})
+                    self.subnet_parameters["resource_navigation_links"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.subnet_parameters.update({"provisioning_state": kwargs[key]})
+                    self.subnet_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.subnet_parameters.update({"name": kwargs[key]})
+                    self.subnet_parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.subnet_parameters.update({"etag": kwargs[key]})
+                    self.subnet_parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

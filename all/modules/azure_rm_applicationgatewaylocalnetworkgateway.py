@@ -190,19 +190,19 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "local_network_address_space":
-                    self.parameters.update({"local_network_address_space": kwargs[key]})
+                    self.parameters["local_network_address_space"] = kwargs[key]
                 elif key == "gateway_ip_address":
-                    self.parameters.update({"gateway_ip_address": kwargs[key]})
+                    self.parameters["gateway_ip_address"] = kwargs[key]
                 elif key == "bgp_settings":
-                    self.parameters.update({"bgp_settings": kwargs[key]})
+                    self.parameters["bgp_settings"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

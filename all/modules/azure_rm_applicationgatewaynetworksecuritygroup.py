@@ -383,19 +383,19 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "security_rules":
-                    self.parameters.update({"security_rules": kwargs[key]})
+                    self.parameters["security_rules"] = kwargs[key]
                 elif key == "default_security_rules":
-                    self.parameters.update({"default_security_rules": kwargs[key]})
+                    self.parameters["default_security_rules"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

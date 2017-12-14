@@ -854,41 +854,41 @@ class AzureRMWebApps(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.site_envelope.update({"kind": kwargs[key]})
+                    self.site_envelope["kind"] = kwargs[key]
                 elif key == "location":
-                    self.site_envelope.update({"location": kwargs[key]})
+                    self.site_envelope["location"] = kwargs[key]
                 elif key == "enabled":
-                    self.site_envelope.update({"enabled": kwargs[key]})
+                    self.site_envelope["enabled"] = kwargs[key]
                 elif key == "host_name_ssl_states":
-                    self.site_envelope.update({"host_name_ssl_states": kwargs[key]})
+                    self.site_envelope["host_name_ssl_states"] = kwargs[key]
                 elif key == "server_farm_id":
-                    self.site_envelope.update({"server_farm_id": kwargs[key]})
+                    self.site_envelope["server_farm_id"] = kwargs[key]
                 elif key == "reserved":
-                    self.site_envelope.update({"reserved": kwargs[key]})
+                    self.site_envelope["reserved"] = kwargs[key]
                 elif key == "site_config":
-                    self.site_envelope.update({"site_config": kwargs[key]})
+                    self.site_envelope["site_config"] = kwargs[key]
                 elif key == "scm_site_also_stopped":
-                    self.site_envelope.update({"scm_site_also_stopped": kwargs[key]})
+                    self.site_envelope["scm_site_also_stopped"] = kwargs[key]
                 elif key == "hosting_environment_profile":
-                    self.site_envelope.update({"hosting_environment_profile": kwargs[key]})
+                    self.site_envelope["hosting_environment_profile"] = kwargs[key]
                 elif key == "client_affinity_enabled":
-                    self.site_envelope.update({"client_affinity_enabled": kwargs[key]})
+                    self.site_envelope["client_affinity_enabled"] = kwargs[key]
                 elif key == "client_cert_enabled":
-                    self.site_envelope.update({"client_cert_enabled": kwargs[key]})
+                    self.site_envelope["client_cert_enabled"] = kwargs[key]
                 elif key == "host_names_disabled":
-                    self.site_envelope.update({"host_names_disabled": kwargs[key]})
+                    self.site_envelope["host_names_disabled"] = kwargs[key]
                 elif key == "container_size":
-                    self.site_envelope.update({"container_size": kwargs[key]})
+                    self.site_envelope["container_size"] = kwargs[key]
                 elif key == "daily_memory_time_quota":
-                    self.site_envelope.update({"daily_memory_time_quota": kwargs[key]})
+                    self.site_envelope["daily_memory_time_quota"] = kwargs[key]
                 elif key == "cloning_info":
-                    self.site_envelope.update({"cloning_info": kwargs[key]})
+                    self.site_envelope["cloning_info"] = kwargs[key]
                 elif key == "snapshot_info":
-                    self.site_envelope.update({"snapshot_info": kwargs[key]})
+                    self.site_envelope["snapshot_info"] = kwargs[key]
                 elif key == "https_only":
-                    self.site_envelope.update({"https_only": kwargs[key]})
+                    self.site_envelope["https_only"] = kwargs[key]
                 elif key == "identity":
-                    self.site_envelope.update({"identity": kwargs[key]})
+                    self.site_envelope["identity"] = kwargs[key]
 
         old_response = None
         response = None

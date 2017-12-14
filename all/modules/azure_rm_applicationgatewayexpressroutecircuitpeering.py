@@ -949,43 +949,43 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.peering_parameters.update({"id": kwargs[key]})
+                    self.peering_parameters["id"] = kwargs[key]
                 elif key == "peering_type":
-                    self.peering_parameters.update({"peering_type": kwargs[key]})
+                    self.peering_parameters["peering_type"] = kwargs[key]
                 elif key == "state":
-                    self.peering_parameters.update({"state": kwargs[key]})
+                    self.peering_parameters["state"] = kwargs[key]
                 elif key == "azure_asn":
-                    self.peering_parameters.update({"azure_asn": kwargs[key]})
+                    self.peering_parameters["azure_asn"] = kwargs[key]
                 elif key == "peer_asn":
-                    self.peering_parameters.update({"peer_asn": kwargs[key]})
+                    self.peering_parameters["peer_asn"] = kwargs[key]
                 elif key == "primary_peer_address_prefix":
-                    self.peering_parameters.update({"primary_peer_address_prefix": kwargs[key]})
+                    self.peering_parameters["primary_peer_address_prefix"] = kwargs[key]
                 elif key == "secondary_peer_address_prefix":
-                    self.peering_parameters.update({"secondary_peer_address_prefix": kwargs[key]})
+                    self.peering_parameters["secondary_peer_address_prefix"] = kwargs[key]
                 elif key == "primary_azure_port":
-                    self.peering_parameters.update({"primary_azure_port": kwargs[key]})
+                    self.peering_parameters["primary_azure_port"] = kwargs[key]
                 elif key == "secondary_azure_port":
-                    self.peering_parameters.update({"secondary_azure_port": kwargs[key]})
+                    self.peering_parameters["secondary_azure_port"] = kwargs[key]
                 elif key == "shared_key":
-                    self.peering_parameters.update({"shared_key": kwargs[key]})
+                    self.peering_parameters["shared_key"] = kwargs[key]
                 elif key == "vlan_id":
-                    self.peering_parameters.update({"vlan_id": kwargs[key]})
+                    self.peering_parameters["vlan_id"] = kwargs[key]
                 elif key == "microsoft_peering_config":
-                    self.peering_parameters.update({"microsoft_peering_config": kwargs[key]})
+                    self.peering_parameters["microsoft_peering_config"] = kwargs[key]
                 elif key == "stats":
-                    self.peering_parameters.update({"stats": kwargs[key]})
+                    self.peering_parameters["stats"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.peering_parameters.update({"provisioning_state": kwargs[key]})
+                    self.peering_parameters["provisioning_state"] = kwargs[key]
                 elif key == "gateway_manager_etag":
-                    self.peering_parameters.update({"gateway_manager_etag": kwargs[key]})
+                    self.peering_parameters["gateway_manager_etag"] = kwargs[key]
                 elif key == "last_modified_by":
-                    self.peering_parameters.update({"last_modified_by": kwargs[key]})
+                    self.peering_parameters["last_modified_by"] = kwargs[key]
                 elif key == "route_filter":
-                    self.peering_parameters.update({"route_filter": kwargs[key]})
+                    self.peering_parameters["route_filter"] = kwargs[key]
                 elif key == "ipv6_peering_config":
-                    self.peering_parameters.update({"ipv6_peering_config": kwargs[key]})
+                    self.peering_parameters["ipv6_peering_config"] = kwargs[key]
                 elif key == "name":
-                    self.peering_parameters.update({"name": kwargs[key]})
+                    self.peering_parameters["name"] = kwargs[key]
 
         old_response = None
         response = None

@@ -295,31 +295,31 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.app_service_plan.update({"kind": kwargs[key]})
+                    self.app_service_plan["kind"] = kwargs[key]
                 elif key == "location":
-                    self.app_service_plan.update({"location": kwargs[key]})
+                    self.app_service_plan["location"] = kwargs[key]
                 elif key == "app_service_plan_name":
-                    self.app_service_plan.update({"app_service_plan_name": kwargs[key]})
+                    self.app_service_plan["app_service_plan_name"] = kwargs[key]
                 elif key == "worker_tier_name":
-                    self.app_service_plan.update({"worker_tier_name": kwargs[key]})
+                    self.app_service_plan["worker_tier_name"] = kwargs[key]
                 elif key == "admin_site_name":
-                    self.app_service_plan.update({"admin_site_name": kwargs[key]})
+                    self.app_service_plan["admin_site_name"] = kwargs[key]
                 elif key == "hosting_environment_profile":
-                    self.app_service_plan.update({"hosting_environment_profile": kwargs[key]})
+                    self.app_service_plan["hosting_environment_profile"] = kwargs[key]
                 elif key == "per_site_scaling":
-                    self.app_service_plan.update({"per_site_scaling": kwargs[key]})
+                    self.app_service_plan["per_site_scaling"] = kwargs[key]
                 elif key == "is_spot":
-                    self.app_service_plan.update({"is_spot": kwargs[key]})
+                    self.app_service_plan["is_spot"] = kwargs[key]
                 elif key == "spot_expiration_time":
-                    self.app_service_plan.update({"spot_expiration_time": kwargs[key]})
+                    self.app_service_plan["spot_expiration_time"] = kwargs[key]
                 elif key == "reserved":
-                    self.app_service_plan.update({"reserved": kwargs[key]})
+                    self.app_service_plan["reserved"] = kwargs[key]
                 elif key == "target_worker_count":
-                    self.app_service_plan.update({"target_worker_count": kwargs[key]})
+                    self.app_service_plan["target_worker_count"] = kwargs[key]
                 elif key == "target_worker_size_id":
-                    self.app_service_plan.update({"target_worker_size_id": kwargs[key]})
+                    self.app_service_plan["target_worker_size_id"] = kwargs[key]
                 elif key == "sku":
-                    self.app_service_plan.update({"sku": kwargs[key]})
+                    self.app_service_plan["sku"] = kwargs[key]
 
         old_response = None
         response = None

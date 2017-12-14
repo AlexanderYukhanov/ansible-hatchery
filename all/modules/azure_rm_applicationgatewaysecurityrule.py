@@ -306,43 +306,43 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.security_rule_parameters.update({"id": kwargs[key]})
+                    self.security_rule_parameters["id"] = kwargs[key]
                 elif key == "description":
-                    self.security_rule_parameters.update({"description": kwargs[key]})
+                    self.security_rule_parameters["description"] = kwargs[key]
                 elif key == "protocol":
-                    self.security_rule_parameters.update({"protocol": kwargs[key]})
+                    self.security_rule_parameters["protocol"] = kwargs[key]
                 elif key == "source_port_range":
-                    self.security_rule_parameters.update({"source_port_range": kwargs[key]})
+                    self.security_rule_parameters["source_port_range"] = kwargs[key]
                 elif key == "destination_port_range":
-                    self.security_rule_parameters.update({"destination_port_range": kwargs[key]})
+                    self.security_rule_parameters["destination_port_range"] = kwargs[key]
                 elif key == "source_address_prefix":
-                    self.security_rule_parameters.update({"source_address_prefix": kwargs[key]})
+                    self.security_rule_parameters["source_address_prefix"] = kwargs[key]
                 elif key == "source_address_prefixes":
-                    self.security_rule_parameters.update({"source_address_prefixes": kwargs[key]})
+                    self.security_rule_parameters["source_address_prefixes"] = kwargs[key]
                 elif key == "source_application_security_groups":
-                    self.security_rule_parameters.update({"source_application_security_groups": kwargs[key]})
+                    self.security_rule_parameters["source_application_security_groups"] = kwargs[key]
                 elif key == "destination_address_prefix":
-                    self.security_rule_parameters.update({"destination_address_prefix": kwargs[key]})
+                    self.security_rule_parameters["destination_address_prefix"] = kwargs[key]
                 elif key == "destination_address_prefixes":
-                    self.security_rule_parameters.update({"destination_address_prefixes": kwargs[key]})
+                    self.security_rule_parameters["destination_address_prefixes"] = kwargs[key]
                 elif key == "destination_application_security_groups":
-                    self.security_rule_parameters.update({"destination_application_security_groups": kwargs[key]})
+                    self.security_rule_parameters["destination_application_security_groups"] = kwargs[key]
                 elif key == "source_port_ranges":
-                    self.security_rule_parameters.update({"source_port_ranges": kwargs[key]})
+                    self.security_rule_parameters["source_port_ranges"] = kwargs[key]
                 elif key == "destination_port_ranges":
-                    self.security_rule_parameters.update({"destination_port_ranges": kwargs[key]})
+                    self.security_rule_parameters["destination_port_ranges"] = kwargs[key]
                 elif key == "access":
-                    self.security_rule_parameters.update({"access": kwargs[key]})
+                    self.security_rule_parameters["access"] = kwargs[key]
                 elif key == "priority":
-                    self.security_rule_parameters.update({"priority": kwargs[key]})
+                    self.security_rule_parameters["priority"] = kwargs[key]
                 elif key == "direction":
-                    self.security_rule_parameters.update({"direction": kwargs[key]})
+                    self.security_rule_parameters["direction"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.security_rule_parameters.update({"provisioning_state": kwargs[key]})
+                    self.security_rule_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.security_rule_parameters.update({"name": kwargs[key]})
+                    self.security_rule_parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.security_rule_parameters.update({"etag": kwargs[key]})
+                    self.security_rule_parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

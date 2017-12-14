@@ -148,9 +148,9 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "virtual_network_subnet_id":
-                    self.parameters.update({"virtual_network_subnet_id": kwargs[key]})
+                    self.parameters["virtual_network_subnet_id"] = kwargs[key]
                 elif key == "ignore_missing_vnet_service_endpoint":
-                    self.parameters.update({"ignore_missing_vnet_service_endpoint": kwargs[key]})
+                    self.parameters["ignore_missing_vnet_service_endpoint"] = kwargs[key]
 
         old_response = None
         response = None

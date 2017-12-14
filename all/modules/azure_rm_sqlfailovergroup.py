@@ -183,13 +183,13 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "read_write_endpoint":
-                    self.parameters.update({"read_write_endpoint": kwargs[key]})
+                    self.parameters["read_write_endpoint"] = kwargs[key]
                 elif key == "read_only_endpoint":
-                    self.parameters.update({"read_only_endpoint": kwargs[key]})
+                    self.parameters["read_only_endpoint"] = kwargs[key]
                 elif key == "partner_servers":
-                    self.parameters.update({"partner_servers": kwargs[key]})
+                    self.parameters["partner_servers"] = kwargs[key]
                 elif key == "databases":
-                    self.parameters.update({"databases": kwargs[key]})
+                    self.parameters["databases"] = kwargs[key]
 
         old_response = None
         response = None

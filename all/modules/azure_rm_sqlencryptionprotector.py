@@ -150,11 +150,11 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.parameters.update({"kind": kwargs[key]})
+                    self.parameters["kind"] = kwargs[key]
                 elif key == "server_key_name":
-                    self.parameters.update({"server_key_name": kwargs[key]})
+                    self.parameters["server_key_name"] = kwargs[key]
                 elif key == "server_key_type":
-                    self.parameters.update({"server_key_type": kwargs[key]})
+                    self.parameters["server_key_type"] = kwargs[key]
 
         old_response = None
         response = None

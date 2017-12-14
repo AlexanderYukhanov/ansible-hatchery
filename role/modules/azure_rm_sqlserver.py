@@ -173,15 +173,15 @@ class AzureRMServers(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "admin_username":
-                    self.parameters.update({"administrator_login": kwargs[key]})
+                    self.parameters["administrator_login"] = kwargs[key]
                 elif key == "admin_password":
-                    self.parameters.update({"administrator_login_password": kwargs[key]})
+                    self.parameters["administrator_login_password"] = kwargs[key]
                 elif key == "version":
-                    self.parameters.update({"version": kwargs[key]})
+                    self.parameters["version"] = kwargs[key]
                 elif key == "identity":
-                    self.parameters.update({"identity": {"type": kwargs[key]}})
+                    self.parameters.setdefault("identity", {})["type"] = kwargs[key]
 
         old_response = None
         response = None

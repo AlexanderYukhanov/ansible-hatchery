@@ -168,15 +168,15 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.parameters.update({"kind": kwargs[key]})
+                    self.parameters["kind"] = kwargs[key]
                 elif key == "server_key_type":
-                    self.parameters.update({"server_key_type": kwargs[key]})
+                    self.parameters["server_key_type"] = kwargs[key]
                 elif key == "uri":
-                    self.parameters.update({"uri": kwargs[key]})
+                    self.parameters["uri"] = kwargs[key]
                 elif key == "thumbprint":
-                    self.parameters.update({"thumbprint": kwargs[key]})
+                    self.parameters["thumbprint"] = kwargs[key]
                 elif key == "creation_date":
-                    self.parameters.update({"creation_date": kwargs[key]})
+                    self.parameters["creation_date"] = kwargs[key]
 
         old_response = None
         response = None

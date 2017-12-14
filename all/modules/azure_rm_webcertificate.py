@@ -182,21 +182,21 @@ class AzureRMCertificates(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.certificate_envelope.update({"kind": kwargs[key]})
+                    self.certificate_envelope["kind"] = kwargs[key]
                 elif key == "location":
-                    self.certificate_envelope.update({"location": kwargs[key]})
+                    self.certificate_envelope["location"] = kwargs[key]
                 elif key == "host_names":
-                    self.certificate_envelope.update({"host_names": kwargs[key]})
+                    self.certificate_envelope["host_names"] = kwargs[key]
                 elif key == "pfx_blob":
-                    self.certificate_envelope.update({"pfx_blob": kwargs[key]})
+                    self.certificate_envelope["pfx_blob"] = kwargs[key]
                 elif key == "password":
-                    self.certificate_envelope.update({"password": kwargs[key]})
+                    self.certificate_envelope["password"] = kwargs[key]
                 elif key == "key_vault_id":
-                    self.certificate_envelope.update({"key_vault_id": kwargs[key]})
+                    self.certificate_envelope["key_vault_id"] = kwargs[key]
                 elif key == "key_vault_secret_name":
-                    self.certificate_envelope.update({"key_vault_secret_name": kwargs[key]})
+                    self.certificate_envelope["key_vault_secret_name"] = kwargs[key]
                 elif key == "server_farm_id":
-                    self.certificate_envelope.update({"server_farm_id": kwargs[key]})
+                    self.certificate_envelope["server_farm_id"] = kwargs[key]
 
         old_response = None
         response = None

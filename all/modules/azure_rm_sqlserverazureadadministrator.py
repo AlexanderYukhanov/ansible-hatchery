@@ -161,13 +161,13 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "administrator_type":
-                    self.properties.update({"administrator_type": kwargs[key]})
+                    self.properties["administrator_type"] = kwargs[key]
                 elif key == "login":
-                    self.properties.update({"login": kwargs[key]})
+                    self.properties["login"] = kwargs[key]
                 elif key == "sid":
-                    self.properties.update({"sid": kwargs[key]})
+                    self.properties["sid"] = kwargs[key]
                 elif key == "tenant_id":
-                    self.properties.update({"tenant_id": kwargs[key]})
+                    self.properties["tenant_id"] = kwargs[key]
 
         old_response = None
         response = None

@@ -141,9 +141,9 @@ class AzureRMConfigurations(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "value":
-                    self.parameters.update({"value": kwargs[key]})
+                    self.parameters["value"] = kwargs[key]
                 elif key == "source":
-                    self.parameters.update({"source": kwargs[key]})
+                    self.parameters["source"] = kwargs[key]
 
         old_response = None
         response = None

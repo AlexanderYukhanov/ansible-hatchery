@@ -1450,47 +1450,47 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters.update({"sku": kwargs[key]})
+                    self.parameters["sku"] = kwargs[key]
                 elif key == "ssl_policy":
-                    self.parameters.update({"ssl_policy": kwargs[key]})
+                    self.parameters["ssl_policy"] = kwargs[key]
                 elif key == "gateway_ip_configurations":
-                    self.parameters.update({"gateway_ip_configurations": kwargs[key]})
+                    self.parameters["gateway_ip_configurations"] = kwargs[key]
                 elif key == "authentication_certificates":
-                    self.parameters.update({"authentication_certificates": kwargs[key]})
+                    self.parameters["authentication_certificates"] = kwargs[key]
                 elif key == "ssl_certificates":
-                    self.parameters.update({"ssl_certificates": kwargs[key]})
+                    self.parameters["ssl_certificates"] = kwargs[key]
                 elif key == "frontend_ip_configurations":
-                    self.parameters.update({"frontend_ip_configurations": kwargs[key]})
+                    self.parameters["frontend_ip_configurations"] = kwargs[key]
                 elif key == "frontend_ports":
-                    self.parameters.update({"frontend_ports": kwargs[key]})
+                    self.parameters["frontend_ports"] = kwargs[key]
                 elif key == "probes":
-                    self.parameters.update({"probes": kwargs[key]})
+                    self.parameters["probes"] = kwargs[key]
                 elif key == "backend_address_pools":
-                    self.parameters.update({"backend_address_pools": kwargs[key]})
+                    self.parameters["backend_address_pools"] = kwargs[key]
                 elif key == "backend_http_settings_collection":
-                    self.parameters.update({"backend_http_settings_collection": kwargs[key]})
+                    self.parameters["backend_http_settings_collection"] = kwargs[key]
                 elif key == "http_listeners":
-                    self.parameters.update({"http_listeners": kwargs[key]})
+                    self.parameters["http_listeners"] = kwargs[key]
                 elif key == "url_path_maps":
-                    self.parameters.update({"url_path_maps": kwargs[key]})
+                    self.parameters["url_path_maps"] = kwargs[key]
                 elif key == "request_routing_rules":
-                    self.parameters.update({"request_routing_rules": kwargs[key]})
+                    self.parameters["request_routing_rules"] = kwargs[key]
                 elif key == "redirect_configurations":
-                    self.parameters.update({"redirect_configurations": kwargs[key]})
+                    self.parameters["redirect_configurations"] = kwargs[key]
                 elif key == "web_application_firewall_configuration":
-                    self.parameters.update({"web_application_firewall_configuration": kwargs[key]})
+                    self.parameters["web_application_firewall_configuration"] = kwargs[key]
                 elif key == "enable_http2":
-                    self.parameters.update({"enable_http2": kwargs[key]})
+                    self.parameters["enable_http2"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

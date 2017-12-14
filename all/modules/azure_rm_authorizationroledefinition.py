@@ -167,15 +167,15 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "properties_role_name":
-                    self.role_definition.update({"properties": {"role_name": kwargs[key]}})
+                    self.role_definition.setdefault("properties", {})["role_name"] = kwargs[key]
                 elif key == "properties_description":
-                    self.role_definition.update({"properties": {"description": kwargs[key]}})
+                    self.role_definition.setdefault("properties", {})["description"] = kwargs[key]
                 elif key == "properties_type":
-                    self.role_definition.update({"properties": {"type": kwargs[key]}})
+                    self.role_definition.setdefault("properties", {})["type"] = kwargs[key]
                 elif key == "properties_permissions":
-                    self.role_definition.update({"properties": {"permissions": kwargs[key]}})
+                    self.role_definition.setdefault("properties", {})["permissions"] = kwargs[key]
                 elif key == "properties_assignable_scopes":
-                    self.role_definition.update({"properties": {"assignable_scopes": kwargs[key]}})
+                    self.role_definition.setdefault("properties", {})["assignable_scopes"] = kwargs[key]
 
         old_response = None
         response = None

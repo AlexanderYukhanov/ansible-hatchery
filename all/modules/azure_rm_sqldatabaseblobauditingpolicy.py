@@ -201,19 +201,19 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "state":
-                    self.parameters.update({"state": kwargs[key]})
+                    self.parameters["state"] = kwargs[key]
                 elif key == "storage_endpoint":
-                    self.parameters.update({"storage_endpoint": kwargs[key]})
+                    self.parameters["storage_endpoint"] = kwargs[key]
                 elif key == "storage_account_access_key":
-                    self.parameters.update({"storage_account_access_key": kwargs[key]})
+                    self.parameters["storage_account_access_key"] = kwargs[key]
                 elif key == "retention_days":
-                    self.parameters.update({"retention_days": kwargs[key]})
+                    self.parameters["retention_days"] = kwargs[key]
                 elif key == "audit_actions_and_groups":
-                    self.parameters.update({"audit_actions_and_groups": kwargs[key]})
+                    self.parameters["audit_actions_and_groups"] = kwargs[key]
                 elif key == "storage_account_subscription_id":
-                    self.parameters.update({"storage_account_subscription_id": kwargs[key]})
+                    self.parameters["storage_account_subscription_id"] = kwargs[key]
                 elif key == "is_storage_secondary_key_in_use":
-                    self.parameters.update({"is_storage_secondary_key_in_use": kwargs[key]})
+                    self.parameters["is_storage_secondary_key_in_use"] = kwargs[key]
 
         old_response = None
         response = None

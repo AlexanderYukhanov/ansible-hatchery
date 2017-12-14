@@ -774,31 +774,31 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters.update({"sku": kwargs[key]})
+                    self.parameters["sku"] = kwargs[key]
                 elif key == "allow_classic_operations":
-                    self.parameters.update({"allow_classic_operations": kwargs[key]})
+                    self.parameters["allow_classic_operations"] = kwargs[key]
                 elif key == "circuit_provisioning_state":
-                    self.parameters.update({"circuit_provisioning_state": kwargs[key]})
+                    self.parameters["circuit_provisioning_state"] = kwargs[key]
                 elif key == "service_provider_provisioning_state":
-                    self.parameters.update({"service_provider_provisioning_state": kwargs[key]})
+                    self.parameters["service_provider_provisioning_state"] = kwargs[key]
                 elif key == "authorizations":
-                    self.parameters.update({"authorizations": kwargs[key]})
+                    self.parameters["authorizations"] = kwargs[key]
                 elif key == "peerings":
-                    self.parameters.update({"peerings": kwargs[key]})
+                    self.parameters["peerings"] = kwargs[key]
                 elif key == "service_key":
-                    self.parameters.update({"service_key": kwargs[key]})
+                    self.parameters["service_key"] = kwargs[key]
                 elif key == "service_provider_notes":
-                    self.parameters.update({"service_provider_notes": kwargs[key]})
+                    self.parameters["service_provider_notes"] = kwargs[key]
                 elif key == "service_provider_properties":
-                    self.parameters.update({"service_provider_properties": kwargs[key]})
+                    self.parameters["service_provider_properties"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "gateway_manager_etag":
-                    self.parameters.update({"gateway_manager_etag": kwargs[key]})
+                    self.parameters["gateway_manager_etag"] = kwargs[key]
 
         old_response = None
         response = None

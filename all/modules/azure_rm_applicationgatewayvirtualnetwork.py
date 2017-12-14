@@ -648,27 +648,27 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "address_space":
-                    self.parameters.update({"address_space": kwargs[key]})
+                    self.parameters["address_space"] = kwargs[key]
                 elif key == "dhcp_options":
-                    self.parameters.update({"dhcp_options": kwargs[key]})
+                    self.parameters["dhcp_options"] = kwargs[key]
                 elif key == "subnets":
-                    self.parameters.update({"subnets": kwargs[key]})
+                    self.parameters["subnets"] = kwargs[key]
                 elif key == "virtual_network_peerings":
-                    self.parameters.update({"virtual_network_peerings": kwargs[key]})
+                    self.parameters["virtual_network_peerings"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "enable_ddos_protection":
-                    self.parameters.update({"enable_ddos_protection": kwargs[key]})
+                    self.parameters["enable_ddos_protection"] = kwargs[key]
                 elif key == "enable_vm_protection":
-                    self.parameters.update({"enable_vm_protection": kwargs[key]})
+                    self.parameters["enable_vm_protection"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

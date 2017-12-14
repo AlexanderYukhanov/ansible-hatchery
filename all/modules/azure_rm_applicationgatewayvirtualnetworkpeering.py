@@ -228,27 +228,27 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.virtual_network_peering_parameters.update({"id": kwargs[key]})
+                    self.virtual_network_peering_parameters["id"] = kwargs[key]
                 elif key == "allow_virtual_network_access":
-                    self.virtual_network_peering_parameters.update({"allow_virtual_network_access": kwargs[key]})
+                    self.virtual_network_peering_parameters["allow_virtual_network_access"] = kwargs[key]
                 elif key == "allow_forwarded_traffic":
-                    self.virtual_network_peering_parameters.update({"allow_forwarded_traffic": kwargs[key]})
+                    self.virtual_network_peering_parameters["allow_forwarded_traffic"] = kwargs[key]
                 elif key == "allow_gateway_transit":
-                    self.virtual_network_peering_parameters.update({"allow_gateway_transit": kwargs[key]})
+                    self.virtual_network_peering_parameters["allow_gateway_transit"] = kwargs[key]
                 elif key == "use_remote_gateways":
-                    self.virtual_network_peering_parameters.update({"use_remote_gateways": kwargs[key]})
+                    self.virtual_network_peering_parameters["use_remote_gateways"] = kwargs[key]
                 elif key == "remote_virtual_network":
-                    self.virtual_network_peering_parameters.update({"remote_virtual_network": kwargs[key]})
+                    self.virtual_network_peering_parameters["remote_virtual_network"] = kwargs[key]
                 elif key == "remote_address_space":
-                    self.virtual_network_peering_parameters.update({"remote_address_space": kwargs[key]})
+                    self.virtual_network_peering_parameters["remote_address_space"] = kwargs[key]
                 elif key == "peering_state":
-                    self.virtual_network_peering_parameters.update({"peering_state": kwargs[key]})
+                    self.virtual_network_peering_parameters["peering_state"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.virtual_network_peering_parameters.update({"provisioning_state": kwargs[key]})
+                    self.virtual_network_peering_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.virtual_network_peering_parameters.update({"name": kwargs[key]})
+                    self.virtual_network_peering_parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.virtual_network_peering_parameters.update({"etag": kwargs[key]})
+                    self.virtual_network_peering_parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

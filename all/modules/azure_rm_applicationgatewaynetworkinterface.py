@@ -1328,31 +1328,31 @@ class AzureRMNetworkInterfaces(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "virtual_machine":
-                    self.parameters.update({"virtual_machine": kwargs[key]})
+                    self.parameters["virtual_machine"] = kwargs[key]
                 elif key == "network_security_group":
-                    self.parameters.update({"network_security_group": kwargs[key]})
+                    self.parameters["network_security_group"] = kwargs[key]
                 elif key == "ip_configurations":
-                    self.parameters.update({"ip_configurations": kwargs[key]})
+                    self.parameters["ip_configurations"] = kwargs[key]
                 elif key == "dns_settings":
-                    self.parameters.update({"dns_settings": kwargs[key]})
+                    self.parameters["dns_settings"] = kwargs[key]
                 elif key == "mac_address":
-                    self.parameters.update({"mac_address": kwargs[key]})
+                    self.parameters["mac_address"] = kwargs[key]
                 elif key == "primary":
-                    self.parameters.update({"primary": kwargs[key]})
+                    self.parameters["primary"] = kwargs[key]
                 elif key == "enable_accelerated_networking":
-                    self.parameters.update({"enable_accelerated_networking": kwargs[key]})
+                    self.parameters["enable_accelerated_networking"] = kwargs[key]
                 elif key == "enable_ip_forwarding":
-                    self.parameters.update({"enable_ip_forwarding": kwargs[key]})
+                    self.parameters["enable_ip_forwarding"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

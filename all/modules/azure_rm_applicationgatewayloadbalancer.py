@@ -961,31 +961,31 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters.update({"sku": kwargs[key]})
+                    self.parameters["sku"] = kwargs[key]
                 elif key == "frontend_ip_configurations":
-                    self.parameters.update({"frontend_ip_configurations": kwargs[key]})
+                    self.parameters["frontend_ip_configurations"] = kwargs[key]
                 elif key == "backend_address_pools":
-                    self.parameters.update({"backend_address_pools": kwargs[key]})
+                    self.parameters["backend_address_pools"] = kwargs[key]
                 elif key == "load_balancing_rules":
-                    self.parameters.update({"load_balancing_rules": kwargs[key]})
+                    self.parameters["load_balancing_rules"] = kwargs[key]
                 elif key == "probes":
-                    self.parameters.update({"probes": kwargs[key]})
+                    self.parameters["probes"] = kwargs[key]
                 elif key == "inbound_nat_rules":
-                    self.parameters.update({"inbound_nat_rules": kwargs[key]})
+                    self.parameters["inbound_nat_rules"] = kwargs[key]
                 elif key == "inbound_nat_pools":
-                    self.parameters.update({"inbound_nat_pools": kwargs[key]})
+                    self.parameters["inbound_nat_pools"] = kwargs[key]
                 elif key == "outbound_nat_rules":
-                    self.parameters.update({"outbound_nat_rules": kwargs[key]})
+                    self.parameters["outbound_nat_rules"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

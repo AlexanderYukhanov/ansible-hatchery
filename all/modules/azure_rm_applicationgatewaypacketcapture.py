@@ -216,17 +216,17 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "target":
-                    self.parameters.update({"target": kwargs[key]})
+                    self.parameters["target"] = kwargs[key]
                 elif key == "bytes_to_capture_per_packet":
-                    self.parameters.update({"bytes_to_capture_per_packet": kwargs[key]})
+                    self.parameters["bytes_to_capture_per_packet"] = kwargs[key]
                 elif key == "total_bytes_per_session":
-                    self.parameters.update({"total_bytes_per_session": kwargs[key]})
+                    self.parameters["total_bytes_per_session"] = kwargs[key]
                 elif key == "time_limit_in_seconds":
-                    self.parameters.update({"time_limit_in_seconds": kwargs[key]})
+                    self.parameters["time_limit_in_seconds"] = kwargs[key]
                 elif key == "storage_location":
-                    self.parameters.update({"storage_location": kwargs[key]})
+                    self.parameters["storage_location"] = kwargs[key]
                 elif key == "filters":
-                    self.parameters.update({"filters": kwargs[key]})
+                    self.parameters["filters"] = kwargs[key]
 
         old_response = None
         response = None

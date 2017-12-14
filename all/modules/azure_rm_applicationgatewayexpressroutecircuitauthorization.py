@@ -165,15 +165,15 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.authorization_parameters.update({"id": kwargs[key]})
+                    self.authorization_parameters["id"] = kwargs[key]
                 elif key == "authorization_key":
-                    self.authorization_parameters.update({"authorization_key": kwargs[key]})
+                    self.authorization_parameters["authorization_key"] = kwargs[key]
                 elif key == "authorization_use_status":
-                    self.authorization_parameters.update({"authorization_use_status": kwargs[key]})
+                    self.authorization_parameters["authorization_use_status"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.authorization_parameters.update({"provisioning_state": kwargs[key]})
+                    self.authorization_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.authorization_parameters.update({"name": kwargs[key]})
+                    self.authorization_parameters["name"] = kwargs[key]
 
         old_response = None
         response = None

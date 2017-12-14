@@ -177,17 +177,17 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.route_filter_rule_parameters.update({"id": kwargs[key]})
+                    self.route_filter_rule_parameters["id"] = kwargs[key]
                 elif key == "access":
-                    self.route_filter_rule_parameters.update({"access": kwargs[key]})
+                    self.route_filter_rule_parameters["access"] = kwargs[key]
                 elif key == "route_filter_rule_type":
-                    self.route_filter_rule_parameters.update({"route_filter_rule_type": kwargs[key]})
+                    self.route_filter_rule_parameters["route_filter_rule_type"] = kwargs[key]
                 elif key == "communities":
-                    self.route_filter_rule_parameters.update({"communities": kwargs[key]})
+                    self.route_filter_rule_parameters["communities"] = kwargs[key]
                 elif key == "name":
-                    self.route_filter_rule_parameters.update({"name": kwargs[key]})
+                    self.route_filter_rule_parameters["name"] = kwargs[key]
                 elif key == "location":
-                    self.route_filter_rule_parameters.update({"location": kwargs[key]})
+                    self.route_filter_rule_parameters["location"] = kwargs[key]
 
         old_response = None
         response = None

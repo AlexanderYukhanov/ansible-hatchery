@@ -194,23 +194,23 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.certificate_distinguished_name.update({"kind": kwargs[key]})
+                    self.certificate_distinguished_name["kind"] = kwargs[key]
                 elif key == "location":
-                    self.certificate_distinguished_name.update({"location": kwargs[key]})
+                    self.certificate_distinguished_name["location"] = kwargs[key]
                 elif key == "certificates":
-                    self.certificate_distinguished_name.update({"certificates": kwargs[key]})
+                    self.certificate_distinguished_name["certificates"] = kwargs[key]
                 elif key == "distinguished_name":
-                    self.certificate_distinguished_name.update({"distinguished_name": kwargs[key]})
+                    self.certificate_distinguished_name["distinguished_name"] = kwargs[key]
                 elif key == "validity_in_years":
-                    self.certificate_distinguished_name.update({"validity_in_years": kwargs[key]})
+                    self.certificate_distinguished_name["validity_in_years"] = kwargs[key]
                 elif key == "key_size":
-                    self.certificate_distinguished_name.update({"key_size": kwargs[key]})
+                    self.certificate_distinguished_name["key_size"] = kwargs[key]
                 elif key == "product_type":
-                    self.certificate_distinguished_name.update({"product_type": kwargs[key]})
+                    self.certificate_distinguished_name["product_type"] = kwargs[key]
                 elif key == "auto_renew":
-                    self.certificate_distinguished_name.update({"auto_renew": kwargs[key]})
+                    self.certificate_distinguished_name["auto_renew"] = kwargs[key]
                 elif key == "csr":
-                    self.certificate_distinguished_name.update({"csr": kwargs[key]})
+                    self.certificate_distinguished_name["csr"] = kwargs[key]
 
         old_response = None
         response = None

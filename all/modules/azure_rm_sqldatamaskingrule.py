@@ -240,27 +240,27 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "alias_name":
-                    self.parameters.update({"alias_name": kwargs[key]})
+                    self.parameters["alias_name"] = kwargs[key]
                 elif key == "rule_state":
-                    self.parameters.update({"rule_state": kwargs[key]})
+                    self.parameters["rule_state"] = kwargs[key]
                 elif key == "schema_name":
-                    self.parameters.update({"schema_name": kwargs[key]})
+                    self.parameters["schema_name"] = kwargs[key]
                 elif key == "table_name":
-                    self.parameters.update({"table_name": kwargs[key]})
+                    self.parameters["table_name"] = kwargs[key]
                 elif key == "column_name":
-                    self.parameters.update({"column_name": kwargs[key]})
+                    self.parameters["column_name"] = kwargs[key]
                 elif key == "masking_function":
-                    self.parameters.update({"masking_function": kwargs[key]})
+                    self.parameters["masking_function"] = kwargs[key]
                 elif key == "number_from":
-                    self.parameters.update({"number_from": kwargs[key]})
+                    self.parameters["number_from"] = kwargs[key]
                 elif key == "number_to":
-                    self.parameters.update({"number_to": kwargs[key]})
+                    self.parameters["number_to"] = kwargs[key]
                 elif key == "prefix_size":
-                    self.parameters.update({"prefix_size": kwargs[key]})
+                    self.parameters["prefix_size"] = kwargs[key]
                 elif key == "suffix_size":
-                    self.parameters.update({"suffix_size": kwargs[key]})
+                    self.parameters["suffix_size"] = kwargs[key]
                 elif key == "replacement_string":
-                    self.parameters.update({"replacement_string": kwargs[key]})
+                    self.parameters["replacement_string"] = kwargs[key]
 
         old_response = None
         response = None

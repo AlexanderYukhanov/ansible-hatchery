@@ -183,19 +183,19 @@ class AzureRMRoutes(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.route_parameters.update({"id": kwargs[key]})
+                    self.route_parameters["id"] = kwargs[key]
                 elif key == "address_prefix":
-                    self.route_parameters.update({"address_prefix": kwargs[key]})
+                    self.route_parameters["address_prefix"] = kwargs[key]
                 elif key == "next_hop_type":
-                    self.route_parameters.update({"next_hop_type": kwargs[key]})
+                    self.route_parameters["next_hop_type"] = kwargs[key]
                 elif key == "next_hop_ip_address":
-                    self.route_parameters.update({"next_hop_ip_address": kwargs[key]})
+                    self.route_parameters["next_hop_ip_address"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.route_parameters.update({"provisioning_state": kwargs[key]})
+                    self.route_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.route_parameters.update({"name": kwargs[key]})
+                    self.route_parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.route_parameters.update({"etag": kwargs[key]})
+                    self.route_parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

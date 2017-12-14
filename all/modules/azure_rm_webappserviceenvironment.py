@@ -349,47 +349,47 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.hosting_environment_envelope.update({"kind": kwargs[key]})
+                    self.hosting_environment_envelope["kind"] = kwargs[key]
                 elif key == "location":
-                    self.hosting_environment_envelope.update({"location": kwargs[key]})
+                    self.hosting_environment_envelope["location"] = kwargs[key]
                 elif key == "app_service_environment_resource_name":
-                    self.hosting_environment_envelope.update({"app_service_environment_resource_name": kwargs[key]})
+                    self.hosting_environment_envelope["app_service_environment_resource_name"] = kwargs[key]
                 elif key == "app_service_environment_resource_location":
-                    self.hosting_environment_envelope.update({"app_service_environment_resource_location": kwargs[key]})
+                    self.hosting_environment_envelope["app_service_environment_resource_location"] = kwargs[key]
                 elif key == "vnet_name":
-                    self.hosting_environment_envelope.update({"vnet_name": kwargs[key]})
+                    self.hosting_environment_envelope["vnet_name"] = kwargs[key]
                 elif key == "vnet_resource_group_name":
-                    self.hosting_environment_envelope.update({"vnet_resource_group_name": kwargs[key]})
+                    self.hosting_environment_envelope["vnet_resource_group_name"] = kwargs[key]
                 elif key == "vnet_subnet_name":
-                    self.hosting_environment_envelope.update({"vnet_subnet_name": kwargs[key]})
+                    self.hosting_environment_envelope["vnet_subnet_name"] = kwargs[key]
                 elif key == "virtual_network":
-                    self.hosting_environment_envelope.update({"virtual_network": kwargs[key]})
+                    self.hosting_environment_envelope["virtual_network"] = kwargs[key]
                 elif key == "internal_load_balancing_mode":
-                    self.hosting_environment_envelope.update({"internal_load_balancing_mode": kwargs[key]})
+                    self.hosting_environment_envelope["internal_load_balancing_mode"] = kwargs[key]
                 elif key == "multi_size":
-                    self.hosting_environment_envelope.update({"multi_size": kwargs[key]})
+                    self.hosting_environment_envelope["multi_size"] = kwargs[key]
                 elif key == "multi_role_count":
-                    self.hosting_environment_envelope.update({"multi_role_count": kwargs[key]})
+                    self.hosting_environment_envelope["multi_role_count"] = kwargs[key]
                 elif key == "worker_pools":
-                    self.hosting_environment_envelope.update({"worker_pools": kwargs[key]})
+                    self.hosting_environment_envelope["worker_pools"] = kwargs[key]
                 elif key == "ipssl_address_count":
-                    self.hosting_environment_envelope.update({"ipssl_address_count": kwargs[key]})
+                    self.hosting_environment_envelope["ipssl_address_count"] = kwargs[key]
                 elif key == "dns_suffix":
-                    self.hosting_environment_envelope.update({"dns_suffix": kwargs[key]})
+                    self.hosting_environment_envelope["dns_suffix"] = kwargs[key]
                 elif key == "network_access_control_list":
-                    self.hosting_environment_envelope.update({"network_access_control_list": kwargs[key]})
+                    self.hosting_environment_envelope["network_access_control_list"] = kwargs[key]
                 elif key == "front_end_scale_factor":
-                    self.hosting_environment_envelope.update({"front_end_scale_factor": kwargs[key]})
+                    self.hosting_environment_envelope["front_end_scale_factor"] = kwargs[key]
                 elif key == "api_management_account_id":
-                    self.hosting_environment_envelope.update({"api_management_account_id": kwargs[key]})
+                    self.hosting_environment_envelope["api_management_account_id"] = kwargs[key]
                 elif key == "suspended":
-                    self.hosting_environment_envelope.update({"suspended": kwargs[key]})
+                    self.hosting_environment_envelope["suspended"] = kwargs[key]
                 elif key == "dynamic_cache_enabled":
-                    self.hosting_environment_envelope.update({"dynamic_cache_enabled": kwargs[key]})
+                    self.hosting_environment_envelope["dynamic_cache_enabled"] = kwargs[key]
                 elif key == "cluster_settings":
-                    self.hosting_environment_envelope.update({"cluster_settings": kwargs[key]})
+                    self.hosting_environment_envelope["cluster_settings"] = kwargs[key]
                 elif key == "user_whitelisted_ip_ranges":
-                    self.hosting_environment_envelope.update({"user_whitelisted_ip_ranges": kwargs[key]})
+                    self.hosting_environment_envelope["user_whitelisted_ip_ranges"] = kwargs[key]
 
         old_response = None
         response = None

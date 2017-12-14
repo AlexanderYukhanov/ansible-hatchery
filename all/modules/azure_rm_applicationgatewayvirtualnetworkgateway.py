@@ -354,31 +354,31 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "ip_configurations":
-                    self.parameters.update({"ip_configurations": kwargs[key]})
+                    self.parameters["ip_configurations"] = kwargs[key]
                 elif key == "gateway_type":
-                    self.parameters.update({"gateway_type": kwargs[key]})
+                    self.parameters["gateway_type"] = kwargs[key]
                 elif key == "vpn_type":
-                    self.parameters.update({"vpn_type": kwargs[key]})
+                    self.parameters["vpn_type"] = kwargs[key]
                 elif key == "enable_bgp":
-                    self.parameters.update({"enable_bgp": kwargs[key]})
+                    self.parameters["enable_bgp"] = kwargs[key]
                 elif key == "active_active":
-                    self.parameters.update({"active_active": kwargs[key]})
+                    self.parameters["active_active"] = kwargs[key]
                 elif key == "gateway_default_site":
-                    self.parameters.update({"gateway_default_site": kwargs[key]})
+                    self.parameters["gateway_default_site"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters.update({"sku": kwargs[key]})
+                    self.parameters["sku"] = kwargs[key]
                 elif key == "vpn_client_configuration":
-                    self.parameters.update({"vpn_client_configuration": kwargs[key]})
+                    self.parameters["vpn_client_configuration"] = kwargs[key]
                 elif key == "bgp_settings":
-                    self.parameters.update({"bgp_settings": kwargs[key]})
+                    self.parameters["bgp_settings"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

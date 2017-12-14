@@ -218,23 +218,23 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "state":
-                    self.parameters.update({"state": kwargs[key]})
+                    self.parameters["state"] = kwargs[key]
                 elif key == "disabled_alerts":
-                    self.parameters.update({"disabled_alerts": kwargs[key]})
+                    self.parameters["disabled_alerts"] = kwargs[key]
                 elif key == "email_addresses":
-                    self.parameters.update({"email_addresses": kwargs[key]})
+                    self.parameters["email_addresses"] = kwargs[key]
                 elif key == "email_account_admins":
-                    self.parameters.update({"email_account_admins": kwargs[key]})
+                    self.parameters["email_account_admins"] = kwargs[key]
                 elif key == "storage_endpoint":
-                    self.parameters.update({"storage_endpoint": kwargs[key]})
+                    self.parameters["storage_endpoint"] = kwargs[key]
                 elif key == "storage_account_access_key":
-                    self.parameters.update({"storage_account_access_key": kwargs[key]})
+                    self.parameters["storage_account_access_key"] = kwargs[key]
                 elif key == "retention_days":
-                    self.parameters.update({"retention_days": kwargs[key]})
+                    self.parameters["retention_days"] = kwargs[key]
                 elif key == "use_server_default":
-                    self.parameters.update({"use_server_default": kwargs[key]})
+                    self.parameters["use_server_default"] = kwargs[key]
 
         old_response = None
         response = None

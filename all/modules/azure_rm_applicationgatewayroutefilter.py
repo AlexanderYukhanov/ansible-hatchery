@@ -683,13 +683,13 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.route_filter_parameters.update({"id": kwargs[key]})
+                    self.route_filter_parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.route_filter_parameters.update({"location": kwargs[key]})
+                    self.route_filter_parameters["location"] = kwargs[key]
                 elif key == "rules":
-                    self.route_filter_parameters.update({"rules": kwargs[key]})
+                    self.route_filter_parameters["rules"] = kwargs[key]
                 elif key == "peerings":
-                    self.route_filter_parameters.update({"peerings": kwargs[key]})
+                    self.route_filter_parameters["peerings"] = kwargs[key]
 
         old_response = None
         response = None

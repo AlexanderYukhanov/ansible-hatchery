@@ -717,35 +717,35 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "authorization_key":
-                    self.parameters.update({"authorization_key": kwargs[key]})
+                    self.parameters["authorization_key"] = kwargs[key]
                 elif key == "virtual_network_gateway1":
-                    self.parameters.update({"virtual_network_gateway1": kwargs[key]})
+                    self.parameters["virtual_network_gateway1"] = kwargs[key]
                 elif key == "virtual_network_gateway2":
-                    self.parameters.update({"virtual_network_gateway2": kwargs[key]})
+                    self.parameters["virtual_network_gateway2"] = kwargs[key]
                 elif key == "local_network_gateway2":
-                    self.parameters.update({"local_network_gateway2": kwargs[key]})
+                    self.parameters["local_network_gateway2"] = kwargs[key]
                 elif key == "connection_type":
-                    self.parameters.update({"connection_type": kwargs[key]})
+                    self.parameters["connection_type"] = kwargs[key]
                 elif key == "routing_weight":
-                    self.parameters.update({"routing_weight": kwargs[key]})
+                    self.parameters["routing_weight"] = kwargs[key]
                 elif key == "shared_key":
-                    self.parameters.update({"shared_key": kwargs[key]})
+                    self.parameters["shared_key"] = kwargs[key]
                 elif key == "peer":
-                    self.parameters.update({"peer": kwargs[key]})
+                    self.parameters["peer"] = kwargs[key]
                 elif key == "enable_bgp":
-                    self.parameters.update({"enable_bgp": kwargs[key]})
+                    self.parameters["enable_bgp"] = kwargs[key]
                 elif key == "use_policy_based_traffic_selectors":
-                    self.parameters.update({"use_policy_based_traffic_selectors": kwargs[key]})
+                    self.parameters["use_policy_based_traffic_selectors"] = kwargs[key]
                 elif key == "ipsec_policies":
-                    self.parameters.update({"ipsec_policies": kwargs[key]})
+                    self.parameters["ipsec_policies"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

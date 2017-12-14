@@ -222,21 +222,21 @@ class AzureRMServers(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "sku":
-                    self.parameters.update({"sku": kwargs[key]})
+                    self.parameters["sku"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "storage_mb":
-                    self.parameters.update({"properties": {"storage_mb": kwargs[key]}})
+                    self.parameters.setdefault("properties", {})["storage_mb"] = kwargs[key]
                 elif key == "version":
-                    self.parameters.update({"properties": {"version": kwargs[key]}})
+                    self.parameters.setdefault("properties", {})["version"] = kwargs[key]
                 elif key == "ssl_enforcement":
-                    self.parameters.update({"properties": {"ssl_enforcement": kwargs[key]}})
+                    self.parameters.setdefault("properties", {})["ssl_enforcement"] = kwargs[key]
                 elif key == "create_mode":
-                    self.parameters.update({"properties": {"create_mode": kwargs[key]}})
+                    self.parameters.setdefault("properties", {})["create_mode"] = kwargs[key]
                 elif key == "admin_username":
-                    self.parameters.update({"properties": {"administrator_login": kwargs[key]}})
+                    self.parameters.setdefault("properties", {})["administrator_login"] = kwargs[key]
                 elif key == "admin_password":
-                    self.parameters.update({"properties": {"administrator_login_password": kwargs[key]}})
+                    self.parameters.setdefault("properties", {})["administrator_login_password"] = kwargs[key]
 
         old_response = None
         response = None

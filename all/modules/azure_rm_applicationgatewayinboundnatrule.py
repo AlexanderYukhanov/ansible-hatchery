@@ -212,25 +212,25 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.inbound_nat_rule_parameters.update({"id": kwargs[key]})
+                    self.inbound_nat_rule_parameters["id"] = kwargs[key]
                 elif key == "frontend_ip_configuration":
-                    self.inbound_nat_rule_parameters.update({"frontend_ip_configuration": kwargs[key]})
+                    self.inbound_nat_rule_parameters["frontend_ip_configuration"] = kwargs[key]
                 elif key == "protocol":
-                    self.inbound_nat_rule_parameters.update({"protocol": kwargs[key]})
+                    self.inbound_nat_rule_parameters["protocol"] = kwargs[key]
                 elif key == "frontend_port":
-                    self.inbound_nat_rule_parameters.update({"frontend_port": kwargs[key]})
+                    self.inbound_nat_rule_parameters["frontend_port"] = kwargs[key]
                 elif key == "backend_port":
-                    self.inbound_nat_rule_parameters.update({"backend_port": kwargs[key]})
+                    self.inbound_nat_rule_parameters["backend_port"] = kwargs[key]
                 elif key == "idle_timeout_in_minutes":
-                    self.inbound_nat_rule_parameters.update({"idle_timeout_in_minutes": kwargs[key]})
+                    self.inbound_nat_rule_parameters["idle_timeout_in_minutes"] = kwargs[key]
                 elif key == "enable_floating_ip":
-                    self.inbound_nat_rule_parameters.update({"enable_floating_ip": kwargs[key]})
+                    self.inbound_nat_rule_parameters["enable_floating_ip"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.inbound_nat_rule_parameters.update({"provisioning_state": kwargs[key]})
+                    self.inbound_nat_rule_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.inbound_nat_rule_parameters.update({"name": kwargs[key]})
+                    self.inbound_nat_rule_parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.inbound_nat_rule_parameters.update({"etag": kwargs[key]})
+                    self.inbound_nat_rule_parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

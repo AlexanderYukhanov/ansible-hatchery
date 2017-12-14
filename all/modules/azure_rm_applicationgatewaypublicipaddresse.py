@@ -234,29 +234,29 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters.update({"sku": kwargs[key]})
+                    self.parameters["sku"] = kwargs[key]
                 elif key == "public_ip_allocation_method":
-                    self.parameters.update({"public_ip_allocation_method": kwargs[key]})
+                    self.parameters["public_ip_allocation_method"] = kwargs[key]
                 elif key == "public_ip_address_version":
-                    self.parameters.update({"public_ip_address_version": kwargs[key]})
+                    self.parameters["public_ip_address_version"] = kwargs[key]
                 elif key == "dns_settings":
-                    self.parameters.update({"dns_settings": kwargs[key]})
+                    self.parameters["dns_settings"] = kwargs[key]
                 elif key == "ip_address":
-                    self.parameters.update({"ip_address": kwargs[key]})
+                    self.parameters["ip_address"] = kwargs[key]
                 elif key == "idle_timeout_in_minutes":
-                    self.parameters.update({"idle_timeout_in_minutes": kwargs[key]})
+                    self.parameters["idle_timeout_in_minutes"] = kwargs[key]
                 elif key == "resource_guid":
-                    self.parameters.update({"resource_guid": kwargs[key]})
+                    self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
                 elif key == "zones":
-                    self.parameters.update({"zones": kwargs[key]})
+                    self.parameters["zones"] = kwargs[key]
 
         old_response = None
         response = None

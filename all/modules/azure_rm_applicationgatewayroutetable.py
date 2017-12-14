@@ -194,17 +194,17 @@ class AzureRMRouteTables(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.parameters.update({"id": kwargs[key]})
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.parameters.update({"location": kwargs[key]})
+                    self.parameters["location"] = kwargs[key]
                 elif key == "routes":
-                    self.parameters.update({"routes": kwargs[key]})
+                    self.parameters["routes"] = kwargs[key]
                 elif key == "disable_bgp_route_propagation":
-                    self.parameters.update({"disable_bgp_route_propagation": kwargs[key]})
+                    self.parameters["disable_bgp_route_propagation"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.parameters.update({"provisioning_state": kwargs[key]})
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "etag":
-                    self.parameters.update({"etag": kwargs[key]})
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None

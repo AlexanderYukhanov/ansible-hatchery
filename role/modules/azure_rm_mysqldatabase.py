@@ -147,9 +147,9 @@ class AzureRMDatabases(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "charset":
-                    self.parameters.update({"charset": kwargs[key]})
+                    self.parameters["charset"] = kwargs[key]
                 elif key == "collation":
-                    self.parameters.update({"collation": kwargs[key]})
+                    self.parameters["collation"] = kwargs[key]
 
         old_response = None
         response = None

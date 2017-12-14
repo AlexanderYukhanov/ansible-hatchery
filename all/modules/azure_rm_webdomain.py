@@ -518,31 +518,31 @@ class AzureRMDomains(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "kind":
-                    self.domain.update({"kind": kwargs[key]})
+                    self.domain["kind"] = kwargs[key]
                 elif key == "location":
-                    self.domain.update({"location": kwargs[key]})
+                    self.domain["location"] = kwargs[key]
                 elif key == "contact_admin":
-                    self.domain.update({"contact_admin": kwargs[key]})
+                    self.domain["contact_admin"] = kwargs[key]
                 elif key == "contact_billing":
-                    self.domain.update({"contact_billing": kwargs[key]})
+                    self.domain["contact_billing"] = kwargs[key]
                 elif key == "contact_registrant":
-                    self.domain.update({"contact_registrant": kwargs[key]})
+                    self.domain["contact_registrant"] = kwargs[key]
                 elif key == "contact_tech":
-                    self.domain.update({"contact_tech": kwargs[key]})
+                    self.domain["contact_tech"] = kwargs[key]
                 elif key == "privacy":
-                    self.domain.update({"privacy": kwargs[key]})
+                    self.domain["privacy"] = kwargs[key]
                 elif key == "auto_renew":
-                    self.domain.update({"auto_renew": kwargs[key]})
+                    self.domain["auto_renew"] = kwargs[key]
                 elif key == "consent":
-                    self.domain.update({"consent": kwargs[key]})
+                    self.domain["consent"] = kwargs[key]
                 elif key == "dns_type":
-                    self.domain.update({"dns_type": kwargs[key]})
+                    self.domain["dns_type"] = kwargs[key]
                 elif key == "dns_zone_id":
-                    self.domain.update({"dns_zone_id": kwargs[key]})
+                    self.domain["dns_zone_id"] = kwargs[key]
                 elif key == "target_dns_type":
-                    self.domain.update({"target_dns_type": kwargs[key]})
+                    self.domain["target_dns_type"] = kwargs[key]
                 elif key == "auth_code":
-                    self.domain.update({"auth_code": kwargs[key]})
+                    self.domain["auth_code"] = kwargs[key]
 
         old_response = None
         response = None
