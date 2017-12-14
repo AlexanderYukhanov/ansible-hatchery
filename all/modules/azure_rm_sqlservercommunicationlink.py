@@ -51,10 +51,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerCommunicationLinks
     azure_rm_sqlservercommunicationlink:
-      resource_group: resource_group_name
-      server_name: server_name
-      communication_link_name: communication_link_name
-      partner_server: partner_server
+      resource_group: sqlcrudtest-7398
+      server_name: sqlcrudtest-4645
+      communication_link_name: link1
+      partner_server: NOT FOUND
 '''
 
 RETURN = '''

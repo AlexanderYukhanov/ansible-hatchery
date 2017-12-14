@@ -78,20 +78,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) LocalNetworkGateways
     azure_rm_applicationgatewaylocalnetworkgateway:
-      resource_group: resource_group_name
-      local_network_gateway_name: local_network_gateway_name
-      id: id
-      location: location
+      resource_group: NOT FOUND
+      local_network_gateway_name: NOT FOUND
       local_network_address_space:
         address_prefixes:
           - XXXX - list of values -- not implemented str
-      gateway_ip_address: gateway_ip_address
-      bgp_settings:
-        asn: asn
-        bgp_peering_address: bgp_peering_address
-        peer_weight: peer_weight
-      resource_guid: resource_guid
-      etag: etag
 '''
 
 RETURN = '''

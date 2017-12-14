@@ -60,7 +60,7 @@ EXAMPLES = '''
   - name: Create (or update) SQL Server
     azure_rm_sqlserver:
       resource_group: resource_group
-      name: server_name
+      name: sqlcrudtest-4645
       location: westus
       admin_username: mylogin
       admin_password: Testpasswordxyz12!

@@ -54,11 +54,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) VirtualNetworkRules
     azure_rm_sqlvirtualnetworkrule:
-      resource_group: resource_group_name
-      server_name: server_name
-      virtual_network_rule_name: virtual_network_rule_name
-      virtual_network_subnet_id: virtual_network_subnet_id
-      ignore_missing_vnet_service_endpoint: ignore_missing_vnet_service_endpoint
+      resource_group: Default
+      server_name: vnet-test-svr
+      virtual_network_rule_name: vnet-firewall-rule
+      virtual_network_subnet_id: NOT FOUND
+      ignore_missing_vnet_service_endpoint: NOT FOUND
 '''
 
 RETURN = '''

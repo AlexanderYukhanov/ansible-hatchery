@@ -54,11 +54,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) VirtualNetworkRules
     azure_rm_mysqlvirtualnetworkrule:
-      resource_group: resource_group_name
-      server_name: server_name
-      name: virtual_network_rule_name
-      virtual_network_subnet_id: virtual_network_subnet_id
-      ignore_missing_vnet_service_endpoint: ignore_missing_vnet_service_endpoint
+      resource_group: TestGroup
+      server_name: vnet-test-svr
+      name: vnet-firewall-rule
 '''
 
 RETURN = '''

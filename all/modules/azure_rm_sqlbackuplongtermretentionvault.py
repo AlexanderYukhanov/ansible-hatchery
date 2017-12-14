@@ -51,10 +51,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) BackupLongTermRetentionVaults
     azure_rm_sqlbackuplongtermretentionvault:
-      resource_group: resource_group_name
-      server_name: server_name
-      backup_long_term_retention_vault_name: backup_long_term_retention_vault_name
-      recovery_services_vault_resource_id: recovery_services_vault_resource_id
+      resource_group: longtermretentiontest-1234
+      server_name: longtermretentiontest-5678
+      backup_long_term_retention_vault_name: RegisteredVault
+      recovery_services_vault_resource_id: NOT FOUND
 '''
 
 RETURN = '''

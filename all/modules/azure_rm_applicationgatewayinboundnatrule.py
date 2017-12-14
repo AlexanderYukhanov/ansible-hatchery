@@ -83,20 +83,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) InboundNatRules
     azure_rm_applicationgatewayinboundnatrule:
-      resource_group: resource_group_name
-      load_balancer_name: load_balancer_name
-      inbound_nat_rule_name: inbound_nat_rule_name
-      id: id
-      frontend_ip_configuration:
-        id: id
-      protocol: protocol
-      frontend_port: frontend_port
-      backend_port: backend_port
-      idle_timeout_in_minutes: idle_timeout_in_minutes
-      enable_floating_ip: enable_floating_ip
-      provisioning_state: provisioning_state
-      name: name
-      etag: etag
+      resource_group: testrg
+      load_balancer_name: lb1
+      inbound_nat_rule_name: natRule1.1
 '''
 
 RETURN = '''

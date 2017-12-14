@@ -100,23 +100,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) PacketCaptures
     azure_rm_applicationgatewaypacketcapture:
-      resource_group: resource_group_name
-      network_watcher_name: network_watcher_name
-      packet_capture_name: packet_capture_name
-      target: target
-      bytes_to_capture_per_packet: bytes_to_capture_per_packet
-      total_bytes_per_session: total_bytes_per_session
-      time_limit_in_seconds: time_limit_in_seconds
-      storage_location:
-        storage_id: storage_id
-        storage_path: storage_path
-        file_path: file_path
+      resource_group: NOT FOUND
+      network_watcher_name: NOT FOUND
+      packet_capture_name: NOT FOUND
       filters:
-        - protocol: protocol
-          local_ip_address: local_ip_address
-          remote_ip_address: remote_ip_address
-          local_port: local_port
-          remote_port: remote_port
 '''
 
 RETURN = '''

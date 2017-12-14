@@ -412,10 +412,8 @@ author:
 EXAMPLES = '''
   - name: Create (or update) VirtualNetworks
     azure_rm_applicationgatewayvirtualnetwork:
-      resource_group: resource_group_name
-      virtual_network_name: virtual_network_name
-      id: id
-      location: location
+      resource_group: rg1
+      virtual_network_name: test-vnet
       address_space:
         address_prefixes:
           - XXXX - list of values -- not implemented str
@@ -423,117 +421,39 @@ EXAMPLES = '''
         dns_servers:
           - XXXX - list of values -- not implemented str
       subnets:
-        - id: id
-          address_prefix: address_prefix
-          network_security_group:
-            id: id
-            location: location
+        - network_security_group:
             security_rules:
-              - id: id
-                description: description
-                protocol: protocol
-                source_port_range: source_port_range
-                destination_port_range: destination_port_range
-                source_address_prefix: source_address_prefix
-                source_address_prefixes:
+              - source_address_prefixes:
                   - XXXX - list of values -- not implemented str
                 source_application_security_groups:
-                  - id: id
-                    location: location
-                destination_address_prefix: destination_address_prefix
                 destination_address_prefixes:
                   - XXXX - list of values -- not implemented str
                 destination_application_security_groups:
-                  - id: id
-                    location: location
                 source_port_ranges:
                   - XXXX - list of values -- not implemented str
                 destination_port_ranges:
                   - XXXX - list of values -- not implemented str
-                access: access
-                priority: priority
-                direction: direction
-                provisioning_state: provisioning_state
-                name: name
-                etag: etag
             default_security_rules:
-              - id: id
-                description: description
-                protocol: protocol
-                source_port_range: source_port_range
-                destination_port_range: destination_port_range
-                source_address_prefix: source_address_prefix
-                source_address_prefixes:
+              - source_address_prefixes:
                   - XXXX - list of values -- not implemented str
                 source_application_security_groups:
-                  - id: id
-                    location: location
-                destination_address_prefix: destination_address_prefix
                 destination_address_prefixes:
                   - XXXX - list of values -- not implemented str
                 destination_application_security_groups:
-                  - id: id
-                    location: location
                 source_port_ranges:
                   - XXXX - list of values -- not implemented str
                 destination_port_ranges:
                   - XXXX - list of values -- not implemented str
-                access: access
-                priority: priority
-                direction: direction
-                provisioning_state: provisioning_state
-                name: name
-                etag: etag
-            resource_guid: resource_guid
-            provisioning_state: provisioning_state
-            etag: etag
           route_table:
-            id: id
-            location: location
             routes:
-              - id: id
-                address_prefix: address_prefix
-                next_hop_type: next_hop_type
-                next_hop_ip_address: next_hop_ip_address
-                provisioning_state: provisioning_state
-                name: name
-                etag: etag
-            disable_bgp_route_propagation: disable_bgp_route_propagation
-            provisioning_state: provisioning_state
-            etag: etag
           service_endpoints:
-            - service: service
-              locations:
+            - locations:
                 - XXXX - list of values -- not implemented str
-              provisioning_state: provisioning_state
           resource_navigation_links:
-            - id: id
-              linked_resource_type: linked_resource_type
-              link: link
-              name: name
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
       virtual_network_peerings:
-        - id: id
-          allow_virtual_network_access: allow_virtual_network_access
-          allow_forwarded_traffic: allow_forwarded_traffic
-          allow_gateway_transit: allow_gateway_transit
-          use_remote_gateways: use_remote_gateways
-          remote_virtual_network:
-            id: id
-          remote_address_space:
+        - remote_address_space:
             address_prefixes:
               - XXXX - list of values -- not implemented str
-          peering_state: peering_state
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-      resource_guid: resource_guid
-      provisioning_state: provisioning_state
-      enable_ddos_protection: enable_ddos_protection
-      enable_vm_protection: enable_vm_protection
-      etag: etag
 '''
 
 RETURN = '''

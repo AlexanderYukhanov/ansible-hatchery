@@ -57,12 +57,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) EncryptionProtectors
     azure_rm_sqlencryptionprotector:
-      resource_group: resource_group_name
-      server_name: server_name
-      encryption_protector_name: encryption_protector_name
-      kind: kind
-      server_key_name: server_key_name
-      server_key_type: server_key_type
+      resource_group: sqlcrudtest-7398
+      server_name: sqlcrudtest-4645
+      encryption_protector_name: current
 '''
 
 RETURN = '''

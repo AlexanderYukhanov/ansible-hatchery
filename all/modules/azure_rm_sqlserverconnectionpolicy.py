@@ -51,10 +51,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerConnectionPolicies
     azure_rm_sqlserverconnectionpolicy:
-      resource_group: resource_group_name
-      server_name: server_name
-      connection_policy_name: connection_policy_name
-      connection_type: connection_type
+      resource_group: test-1234
+      server_name: test-5678
+      connection_policy_name: default
+      connection_type: NOT FOUND
 '''
 
 RETURN = '''

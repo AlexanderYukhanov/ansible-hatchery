@@ -317,85 +317,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Domains
     azure_rm_webdomain:
-      resource_group: resource_group_name
-      domain_name: domain_name
-      kind: kind
-      location: location
-      contact_admin:
-        address_mailing:
-          address1: address1
-          address2: address2
-          city: city
-          country: country
-          postal_code: postal_code
-          state: state
-        email: email
-        fax: fax
-        job_title: job_title
-        name_first: name_first
-        name_last: name_last
-        name_middle: name_middle
-        organization: organization
-        phone: phone
-      contact_billing:
-        address_mailing:
-          address1: address1
-          address2: address2
-          city: city
-          country: country
-          postal_code: postal_code
-          state: state
-        email: email
-        fax: fax
-        job_title: job_title
-        name_first: name_first
-        name_last: name_last
-        name_middle: name_middle
-        organization: organization
-        phone: phone
-      contact_registrant:
-        address_mailing:
-          address1: address1
-          address2: address2
-          city: city
-          country: country
-          postal_code: postal_code
-          state: state
-        email: email
-        fax: fax
-        job_title: job_title
-        name_first: name_first
-        name_last: name_last
-        name_middle: name_middle
-        organization: organization
-        phone: phone
-      contact_tech:
-        address_mailing:
-          address1: address1
-          address2: address2
-          city: city
-          country: country
-          postal_code: postal_code
-          state: state
-        email: email
-        fax: fax
-        job_title: job_title
-        name_first: name_first
-        name_last: name_last
-        name_middle: name_middle
-        organization: organization
-        phone: phone
-      privacy: privacy
-      auto_renew: auto_renew
+      resource_group: NOT FOUND
+      domain_name: NOT FOUND
       consent:
         agreement_keys:
           - XXXX - list of values -- not implemented str
-        agreed_by: agreed_by
-        agreed_at: agreed_at
-      dns_type: dns_type
-      dns_zone_id: dns_zone_id
-      target_dns_type: target_dns_type
-      auth_code: auth_code
 '''
 
 RETURN = '''

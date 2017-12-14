@@ -53,11 +53,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) PostgreSQL Database
     azure_rm_postgresqldatabase:
-      resource_group: resource_group_name
-      server_name: server_name
-      name: database_name
-      charset: charset
-      collation: collation
+      resource_group: TestGroup
+      server_name: testserver
+      name: db1
 '''
 
 RETURN = '''

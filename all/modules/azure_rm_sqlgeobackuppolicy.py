@@ -55,11 +55,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) GeoBackupPolicies
     azure_rm_sqlgeobackuppolicy:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      geo_backup_policy_name: geo_backup_policy_name
-      state: state
+      resource_group: sqlcrudtest-4799
+      server_name: sqlcrudtest-5961
+      database_name: testdw
+      geo_backup_policy_name: Default
+      state: NOT FOUND
 '''
 
 RETURN = '''

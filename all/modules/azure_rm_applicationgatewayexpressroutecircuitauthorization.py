@@ -62,14 +62,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ExpressRouteCircuitAuthorizations
     azure_rm_applicationgatewayexpressroutecircuitauthorization:
-      resource_group: resource_group_name
-      circuit_name: circuit_name
-      authorization_name: authorization_name
-      id: id
-      authorization_key: authorization_key
-      authorization_use_status: authorization_use_status
-      provisioning_state: provisioning_state
-      name: name
+      resource_group: NOT FOUND
+      circuit_name: NOT FOUND
+      authorization_name: NOT FOUND
 '''
 
 RETURN = '''

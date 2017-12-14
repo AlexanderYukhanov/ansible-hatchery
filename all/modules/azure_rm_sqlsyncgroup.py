@@ -93,23 +93,13 @@ author:
 EXAMPLES = '''
   - name: Create (or update) SyncGroups
     azure_rm_sqlsyncgroup:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      sync_group_name: sync_group_name
-      interval: interval
-      conflict_resolution_policy: conflict_resolution_policy
-      sync_database_id: sync_database_id
-      hub_database_user_name: hub_database_user_name
-      hub_database_password: hub_database_password
+      resource_group: syncgroupcrud-65440
+      server_name: syncgroupcrud-8475
+      database_name: syncgroupcrud-4328
+      sync_group_name: syncgroupcrud-3187
       schema:
         tables:
           - columns:
-              - quoted_name: quoted_name
-                data_size: data_size
-                data_type: data_type
-            quoted_name: quoted_name
-        master_sync_member_name: master_sync_member_name
 '''
 
 RETURN = '''

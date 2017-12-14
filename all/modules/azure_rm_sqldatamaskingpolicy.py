@@ -59,12 +59,12 @@ author:
 EXAMPLES = '''
   - name: Create (or update) DataMaskingPolicies
     azure_rm_sqldatamaskingpolicy:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      data_masking_policy_name: data_masking_policy_name
-      data_masking_state: data_masking_state
-      exempt_principals: exempt_principals
+      resource_group: sqlcrudtest-6852
+      server_name: sqlcrudtest-2080
+      database_name: sqlcrudtest-331
+      data_masking_policy_name: Default
+      data_masking_state: NOT FOUND
+      exempt_principals: NOT FOUND
 '''
 
 RETURN = '''

@@ -50,10 +50,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) SyncAgents
     azure_rm_sqlsyncagent:
-      resource_group: resource_group_name
-      server_name: server_name
-      sync_agent_name: sync_agent_name
-      sync_database_id: sync_database_id
+      resource_group: syncagentcrud-65440
+      server_name: syncagentcrud-8475
+      sync_agent_name: syncagentcrud-3187
+      sync_database_id: NOT FOUND
 '''
 
 RETURN = '''

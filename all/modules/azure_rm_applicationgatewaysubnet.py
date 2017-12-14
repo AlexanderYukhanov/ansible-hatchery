@@ -322,100 +322,38 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Subnets
     azure_rm_applicationgatewaysubnet:
-      resource_group: resource_group_name
-      virtual_network_name: virtual_network_name
-      subnet_name: subnet_name
-      id: id
-      address_prefix: address_prefix
+      resource_group: subnet-test
+      virtual_network_name: vnetname
+      subnet_name: subnet1
       network_security_group:
-        id: id
-        location: location
         security_rules:
-          - id: id
-            description: description
-            protocol: protocol
-            source_port_range: source_port_range
-            destination_port_range: destination_port_range
-            source_address_prefix: source_address_prefix
-            source_address_prefixes:
+          - source_address_prefixes:
               - XXXX - list of values -- not implemented str
             source_application_security_groups:
-              - id: id
-                location: location
-            destination_address_prefix: destination_address_prefix
             destination_address_prefixes:
               - XXXX - list of values -- not implemented str
             destination_application_security_groups:
-              - id: id
-                location: location
             source_port_ranges:
               - XXXX - list of values -- not implemented str
             destination_port_ranges:
               - XXXX - list of values -- not implemented str
-            access: access
-            priority: priority
-            direction: direction
-            provisioning_state: provisioning_state
-            name: name
-            etag: etag
         default_security_rules:
-          - id: id
-            description: description
-            protocol: protocol
-            source_port_range: source_port_range
-            destination_port_range: destination_port_range
-            source_address_prefix: source_address_prefix
-            source_address_prefixes:
+          - source_address_prefixes:
               - XXXX - list of values -- not implemented str
             source_application_security_groups:
-              - id: id
-                location: location
-            destination_address_prefix: destination_address_prefix
             destination_address_prefixes:
               - XXXX - list of values -- not implemented str
             destination_application_security_groups:
-              - id: id
-                location: location
             source_port_ranges:
               - XXXX - list of values -- not implemented str
             destination_port_ranges:
               - XXXX - list of values -- not implemented str
-            access: access
-            priority: priority
-            direction: direction
-            provisioning_state: provisioning_state
-            name: name
-            etag: etag
-        resource_guid: resource_guid
-        provisioning_state: provisioning_state
-        etag: etag
       route_table:
-        id: id
-        location: location
         routes:
-          - id: id
-            address_prefix: address_prefix
-            next_hop_type: next_hop_type
-            next_hop_ip_address: next_hop_ip_address
-            provisioning_state: provisioning_state
-            name: name
-            etag: etag
-        disable_bgp_route_propagation: disable_bgp_route_propagation
-        provisioning_state: provisioning_state
-        etag: etag
       service_endpoints:
-        - service: service
-          locations:
+        - locations:
             - XXXX - list of values -- not implemented str
-          provisioning_state: provisioning_state
       resource_navigation_links:
-        - id: id
-          linked_resource_type: linked_resource_type
-          link: link
-          name: name
-      provisioning_state: provisioning_state
-      name: name
-      etag: etag
 '''
 
 RETURN = '''

@@ -79,19 +79,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) SyncMembers
     azure_rm_sqlsyncmember:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      sync_group_name: sync_group_name
-      sync_member_name: sync_member_name
-      database_type: database_type
-      sync_agent_id: sync_agent_id
-      sql_server_database_id: sql_server_database_id
-      server_name: server_name
-      database_name: database_name
-      user_name: user_name
-      password: password
-      sync_direction: sync_direction
+      resource_group: syncgroupcrud-65440
+      server_name: syncgroupcrud-8475
+      database_name: syncgroupcrud-4328
+      sync_group_name: syncgroupcrud-3187
+      sync_member_name: syncgroupcrud-4879
 '''
 
 RETURN = '''

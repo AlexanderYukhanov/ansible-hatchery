@@ -56,12 +56,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) FirewallRules
     azure_rm_mysqlfirewallrule:
-      resource_group: resource_group_name
-      server_name: server_name
-      name: firewall_rule_name
+      resource_group: TestGroup
+      server_name: testserver
+      name: rule1
       parameters: parameters
-      start_ip_address: start_ip_address
-      end_ip_address: end_ip_address
 '''
 
 RETURN = '''

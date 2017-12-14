@@ -653,33 +653,15 @@ author:
 EXAMPLES = '''
   - name: Create (or update) LoadBalancers
     azure_rm_applicationgatewayloadbalancer:
-      resource_group: resource_group_name
-      load_balancer_name: load_balancer_name
-      id: id
-      location: location
-      sku:
-        name: name
+      resource_group: rg1
+      load_balancer_name: lb
       frontend_ip_configurations:
-        - id: id
-          private_ip_address: private_ip_address
-          private_ip_allocation_method: private_ip_allocation_method
-          subnet:
-            id: id
-            address_prefix: address_prefix
+        - subnet:
             network_security_group:
-              id: id
-              location: location
               security_rules:
-                - id: id
-                  description: description
-                  protocol: protocol
-                  source_port_range: source_port_range
-                  destination_port_range: destination_port_range
-                  source_address_prefix: source_address_prefix
-                  source_address_prefixes:
+                - source_address_prefixes:
                     - XXXX - list of values -- not implemented str
                   source_application_security_groups:
-                  destination_address_prefix: destination_address_prefix
                   destination_address_prefixes:
                     - XXXX - list of values -- not implemented str
                   destination_application_security_groups:
@@ -687,23 +669,10 @@ EXAMPLES = '''
                     - XXXX - list of values -- not implemented str
                   destination_port_ranges:
                     - XXXX - list of values -- not implemented str
-                  access: access
-                  priority: priority
-                  direction: direction
-                  provisioning_state: provisioning_state
-                  name: name
-                  etag: etag
               default_security_rules:
-                - id: id
-                  description: description
-                  protocol: protocol
-                  source_port_range: source_port_range
-                  destination_port_range: destination_port_range
-                  source_address_prefix: source_address_prefix
-                  source_address_prefixes:
+                - source_address_prefixes:
                     - XXXX - list of values -- not implemented str
                   source_application_security_groups:
-                  destination_address_prefix: destination_address_prefix
                   destination_address_prefixes:
                     - XXXX - list of values -- not implemented str
                   destination_application_security_groups:
@@ -711,134 +680,24 @@ EXAMPLES = '''
                     - XXXX - list of values -- not implemented str
                   destination_port_ranges:
                     - XXXX - list of values -- not implemented str
-                  access: access
-                  priority: priority
-                  direction: direction
-                  provisioning_state: provisioning_state
-                  name: name
-                  etag: etag
-              resource_guid: resource_guid
-              provisioning_state: provisioning_state
-              etag: etag
             route_table:
-              id: id
-              location: location
               routes:
-                - id: id
-                  address_prefix: address_prefix
-                  next_hop_type: next_hop_type
-                  next_hop_ip_address: next_hop_ip_address
-                  provisioning_state: provisioning_state
-                  name: name
-                  etag: etag
-              disable_bgp_route_propagation: disable_bgp_route_propagation
-              provisioning_state: provisioning_state
-              etag: etag
             service_endpoints:
-              - service: service
-                locations:
+              - locations:
                   - XXXX - list of values -- not implemented str
-                provisioning_state: provisioning_state
             resource_navigation_links:
-              - id: id
-                linked_resource_type: linked_resource_type
-                link: link
-                name: name
-            provisioning_state: provisioning_state
-            name: name
-            etag: etag
           public_ip_address:
-            id: id
-            location: location
-            sku:
-              name: name
-            public_ip_allocation_method: public_ip_allocation_method
-            public_ip_address_version: public_ip_address_version
-            dns_settings:
-              domain_name_label: domain_name_label
-              fqdn: fqdn
-              reverse_fqdn: reverse_fqdn
-            ip_address: ip_address
-            idle_timeout_in_minutes: idle_timeout_in_minutes
-            resource_guid: resource_guid
-            provisioning_state: provisioning_state
-            etag: etag
             zones:
               - XXXX - list of values -- not implemented str
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
           zones:
             - XXXX - list of values -- not implemented str
       backend_address_pools:
-        - id: id
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
       load_balancing_rules:
-        - id: id
-          frontend_ip_configuration:
-            id: id
-          backend_address_pool:
-            id: id
-          probe:
-            id: id
-          protocol: protocol
-          load_distribution: load_distribution
-          frontend_port: frontend_port
-          backend_port: backend_port
-          idle_timeout_in_minutes: idle_timeout_in_minutes
-          enable_floating_ip: enable_floating_ip
-          disable_outbound_snat: disable_outbound_snat
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
       probes:
-        - id: id
-          protocol: protocol
-          port: port
-          interval_in_seconds: interval_in_seconds
-          number_of_probes: number_of_probes
-          request_path: request_path
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
       inbound_nat_rules:
-        - id: id
-          frontend_ip_configuration:
-            id: id
-          protocol: protocol
-          frontend_port: frontend_port
-          backend_port: backend_port
-          idle_timeout_in_minutes: idle_timeout_in_minutes
-          enable_floating_ip: enable_floating_ip
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
       inbound_nat_pools:
-        - id: id
-          frontend_ip_configuration:
-            id: id
-          protocol: protocol
-          frontend_port_range_start: frontend_port_range_start
-          frontend_port_range_end: frontend_port_range_end
-          backend_port: backend_port
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
       outbound_nat_rules:
-        - id: id
-          allocated_outbound_ports: allocated_outbound_ports
-          frontend_ip_configurations:
-            - id: id
-          backend_address_pool:
-            id: id
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-      resource_guid: resource_guid
-      provisioning_state: provisioning_state
-      etag: etag
+        - frontend_ip_configurations:
 '''
 
 RETURN = '''

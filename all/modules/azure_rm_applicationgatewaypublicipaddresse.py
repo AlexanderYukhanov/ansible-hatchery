@@ -97,23 +97,8 @@ author:
 EXAMPLES = '''
   - name: Create (or update) PublicIPAddresses
     azure_rm_applicationgatewaypublicipaddresse:
-      resource_group: resource_group_name
-      public_ip_address_name: public_ip_address_name
-      id: id
-      location: location
-      sku:
-        name: name
-      public_ip_allocation_method: public_ip_allocation_method
-      public_ip_address_version: public_ip_address_version
-      dns_settings:
-        domain_name_label: domain_name_label
-        fqdn: fqdn
-        reverse_fqdn: reverse_fqdn
-      ip_address: ip_address
-      idle_timeout_in_minutes: idle_timeout_in_minutes
-      resource_guid: resource_guid
-      provisioning_state: provisioning_state
-      etag: etag
+      resource_group: rg1
+      public_ip_address_name: test-ip
       zones:
         - XXXX - list of values -- not implemented str
 '''

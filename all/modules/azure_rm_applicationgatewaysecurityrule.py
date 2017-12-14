@@ -125,36 +125,19 @@ author:
 EXAMPLES = '''
   - name: Create (or update) SecurityRules
     azure_rm_applicationgatewaysecurityrule:
-      resource_group: resource_group_name
-      network_security_group_name: network_security_group_name
-      security_rule_name: security_rule_name
-      id: id
-      description: description
-      protocol: protocol
-      source_port_range: source_port_range
-      destination_port_range: destination_port_range
-      source_address_prefix: source_address_prefix
+      resource_group: rg1
+      network_security_group_name: testnsg
+      security_rule_name: rule1
       source_address_prefixes:
         - XXXX - list of values -- not implemented str
       source_application_security_groups:
-        - id: id
-          location: location
-      destination_address_prefix: destination_address_prefix
       destination_address_prefixes:
         - XXXX - list of values -- not implemented str
       destination_application_security_groups:
-        - id: id
-          location: location
       source_port_ranges:
         - XXXX - list of values -- not implemented str
       destination_port_ranges:
         - XXXX - list of values -- not implemented str
-      access: access
-      priority: priority
-      direction: direction
-      provisioning_state: provisioning_state
-      name: name
-      etag: etag
 '''
 
 RETURN = '''

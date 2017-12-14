@@ -53,11 +53,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Configurations
     azure_rm_postgresqlconfiguration:
-      resource_group: resource_group_name
-      server_name: server_name
-      configuration_name: configuration_name
-      value: value
-      source: source
+      resource_group: TestGroup
+      server_name: testserver
+      configuration_name: array_nulls
 '''
 
 RETURN = '''

@@ -63,13 +63,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerAzureADAdministrators
     azure_rm_sqlserverazureadadministrator:
-      resource_group: resource_group_name
-      server_name: server_name
-      administrator_name: administrator_name
-      administrator_type: administrator_type
-      login: login
-      sid: sid
-      tenant_id: tenant_id
+      resource_group: sqlcrudtest-4799
+      server_name: sqlcrudtest-6440
+      administrator_name: activeDirectory
 '''
 
 RETURN = '''

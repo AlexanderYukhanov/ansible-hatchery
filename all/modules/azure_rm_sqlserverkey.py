@@ -65,14 +65,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ServerKeys
     azure_rm_sqlserverkey:
-      resource_group: resource_group_name
-      server_name: server_name
-      key_name: key_name
-      kind: kind
-      server_key_type: server_key_type
-      uri: uri
-      thumbprint: thumbprint
-      creation_date: creation_date
+      resource_group: sqlcrudtest-7398
+      server_name: sqlcrudtest-4645
+      key_name: someVault_someKey_01234567890123456789012345678901
 '''
 
 RETURN = '''

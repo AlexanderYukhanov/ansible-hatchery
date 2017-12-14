@@ -66,10 +66,7 @@ EXAMPLES = '''
   - name: Create (or update) RoleDefinitions
     azure_rm_authorizationroledefinition:
       scope: scope
-      role_definition_id: role_definition_id
-      properties_role_name: role_name
-      properties_description: description
-      properties_type: type
+      role_definition_id: roleDefinitionId
       properties_permissions:
         - actions:
             - XXXX - list of values -- not implemented str

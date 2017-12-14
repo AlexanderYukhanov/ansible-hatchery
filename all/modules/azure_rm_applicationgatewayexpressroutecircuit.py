@@ -501,157 +501,39 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ExpressRouteCircuits
     azure_rm_applicationgatewayexpressroutecircuit:
-      resource_group: resource_group_name
-      circuit_name: circuit_name
-      id: id
-      location: location
-      sku:
-        name: name
-        tier: tier
-        family: family
-      allow_classic_operations: allow_classic_operations
-      circuit_provisioning_state: circuit_provisioning_state
-      service_provider_provisioning_state: service_provider_provisioning_state
+      resource_group: NOT FOUND
+      circuit_name: NOT FOUND
       authorizations:
-        - id: id
-          authorization_key: authorization_key
-          authorization_use_status: authorization_use_status
-          provisioning_state: provisioning_state
-          name: name
       peerings:
-        - id: id
-          peering_type: peering_type
-          state: state
-          azure_asn: azure_asn
-          peer_asn: peer_asn
-          primary_peer_address_prefix: primary_peer_address_prefix
-          secondary_peer_address_prefix: secondary_peer_address_prefix
-          primary_azure_port: primary_azure_port
-          secondary_azure_port: secondary_azure_port
-          shared_key: shared_key
-          vlan_id: vlan_id
-          microsoft_peering_config:
+        - microsoft_peering_config:
             advertised_public_prefixes:
               - XXXX - list of values -- not implemented str
             advertised_communities:
               - XXXX - list of values -- not implemented str
-            advertised_public_prefixes_state: advertised_public_prefixes_state
-            legacy_mode: legacy_mode
-            customer_asn: customer_asn
-            routing_registry_name: routing_registry_name
-          stats:
-            primarybytes_in: primarybytes_in
-            primarybytes_out: primarybytes_out
-            secondarybytes_in: secondarybytes_in
-            secondarybytes_out: secondarybytes_out
-          provisioning_state: provisioning_state
-          gateway_manager_etag: gateway_manager_etag
-          last_modified_by: last_modified_by
           route_filter:
-            id: id
-            location: location
             rules:
-              - id: id
-                access: access
-                route_filter_rule_type: route_filter_rule_type
-                communities:
+              - communities:
                   - XXXX - list of values -- not implemented str
-                name: name
-                location: location
             peerings:
-              - id: id
-                peering_type: peering_type
-                state: state
-                azure_asn: azure_asn
-                peer_asn: peer_asn
-                primary_peer_address_prefix: primary_peer_address_prefix
-                secondary_peer_address_prefix: secondary_peer_address_prefix
-                primary_azure_port: primary_azure_port
-                secondary_azure_port: secondary_azure_port
-                shared_key: shared_key
-                vlan_id: vlan_id
-                microsoft_peering_config:
+              - microsoft_peering_config:
                   advertised_public_prefixes:
                     - XXXX - list of values -- not implemented str
                   advertised_communities:
                     - XXXX - list of values -- not implemented str
-                  advertised_public_prefixes_state: advertised_public_prefixes_state
-                  legacy_mode: legacy_mode
-                  customer_asn: customer_asn
-                  routing_registry_name: routing_registry_name
-                stats:
-                  primarybytes_in: primarybytes_in
-                  primarybytes_out: primarybytes_out
-                  secondarybytes_in: secondarybytes_in
-                  secondarybytes_out: secondarybytes_out
-                provisioning_state: provisioning_state
-                gateway_manager_etag: gateway_manager_etag
-                last_modified_by: last_modified_by
                 route_filter:
-                  id: id
-                  location: location
                   rules:
                   peerings:
-                ipv6_peering_config:
-                  primary_peer_address_prefix: primary_peer_address_prefix
-                  secondary_peer_address_prefix: secondary_peer_address_prefix
-                  microsoft_peering_config: microsoft_peering_config
-                  route_filter: route_filter
-                  state: state
-                name: name
           ipv6_peering_config:
-            primary_peer_address_prefix: primary_peer_address_prefix
-            secondary_peer_address_prefix: secondary_peer_address_prefix
             microsoft_peering_config:
               advertised_public_prefixes:
                 - XXXX - list of values -- not implemented str
               advertised_communities:
                 - XXXX - list of values -- not implemented str
-              advertised_public_prefixes_state: advertised_public_prefixes_state
-              legacy_mode: legacy_mode
-              customer_asn: customer_asn
-              routing_registry_name: routing_registry_name
             route_filter:
-              id: id
-              location: location
               rules:
-                - id: id
-                  access: access
-                  route_filter_rule_type: route_filter_rule_type
-                  communities:
+                - communities:
                     - XXXX - list of values -- not implemented str
-                  name: name
-                  location: location
               peerings:
-                - id: id
-                  peering_type: peering_type
-                  state: state
-                  azure_asn: azure_asn
-                  peer_asn: peer_asn
-                  primary_peer_address_prefix: primary_peer_address_prefix
-                  secondary_peer_address_prefix: secondary_peer_address_prefix
-                  primary_azure_port: primary_azure_port
-                  secondary_azure_port: secondary_azure_port
-                  shared_key: shared_key
-                  vlan_id: vlan_id
-                  microsoft_peering_config: microsoft_peering_config
-                  stats: stats
-                  provisioning_state: provisioning_state
-                  gateway_manager_etag: gateway_manager_etag
-                  last_modified_by: last_modified_by
-                  route_filter: route_filter
-                  ipv6_peering_config: ipv6_peering_config
-                  name: name
-            state: state
-          name: name
-      service_key: service_key
-      service_provider_notes: service_provider_notes
-      service_provider_properties:
-        service_provider_name: service_provider_name
-        peering_location: peering_location
-        bandwidth_in_mbps: bandwidth_in_mbps
-      provisioning_state: provisioning_state
-      gateway_manager_etag: gateway_manager_etag
 '''
 
 RETURN = '''

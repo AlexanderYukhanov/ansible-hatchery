@@ -60,11 +60,11 @@ EXAMPLES = '''
   - name: Create (or update) RoleAssignments
     azure_rm_authorizationroleassignment:
       scope: scope
-      role_assignment_name: role_assignment_name
+      role_assignment_name: roleAssignmentName
       parameters: parameters
       properties:
-        role_definition_id: role_definition_id
-        principal_id: principal_id
+        role_definition_id: /subscriptions/4004a9fd-d58e-48dc-aeb2-4a4aec58606f/providers/Microsoft.Authorization/roleDefinitions/de139f84-1756-47ae-9be6-808fbbe84772
+        principal_id: d93a38bc-d029-4160-bfb0-fbda779ac214
 '''
 
 RETURN = '''

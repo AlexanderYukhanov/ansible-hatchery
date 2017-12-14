@@ -153,40 +153,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) AppServiceEnvironments
     azure_rm_webappserviceenvironment:
-      resource_group: resource_group_name
-      name: name
-      kind: kind
-      location: location
-      app_service_environment_resource_name: app_service_environment_resource_name
-      app_service_environment_resource_location: app_service_environment_resource_location
-      vnet_name: vnet_name
-      vnet_resource_group_name: vnet_resource_group_name
-      vnet_subnet_name: vnet_subnet_name
-      virtual_network:
-        id: id
-        subnet: subnet
-      internal_load_balancing_mode: internal_load_balancing_mode
-      multi_size: multi_size
-      multi_role_count: multi_role_count
+      resource_group: NOT FOUND
+      name: NOT FOUND
       worker_pools:
-        - worker_size_id: worker_size_id
-          compute_mode: compute_mode
-          worker_size: worker_size
-          worker_count: worker_count
-      ipssl_address_count: ipssl_address_count
-      dns_suffix: dns_suffix
       network_access_control_list:
-        - action: action
-          description: description
-          order: order
-          remote_subnet: remote_subnet
-      front_end_scale_factor: front_end_scale_factor
-      api_management_account_id: api_management_account_id
-      suspended: suspended
-      dynamic_cache_enabled: dynamic_cache_enabled
       cluster_settings:
-        - name: name
-          value: value
       user_whitelisted_ip_ranges:
         - XXXX - list of values -- not implemented str
 '''

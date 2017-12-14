@@ -70,17 +70,8 @@ author:
 EXAMPLES = '''
   - name: Create (or update) AppServiceCertificateOrders
     azure_rm_webappservicecertificateorder:
-      resource_group: resource_group_name
-      certificate_order_name: certificate_order_name
-      kind: kind
-      location: location
-      certificates: certificates
-      distinguished_name: distinguished_name
-      validity_in_years: validity_in_years
-      key_size: key_size
-      product_type: product_type
-      auto_renew: auto_renew
-      csr: csr
+      resource_group: NOT FOUND
+      certificate_order_name: NOT FOUND
 '''
 
 RETURN = '''

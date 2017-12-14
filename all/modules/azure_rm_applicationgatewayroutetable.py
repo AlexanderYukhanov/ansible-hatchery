@@ -85,21 +85,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) RouteTables
     azure_rm_applicationgatewayroutetable:
-      resource_group: resource_group_name
-      route_table_name: route_table_name
-      id: id
-      location: location
+      resource_group: rg1
+      route_table_name: testrt
       routes:
-        - id: id
-          address_prefix: address_prefix
-          next_hop_type: next_hop_type
-          next_hop_ip_address: next_hop_ip_address
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-      disable_bgp_route_propagation: disable_bgp_route_propagation
-      provisioning_state: provisioning_state
-      etag: etag
 '''
 
 RETURN = '''

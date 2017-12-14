@@ -135,38 +135,20 @@ author:
 EXAMPLES = '''
   - name: Create (or update) AppServicePlans
     azure_rm_webappserviceplan:
-      resource_group: resource_group_name
-      name: name
-      kind: kind
-      location: location
-      app_service_plan_name: app_service_plan_name
-      worker_tier_name: worker_tier_name
-      admin_site_name: admin_site_name
-      hosting_environment_profile:
-        id: id
-      per_site_scaling: per_site_scaling
-      is_spot: is_spot
-      spot_expiration_time: spot_expiration_time
-      reserved: reserved
-      target_worker_count: target_worker_count
-      target_worker_size_id: target_worker_size_id
+      resource_group: testrg123
+      name: testsf6141
+      kind: app
+      location: East US
+      app_service_plan_name: testsf6141
       sku:
-        name: name
-        tier: tier
-        size: size
-        family: family
-        capacity: capacity
-        sku_capacity:
-          minimum: minimum
-          maximum: maximum
-          default: default
-          scale_type: scale_type
+        name: P1
+        tier: Premium
+        size: P1
+        family: P
+        capacity: 1
         locations:
           - XXXX - list of values -- not implemented str
         capabilities:
-          - name: name
-            value: value
-            reason: reason
 '''
 
 RETURN = '''

@@ -54,11 +54,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) TransparentDataEncryptions
     azure_rm_sqltransparentdataencryption:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      transparent_data_encryption_name: transparent_data_encryption_name
-      status: status
+      resource_group: sqlcrudtest-6852
+      server_name: sqlcrudtest-2080
+      database_name: sqlcrudtest-9187
+      transparent_data_encryption_name: current
+      status: NOT FOUND
 '''
 
 RETURN = '''

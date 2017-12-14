@@ -68,17 +68,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Certificates
     azure_rm_webcertificate:
-      resource_group: resource_group_name
-      name: name
-      kind: kind
-      location: location
+      resource_group: testrg123
+      name: testc6282
+      location: East US
       host_names:
         - XXXX - list of values -- not implemented str
-      pfx_blob: pfx_blob
-      password: password
-      key_vault_id: key_vault_id
-      key_vault_secret_name: key_vault_secret_name
-      server_farm_id: server_farm_id
 '''
 
 RETURN = '''

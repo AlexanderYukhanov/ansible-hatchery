@@ -998,304 +998,64 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ApplicationGateways
     azure_rm_applicationgatewayapplicationgateway:
-      resource_group: resource_group_name
-      application_gateway_name: application_gateway_name
-      id: id
-      location: location
-      sku:
-        name: name
-        tier: tier
-        capacity: capacity
+      resource_group: NOT FOUND
+      application_gateway_name: NOT FOUND
       ssl_policy:
         disabled_ssl_protocols:
           - XXXX - list of values -- not implemented str
-        policy_type: policy_type
-        policy_name: policy_name
         cipher_suites:
           - XXXX - list of values -- not implemented str
-        min_protocol_version: min_protocol_version
       gateway_ip_configurations:
-        - id: id
-          subnet:
-            id: id
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       authentication_certificates:
-        - id: id
-          data: data
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       ssl_certificates:
-        - id: id
-          data: data
-          password: password
-          public_cert_data: public_cert_data
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       frontend_ip_configurations:
-        - id: id
-          private_ip_address: private_ip_address
-          private_ip_allocation_method: private_ip_allocation_method
-          subnet:
-            id: id
-          public_ip_address:
-            id: id
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       frontend_ports:
-        - id: id
-          port: port
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       probes:
-        - id: id
-          protocol: protocol
-          host: host
-          path: path
-          interval: interval
-          timeout: timeout
-          unhealthy_threshold: unhealthy_threshold
-          pick_host_name_from_backend_http_settings: pick_host_name_from_backend_http_settings
-          min_servers: min_servers
-          match:
-            body: body
+        - match:
             status_codes:
               - XXXX - list of values -- not implemented str
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       backend_address_pools:
-        - id: id
-          backend_ip_configurations:
-            - id: id
-              application_gateway_backend_address_pools:
-                - id: id
-                  backend_ip_configurations:
-                    - id: id
-                      application_gateway_backend_address_pools:
+        - backend_ip_configurations:
+            - application_gateway_backend_address_pools:
+                - backend_ip_configurations:
+                    - application_gateway_backend_address_pools:
                       load_balancer_backend_address_pools:
                       load_balancer_inbound_nat_rules:
-                      private_ip_address: private_ip_address
-                      private_ip_allocation_method: private_ip_allocation_method
-                      private_ip_address_version: private_ip_address_version
-                      subnet: subnet
-                      primary: primary
-                      public_ip_address: public_ip_address
                       application_security_groups:
-                      provisioning_state: provisioning_state
-                      name: name
-                      etag: etag
                   backend_addresses:
-                    - fqdn: fqdn
-                      ip_address: ip_address
-                  provisioning_state: provisioning_state
-                  name: name
-                  etag: etag
-                  type: type
               load_balancer_backend_address_pools:
-                - id: id
-                  provisioning_state: provisioning_state
-                  name: name
-                  etag: etag
               load_balancer_inbound_nat_rules:
-                - id: id
-                  frontend_ip_configuration:
-                    id: id
-                  protocol: protocol
-                  frontend_port: frontend_port
-                  backend_port: backend_port
-                  idle_timeout_in_minutes: idle_timeout_in_minutes
-                  enable_floating_ip: enable_floating_ip
-                  provisioning_state: provisioning_state
-                  name: name
-                  etag: etag
-              private_ip_address: private_ip_address
-              private_ip_allocation_method: private_ip_allocation_method
-              private_ip_address_version: private_ip_address_version
               subnet:
-                id: id
-                address_prefix: address_prefix
                 network_security_group:
-                  id: id
-                  location: location
                   security_rules:
                   default_security_rules:
-                  resource_guid: resource_guid
-                  provisioning_state: provisioning_state
-                  etag: etag
                 route_table:
-                  id: id
-                  location: location
                   routes:
-                  disable_bgp_route_propagation: disable_bgp_route_propagation
-                  provisioning_state: provisioning_state
-                  etag: etag
                 service_endpoints:
-                  - service: service
-                    locations:
+                  - locations:
                       - XXXX - list of values -- not implemented str
-                    provisioning_state: provisioning_state
                 resource_navigation_links:
-                  - id: id
-                    linked_resource_type: linked_resource_type
-                    link: link
-                    name: name
-                provisioning_state: provisioning_state
-                name: name
-                etag: etag
-              primary: primary
               public_ip_address:
-                id: id
-                location: location
-                sku:
-                  name: name
-                public_ip_allocation_method: public_ip_allocation_method
-                public_ip_address_version: public_ip_address_version
-                dns_settings:
-                  domain_name_label: domain_name_label
-                  fqdn: fqdn
-                  reverse_fqdn: reverse_fqdn
-                ip_address: ip_address
-                idle_timeout_in_minutes: idle_timeout_in_minutes
-                resource_guid: resource_guid
-                provisioning_state: provisioning_state
-                etag: etag
                 zones:
                   - XXXX - list of values -- not implemented str
               application_security_groups:
-                - id: id
-                  location: location
-              provisioning_state: provisioning_state
-              name: name
-              etag: etag
           backend_addresses:
-            - fqdn: fqdn
-              ip_address: ip_address
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       backend_http_settings_collection:
-        - id: id
-          port: port
-          protocol: protocol
-          cookie_based_affinity: cookie_based_affinity
-          request_timeout: request_timeout
-          probe:
-            id: id
-          authentication_certificates:
-            - id: id
-          connection_draining:
-            enabled: enabled
-            drain_timeout_in_sec: drain_timeout_in_sec
-          host_name: host_name
-          pick_host_name_from_backend_address: pick_host_name_from_backend_address
-          affinity_cookie_name: affinity_cookie_name
-          probe_enabled: probe_enabled
-          path: path
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
+        - authentication_certificates:
       http_listeners:
-        - id: id
-          frontend_ip_configuration:
-            id: id
-          frontend_port:
-            id: id
-          protocol: protocol
-          host_name: host_name
-          ssl_certificate:
-            id: id
-          require_server_name_indication: require_server_name_indication
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       url_path_maps:
-        - id: id
-          default_backend_address_pool:
-            id: id
-          default_backend_http_settings:
-            id: id
-          default_redirect_configuration:
-            id: id
-          path_rules:
-            - id: id
-              paths:
+        - path_rules:
+            - paths:
                 - XXXX - list of values -- not implemented str
-              backend_address_pool:
-                id: id
-              backend_http_settings:
-                id: id
-              redirect_configuration:
-                id: id
-              provisioning_state: provisioning_state
-              name: name
-              etag: etag
-              type: type
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       request_routing_rules:
-        - id: id
-          rule_type: rule_type
-          backend_address_pool:
-            id: id
-          backend_http_settings:
-            id: id
-          http_listener:
-            id: id
-          url_path_map:
-            id: id
-          redirect_configuration:
-            id: id
-          provisioning_state: provisioning_state
-          name: name
-          etag: etag
-          type: type
       redirect_configurations:
-        - id: id
-          redirect_type: redirect_type
-          target_listener:
-            id: id
-          target_url: target_url
-          include_path: include_path
-          include_query_string: include_query_string
-          request_routing_rules:
-            - id: id
+        - request_routing_rules:
           url_path_maps:
-            - id: id
           path_rules:
-            - id: id
-          name: name
-          etag: etag
-          type: type
       web_application_firewall_configuration:
-        enabled: enabled
-        firewall_mode: firewall_mode
-        rule_set_type: rule_set_type
-        rule_set_version: rule_set_version
         disabled_rule_groups:
-          - rule_group_name: rule_group_name
-            rules:
+          - rules:
               - XXXX - list of values -- not implemented int
-      enable_http2: enable_http2
-      resource_guid: resource_guid
-      provisioning_state: provisioning_state
-      etag: etag
 '''
 
 RETURN = '''

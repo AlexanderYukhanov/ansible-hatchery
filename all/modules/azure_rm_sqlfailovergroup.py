@@ -80,16 +80,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) FailoverGroups
     azure_rm_sqlfailovergroup:
-      resource_group: resource_group_name
-      server_name: server_name
-      failover_group_name: failover_group_name
-      read_write_endpoint:
-        failover_policy: failover_policy
-        failover_with_data_loss_grace_period_minutes: failover_with_data_loss_grace_period_minutes
-      read_only_endpoint:
-        failover_policy: failover_policy
+      resource_group: Default
+      server_name: failover-group-primary-server
+      failover_group_name: failover-group-test-3
       partner_servers:
-        - id: id
       databases:
         - XXXX - list of values -- not implemented str
 '''

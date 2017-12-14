@@ -83,21 +83,17 @@ author:
 EXAMPLES = '''
   - name: Create (or update) PostgreSQL Server
     azure_rm_postgresqlserver:
-      resource_group: resource_group_name
-      name: server_name
+      resource_group: TestGroup
+      name: testserver
       sku:
-        name: name
-        tier: tier
-        capacity: capacity
-        size: size
-        family: family
-      location: location
-      storage_mb: storage_mb
-      version: version
-      ssl_enforcement: ssl_enforcement
-      create_mode: create_mode
-      admin_username: administrator_login
-      admin_password: administrator_login_password
+        name: SkuName
+        tier: Basic
+        capacity: 100
+      location: OneBox
+      storage_mb: 1024
+      ssl_enforcement: Enabled
+      admin_username: cloudsa
+      admin_password: password
 '''
 
 RETURN = '''

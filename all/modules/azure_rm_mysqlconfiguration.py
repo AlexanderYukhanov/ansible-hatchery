@@ -56,12 +56,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Configurations
     azure_rm_mysqlconfiguration:
-      resource_group: resource_group_name
-      server_name: server_name
-      name: configuration_name
+      resource_group: TestGroup
+      server_name: testserver
+      name: event_scheduler
       parameters: parameters
-      value: value
-      source: source
 '''
 
 RETURN = '''

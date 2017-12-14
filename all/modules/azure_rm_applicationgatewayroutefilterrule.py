@@ -68,16 +68,11 @@ author:
 EXAMPLES = '''
   - name: Create (or update) RouteFilterRules
     azure_rm_applicationgatewayroutefilterrule:
-      resource_group: resource_group_name
-      route_filter_name: route_filter_name
-      rule_name: rule_name
-      id: id
-      access: access
-      route_filter_rule_type: route_filter_rule_type
+      resource_group: rg1
+      route_filter_name: filterName
+      rule_name: ruleName
       communities:
         - XXXX - list of values -- not implemented str
-      name: name
-      location: location
 '''
 
 RETURN = '''

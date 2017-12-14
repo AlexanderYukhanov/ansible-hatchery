@@ -535,157 +535,30 @@ author:
 EXAMPLES = '''
   - name: Create (or update) WebApps
     azure_rm_webwebapp:
-      resource_group: resource_group_name
-      name: name
-      kind: kind
-      location: location
-      enabled: enabled
+      resource_group: NOT FOUND
+      name: NOT FOUND
       host_name_ssl_states:
-        - name: name
-          ssl_state: ssl_state
-          virtual_ip: virtual_ip
-          thumbprint: thumbprint
-          to_update: to_update
-          host_type: host_type
-      server_farm_id: server_farm_id
-      reserved: reserved
       site_config:
-        number_of_workers: number_of_workers
         default_documents:
           - XXXX - list of values -- not implemented str
-        net_framework_version: net_framework_version
-        php_version: php_version
-        python_version: python_version
-        node_version: node_version
-        linux_fx_version: linux_fx_version
-        request_tracing_enabled: request_tracing_enabled
-        request_tracing_expiration_time: request_tracing_expiration_time
-        remote_debugging_enabled: remote_debugging_enabled
-        remote_debugging_version: remote_debugging_version
-        http_logging_enabled: http_logging_enabled
-        logs_directory_size_limit: logs_directory_size_limit
-        detailed_error_logging_enabled: detailed_error_logging_enabled
-        publishing_username: publishing_username
         app_settings:
-          - name: name
-            value: value
         connection_strings:
-          - name: name
-            connection_string: connection_string
-            type: type
         handler_mappings:
-          - extension: extension
-            script_processor: script_processor
-            arguments: arguments
-        document_root: document_root
-        scm_type: scm_type
-        use32_bit_worker_process: use32_bit_worker_process
-        web_sockets_enabled: web_sockets_enabled
-        always_on: always_on
-        java_version: java_version
-        java_container: java_container
-        java_container_version: java_container_version
-        app_command_line: app_command_line
-        managed_pipeline_mode: managed_pipeline_mode
         virtual_applications:
-          - virtual_path: virtual_path
-            physical_path: physical_path
-            preload_enabled: preload_enabled
-            virtual_directories:
-              - virtual_path: virtual_path
-                physical_path: physical_path
-        load_balancing: load_balancing
+          - virtual_directories:
         experiments:
           ramp_up_rules:
-            - action_host_name: action_host_name
-              reroute_percentage: reroute_percentage
-              change_step: change_step
-              change_interval_in_minutes: change_interval_in_minutes
-              min_reroute_percentage: min_reroute_percentage
-              max_reroute_percentage: max_reroute_percentage
-              change_decision_callback_url: change_decision_callback_url
-              name: name
-        limits:
-          max_percentage_cpu: max_percentage_cpu
-          max_memory_in_mb: max_memory_in_mb
-          max_disk_size_in_mb: max_disk_size_in_mb
-        auto_heal_enabled: auto_heal_enabled
         auto_heal_rules:
           triggers:
-            requests:
-              count: count
-              time_interval: time_interval
-            private_bytes_in_kb: private_bytes_in_kb
             status_codes:
-              - status: status
-                sub_status: sub_status
-                win32_status: win32_status
-                count: count
-                time_interval: time_interval
-            slow_requests:
-              time_taken: time_taken
-              count: count
-              time_interval: time_interval
-          actions:
-            action_type: action_type
-            custom_action:
-              exe: exe
-              parameters: parameters
-            min_process_execution_time: min_process_execution_time
-        tracing_options: tracing_options
-        vnet_name: vnet_name
         cors:
           allowed_origins:
             - XXXX - list of values -- not implemented str
-        push:
-          kind: kind
-          is_push_enabled: is_push_enabled
-          tag_whitelist_json: tag_whitelist_json
-          tags_requiring_auth: tags_requiring_auth
-          dynamic_tags_json: dynamic_tags_json
-        api_definition:
-          url: url
-        auto_swap_slot_name: auto_swap_slot_name
-        local_my_sql_enabled: local_my_sql_enabled
         ip_security_restrictions:
-          - ip_address: ip_address
-            subnet_mask: subnet_mask
-      scm_site_also_stopped: scm_site_also_stopped
-      hosting_environment_profile:
-        id: id
-      client_affinity_enabled: client_affinity_enabled
-      client_cert_enabled: client_cert_enabled
-      host_names_disabled: host_names_disabled
-      container_size: container_size
-      daily_memory_time_quota: daily_memory_time_quota
-      cloning_info:
-        correlation_id: correlation_id
-        overwrite: overwrite
-        clone_custom_host_names: clone_custom_host_names
-        clone_source_control: clone_source_control
-        source_web_app_id: source_web_app_id
-        hosting_environment: hosting_environment
-        app_settings_overrides: app_settings_overrides
-        configure_load_balancing: configure_load_balancing
-        traffic_manager_profile_id: traffic_manager_profile_id
-        traffic_manager_profile_name: traffic_manager_profile_name
-        ignore_quotas: ignore_quotas
-      snapshot_info:
-        kind: kind
-        snapshot_time: snapshot_time
-        recovery_target:
-          location: location
-          id: id
-        overwrite: overwrite
-        recover_configuration: recover_configuration
-        ignore_conflicting_host_names: ignore_conflicting_host_names
-      https_only: https_only
-      identity:
-        type: type
-      skip_dns_registration: skip_dns_registration
-      skip_custom_domain_verification: skip_custom_domain_verification
-      force_dns_registration: force_dns_registration
-      ttl_in_seconds: ttl_in_seconds
+      skip_dns_registration: NOT FOUND
+      skip_custom_domain_verification: NOT FOUND
+      force_dns_registration: NOT FOUND
+      ttl_in_seconds: NOT FOUND
 '''
 
 RETURN = '''

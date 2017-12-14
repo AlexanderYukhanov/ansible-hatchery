@@ -69,16 +69,10 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ElasticPool
     azure_rm_sqlelasticpool:
-      resource_group: resource_group_name
-      server_name: server_name
-      name: elastic_pool_name
-      location: location
-      edition: edition
-      dtu: dtu
-      database_dtu_max: database_dtu_max
-      database_dtu_min: database_dtu_min
-      storage_mb: storage_mb
-      zone_redundant: zone_redundant
+      resource_group: sqlcrudtest-2369
+      server_name: sqlcrudtest-8069
+      name: sqlcrudtest-8102
+      location: Japan East
 '''
 
 RETURN = '''

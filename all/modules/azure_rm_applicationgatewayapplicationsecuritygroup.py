@@ -49,10 +49,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) ApplicationSecurityGroups
     azure_rm_applicationgatewayapplicationsecuritygroup:
-      resource_group: resource_group_name
-      application_security_group_name: application_security_group_name
-      id: id
-      location: location
+      resource_group: rg1
+      application_security_group_name: test-asg
+      location: westus
 '''
 
 RETURN = '''

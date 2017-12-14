@@ -59,12 +59,12 @@ author:
 EXAMPLES = '''
   - name: Create (or update) BackupLongTermRetentionPolicies
     azure_rm_sqlbackuplongtermretentionpolicy:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      backup_long_term_retention_policy_name: backup_long_term_retention_policy_name
-      state: state
-      recovery_services_backup_policy_resource_id: recovery_services_backup_policy_resource_id
+      resource_group: longtermretentiontest-1234
+      server_name: longtermretentiontest-5678
+      database_name: longtermretentiontest-9012
+      backup_long_term_retention_policy_name: Default
+      state: NOT FOUND
+      recovery_services_backup_policy_resource_id: NOT FOUND
 '''
 
 RETURN = '''

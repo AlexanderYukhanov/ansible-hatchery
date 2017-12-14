@@ -92,23 +92,12 @@ author:
 EXAMPLES = '''
   - name: Create (or update) VirtualNetworkPeerings
     azure_rm_applicationgatewayvirtualnetworkpeering:
-      resource_group: resource_group_name
-      virtual_network_name: virtual_network_name
-      virtual_network_peering_name: virtual_network_peering_name
-      id: id
-      allow_virtual_network_access: allow_virtual_network_access
-      allow_forwarded_traffic: allow_forwarded_traffic
-      allow_gateway_transit: allow_gateway_transit
-      use_remote_gateways: use_remote_gateways
-      remote_virtual_network:
-        id: id
+      resource_group: peerTest
+      virtual_network_name: vnet1
+      virtual_network_peering_name: peer
       remote_address_space:
         address_prefixes:
           - XXXX - list of values -- not implemented str
-      peering_state: peering_state
-      provisioning_state: provisioning_state
-      name: name
-      etag: etag
 '''
 
 RETURN = '''

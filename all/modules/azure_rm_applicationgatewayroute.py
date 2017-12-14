@@ -70,16 +70,9 @@ author:
 EXAMPLES = '''
   - name: Create (or update) Routes
     azure_rm_applicationgatewayroute:
-      resource_group: resource_group_name
-      route_table_name: route_table_name
-      route_name: route_name
-      id: id
-      address_prefix: address_prefix
-      next_hop_type: next_hop_type
-      next_hop_ip_address: next_hop_ip_address
-      provisioning_state: provisioning_state
-      name: name
-      etag: etag
+      resource_group: rg1
+      route_table_name: testrt
+      route_name: route1
 '''
 
 RETURN = '''

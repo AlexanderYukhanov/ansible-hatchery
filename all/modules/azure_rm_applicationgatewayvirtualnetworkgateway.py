@@ -185,53 +185,17 @@ author:
 EXAMPLES = '''
   - name: Create (or update) VirtualNetworkGateways
     azure_rm_applicationgatewayvirtualnetworkgateway:
-      resource_group: resource_group_name
-      virtual_network_gateway_name: virtual_network_gateway_name
-      id: id
-      location: location
+      resource_group: NOT FOUND
+      virtual_network_gateway_name: NOT FOUND
       ip_configurations:
-        - id: id
-          private_ip_allocation_method: private_ip_allocation_method
-          subnet:
-            id: id
-          public_ip_address:
-            id: id
-          name: name
-          etag: etag
-      gateway_type: gateway_type
-      vpn_type: vpn_type
-      enable_bgp: enable_bgp
-      active_active: active_active
-      gateway_default_site:
-        id: id
-      sku:
-        name: name
-        tier: tier
-        capacity: capacity
       vpn_client_configuration:
         vpn_client_address_pool:
           address_prefixes:
             - XXXX - list of values -- not implemented str
         vpn_client_root_certificates:
-          - id: id
-            public_cert_data: public_cert_data
-            name: name
-            etag: etag
         vpn_client_revoked_certificates:
-          - id: id
-            thumbprint: thumbprint
-            name: name
-            etag: etag
         vpn_client_protocols:
           - XXXX - list of values -- not implemented str
-        radius_server_address: radius_server_address
-        radius_server_secret: radius_server_secret
-      bgp_settings:
-        asn: asn
-        bgp_peering_address: bgp_peering_address
-        peer_weight: peer_weight
-      resource_guid: resource_guid
-      etag: etag
 '''
 
 RETURN = '''

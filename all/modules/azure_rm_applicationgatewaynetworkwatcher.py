@@ -52,11 +52,8 @@ author:
 EXAMPLES = '''
   - name: Create (or update) NetworkWatchers
     azure_rm_applicationgatewaynetworkwatcher:
-      resource_group: resource_group_name
-      network_watcher_name: network_watcher_name
-      id: id
-      location: location
-      etag: etag
+      resource_group: NOT FOUND
+      network_watcher_name: NOT FOUND
 '''
 
 RETURN = '''
