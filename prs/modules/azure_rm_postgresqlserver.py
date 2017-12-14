@@ -64,15 +64,12 @@ options:
     create_mode:
         description:
             - "Currently only 'Default' value supported"
-        required: True
     admin_username:
         description:
             - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
-        required: True
     admin_password:
         description:
             - The password of the administrator login.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -186,12 +183,12 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             admin_username=dict(
                 type='str',
-                required=True
+                required=False
             ),
             admin_password=dict(
                 type='str',
                 no_log=True,
-                required=True
+                required=False
             ),
             state=dict(
                 type='str',
