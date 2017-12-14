@@ -9,7 +9,6 @@
     name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     location: westus
     version: 5.6
-    create_mode: Default
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
 - name: Create instance of Configurations -- check mode
@@ -32,7 +31,6 @@
     name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     location: westus
     version: 5.6
-    create_mode: Default
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
 - name: Create instance of Configurations
@@ -55,7 +53,6 @@
     name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     location: westus
     version: 5.6
-    create_mode: Default
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
 - name: Create again instance of Configurations

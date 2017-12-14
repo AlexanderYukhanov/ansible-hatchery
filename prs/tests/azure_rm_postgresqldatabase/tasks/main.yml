@@ -8,7 +8,6 @@
     resource_group: "{{ resource_group }}"
     name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     location: westus
-    create_mode: Default
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
 - name: Create instance of PostgreSQL Database -- check mode
@@ -28,7 +27,6 @@
     resource_group: "{{ resource_group }}"
     name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     location: westus
-    create_mode: Default
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
 - name: Create instance of PostgreSQL Database
@@ -48,7 +46,6 @@
     resource_group: "{{ resource_group }}"
     name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     location: westus
-    create_mode: Default
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
 - name: Create again instance of PostgreSQL Database

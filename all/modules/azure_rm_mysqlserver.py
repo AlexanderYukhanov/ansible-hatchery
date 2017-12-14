@@ -63,7 +63,7 @@ options:
             - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'"
     create_mode:
         description:
-            - Constant filled by server.
+            - "Currently only 'Default' value supported"
         required: True
     admin_username:
         description:
@@ -182,7 +182,7 @@ class AzureRMServers(AzureRMModuleBase):
             ),
             create_mode=dict(
                 type='str',
-                required=True
+                default='Default'
             ),
             admin_username=dict(
                 type='str',

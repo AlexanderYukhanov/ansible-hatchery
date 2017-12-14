@@ -237,10 +237,10 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "Constant filled by server.",
-          "DefaultValue": null,
+          "Documentation": "Currently only 'Default' value supported",
+          "DefaultValue": "'Default'",
           "DefaultValueSample": "create_mode",
-          "DefaultValueTest": "Default",
+          "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
