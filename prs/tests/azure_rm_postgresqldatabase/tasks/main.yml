@@ -7,11 +7,10 @@
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
     name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
-    properties:
-      create_mode: Default
-      admin_username: zimxyz
-      admin_password: Testpasswordxyz12!
     location: westus
+    create_mode: Default
+    admin_username: zimxyz
+    admin_password: Testpasswordxyz12!
 - name: Create instance of PostgreSQL Database -- check mode
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
@@ -28,11 +27,10 @@
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
     name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
-    properties:
-      create_mode: Default
-      admin_username: zimxyz
-      admin_password: Testpasswordxyz12!
     location: westus
+    create_mode: Default
+    admin_username: zimxyz
+    admin_password: Testpasswordxyz12!
 - name: Create instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"
@@ -49,11 +47,10 @@
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
     name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
-    properties:
-      create_mode: Default
-      admin_username: zimxyz
-      admin_password: Testpasswordxyz12!
     location: westus
+    create_mode: Default
+    admin_username: zimxyz
+    admin_password: Testpasswordxyz12!
 - name: Create again instance of PostgreSQL Database
   azure_rm_postgresqldatabase:
     resource_group: "{{ resource_group }}"

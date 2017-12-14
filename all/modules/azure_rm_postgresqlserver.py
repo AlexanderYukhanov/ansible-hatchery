@@ -49,34 +49,30 @@ options:
             family:
                 description:
                     - The family of hardware.
-    properties:
-        description:
-            - Properties of the server.
-        suboptions:
-            storage_mb:
-                description:
-                    - The maximum storage allowed for a server.
-            version:
-                description:
-                    - "Server version. Possible values include: '9.5', '9.6'"
-            ssl_enforcement:
-                description:
-                    - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'"
-            create_mode:
-                description:
-                    - Constant filled by server.
-                required: True
-            admin_username:
-                description:
-                    - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
-                required: True
-            admin_password:
-                description:
-                    - The password of the administrator login.
-                required: True
     location:
         description:
             - The location the resource resides in.
+    storage_mb:
+        description:
+            - The maximum storage allowed for a server.
+    version:
+        description:
+            - "Server version. Possible values include: '9.5', '9.6'"
+    ssl_enforcement:
+        description:
+            - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'"
+    create_mode:
+        description:
+            - Constant filled by server.
+        required: True
+    admin_username:
+        description:
+            - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
+        required: True
+    admin_password:
+        description:
+            - The password of the administrator login.
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -98,14 +94,13 @@ EXAMPLES = '''
         capacity: capacity
         size: size
         family: family
-      properties:
-        storage_mb: storage_mb
-        version: version
-        ssl_enforcement: ssl_enforcement
-        create_mode: create_mode
-        admin_username: administrator_login
-        admin_password: administrator_login_password
       location: location
+      storage_mb: storage_mb
+      version: version
+      ssl_enforcement: ssl_enforcement
+      create_mode: create_mode
+      admin_username: administrator_login
+      admin_password: administrator_login_password
 '''
 
 RETURN = '''
@@ -169,13 +164,34 @@ class AzureRMServers(AzureRMModuleBase):
                 type='dict',
                 required=False
             ),
-            properties=dict(
-                type='dict',
-                required=False
-            ),
             location=dict(
                 type='str',
                 required=False
+            ),
+            storage_mb=dict(
+                type='long',
+                required=False
+            ),
+            version=dict(
+                type='str',
+                required=False
+            ),
+            ssl_enforcement=dict(
+                type='str',
+                required=False
+            ),
+            create_mode=dict(
+                type='str',
+                required=True
+            ),
+            admin_username=dict(
+                type='str',
+                required=True
+            ),
+            admin_password=dict(
+                type='str',
+                no_log=True,
+                required=True
             ),
             state=dict(
                 type='str',
@@ -207,12 +223,20 @@ class AzureRMServers(AzureRMModuleBase):
             elif kwargs[key] is not None:
                 if key == "sku":
                     self.parameters.update({"sku": kwargs[key]})
-                elif key == "properties":
-                    self.parameters.update({"properties": kwargs[key]})
                 elif key == "location":
                     self.parameters.update({"location": kwargs[key]})
-
-        self.adjust_parameters()
+                elif key == "storage_mb":
+                    self.parameters.update({"properties": {"storage_mb": kwargs[key]}})
+                elif key == "version":
+                    self.parameters.update({"properties": {"version": kwargs[key]}})
+                elif key == "ssl_enforcement":
+                    self.parameters.update({"properties": {"ssl_enforcement": kwargs[key]}})
+                elif key == "create_mode":
+                    self.parameters.update({"properties": {"create_mode": kwargs[key]}})
+                elif key == "admin_username":
+                    self.parameters.update({"properties": {"administrator_login": kwargs[key]}})
+                elif key == "admin_password":
+                    self.parameters.update({"properties": {"administrator_login_password": kwargs[key]}})
 
         old_response = None
         response = None
@@ -280,17 +304,6 @@ class AzureRMServers(AzureRMModuleBase):
             self.results["fully_qualified_domain_name"] = response["fully_qualified_domain_name"]
 
         return self.results
-
-    def adjust_parameters(self):
-        if self.parameters.get('properties', None) is not None:
-            self.rename_key(self.parameters['properties'], 'admin_username', 'administrator_login')
-            self.rename_key(self.parameters['properties'], 'admin_password', 'administrator_login_password')
-
-    def rename_key(self, d, old_name, new_name):
-        old_value = d.get(old_name, None)
-        if old_value is not None:
-            d.pop(old_name, None)
-            d[new_name] = old_value
 
     def create_update_postgresqlserver(self):
         '''
