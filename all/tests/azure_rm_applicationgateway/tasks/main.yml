@@ -37,6 +37,8 @@
       - name: mybackendhttpsettings
     http_listeners:
       - name: myhttplistener
+    request_routing_rules:
+      - name: myrequestroutingrule
   register: output
 - name: Assert the resource instance is well created
   assert:
