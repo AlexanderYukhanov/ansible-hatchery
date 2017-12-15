@@ -35,6 +35,8 @@
       - name: mybackendaddresspool
     backend_http_settings_collection:
       - name: mybackendhttpsettings
+    http_listeners:
+      - name: myhttplistener
   register: output
 - name: Assert the resource instance is well created
   assert:
