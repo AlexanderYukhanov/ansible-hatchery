@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_applicationgatewayapplicationgateway
+module: azure_rm_applicationgateway
 version_added: "2.5"
-short_description: Manage ApplicationGateways instance
+short_description: Manage Application Gateway instance
 description:
-    - Create, update and delete instance of ApplicationGateways
+    - Create, update and delete instance of Application Gateway
 
 options:
     resource_group:
@@ -996,8 +996,8 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ApplicationGateways
-    azure_rm_applicationgatewayapplicationgateway:
+  - name: Create (or update) Application Gateway
+    azure_rm_applicationgateway:
       resource_group: NOT FOUND
       application_gateway_name: NOT FOUND
       ssl_policy:
@@ -1085,7 +1085,7 @@ class Actions:
 
 
 class AzureRMApplicationGateways(AzureRMModuleBase):
-    """Configuration class for an Azure RM ApplicationGateways resource"""
+    """Configuration class for an Azure RM Application Gateway resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -1263,30 +1263,30 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_applicationgateways()
+        old_response = self.get_applicationgateway()
 
         if not old_response:
-            self.log("ApplicationGateways instance doesn't exist")
+            self.log("Application Gateway instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("ApplicationGateways instance already exists")
+            self.log("Application Gateway instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if ApplicationGateways instance has to be deleted or may be updated")
+                self.log("Need to check if Application Gateway instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ApplicationGateways instance")
+            self.log("Need to Create / Update the Application Gateway instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_applicationgateways()
+            response = self.create_update_applicationgateway()
 
             if not old_response:
                 self.results['changed'] = True
@@ -1294,19 +1294,19 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("ApplicationGateways instance deleted")
+            self.log("Application Gateway instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_applicationgateways()
+            self.delete_applicationgateway()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_applicationgateways():
+            while self.get_applicationgateway():
                 time.sleep(20)
         else:
-            self.log("ApplicationGateways instance unchanged")
+            self.log("Application Gateway instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -1315,13 +1315,13 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_applicationgateways(self):
+    def create_update_applicationgateway(self):
         '''
-        Creates or updates ApplicationGateways with the specified configuration.
+        Creates or updates Application Gateway with the specified configuration.
 
-        :return: deserialized ApplicationGateways instance state dictionary
+        :return: deserialized Application Gateway instance state dictionary
         '''
-        self.log("Creating / Updating the ApplicationGateways instance {0}".format(self.application_gateway_name))
+        self.log("Creating / Updating the Application Gateway instance {0}".format(self.application_gateway_name))
 
         try:
             response = self.mgmt_client.application_gateways.create_or_update(self.resource_group,
@@ -1331,42 +1331,42 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ApplicationGateways instance.')
-            self.fail("Error creating the ApplicationGateways instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Application Gateway instance.')
+            self.fail("Error creating the Application Gateway instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_applicationgateways(self):
+    def delete_applicationgateway(self):
         '''
-        Deletes specified ApplicationGateways instance in the specified subscription and resource group.
+        Deletes specified Application Gateway instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ApplicationGateways instance {0}".format(self.application_gateway_name))
+        self.log("Deleting the Application Gateway instance {0}".format(self.application_gateway_name))
         try:
             response = self.mgmt_client.application_gateways.delete(self.resource_group,
                                                                     self.application_gateway_name)
         except CloudError as e:
-            self.log('Error attempting to delete the ApplicationGateways instance.')
-            self.fail("Error deleting the ApplicationGateways instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Application Gateway instance.')
+            self.fail("Error deleting the Application Gateway instance: {0}".format(str(e)))
 
         return True
 
-    def get_applicationgateways(self):
+    def get_applicationgateway(self):
         '''
-        Gets the properties of the specified ApplicationGateways.
+        Gets the properties of the specified Application Gateway.
 
-        :return: deserialized ApplicationGateways instance state dictionary
+        :return: deserialized Application Gateway instance state dictionary
         '''
-        self.log("Checking if the ApplicationGateways instance {0} is present".format(self.application_gateway_name))
+        self.log("Checking if the Application Gateway instance {0} is present".format(self.application_gateway_name))
         found = False
         try:
             response = self.mgmt_client.application_gateways.get(self.resource_group,
                                                                  self.application_gateway_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ApplicationGateways instance : {0} found".format(response.name))
+            self.log("Application Gateway instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ApplicationGateways instance.')
+            self.log('Did not find the Application Gateway instance.')
         if found is True:
             return response.as_dict()
 

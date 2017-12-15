@@ -3,8 +3,8 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of ApplicationGateways -- check mode
-  azure_rm_applicationgatewayapplicationgateway:
+- name: Create instance of Application Gateway -- check mode
+  azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     ssl_policy:
       disabled_ssl_protocols:
@@ -69,8 +69,8 @@
     that:
       - output.changed
 
-- name: Create instance of ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway:
+- name: Create instance of Application Gateway
+  azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     ssl_policy:
       disabled_ssl_protocols:
@@ -135,8 +135,8 @@
       - output.changed
       - output.state == 'Ready'
 
-- name: Create again instance of ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway:
+- name: Create again instance of Application Gateway
+  azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     ssl_policy:
       disabled_ssl_protocols:
@@ -201,8 +201,8 @@
       - output.changed == false
       - output.state == 'Ready'
 
-- name: Delete instance of ApplicationGateways -- check mode
-  azure_rm_applicationgatewayapplicationgateway:
+- name: Delete instance of Application Gateway -- check mode
+  azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     state: absent
   check_mode: yes
@@ -212,8 +212,8 @@
     that:
       - output.changed
 
-- name: Delete instance of ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway:
+- name: Delete instance of Application Gateway
+  azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     state: absent
   register: output
@@ -222,8 +222,8 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway:
+- name: Delete unexisting instance of Application Gateway
+  azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     state: absent
   register: output

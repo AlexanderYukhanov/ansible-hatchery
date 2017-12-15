@@ -2,7 +2,7 @@
   "Modules": [
     {
       "ModuleName": "azure_rm_applicationgatewayapplicationgateway",
-      "ModuleNameAlt": "azure_rm_applicationgatewayapplicationgateway",
+      "ModuleNameAlt": "azure_rm_applicationgateway",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8714,7 +8714,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ApplicationGateways",
       "ModuleOperationName": "application_gateways",
-      "ObjectName": "ApplicationGateways",
+      "ObjectName": "Application Gateway",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
