@@ -24,7 +24,7 @@
         },
         {
           "Name": "application_gateway_name",
-          "NameAlt": "application_gateway_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -35,7 +35,7 @@
           "DefaultValueSample": {
             "default": "NOT FOUND"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false

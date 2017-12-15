@@ -6,6 +6,7 @@
 - name: Create instance of Application Gateway -- check mode
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
+    name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     ssl_policy:
       disabled_ssl_protocols:
         - XXXX - list of values -- not implemented str
@@ -72,6 +73,7 @@
 - name: Create instance of Application Gateway
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
+    name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     ssl_policy:
       disabled_ssl_protocols:
         - XXXX - list of values -- not implemented str
@@ -138,6 +140,7 @@
 - name: Create again instance of Application Gateway
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
+    name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     ssl_policy:
       disabled_ssl_protocols:
         - XXXX - list of values -- not implemented str
@@ -204,6 +207,7 @@
 - name: Delete instance of Application Gateway -- check mode
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
+    name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     state: absent
   check_mode: yes
   register: output
@@ -215,6 +219,7 @@
 - name: Delete instance of Application Gateway
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
+    name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     state: absent
   register: output
 - name: Assert the state has changed
@@ -225,6 +230,7 @@
 - name: Delete unexisting instance of Application Gateway
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
+    name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     state: absent
   register: output
 - name: Assert the state has changed

@@ -26,7 +26,7 @@ options:
         description:
             - The name of the resource group.
         required: True
-    application_gateway_name:
+    name:
         description:
             - The name of the application gateway.
         required: True
@@ -999,7 +999,7 @@ EXAMPLES = '''
   - name: Create (or update) Application Gateway
     azure_rm_applicationgateway:
       resource_group: NOT FOUND
-      application_gateway_name: NOT FOUND
+      name: NOT FOUND
       ssl_policy:
         disabled_ssl_protocols:
           - XXXX - list of values -- not implemented str
@@ -1093,7 +1093,7 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            application_gateway_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
@@ -1190,7 +1190,7 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
         )
 
         self.resource_group = None
-        self.application_gateway_name = None
+        self.name = None
         self.parameters = dict()
 
         self.results = dict(changed=False)
@@ -1321,11 +1321,11 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
 
         :return: deserialized Application Gateway instance state dictionary
         '''
-        self.log("Creating / Updating the Application Gateway instance {0}".format(self.application_gateway_name))
+        self.log("Creating / Updating the Application Gateway instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.application_gateways.create_or_update(self.resource_group,
-                                                                              self.application_gateway_name,
+                                                                              self.name,
                                                                               self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
@@ -1341,10 +1341,10 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the Application Gateway instance {0}".format(self.application_gateway_name))
+        self.log("Deleting the Application Gateway instance {0}".format(self.name))
         try:
             response = self.mgmt_client.application_gateways.delete(self.resource_group,
-                                                                    self.application_gateway_name)
+                                                                    self.name)
         except CloudError as e:
             self.log('Error attempting to delete the Application Gateway instance.')
             self.fail("Error deleting the Application Gateway instance: {0}".format(str(e)))
@@ -1357,11 +1357,11 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
 
         :return: deserialized Application Gateway instance state dictionary
         '''
-        self.log("Checking if the Application Gateway instance {0} is present".format(self.application_gateway_name))
+        self.log("Checking if the Application Gateway instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.application_gateways.get(self.resource_group,
-                                                                 self.application_gateway_name)
+                                                                 self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Application Gateway instance : {0} found".format(response.name))
