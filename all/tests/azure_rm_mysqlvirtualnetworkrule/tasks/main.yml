@@ -15,7 +15,7 @@
 - name: Create instance of VirtualNetworkRules -- check mode
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
   check_mode: yes
   register: output
@@ -27,7 +27,7 @@
 - name: Create instance of VirtualNetworkRules
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
   register: output
 - name: Assert the resource instance is well created
@@ -39,7 +39,7 @@
 - name: Create again instance of VirtualNetworkRules
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
   register: output
 - name: Assert the state has not changed
@@ -51,7 +51,7 @@
 - name: Delete instance of VirtualNetworkRules -- check mode
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
     state: absent
   check_mode: yes
@@ -64,7 +64,7 @@
 - name: Delete instance of VirtualNetworkRules
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
     state: absent
   register: output
@@ -76,7 +76,7 @@
 - name: Delete unexisting instance of VirtualNetworkRules
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
     state: absent
   register: output

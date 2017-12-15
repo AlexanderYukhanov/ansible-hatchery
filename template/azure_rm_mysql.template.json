@@ -641,7 +641,7 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "test-mysql-server",
+          "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -972,7 +972,7 @@
           "DefaultValueSample": {
             "default": "vnet-test-svr"
           },
-          "DefaultValueTest": "test-mysql-server",
+          "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -1607,7 +1607,7 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "test-mysql-server",
+          "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false

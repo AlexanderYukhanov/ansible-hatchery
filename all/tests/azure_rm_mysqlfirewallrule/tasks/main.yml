@@ -15,7 +15,7 @@
 - name: Create instance of FirewallRules -- check mode
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-firewall-rule
     start_ip_address: 172.28.10.136
     end_ip_address: 172.28.10.138
@@ -29,7 +29,7 @@
 - name: Create instance of FirewallRules
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-firewall-rule
     start_ip_address: 172.28.10.136
     end_ip_address: 172.28.10.138
@@ -43,7 +43,7 @@
 - name: Create again instance of FirewallRules
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-firewall-rule
     start_ip_address: 172.28.10.136
     end_ip_address: 172.28.10.138
@@ -57,7 +57,7 @@
 - name: Delete instance of FirewallRules -- check mode
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-firewall-rule
     state: absent
   check_mode: yes
@@ -70,7 +70,7 @@
 - name: Delete instance of FirewallRules
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-firewall-rule
     state: absent
   register: output
@@ -82,7 +82,7 @@
 - name: Delete unexisting instance of FirewallRules
   azure_rm_mysqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-firewall-rule
     state: absent
   register: output

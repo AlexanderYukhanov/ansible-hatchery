@@ -15,7 +15,7 @@
 - name: Create instance of Configurations -- check mode
   azure_rm_mysqlconfiguration:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: event_scheduler
     value: "ON"
     source: user-override
@@ -29,7 +29,7 @@
 - name: Create instance of Configurations
   azure_rm_mysqlconfiguration:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: event_scheduler
     value: "ON"
     source: user-override
@@ -43,7 +43,7 @@
 - name: Create again instance of Configurations
   azure_rm_mysqlconfiguration:
     resource_group: "{{ resource_group }}"
-    server_name: test-mysql-server
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: event_scheduler
     value: "ON"
     source: user-override
