@@ -24,6 +24,7 @@
     name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     sku:
       name: Standard_Large
+      capacity: 1
   register: output
 - name: Assert the resource instance is well created
   assert:
