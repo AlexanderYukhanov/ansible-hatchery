@@ -27,6 +27,8 @@
       capacity: 1
     gateway_ip_configurations:
       - name: myipconfiguration
+        subnet:
+          id: mukamukamuka
     frontend_ip_configurations:
       - name: myfrontendipconfiguration
     frontend_ports:
