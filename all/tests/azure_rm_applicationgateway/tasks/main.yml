@@ -8,7 +8,9 @@
     resource_group: "{{ resource_group }}"
     name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     sku:
-      name: "Standard_Large"
+      name: Standard_Large
+      capacity: 1
+      tier: Standard
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -20,6 +22,8 @@
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    sku:
+      name: Standard_Large
   register: output
 - name: Assert the resource instance is well created
   assert:
