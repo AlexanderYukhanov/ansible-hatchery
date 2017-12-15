@@ -205,7 +205,6 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
 
         old_response = None
         response = None
-        results = dict()
 
         self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
