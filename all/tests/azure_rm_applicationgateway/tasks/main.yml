@@ -25,6 +25,8 @@
     sku:
       name: Standard_Large
       capacity: 1
+    ip_configurations:
+      - name: myipconfiguration
   register: output
 - name: Assert the resource instance is well created
   assert:
