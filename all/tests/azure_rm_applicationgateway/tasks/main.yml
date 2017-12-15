@@ -31,6 +31,8 @@
       - name: myfrontendipconfiguration
     frontend_ports:
       - name: myfrontendport
+    backend_address_pools:
+      - name: mybackendaddresspool
   register: output
 - name: Assert the resource instance is well created
   assert:
