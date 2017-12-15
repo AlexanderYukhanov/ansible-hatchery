@@ -14,7 +14,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "longtermretentiontest-1234",
+          "DefaultValueSample": {
+            "default": "longtermretentiontest-1234"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -30,7 +32,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "longtermretentiontest-5678",
+          "DefaultValueSample": {
+            "default": "longtermretentiontest-5678"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -46,7 +50,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database",
           "DefaultValue": null,
-          "DefaultValueSample": "longtermretentiontest-9012",
+          "DefaultValueSample": {
+            "default": "longtermretentiontest-9012"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -62,7 +68,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the backup long term retention policy",
           "DefaultValue": null,
-          "DefaultValueSample": "Default",
+          "DefaultValueSample": {
+            "default": "Default"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -78,7 +86,9 @@
           "VariableValue": "None",
           "Documentation": "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -94,7 +104,9 @@
           "VariableValue": "None",
           "Documentation": "The azure recovery services backup protection policy resource id",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -219,7 +231,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -235,7 +249,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -251,7 +267,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -267,7 +285,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the backup long term retention policy",
           "DefaultValue": null,
-          "DefaultValueSample": "backup_long_term_retention_policy_name",
+          "DefaultValueSample": {
+            "default": "backup_long_term_retention_policy_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -331,7 +351,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "longtermretentiontest-1234",
+          "DefaultValueSample": {
+            "default": "longtermretentiontest-1234"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -347,7 +369,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "longtermretentiontest-5678",
+          "DefaultValueSample": {
+            "default": "longtermretentiontest-5678"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -363,7 +387,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the backup long term retention vault",
           "DefaultValue": null,
-          "DefaultValueSample": "RegisteredVault",
+          "DefaultValueSample": {
+            "default": "RegisteredVault"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -379,7 +405,9 @@
           "VariableValue": "None",
           "Documentation": "The azure recovery services vault resource id",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -489,7 +517,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -505,7 +535,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -521,7 +553,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the Azure SQL Server backup LongTermRetention vault",
           "DefaultValue": null,
-          "DefaultValueSample": "backup_long_term_retention_vault_name",
+          "DefaultValueSample": {
+            "default": "backup_long_term_retention_vault_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -581,7 +615,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -597,7 +633,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -613,7 +651,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database to get available restore points.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -662,7 +702,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -678,7 +720,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -694,7 +738,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -754,7 +800,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -770,7 +818,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -786,7 +836,9 @@
           "VariableValue": "None",
           "Documentation": "The id of the deleted database in the form of databaseName,deletionTimeInFileTimeFormat",
           "DefaultValue": null,
-          "DefaultValueSample": "restorable_droppeded_database_id",
+          "DefaultValueSample": {
+            "default": "restorable_droppeded_database_id"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -846,7 +898,9 @@
           "VariableValue": "None",
           "Documentation": "The location id whose capabilities are retrieved.",
           "DefaultValue": null,
-          "DefaultValueSample": "location_id",
+          "DefaultValueSample": {
+            "default": "location_id"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -891,7 +945,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "test-1234",
+          "DefaultValueSample": {
+            "default": "test-1234"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -907,7 +963,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "test-5678",
+          "DefaultValueSample": {
+            "default": "test-5678"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -923,7 +981,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the connection policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "default",
+          "DefaultValueSample": {
+            "default": "default"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -939,7 +999,9 @@
           "VariableValue": "None",
           "Documentation": "The server connection type. Possible values include: 'Default', 'Proxy', 'Redirect'",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1058,7 +1120,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1074,7 +1138,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1090,7 +1156,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the connection policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "connection_policy_name",
+          "DefaultValueSample": {
+            "default": "connection_policy_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1139,7 +1207,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "securityalert-4799",
+          "DefaultValueSample": {
+            "default": "securityalert-4799"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1155,7 +1225,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "securityalert-6440",
+          "DefaultValueSample": {
+            "default": "securityalert-6440"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1171,7 +1243,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which database Threat Detection policy is defined.",
           "DefaultValue": null,
-          "DefaultValueSample": "testdb",
+          "DefaultValueSample": {
+            "default": "testdb"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1187,7 +1261,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the security alert policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "default",
+          "DefaultValueSample": {
+            "default": "default"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1203,7 +1279,9 @@
           "VariableValue": "dict()",
           "Documentation": "The database Threat Detection policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1219,7 +1297,9 @@
           "VariableValue": "None",
           "Documentation": "The geo-location where the resource lives",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1235,7 +1315,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'New', 'Enabled', 'Disabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1251,7 +1333,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection; Sql_Injection_Vulnerability; Access_Anomaly; Usage_Anomaly.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1267,7 +1351,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1283,7 +1369,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1299,7 +1387,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. If state is Enabled, storageEndpoint is required.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1315,7 +1405,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the identifier key of the Threat Detection audit storage account. If state is Enabled, storageAccountAccessKey is required.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1331,7 +1423,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the number of days to keep in the Threat Detection audit logs.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1347,7 +1441,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1533,7 +1629,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1549,7 +1647,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1565,7 +1665,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which database Threat Detection policy is defined.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1581,7 +1683,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the security alert policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "security_alert_policy_name",
+          "DefaultValueSample": {
+            "default": "security_alert_policy_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1632,7 +1736,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-6852",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-6852"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1648,7 +1754,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-2080",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-2080"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1664,7 +1772,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-331",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-331"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1680,7 +1790,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the data masking rule applies.",
           "DefaultValue": null,
-          "DefaultValueSample": "Default",
+          "DefaultValueSample": {
+            "default": "Default"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1696,7 +1808,9 @@
           "VariableValue": "None",
           "Documentation": "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1712,7 +1826,9 @@
           "VariableValue": "None",
           "Documentation": "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not apply. The specified users receive data results without masking for all of the database queries.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1863,7 +1979,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1879,7 +1997,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1895,7 +2015,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1911,7 +2033,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the data masking rule applies.",
           "DefaultValue": null,
-          "DefaultValueSample": "data_masking_policy_name",
+          "DefaultValueSample": {
+            "default": "data_masking_policy_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1962,7 +2086,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-6852",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-6852"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1978,7 +2104,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-2080",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-2080"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1994,7 +2122,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-331",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-331"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2010,7 +2140,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the data masking rule applies.",
           "DefaultValue": null,
-          "DefaultValueSample": "Default",
+          "DefaultValueSample": {
+            "default": "Default"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2026,7 +2158,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the data masking rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "rule1",
+          "DefaultValueSample": {
+            "default": "rule1"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2042,7 +2176,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for creating or updating a data masking rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2058,7 +2194,9 @@
           "VariableValue": "None",
           "Documentation": "The alias name. This is a legacy parameter and is no longer used.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2074,7 +2212,9 @@
           "VariableValue": "None",
           "Documentation": "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless of the provided value of ruleState. Possible values include: 'Disabled', 'Enabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2090,7 +2230,9 @@
           "VariableValue": "None",
           "Documentation": "The schema name on which the data masking rule is applied.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2106,7 +2248,9 @@
           "VariableValue": "None",
           "Documentation": "The table name on which the data masking rule is applied.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2122,7 +2266,9 @@
           "VariableValue": "None",
           "Documentation": "The column name on which the data masking rule is applied.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2138,7 +2284,9 @@
           "VariableValue": "None",
           "Documentation": "The masking function that is used for the data masking rule. Possible values include: 'Default', 'CCN', 'Email', 'Number', 'SSN', 'Text'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2154,7 +2302,9 @@
           "VariableValue": "None",
           "Documentation": "The numberFrom property of the masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2170,7 +2320,9 @@
           "VariableValue": "None",
           "Documentation": "The numberTo property of the data masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2186,7 +2338,9 @@
           "VariableValue": "None",
           "Documentation": "If maskingFunction is set to Text, the number of characters to show unmasked in the beginning of the string. Otherwise, this parameter will be ignored.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2202,7 +2356,9 @@
           "VariableValue": "None",
           "Documentation": "If maskingFunction is set to Text, the number of characters to show unmasked at the end of the string. Otherwise, this parameter will be ignored.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2218,7 +2374,9 @@
           "VariableValue": "None",
           "Documentation": "If maskingFunction is set to Text, the character to use for masking the unexposed part of the string. Otherwise, this parameter will be ignored.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2427,7 +2585,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -2443,7 +2603,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -2459,7 +2621,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -2475,7 +2639,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the data masking rule applies.",
           "DefaultValue": null,
-          "DefaultValueSample": "data_masking_policy_name",
+          "DefaultValueSample": {
+            "default": "data_masking_policy_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -2526,7 +2692,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "firewallrulecrudtest-12",
+          "DefaultValueSample": {
+            "default": "firewallrulecrudtest-12"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2542,7 +2710,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "firewallrulecrudtest-6285",
+          "DefaultValueSample": {
+            "default": "firewallrulecrudtest-6285"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2558,7 +2728,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the firewall rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "firewallrulecrudtest-5370",
+          "DefaultValueSample": {
+            "default": "firewallrulecrudtest-5370"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2574,7 +2746,9 @@
           "VariableValue": "None",
           "Documentation": "The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2590,7 +2764,9 @@
           "VariableValue": "None",
           "Documentation": "The end IP address of the firewall rule. Must be IPv4 format. Must be greater than or equal to startIpAddress. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2733,7 +2909,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -2749,7 +2927,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -2765,7 +2945,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the firewall rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "firewall_rule_name",
+          "DefaultValueSample": {
+            "default": "firewall_rule_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -2825,7 +3007,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-4799",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-4799"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2841,7 +3025,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-5961",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-5961"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2857,7 +3043,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "testdw",
+          "DefaultValueSample": {
+            "default": "testdw"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2873,7 +3061,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the geo backup policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "Default",
+          "DefaultValueSample": {
+            "default": "Default"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2889,7 +3079,9 @@
           "VariableValue": "None",
           "Documentation": "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3021,7 +3213,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -3037,7 +3231,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -3053,7 +3249,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -3069,7 +3267,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the geo backup policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "geo_backup_policy_name",
+          "DefaultValueSample": {
+            "default": "geo_backup_policy_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -3133,7 +3333,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-4799",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-4799"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3149,7 +3351,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-5961",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-5961"
+          },
           "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3165,7 +3369,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database to be operated on (updated or created).",
           "DefaultValue": null,
-          "DefaultValueSample": "testdb",
+          "DefaultValueSample": {
+            "default": "testdb"
+          },
           "DefaultValueTest": "test-database",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3181,7 +3387,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for creating or updating a database.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3197,7 +3405,9 @@
           "VariableValue": "None",
           "Documentation": "Resource location.",
           "DefaultValue": null,
-          "DefaultValueSample": "Japan East",
+          "DefaultValueSample": {
+            "default": "Japan East"
+          },
           "DefaultValueTest": "eastus",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3213,7 +3423,9 @@
           "VariableValue": "None",
           "Documentation": "The collation of the database. If createMode is not Default, this value is ignored.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3229,7 +3441,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the mode of database creation.\n\nDefault: regular database creation.\n\nCopy: creates a database as a copy of an existing database. sourceDatabaseId must be specified as the resource ID of the source database.\n\nOnlineSecondary/NonReadableSecondary: creates a database as a (readable or nonreadable) secondary replica of an existing database. sourceDatabaseId must be specified as the resource ID of the existing primary database.\n\nPointInTimeRestore: Creates a database by restoring a point in time backup of an existing database. sourceDatabaseId must be specified as the resource ID of the existing database, and restorePointInTime must be specified.\n\nRecovery: Creates a database by restoring a geo-replicated backup. sourceDatabaseId must be specified as the recoverable database resource ID to restore.\n\nRestore: Creates a database by restoring a backup of a deleted database. sourceDatabaseId must be specified. If sourceDatabaseId is the database's original resource ID, then sourceDatabaseDeletionDate must be specified. Otherwise sourceDatabaseId must be the restorable dropped database resource ID and sourceDatabaseDeletionDate is ignored. restorePointInTime may also be specified to restore from an earlier point in time.\n\nRestoreLongTermRetentionBackup: Creates a database by restoring from a long term retention vault. recoveryServicesRecoveryPointResourceId must be specified as the recovery point resource ID.\n\nCopy, NonReadableSecondary, OnlineSecondary and RestoreLongTermRetentionBackup are not supported for DataWarehouse edition. Possible values include: 'Copy', 'Default', 'NonReadableSecondary', 'OnlineSecondary', 'PointInTimeRestore', 'Recovery', 'Restore', 'RestoreLongTermRetentionBackup'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3245,7 +3459,9 @@
           "VariableValue": "None",
           "Documentation": "Conditional. If createMode is Copy, NonReadableSecondary, OnlineSecondary, PointInTimeRestore, Recovery, or Restore, then this value is required. Specifies the resource ID of the source database. If createMode is NonReadableSecondary or OnlineSecondary, the name of the source database must be the same as the new database being created.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3261,7 +3477,9 @@
           "VariableValue": "None",
           "Documentation": "Conditional. If createMode is Restore and sourceDatabaseId is the deleted database's original resource id when it existed (as opposed to its current restorable dropped database id), then this value is required. Specifies the time that the database was deleted.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3277,7 +3495,9 @@
           "VariableValue": "None",
           "Documentation": "Conditional. If createMode is PointInTimeRestore, this value is required. If createMode is Restore, this value is optional. Specifies the point in time (ISO8601 format) of the source database that will be restored to create the new database. Must be greater than or equal to the source database's earliestRestoreDate value.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3293,7 +3513,9 @@
           "VariableValue": "None",
           "Documentation": "Conditional. If createMode is RestoreLongTermRetentionBackup, then this value is required. Specifies the resource ID of the recovery point to restore from.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3309,7 +3531,9 @@
           "VariableValue": "None",
           "Documentation": "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSecondary or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3325,7 +3549,9 @@
           "VariableValue": "None",
           "Documentation": "The max size of the database expressed in bytes. If createMode is not Default, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\"",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3341,7 +3567,9 @@
           "VariableValue": "None",
           "Documentation": "The configured service level objective ID of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of currentServiceObjectiveId property. If requestedServiceObjectiveId and requestedServiceObjectiveName are both updated, the value of requestedServiceObjectiveId overrides the value of requestedServiceObjectiveName. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\"",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3357,7 +3585,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the configured service level objective of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of serviceLevelObjective property. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3373,7 +3603,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the elastic pool the database is in. If elasticPoolName and requestedServiceObjectiveName are both updated, the value of requestedServiceObjectiveName is ignored. Not supported for DataWarehouse edition.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3389,7 +3621,9 @@
           "VariableValue": "None",
           "Documentation": "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for DataWarehouse edition. Possible values include: 'Enabled', 'Disabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3405,7 +3639,9 @@
           "VariableValue": "None",
           "Documentation": "Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not supported for DataWarehouse edition. Possible values include: 'AdventureWorksLT'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3421,7 +3657,9 @@
           "VariableValue": "None",
           "Documentation": "Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4286,7 +4524,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 6,
@@ -4302,7 +4542,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 6,
@@ -4318,7 +4560,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -4334,7 +4578,9 @@
           "VariableValue": "None",
           "Documentation": "An OData filter expression that describes a subset of metrics to return.",
           "DefaultValue": null,
-          "DefaultValueSample": "filter",
+          "DefaultValueSample": {
+            "default": "filter"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -4350,7 +4596,9 @@
           "VariableValue": "None",
           "Documentation": "A comma separated list of child objects to expand in the response. Possible properties: serviceTierAdvisors, transparentDataEncryption.",
           "DefaultValue": null,
-          "DefaultValueSample": "expand",
+          "DefaultValueSample": {
+            "default": "expand"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4366,7 +4614,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the elastic pool to be retrieved.",
           "DefaultValue": null,
-          "DefaultValueSample": "elastic_pool_name",
+          "DefaultValueSample": {
+            "default": "elastic_pool_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -4382,7 +4632,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the recommended elastic pool to be retrieved.",
           "DefaultValue": null,
-          "DefaultValueSample": "recommended_elastic_pool_name",
+          "DefaultValueSample": {
+            "default": "recommended_elastic_pool_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -4499,7 +4751,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-2369",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-2369"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4515,7 +4769,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-8069",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-8069"
+          },
           "DefaultValueTest": "zims-server",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4531,7 +4787,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the elastic pool to be operated on (updated or created).",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-8102",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-8102"
+          },
           "DefaultValueTest": "test-elastic-pool",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4547,7 +4805,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for creating or updating an elastic pool.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4563,7 +4823,9 @@
           "VariableValue": "None",
           "Documentation": "Resource location.",
           "DefaultValue": null,
-          "DefaultValueSample": "Japan East",
+          "DefaultValueSample": {
+            "default": "Japan East"
+          },
           "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4579,7 +4841,9 @@
           "VariableValue": "None",
           "Documentation": "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4595,7 +4859,9 @@
           "VariableValue": "None",
           "Documentation": "The total shared DTU for the database elastic pool.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4611,7 +4877,9 @@
           "VariableValue": "None",
           "Documentation": "The maximum DTU any one database can consume.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4627,7 +4895,9 @@
           "VariableValue": "None",
           "Documentation": "The minimum DTU all databases are guaranteed.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4643,7 +4913,9 @@
           "VariableValue": "None",
           "Documentation": "Gets storage limit for the database elastic pool in MB.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4659,7 +4931,9 @@
           "VariableValue": "None",
           "Documentation": "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availability zones.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4878,7 +5152,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 4,
@@ -4894,7 +5170,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 4,
@@ -4910,7 +5188,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the elastic pool.",
           "DefaultValue": null,
-          "DefaultValueSample": "elastic_pool_name",
+          "DefaultValueSample": {
+            "default": "elastic_pool_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -4926,7 +5206,9 @@
           "VariableValue": "None",
           "Documentation": "An OData filter expression that describes a subset of metrics to return.",
           "DefaultValue": null,
-          "DefaultValueSample": "filter",
+          "DefaultValueSample": {
+            "default": "filter"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -5014,7 +5296,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5030,7 +5314,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5046,7 +5332,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database to get the link for.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5062,7 +5350,9 @@
           "VariableValue": "None",
           "Documentation": "The replication link ID to be retrieved.",
           "DefaultValue": null,
-          "DefaultValueSample": "link_id",
+          "DefaultValueSample": {
+            "default": "link_id"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -5126,7 +5416,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-4799",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-4799"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5142,7 +5434,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-6440",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-6440"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5158,7 +5452,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the server administrator resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "activeDirectory",
+          "DefaultValueSample": {
+            "default": "activeDirectory"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5174,7 +5470,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for creating or updating an Active Directory Administrator.",
           "DefaultValue": null,
-          "DefaultValueSample": "properties",
+          "DefaultValueSample": {
+            "default": "properties"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5190,7 +5488,9 @@
           "VariableValue": "None",
           "Documentation": "The type of administrator.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5206,7 +5506,9 @@
           "VariableValue": "None",
           "Documentation": "The server administrator login value.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5222,7 +5524,9 @@
           "VariableValue": "None",
           "Documentation": "The server administrator Sid (Secure ID).",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5238,7 +5542,9 @@
           "VariableValue": "None",
           "Documentation": "The server Active Directory Administrator tenant id.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5379,7 +5685,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5395,7 +5703,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5411,7 +5721,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the server administrator resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "administrator_name",
+          "DefaultValueSample": {
+            "default": "administrator_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -5471,7 +5783,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-7398",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-7398"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5487,7 +5801,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-4645",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-4645"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5503,7 +5819,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server communication link.",
           "DefaultValue": null,
-          "DefaultValueSample": "link1",
+          "DefaultValueSample": {
+            "default": "link1"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5519,7 +5837,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the partner server.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5660,7 +5980,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5676,7 +5998,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5692,7 +6016,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server communication link.",
           "DefaultValue": null,
-          "DefaultValueSample": "communication_link_name",
+          "DefaultValueSample": {
+            "default": "communication_link_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -5752,7 +6078,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5768,7 +6096,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5784,7 +6114,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the service objective to retrieve.",
           "DefaultValue": null,
-          "DefaultValueSample": "service_objective_name",
+          "DefaultValueSample": {
+            "default": "service_objective_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -5844,7 +6176,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group",
+          "DefaultValueSample": {
+            "default": "resource_group"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5860,7 +6194,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-4645",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-4645"
+          },
           "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5876,7 +6212,9 @@
           "VariableValue": "dict()",
           "Documentation": "The requested server resource state.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5892,7 +6230,9 @@
           "VariableValue": "None",
           "Documentation": "Resource location.",
           "DefaultValue": null,
-          "DefaultValueSample": "westus",
+          "DefaultValueSample": {
+            "default": "westus"
+          },
           "DefaultValueTest": "eastus",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5908,7 +6248,9 @@
           "VariableValue": "None",
           "Documentation": "The Azure Active Directory identity of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5924,7 +6266,9 @@
           "VariableValue": "None",
           "Documentation": "Administrator username for the server. Once created it cannot be changed.",
           "DefaultValue": null,
-          "DefaultValueSample": "mylogin",
+          "DefaultValueSample": {
+            "default": "mylogin"
+          },
           "DefaultValueTest": "mylogin",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5940,7 +6284,9 @@
           "VariableValue": "None",
           "Documentation": "The administrator login password (required for server creation).",
           "DefaultValue": null,
-          "DefaultValueSample": "Testpasswordxyz12!",
+          "DefaultValueSample": {
+            "default": "Testpasswordxyz12!"
+          },
           "DefaultValueTest": "Testpasswordxyz12!",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5956,7 +6302,9 @@
           "VariableValue": "None",
           "Documentation": "The version of the server. For example '12.0'.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -5972,7 +6320,9 @@
           "VariableValue": "None",
           "Documentation": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource. Possible values include: 'SystemAssigned'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6193,7 +6543,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -6209,7 +6561,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6265,7 +6619,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6281,7 +6637,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6297,7 +6655,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the elastic pool for which to get the current activity.",
           "DefaultValue": null,
-          "DefaultValueSample": "elastic_pool_name",
+          "DefaultValueSample": {
+            "default": "elastic_pool_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6346,7 +6706,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6362,7 +6724,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6378,7 +6742,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the elastic pool.",
           "DefaultValue": null,
-          "DefaultValueSample": "elastic_pool_name",
+          "DefaultValueSample": {
+            "default": "elastic_pool_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6427,7 +6793,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -6443,7 +6811,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -6459,7 +6829,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the recommended elastic pool to be retrieved.",
           "DefaultValue": null,
-          "DefaultValueSample": "recommended_elastic_pool_name",
+          "DefaultValueSample": {
+            "default": "recommended_elastic_pool_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -6532,7 +6904,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -6548,7 +6922,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -6564,7 +6940,9 @@
           "VariableValue": "None",
           "Documentation": "The name of database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -6580,7 +6958,9 @@
           "VariableValue": "None",
           "Documentation": "The name of service tier advisor.",
           "DefaultValue": null,
-          "DefaultValueSample": "service_tier_advisor_name",
+          "DefaultValueSample": {
+            "default": "service_tier_advisor_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6644,7 +7024,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-6852",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-6852"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6660,7 +7042,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-2080",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-2080"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6676,7 +7060,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which setting the transparent data encryption applies.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-9187",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-9187"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6692,7 +7078,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the transparent data encryption configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "current",
+          "DefaultValueSample": {
+            "default": "current"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6708,7 +7096,9 @@
           "VariableValue": "None",
           "Documentation": "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6821,7 +7211,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6837,7 +7229,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6853,7 +7247,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the transparent data encryption applies.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6869,7 +7265,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the transparent data encryption configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "transparent_data_encryption_name",
+          "DefaultValueSample": {
+            "default": "transparent_data_encryption_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6920,7 +7318,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6936,7 +7336,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6952,7 +7354,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the transparent data encryption applies.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6968,7 +7372,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the transparent data encryption configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "transparent_data_encryption_name",
+          "DefaultValueSample": {
+            "default": "transparent_data_encryption_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7019,7 +7425,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7035,7 +7443,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7082,7 +7492,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7098,7 +7510,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7114,7 +7528,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7163,7 +7579,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "blobauditingtest-4799",
+          "DefaultValueSample": {
+            "default": "blobauditingtest-4799"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7179,7 +7597,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "blobauditingtest-6440",
+          "DefaultValueSample": {
+            "default": "blobauditingtest-6440"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7195,7 +7615,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the blob auditing policy will be defined.",
           "DefaultValue": null,
-          "DefaultValueSample": "testdb",
+          "DefaultValueSample": {
+            "default": "testdb"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7211,7 +7633,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the blob auditing policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "default",
+          "DefaultValueSample": {
+            "default": "default"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7227,7 +7651,9 @@
           "VariableValue": "dict()",
           "Documentation": "The database blob auditing policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7243,7 +7669,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Enabled', 'Disabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7259,7 +7687,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7275,7 +7705,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the identifier key of the auditing storage account. If state is Enabled, storageAccountAccessKey is required.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7291,7 +7723,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the number of days to keep in the audit logs.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7307,7 +7741,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the Actions and Actions-Groups to audit.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7323,7 +7759,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies the blob storage subscription Id.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7339,7 +7777,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies whether storageAccountAccessKey value is the storage’s secondary key.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7507,7 +7947,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7523,7 +7965,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7539,7 +7983,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database for which the blob audit policy is defined.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7555,7 +8001,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the blob auditing policy.",
           "DefaultValue": null,
-          "DefaultValueSample": "blob_auditing_policy_name",
+          "DefaultValueSample": {
+            "default": "blob_auditing_policy_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7606,7 +8054,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-7398",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-7398"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7622,7 +8072,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-4645",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-4645"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7638,7 +8090,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the encryption protector to be updated.",
           "DefaultValue": null,
-          "DefaultValueSample": "current",
+          "DefaultValueSample": {
+            "default": "current"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7654,7 +8108,9 @@
           "VariableValue": "dict()",
           "Documentation": "The requested encryption protector resource state.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7670,7 +8126,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7686,7 +8144,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server key.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7702,7 +8162,9 @@
           "VariableValue": "None",
           "Documentation": "The encryption protector type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -7857,7 +8319,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -7873,7 +8337,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -7889,7 +8355,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the encryption protector to be retrieved.",
           "DefaultValue": null,
-          "DefaultValueSample": "encryption_protector_name",
+          "DefaultValueSample": {
+            "default": "encryption_protector_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -7949,7 +8417,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "Default",
+          "DefaultValueSample": {
+            "default": "Default"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7965,7 +8435,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server containing the failover group.",
           "DefaultValue": null,
-          "DefaultValueSample": "failover-group-primary-server",
+          "DefaultValueSample": {
+            "default": "failover-group-primary-server"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7981,7 +8453,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the failover group.",
           "DefaultValue": null,
-          "DefaultValueSample": "failover-group-test-3",
+          "DefaultValueSample": {
+            "default": "failover-group-test-3"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7997,7 +8471,9 @@
           "VariableValue": "dict()",
           "Documentation": "The failover group parameters.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8013,7 +8489,9 @@
           "VariableValue": "None",
           "Documentation": "Read-write endpoint of the failover group instance.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -8026,7 +8504,9 @@
               "VariableValue": "None",
               "Documentation": "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required. Possible values include: 'Manual', 'Automatic'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -8042,7 +8522,9 @@
               "VariableValue": "None",
               "Documentation": "Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -8062,7 +8544,9 @@
           "VariableValue": "None",
           "Documentation": "Read-only endpoint of the failover group instance.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -8075,7 +8559,9 @@
               "VariableValue": "None",
               "Documentation": "Failover policy of the read-only endpoint for the failover group. Possible values include: 'Disabled', 'Enabled'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -8095,7 +8581,9 @@
           "VariableValue": "None",
           "Documentation": "List of partner server information for the failover group.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -8108,7 +8596,9 @@
               "VariableValue": "None",
               "Documentation": "Resource identifier of the partner server.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -8128,7 +8618,9 @@
           "VariableValue": "None",
           "Documentation": "List of databases in the failover group.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -8377,7 +8869,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8393,7 +8887,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server containing the failover group.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8409,7 +8905,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the failover group.",
           "DefaultValue": null,
-          "DefaultValueSample": "failover_group_name",
+          "DefaultValueSample": {
+            "default": "failover_group_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -8469,7 +8967,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-7398",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-7398"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8485,7 +8985,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "sqlcrudtest-4645",
+          "DefaultValueSample": {
+            "default": "sqlcrudtest-4645"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8501,7 +9003,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server key to be operated on (updated or created). The key name is required to be in the format of 'vault_key_version'. For example, if the keyId is https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901, then the server key name should be formatted as: YourVaultName_YourKeyName_01234567890123456789012345678901",
           "DefaultValue": null,
-          "DefaultValueSample": "someVault_someKey_01234567890123456789012345678901",
+          "DefaultValueSample": {
+            "default": "someVault_someKey_01234567890123456789012345678901"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8517,7 +9021,9 @@
           "VariableValue": "dict()",
           "Documentation": "The requested server key resource state.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8533,7 +9039,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -8549,7 +9057,9 @@
           "VariableValue": "None",
           "Documentation": "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -8565,7 +9075,9 @@
           "VariableValue": "None",
           "Documentation": "The URI of the server key.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -8581,7 +9093,9 @@
           "VariableValue": "None",
           "Documentation": "Thumbprint of the server key.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -8597,7 +9111,9 @@
           "VariableValue": "None",
           "Documentation": "The server key creation date.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -8765,7 +9281,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8781,7 +9299,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8797,7 +9317,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server key to be retrieved.",
           "DefaultValue": null,
-          "DefaultValueSample": "key_name",
+          "DefaultValueSample": {
+            "default": "key_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -8857,7 +9379,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncagentcrud-65440",
+          "DefaultValueSample": {
+            "default": "syncagentcrud-65440"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8873,7 +9397,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server on which the sync agent is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncagentcrud-8475",
+          "DefaultValueSample": {
+            "default": "syncagentcrud-8475"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8889,7 +9415,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync agent.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncagentcrud-3187",
+          "DefaultValueSample": {
+            "default": "syncagentcrud-3187"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8905,7 +9433,9 @@
           "VariableValue": "None",
           "Documentation": "ARM resource id of the sync database in the sync agent.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9072,7 +9602,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -9088,7 +9620,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server on which the sync agent is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -9104,7 +9638,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync agent.",
           "DefaultValue": null,
-          "DefaultValueSample": "sync_agent_name",
+          "DefaultValueSample": {
+            "default": "sync_agent_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -9177,7 +9713,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-65440",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-65440"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9193,7 +9731,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-8475",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-8475"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9209,7 +9749,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database on which the sync group is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-4328",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-4328"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9225,7 +9767,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync group.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-3187",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-3187"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9241,7 +9785,9 @@
           "VariableValue": "dict()",
           "Documentation": "The requested sync group resource state.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9257,7 +9803,9 @@
           "VariableValue": "None",
           "Documentation": "Sync interval of the sync group.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9273,7 +9821,9 @@
           "VariableValue": "None",
           "Documentation": "Conflict resolution policy of the sync group. Possible values include: 'HubWin', 'MemberWin'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9289,7 +9839,9 @@
           "VariableValue": "None",
           "Documentation": "ARM resource id of the sync database in the sync group.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9305,7 +9857,9 @@
           "VariableValue": "None",
           "Documentation": "User name for the sync group hub database credential.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9321,7 +9875,9 @@
           "VariableValue": "None",
           "Documentation": "Password for the sync group hub database credential.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9337,7 +9893,9 @@
           "VariableValue": "None",
           "Documentation": "Sync schema of the sync group.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -9350,7 +9908,9 @@
               "VariableValue": "None",
               "Documentation": "List of tables in sync group schema.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -9363,7 +9923,9 @@
                   "VariableValue": "None",
                   "Documentation": "List of columns in sync group schema.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [
                     {
@@ -9376,7 +9938,9 @@
                       "VariableValue": "None",
                       "Documentation": "Quoted name of sync group table column.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -9392,7 +9956,9 @@
                       "VariableValue": "None",
                       "Documentation": "Data size of the column.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -9408,7 +9974,9 @@
                       "VariableValue": "None",
                       "Documentation": "Data type of the column.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -9428,7 +9996,9 @@
                   "VariableValue": "None",
                   "Documentation": "Quoted name of sync group schema table.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -9448,7 +10018,9 @@
               "VariableValue": "None",
               "Documentation": "Name of master sync member where the schema is from.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -9718,7 +10290,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 4,
@@ -9734,7 +10308,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 4,
@@ -9750,7 +10326,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database on which the sync group is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 4,
@@ -9766,7 +10344,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync group.",
           "DefaultValue": null,
-          "DefaultValueSample": "sync_group_name",
+          "DefaultValueSample": {
+            "default": "sync_group_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -9782,7 +10362,9 @@
           "VariableValue": "None",
           "Documentation": "Get logs generated after this time.",
           "DefaultValue": null,
-          "DefaultValueSample": "start_time",
+          "DefaultValueSample": {
+            "default": "start_time"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -9798,7 +10380,9 @@
           "VariableValue": "None",
           "Documentation": "Get logs generated before this time.",
           "DefaultValue": null,
-          "DefaultValueSample": "end_time",
+          "DefaultValueSample": {
+            "default": "end_time"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -9814,7 +10398,9 @@
           "VariableValue": "None",
           "Documentation": "The types of logs to retrieve.",
           "DefaultValue": null,
-          "DefaultValueSample": "type",
+          "DefaultValueSample": {
+            "default": "type"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -9830,7 +10416,9 @@
           "VariableValue": "None",
           "Documentation": "The continuation token for this operation.",
           "DefaultValue": null,
-          "DefaultValueSample": "continuation_token",
+          "DefaultValueSample": {
+            "default": "continuation_token"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9846,7 +10434,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the region where the resource is located.",
           "DefaultValue": null,
-          "DefaultValueSample": "location_name",
+          "DefaultValueSample": {
+            "default": "location_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -9956,7 +10546,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-65440",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-65440"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9972,7 +10564,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-8475",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-8475"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9988,7 +10582,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database on which the sync group is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-4328",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-4328"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10004,7 +10600,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync group on which the sync member is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-3187",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-3187"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10020,7 +10618,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync member.",
           "DefaultValue": null,
-          "DefaultValueSample": "syncgroupcrud-4879",
+          "DefaultValueSample": {
+            "default": "syncgroupcrud-4879"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10036,7 +10636,9 @@
           "VariableValue": "dict()",
           "Documentation": "The requested sync member resource state.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10052,7 +10654,9 @@
           "VariableValue": "None",
           "Documentation": "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10068,7 +10672,9 @@
           "VariableValue": "None",
           "Documentation": "ARM resource id of the sync agent in the sync member.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10084,7 +10690,9 @@
           "VariableValue": "None",
           "Documentation": "SQL Server database id of the sync member.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10100,7 +10708,9 @@
           "VariableValue": "None",
           "Documentation": "Server name of the member database in the sync member",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10116,7 +10726,9 @@
           "VariableValue": "None",
           "Documentation": "Database name of the member database in the sync member.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10132,7 +10744,9 @@
           "VariableValue": "None",
           "Documentation": "User name of the member database in the sync member.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10148,7 +10762,9 @@
           "VariableValue": "None",
           "Documentation": "Password of the member database in the sync member.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10164,7 +10780,9 @@
           "VariableValue": "None",
           "Documentation": "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10381,7 +10999,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -10397,7 +11017,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -10413,7 +11035,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database on which the sync group is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -10429,7 +11053,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync group on which the sync member is hosted.",
           "DefaultValue": null,
-          "DefaultValueSample": "sync_group_name",
+          "DefaultValueSample": {
+            "default": "sync_group_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -10445,7 +11071,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the sync member.",
           "DefaultValue": null,
-          "DefaultValueSample": "sync_member_name",
+          "DefaultValueSample": {
+            "default": "sync_member_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -10530,7 +11158,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the region where the resource is located.",
           "DefaultValue": null,
-          "DefaultValueSample": "location_name",
+          "DefaultValueSample": {
+            "default": "location_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -10546,7 +11176,9 @@
           "VariableValue": "None",
           "Documentation": "Name of usage metric to return.",
           "DefaultValue": null,
-          "DefaultValueSample": "usage_name",
+          "DefaultValueSample": {
+            "default": "usage_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -10602,7 +11234,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "Default",
+          "DefaultValueSample": {
+            "default": "Default"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10618,7 +11252,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "vnet-test-svr",
+          "DefaultValueSample": {
+            "default": "vnet-test-svr"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10634,7 +11270,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the virtual network rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "vnet-firewall-rule",
+          "DefaultValueSample": {
+            "default": "vnet-firewall-rule"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10650,7 +11288,9 @@
           "VariableValue": "None",
           "Documentation": "The ARM resource id of the virtual network subnet.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10666,7 +11306,9 @@
           "VariableValue": "None",
           "Documentation": "Create firewall rule before the virtual network has vnet service endpoint enabled.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10799,7 +11441,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -10815,7 +11459,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -10831,7 +11477,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the virtual network rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "virtual_network_rule_name",
+          "DefaultValueSample": {
+            "default": "virtual_network_rule_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -10891,7 +11539,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -10907,7 +11557,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -10923,7 +11575,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -10972,7 +11626,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "Default",
+          "DefaultValueSample": {
+            "default": "Default"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10988,7 +11644,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server that the alias is pointing to.",
           "DefaultValue": null,
-          "DefaultValueSample": "dns-alias-server",
+          "DefaultValueSample": {
+            "default": "dns-alias-server"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11004,7 +11662,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server DNS alias.",
           "DefaultValue": null,
-          "DefaultValueSample": "dns-alias-name-1",
+          "DefaultValueSample": {
+            "default": "dns-alias-name-1"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11116,7 +11776,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -11132,7 +11794,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server that the alias is pointing to.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -11148,7 +11812,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server DNS alias.",
           "DefaultValue": null,
-          "DefaultValueSample": "dns_alias_name",
+          "DefaultValueSample": {
+            "default": "dns_alias_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,

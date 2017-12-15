@@ -14,7 +14,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "TestGroup",
+          "DefaultValueSample": {
+            "default": "TestGroup"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -30,7 +32,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "testserver",
+          "DefaultValueSample": {
+            "default": "testserver"
+          },
           "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -46,7 +50,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for creating or updating a server.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -62,7 +68,9 @@
           "VariableValue": "None",
           "Documentation": "The SKU (pricing tier) of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "{\r\n  \"name\": \"SkuName\",\r\n  \"tier\": \"Basic\",\r\n  \"capacity\": \"100\"\r\n}",
+          "DefaultValueSample": {
+            "default": "{\r\n  \"name\": \"SkuName\",\r\n  \"tier\": \"Basic\",\r\n  \"capacity\": \"100\"\r\n}"
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -75,7 +83,9 @@
               "VariableValue": "None",
               "Documentation": "The name of the sku, typically, a letter + Number code, e.g. P3.",
               "DefaultValue": null,
-              "DefaultValueSample": "SkuName",
+              "DefaultValueSample": {
+                "default": "SkuName"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -91,7 +101,9 @@
               "VariableValue": "None",
               "Documentation": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
               "DefaultValue": null,
-              "DefaultValueSample": "Basic",
+              "DefaultValueSample": {
+                "default": "Basic"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -107,7 +119,9 @@
               "VariableValue": "None",
               "Documentation": "The scale up/out capacity, representing server's compute units.",
               "DefaultValue": null,
-              "DefaultValueSample": "100",
+              "DefaultValueSample": {
+                "default": "100"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -123,7 +137,9 @@
               "VariableValue": "None",
               "Documentation": "The size code, to be interpreted by resource as appropriate.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -139,7 +155,9 @@
               "VariableValue": "None",
               "Documentation": "The family of hardware.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -159,7 +177,9 @@
           "VariableValue": "None",
           "Documentation": "Properties of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "{\r\n  \"administratorLogin\": \"cloudsa\",\r\n  \"administratorLoginPassword\": \"password\",\r\n  \"storageMB\": \"1024\",\r\n  \"sslEnforcement\": \"Enabled\",\r\n  \"createMode\": \"Default\"\r\n}",
+          "DefaultValueSample": {
+            "default": "{\r\n  \"administratorLogin\": \"cloudsa\",\r\n  \"administratorLoginPassword\": \"password\",\r\n  \"storageMB\": \"1024\",\r\n  \"sslEnforcement\": \"Enabled\",\r\n  \"createMode\": \"Default\"\r\n}"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -175,7 +195,9 @@
           "VariableValue": "None",
           "Documentation": "The location the resource resides in.",
           "DefaultValue": null,
-          "DefaultValueSample": "OneBox",
+          "DefaultValueSample": {
+            "default": "OneBox"
+          },
           "DefaultValueTest": "westus",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -191,7 +213,9 @@
           "VariableValue": "None",
           "Documentation": "The maximum storage allowed for a server.",
           "DefaultValue": null,
-          "DefaultValueSample": "1024",
+          "DefaultValueSample": {
+            "default": "1024"
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -207,7 +231,9 @@
           "VariableValue": "None",
           "Documentation": "Server version. Possible values include: '5.6', '5.7'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "5.6",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -223,7 +249,9 @@
           "VariableValue": "None",
           "Documentation": "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'",
           "DefaultValue": null,
-          "DefaultValueSample": "Enabled",
+          "DefaultValueSample": {
+            "default": "Enabled"
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -239,7 +267,9 @@
           "VariableValue": "None",
           "Documentation": "Currently only 'Default' value supported",
           "DefaultValue": "'Default'",
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -255,7 +285,9 @@
           "VariableValue": "None",
           "Documentation": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
           "DefaultValue": null,
-          "DefaultValueSample": "cloudsa",
+          "DefaultValueSample": {
+            "default": "cloudsa"
+          },
           "DefaultValueTest": "zimxyz",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -271,7 +303,9 @@
           "VariableValue": "None",
           "Documentation": "The password of the administrator login.",
           "DefaultValue": null,
-          "DefaultValueSample": "password",
+          "DefaultValueSample": {
+            "default": "password"
+          },
           "DefaultValueTest": "Testpasswordxyz12!",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -510,7 +544,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -526,7 +562,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -582,7 +620,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "TestGroup",
+          "DefaultValueSample": {
+            "default": "TestGroup"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -598,7 +638,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "testserver",
+          "DefaultValueSample": {
+            "default": "testserver"
+          },
           "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -614,7 +656,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server firewall rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "rule1",
+          "DefaultValueSample": {
+            "default": "rule1"
+          },
           "DefaultValueTest": "test-firewall-rule",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -630,7 +674,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for creating or updating a firewall rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -646,7 +692,9 @@
           "VariableValue": "None",
           "Documentation": "The start IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "172.28.10.136",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -662,7 +710,9 @@
           "VariableValue": "None",
           "Documentation": "The end IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "172.28.10.138",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -803,7 +853,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -819,7 +871,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -835,7 +889,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server firewall rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "firewall_rule_name",
+          "DefaultValueSample": {
+            "default": "firewall_rule_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -895,7 +951,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "TestGroup",
+          "DefaultValueSample": {
+            "default": "TestGroup"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -911,7 +969,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "vnet-test-svr",
+          "DefaultValueSample": {
+            "default": "vnet-test-svr"
+          },
           "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -927,7 +987,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the virtual network rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "vnet-firewall-rule",
+          "DefaultValueSample": {
+            "default": "vnet-firewall-rule"
+          },
           "DefaultValueTest": "test-virtual-network-rule",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -943,7 +1005,9 @@
           "VariableValue": "dict()",
           "Documentation": "The requested virtual Network Rule Resource state.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -959,7 +1023,9 @@
           "VariableValue": "None",
           "Documentation": "The ARM resource id of the virtual network subnet.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -975,7 +1041,9 @@
           "VariableValue": "None",
           "Documentation": "Create firewall rule before the virtual network has vnet service endpoint enabled.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1107,7 +1175,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1123,7 +1193,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1139,7 +1211,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the virtual network rule.",
           "DefaultValue": null,
-          "DefaultValueSample": "virtual_network_rule_name",
+          "DefaultValueSample": {
+            "default": "virtual_network_rule_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1199,7 +1273,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "TestGroup",
+          "DefaultValueSample": {
+            "default": "TestGroup"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1215,7 +1291,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "testserver",
+          "DefaultValueSample": {
+            "default": "testserver"
+          },
           "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1231,7 +1309,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "db1",
+          "DefaultValueSample": {
+            "default": "db1"
+          },
           "DefaultValueTest": "testdatabase",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1247,7 +1327,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for creating or updating a database.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1263,7 +1345,9 @@
           "VariableValue": "None",
           "Documentation": "The charset of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1279,7 +1363,9 @@
           "VariableValue": "None",
           "Documentation": "The collation of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1402,7 +1488,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1418,7 +1506,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1434,7 +1524,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the database.",
           "DefaultValue": null,
-          "DefaultValueSample": "database_name",
+          "DefaultValueSample": {
+            "default": "database_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1494,7 +1586,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "TestGroup",
+          "DefaultValueSample": {
+            "default": "TestGroup"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1510,7 +1604,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "testserver",
+          "DefaultValueSample": {
+            "default": "testserver"
+          },
           "DefaultValueTest": "test-mysql-server",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1526,7 +1622,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "event_scheduler",
+          "DefaultValueSample": {
+            "default": "event_scheduler"
+          },
           "DefaultValueTest": "event_scheduler",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1542,7 +1640,9 @@
           "VariableValue": "dict()",
           "Documentation": "The required parameters for updating a server configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "parameters",
+          "DefaultValueSample": {
+            "default": "parameters"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1558,7 +1658,9 @@
           "VariableValue": "None",
           "Documentation": "Value of the configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "\"ON\"",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1574,7 +1676,9 @@
           "VariableValue": "None",
           "Documentation": "Source of the configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "user-override",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1721,7 +1825,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1737,7 +1843,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1753,7 +1861,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server configuration.",
           "DefaultValue": null,
-          "DefaultValueSample": "configuration_name",
+          "DefaultValueSample": {
+            "default": "configuration_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1813,7 +1923,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1829,7 +1941,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
-          "DefaultValueSample": "server_name",
+          "DefaultValueSample": {
+            "default": "server_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,

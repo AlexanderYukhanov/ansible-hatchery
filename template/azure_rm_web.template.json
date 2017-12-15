@@ -14,7 +14,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -30,7 +32,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the certificate order.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -46,7 +50,9 @@
           "VariableValue": "dict()",
           "Documentation": "Distinguished name to to use for the certificate order.",
           "DefaultValue": null,
-          "DefaultValueSample": "certificate_distinguished_name",
+          "DefaultValueSample": {
+            "default": "certificate_distinguished_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -62,7 +68,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -78,7 +86,9 @@
           "VariableValue": "None",
           "Documentation": "Resource Location.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -94,7 +104,9 @@
           "VariableValue": "None",
           "Documentation": "State of the Key Vault secret.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -110,7 +122,9 @@
           "VariableValue": "None",
           "Documentation": "Certificate distinguished name.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -126,7 +140,9 @@
           "VariableValue": "None",
           "Documentation": "Duration in years (must be between 1 and 3).",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -142,7 +158,9 @@
           "VariableValue": "None",
           "Documentation": "Certificate key size.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -158,7 +176,9 @@
           "VariableValue": "None",
           "Documentation": "Certificate product type. Possible values include: 'StandardDomainValidatedSsl', 'StandardDomainValidatedWildCardSsl'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -174,7 +194,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> if the certificate should be automatically renewed when it expires; otherwise, <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -190,7 +212,9 @@
           "VariableValue": "None",
           "Documentation": "Last CSR that was created for this order.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -746,7 +770,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -762,7 +788,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the certificate order..",
           "DefaultValue": null,
-          "DefaultValueSample": "certificate_order_name",
+          "DefaultValueSample": {
+            "default": "certificate_order_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -853,7 +881,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -869,7 +899,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the domain.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -885,7 +917,9 @@
           "VariableValue": "dict()",
           "Documentation": "Domain registration information.",
           "DefaultValue": null,
-          "DefaultValueSample": "domain",
+          "DefaultValueSample": {
+            "default": "domain"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -901,7 +935,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -917,7 +953,9 @@
           "VariableValue": "None",
           "Documentation": "Resource Location.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -933,7 +971,9 @@
           "VariableValue": "None",
           "Documentation": "Administrative contact.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -946,7 +986,9 @@
               "VariableValue": "None",
               "Documentation": "Mailing address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -959,7 +1001,9 @@
                   "VariableValue": "None",
                   "Documentation": "First line of an Address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -975,7 +1019,9 @@
                   "VariableValue": "None",
                   "Documentation": "The second line of the Address. Optional.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -991,7 +1037,9 @@
                   "VariableValue": "None",
                   "Documentation": "The city for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1007,7 +1055,9 @@
                   "VariableValue": "None",
                   "Documentation": "The country for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1023,7 +1073,9 @@
                   "VariableValue": "None",
                   "Documentation": "The postal code for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1039,7 +1091,9 @@
                   "VariableValue": "None",
                   "Documentation": "The state or province for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1059,7 +1113,9 @@
               "VariableValue": "None",
               "Documentation": "Email address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1075,7 +1131,9 @@
               "VariableValue": "None",
               "Documentation": "Fax number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1091,7 +1149,9 @@
               "VariableValue": "None",
               "Documentation": "Job title.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1107,7 +1167,9 @@
               "VariableValue": "None",
               "Documentation": "First name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1123,7 +1185,9 @@
               "VariableValue": "None",
               "Documentation": "Last name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1139,7 +1203,9 @@
               "VariableValue": "None",
               "Documentation": "Middle name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1155,7 +1221,9 @@
               "VariableValue": "None",
               "Documentation": "Organization contact belongs to.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1171,7 +1239,9 @@
               "VariableValue": "None",
               "Documentation": "Phone number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1191,7 +1261,9 @@
           "VariableValue": "None",
           "Documentation": "Billing contact.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -1204,7 +1276,9 @@
               "VariableValue": "None",
               "Documentation": "Mailing address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -1217,7 +1291,9 @@
                   "VariableValue": "None",
                   "Documentation": "First line of an Address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1233,7 +1309,9 @@
                   "VariableValue": "None",
                   "Documentation": "The second line of the Address. Optional.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1249,7 +1327,9 @@
                   "VariableValue": "None",
                   "Documentation": "The city for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1265,7 +1345,9 @@
                   "VariableValue": "None",
                   "Documentation": "The country for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1281,7 +1363,9 @@
                   "VariableValue": "None",
                   "Documentation": "The postal code for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1297,7 +1381,9 @@
                   "VariableValue": "None",
                   "Documentation": "The state or province for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1317,7 +1403,9 @@
               "VariableValue": "None",
               "Documentation": "Email address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1333,7 +1421,9 @@
               "VariableValue": "None",
               "Documentation": "Fax number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1349,7 +1439,9 @@
               "VariableValue": "None",
               "Documentation": "Job title.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1365,7 +1457,9 @@
               "VariableValue": "None",
               "Documentation": "First name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1381,7 +1475,9 @@
               "VariableValue": "None",
               "Documentation": "Last name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1397,7 +1493,9 @@
               "VariableValue": "None",
               "Documentation": "Middle name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1413,7 +1511,9 @@
               "VariableValue": "None",
               "Documentation": "Organization contact belongs to.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1429,7 +1529,9 @@
               "VariableValue": "None",
               "Documentation": "Phone number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1449,7 +1551,9 @@
           "VariableValue": "None",
           "Documentation": "Registrant contact.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -1462,7 +1566,9 @@
               "VariableValue": "None",
               "Documentation": "Mailing address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -1475,7 +1581,9 @@
                   "VariableValue": "None",
                   "Documentation": "First line of an Address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1491,7 +1599,9 @@
                   "VariableValue": "None",
                   "Documentation": "The second line of the Address. Optional.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1507,7 +1617,9 @@
                   "VariableValue": "None",
                   "Documentation": "The city for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1523,7 +1635,9 @@
                   "VariableValue": "None",
                   "Documentation": "The country for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1539,7 +1653,9 @@
                   "VariableValue": "None",
                   "Documentation": "The postal code for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1555,7 +1671,9 @@
                   "VariableValue": "None",
                   "Documentation": "The state or province for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1575,7 +1693,9 @@
               "VariableValue": "None",
               "Documentation": "Email address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1591,7 +1711,9 @@
               "VariableValue": "None",
               "Documentation": "Fax number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1607,7 +1729,9 @@
               "VariableValue": "None",
               "Documentation": "Job title.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1623,7 +1747,9 @@
               "VariableValue": "None",
               "Documentation": "First name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1639,7 +1765,9 @@
               "VariableValue": "None",
               "Documentation": "Last name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1655,7 +1783,9 @@
               "VariableValue": "None",
               "Documentation": "Middle name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1671,7 +1801,9 @@
               "VariableValue": "None",
               "Documentation": "Organization contact belongs to.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1687,7 +1819,9 @@
               "VariableValue": "None",
               "Documentation": "Phone number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1707,7 +1841,9 @@
           "VariableValue": "None",
           "Documentation": "Technical contact.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -1720,7 +1856,9 @@
               "VariableValue": "None",
               "Documentation": "Mailing address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -1733,7 +1871,9 @@
                   "VariableValue": "None",
                   "Documentation": "First line of an Address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1749,7 +1889,9 @@
                   "VariableValue": "None",
                   "Documentation": "The second line of the Address. Optional.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1765,7 +1907,9 @@
                   "VariableValue": "None",
                   "Documentation": "The city for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1781,7 +1925,9 @@
                   "VariableValue": "None",
                   "Documentation": "The country for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1797,7 +1943,9 @@
                   "VariableValue": "None",
                   "Documentation": "The postal code for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1813,7 +1961,9 @@
                   "VariableValue": "None",
                   "Documentation": "The state or province for the address.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -1833,7 +1983,9 @@
               "VariableValue": "None",
               "Documentation": "Email address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1849,7 +2001,9 @@
               "VariableValue": "None",
               "Documentation": "Fax number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1865,7 +2019,9 @@
               "VariableValue": "None",
               "Documentation": "Job title.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1881,7 +2037,9 @@
               "VariableValue": "None",
               "Documentation": "First name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1897,7 +2055,9 @@
               "VariableValue": "None",
               "Documentation": "Last name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1913,7 +2073,9 @@
               "VariableValue": "None",
               "Documentation": "Middle name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1929,7 +2091,9 @@
               "VariableValue": "None",
               "Documentation": "Organization contact belongs to.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1945,7 +2109,9 @@
               "VariableValue": "None",
               "Documentation": "Phone number.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -1965,7 +2131,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> if domain privacy is enabled for this domain; otherwise, <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1981,7 +2149,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> if the domain should be automatically renewed; otherwise, <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1997,7 +2167,9 @@
           "VariableValue": "None",
           "Documentation": "Legal agreement consent.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -2010,7 +2182,9 @@
               "VariableValue": "None",
               "Documentation": "List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code> resource.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -2026,7 +2200,9 @@
               "VariableValue": "None",
               "Documentation": "Client IP address.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -2042,7 +2218,9 @@
               "VariableValue": "None",
               "Documentation": "Timestamp when the agreements were accepted.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -2062,7 +2240,9 @@
           "VariableValue": "None",
           "Documentation": "Current DNS type. Possible values include: 'AzureDns', 'DefaultDomainRegistrarDns'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2078,7 +2258,9 @@
           "VariableValue": "None",
           "Documentation": "Azure DNS Zone to use",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2094,7 +2276,9 @@
           "VariableValue": "None",
           "Documentation": "Target DNS type (would be used for migration). Possible values include: 'AzureDns', 'DefaultDomainRegistrarDns'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -2110,7 +2294,9 @@
           "VariableValue": "None",
           "Documentation": "",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3061,7 +3247,9 @@
           "VariableValue": "None",
           "Documentation": "Keywords to be used for generating domain recommendations.",
           "DefaultValue": null,
-          "DefaultValueSample": "keywords",
+          "DefaultValueSample": {
+            "default": "keywords"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3077,7 +3265,9 @@
           "VariableValue": "None",
           "Documentation": "Maximum number of recommendations.",
           "DefaultValue": null,
-          "DefaultValueSample": "max_domain_recommendations",
+          "DefaultValueSample": {
+            "default": "max_domain_recommendations"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3093,7 +3283,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -3109,7 +3301,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the domain.",
           "DefaultValue": null,
-          "DefaultValueSample": "domain_name",
+          "DefaultValueSample": {
+            "default": "domain_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -3184,7 +3378,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the top-level domain.",
           "DefaultValue": null,
-          "DefaultValueSample": "name",
+          "DefaultValueSample": {
+            "default": "name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -3200,7 +3396,9 @@
           "VariableValue": "None",
           "Documentation": "If <code>true</code>, then the list of agreements will include agreements for domain privacy as well; otherwise, <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "include_privacy",
+          "DefaultValueSample": {
+            "default": "include_privacy"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3216,7 +3414,9 @@
           "VariableValue": "None",
           "Documentation": "If <code>true</code>, then the list of agreements will include agreements for domain transfer as well; otherwise, <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "for_transfer",
+          "DefaultValueSample": {
+            "default": "for_transfer"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3296,7 +3496,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "testrg123",
+          "DefaultValueSample": {
+            "default": "testrg123"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3312,7 +3514,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the certificate.",
           "DefaultValue": null,
-          "DefaultValueSample": "testc6282",
+          "DefaultValueSample": {
+            "default": "testc6282"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3328,7 +3532,9 @@
           "VariableValue": "dict()",
           "Documentation": "Details of certificate, if it exists already.",
           "DefaultValue": null,
-          "DefaultValueSample": "certificate_envelope",
+          "DefaultValueSample": {
+            "default": "certificate_envelope"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3344,7 +3550,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3360,7 +3568,9 @@
           "VariableValue": "None",
           "Documentation": "Resource Location.",
           "DefaultValue": null,
-          "DefaultValueSample": "East US",
+          "DefaultValueSample": {
+            "default": "East US"
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3376,7 +3586,9 @@
           "VariableValue": "None",
           "Documentation": "Host names the certificate applies to.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3392,7 +3604,9 @@
           "VariableValue": "None",
           "Documentation": "Pfx blob.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3408,7 +3622,9 @@
           "VariableValue": "None",
           "Documentation": "Certificate password.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3424,7 +3640,9 @@
           "VariableValue": "None",
           "Documentation": "Key Vault Csm resource Id.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3440,7 +3658,9 @@
           "VariableValue": "None",
           "Documentation": "Key Vault secret name.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3456,7 +3676,9 @@
           "VariableValue": "None",
           "Documentation": "Resource ID of the associated App Service plan, formatted as: \"/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}\".",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -3803,7 +4025,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -3819,7 +4043,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the certificate.",
           "DefaultValue": null,
-          "DefaultValueSample": "name",
+          "DefaultValueSample": {
+            "default": "name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
@@ -3875,7 +4101,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 6,
@@ -3891,7 +4119,9 @@
           "VariableValue": "None",
           "Documentation": "Site Name",
           "DefaultValue": null,
-          "DefaultValueSample": "site_name",
+          "DefaultValueSample": {
+            "default": "site_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 6,
@@ -3907,7 +4137,9 @@
           "VariableValue": "None",
           "Documentation": "Diagnostic Category",
           "DefaultValue": null,
-          "DefaultValueSample": "diagnostic_category",
+          "DefaultValueSample": {
+            "default": "diagnostic_category"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 4,
@@ -3923,7 +4155,9 @@
           "VariableValue": "None",
           "Documentation": "Slot Name",
           "DefaultValue": null,
-          "DefaultValueSample": "slot",
+          "DefaultValueSample": {
+            "default": "slot"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 3,
@@ -4063,7 +4297,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -4079,7 +4315,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the app.",
           "DefaultValue": null,
-          "DefaultValueSample": "site_name",
+          "DefaultValueSample": {
+            "default": "site_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -4095,7 +4333,9 @@
           "VariableValue": "None",
           "Documentation": "Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.",
           "DefaultValue": null,
-          "DefaultValueSample": "featured",
+          "DefaultValueSample": {
+            "default": "featured"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4111,7 +4351,9 @@
           "VariableValue": "None",
           "Documentation": "Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channels eq 'Api' or channel eq 'Notification'",
           "DefaultValue": null,
-          "DefaultValueSample": "filter",
+          "DefaultValueSample": {
+            "default": "filter"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4172,7 +4414,9 @@
           "VariableValue": "None",
           "Documentation": "Name of SKU used to filter the regions.",
           "DefaultValue": null,
-          "DefaultValueSample": "sku",
+          "DefaultValueSample": {
+            "default": "sku"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4188,7 +4432,9 @@
           "VariableValue": "None",
           "Documentation": "Specify <code>true</code> if you want to filter to only regions that support Linux workers.",
           "DefaultValue": null,
-          "DefaultValueSample": "linux_workers_enabled",
+          "DefaultValueSample": {
+            "default": "linux_workers_enabled"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4247,7 +4493,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4263,7 +4511,9 @@
           "VariableValue": "None",
           "Documentation": "Unique name of the app to create or update. To create or update a deployment slot, use the {slot} parameter.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4279,7 +4529,9 @@
           "VariableValue": "dict()",
           "Documentation": "A JSON representation of the app properties. See example.",
           "DefaultValue": null,
-          "DefaultValueSample": "site_envelope",
+          "DefaultValueSample": {
+            "default": "site_envelope"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4295,7 +4547,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4311,7 +4565,9 @@
           "VariableValue": "None",
           "Documentation": "Resource Location.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4327,7 +4583,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> if the app is enabled; otherwise, <code>false</code>. Setting this value to false disables the app (takes the app offline).",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4343,7 +4601,9 @@
           "VariableValue": "None",
           "Documentation": "Hostname SSL states are used to manage the SSL bindings for app's hostnames.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -4356,7 +4616,9 @@
               "VariableValue": "None",
               "Documentation": "Hostname.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4372,7 +4634,9 @@
               "VariableValue": "None",
               "Documentation": "SSL type. Possible values include: 'Disabled', 'SniEnabled', 'IpBasedEnabled'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4388,7 +4652,9 @@
               "VariableValue": "None",
               "Documentation": "Virtual IP address assigned to the hostname if IP based SSL is enabled.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4404,7 +4670,9 @@
               "VariableValue": "None",
               "Documentation": "SSL certificate thumbprint.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4420,7 +4688,9 @@
               "VariableValue": "None",
               "Documentation": "Set to <code>true</code> to update existing hostname.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4436,7 +4706,9 @@
               "VariableValue": "None",
               "Documentation": "Indicates whether the hostname is a standard or repository hostname. Possible values include: 'Standard', 'Repository'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4456,7 +4728,9 @@
           "VariableValue": "None",
           "Documentation": "Resource ID of the associated App Service plan, formatted as: \"/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}\".",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4472,7 +4746,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> if reserved; otherwise, <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -4488,7 +4764,9 @@
           "VariableValue": "None",
           "Documentation": "Configuration of the app.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -4501,7 +4779,9 @@
               "VariableValue": "None",
               "Documentation": "Number of workers.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4517,7 +4797,9 @@
               "VariableValue": "None",
               "Documentation": "Default documents.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4533,7 +4815,9 @@
               "VariableValue": "None",
               "Documentation": ".NET Framework version.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4549,7 +4833,9 @@
               "VariableValue": "None",
               "Documentation": "Version of PHP.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4565,7 +4851,9 @@
               "VariableValue": "None",
               "Documentation": "Version of Python.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4581,7 +4869,9 @@
               "VariableValue": "None",
               "Documentation": "Version of Node.js.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4597,7 +4887,9 @@
               "VariableValue": "None",
               "Documentation": "Linux App Framework and version",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4613,7 +4905,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if request tracing is enabled; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4629,7 +4923,9 @@
               "VariableValue": "None",
               "Documentation": "Request tracing expiration time.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4645,7 +4941,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if remote debugging is enabled; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4661,7 +4959,9 @@
               "VariableValue": "None",
               "Documentation": "Remote debugging version.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4677,7 +4977,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if HTTP logging is enabled; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4693,7 +4995,9 @@
               "VariableValue": "None",
               "Documentation": "HTTP logs directory size limit.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4709,7 +5013,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if detailed error logging is enabled; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4725,7 +5031,9 @@
               "VariableValue": "None",
               "Documentation": "Publishing user name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4741,7 +5049,9 @@
               "VariableValue": "None",
               "Documentation": "Application settings.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -4754,7 +5064,9 @@
                   "VariableValue": "None",
                   "Documentation": "Pair name.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4770,7 +5082,9 @@
                   "VariableValue": "None",
                   "Documentation": "Pair value.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4790,7 +5104,9 @@
               "VariableValue": "None",
               "Documentation": "Connection strings.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -4803,7 +5119,9 @@
                   "VariableValue": "None",
                   "Documentation": "Name of connection string.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4819,7 +5137,9 @@
                   "VariableValue": "None",
                   "Documentation": "Connection string value.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4835,7 +5155,9 @@
                   "VariableValue": "None",
                   "Documentation": "Type of database. Possible values include: 'MySql', 'SQLServer', 'SQLAzure', 'Custom', 'NotificationHub', 'ServiceBus', 'EventHub', 'ApiHub', 'DocDb', 'RedisCache', 'PostgreSQL'",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4855,7 +5177,9 @@
               "VariableValue": "None",
               "Documentation": "Handler mappings.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -4868,7 +5192,9 @@
                   "VariableValue": "None",
                   "Documentation": "Requests with this extension will be handled using the specified FastCGI application.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4884,7 +5210,9 @@
                   "VariableValue": "None",
                   "Documentation": "The absolute path to the FastCGI application.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4900,7 +5228,9 @@
                   "VariableValue": "None",
                   "Documentation": "Command-line arguments to be passed to the script processor.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -4920,7 +5250,9 @@
               "VariableValue": "None",
               "Documentation": "Document root.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4936,7 +5268,9 @@
               "VariableValue": "None",
               "Documentation": "SCM type. Possible values include: 'None', 'Dropbox', 'Tfs', 'LocalGit', 'GitHub', 'CodePlexGit', 'CodePlexHg', 'BitbucketGit', 'BitbucketHg', 'ExternalGit', 'ExternalHg', 'OneDrive', 'VSO'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4952,7 +5286,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> to use 32-bit worker process; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4968,7 +5304,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if WebSocket is enabled; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -4984,7 +5322,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if Always On is enabled; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5000,7 +5340,9 @@
               "VariableValue": "None",
               "Documentation": "Java version.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5016,7 +5358,9 @@
               "VariableValue": "None",
               "Documentation": "Java container.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5032,7 +5376,9 @@
               "VariableValue": "None",
               "Documentation": "Java container version.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5048,7 +5394,9 @@
               "VariableValue": "None",
               "Documentation": "App command line to launch.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5064,7 +5412,9 @@
               "VariableValue": "None",
               "Documentation": "Managed pipeline mode. Possible values include: 'Integrated', 'Classic'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5080,7 +5430,9 @@
               "VariableValue": "None",
               "Documentation": "Virtual applications.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -5093,7 +5445,9 @@
                   "VariableValue": "None",
                   "Documentation": "Virtual path.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5109,7 +5463,9 @@
                   "VariableValue": "None",
                   "Documentation": "Physical path.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5125,7 +5481,9 @@
                   "VariableValue": "None",
                   "Documentation": "<code>true</code> if preloading is enabled; otherwise, <code>false</code>.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5141,7 +5499,9 @@
                   "VariableValue": "None",
                   "Documentation": "Virtual directories for virtual application.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [
                     {
@@ -5154,7 +5514,9 @@
                       "VariableValue": "None",
                       "Documentation": "Path to virtual application.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5170,7 +5532,9 @@
                       "VariableValue": "None",
                       "Documentation": "Physical path.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5194,7 +5558,9 @@
               "VariableValue": "None",
               "Documentation": "Site load balancing. Possible values include: 'WeightedRoundRobin', 'LeastRequests', 'LeastResponseTime', 'WeightedTotalTraffic', 'RequestHash'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5210,7 +5576,9 @@
               "VariableValue": "None",
               "Documentation": "This is work around for polymophic types.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -5223,7 +5591,9 @@
                   "VariableValue": "None",
                   "Documentation": "List of ramp-up rules.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [
                     {
@@ -5236,7 +5606,9 @@
                       "VariableValue": "None",
                       "Documentation": "Hostname of a slot to which the traffic will be redirected if decided to. E.g. myapp-stage.azurewebsites.net.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5252,7 +5624,9 @@
                       "VariableValue": "None",
                       "Documentation": "Percentage of the traffic which will be redirected to <code>ActionHostName</code>.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5268,7 +5642,9 @@
                       "VariableValue": "None",
                       "Documentation": "In auto ramp up scenario this is the step to to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specificed in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5284,7 +5660,9 @@
                       "VariableValue": "None",
                       "Documentation": "Specifies interval in mimuntes to reevaluate ReroutePercentage.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5300,7 +5678,9 @@
                       "VariableValue": "None",
                       "Documentation": "Specifies lower boundary above which ReroutePercentage will stay.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5316,7 +5696,9 @@
                       "VariableValue": "None",
                       "Documentation": "Specifies upper boundary below which ReroutePercentage will stay.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5332,7 +5714,9 @@
                       "VariableValue": "None",
                       "Documentation": "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback site extension for the scaffold and contracts.\nhttps://www.siteextensions.net/packages/TiPCallback/",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5348,7 +5732,9 @@
                       "VariableValue": "None",
                       "Documentation": "Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5372,7 +5758,9 @@
               "VariableValue": "None",
               "Documentation": "Site limits.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -5385,7 +5773,9 @@
                   "VariableValue": "None",
                   "Documentation": "Maximum allowed CPU usage percentage.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5401,7 +5791,9 @@
                   "VariableValue": "None",
                   "Documentation": "Maximum allowed memory usage in MB.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5417,7 +5809,9 @@
                   "VariableValue": "None",
                   "Documentation": "Maximum allowed disk size usage in MB.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5437,7 +5831,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if Auto Heal is enabled; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5453,7 +5849,9 @@
               "VariableValue": "None",
               "Documentation": "Auto Heal rules.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -5466,7 +5864,9 @@
                   "VariableValue": "None",
                   "Documentation": "Conditions that describe when to execute the auto-heal actions.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [
                     {
@@ -5479,7 +5879,9 @@
                       "VariableValue": "None",
                       "Documentation": "A rule based on total requests.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [
                         {
@@ -5492,7 +5894,9 @@
                           "VariableValue": "None",
                           "Documentation": "Request Count.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5508,7 +5912,9 @@
                           "VariableValue": "None",
                           "Documentation": "Time interval.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5528,7 +5934,9 @@
                       "VariableValue": "None",
                       "Documentation": "A rule based on private bytes.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5544,7 +5952,9 @@
                       "VariableValue": "None",
                       "Documentation": "A rule based on status codes.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [
                         {
@@ -5557,7 +5967,9 @@
                           "VariableValue": "None",
                           "Documentation": "HTTP status code.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5573,7 +5985,9 @@
                           "VariableValue": "None",
                           "Documentation": "Request Sub Status.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5589,7 +6003,9 @@
                           "VariableValue": "None",
                           "Documentation": "Win32 error code.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5605,7 +6021,9 @@
                           "VariableValue": "None",
                           "Documentation": "Request Count.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5621,7 +6039,9 @@
                           "VariableValue": "None",
                           "Documentation": "Time interval.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5641,7 +6061,9 @@
                       "VariableValue": "None",
                       "Documentation": "A rule based on request execution time.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [
                         {
@@ -5654,7 +6076,9 @@
                           "VariableValue": "None",
                           "Documentation": "Time taken.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5670,7 +6094,9 @@
                           "VariableValue": "None",
                           "Documentation": "Request Count.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5686,7 +6112,9 @@
                           "VariableValue": "None",
                           "Documentation": "Time interval.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5710,7 +6138,9 @@
                   "VariableValue": "None",
                   "Documentation": "Actions to be executed when a rule is triggered.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [
                     {
@@ -5723,7 +6153,9 @@
                       "VariableValue": "None",
                       "Documentation": "Predefined action to be taken. Possible values include: 'Recycle', 'LogEvent', 'CustomAction'",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5739,7 +6171,9 @@
                       "VariableValue": "None",
                       "Documentation": "Custom action to be taken.",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [
                         {
@@ -5752,7 +6186,9 @@
                           "VariableValue": "None",
                           "Documentation": "Executable to be run.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5768,7 +6204,9 @@
                           "VariableValue": "None",
                           "Documentation": "Parameters for the executable.",
                           "DefaultValue": null,
-                          "DefaultValueSample": "",
+                          "DefaultValueSample": {
+                            "default": ""
+                          },
                           "DefaultValueTest": "",
                           "SubOptions": [],
                           "RequiredCount": 0,
@@ -5788,7 +6226,9 @@
                       "VariableValue": "None",
                       "Documentation": "Minimum time the process must execute\nbefore taking the action",
                       "DefaultValue": null,
-                      "DefaultValueSample": "",
+                      "DefaultValueSample": {
+                        "default": ""
+                      },
                       "DefaultValueTest": "",
                       "SubOptions": [],
                       "RequiredCount": 0,
@@ -5812,7 +6252,9 @@
               "VariableValue": "None",
               "Documentation": "Tracing options.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5828,7 +6270,9 @@
               "VariableValue": "None",
               "Documentation": "Virtual Network name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -5844,7 +6288,9 @@
               "VariableValue": "None",
               "Documentation": "Cross-Origin Resource Sharing (CORS) settings.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -5857,7 +6303,9 @@
                   "VariableValue": "None",
                   "Documentation": "Gets or sets the list of origins that should be allowed to make cross-origin\ncalls (for example: http://example.com:12345). Use \"*\" to allow all.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5877,7 +6325,9 @@
               "VariableValue": "None",
               "Documentation": "Push endpoint settings.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -5890,7 +6340,9 @@
                   "VariableValue": "None",
                   "Documentation": "Kind of resource.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5906,7 +6358,9 @@
                   "VariableValue": "None",
                   "Documentation": "Gets or sets a flag indicating whether the Push endpoint is enabled.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5922,7 +6376,9 @@
                   "VariableValue": "None",
                   "Documentation": "Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration endpoint.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5938,7 +6394,9 @@
                   "VariableValue": "None",
                   "Documentation": "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endpoint.\nTags can consist of alphanumeric characters and the following:\n'_', '@', '#', '.', ':', '-'. \nValidation should be performed at the PushRequestHandler.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5954,7 +6412,9 @@
                   "VariableValue": "None",
                   "Documentation": "Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration endpoint.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -5974,7 +6434,9 @@
               "VariableValue": "None",
               "Documentation": "Information about the formal API definition for the app.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -5987,7 +6449,9 @@
                   "VariableValue": "None",
                   "Documentation": "The URL of the API definition.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -6007,7 +6471,9 @@
               "VariableValue": "None",
               "Documentation": "Auto-swap slot name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6023,7 +6489,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> to enable local MySQL; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6039,7 +6507,9 @@
               "VariableValue": "None",
               "Documentation": "IP security restrictions.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -6052,7 +6522,9 @@
                   "VariableValue": "None",
                   "Documentation": "IP address the security restriction is valid for.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -6068,7 +6540,9 @@
                   "VariableValue": "None",
                   "Documentation": "Subnet mask for the range of IP addresses the restriction is valid for.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -6092,7 +6566,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> to stop SCM (KUDU) site when the app is stopped; otherwise, <code>false</code>. The default is <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6108,7 +6584,9 @@
           "VariableValue": "None",
           "Documentation": "App Service Environment to use for the app.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -6121,7 +6599,9 @@
               "VariableValue": "None",
               "Documentation": "Resource ID of the App Service Environment.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6141,7 +6621,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which route client requests in the same session to the same instance. Default is <code>true</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6157,7 +6639,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise, <code>false</code>. Default is <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6173,7 +6657,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.\n If <code>true</code>, the app is only accessible via API management process.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6189,7 +6675,9 @@
           "VariableValue": "None",
           "Documentation": "Size of the function container.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6205,7 +6693,9 @@
           "VariableValue": "None",
           "Documentation": "Maximum allowed daily memory-time quota (applicable on dynamic apps only).",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6221,7 +6711,9 @@
           "VariableValue": "None",
           "Documentation": "If specified during app creation, the app is cloned from a source app.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -6234,7 +6726,9 @@
               "VariableValue": "None",
               "Documentation": "Correlation ID of cloning operation. This ID ties multiple cloning operations\ntogether to use the same snapshot.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6250,7 +6744,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> to overwrite destination app; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6266,7 +6762,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> to clone custom hostnames from source app; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6282,7 +6780,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> to clone source control from source app; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6298,7 +6798,9 @@
               "VariableValue": "None",
               "Documentation": "ARM resource ID of the source app. App resource ID is of the form \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6314,7 +6816,9 @@
               "VariableValue": "None",
               "Documentation": "App Service Environment.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6330,7 +6834,9 @@
               "VariableValue": "None",
               "Documentation": "Application setting overrides for cloned app. If specified, these settings override the settings cloned \nfrom source app. Otherwise, application settings from source app are retained.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6346,7 +6852,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> to configure load balancing for source and destination app.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6362,7 +6870,9 @@
               "VariableValue": "None",
               "Documentation": "ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6378,7 +6888,9 @@
               "VariableValue": "None",
               "Documentation": "Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already exist.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6394,7 +6906,9 @@
               "VariableValue": "None",
               "Documentation": "<code>true</code> if quotas should be ignored; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6414,7 +6928,9 @@
           "VariableValue": "None",
           "Documentation": "If specified during app creation, the app is created from a previous snapshot.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -6427,7 +6943,9 @@
               "VariableValue": "None",
               "Documentation": "Kind of resource.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6443,7 +6961,9 @@
               "VariableValue": "None",
               "Documentation": "Point in time in which the app recovery should be attempted, formatted as a DateTime string.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6459,7 +6979,9 @@
               "VariableValue": "None",
               "Documentation": "Specifies the web app that snapshot contents will be written to.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -6472,7 +6994,9 @@
                   "VariableValue": "None",
                   "Documentation": "Geographical location of the target web app, e.g. SouthEastAsia, SouthCentralUS",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -6488,7 +7012,9 @@
                   "VariableValue": "None",
                   "Documentation": "ARM resource ID of the target app. \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -6508,7 +7034,9 @@
               "VariableValue": "None",
               "Documentation": "If <code>true</code> the recovery operation can overwrite source app; otherwise, <code>false</code>.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6524,7 +7052,9 @@
               "VariableValue": "None",
               "Documentation": "If true, site configuration, in addition to content, will be reverted.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6540,7 +7070,9 @@
               "VariableValue": "None",
               "Documentation": "If true, custom hostname conflicts will be ignored when recovering to a target web app.\nThis setting is only necessary when RecoverConfiguration is enabled.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6560,7 +7092,9 @@
           "VariableValue": "None",
           "Documentation": "HttpsOnly: configures a web site to accept only https requests. Issues redirect for\nhttp requests",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -6576,7 +7110,9 @@
           "VariableValue": "None",
           "Documentation": "",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -6589,7 +7125,9 @@
               "VariableValue": "None",
               "Documentation": "Type of managed service identity.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -6609,7 +7147,9 @@
           "VariableValue": "None",
           "Documentation": "If true web app hostname is not registered with DNS on creation. This parameter is\n only used for app creation.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6625,7 +7165,9 @@
           "VariableValue": "None",
           "Documentation": "If true, custom (non *.azurewebsites.net) domains associated with web app are not verified.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6641,7 +7183,9 @@
           "VariableValue": "None",
           "Documentation": "If true, web app hostname is force registered with DNS.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6657,7 +7201,9 @@
           "VariableValue": "None",
           "Documentation": "Time to live in seconds for web app's default domain name.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8419,7 +8965,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 88,
@@ -8435,7 +8983,9 @@
           "VariableValue": "None",
           "Documentation": "Name of web app.",
           "DefaultValue": null,
-          "DefaultValueSample": "name",
+          "DefaultValueSample": {
+            "default": "name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 87,
@@ -8451,7 +9001,9 @@
           "VariableValue": "None",
           "Documentation": "ID of backup.",
           "DefaultValue": null,
-          "DefaultValueSample": "backup_id",
+          "DefaultValueSample": {
+            "default": "backup_id"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8467,7 +9019,9 @@
           "VariableValue": "None",
           "Documentation": "Information on backup request.",
           "DefaultValue": null,
-          "DefaultValueSample": "request",
+          "DefaultValueSample": {
+            "default": "request"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8483,7 +9037,9 @@
           "VariableValue": "None",
           "Documentation": "Name of web app slot. If not specified then will default to production slot.",
           "DefaultValue": null,
-          "DefaultValueSample": "slot",
+          "DefaultValueSample": {
+            "default": "slot"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 42,
@@ -8499,7 +9055,9 @@
           "VariableValue": "None",
           "Documentation": "The namespace for this hybrid connection.",
           "DefaultValue": null,
-          "DefaultValueSample": "namespace_name",
+          "DefaultValueSample": {
+            "default": "namespace_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8515,7 +9073,9 @@
           "VariableValue": "None",
           "Documentation": "The relay name for this hybrid connection.",
           "DefaultValue": null,
-          "DefaultValueSample": "relay_name",
+          "DefaultValueSample": {
+            "default": "relay_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8531,7 +9091,9 @@
           "VariableValue": "None",
           "Documentation": "PID.",
           "DefaultValue": null,
-          "DefaultValueSample": "process_id",
+          "DefaultValueSample": {
+            "default": "process_id"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 8,
@@ -8547,7 +9109,9 @@
           "VariableValue": "None",
           "Documentation": "ID of a specific scaled-out instance. This is the value of the name property in the JSON response from \"GET api/sites/{siteName}/instances\".",
           "DefaultValue": null,
-          "DefaultValueSample": "instance_id",
+          "DefaultValueSample": {
+            "default": "instance_id"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 6,
@@ -8563,7 +9127,9 @@
           "VariableValue": "None",
           "Documentation": "Specify \"true\" to include metric details in the response. It is \"false\" by default.",
           "DefaultValue": null,
-          "DefaultValueSample": "details",
+          "DefaultValueSample": {
+            "default": "details"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8579,7 +9145,9 @@
           "VariableValue": "None",
           "Documentation": "Return only metrics specified in the filter (using OData syntax). For example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq '2014-01-01T00:00:00Z' and endTime eq '2014-12-31T23:59:59Z' and timeGrain eq duration'[Hour|Minute|Day]'.",
           "DefaultValue": null,
-          "DefaultValueSample": "filter",
+          "DefaultValueSample": {
+            "default": "filter"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8595,7 +9163,9 @@
           "VariableValue": "None",
           "Documentation": "Destination deployment slot during swap operation.",
           "DefaultValue": null,
-          "DefaultValueSample": "target_slot",
+          "DefaultValueSample": {
+            "default": "target_slot"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8611,7 +9181,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "preserve_vnet",
+          "DefaultValueSample": {
+            "default": "preserve_vnet"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8627,7 +9199,9 @@
           "VariableValue": "None",
           "Documentation": "The ID of a specific deployment. This is the value of the name property in the JSON response from \"GET /api/sites/{siteName}/deployments\".",
           "DefaultValue": null,
-          "DefaultValueSample": "id",
+          "DefaultValueSample": {
+            "default": "id"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8643,7 +9217,9 @@
           "VariableValue": "None",
           "Documentation": "Function name.",
           "DefaultValue": null,
-          "DefaultValueSample": "function_name",
+          "DefaultValueSample": {
+            "default": "function_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8659,7 +9235,9 @@
           "VariableValue": "None",
           "Documentation": "The type of view. This can either be \"summary\" or \"detailed\".",
           "DefaultValue": null,
-          "DefaultValueSample": "view",
+          "DefaultValueSample": {
+            "default": "view"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8675,7 +9253,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the format. Valid values are: \nFileZilla3\nWebDeploy -- default\nFtp. Possible values include: 'FileZilla3', 'WebDeploy', 'Ftp'",
           "DefaultValue": null,
-          "DefaultValueSample": "format",
+          "DefaultValueSample": {
+            "default": "format"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8691,7 +9271,9 @@
           "VariableValue": "None",
           "Documentation": "Name of Web Job.",
           "DefaultValue": null,
-          "DefaultValueSample": "web_job_name",
+          "DefaultValueSample": {
+            "default": "web_job_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -8707,7 +9289,9 @@
           "VariableValue": "None",
           "Documentation": "Specify <strong>true</strong> to include deployment slots in results. The default is false, which only gives you the production slot of all apps.",
           "DefaultValue": null,
-          "DefaultValueSample": "include_slots",
+          "DefaultValueSample": {
+            "default": "include_slots"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9872,7 +10456,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9888,7 +10474,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "NOT FOUND",
+          "DefaultValueSample": {
+            "default": "NOT FOUND"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9904,7 +10492,9 @@
           "VariableValue": "dict()",
           "Documentation": "Configuration details of the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "hosting_environment_envelope",
+          "DefaultValueSample": {
+            "default": "hosting_environment_envelope"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9920,7 +10510,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9936,7 +10528,9 @@
           "VariableValue": "None",
           "Documentation": "Resource Location.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9952,7 +10546,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9968,7 +10564,9 @@
           "VariableValue": "None",
           "Documentation": "Location of the App Service Environment, e.g. \"West US\".",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -9984,7 +10582,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the Virtual Network for the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10000,7 +10600,9 @@
           "VariableValue": "None",
           "Documentation": "Resource group of the Virtual Network.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10016,7 +10618,9 @@
           "VariableValue": "None",
           "Documentation": "Subnet of the Virtual Network.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10032,7 +10636,9 @@
           "VariableValue": "None",
           "Documentation": "Description of the Virtual Network.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -10045,7 +10651,9 @@
               "VariableValue": "None",
               "Documentation": "Resource id of the Virtual Network.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10061,7 +10669,9 @@
               "VariableValue": "None",
               "Documentation": "Subnet within the Virtual Network.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10081,7 +10691,9 @@
           "VariableValue": "None",
           "Documentation": "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values include: 'None', 'Web', 'Publishing'",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10097,7 +10709,9 @@
           "VariableValue": "None",
           "Documentation": "Front-end VM size, e.g. \"Medium\", \"Large\".",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10113,7 +10727,9 @@
           "VariableValue": "None",
           "Documentation": "Number of front-end instances.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10129,7 +10745,9 @@
           "VariableValue": "None",
           "Documentation": "Description of worker pools with worker size IDs, VM sizes, and number of workers in each pool.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -10142,7 +10760,9 @@
               "VariableValue": "None",
               "Documentation": "Worker size ID for referencing this worker pool.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10158,7 +10778,9 @@
               "VariableValue": "None",
               "Documentation": "Shared or dedicated app hosting. Possible values include: 'Shared', 'Dedicated', 'Dynamic'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10174,7 +10796,9 @@
               "VariableValue": "None",
               "Documentation": "VM size of the worker pool instances.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10190,7 +10814,9 @@
               "VariableValue": "None",
               "Documentation": "Number of instances in the worker pool.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10210,7 +10836,9 @@
           "VariableValue": "None",
           "Documentation": "Number of IP SSL addresses reserved for the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10226,7 +10854,9 @@
           "VariableValue": "None",
           "Documentation": "DNS suffix of the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10242,7 +10872,9 @@
           "VariableValue": "None",
           "Documentation": "Access control list for controlling traffic to the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -10255,7 +10887,9 @@
               "VariableValue": "None",
               "Documentation": "Action object. Possible values include: 'Permit', 'Deny'",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10271,7 +10905,9 @@
               "VariableValue": "None",
               "Documentation": "Description of network access control entry.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10287,7 +10923,9 @@
               "VariableValue": "None",
               "Documentation": "Order of precedence.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10303,7 +10941,9 @@
               "VariableValue": "None",
               "Documentation": "Remote subnet.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10323,7 +10963,9 @@
           "VariableValue": "None",
           "Documentation": "Scale factor for front-ends.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10339,7 +10981,9 @@
           "VariableValue": "None",
           "Documentation": "API Management Account associated with the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10355,7 +10999,9 @@
           "VariableValue": "None",
           "Documentation": "<code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can be suspended, e.g. when the management endpoint is no longer available\n (most likely because NSG blocked the incoming traffic).",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10371,7 +11017,9 @@
           "VariableValue": "None",
           "Documentation": "True/false indicating whether the App Service Environment is suspended. The environment can be suspended e.g. when the management endpoint is no longer available\n(most likely because NSG blocked the incoming traffic).",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -10387,7 +11035,9 @@
           "VariableValue": "None",
           "Documentation": "Custom settings for changing the behavior of the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -10400,7 +11050,9 @@
               "VariableValue": "None",
               "Documentation": "Pair name.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10416,7 +11068,9 @@
               "VariableValue": "None",
               "Documentation": "Pair value.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -10436,7 +11090,9 @@
           "VariableValue": "None",
           "Documentation": "User added ip ranges to whitelist on ASE db",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11167,7 +11823,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 25,
@@ -11183,7 +11841,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the App Service Environment.",
           "DefaultValue": null,
-          "DefaultValueSample": "name",
+          "DefaultValueSample": {
+            "default": "name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 24,
@@ -11199,7 +11859,9 @@
           "VariableValue": "None",
           "Documentation": "Beginning time of the metrics query.",
           "DefaultValue": null,
-          "DefaultValueSample": "start_time",
+          "DefaultValueSample": {
+            "default": "start_time"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11215,7 +11877,9 @@
           "VariableValue": "None",
           "Documentation": "End time of the metrics query.",
           "DefaultValue": null,
-          "DefaultValueSample": "end_time",
+          "DefaultValueSample": {
+            "default": "end_time"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11231,7 +11895,9 @@
           "VariableValue": "None",
           "Documentation": "Time granularity of the metrics query.",
           "DefaultValue": null,
-          "DefaultValueSample": "time_grain",
+          "DefaultValueSample": {
+            "default": "time_grain"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11247,7 +11913,9 @@
           "VariableValue": "None",
           "Documentation": "Specify <code>true</code> to include instance details. The default is <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "details",
+          "DefaultValueSample": {
+            "default": "details"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11263,7 +11931,9 @@
           "VariableValue": "None",
           "Documentation": "Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq '2014-01-01T00:00:00Z' and endTime eq '2014-12-31T23:59:59Z' and timeGrain eq duration'[Hour|Minute|Day]'.",
           "DefaultValue": null,
-          "DefaultValueSample": "filter",
+          "DefaultValueSample": {
+            "default": "filter"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11279,7 +11949,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the worker pool.",
           "DefaultValue": null,
-          "DefaultValueSample": "worker_pool_name",
+          "DefaultValueSample": {
+            "default": "worker_pool_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 6,
@@ -11295,7 +11967,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the instance in the worker pool.",
           "DefaultValue": null,
-          "DefaultValueSample": "instance",
+          "DefaultValueSample": {
+            "default": "instance"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 4,
@@ -11311,7 +11985,9 @@
           "VariableValue": "None",
           "Documentation": "Comma separated list of app properties to include.",
           "DefaultValue": null,
-          "DefaultValueSample": "properties_to_include",
+          "DefaultValueSample": {
+            "default": "properties_to_include"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11654,7 +12330,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "testrg123",
+          "DefaultValueSample": {
+            "default": "testrg123"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11670,7 +12348,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the App Service plan.",
           "DefaultValue": null,
-          "DefaultValueSample": "testsf6141",
+          "DefaultValueSample": {
+            "default": "testsf6141"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11686,7 +12366,9 @@
           "VariableValue": "dict()",
           "Documentation": "Details of the App Service plan.",
           "DefaultValue": null,
-          "DefaultValueSample": "app_service_plan",
+          "DefaultValueSample": {
+            "default": "app_service_plan"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -11702,7 +12384,9 @@
           "VariableValue": "None",
           "Documentation": "Kind of resource.",
           "DefaultValue": null,
-          "DefaultValueSample": "app",
+          "DefaultValueSample": {
+            "default": "app"
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11718,7 +12402,9 @@
           "VariableValue": "None",
           "Documentation": "Resource Location.",
           "DefaultValue": null,
-          "DefaultValueSample": "East US",
+          "DefaultValueSample": {
+            "default": "East US"
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11734,7 +12420,9 @@
           "VariableValue": "None",
           "Documentation": "Name for the App Service plan.",
           "DefaultValue": null,
-          "DefaultValueSample": "testsf6141",
+          "DefaultValueSample": {
+            "default": "testsf6141"
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11750,7 +12438,9 @@
           "VariableValue": "None",
           "Documentation": "Target worker tier assigned to the App Service plan.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11766,7 +12456,9 @@
           "VariableValue": "None",
           "Documentation": "App Service plan administration site.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11782,7 +12474,9 @@
           "VariableValue": "None",
           "Documentation": "Specification for the App Service Environment to use for the App Service plan.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -11795,7 +12489,9 @@
               "VariableValue": "None",
               "Documentation": "Resource ID of the App Service Environment.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -11815,7 +12511,9 @@
           "VariableValue": "None",
           "Documentation": "If <code>true</code>, apps assigned to this App Service plan can be scaled independently.\nIf <code>false</code>, apps assigned to this App Service plan will scale to all instances of the plan.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11831,7 +12529,9 @@
           "VariableValue": "None",
           "Documentation": "If <code>true</code>, this App Service Plan owns spot instances.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11847,7 +12547,9 @@
           "VariableValue": "None",
           "Documentation": "The time when the server farm expires. Valid only if it is a spot server farm.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11863,7 +12565,9 @@
           "VariableValue": "None",
           "Documentation": "If Linux app service plan <code>true</code>, <code>false</code> otherwise.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11879,7 +12583,9 @@
           "VariableValue": "None",
           "Documentation": "Scaling worker count.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11895,7 +12601,9 @@
           "VariableValue": "None",
           "Documentation": "Scaling worker size ID.",
           "DefaultValue": null,
-          "DefaultValueSample": "",
+          "DefaultValueSample": {
+            "default": ""
+          },
           "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
@@ -11911,7 +12619,9 @@
           "VariableValue": "None",
           "Documentation": "",
           "DefaultValue": null,
-          "DefaultValueSample": "{\r\n  \"name\": \"P1\",\r\n  \"tier\": \"Premium\",\r\n  \"size\": \"P1\",\r\n  \"family\": \"P\",\r\n  \"capacity\": \"1\"\r\n}",
+          "DefaultValueSample": {
+            "default": "{\r\n  \"name\": \"P1\",\r\n  \"tier\": \"Premium\",\r\n  \"size\": \"P1\",\r\n  \"family\": \"P\",\r\n  \"capacity\": \"1\"\r\n}"
+          },
           "DefaultValueTest": "",
           "SubOptions": [
             {
@@ -11924,7 +12634,9 @@
               "VariableValue": "None",
               "Documentation": "Name of the resource SKU.",
               "DefaultValue": null,
-              "DefaultValueSample": "P1",
+              "DefaultValueSample": {
+                "default": "P1"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -11940,7 +12652,9 @@
               "VariableValue": "None",
               "Documentation": "Service tier of the resource SKU.",
               "DefaultValue": null,
-              "DefaultValueSample": "Premium",
+              "DefaultValueSample": {
+                "default": "Premium"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -11956,7 +12670,9 @@
               "VariableValue": "None",
               "Documentation": "Size specifier of the resource SKU.",
               "DefaultValue": null,
-              "DefaultValueSample": "P1",
+              "DefaultValueSample": {
+                "default": "P1"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -11972,7 +12688,9 @@
               "VariableValue": "None",
               "Documentation": "Family code of the resource SKU.",
               "DefaultValue": null,
-              "DefaultValueSample": "P",
+              "DefaultValueSample": {
+                "default": "P"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -11988,7 +12706,9 @@
               "VariableValue": "None",
               "Documentation": "Current number of instances assigned to the resource.",
               "DefaultValue": null,
-              "DefaultValueSample": "1",
+              "DefaultValueSample": {
+                "default": "1"
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -12004,7 +12724,9 @@
               "VariableValue": "None",
               "Documentation": "Min, max, and default scale values of the SKU.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -12017,7 +12739,9 @@
                   "VariableValue": "None",
                   "Documentation": "Minimum number of workers for this App Service plan SKU.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -12033,7 +12757,9 @@
                   "VariableValue": "None",
                   "Documentation": "Maximum number of workers for this App Service plan SKU.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -12049,7 +12775,9 @@
                   "VariableValue": "None",
                   "Documentation": "Default number of workers for this App Service plan SKU.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -12065,7 +12793,9 @@
                   "VariableValue": "None",
                   "Documentation": "Available scale configurations for an App Service plan.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -12085,7 +12815,9 @@
               "VariableValue": "None",
               "Documentation": "Locations of the SKU.",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
@@ -12101,7 +12833,9 @@
               "VariableValue": "None",
               "Documentation": "Capabilities of the SKU, e.g., is traffic manager enabled?",
               "DefaultValue": null,
-              "DefaultValueSample": "",
+              "DefaultValueSample": {
+                "default": ""
+              },
               "DefaultValueTest": "",
               "SubOptions": [
                 {
@@ -12114,7 +12848,9 @@
                   "VariableValue": "None",
                   "Documentation": "Name of the SKU capability.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -12130,7 +12866,9 @@
                   "VariableValue": "None",
                   "Documentation": "Value of the SKU capability.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -12146,7 +12884,9 @@
                   "VariableValue": "None",
                   "Documentation": "Reason of the SKU capability.",
                   "DefaultValue": null,
-                  "DefaultValueSample": "",
+                  "DefaultValueSample": {
+                    "default": ""
+                  },
                   "DefaultValueTest": "",
                   "SubOptions": [],
                   "RequiredCount": 0,
@@ -12621,7 +13361,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
-          "DefaultValueSample": "resource_group_name",
+          "DefaultValueSample": {
+            "default": "resource_group_name"
+          },
           "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 12,
@@ -12637,7 +13379,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the App Service plan.",
           "DefaultValue": null,
-          "DefaultValueSample": "name",
+          "DefaultValueSample": {
+            "default": "name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 11,
@@ -12653,7 +13397,9 @@
           "VariableValue": "None",
           "Documentation": "Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list",
           "DefaultValue": null,
-          "DefaultValueSample": "skip_token",
+          "DefaultValueSample": {
+            "default": "skip_token"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -12669,7 +13415,9 @@
           "VariableValue": "None",
           "Documentation": "Supported filter: $filter=state eq running. Returns only web apps that are currently running",
           "DefaultValue": null,
-          "DefaultValueSample": "filter",
+          "DefaultValueSample": {
+            "default": "filter"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -12685,7 +13433,9 @@
           "VariableValue": "None",
           "Documentation": "List page size. If specified, results are paged.",
           "DefaultValue": null,
-          "DefaultValueSample": "top",
+          "DefaultValueSample": {
+            "default": "top"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -12701,7 +13451,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the Service Bus namespace.",
           "DefaultValue": null,
-          "DefaultValueSample": "namespace_name",
+          "DefaultValueSample": {
+            "default": "namespace_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -12717,7 +13469,9 @@
           "VariableValue": "None",
           "Documentation": "The name of the Service Bus relay.",
           "DefaultValue": null,
-          "DefaultValueSample": "relay_name",
+          "DefaultValueSample": {
+            "default": "relay_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
@@ -12733,7 +13487,9 @@
           "VariableValue": "None",
           "Documentation": "Specify <code>true</code> to include instance details. The default is <code>false</code>.",
           "DefaultValue": null,
-          "DefaultValueSample": "details",
+          "DefaultValueSample": {
+            "default": "details"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
@@ -12749,7 +13505,9 @@
           "VariableValue": "None",
           "Documentation": "Name of the Virtual Network.",
           "DefaultValue": null,
-          "DefaultValueSample": "vnet_name",
+          "DefaultValueSample": {
+            "default": "vnet_name"
+          },
           "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
