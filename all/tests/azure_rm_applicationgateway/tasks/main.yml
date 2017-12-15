@@ -29,6 +29,8 @@
       - name: myipconfiguration
     frontend_ip_configurations:
       - name: myfrontendipconfiguration
+    frontend_ports:
+      - name: myfrontendport
   register: output
 - name: Assert the resource instance is well created
   assert:
