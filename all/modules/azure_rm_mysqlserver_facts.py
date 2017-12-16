@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysqlserver_facts
 version_added: "2.5"
-short_description: Get Servers facts.
+short_description: Get MySQL Server facts.
 description:
-    - Get facts of Servers.
+    - Get facts of MySQL Server.
 
 options:
     resource_group:
@@ -40,12 +40,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of Servers
+  - name: Get instance of MySQL Server
     azure_rm_mysqlserver_facts:
       resource_group: resource_group_name
       server_name: server_name
 
-  - name: List instances of Servers
+  - name: List instances of MySQL Server
     azure_rm_mysqlserver_facts:
       resource_group: resource_group_name
 '''
@@ -80,6 +80,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.server_name = None
         super(AzureRMServersFacts, self).__init__(self.module_arg_spec)
@@ -87,19 +88,21 @@ class AzureRMServersFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(MySQLManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.server_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None):
+        elif (self.resource_group is not None):
             self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
         return self.results
 
     def get(self):
         '''
-        Gets facts of the specified Servers.
+        Gets facts of the specified MySQL Server.
 
-        :return: deserialized Serversinstance state dictionary
+        :return: deserialized MySQL Serverinstance state dictionary
         '''
         found = False
         try:
@@ -107,9 +110,8 @@ class AzureRMServersFacts(AzureRMModuleBase):
                                                     self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Could not get facts for Servers.')
         if found is True:
             return response.as_dict()
 
@@ -117,18 +119,17 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified Servers.
+        Gets facts of the specified MySQL Server.
 
-        :return: deserialized Serversinstance state dictionary
+        :return: deserialized MySQL Serverinstance state dictionary
         '''
         found = False
         try:
             response = self.mgmt_client.servers.list_by_resource_group(self.resource_group)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Could not get facts for Servers.')
         if found is True:
             return response.as_dict()
 

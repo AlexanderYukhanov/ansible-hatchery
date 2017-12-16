@@ -123,6 +123,7 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.site_name = None
         self.diagnostic_category = None
@@ -132,30 +133,32 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.site_name is not None and
                 self.diagnostic_category is not None and
                 self.slot is not None):
             self.results['ansible_facts']['list_site_analyses_slot'] = self.list_site_analyses_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.site_name is not None and
               self.diagnostic_category is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_site_detectors_slot'] = self.list_site_detectors_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.site_name is not None and
               self.diagnostic_category is not None):
             self.results['ansible_facts']['list_site_analyses'] = self.list_site_analyses()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.site_name is not None and
               self.diagnostic_category is not None):
             self.results['ansible_facts']['list_site_detectors'] = self.list_site_detectors()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.site_name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_site_diagnostic_categories_slot'] = self.list_site_diagnostic_categories_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.site_name is not None):
             self.results['ansible_facts']['list_site_diagnostic_categories'] = self.list_site_diagnostic_categories()
         return self.results
@@ -174,9 +177,8 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                                                                             self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Diagnostics instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Diagnostics instance.')
+            self.log('Could not get facts for Diagnostics.')
         if found is True:
             return response.as_dict()
 
@@ -196,9 +198,8 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                                                                              self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Diagnostics instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Diagnostics instance.')
+            self.log('Could not get facts for Diagnostics.')
         if found is True:
             return response.as_dict()
 
@@ -217,9 +218,8 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                                                                        self.diagnostic_category)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Diagnostics instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Diagnostics instance.')
+            self.log('Could not get facts for Diagnostics.')
         if found is True:
             return response.as_dict()
 
@@ -238,9 +238,8 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                                                                         self.diagnostic_category)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Diagnostics instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Diagnostics instance.')
+            self.log('Could not get facts for Diagnostics.')
         if found is True:
             return response.as_dict()
 
@@ -259,9 +258,8 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                                                                                          self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Diagnostics instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Diagnostics instance.')
+            self.log('Could not get facts for Diagnostics.')
         if found is True:
             return response.as_dict()
 
@@ -279,9 +277,8 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                                                                                     self.site_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Diagnostics instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Diagnostics instance.')
+            self.log('Could not get facts for Diagnostics.')
         if found is True:
             return response.as_dict()
 

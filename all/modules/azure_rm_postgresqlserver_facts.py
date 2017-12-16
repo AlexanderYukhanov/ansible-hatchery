@@ -80,6 +80,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.server_name = None
         super(AzureRMServersFacts, self).__init__(self.module_arg_spec)
@@ -87,11 +88,13 @@ class AzureRMServersFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(PostgreSQLManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.server_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None):
+        elif (self.resource_group is not None):
             self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
         return self.results
 
@@ -107,9 +110,8 @@ class AzureRMServersFacts(AzureRMModuleBase):
                                                     self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Could not get facts for Servers.')
         if found is True:
             return response.as_dict()
 
@@ -126,9 +128,8 @@ class AzureRMServersFacts(AzureRMModuleBase):
             response = self.mgmt_client.servers.list_by_resource_group(self.resource_group)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Servers instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Servers instance.')
+            self.log('Could not get facts for Servers.')
         if found is True:
             return response.as_dict()
 

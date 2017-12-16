@@ -95,6 +95,7 @@ class AzureRMDatabaseBlobAuditingPoliciesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.server_name = None
         self.database_name = None
@@ -104,8 +105,10 @@ class AzureRMDatabaseBlobAuditingPoliciesFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None and
                 self.blob_auditing_policy_name is not None):
@@ -126,9 +129,8 @@ class AzureRMDatabaseBlobAuditingPoliciesFacts(AzureRMModuleBase):
                                                                             self.blob_auditing_policy_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("DatabaseBlobAuditingPolicies instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the DatabaseBlobAuditingPolicies instance.')
+            self.log('Could not get facts for DatabaseBlobAuditingPolicies.')
         if found is True:
             return response.as_dict()
 

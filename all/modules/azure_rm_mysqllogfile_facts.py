@@ -85,7 +85,6 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
-
         self.mgmt_client = self.get_mgmt_svc_client(MySQLManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
@@ -107,7 +106,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
             found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
-            self.log('Couldn''t get facts for MySQL Server Log File.')
+            self.log('Could not get facts for LogFiles.')
         if found is True:
             return response.as_dict()
 

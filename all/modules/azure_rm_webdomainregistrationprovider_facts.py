@@ -59,11 +59,14 @@ class AzureRMDomainRegistrationProviderFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         super(AzureRMDomainRegistrationProviderFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
             self.results['ansible_facts']['list_operations'] = self.list_operations()
         return self.results
@@ -79,9 +82,8 @@ class AzureRMDomainRegistrationProviderFacts(AzureRMModuleBase):
             response = self.mgmt_client.domain_registration_provider.list_operations()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("DomainRegistrationProvider instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the DomainRegistrationProvider instance.')
+            self.log('Could not get facts for DomainRegistrationProvider.')
         if found is True:
             return response.as_dict()
 

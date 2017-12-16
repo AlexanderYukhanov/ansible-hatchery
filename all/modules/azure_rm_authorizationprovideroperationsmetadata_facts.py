@@ -76,6 +76,7 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_provider_namespace = None
         self.expand = None
         super(AzureRMProviderOperationsMetadataFacts, self).__init__(self.module_arg_spec)
@@ -83,6 +84,8 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.resource_provider_namespace is not None):
             self.results['ansible_facts']['get'] = self.get()
@@ -99,9 +102,8 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
             response = self.mgmt_client.provider_operations_metadata.get(self.resource_provider_namespace)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ProviderOperationsMetadata instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ProviderOperationsMetadata instance.')
+            self.log('Could not get facts for ProviderOperationsMetadata.')
         if found is True:
             return response.as_dict()
 

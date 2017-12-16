@@ -80,6 +80,7 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.location_name = None
         self.usage_name = None
         super(AzureRMSubscriptionUsagesFacts, self).__init__(self.module_arg_spec)
@@ -87,6 +88,8 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.location_name is not None and
                 self.usage_name is not None):
@@ -107,9 +110,8 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
                                                                 self.usage_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SubscriptionUsages instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SubscriptionUsages instance.')
+            self.log('Could not get facts for SubscriptionUsages.')
         if found is True:
             return response.as_dict()
 
@@ -126,9 +128,8 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
             response = self.mgmt_client.subscription_usages.list_by_location(self.location_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SubscriptionUsages instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SubscriptionUsages instance.')
+            self.log('Could not get facts for SubscriptionUsages.')
         if found is True:
             return response.as_dict()
 

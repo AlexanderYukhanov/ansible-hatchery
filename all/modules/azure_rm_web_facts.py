@@ -84,6 +84,7 @@ class AzureRMFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.sku = None
         self.linux_workers_enabled = None
         super(AzureRMFacts, self).__init__(self.module_arg_spec)
@@ -91,6 +92,8 @@ class AzureRMFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
             self.results['ansible_facts']['list_geo_regions'] = self.list_geo_regions()
             self.results['ansible_facts']['list_premier_add_on_offers'] = self.list_premier_add_on_offers()
@@ -109,9 +112,8 @@ class AzureRMFacts(AzureRMModuleBase):
             response = self.mgmt_client..list_geo_regions()
             found = True
             self.log("Response : {0}".format(response))
-            self.log(" instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the  instance.')
+            self.log('Could not get facts for .')
         if found is True:
             return response.as_dict()
 
@@ -128,9 +130,8 @@ class AzureRMFacts(AzureRMModuleBase):
             response = self.mgmt_client..list_premier_add_on_offers()
             found = True
             self.log("Response : {0}".format(response))
-            self.log(" instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the  instance.')
+            self.log('Could not get facts for .')
         if found is True:
             return response.as_dict()
 
@@ -147,9 +148,8 @@ class AzureRMFacts(AzureRMModuleBase):
             response = self.mgmt_client..list_skus()
             found = True
             self.log("Response : {0}".format(response))
-            self.log(" instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the  instance.')
+            self.log('Could not get facts for .')
         if found is True:
             return response.as_dict()
 
@@ -166,9 +166,8 @@ class AzureRMFacts(AzureRMModuleBase):
             response = self.mgmt_client..list_source_controls()
             found = True
             self.log("Response : {0}".format(response))
-            self.log(" instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the  instance.')
+            self.log('Could not get facts for .')
         if found is True:
             return response.as_dict()
 

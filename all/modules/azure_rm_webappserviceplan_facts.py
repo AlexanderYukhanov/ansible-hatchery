@@ -191,6 +191,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.name = None
         self.skip_token = None
@@ -205,46 +206,48 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.name is not None):
             self.results['ansible_facts']['list_web_apps'] = self.list_web_apps()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.namespace_name is not None and
               self.relay_name is not None):
             self.results['ansible_facts']['list_hybrid_connection_keys'] = self.list_hybrid_connection_keys()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.namespace_name is not None and
               self.relay_name is not None):
             self.results['ansible_facts']['list_web_apps_by_hybrid_connection'] = self.list_web_apps_by_hybrid_connection()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_metrics'] = self.list_metrics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_usages'] = self.list_usages()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.vnet_name is not None):
             self.results['ansible_facts']['list_routes_for_vnet'] = self.list_routes_for_vnet()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_capabilities'] = self.list_capabilities()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_hybrid_connections'] = self.list_hybrid_connections()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_metric_defintions'] = self.list_metric_defintions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_vnets'] = self.list_vnets()
-        elif (self.resource_group_name is not None):
+        elif (self.resource_group is not None):
             self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
         return self.results
 
@@ -260,9 +263,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                         self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -282,9 +284,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                                       self.relay_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -304,9 +305,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                                              self.relay_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -324,9 +324,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                        self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -344,9 +343,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                       self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -365,9 +363,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                                self.vnet_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -385,9 +382,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                               self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -405,9 +401,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                             self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -425,9 +420,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                                   self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -445,9 +439,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                                  self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -465,9 +458,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                                                                      self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 
@@ -484,9 +476,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             response = self.mgmt_client.app_service_plans.list_by_resource_group(self.resource_group)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Could not get facts for AppServicePlans.')
         if found is True:
             return response.as_dict()
 

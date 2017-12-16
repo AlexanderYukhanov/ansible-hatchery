@@ -113,6 +113,7 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.circuit_name = None
         self.peering_name = None
@@ -122,23 +123,25 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(NetworkManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.circuit_name is not None and
                 self.peering_name is not None and
                 self.device_path is not None):
             self.results['ansible_facts']['list_arp_table'] = self.list_arp_table()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.circuit_name is not None and
               self.peering_name is not None and
               self.device_path is not None):
             self.results['ansible_facts']['list_routes_table'] = self.list_routes_table()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.circuit_name is not None and
               self.peering_name is not None and
               self.device_path is not None):
             self.results['ansible_facts']['list_routes_table_summary'] = self.list_routes_table_summary()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.circuit_name is not None):
             self.results['ansible_facts']['get'] = self.get()
             self.results['ansible_facts']['list_all'] = self.list_all()
@@ -158,9 +161,8 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
                                                                               self.device_path)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuits instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuits instance.')
+            self.log('Could not get facts for ExpressRouteCircuits.')
         if found is True:
             return response.as_dict()
 
@@ -180,9 +182,8 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
                                                                                  self.device_path)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuits instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuits instance.')
+            self.log('Could not get facts for ExpressRouteCircuits.')
         if found is True:
             return response.as_dict()
 
@@ -202,9 +203,8 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
                                                                                          self.device_path)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuits instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuits instance.')
+            self.log('Could not get facts for ExpressRouteCircuits.')
         if found is True:
             return response.as_dict()
 
@@ -222,9 +222,8 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
                                                                    self.circuit_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuits instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuits instance.')
+            self.log('Could not get facts for ExpressRouteCircuits.')
         if found is True:
             return response.as_dict()
 
@@ -241,9 +240,8 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             response = self.mgmt_client.express_route_circuits.list_all()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuits instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuits instance.')
+            self.log('Could not get facts for ExpressRouteCircuits.')
         if found is True:
             return response.as_dict()
 

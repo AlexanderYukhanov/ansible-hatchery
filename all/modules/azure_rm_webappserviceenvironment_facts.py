@@ -276,6 +276,7 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.name = None
         self.start_time = None
@@ -291,90 +292,92 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.name is not None):
             self.results['ansible_facts']['list_multi_role_metrics'] = self.list_multi_role_metrics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None and
               self.instance is not None):
             self.results['ansible_facts']['list_worker_pool_instance_metrics'] = self.list_worker_pool_instance_metrics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
             self.results['ansible_facts']['list_web_worker_metrics'] = self.list_web_worker_metrics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_metrics'] = self.list_metrics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.instance is not None):
             self.results['ansible_facts']['list_multi_role_pool_instance_metrics'] = self.list_multi_role_pool_instance_metrics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None and
               self.instance is not None):
             self.results['ansible_facts']['list_worker_pool_instance_metric_definitions'] = self.list_worker_pool_instance_metric_definitions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.instance is not None):
             self.results['ansible_facts']['list_multi_role_pool_instance_metric_definitions'] = self.list_multi_role_pool_instance_metric_definitions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_web_apps'] = self.list_web_apps()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_usages'] = self.list_usages()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
             self.results['ansible_facts']['list_web_worker_metric_definitions'] = self.list_web_worker_metric_definitions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
             self.results['ansible_facts']['list_worker_pool_skus'] = self.list_worker_pool_skus()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
             self.results['ansible_facts']['list_web_worker_usages'] = self.list_web_worker_usages()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_capacities'] = self.list_capacities()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_vips'] = self.list_vips()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_diagnostics'] = self.list_diagnostics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_metric_definitions'] = self.list_metric_definitions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_multi_role_pools'] = self.list_multi_role_pools()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_multi_role_metric_definitions'] = self.list_multi_role_metric_definitions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_multi_role_pool_skus'] = self.list_multi_role_pool_skus()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_multi_role_usages'] = self.list_multi_role_usages()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_operations'] = self.list_operations()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_app_service_plans'] = self.list_app_service_plans()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_worker_pools'] = self.list_worker_pools()
-        elif (self.resource_group_name is not None):
+        elif (self.resource_group is not None):
             self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
         return self.results
 
@@ -390,9 +393,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -412,9 +414,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                                    self.instance)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -433,9 +434,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                          self.worker_pool_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -453,9 +453,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                               self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -474,9 +473,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                                        self.instance)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -496,9 +494,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                                               self.instance)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -517,9 +514,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                                                   self.instance)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -537,9 +533,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -557,9 +552,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                              self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -578,9 +572,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                                     self.worker_pool_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -599,9 +592,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                        self.worker_pool_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -620,9 +612,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                         self.worker_pool_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -640,9 +631,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                      self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -660,9 +650,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                  self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -680,9 +669,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                            self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -700,9 +688,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                   self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -720,9 +707,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -740,9 +726,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                        self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -760,9 +745,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                                     self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -780,9 +764,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                            self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -800,9 +783,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                         self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -820,9 +802,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                  self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -840,9 +821,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                         self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -860,9 +840,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                                                                                    self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 
@@ -879,9 +858,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             response = self.mgmt_client.app_service_environments.list_by_resource_group(self.resource_group)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Could not get facts for AppServiceEnvironments.')
         if found is True:
             return response.as_dict()
 

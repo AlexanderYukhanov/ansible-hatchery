@@ -88,6 +88,7 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.route_filter_name = None
         self.expand = None
@@ -96,11 +97,13 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(NetworkManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.route_filter_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None):
+        elif (self.resource_group is not None):
             self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
         return self.results
 
@@ -116,9 +119,8 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
                                                           self.route_filter_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("RouteFilters instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the RouteFilters instance.')
+            self.log('Could not get facts for RouteFilters.')
         if found is True:
             return response.as_dict()
 
@@ -135,9 +137,8 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
             response = self.mgmt_client.route_filters.list_by_resource_group(self.resource_group)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("RouteFilters instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the RouteFilters instance.')
+            self.log('Could not get facts for RouteFilters.')
         if found is True:
             return response.as_dict()
 

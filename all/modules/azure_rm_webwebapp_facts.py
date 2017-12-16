@@ -717,6 +717,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.name = None
         self.backup_id = None
@@ -741,344 +742,346 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.name is not None and
                 self.backup_id is not None and
                 self.request is not None and
                 self.slot is not None):
             self.results['ansible_facts']['list_backup_status_secrets_slot'] = self.list_backup_status_secrets_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.namespace_name is not None and
               self.relay_name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_hybrid_connection_keys_slot'] = self.list_hybrid_connection_keys_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None and
               self.slot is not None and
               self.instance_id is not None):
             self.results['ansible_facts']['list_instance_process_modules_slot'] = self.list_instance_process_modules_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None and
               self.slot is not None and
               self.instance_id is not None):
             self.results['ansible_facts']['list_instance_process_threads_slot'] = self.list_instance_process_threads_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_metrics_slot'] = self.list_metrics_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None and
               self.target_slot is not None and
               self.preserve_vnet is not None):
             self.results['ansible_facts']['list_slot_differences_slot'] = self.list_slot_differences_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.backup_id is not None and
               self.request is not None):
             self.results['ansible_facts']['list_backup_status_secrets'] = self.list_backup_status_secrets()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.namespace_name is not None and
               self.relay_name is not None):
             self.results['ansible_facts']['list_hybrid_connection_keys'] = self.list_hybrid_connection_keys()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None and
               self.instance_id is not None):
             self.results['ansible_facts']['list_instance_process_modules'] = self.list_instance_process_modules()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None and
               self.instance_id is not None):
             self.results['ansible_facts']['list_instance_process_threads'] = self.list_instance_process_threads()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_metrics'] = self.list_metrics()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.id is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_deployment_log_slot'] = self.list_deployment_log_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.function_name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_function_secrets_slot'] = self.list_function_secrets_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None and
               self.instance_id is not None):
             self.results['ansible_facts']['list_instance_processes_slot'] = self.list_instance_processes_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.view is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_network_features_slot'] = self.list_network_features_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_perf_mon_counters_slot'] = self.list_perf_mon_counters_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_process_modules_slot'] = self.list_process_modules_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_process_threads_slot'] = self.list_process_threads_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_publishing_profile_xml_with_secrets_slot'] = self.list_publishing_profile_xml_with_secrets_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.web_job_name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_triggered_web_job_history_slot'] = self.list_triggered_web_job_history_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_usages_slot'] = self.list_usages_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.target_slot is not None and
               self.preserve_vnet is not None):
             self.results['ansible_facts']['list_slot_differences_from_production'] = self.list_slot_differences_from_production()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.id is not None):
             self.results['ansible_facts']['list_deployment_log'] = self.list_deployment_log()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.function_name is not None):
             self.results['ansible_facts']['list_function_secrets'] = self.list_function_secrets()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.instance_id is not None):
             self.results['ansible_facts']['list_instance_processes'] = self.list_instance_processes()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.view is not None):
             self.results['ansible_facts']['list_network_features'] = self.list_network_features()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_perf_mon_counters'] = self.list_perf_mon_counters()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None):
             self.results['ansible_facts']['list_process_modules'] = self.list_process_modules()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.process_id is not None):
             self.results['ansible_facts']['list_process_threads'] = self.list_process_threads()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_publishing_profile_xml_with_secrets'] = self.list_publishing_profile_xml_with_secrets()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_backups_slot'] = self.list_backups_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_configurations_slot'] = self.list_configurations_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_application_settings_slot'] = self.list_application_settings_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_connection_strings_slot'] = self.list_connection_strings_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_metadata_slot'] = self.list_metadata_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_publishing_credentials_slot'] = self.list_publishing_credentials_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_site_push_settings_slot'] = self.list_site_push_settings_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_configuration_snapshot_info_slot'] = self.list_configuration_snapshot_info_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_continuous_web_jobs_slot'] = self.list_continuous_web_jobs_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_deployments_slot'] = self.list_deployments_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_domain_ownership_identifiers_slot'] = self.list_domain_ownership_identifiers_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_instance_functions_slot'] = self.list_instance_functions_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_host_name_bindings_slot'] = self.list_host_name_bindings_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_hybrid_connections_slot'] = self.list_hybrid_connections_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_relay_service_connections_slot'] = self.list_relay_service_connections_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_instance_identifiers_slot'] = self.list_instance_identifiers_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_sync_function_triggers_slot'] = self.list_sync_function_triggers_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_metric_definitions_slot'] = self.list_metric_definitions_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_premier_add_ons_slot'] = self.list_premier_add_ons_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_processes_slot'] = self.list_processes_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_public_certificates_slot'] = self.list_public_certificates_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_site_extensions_slot'] = self.list_site_extensions_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_snapshots_slot'] = self.list_snapshots_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_triggered_web_jobs_slot'] = self.list_triggered_web_jobs_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_vnet_connections_slot'] = self.list_vnet_connections_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.slot is not None):
             self.results['ansible_facts']['list_web_jobs_slot'] = self.list_web_jobs_slot()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None and
               self.web_job_name is not None):
             self.results['ansible_facts']['list_triggered_web_job_history'] = self.list_triggered_web_job_history()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_usages'] = self.list_usages()
-        elif (self.resource_group_name is not None):
+        elif (self.resource_group is not None):
             self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_backups'] = self.list_backups()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_configurations'] = self.list_configurations()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_application_settings'] = self.list_application_settings()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_connection_strings'] = self.list_connection_strings()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_metadata'] = self.list_metadata()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_publishing_credentials'] = self.list_publishing_credentials()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_site_push_settings'] = self.list_site_push_settings()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_slot_configuration_names'] = self.list_slot_configuration_names()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_configuration_snapshot_info'] = self.list_configuration_snapshot_info()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_continuous_web_jobs'] = self.list_continuous_web_jobs()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_deployments'] = self.list_deployments()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_domain_ownership_identifiers'] = self.list_domain_ownership_identifiers()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_functions'] = self.list_functions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_host_name_bindings'] = self.list_host_name_bindings()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_hybrid_connections'] = self.list_hybrid_connections()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_relay_service_connections'] = self.list_relay_service_connections()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_instance_identifiers'] = self.list_instance_identifiers()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_sync_function_triggers'] = self.list_sync_function_triggers()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_metric_definitions'] = self.list_metric_definitions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_premier_add_ons'] = self.list_premier_add_ons()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_processes'] = self.list_processes()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_public_certificates'] = self.list_public_certificates()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_site_extensions'] = self.list_site_extensions()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_slots'] = self.list_slots()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_snapshots'] = self.list_snapshots()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_triggered_web_jobs'] = self.list_triggered_web_jobs()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_vnet_connections'] = self.list_vnet_connections()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.name is not None):
             self.results['ansible_facts']['list_web_jobs'] = self.list_web_jobs()
         return self.results
@@ -1098,9 +1101,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                  self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1121,9 +1123,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                   self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1144,9 +1145,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                     self.instance_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1167,9 +1167,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                     self.instance_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1188,9 +1187,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                    self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1211,9 +1209,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                             self.preserve_vnet)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1233,9 +1230,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                             self.request)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1255,9 +1251,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                              self.relay_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1277,9 +1272,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                self.instance_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1299,9 +1293,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                self.instance_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1319,9 +1312,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                               self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1341,9 +1333,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                           self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1363,9 +1354,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                             self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1385,9 +1375,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.instance_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1407,9 +1396,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                             self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1428,9 +1416,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                              self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1450,9 +1437,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                            self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1472,9 +1458,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                            self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1493,9 +1478,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                                self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1515,9 +1499,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                      self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1536,9 +1519,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                   self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1558,9 +1540,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                        self.preserve_vnet)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1579,9 +1560,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                      self.id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1600,9 +1580,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                        self.function_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1621,9 +1600,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                          self.instance_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1642,9 +1620,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                        self.view)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1662,9 +1639,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                         self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1683,9 +1659,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                       self.process_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1704,9 +1679,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                       self.process_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1724,9 +1698,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                           self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1745,9 +1718,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                    self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1766,9 +1738,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                           self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1787,9 +1758,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                 self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1808,9 +1778,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1829,9 +1798,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                     self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1850,9 +1818,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                   self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1871,9 +1838,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1892,9 +1858,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                        self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1913,9 +1878,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1934,9 +1898,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                        self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1955,9 +1918,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                         self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1976,9 +1938,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -1997,9 +1958,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2018,9 +1978,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2039,9 +1998,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                      self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2060,9 +2018,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                 self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2081,9 +2038,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                   self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2102,9 +2058,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2123,9 +2078,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                            self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2144,9 +2098,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                      self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2165,9 +2118,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2186,9 +2138,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                            self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2207,9 +2158,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                      self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2228,9 +2178,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                               self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2249,9 +2198,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                             self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2270,9 +2218,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                     self.slot)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2291,9 +2238,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                 self.web_job_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2311,9 +2257,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                              self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2330,9 +2275,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             response = self.mgmt_client.web_apps.list_by_resource_group(self.resource_group)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2350,9 +2294,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                      self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2370,9 +2313,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                               self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2390,9 +2332,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                      self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2410,9 +2351,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                            self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2430,9 +2370,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2450,9 +2389,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2470,9 +2408,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                              self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2490,9 +2427,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2510,9 +2446,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2530,9 +2465,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                   self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2550,9 +2484,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                           self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2570,9 +2503,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                   self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2590,9 +2522,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                    self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2610,9 +2541,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                 self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2630,9 +2560,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2650,9 +2579,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2670,9 +2598,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                                 self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2690,9 +2617,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                            self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2710,9 +2636,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                              self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2730,9 +2655,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2750,9 +2674,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                       self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2770,9 +2693,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                 self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2790,9 +2712,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                           self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2810,9 +2731,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                       self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2830,9 +2750,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                             self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2850,9 +2769,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                 self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2870,9 +2788,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                          self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2890,9 +2807,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                        self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 
@@ -2910,9 +2826,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                                                                self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Could not get facts for WebApps.')
         if found is True:
             return response.as_dict()
 

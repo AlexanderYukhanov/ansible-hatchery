@@ -87,6 +87,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.application_gateway_name = None
         super(AzureRMApplicationGatewaysFacts, self).__init__(self.module_arg_spec)
@@ -94,8 +95,10 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(NetworkManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.application_gateway_name is not None):
             self.results['ansible_facts']['get'] = self.get()
             self.results['ansible_facts']['list_all'] = self.list_all()
@@ -116,9 +119,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
                                                                  self.application_gateway_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ApplicationGateways instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ApplicationGateways instance.')
+            self.log('Could not get facts for ApplicationGateways.')
         if found is True:
             return response.as_dict()
 
@@ -135,9 +137,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             response = self.mgmt_client.application_gateways.list_all()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ApplicationGateways instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ApplicationGateways instance.')
+            self.log('Could not get facts for ApplicationGateways.')
         if found is True:
             return response.as_dict()
 
@@ -154,9 +155,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             response = self.mgmt_client.application_gateways.list_available_waf_rule_sets()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ApplicationGateways instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ApplicationGateways instance.')
+            self.log('Could not get facts for ApplicationGateways.')
         if found is True:
             return response.as_dict()
 
@@ -173,9 +173,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             response = self.mgmt_client.application_gateways.list_available_ssl_options()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ApplicationGateways instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ApplicationGateways instance.')
+            self.log('Could not get facts for ApplicationGateways.')
         if found is True:
             return response.as_dict()
 
@@ -192,9 +191,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             response = self.mgmt_client.application_gateways.list_available_ssl_predefined_policies()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ApplicationGateways instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ApplicationGateways instance.')
+            self.log('Could not get facts for ApplicationGateways.')
         if found is True:
             return response.as_dict()
 

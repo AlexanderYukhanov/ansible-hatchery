@@ -100,6 +100,7 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.server_name = None
         self.database_name = None
@@ -109,13 +110,15 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None and
                 self.service_tier_advisor_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None):
             self.results['ansible_facts']['list_by_database'] = self.list_by_database()
@@ -135,9 +138,8 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
                                                                   self.service_tier_advisor_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServiceTierAdvisors instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServiceTierAdvisors instance.')
+            self.log('Could not get facts for ServiceTierAdvisors.')
         if found is True:
             return response.as_dict()
 
@@ -156,9 +158,8 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
                                                                                self.database_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServiceTierAdvisors instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServiceTierAdvisors instance.')
+            self.log('Could not get facts for ServiceTierAdvisors.')
         if found is True:
             return response.as_dict()
 

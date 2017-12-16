@@ -86,6 +86,7 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.circuit_name = None
         self.peering_name = None
@@ -94,8 +95,10 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(NetworkManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.circuit_name is not None and
                 self.peering_name is not None):
             self.results['ansible_facts']['get'] = self.get()
@@ -114,9 +117,8 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
                                                                            self.peering_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuitPeerings instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuitPeerings instance.')
+            self.log('Could not get facts for ExpressRouteCircuitPeerings.')
         if found is True:
             return response.as_dict()
 

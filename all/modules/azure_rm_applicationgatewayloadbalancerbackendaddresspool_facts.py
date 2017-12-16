@@ -86,6 +86,7 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.load_balancer_name = None
         self.backend_address_pool_name = None
@@ -94,8 +95,10 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(NetworkManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.load_balancer_name is not None and
                 self.backend_address_pool_name is not None):
             self.results['ansible_facts']['get'] = self.get()
@@ -114,9 +117,8 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
                                                                                 self.backend_address_pool_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("LoadBalancerBackendAddressPools instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the LoadBalancerBackendAddressPools instance.')
+            self.log('Could not get facts for LoadBalancerBackendAddressPools.')
         if found is True:
             return response.as_dict()
 

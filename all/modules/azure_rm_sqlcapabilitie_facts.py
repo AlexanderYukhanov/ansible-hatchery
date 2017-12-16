@@ -68,12 +68,15 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.location_id = None
         super(AzureRMCapabilitiesFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.location_id is not None):
             self.results['ansible_facts']['list_by_location'] = self.list_by_location()
@@ -90,9 +93,8 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
             response = self.mgmt_client.capabilities.list_by_location(self.location_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Capabilities instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Capabilities instance.')
+            self.log('Could not get facts for Capabilities.')
         if found is True:
             return response.as_dict()
 

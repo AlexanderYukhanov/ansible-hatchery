@@ -3,7 +3,17 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
-- name: Gather facts Servers
+- name: Gather facts MySQL Server
+  azure_rm_mysqlserver_facts:
+    resource_group: "{{ resource_group }}"
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+
+- name: Gather facts MySQL Server
   azure_rm_mysqlserver_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -12,11 +22,8 @@
     that:
       - output.changed == False
 
-- name: Gather facts Servers
-  azure_rm_mysqlserver_facts:
+- name: Delete instance of MySQL Server
+  azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
+    name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    state: absent

@@ -77,6 +77,7 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.scope = None
         self.role_definition_id = None
         super(AzureRMRoleDefinitionsFacts, self).__init__(self.module_arg_spec)
@@ -84,6 +85,8 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.scope is not None and
                 self.role_definition_id is not None):
@@ -102,9 +105,8 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
                                                              self.role_definition_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("RoleDefinitions instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the RoleDefinitions instance.')
+            self.log('Could not get facts for RoleDefinitions.')
         if found is True:
             return response.as_dict()
 

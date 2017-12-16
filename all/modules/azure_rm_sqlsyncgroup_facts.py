@@ -154,6 +154,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.server_name = None
         self.database_name = None
@@ -168,8 +169,10 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(SqlManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None and
                 self.sync_group_name is not None and
@@ -177,17 +180,17 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
                 self.end_time is not None and
                 self.type is not None):
             self.results['ansible_facts']['list_logs'] = self.list_logs()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None and
               self.sync_group_name is not None):
             self.results['ansible_facts']['list_hub_schemas'] = self.list_hub_schemas()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None and
               self.sync_group_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None):
             self.results['ansible_facts']['list_by_database'] = self.list_by_database()
@@ -212,9 +215,8 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
                                                               self.type)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SyncGroups instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SyncGroups instance.')
+            self.log('Could not get facts for SyncGroups.')
         if found is True:
             return response.as_dict()
 
@@ -234,9 +236,8 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
                                                                      self.sync_group_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SyncGroups instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SyncGroups instance.')
+            self.log('Could not get facts for SyncGroups.')
         if found is True:
             return response.as_dict()
 
@@ -256,9 +257,8 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
                                                         self.sync_group_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SyncGroups instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SyncGroups instance.')
+            self.log('Could not get facts for SyncGroups.')
         if found is True:
             return response.as_dict()
 
@@ -277,9 +277,8 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
                                                                      self.database_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SyncGroups instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SyncGroups instance.')
+            self.log('Could not get facts for SyncGroups.')
         if found is True:
             return response.as_dict()
 
@@ -296,9 +295,8 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             response = self.mgmt_client.sync_groups.list_sync_database_ids(self.location_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SyncGroups instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SyncGroups instance.')
+            self.log('Could not get facts for SyncGroups.')
         if found is True:
             return response.as_dict()
 

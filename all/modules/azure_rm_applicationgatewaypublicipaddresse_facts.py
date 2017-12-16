@@ -127,6 +127,7 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.virtual_machine_scale_set_name = None
         self.virtualmachine_index = None
@@ -139,17 +140,19 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(NetworkManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.virtual_machine_scale_set_name is not None and
                 self.virtualmachine_index is not None and
                 self.network_interface_name is not None and
                 self.ip_configuration_name is not None):
             self.results['ansible_facts']['list_virtual_machine_scale_set_vm_public_ip_addresses'] = self.list_virtual_machine_scale_set_vm_public_ip_addresses()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.public_ip_address_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.virtual_machine_scale_set_name is not None):
             self.results['ansible_facts']['list_virtual_machine_scale_set_public_ip_addresses'] = self.list_virtual_machine_scale_set_public_ip_addresses()
             self.results['ansible_facts']['list_all'] = self.list_all()
@@ -170,9 +173,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
                                                                                                                   self.ip_configuration_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("PublicIPAddresses instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the PublicIPAddresses instance.')
+            self.log('Could not get facts for PublicIPAddresses.')
         if found is True:
             return response.as_dict()
 
@@ -190,9 +192,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
                                                                 self.public_ip_address_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("PublicIPAddresses instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the PublicIPAddresses instance.')
+            self.log('Could not get facts for PublicIPAddresses.')
         if found is True:
             return response.as_dict()
 
@@ -210,9 +211,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
                                                                                                                self.virtual_machine_scale_set_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("PublicIPAddresses instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the PublicIPAddresses instance.')
+            self.log('Could not get facts for PublicIPAddresses.')
         if found is True:
             return response.as_dict()
 
@@ -229,9 +229,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             response = self.mgmt_client.public_ip_addresses.list_all()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("PublicIPAddresses instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the PublicIPAddresses instance.')
+            self.log('Could not get facts for PublicIPAddresses.')
         if found is True:
             return response.as_dict()
 

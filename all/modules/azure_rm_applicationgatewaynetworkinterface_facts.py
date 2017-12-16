@@ -124,6 +124,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.virtual_machine_scale_set_name = None
         self.virtualmachine_index = None
@@ -134,23 +135,25 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+        self.mgmt_client = self.get_mgmt_svc_client(NetworkManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.virtual_machine_scale_set_name is not None and
                 self.virtualmachine_index is not None and
                 self.network_interface_name is not None):
             self.results['ansible_facts']['list_virtual_machine_scale_set_ip_configurations'] = self.list_virtual_machine_scale_set_ip_configurations()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.network_interface_name is not None):
             self.results['ansible_facts']['get'] = self.get()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.virtual_machine_scale_set_name is not None and
               self.virtualmachine_index is not None):
             self.results['ansible_facts']['list_virtual_machine_scale_set_vm_network_interfaces'] = self.list_virtual_machine_scale_set_vm_network_interfaces()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.network_interface_name is not None):
             self.results['ansible_facts']['list_effective_network_security_groups'] = self.list_effective_network_security_groups()
-        elif (self.resource_group_name is not None and
+        elif (self.resource_group is not None and
               self.virtual_machine_scale_set_name is not None):
             self.results['ansible_facts']['list_virtual_machine_scale_set_network_interfaces'] = self.list_virtual_machine_scale_set_network_interfaces()
             self.results['ansible_facts']['list_all'] = self.list_all()
@@ -170,9 +173,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                                                                                                             self.network_interface_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkInterfaces instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkInterfaces instance.')
+            self.log('Could not get facts for NetworkInterfaces.')
         if found is True:
             return response.as_dict()
 
@@ -190,9 +192,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                                                                self.network_interface_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkInterfaces instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkInterfaces instance.')
+            self.log('Could not get facts for NetworkInterfaces.')
         if found is True:
             return response.as_dict()
 
@@ -211,9 +212,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                                                                                                                 self.virtualmachine_index)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkInterfaces instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkInterfaces instance.')
+            self.log('Could not get facts for NetworkInterfaces.')
         if found is True:
             return response.as_dict()
 
@@ -231,9 +231,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                                                                                                   self.network_interface_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkInterfaces instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkInterfaces instance.')
+            self.log('Could not get facts for NetworkInterfaces.')
         if found is True:
             return response.as_dict()
 
@@ -251,9 +250,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                                                                                                              self.virtual_machine_scale_set_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkInterfaces instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkInterfaces instance.')
+            self.log('Could not get facts for NetworkInterfaces.')
         if found is True:
             return response.as_dict()
 
@@ -270,9 +268,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             response = self.mgmt_client.network_interfaces.list_all()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkInterfaces instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkInterfaces instance.')
+            self.log('Could not get facts for NetworkInterfaces.')
         if found is True:
             return response.as_dict()
 
