@@ -1903,7 +1903,7 @@
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "MySQL Configuration",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
