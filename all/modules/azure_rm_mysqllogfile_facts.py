@@ -106,9 +106,8 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
                                                                  self.server_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("LogFiles instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the LogFiles instance.')
+            self.log('Couldn''t get facts for MySQL Server Log File.')
         if found is True:
             return response.as_dict()
 
