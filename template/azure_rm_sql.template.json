@@ -2889,7 +2889,7 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
@@ -2987,7 +2987,7 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
@@ -4545,7 +4545,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 6,
           "NoLog": false
@@ -4563,7 +4563,7 @@
           "DefaultValueSample": {
             "default": "database_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-database",
           "SubOptions": null,
           "RequiredCount": 3,
           "NoLog": false
@@ -4725,13 +4725,13 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_sqldatabase",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases",
-      "ReleaseStatus": "",
+      "ObjectName": "SQL Database",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
@@ -6564,7 +6564,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -6593,13 +6593,13 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_sqlserver",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
       "ObjectName": "SQL Server",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
@@ -11421,7 +11421,7 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
@@ -11519,7 +11519,7 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,

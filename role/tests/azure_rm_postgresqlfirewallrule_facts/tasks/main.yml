@@ -1,0 +1,22 @@
+- name: Prepare random number
+  set_fact:
+    random_postfix: "{{ 1000 | random }}"
+  run_once: yes
+
+- name: Gather facts FirewallRules
+  azure_rm_postgresqlfirewallrule_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+
+- name: Gather facts FirewallRules
+  azure_rm_postgresqlfirewallrule_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
