@@ -130,20 +130,21 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServiceTierAdvisorsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.service_tier_advisors.get(self.resource_group,
                                                                   self.server_name,
                                                                   self.database_name,
                                                                   self.service_tier_advisor_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServiceTierAdvisors.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_database(self):
         '''
@@ -151,19 +152,22 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServiceTierAdvisorsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.service_tier_advisors.list_by_database(self.resource_group,
                                                                                self.server_name,
                                                                                self.database_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServiceTierAdvisors.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

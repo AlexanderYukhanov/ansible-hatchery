@@ -117,19 +117,20 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServerAzureADAdministratorsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.server_azure_ad_administrators.get(self.resource_group,
                                                                            self.server_name,
                                                                            self.administrator_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServerAzureADAdministrators.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_server(self):
         '''
@@ -137,18 +138,21 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServerAzureADAdministratorsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.server_azure_ad_administrators.list_by_server(self.resource_group,
                                                                                       self.server_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServerAzureADAdministrators.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

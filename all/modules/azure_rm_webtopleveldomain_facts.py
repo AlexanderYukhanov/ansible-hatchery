@@ -112,17 +112,20 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized TopLevelDomainsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.top_level_domains.list_agreements(self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for TopLevelDomains.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -130,17 +133,18 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized TopLevelDomainsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.top_level_domains.get(self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for TopLevelDomains.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
 
 def main():

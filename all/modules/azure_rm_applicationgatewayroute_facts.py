@@ -110,19 +110,20 @@ class AzureRMRoutesFacts(AzureRMModuleBase):
 
         :return: deserialized Routesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.routes.get(self.resource_group,
                                                    self.route_table_name,
                                                    self.route_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Routes.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
 
 def main():

@@ -112,18 +112,19 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceCertificateOrdersinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_certificate_orders.get(self.resource_group,
                                                                            self.certificate_order_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceCertificateOrders.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_certificates(self):
         '''
@@ -131,18 +132,21 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceCertificateOrdersinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_certificate_orders.list_certificates(self.resource_group,
                                                                                          self.certificate_order_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceCertificateOrders.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_by_resource_group(self):
         '''
@@ -150,17 +154,20 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceCertificateOrdersinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_certificate_orders.list_by_resource_group(self.resource_group)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceCertificateOrders.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

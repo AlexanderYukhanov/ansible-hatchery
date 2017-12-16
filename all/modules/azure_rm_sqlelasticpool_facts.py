@@ -147,20 +147,23 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.elastic_pools.list_metrics(self.resource_group,
                                                                    self.server_name,
                                                                    self.elastic_pool_name,
                                                                    self.filter)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metric_definitions(self):
         '''
@@ -168,19 +171,22 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.elastic_pools.list_metric_definitions(self.resource_group,
                                                                               self.server_name,
                                                                               self.elastic_pool_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -188,19 +194,20 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.elastic_pools.get(self.resource_group,
                                                           self.server_name,
                                                           self.elastic_pool_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_server(self):
         '''
@@ -208,18 +215,21 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.elastic_pools.list_by_server(self.resource_group,
                                                                      self.server_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

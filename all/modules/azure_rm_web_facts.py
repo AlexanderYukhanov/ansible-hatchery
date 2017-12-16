@@ -107,17 +107,20 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client..list_geo_regions()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for .')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_premier_add_on_offers(self):
         '''
@@ -125,17 +128,20 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client..list_premier_add_on_offers()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for .')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_skus(self):
         '''
@@ -143,17 +149,20 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client..list_skus()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for .')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_source_controls(self):
         '''
@@ -161,17 +170,20 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client..list_source_controls()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for .')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

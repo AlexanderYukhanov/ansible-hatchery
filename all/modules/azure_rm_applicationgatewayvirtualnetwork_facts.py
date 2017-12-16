@@ -118,18 +118,19 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworksinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.virtual_networks.get(self.resource_group,
                                                              self.virtual_network_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworks.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_usage(self):
         '''
@@ -137,18 +138,21 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworksinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.virtual_networks.list_usage(self.resource_group,
                                                                     self.virtual_network_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworks.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_all(self):
         '''
@@ -156,17 +160,20 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworksinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.virtual_networks.list_all()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworks.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

@@ -104,18 +104,19 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
         :return: deserialized SQL Serverinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.servers.get(self.resource_group,
                                                     self.server_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Servers.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_resource_group(self):
         '''
@@ -123,17 +124,20 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
         :return: deserialized SQL Serverinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.servers.list_by_resource_group(self.resource_group)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Servers.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

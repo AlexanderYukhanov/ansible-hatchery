@@ -204,7 +204,8 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_groups.list_logs(self.resource_group,
                                                               self.server_name,
@@ -213,14 +214,16 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
                                                               self.start_time,
                                                               self.end_time,
                                                               self.type)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_hub_schemas(self):
         '''
@@ -228,20 +231,23 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_groups.list_hub_schemas(self.resource_group,
                                                                      self.server_name,
                                                                      self.database_name,
                                                                      self.sync_group_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -249,20 +255,21 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_groups.get(self.resource_group,
                                                         self.server_name,
                                                         self.database_name,
                                                         self.sync_group_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_database(self):
         '''
@@ -270,19 +277,22 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_groups.list_by_database(self.resource_group,
                                                                      self.server_name,
                                                                      self.database_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_sync_database_ids(self):
         '''
@@ -290,17 +300,20 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_groups.list_sync_database_ids(self.location_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

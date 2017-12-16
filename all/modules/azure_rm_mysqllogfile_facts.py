@@ -99,18 +99,21 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
 
         :return: deserialized LogFilesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.log_files.list_by_server(self.resource_group,
                                                                  self.server_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for LogFiles.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

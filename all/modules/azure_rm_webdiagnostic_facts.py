@@ -169,20 +169,23 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.diagnostics.list_site_analyses_slot(self.resource_group,
                                                                             self.site_name,
                                                                             self.diagnostic_category,
                                                                             self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_detectors_slot(self):
         '''
@@ -190,20 +193,23 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.diagnostics.list_site_detectors_slot(self.resource_group,
                                                                              self.site_name,
                                                                              self.diagnostic_category,
                                                                              self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_analyses(self):
         '''
@@ -211,19 +217,22 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.diagnostics.list_site_analyses(self.resource_group,
                                                                        self.site_name,
                                                                        self.diagnostic_category)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_detectors(self):
         '''
@@ -231,19 +240,22 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.diagnostics.list_site_detectors(self.resource_group,
                                                                         self.site_name,
                                                                         self.diagnostic_category)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_diagnostic_categories_slot(self):
         '''
@@ -251,19 +263,22 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.diagnostics.list_site_diagnostic_categories_slot(self.resource_group,
                                                                                          self.site_name,
                                                                                          self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_diagnostic_categories(self):
         '''
@@ -271,18 +286,21 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.diagnostics.list_site_diagnostic_categories(self.resource_group,
                                                                                     self.site_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

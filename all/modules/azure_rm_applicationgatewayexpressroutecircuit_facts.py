@@ -153,20 +153,23 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.express_route_circuits.list_arp_table(self.resource_group,
                                                                               self.circuit_name,
                                                                               self.peering_name,
                                                                               self.device_path)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_routes_table(self):
         '''
@@ -174,20 +177,23 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.express_route_circuits.list_routes_table(self.resource_group,
                                                                                  self.circuit_name,
                                                                                  self.peering_name,
                                                                                  self.device_path)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_routes_table_summary(self):
         '''
@@ -195,20 +201,23 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.express_route_circuits.list_routes_table_summary(self.resource_group,
                                                                                          self.circuit_name,
                                                                                          self.peering_name,
                                                                                          self.device_path)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -216,18 +225,19 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.express_route_circuits.get(self.resource_group,
                                                                    self.circuit_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_all(self):
         '''
@@ -235,17 +245,20 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.express_route_circuits.list_all()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

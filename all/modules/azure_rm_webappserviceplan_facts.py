@@ -257,18 +257,21 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_web_apps(self.resource_group,
                                                                         self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_hybrid_connection_keys(self):
         '''
@@ -276,20 +279,23 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_hybrid_connection_keys(self.resource_group,
                                                                                       self.name,
                                                                                       self.namespace_name,
                                                                                       self.relay_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_web_apps_by_hybrid_connection(self):
         '''
@@ -297,20 +303,23 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_web_apps_by_hybrid_connection(self.resource_group,
                                                                                              self.name,
                                                                                              self.namespace_name,
                                                                                              self.relay_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metrics(self):
         '''
@@ -318,18 +327,21 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_metrics(self.resource_group,
                                                                        self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_usages(self):
         '''
@@ -337,18 +349,21 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_usages(self.resource_group,
                                                                       self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_routes_for_vnet(self):
         '''
@@ -356,19 +371,22 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_routes_for_vnet(self.resource_group,
                                                                                self.name,
                                                                                self.vnet_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -376,18 +394,19 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.get(self.resource_group,
                                                               self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_capabilities(self):
         '''
@@ -395,18 +414,21 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_capabilities(self.resource_group,
                                                                             self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_hybrid_connections(self):
         '''
@@ -414,18 +436,21 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_hybrid_connections(self.resource_group,
                                                                                   self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metric_defintions(self):
         '''
@@ -433,18 +458,21 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_metric_defintions(self.resource_group,
                                                                                  self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_vnets(self):
         '''
@@ -452,18 +480,21 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_vnets(self.resource_group,
                                                                      self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_by_resource_group(self):
         '''
@@ -471,17 +502,20 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_plans.list_by_resource_group(self.resource_group)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

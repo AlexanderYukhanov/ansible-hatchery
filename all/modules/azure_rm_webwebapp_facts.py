@@ -1092,21 +1092,24 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_backup_status_secrets_slot(self.resource_group,
                                                                                  self.name,
                                                                                  self.backup_id,
                                                                                  self.request,
                                                                                  self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_hybrid_connection_keys_slot(self):
         '''
@@ -1114,21 +1117,24 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connection_keys_slot(self.resource_group,
                                                                                   self.name,
                                                                                   self.namespace_name,
                                                                                   self.relay_name,
                                                                                   self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_process_modules_slot(self):
         '''
@@ -1136,21 +1142,24 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_modules_slot(self.resource_group,
                                                                                     self.name,
                                                                                     self.process_id,
                                                                                     self.slot,
                                                                                     self.instance_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_process_threads_slot(self):
         '''
@@ -1158,21 +1167,24 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_threads_slot(self.resource_group,
                                                                                     self.name,
                                                                                     self.process_id,
                                                                                     self.slot,
                                                                                     self.instance_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metrics_slot(self):
         '''
@@ -1180,19 +1192,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_metrics_slot(self.resource_group,
                                                                    self.name,
                                                                    self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_slot_differences_slot(self):
         '''
@@ -1200,21 +1215,24 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_slot_differences_slot(self.resource_group,
                                                                             self.name,
                                                                             self.slot,
                                                                             self.target_slot,
                                                                             self.preserve_vnet)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_backup_status_secrets(self):
         '''
@@ -1222,20 +1240,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_backup_status_secrets(self.resource_group,
                                                                             self.name,
                                                                             self.backup_id,
                                                                             self.request)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_hybrid_connection_keys(self):
         '''
@@ -1243,20 +1264,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connection_keys(self.resource_group,
                                                                              self.name,
                                                                              self.namespace_name,
                                                                              self.relay_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_process_modules(self):
         '''
@@ -1264,20 +1288,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_modules(self.resource_group,
                                                                                self.name,
                                                                                self.process_id,
                                                                                self.instance_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_process_threads(self):
         '''
@@ -1285,20 +1312,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_threads(self.resource_group,
                                                                                self.name,
                                                                                self.process_id,
                                                                                self.instance_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metrics(self):
         '''
@@ -1306,18 +1336,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_metrics(self.resource_group,
                                                               self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_deployment_log_slot(self):
         '''
@@ -1325,20 +1358,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_deployment_log_slot(self.resource_group,
                                                                           self.name,
                                                                           self.id,
                                                                           self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_function_secrets_slot(self):
         '''
@@ -1346,20 +1382,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_function_secrets_slot(self.resource_group,
                                                                             self.name,
                                                                             self.function_name,
                                                                             self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_processes_slot(self):
         '''
@@ -1367,20 +1406,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_processes_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot,
                                                                               self.instance_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_network_features_slot(self):
         '''
@@ -1388,20 +1430,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_network_features_slot(self.resource_group,
                                                                             self.name,
                                                                             self.view,
                                                                             self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_perf_mon_counters_slot(self):
         '''
@@ -1409,19 +1454,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_perf_mon_counters_slot(self.resource_group,
                                                                              self.name,
                                                                              self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_process_modules_slot(self):
         '''
@@ -1429,20 +1477,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_process_modules_slot(self.resource_group,
                                                                            self.name,
                                                                            self.process_id,
                                                                            self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_process_threads_slot(self):
         '''
@@ -1450,20 +1501,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_process_threads_slot(self.resource_group,
                                                                            self.name,
                                                                            self.process_id,
                                                                            self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_publishing_profile_xml_with_secrets_slot(self):
         '''
@@ -1471,19 +1525,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets_slot(self.resource_group,
                                                                                                self.name,
                                                                                                self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_triggered_web_job_history_slot(self):
         '''
@@ -1491,20 +1548,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_job_history_slot(self.resource_group,
                                                                                      self.name,
                                                                                      self.web_job_name,
                                                                                      self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_usages_slot(self):
         '''
@@ -1512,19 +1572,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_usages_slot(self.resource_group,
                                                                   self.name,
                                                                   self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_slot_differences_from_production(self):
         '''
@@ -1532,20 +1595,23 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_slot_differences_from_production(self.resource_group,
                                                                                        self.name,
                                                                                        self.target_slot,
                                                                                        self.preserve_vnet)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_deployment_log(self):
         '''
@@ -1553,19 +1619,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_deployment_log(self.resource_group,
                                                                      self.name,
                                                                      self.id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_function_secrets(self):
         '''
@@ -1573,19 +1642,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_function_secrets(self.resource_group,
                                                                        self.name,
                                                                        self.function_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_processes(self):
         '''
@@ -1593,19 +1665,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_processes(self.resource_group,
                                                                          self.name,
                                                                          self.instance_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_network_features(self):
         '''
@@ -1613,19 +1688,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_network_features(self.resource_group,
                                                                        self.name,
                                                                        self.view)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_perf_mon_counters(self):
         '''
@@ -1633,18 +1711,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_perf_mon_counters(self.resource_group,
                                                                         self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_process_modules(self):
         '''
@@ -1652,19 +1733,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_process_modules(self.resource_group,
                                                                       self.name,
                                                                       self.process_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_process_threads(self):
         '''
@@ -1672,19 +1756,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_process_threads(self.resource_group,
                                                                       self.name,
                                                                       self.process_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_publishing_profile_xml_with_secrets(self):
         '''
@@ -1692,18 +1779,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets(self.resource_group,
                                                                                           self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_backups_slot(self):
         '''
@@ -1711,19 +1801,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_backups_slot(self.resource_group,
                                                                    self.name,
                                                                    self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_configurations_slot(self):
         '''
@@ -1731,19 +1824,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_configurations_slot(self.resource_group,
                                                                           self.name,
                                                                           self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_application_settings_slot(self):
         '''
@@ -1751,19 +1847,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_application_settings_slot(self.resource_group,
                                                                                 self.name,
                                                                                 self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_connection_strings_slot(self):
         '''
@@ -1771,19 +1870,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_connection_strings_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metadata_slot(self):
         '''
@@ -1791,19 +1893,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_metadata_slot(self.resource_group,
                                                                     self.name,
                                                                     self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_publishing_credentials_slot(self):
         '''
@@ -1811,19 +1916,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_credentials_slot(self.resource_group,
                                                                                   self.name,
                                                                                   self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_push_settings_slot(self):
         '''
@@ -1831,19 +1939,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_site_push_settings_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_configuration_snapshot_info_slot(self):
         '''
@@ -1851,19 +1962,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_configuration_snapshot_info_slot(self.resource_group,
                                                                                        self.name,
                                                                                        self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_continuous_web_jobs_slot(self):
         '''
@@ -1871,19 +1985,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_continuous_web_jobs_slot(self.resource_group,
                                                                                self.name,
                                                                                self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_deployments_slot(self):
         '''
@@ -1891,19 +2008,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_deployments_slot(self.resource_group,
                                                                        self.name,
                                                                        self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_domain_ownership_identifiers_slot(self):
         '''
@@ -1911,19 +2031,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_domain_ownership_identifiers_slot(self.resource_group,
                                                                                         self.name,
                                                                                         self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_functions_slot(self):
         '''
@@ -1931,19 +2054,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_functions_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_host_name_bindings_slot(self):
         '''
@@ -1951,19 +2077,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_host_name_bindings_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_hybrid_connections_slot(self):
         '''
@@ -1971,19 +2100,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connections_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_relay_service_connections_slot(self):
         '''
@@ -1991,19 +2123,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_relay_service_connections_slot(self.resource_group,
                                                                                      self.name,
                                                                                      self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_identifiers_slot(self):
         '''
@@ -2011,19 +2146,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_identifiers_slot(self.resource_group,
                                                                                 self.name,
                                                                                 self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_sync_function_triggers_slot(self):
         '''
@@ -2031,19 +2169,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_sync_function_triggers_slot(self.resource_group,
                                                                                   self.name,
                                                                                   self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metric_definitions_slot(self):
         '''
@@ -2051,19 +2192,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_metric_definitions_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_premier_add_ons_slot(self):
         '''
@@ -2071,19 +2215,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_premier_add_ons_slot(self.resource_group,
                                                                            self.name,
                                                                            self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_processes_slot(self):
         '''
@@ -2091,19 +2238,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_processes_slot(self.resource_group,
                                                                      self.name,
                                                                      self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_public_certificates_slot(self):
         '''
@@ -2111,19 +2261,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_public_certificates_slot(self.resource_group,
                                                                                self.name,
                                                                                self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_extensions_slot(self):
         '''
@@ -2131,19 +2284,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_site_extensions_slot(self.resource_group,
                                                                            self.name,
                                                                            self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_snapshots_slot(self):
         '''
@@ -2151,19 +2307,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_snapshots_slot(self.resource_group,
                                                                      self.name,
                                                                      self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_triggered_web_jobs_slot(self):
         '''
@@ -2171,19 +2330,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_jobs_slot(self.resource_group,
                                                                               self.name,
                                                                               self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_vnet_connections_slot(self):
         '''
@@ -2191,19 +2353,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_vnet_connections_slot(self.resource_group,
                                                                             self.name,
                                                                             self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_web_jobs_slot(self):
         '''
@@ -2211,19 +2376,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_web_jobs_slot(self.resource_group,
                                                                     self.name,
                                                                     self.slot)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_triggered_web_job_history(self):
         '''
@@ -2231,19 +2399,22 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_job_history(self.resource_group,
                                                                                 self.name,
                                                                                 self.web_job_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_usages(self):
         '''
@@ -2251,18 +2422,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_usages(self.resource_group,
                                                              self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_by_resource_group(self):
         '''
@@ -2270,17 +2444,20 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_by_resource_group(self.resource_group)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -2288,18 +2465,19 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.get(self.resource_group,
                                                      self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_backups(self):
         '''
@@ -2307,18 +2485,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_backups(self.resource_group,
                                                               self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_configurations(self):
         '''
@@ -2326,18 +2507,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_configurations(self.resource_group,
                                                                      self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_application_settings(self):
         '''
@@ -2345,18 +2529,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_application_settings(self.resource_group,
                                                                            self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_connection_strings(self):
         '''
@@ -2364,18 +2551,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_connection_strings(self.resource_group,
                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metadata(self):
         '''
@@ -2383,18 +2573,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_metadata(self.resource_group,
                                                                self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_publishing_credentials(self):
         '''
@@ -2402,18 +2595,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_credentials(self.resource_group,
                                                                              self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_push_settings(self):
         '''
@@ -2421,18 +2617,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_site_push_settings(self.resource_group,
                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_slot_configuration_names(self):
         '''
@@ -2440,18 +2639,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_slot_configuration_names(self.resource_group,
                                                                                self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_configuration_snapshot_info(self):
         '''
@@ -2459,18 +2661,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_configuration_snapshot_info(self.resource_group,
                                                                                   self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_continuous_web_jobs(self):
         '''
@@ -2478,18 +2683,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_continuous_web_jobs(self.resource_group,
                                                                           self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_deployments(self):
         '''
@@ -2497,18 +2705,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_deployments(self.resource_group,
                                                                   self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_domain_ownership_identifiers(self):
         '''
@@ -2516,18 +2727,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_domain_ownership_identifiers(self.resource_group,
                                                                                    self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_functions(self):
         '''
@@ -2535,18 +2749,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_functions(self.resource_group,
                                                                 self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_host_name_bindings(self):
         '''
@@ -2554,18 +2771,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_host_name_bindings(self.resource_group,
                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_hybrid_connections(self):
         '''
@@ -2573,18 +2793,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connections(self.resource_group,
                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_relay_service_connections(self):
         '''
@@ -2592,18 +2815,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_relay_service_connections(self.resource_group,
                                                                                 self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_instance_identifiers(self):
         '''
@@ -2611,18 +2837,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_instance_identifiers(self.resource_group,
                                                                            self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_sync_function_triggers(self):
         '''
@@ -2630,18 +2859,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_sync_function_triggers(self.resource_group,
                                                                              self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metric_definitions(self):
         '''
@@ -2649,18 +2881,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_metric_definitions(self.resource_group,
                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_premier_add_ons(self):
         '''
@@ -2668,18 +2903,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_premier_add_ons(self.resource_group,
                                                                       self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_processes(self):
         '''
@@ -2687,18 +2925,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_processes(self.resource_group,
                                                                 self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_public_certificates(self):
         '''
@@ -2706,18 +2947,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_public_certificates(self.resource_group,
                                                                           self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_site_extensions(self):
         '''
@@ -2725,18 +2969,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_site_extensions(self.resource_group,
                                                                       self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_slots(self):
         '''
@@ -2744,18 +2991,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_slots(self.resource_group,
                                                             self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_snapshots(self):
         '''
@@ -2763,18 +3013,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_snapshots(self.resource_group,
                                                                 self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_triggered_web_jobs(self):
         '''
@@ -2782,18 +3035,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_jobs(self.resource_group,
                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_vnet_connections(self):
         '''
@@ -2801,18 +3057,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_vnet_connections(self.resource_group,
                                                                        self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_web_jobs(self):
         '''
@@ -2820,18 +3079,21 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.web_apps.list_web_jobs(self.resource_group,
                                                                self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

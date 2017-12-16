@@ -133,17 +133,20 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.domains.list_recommendations()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -151,18 +154,19 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.domains.get(self.resource_group,
                                                     self.domain_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_ownership_identifiers(self):
         '''
@@ -170,18 +174,21 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.domains.list_ownership_identifiers(self.resource_group,
                                                                            self.domain_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_by_resource_group(self):
         '''
@@ -189,17 +196,20 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.domains.list_by_resource_group(self.resource_group)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

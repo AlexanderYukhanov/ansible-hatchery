@@ -88,17 +88,20 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
 
         :return: deserialized Capabilitiesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.capabilities.list_by_location(self.location_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Capabilities.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

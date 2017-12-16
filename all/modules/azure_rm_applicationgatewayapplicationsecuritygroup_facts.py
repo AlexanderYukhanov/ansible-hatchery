@@ -101,18 +101,19 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationSecurityGroupsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.application_security_groups.get(self.resource_group,
                                                                         self.application_security_group_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationSecurityGroups.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_all(self):
         '''
@@ -120,17 +121,20 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationSecurityGroupsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.application_security_groups.list_all()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationSecurityGroups.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

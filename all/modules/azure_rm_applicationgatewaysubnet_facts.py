@@ -119,19 +119,20 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
 
         :return: deserialized Subnetsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.subnets.get(self.resource_group,
                                                     self.virtual_network_name,
                                                     self.subnet_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Subnets.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
 
 def main():

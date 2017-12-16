@@ -130,20 +130,21 @@ class AzureRMReplicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ReplicationLinksinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.replication_links.get(self.resource_group,
                                                               self.server_name,
                                                               self.database_name,
                                                               self.link_id)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ReplicationLinks.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_database(self):
         '''
@@ -151,19 +152,22 @@ class AzureRMReplicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ReplicationLinksinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.replication_links.list_by_database(self.resource_group,
                                                                            self.server_name,
                                                                            self.database_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ReplicationLinks.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

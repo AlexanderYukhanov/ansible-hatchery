@@ -127,19 +127,20 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncAgentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_agents.get(self.resource_group,
                                                         self.server_name,
                                                         self.sync_agent_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncAgents.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_linked_databases(self):
         '''
@@ -147,19 +148,22 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncAgentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_agents.list_linked_databases(self.resource_group,
                                                                           self.server_name,
                                                                           self.sync_agent_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncAgents.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_by_server(self):
         '''
@@ -167,18 +171,21 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncAgentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.sync_agents.list_by_server(self.resource_group,
                                                                    self.server_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncAgents.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

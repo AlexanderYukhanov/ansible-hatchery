@@ -165,20 +165,23 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_ip_configurations(self.resource_group,
                                                                                                             self.virtual_machine_scale_set_name,
                                                                                                             self.virtualmachine_index,
                                                                                                             self.network_interface_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -186,18 +189,19 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.network_interfaces.get(self.resource_group,
                                                                self.network_interface_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_virtual_machine_scale_set_vm_network_interfaces(self):
         '''
@@ -205,19 +209,22 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_vm_network_interfaces(self.resource_group,
                                                                                                                 self.virtual_machine_scale_set_name,
                                                                                                                 self.virtualmachine_index)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_effective_network_security_groups(self):
         '''
@@ -225,18 +232,21 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.network_interfaces.list_effective_network_security_groups(self.resource_group,
                                                                                                   self.network_interface_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_virtual_machine_scale_set_network_interfaces(self):
         '''
@@ -244,18 +254,21 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_network_interfaces(self.resource_group,
                                                                                                              self.virtual_machine_scale_set_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_all(self):
         '''
@@ -263,17 +276,20 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.network_interfaces.list_all()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

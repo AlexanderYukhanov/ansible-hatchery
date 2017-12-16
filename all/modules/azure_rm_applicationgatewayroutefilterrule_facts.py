@@ -117,19 +117,20 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteFilterRulesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.route_filter_rules.get(self.resource_group,
                                                                self.route_filter_name,
                                                                self.rule_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RouteFilterRules.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_route_filter(self):
         '''
@@ -137,18 +138,21 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteFilterRulesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.route_filter_rules.list_by_route_filter(self.resource_group,
                                                                                 self.route_filter_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RouteFilterRules.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

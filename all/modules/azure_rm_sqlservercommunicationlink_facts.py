@@ -117,19 +117,20 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ServerCommunicationLinksinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.server_communication_links.get(self.resource_group,
                                                                        self.server_name,
                                                                        self.communication_link_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServerCommunicationLinks.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_server(self):
         '''
@@ -137,18 +138,21 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ServerCommunicationLinksinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.server_communication_links.list_by_server(self.resource_group,
                                                                                   self.server_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServerCommunicationLinks.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

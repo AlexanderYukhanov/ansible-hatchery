@@ -113,18 +113,19 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.application_gateways.get(self.resource_group,
                                                                  self.application_gateway_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_all(self):
         '''
@@ -132,17 +133,20 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.application_gateways.list_all()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_available_waf_rule_sets(self):
         '''
@@ -150,17 +154,20 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.application_gateways.list_available_waf_rule_sets()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_available_ssl_options(self):
         '''
@@ -168,17 +175,20 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.application_gateways.list_available_ssl_options()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_available_ssl_predefined_policies(self):
         '''
@@ -186,17 +196,20 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.application_gateways.list_available_ssl_predefined_policies()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

@@ -121,20 +121,21 @@ class AzureRMDataMaskingPoliciesFacts(AzureRMModuleBase):
 
         :return: deserialized DataMaskingPoliciesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.data_masking_policies.get(self.resource_group,
                                                                   self.server_name,
                                                                   self.database_name,
                                                                   self.data_masking_policy_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for DataMaskingPolicies.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
 
 def main():

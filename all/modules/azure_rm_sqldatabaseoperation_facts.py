@@ -110,19 +110,22 @@ class AzureRMDatabaseOperationsFacts(AzureRMModuleBase):
 
         :return: deserialized DatabaseOperationsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.database_operations.list_by_database(self.resource_group,
                                                                              self.server_name,
                                                                              self.database_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for DatabaseOperations.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

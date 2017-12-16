@@ -110,18 +110,19 @@ class AzureRMRouteTablesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteTablesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.route_tables.get(self.resource_group,
                                                          self.route_table_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RouteTables.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_all(self):
         '''
@@ -129,17 +130,20 @@ class AzureRMRouteTablesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteTablesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.route_tables.list_all()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RouteTables.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

@@ -99,18 +99,19 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkGatewayConnectionsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.virtual_network_gateway_connections.get(self.resource_group,
                                                                                 self.virtual_network_gateway_connection_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworkGatewayConnections.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
 
 def main():

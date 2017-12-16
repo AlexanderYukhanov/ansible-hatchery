@@ -175,21 +175,24 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.role_assignments.list_for_resource(self.resource_group,
                                                                            self.resource_provider_namespace,
                                                                            self.parent_resource_path,
                                                                            self.resource_type,
                                                                            self.resource_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_for_resource_group(self):
         '''
@@ -197,17 +200,20 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.role_assignments.list_for_resource_group(self.resource_group)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -215,18 +221,19 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.role_assignments.get(self.scope,
                                                              self.role_assignment_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_for_scope(self):
         '''
@@ -234,17 +241,20 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.role_assignments.list_for_scope(self.scope)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

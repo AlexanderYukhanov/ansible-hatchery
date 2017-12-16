@@ -104,18 +104,19 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
 
         :return: deserialized SubscriptionUsagesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.subscription_usages.get(self.location_name,
                                                                 self.usage_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SubscriptionUsages.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_by_location(self):
         '''
@@ -123,17 +124,20 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
 
         :return: deserialized SubscriptionUsagesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.subscription_usages.list_by_location(self.location_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SubscriptionUsages.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

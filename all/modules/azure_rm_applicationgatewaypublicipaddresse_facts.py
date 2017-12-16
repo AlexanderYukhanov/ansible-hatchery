@@ -164,21 +164,24 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_vm_public_ip_addresses(self.resource_group,
                                                                                                                   self.virtual_machine_scale_set_name,
                                                                                                                   self.virtualmachine_index,
                                                                                                                   self.network_interface_name,
                                                                                                                   self.ip_configuration_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -186,18 +189,19 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.public_ip_addresses.get(self.resource_group,
                                                                 self.public_ip_address_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_virtual_machine_scale_set_public_ip_addresses(self):
         '''
@@ -205,18 +209,21 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_public_ip_addresses(self.resource_group,
                                                                                                                self.virtual_machine_scale_set_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_all(self):
         '''
@@ -224,17 +231,20 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.public_ip_addresses.list_all()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

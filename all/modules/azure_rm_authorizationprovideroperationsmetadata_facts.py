@@ -97,17 +97,18 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
 
         :return: deserialized ProviderOperationsMetadatainstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.provider_operations_metadata.get(self.resource_provider_namespace)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ProviderOperationsMetadata.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
 
 def main():

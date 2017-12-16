@@ -387,18 +387,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_metrics(self.resource_group,
                                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_worker_pool_instance_metrics(self):
         '''
@@ -406,20 +409,23 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metrics(self.resource_group,
                                                                                                    self.name,
                                                                                                    self.worker_pool_name,
                                                                                                    self.instance)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_web_worker_metrics(self):
         '''
@@ -427,19 +433,22 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_worker_metrics(self.resource_group,
                                                                                          self.name,
                                                                                          self.worker_pool_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metrics(self):
         '''
@@ -447,18 +456,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_metrics(self.resource_group,
                                                                               self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_multi_role_pool_instance_metrics(self):
         '''
@@ -466,19 +478,22 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metrics(self.resource_group,
                                                                                                        self.name,
                                                                                                        self.instance)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_worker_pool_instance_metric_definitions(self):
         '''
@@ -486,20 +501,23 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metric_definitions(self.resource_group,
                                                                                                               self.name,
                                                                                                               self.worker_pool_name,
                                                                                                               self.instance)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_multi_role_pool_instance_metric_definitions(self):
         '''
@@ -507,19 +525,22 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metric_definitions(self.resource_group,
                                                                                                                   self.name,
                                                                                                                   self.instance)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_web_apps(self):
         '''
@@ -527,18 +548,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_apps(self.resource_group,
                                                                                self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_usages(self):
         '''
@@ -546,18 +570,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_usages(self.resource_group,
                                                                              self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_web_worker_metric_definitions(self):
         '''
@@ -565,19 +592,22 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_worker_metric_definitions(self.resource_group,
                                                                                                     self.name,
                                                                                                     self.worker_pool_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_worker_pool_skus(self):
         '''
@@ -585,19 +615,22 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pool_skus(self.resource_group,
                                                                                        self.name,
                                                                                        self.worker_pool_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_web_worker_usages(self):
         '''
@@ -605,19 +638,22 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_worker_usages(self.resource_group,
                                                                                         self.name,
                                                                                         self.worker_pool_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def get(self):
         '''
@@ -625,18 +661,19 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.get(self.resource_group,
                                                                      self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
     def list_capacities(self):
         '''
@@ -644,18 +681,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_capacities(self.resource_group,
                                                                                  self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_vips(self):
         '''
@@ -663,18 +703,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_vips(self.resource_group,
                                                                            self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_diagnostics(self):
         '''
@@ -682,18 +725,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_diagnostics(self.resource_group,
                                                                                   self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_metric_definitions(self):
         '''
@@ -701,18 +747,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_metric_definitions(self.resource_group,
                                                                                          self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_multi_role_pools(self):
         '''
@@ -720,18 +769,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pools(self.resource_group,
                                                                                        self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_multi_role_metric_definitions(self):
         '''
@@ -739,18 +791,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_metric_definitions(self.resource_group,
                                                                                                     self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_multi_role_pool_skus(self):
         '''
@@ -758,18 +813,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pool_skus(self.resource_group,
                                                                                            self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_multi_role_usages(self):
         '''
@@ -777,18 +835,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_usages(self.resource_group,
                                                                                         self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_operations(self):
         '''
@@ -796,18 +857,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_operations(self.resource_group,
                                                                                  self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_app_service_plans(self):
         '''
@@ -815,18 +879,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_app_service_plans(self.resource_group,
                                                                                         self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_worker_pools(self):
         '''
@@ -834,18 +901,21 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pools(self.resource_group,
                                                                                    self.name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
     def list_by_resource_group(self):
         '''
@@ -853,17 +923,20 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.app_service_environments.list_by_resource_group(self.resource_group)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():

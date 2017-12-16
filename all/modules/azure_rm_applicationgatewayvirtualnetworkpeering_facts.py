@@ -110,19 +110,20 @@ class AzureRMVirtualNetworkPeeringsFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkPeeringsinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.virtual_network_peerings.get(self.resource_group,
                                                                      self.virtual_network_name,
                                                                      self.virtual_network_peering_name)
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworkPeerings.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = response.as_dict()
+
+        return results
 
 
 def main():

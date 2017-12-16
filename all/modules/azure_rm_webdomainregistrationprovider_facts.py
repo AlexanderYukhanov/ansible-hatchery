@@ -77,17 +77,20 @@ class AzureRMDomainRegistrationProviderFacts(AzureRMModuleBase):
 
         :return: deserialized DomainRegistrationProviderinstance state dictionary
         '''
-        found = False
+        response = None
+        results = False
         try:
             response = self.mgmt_client.domain_registration_provider.list_operations()
-            found = True
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for DomainRegistrationProvider.')
-        if found is True:
-            return response.as_dict()
 
-        return False
+        if response is not None:
+            results = []
+            for item in response:
+                results.append(item.as_dict())
+
+        return results
 
 
 def main():
