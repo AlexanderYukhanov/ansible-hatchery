@@ -75,7 +75,7 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
         # store the results of the module operation
         self.results = dict(
             changed=False,
-            ansible_facts=dict(azure_dnsrecordset=[])
+            ansible_facts=dict()
         )
         self.scope = None
         self.role_definition_id = None

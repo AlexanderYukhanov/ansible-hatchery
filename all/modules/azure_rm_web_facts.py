@@ -82,7 +82,7 @@ class AzureRMFacts(AzureRMModuleBase):
         # store the results of the module operation
         self.results = dict(
             changed=False,
-            ansible_facts=dict(azure_dnsrecordset=[])
+            ansible_facts=dict()
         )
         self.sku = None
         self.linux_workers_enabled = None

@@ -88,7 +88,7 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
         # store the results of the module operation
         self.results = dict(
             changed=False,
-            ansible_facts=dict(azure_dnsrecordset=[])
+            ansible_facts=dict()
         )
         self.resource_group = None
         self.server_name = None

@@ -57,7 +57,7 @@ class AzureRMCertificateRegistrationProviderFacts(AzureRMModuleBase):
         # store the results of the module operation
         self.results = dict(
             changed=False,
-            ansible_facts=dict(azure_dnsrecordset=[])
+            ansible_facts=dict()
         )
         super(AzureRMCertificateRegistrationProviderFacts, self).__init__(self.module_arg_spec)
 

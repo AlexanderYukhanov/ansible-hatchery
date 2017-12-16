@@ -75,7 +75,7 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
         # store the results of the module operation
         self.results = dict(
             changed=False,
-            ansible_facts=dict(azure_dnsrecordset=[])
+            ansible_facts=dict()
         )
         self.resource_group = None
         self.local_network_gateway_name = None
