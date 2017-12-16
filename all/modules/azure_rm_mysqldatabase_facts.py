@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysqldatabase_facts
 version_added: "2.5"
-short_description: Get Databases facts.
+short_description: Get MySQL Database facts.
 description:
-    - Get facts of Databases.
+    - Get facts of MySQL Database.
 
 options:
     resource_group:
@@ -44,13 +44,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of Databases
+  - name: Get instance of MySQL Database
     azure_rm_mysqldatabase_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
 
-  - name: List instances of Databases
+  - name: List instances of MySQL Database
     azure_rm_mysqldatabase_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -113,9 +113,9 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified Databases.
+        Gets facts of the specified MySQL Database.
 
-        :return: deserialized Databasesinstance state dictionary
+        :return: deserialized MySQL Databaseinstance state dictionary
         '''
         response = None
         results = False
@@ -134,9 +134,9 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified Databases.
+        Gets facts of the specified MySQL Database.
 
-        :return: deserialized Databasesinstance state dictionary
+        :return: deserialized MySQL Databaseinstance state dictionary
         '''
         response = None
         results = False

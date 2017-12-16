@@ -1509,7 +1509,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -1527,7 +1527,7 @@
           "DefaultValueSample": {
             "default": "database_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "testdatabase",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -1560,12 +1560,12 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_mysqldatabase",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
       "ModuleOperationName": "databases",
-      "ObjectName": "Databases",
+      "ObjectName": "MySQL Database",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
