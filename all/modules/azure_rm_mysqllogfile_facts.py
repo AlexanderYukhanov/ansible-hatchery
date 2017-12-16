@@ -77,6 +77,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
             changed=False,
             ansible_facts=dict()
         )
+        self.mgmt_client = None
         self.resource_group = None
         self.server_name = None
         super(AzureRMLogFilesFacts, self).__init__(self.module_arg_spec)
@@ -84,6 +85,9 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
+
+        self.mgmt_client = self.get_mgmt_svc_client(MySQLManagementClient,
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.resource_group is not None and
                 self.server_name is not None):
