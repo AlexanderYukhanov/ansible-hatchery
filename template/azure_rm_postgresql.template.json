@@ -641,14 +641,14 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
         },
         {
           "Name": "firewall_rule_name",
-          "NameAlt": "firewall_rule_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -659,7 +659,7 @@
           "DefaultValueSample": {
             "default": "rule1"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-firewall-rule",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -667,7 +667,7 @@
         {
           "Name": "parameters",
           "NameAlt": "parameters",
-          "Disposition": "dictionary",
+          "Disposition": "none",
           "Type": "dict",
           "IsList": false,
           "Required": "False",
@@ -685,17 +685,17 @@
         {
           "Name": "start_ip_address",
           "NameAlt": "start_ip_address",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The start IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": ""
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "172.28.10.136",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -703,17 +703,17 @@
         {
           "Name": "end_ip_address",
           "NameAlt": "end_ip_address",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The end IP address of the server firewall rule. Must be IPv4 format.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": ""
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "172.28.10.138",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -745,7 +745,8 @@
             "resource_group_name",
             "server_name",
             "firewall_rule_name",
-            "parameters"
+            "start_ip_address",
+            "end_ip_address"
           ]
         },
         {
@@ -809,15 +810,32 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
-      "AssertStateVariable": "state",
-      "AssertStateExpectedValue": "Ready",
+      "TestPrerequisitesModule": "azure_rm_postgresqlserver",
+      "AssertStateVariable": "name",
+      "AssertStateExpectedValue": "test-firewall-rule",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
-      "UpdateComparisonRules": null,
+      "UpdateComparisonRules": [
+        {
+          "Option": [
+            "start_ip_address"
+          ],
+          "ReturnField": [
+            "start_ip_address"
+          ]
+        },
+        {
+          "Option": [
+            "end_ip_address"
+          ],
+          "ReturnField": [
+            "end_ip_address"
+          ]
+        }
+      ],
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
     },
@@ -856,7 +874,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -907,12 +925,12 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_postgresqlfirewallrule",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules",
+      "ObjectName": "PostgreSQL Firewall Rule",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
@@ -954,14 +972,14 @@
           "DefaultValueSample": {
             "default": "vnet-test-svr"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
         },
         {
           "Name": "virtual_network_rule_name",
-          "NameAlt": "virtual_network_rule_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -972,7 +990,7 @@
           "DefaultValueSample": {
             "default": "vnet-firewall-rule"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "test-virtual-network-rule",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -1131,7 +1149,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_postgresqlserver",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
@@ -1178,7 +1196,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -1229,12 +1247,12 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_postgresqlvirtualnetworkrule",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
-      "ObjectName": "VirtualNetworkRules",
+      "ObjectName": "PostgreSQL Virtual Network Rule",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
@@ -1589,14 +1607,14 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
         },
         {
           "Name": "configuration_name",
-          "NameAlt": "configuration_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "IsList": false,
@@ -1607,7 +1625,7 @@
           "DefaultValueSample": {
             "default": "array_nulls"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "event_scheduler",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -1615,7 +1633,7 @@
         {
           "Name": "parameters",
           "NameAlt": "parameters",
-          "Disposition": "dictionary",
+          "Disposition": "none",
           "Type": "dict",
           "IsList": false,
           "Required": "False",
@@ -1633,7 +1651,7 @@
         {
           "Name": "value",
           "NameAlt": "value",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
           "Required": "False",
@@ -1643,7 +1661,7 @@
           "DefaultValueSample": {
             "default": ""
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"ON\"",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -1651,7 +1669,7 @@
         {
           "Name": "source",
           "NameAlt": "source",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "IsList": false,
           "Required": "False",
@@ -1661,7 +1679,7 @@
           "DefaultValueSample": {
             "default": ""
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "user-override",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -1693,7 +1711,8 @@
             "resource_group_name",
             "server_name",
             "configuration_name",
-            "parameters"
+            "value",
+            "source"
           ]
         }
       ],
@@ -1780,9 +1799,9 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
-      "AssertStateVariable": "state",
-      "AssertStateExpectedValue": "Ready",
+      "TestPrerequisitesModule": "azure_rm_postgresqlserver",
+      "AssertStateVariable": "value",
+      "AssertStateExpectedValue": "ON",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations",
@@ -1884,7 +1903,7 @@
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations",
-      "ReleaseStatus": "RP",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,

@@ -6,6 +6,10 @@
 - name: Create instance of Configurations -- check mode
   azure_rm_postgresqlconfiguration:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: event_scheduler
+    value: "ON"
+    source: user-override
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -16,19 +20,33 @@
 - name: Create instance of Configurations
   azure_rm_postgresqlconfiguration:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: event_scheduler
+    value: "ON"
+    source: user-override
   register: output
 - name: Assert the resource instance is well created
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
+      - output.value == 'ON'
 
 - name: Create again instance of Configurations
   azure_rm_postgresqlconfiguration:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: event_scheduler
+    value: "ON"
+    source: user-override
   register: output
 - name: Assert the state has not changed
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
+      - output.value == 'ON'
+
+- name: Delete instance of PostgreSQL Server
+  azure_rm_postgresqlserver:
+    resource_group: "{{ resource_group }}"
+    name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    state: absent

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_postgresqlfirewallrule_facts
 version_added: "2.5"
-short_description: Get FirewallRules facts.
+short_description: Get PostgreSQL Firewall Rule facts.
 description:
-    - Get facts of FirewallRules.
+    - Get facts of PostgreSQL Firewall Rule.
 
 options:
     resource_group:
@@ -44,13 +44,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of FirewallRules
+  - name: Get instance of PostgreSQL Firewall Rule
     azure_rm_postgresqlfirewallrule_facts:
       resource_group: resource_group_name
       server_name: server_name
       firewall_rule_name: firewall_rule_name
 
-  - name: List instances of FirewallRules
+  - name: List instances of PostgreSQL Firewall Rule
     azure_rm_postgresqlfirewallrule_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -113,9 +113,9 @@ class AzureRMFirewallRulesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified FirewallRules.
+        Gets facts of the specified PostgreSQL Firewall Rule.
 
-        :return: deserialized FirewallRulesinstance state dictionary
+        :return: deserialized PostgreSQL Firewall Ruleinstance state dictionary
         '''
         response = None
         results = False
@@ -134,9 +134,9 @@ class AzureRMFirewallRulesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified FirewallRules.
+        Gets facts of the specified PostgreSQL Firewall Rule.
 
-        :return: deserialized FirewallRulesinstance state dictionary
+        :return: deserialized PostgreSQL Firewall Ruleinstance state dictionary
         '''
         response = None
         results = False

@@ -1903,7 +1903,7 @@
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations",
-      "ReleaseStatus": "RP",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,

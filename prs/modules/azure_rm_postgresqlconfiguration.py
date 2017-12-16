@@ -30,10 +30,13 @@ options:
         description:
             - The name of the server.
         required: True
-    configuration_name:
+    name:
         description:
             - The name of the server configuration.
         required: True
+    parameters:
+        description:
+            - The required parameters for updating a server configuration.
     value:
         description:
             - Value of the configuration.
@@ -55,7 +58,8 @@ EXAMPLES = '''
     azure_rm_postgresqlconfiguration:
       resource_group: TestGroup
       server_name: testserver
-      configuration_name: array_nulls
+      name: array_nulls
+      parameters: parameters
 '''
 
 RETURN = '''
@@ -97,9 +101,13 @@ class AzureRMConfigurations(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            configuration_name=dict(
+            name=dict(
                 type='str',
                 required=True
+            ),
+            parameters=dict(
+                type='dict',
+                required=False
             ),
             value=dict(
                 type='str',
@@ -119,8 +127,9 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         self.resource_group = None
         self.server_name = None
-        self.configuration_name = None
-        self.parameters = dict()
+        self.name = None
+        self.value = None
+        self.source = None
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -137,11 +146,6 @@ class AzureRMConfigurations(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif kwargs[key] is not None:
-                if key == "value":
-                    self.parameters["value"] = kwargs[key]
-                elif key == "source":
-                    self.parameters["source"] = kwargs[key]
 
         old_response = None
         response = None
@@ -209,13 +213,14 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         :return: deserialized Configurations instance state dictionary
         '''
-        self.log("Creating / Updating the Configurations instance {0}".format(self.configuration_name))
+        self.log("Creating / Updating the Configurations instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.configurations.create_or_update(self.resource_group,
                                                                         self.server_name,
-                                                                        self.configuration_name,
-                                                                        self.parameters)
+                                                                        self.name,
+                                                                        self.value,
+                                                                        self.source)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -230,7 +235,7 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the Configurations instance {0}".format(self.configuration_name))
+        self.log("Deleting the Configurations instance {0}".format(self.name))
         try:
             response = self.mgmt_client.configurations.delete()
         except CloudError as e:
@@ -245,12 +250,12 @@ class AzureRMConfigurations(AzureRMModuleBase):
 
         :return: deserialized Configurations instance state dictionary
         '''
-        self.log("Checking if the Configurations instance {0} is present".format(self.configuration_name))
+        self.log("Checking if the Configurations instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.configurations.get(self.resource_group,
                                                            self.server_name,
-                                                           self.configuration_name)
+                                                           self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Configurations instance : {0} found".format(response.name))

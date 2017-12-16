@@ -6,6 +6,10 @@
 - name: Create instance of FirewallRules -- check mode
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: test-firewall-rule
+    start_ip_address: 172.28.10.136
+    end_ip_address: 172.28.10.138
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -16,26 +20,36 @@
 - name: Create instance of FirewallRules
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: test-firewall-rule
+    start_ip_address: 172.28.10.136
+    end_ip_address: 172.28.10.138
   register: output
 - name: Assert the resource instance is well created
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
+      - output.name == 'test-firewall-rule'
 
 - name: Create again instance of FirewallRules
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: test-firewall-rule
+    start_ip_address: 172.28.10.136
+    end_ip_address: 172.28.10.138
   register: output
 - name: Assert the state has not changed
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
+      - output.name == 'test-firewall-rule'
 
 - name: Delete instance of FirewallRules -- check mode
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: test-firewall-rule
     state: absent
   check_mode: yes
   register: output
@@ -47,6 +61,8 @@
 - name: Delete instance of FirewallRules
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: test-firewall-rule
     state: absent
   register: output
 - name: Assert the state has changed
@@ -57,9 +73,17 @@
 - name: Delete unexisting instance of FirewallRules
   azure_rm_postgresqlfirewallrule:
     resource_group: "{{ resource_group }}"
+    server_name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    name: test-firewall-rule
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed == false
+
+- name: Delete instance of PostgreSQL Server
+  azure_rm_postgresqlserver:
+    resource_group: "{{ resource_group }}"
+    name: "postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    state: absent

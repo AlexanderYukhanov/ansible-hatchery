@@ -30,18 +30,19 @@ options:
         description:
             - The name of the server.
         required: True
-    firewall_rule_name:
+    name:
         description:
             - The name of the server firewall rule.
         required: True
+    parameters:
+        description:
+            - The required parameters for creating or updating a firewall rule.
     start_ip_address:
         description:
             - The start IP address of the server firewall rule. Must be IPv4 format.
-        required: True
     end_ip_address:
         description:
             - The end IP address of the server firewall rule. Must be IPv4 format.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -57,7 +58,8 @@ EXAMPLES = '''
     azure_rm_postgresqlfirewallrule:
       resource_group: TestGroup
       server_name: testserver
-      firewall_rule_name: rule1
+      name: rule1
+      parameters: parameters
 '''
 
 RETURN = '''
@@ -99,17 +101,21 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            firewall_rule_name=dict(
+            name=dict(
                 type='str',
                 required=True
+            ),
+            parameters=dict(
+                type='dict',
+                required=False
             ),
             start_ip_address=dict(
                 type='str',
-                required=True
+                required=False
             ),
             end_ip_address=dict(
                 type='str',
-                required=True
+                required=False
             ),
             state=dict(
                 type='str',
@@ -121,8 +127,9 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         self.resource_group = None
         self.server_name = None
-        self.firewall_rule_name = None
-        self.parameters = dict()
+        self.name = None
+        self.start_ip_address = None
+        self.end_ip_address = None
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -139,11 +146,6 @@ class AzureRMFirewallRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()) + ['tags']:
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif kwargs[key] is not None:
-                if key == "start_ip_address":
-                    self.parameters["start_ip_address"] = kwargs[key]
-                elif key == "end_ip_address":
-                    self.parameters["end_ip_address"] = kwargs[key]
 
         old_response = None
         response = None
@@ -167,7 +169,10 @@ class AzureRMFirewallRules(AzureRMModuleBase):
                 self.to_do = Actions.Delete
             elif self.state == 'present':
                 self.log("Need to check if FirewallRules instance has to be deleted or may be updated")
-                self.to_do = Actions.Update
+                if (self.start_ip_address is not None) and (self.start_ip_address != old_response['start_ip_address']):
+                    self.to_do = Actions.Update
+                if (self.end_ip_address is not None) and (self.end_ip_address != old_response['end_ip_address']):
+                    self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
             self.log("Need to Create / Update the FirewallRules instance")
@@ -211,13 +216,14 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         :return: deserialized FirewallRules instance state dictionary
         '''
-        self.log("Creating / Updating the FirewallRules instance {0}".format(self.firewall_rule_name))
+        self.log("Creating / Updating the FirewallRules instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.firewall_rules.create_or_update(self.resource_group,
                                                                         self.server_name,
-                                                                        self.firewall_rule_name,
-                                                                        self.parameters)
+                                                                        self.name,
+                                                                        self.start_ip_address,
+                                                                        self.end_ip_address)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -232,11 +238,11 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         :return: True
         '''
-        self.log("Deleting the FirewallRules instance {0}".format(self.firewall_rule_name))
+        self.log("Deleting the FirewallRules instance {0}".format(self.name))
         try:
             response = self.mgmt_client.firewall_rules.delete(self.resource_group,
                                                               self.server_name,
-                                                              self.firewall_rule_name)
+                                                              self.name)
         except CloudError as e:
             self.log('Error attempting to delete the FirewallRules instance.')
             self.fail("Error deleting the FirewallRules instance: {0}".format(str(e)))
@@ -249,12 +255,12 @@ class AzureRMFirewallRules(AzureRMModuleBase):
 
         :return: deserialized FirewallRules instance state dictionary
         '''
-        self.log("Checking if the FirewallRules instance {0} is present".format(self.firewall_rule_name))
+        self.log("Checking if the FirewallRules instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.firewall_rules.get(self.resource_group,
                                                            self.server_name,
-                                                           self.firewall_rule_name)
+                                                           self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("FirewallRules instance : {0} found".format(response.name))
