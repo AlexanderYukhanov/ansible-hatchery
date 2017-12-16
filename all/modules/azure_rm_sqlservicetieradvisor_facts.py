@@ -127,7 +127,6 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServiceTierAdvisorsinstance state dictionary
         '''
-        self.log("Checking if the ServiceTierAdvisors instance {0} is present".format(self.service_tier_advisor_name))
         found = False
         try:
             response = self.mgmt_client.service_tier_advisors.get(self.resource_group,
@@ -150,7 +149,6 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServiceTierAdvisorsinstance state dictionary
         '''
-        self.log("Checking if the ServiceTierAdvisors instance {0} is present".format(self.service_tier_advisor_name))
         found = False
         try:
             response = self.mgmt_client.service_tier_advisors.list_by_database(self.resource_group,

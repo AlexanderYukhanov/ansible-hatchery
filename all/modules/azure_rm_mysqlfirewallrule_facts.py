@@ -114,7 +114,6 @@ class AzureRMFirewallRulesFacts(AzureRMModuleBase):
 
         :return: deserialized FirewallRulesinstance state dictionary
         '''
-        self.log("Checking if the FirewallRules instance {0} is present".format(self.firewall_rule_name))
         found = False
         try:
             response = self.mgmt_client.firewall_rules.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMFirewallRulesFacts(AzureRMModuleBase):
 
         :return: deserialized FirewallRulesinstance state dictionary
         '''
-        self.log("Checking if the FirewallRules instance {0} is present".format(self.firewall_rule_name))
         found = False
         try:
             response = self.mgmt_client.firewall_rules.list_by_server(self.resource_group,

@@ -161,7 +161,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        self.log("Checking if the PublicIPAddresses instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_vm_public_ip_addresses(self.resource_group,
@@ -185,7 +184,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        self.log("Checking if the PublicIPAddresses instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.public_ip_addresses.get(self.resource_group,
@@ -206,7 +204,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        self.log("Checking if the PublicIPAddresses instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_public_ip_addresses(self.resource_group,
@@ -227,7 +224,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         :return: deserialized PublicIPAddressesinstance state dictionary
         '''
-        self.log("Checking if the PublicIPAddresses instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.public_ip_addresses.list_all()

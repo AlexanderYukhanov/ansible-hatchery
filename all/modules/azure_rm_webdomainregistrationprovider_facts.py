@@ -74,7 +74,6 @@ class AzureRMDomainRegistrationProviderFacts(AzureRMModuleBase):
 
         :return: deserialized DomainRegistrationProviderinstance state dictionary
         '''
-        self.log("Checking if the DomainRegistrationProvider instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.domain_registration_provider.list_operations()

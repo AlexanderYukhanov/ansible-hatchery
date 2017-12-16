@@ -96,7 +96,6 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized LocalNetworkGatewaysinstance state dictionary
         '''
-        self.log("Checking if the LocalNetworkGateways instance {0} is present".format(self.local_network_gateway_name))
         found = False
         try:
             response = self.mgmt_client.local_network_gateways.get(self.resource_group,

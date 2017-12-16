@@ -74,7 +74,6 @@ class AzureRMProviderFacts(AzureRMModuleBase):
 
         :return: deserialized Providerinstance state dictionary
         '''
-        self.log("Checking if the Provider instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.provider.list_operations()

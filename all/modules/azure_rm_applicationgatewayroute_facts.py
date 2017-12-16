@@ -107,7 +107,6 @@ class AzureRMRoutesFacts(AzureRMModuleBase):
 
         :return: deserialized Routesinstance state dictionary
         '''
-        self.log("Checking if the Routes instance {0} is present".format(self.route_name))
         found = False
         try:
             response = self.mgmt_client.routes.get(self.resource_group,

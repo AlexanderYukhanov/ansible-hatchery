@@ -107,7 +107,6 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolActivitiesinstance state dictionary
         '''
-        self.log("Checking if the ElasticPoolActivities instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.elastic_pool_activities.list_by_elastic_pool(self.resource_group,

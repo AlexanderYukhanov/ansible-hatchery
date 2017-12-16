@@ -107,7 +107,6 @@ class AzureRMExpressRouteCircuitAuthorizationsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitAuthorizationsinstance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuitAuthorizations instance {0} is present".format(self.authorization_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuit_authorizations.get(self.resource_group,

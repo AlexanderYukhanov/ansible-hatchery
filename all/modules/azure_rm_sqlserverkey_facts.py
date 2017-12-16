@@ -114,7 +114,6 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
         :return: deserialized ServerKeysinstance state dictionary
         '''
-        self.log("Checking if the ServerKeys instance {0} is present".format(self.key_name))
         found = False
         try:
             response = self.mgmt_client.server_keys.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
         :return: deserialized ServerKeysinstance state dictionary
         '''
-        self.log("Checking if the ServerKeys instance {0} is present".format(self.key_name))
         found = False
         try:
             response = self.mgmt_client.server_keys.list_by_server(self.resource_group,

@@ -166,7 +166,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        self.log("Checking if the Diagnostics instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.diagnostics.list_site_analyses_slot(self.resource_group,
@@ -189,7 +188,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        self.log("Checking if the Diagnostics instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.diagnostics.list_site_detectors_slot(self.resource_group,
@@ -212,7 +210,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        self.log("Checking if the Diagnostics instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.diagnostics.list_site_analyses(self.resource_group,
@@ -234,7 +231,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        self.log("Checking if the Diagnostics instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.diagnostics.list_site_detectors(self.resource_group,
@@ -256,7 +252,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        self.log("Checking if the Diagnostics instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.diagnostics.list_site_diagnostic_categories_slot(self.resource_group,
@@ -278,7 +273,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
         :return: deserialized Diagnosticsinstance state dictionary
         '''
-        self.log("Checking if the Diagnostics instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.diagnostics.list_site_diagnostic_categories(self.resource_group,

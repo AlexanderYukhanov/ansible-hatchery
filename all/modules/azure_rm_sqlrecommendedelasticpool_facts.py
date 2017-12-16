@@ -124,7 +124,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized RecommendedElasticPoolsinstance state dictionary
         '''
-        self.log("Checking if the RecommendedElasticPools instance {0} is present".format(self.recommended_elastic_pool_name))
         found = False
         try:
             response = self.mgmt_client.recommended_elastic_pools.get(self.resource_group,
@@ -146,7 +145,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized RecommendedElasticPoolsinstance state dictionary
         '''
-        self.log("Checking if the RecommendedElasticPools instance {0} is present".format(self.recommended_elastic_pool_name))
         found = False
         try:
             response = self.mgmt_client.recommended_elastic_pools.list_metrics(self.resource_group,
@@ -168,7 +166,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized RecommendedElasticPoolsinstance state dictionary
         '''
-        self.log("Checking if the RecommendedElasticPools instance {0} is present".format(self.recommended_elastic_pool_name))
         found = False
         try:
             response = self.mgmt_client.recommended_elastic_pools.list_by_server(self.resource_group,

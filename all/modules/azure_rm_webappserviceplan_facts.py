@@ -254,7 +254,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_web_apps(self.resource_group,
@@ -275,7 +274,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_hybrid_connection_keys(self.resource_group,
@@ -298,7 +296,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_web_apps_by_hybrid_connection(self.resource_group,
@@ -321,7 +318,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_metrics(self.resource_group,
@@ -342,7 +338,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_usages(self.resource_group,
@@ -363,7 +358,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_routes_for_vnet(self.resource_group,
@@ -385,7 +379,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.get(self.resource_group,
@@ -406,7 +399,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_capabilities(self.resource_group,
@@ -427,7 +419,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_hybrid_connections(self.resource_group,
@@ -448,7 +439,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_metric_defintions(self.resource_group,
@@ -469,7 +459,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_vnets(self.resource_group,
@@ -490,7 +479,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         :return: deserialized AppServicePlansinstance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.list_by_resource_group(self.resource_group)

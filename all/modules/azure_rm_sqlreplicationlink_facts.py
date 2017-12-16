@@ -127,7 +127,6 @@ class AzureRMReplicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ReplicationLinksinstance state dictionary
         '''
-        self.log("Checking if the ReplicationLinks instance {0} is present".format(self.link_id))
         found = False
         try:
             response = self.mgmt_client.replication_links.get(self.resource_group,
@@ -150,7 +149,6 @@ class AzureRMReplicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ReplicationLinksinstance state dictionary
         '''
-        self.log("Checking if the ReplicationLinks instance {0} is present".format(self.link_id))
         found = False
         try:
             response = self.mgmt_client.replication_links.list_by_database(self.resource_group,

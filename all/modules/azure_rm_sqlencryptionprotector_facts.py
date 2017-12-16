@@ -114,7 +114,6 @@ class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
 
         :return: deserialized EncryptionProtectorsinstance state dictionary
         '''
-        self.log("Checking if the EncryptionProtectors instance {0} is present".format(self.encryption_protector_name))
         found = False
         try:
             response = self.mgmt_client.encryption_protectors.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
 
         :return: deserialized EncryptionProtectorsinstance state dictionary
         '''
-        self.log("Checking if the EncryptionProtectors instance {0} is present".format(self.encryption_protector_name))
         found = False
         try:
             response = self.mgmt_client.encryption_protectors.list_by_server(self.resource_group,

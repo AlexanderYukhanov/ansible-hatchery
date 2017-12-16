@@ -172,7 +172,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        self.log("Checking if the RoleAssignments instance {0} is present".format(self.role_assignment_name))
         found = False
         try:
             response = self.mgmt_client.role_assignments.list_for_resource(self.resource_group,
@@ -196,7 +195,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        self.log("Checking if the RoleAssignments instance {0} is present".format(self.role_assignment_name))
         found = False
         try:
             response = self.mgmt_client.role_assignments.list_for_resource_group(self.resource_group)
@@ -216,7 +214,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        self.log("Checking if the RoleAssignments instance {0} is present".format(self.role_assignment_name))
         found = False
         try:
             response = self.mgmt_client.role_assignments.get(self.scope,
@@ -237,7 +234,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleAssignmentsinstance state dictionary
         '''
-        self.log("Checking if the RoleAssignments instance {0} is present".format(self.role_assignment_name))
         found = False
         try:
             response = self.mgmt_client.role_assignments.list_for_scope(self.scope)

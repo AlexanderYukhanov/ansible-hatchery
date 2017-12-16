@@ -114,7 +114,6 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
         :return: deserialized ServiceObjectivesinstance state dictionary
         '''
-        self.log("Checking if the ServiceObjectives instance {0} is present".format(self.service_objective_name))
         found = False
         try:
             response = self.mgmt_client.service_objectives.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
         :return: deserialized ServiceObjectivesinstance state dictionary
         '''
-        self.log("Checking if the ServiceObjectives instance {0} is present".format(self.service_objective_name))
         found = False
         try:
             response = self.mgmt_client.service_objectives.list_by_server(self.resource_group,

@@ -107,7 +107,6 @@ class AzureRMRouteTablesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteTablesinstance state dictionary
         '''
-        self.log("Checking if the RouteTables instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.route_tables.get(self.resource_group,
@@ -128,7 +127,6 @@ class AzureRMRouteTablesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteTablesinstance state dictionary
         '''
-        self.log("Checking if the RouteTables instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.route_tables.list_all()

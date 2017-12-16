@@ -109,7 +109,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized TopLevelDomainsinstance state dictionary
         '''
-        self.log("Checking if the TopLevelDomains instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.top_level_domains.list_agreements(self.name)
@@ -129,7 +128,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized TopLevelDomainsinstance state dictionary
         '''
-        self.log("Checking if the TopLevelDomains instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.top_level_domains.get(self.name)

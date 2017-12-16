@@ -114,7 +114,6 @@ class AzureRMFailoverGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized FailoverGroupsinstance state dictionary
         '''
-        self.log("Checking if the FailoverGroups instance {0} is present".format(self.failover_group_name))
         found = False
         try:
             response = self.mgmt_client.failover_groups.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMFailoverGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized FailoverGroupsinstance state dictionary
         '''
-        self.log("Checking if the FailoverGroups instance {0} is present".format(self.failover_group_name))
         found = False
         try:
             response = self.mgmt_client.failover_groups.list_by_server(self.resource_group,

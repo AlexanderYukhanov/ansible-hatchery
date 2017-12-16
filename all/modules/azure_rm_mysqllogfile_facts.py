@@ -96,7 +96,6 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
 
         :return: deserialized LogFilesinstance state dictionary
         '''
-        self.log("Checking if the LogFiles instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.log_files.list_by_server(self.resource_group,

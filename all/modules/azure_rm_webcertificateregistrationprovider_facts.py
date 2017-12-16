@@ -74,7 +74,6 @@ class AzureRMCertificateRegistrationProviderFacts(AzureRMModuleBase):
 
         :return: deserialized CertificateRegistrationProviderinstance state dictionary
         '''
-        self.log("Checking if the CertificateRegistrationProvider instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.certificate_registration_provider.list_operations()

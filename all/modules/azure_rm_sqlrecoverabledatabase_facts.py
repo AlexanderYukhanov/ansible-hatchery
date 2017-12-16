@@ -114,7 +114,6 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
 
         :return: deserialized RecoverableDatabasesinstance state dictionary
         '''
-        self.log("Checking if the RecoverableDatabases instance {0} is present".format(self.database_name))
         found = False
         try:
             response = self.mgmt_client.recoverable_databases.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
 
         :return: deserialized RecoverableDatabasesinstance state dictionary
         '''
-        self.log("Checking if the RecoverableDatabases instance {0} is present".format(self.database_name))
         found = False
         try:
             response = self.mgmt_client.recoverable_databases.list_by_server(self.resource_group,

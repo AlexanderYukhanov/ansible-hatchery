@@ -96,7 +96,6 @@ class AzureRMServerUsagesFacts(AzureRMModuleBase):
 
         :return: deserialized ServerUsagesinstance state dictionary
         '''
-        self.log("Checking if the ServerUsages instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.server_usages.list_by_server(self.resource_group,

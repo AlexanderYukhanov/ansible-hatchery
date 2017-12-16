@@ -115,7 +115,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworksinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworks instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.virtual_networks.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworksinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworks instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.virtual_networks.list_usage(self.resource_group,
@@ -157,7 +155,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworksinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworks instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.virtual_networks.list_all()

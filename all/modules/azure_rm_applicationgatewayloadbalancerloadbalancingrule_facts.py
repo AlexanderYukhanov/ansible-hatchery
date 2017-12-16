@@ -107,7 +107,6 @@ class AzureRMLoadBalancerLoadBalancingRulesFacts(AzureRMModuleBase):
 
         :return: deserialized LoadBalancerLoadBalancingRulesinstance state dictionary
         '''
-        self.log("Checking if the LoadBalancerLoadBalancingRules instance {0} is present".format(self.load_balancing_rule_name))
         found = False
         try:
             response = self.mgmt_client.load_balancer_load_balancing_rules.get(self.resource_group,

@@ -114,7 +114,6 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteFilterRulesinstance state dictionary
         '''
-        self.log("Checking if the RouteFilterRules instance {0} is present".format(self.rule_name))
         found = False
         try:
             response = self.mgmt_client.route_filter_rules.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
 
         :return: deserialized RouteFilterRulesinstance state dictionary
         '''
-        self.log("Checking if the RouteFilterRules instance {0} is present".format(self.rule_name))
         found = False
         try:
             response = self.mgmt_client.route_filter_rules.list_by_route_filter(self.resource_group,

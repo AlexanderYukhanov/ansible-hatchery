@@ -1089,7 +1089,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_backup_status_secrets_slot(self.resource_group,
@@ -1113,7 +1112,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connection_keys_slot(self.resource_group,
@@ -1137,7 +1135,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_modules_slot(self.resource_group,
@@ -1161,7 +1158,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_threads_slot(self.resource_group,
@@ -1185,7 +1181,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_metrics_slot(self.resource_group,
@@ -1207,7 +1202,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_slot_differences_slot(self.resource_group,
@@ -1231,7 +1225,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_backup_status_secrets(self.resource_group,
@@ -1254,7 +1247,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connection_keys(self.resource_group,
@@ -1277,7 +1269,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_modules(self.resource_group,
@@ -1300,7 +1291,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_process_threads(self.resource_group,
@@ -1323,7 +1313,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_metrics(self.resource_group,
@@ -1344,7 +1333,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_deployment_log_slot(self.resource_group,
@@ -1367,7 +1355,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_function_secrets_slot(self.resource_group,
@@ -1390,7 +1377,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_processes_slot(self.resource_group,
@@ -1413,7 +1399,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_network_features_slot(self.resource_group,
@@ -1436,7 +1421,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_perf_mon_counters_slot(self.resource_group,
@@ -1458,7 +1442,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_process_modules_slot(self.resource_group,
@@ -1481,7 +1464,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_process_threads_slot(self.resource_group,
@@ -1504,7 +1486,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets_slot(self.resource_group,
@@ -1526,7 +1507,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_job_history_slot(self.resource_group,
@@ -1549,7 +1529,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_usages_slot(self.resource_group,
@@ -1571,7 +1550,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_slot_differences_from_production(self.resource_group,
@@ -1594,7 +1572,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_deployment_log(self.resource_group,
@@ -1616,7 +1593,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_function_secrets(self.resource_group,
@@ -1638,7 +1614,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_processes(self.resource_group,
@@ -1660,7 +1635,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_network_features(self.resource_group,
@@ -1682,7 +1656,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_perf_mon_counters(self.resource_group,
@@ -1703,7 +1676,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_process_modules(self.resource_group,
@@ -1725,7 +1697,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_process_threads(self.resource_group,
@@ -1747,7 +1718,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets(self.resource_group,
@@ -1768,7 +1738,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_backups_slot(self.resource_group,
@@ -1790,7 +1759,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_configurations_slot(self.resource_group,
@@ -1812,7 +1780,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_application_settings_slot(self.resource_group,
@@ -1834,7 +1801,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_connection_strings_slot(self.resource_group,
@@ -1856,7 +1822,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_metadata_slot(self.resource_group,
@@ -1878,7 +1843,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_credentials_slot(self.resource_group,
@@ -1900,7 +1864,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_site_push_settings_slot(self.resource_group,
@@ -1922,7 +1885,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_configuration_snapshot_info_slot(self.resource_group,
@@ -1944,7 +1906,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_continuous_web_jobs_slot(self.resource_group,
@@ -1966,7 +1927,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_deployments_slot(self.resource_group,
@@ -1988,7 +1948,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_domain_ownership_identifiers_slot(self.resource_group,
@@ -2010,7 +1969,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_functions_slot(self.resource_group,
@@ -2032,7 +1990,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_host_name_bindings_slot(self.resource_group,
@@ -2054,7 +2011,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connections_slot(self.resource_group,
@@ -2076,7 +2032,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_relay_service_connections_slot(self.resource_group,
@@ -2098,7 +2053,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_identifiers_slot(self.resource_group,
@@ -2120,7 +2074,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_sync_function_triggers_slot(self.resource_group,
@@ -2142,7 +2095,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_metric_definitions_slot(self.resource_group,
@@ -2164,7 +2116,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_premier_add_ons_slot(self.resource_group,
@@ -2186,7 +2137,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_processes_slot(self.resource_group,
@@ -2208,7 +2158,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_public_certificates_slot(self.resource_group,
@@ -2230,7 +2179,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_site_extensions_slot(self.resource_group,
@@ -2252,7 +2200,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_snapshots_slot(self.resource_group,
@@ -2274,7 +2221,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_jobs_slot(self.resource_group,
@@ -2296,7 +2242,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_vnet_connections_slot(self.resource_group,
@@ -2318,7 +2263,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_web_jobs_slot(self.resource_group,
@@ -2340,7 +2284,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_job_history(self.resource_group,
@@ -2362,7 +2305,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_usages(self.resource_group,
@@ -2383,7 +2325,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_by_resource_group(self.resource_group)
@@ -2403,7 +2344,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.get(self.resource_group,
@@ -2424,7 +2364,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_backups(self.resource_group,
@@ -2445,7 +2384,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_configurations(self.resource_group,
@@ -2466,7 +2404,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_application_settings(self.resource_group,
@@ -2487,7 +2424,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_connection_strings(self.resource_group,
@@ -2508,7 +2444,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_metadata(self.resource_group,
@@ -2529,7 +2464,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_publishing_credentials(self.resource_group,
@@ -2550,7 +2484,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_site_push_settings(self.resource_group,
@@ -2571,7 +2504,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_slot_configuration_names(self.resource_group,
@@ -2592,7 +2524,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_configuration_snapshot_info(self.resource_group,
@@ -2613,7 +2544,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_continuous_web_jobs(self.resource_group,
@@ -2634,7 +2564,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_deployments(self.resource_group,
@@ -2655,7 +2584,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_domain_ownership_identifiers(self.resource_group,
@@ -2676,7 +2604,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_functions(self.resource_group,
@@ -2697,7 +2624,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_host_name_bindings(self.resource_group,
@@ -2718,7 +2644,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connections(self.resource_group,
@@ -2739,7 +2664,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_relay_service_connections(self.resource_group,
@@ -2760,7 +2684,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_instance_identifiers(self.resource_group,
@@ -2781,7 +2704,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_sync_function_triggers(self.resource_group,
@@ -2802,7 +2724,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_metric_definitions(self.resource_group,
@@ -2823,7 +2744,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_premier_add_ons(self.resource_group,
@@ -2844,7 +2764,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_processes(self.resource_group,
@@ -2865,7 +2784,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_public_certificates(self.resource_group,
@@ -2886,7 +2804,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_site_extensions(self.resource_group,
@@ -2907,7 +2824,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_slots(self.resource_group,
@@ -2928,7 +2844,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_snapshots(self.resource_group,
@@ -2949,7 +2864,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_jobs(self.resource_group,
@@ -2970,7 +2884,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_vnet_connections(self.resource_group,
@@ -2991,7 +2904,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         :return: deserialized WebAppsinstance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.list_web_jobs(self.resource_group,

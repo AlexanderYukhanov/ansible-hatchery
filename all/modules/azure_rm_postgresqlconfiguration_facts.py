@@ -114,7 +114,6 @@ class AzureRMConfigurationsFacts(AzureRMModuleBase):
 
         :return: deserialized Configurationsinstance state dictionary
         '''
-        self.log("Checking if the Configurations instance {0} is present".format(self.configuration_name))
         found = False
         try:
             response = self.mgmt_client.configurations.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMConfigurationsFacts(AzureRMModuleBase):
 
         :return: deserialized Configurationsinstance state dictionary
         '''
-        self.log("Checking if the Configurations instance {0} is present".format(self.configuration_name))
         found = False
         try:
             response = self.mgmt_client.configurations.list_by_server(self.resource_group,

@@ -107,7 +107,6 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized LoadBalancerBackendAddressPoolsinstance state dictionary
         '''
-        self.log("Checking if the LoadBalancerBackendAddressPools instance {0} is present".format(self.backend_address_pool_name))
         found = False
         try:
             response = self.mgmt_client.load_balancer_backend_address_pools.get(self.resource_group,

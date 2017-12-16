@@ -114,7 +114,6 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
 
         :return: deserialized Databasesinstance state dictionary
         '''
-        self.log("Checking if the Databases instance {0} is present".format(self.database_name))
         found = False
         try:
             response = self.mgmt_client.databases.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMDatabasesFacts(AzureRMModuleBase):
 
         :return: deserialized Databasesinstance state dictionary
         '''
-        self.log("Checking if the Databases instance {0} is present".format(self.database_name))
         found = False
         try:
             response = self.mgmt_client.databases.list_by_server(self.resource_group,

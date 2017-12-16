@@ -114,7 +114,6 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServerAzureADAdministratorsinstance state dictionary
         '''
-        self.log("Checking if the ServerAzureADAdministrators instance {0} is present".format(self.administrator_name))
         found = False
         try:
             response = self.mgmt_client.server_azure_ad_administrators.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
 
         :return: deserialized ServerAzureADAdministratorsinstance state dictionary
         '''
-        self.log("Checking if the ServerAzureADAdministrators instance {0} is present".format(self.administrator_name))
         found = False
         try:
             response = self.mgmt_client.server_azure_ad_administrators.list_by_server(self.resource_group,

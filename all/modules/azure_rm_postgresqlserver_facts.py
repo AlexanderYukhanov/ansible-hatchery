@@ -101,7 +101,6 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
         :return: deserialized Serversinstance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
         found = False
         try:
             response = self.mgmt_client.servers.get(self.resource_group,
@@ -122,7 +121,6 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
         :return: deserialized Serversinstance state dictionary
         '''
-        self.log("Checking if the Servers instance {0} is present".format(self.server_name))
         found = False
         try:
             response = self.mgmt_client.servers.list_by_resource_group(self.resource_group)

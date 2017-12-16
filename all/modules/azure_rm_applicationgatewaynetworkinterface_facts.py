@@ -162,7 +162,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        self.log("Checking if the NetworkInterfaces instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_ip_configurations(self.resource_group,
@@ -185,7 +184,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        self.log("Checking if the NetworkInterfaces instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_interfaces.get(self.resource_group,
@@ -206,7 +204,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        self.log("Checking if the NetworkInterfaces instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_vm_network_interfaces(self.resource_group,
@@ -228,7 +225,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        self.log("Checking if the NetworkInterfaces instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_interfaces.list_effective_network_security_groups(self.resource_group,
@@ -249,7 +245,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        self.log("Checking if the NetworkInterfaces instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_network_interfaces(self.resource_group,
@@ -270,7 +265,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfacesinstance state dictionary
         '''
-        self.log("Checking if the NetworkInterfaces instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_interfaces.list_all()

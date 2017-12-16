@@ -118,7 +118,6 @@ class AzureRMDatabaseBlobAuditingPoliciesFacts(AzureRMModuleBase):
 
         :return: deserialized DatabaseBlobAuditingPoliciesinstance state dictionary
         '''
-        self.log("Checking if the DatabaseBlobAuditingPolicies instance {0} is present".format(self.blob_auditing_policy_name))
         found = False
         try:
             response = self.mgmt_client.database_blob_auditing_policies.get(self.resource_group,

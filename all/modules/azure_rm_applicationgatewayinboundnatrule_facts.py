@@ -116,7 +116,6 @@ class AzureRMInboundNatRulesFacts(AzureRMModuleBase):
 
         :return: deserialized InboundNatRulesinstance state dictionary
         '''
-        self.log("Checking if the InboundNatRules instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.inbound_nat_rules.get(self.resource_group,

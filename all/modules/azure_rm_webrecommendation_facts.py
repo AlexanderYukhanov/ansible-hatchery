@@ -124,7 +124,6 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
 
         :return: deserialized Recommendationsinstance state dictionary
         '''
-        self.log("Checking if the Recommendations instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.recommendations.list_recommended_rules_for_web_app(self.resource_group,
@@ -145,7 +144,6 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
 
         :return: deserialized Recommendationsinstance state dictionary
         '''
-        self.log("Checking if the Recommendations instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.recommendations.list_history_for_web_app(self.resource_group,

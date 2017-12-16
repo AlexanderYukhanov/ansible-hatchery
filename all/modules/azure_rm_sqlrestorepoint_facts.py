@@ -107,7 +107,6 @@ class AzureRMRestorePointsFacts(AzureRMModuleBase):
 
         :return: deserialized RestorePointsinstance state dictionary
         '''
-        self.log("Checking if the RestorePoints instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.restore_points.list_by_database(self.resource_group,

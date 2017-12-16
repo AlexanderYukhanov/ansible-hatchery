@@ -107,7 +107,6 @@ class AzureRMLoadBalancerFrontendIPConfigurationsFacts(AzureRMModuleBase):
 
         :return: deserialized LoadBalancerFrontendIPConfigurationsinstance state dictionary
         '''
-        self.log("Checking if the LoadBalancerFrontendIPConfigurations instance {0} is present".format(self.frontend_ip_configuration_name))
         found = False
         try:
             response = self.mgmt_client.load_balancer_frontend_ip_configurations.get(self.resource_group,

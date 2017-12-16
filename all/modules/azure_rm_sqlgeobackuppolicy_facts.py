@@ -127,7 +127,6 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
 
         :return: deserialized GeoBackupPoliciesinstance state dictionary
         '''
-        self.log("Checking if the GeoBackupPolicies instance {0} is present".format(self.geo_backup_policy_name))
         found = False
         try:
             response = self.mgmt_client.geo_backup_policies.get(self.resource_group,
@@ -150,7 +149,6 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
 
         :return: deserialized GeoBackupPoliciesinstance state dictionary
         '''
-        self.log("Checking if the GeoBackupPolicies instance {0} is present".format(self.geo_backup_policy_name))
         found = False
         try:
             response = self.mgmt_client.geo_backup_policies.list_by_database(self.resource_group,

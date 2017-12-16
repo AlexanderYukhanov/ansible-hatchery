@@ -131,7 +131,6 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
 
         :return: deserialized Permissionsinstance state dictionary
         '''
-        self.log("Checking if the Permissions instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.permissions.list_for_resource(self.resource_group,
@@ -155,7 +154,6 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
 
         :return: deserialized Permissionsinstance state dictionary
         '''
-        self.log("Checking if the Permissions instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.permissions.list_for_resource_group(self.resource_group)

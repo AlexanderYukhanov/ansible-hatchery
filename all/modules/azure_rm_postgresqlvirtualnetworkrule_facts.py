@@ -114,7 +114,6 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkRulesinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.virtual_network_rule_name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_rules.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkRulesinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.virtual_network_rule_name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_rules.list_by_server(self.resource_group,

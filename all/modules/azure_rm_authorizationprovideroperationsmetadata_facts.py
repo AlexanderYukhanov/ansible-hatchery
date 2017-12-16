@@ -94,7 +94,6 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
 
         :return: deserialized ProviderOperationsMetadatainstance state dictionary
         '''
-        self.log("Checking if the ProviderOperationsMetadata instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.provider_operations_metadata.get(self.resource_provider_namespace)

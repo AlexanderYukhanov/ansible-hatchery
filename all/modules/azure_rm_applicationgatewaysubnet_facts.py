@@ -116,7 +116,6 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
 
         :return: deserialized Subnetsinstance state dictionary
         '''
-        self.log("Checking if the Subnets instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.subnets.get(self.resource_group,

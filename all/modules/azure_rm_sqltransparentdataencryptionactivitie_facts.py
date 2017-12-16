@@ -118,7 +118,6 @@ class AzureRMTransparentDataEncryptionActivitiesFacts(AzureRMModuleBase):
 
         :return: deserialized TransparentDataEncryptionActivitiesinstance state dictionary
         '''
-        self.log("Checking if the TransparentDataEncryptionActivities instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.transparent_data_encryption_activities.list_by_configuration(self.resource_group,

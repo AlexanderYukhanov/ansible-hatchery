@@ -109,7 +109,6 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceCertificateOrdersinstance state dictionary
         '''
-        self.log("Checking if the AppServiceCertificateOrders instance {0} is present".format(self.certificate_order_name))
         found = False
         try:
             response = self.mgmt_client.app_service_certificate_orders.get(self.resource_group,
@@ -130,7 +129,6 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceCertificateOrdersinstance state dictionary
         '''
-        self.log("Checking if the AppServiceCertificateOrders instance {0} is present".format(self.certificate_order_name))
         found = False
         try:
             response = self.mgmt_client.app_service_certificate_orders.list_certificates(self.resource_group,
@@ -151,7 +149,6 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceCertificateOrdersinstance state dictionary
         '''
-        self.log("Checking if the AppServiceCertificateOrders instance {0} is present".format(self.certificate_order_name))
         found = False
         try:
             response = self.mgmt_client.app_service_certificate_orders.list_by_resource_group(self.resource_group)

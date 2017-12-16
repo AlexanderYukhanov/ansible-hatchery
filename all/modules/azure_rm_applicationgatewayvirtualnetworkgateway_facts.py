@@ -104,7 +104,6 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkGatewaysinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkGateways instance {0} is present".format(self.virtual_network_gateway_name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_gateways.get(self.resource_group,
@@ -125,7 +124,6 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkGatewaysinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkGateways instance {0} is present".format(self.virtual_network_gateway_name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_gateways.list_connections(self.resource_group,

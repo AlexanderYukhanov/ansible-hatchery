@@ -104,7 +104,6 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        self.log("Checking if the  instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client..list_geo_regions()
@@ -124,7 +123,6 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        self.log("Checking if the  instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client..list_premier_add_on_offers()
@@ -144,7 +142,6 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        self.log("Checking if the  instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client..list_skus()
@@ -164,7 +161,6 @@ class AzureRMFacts(AzureRMModuleBase):
 
         :return: deserialized instance state dictionary
         '''
-        self.log("Checking if the  instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client..list_source_controls()

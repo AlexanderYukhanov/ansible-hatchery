@@ -107,7 +107,6 @@ class AzureRMDatabaseUsagesFacts(AzureRMModuleBase):
 
         :return: deserialized DatabaseUsagesinstance state dictionary
         '''
-        self.log("Checking if the DatabaseUsages instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.database_usages.list_by_database(self.resource_group,

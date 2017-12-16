@@ -144,7 +144,6 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        self.log("Checking if the ElasticPools instance {0} is present".format(self.elastic_pool_name))
         found = False
         try:
             response = self.mgmt_client.elastic_pools.list_metrics(self.resource_group,
@@ -167,7 +166,6 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        self.log("Checking if the ElasticPools instance {0} is present".format(self.elastic_pool_name))
         found = False
         try:
             response = self.mgmt_client.elastic_pools.list_metric_definitions(self.resource_group,
@@ -189,7 +187,6 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        self.log("Checking if the ElasticPools instance {0} is present".format(self.elastic_pool_name))
         found = False
         try:
             response = self.mgmt_client.elastic_pools.get(self.resource_group,
@@ -211,7 +208,6 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
 
         :return: deserialized ElasticPoolsinstance state dictionary
         '''
-        self.log("Checking if the ElasticPools instance {0} is present".format(self.elastic_pool_name))
         found = False
         try:
             response = self.mgmt_client.elastic_pools.list_by_server(self.resource_group,

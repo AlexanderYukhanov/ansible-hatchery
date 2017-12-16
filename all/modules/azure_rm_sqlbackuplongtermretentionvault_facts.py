@@ -114,7 +114,6 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
 
         :return: deserialized BackupLongTermRetentionVaultsinstance state dictionary
         '''
-        self.log("Checking if the BackupLongTermRetentionVaults instance {0} is present".format(self.backup_long_term_retention_vault_name))
         found = False
         try:
             response = self.mgmt_client.backup_long_term_retention_vaults.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
 
         :return: deserialized BackupLongTermRetentionVaultsinstance state dictionary
         '''
-        self.log("Checking if the BackupLongTermRetentionVaults instance {0} is present".format(self.backup_long_term_retention_vault_name))
         found = False
         try:
             response = self.mgmt_client.backup_long_term_retention_vaults.list_by_server(self.resource_group,

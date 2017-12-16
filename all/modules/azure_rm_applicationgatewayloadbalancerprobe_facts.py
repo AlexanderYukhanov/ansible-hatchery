@@ -107,7 +107,6 @@ class AzureRMLoadBalancerProbesFacts(AzureRMModuleBase):
 
         :return: deserialized LoadBalancerProbesinstance state dictionary
         '''
-        self.log("Checking if the LoadBalancerProbes instance {0} is present".format(self.probe_name))
         found = False
         try:
             response = self.mgmt_client.load_balancer_probes.get(self.resource_group,

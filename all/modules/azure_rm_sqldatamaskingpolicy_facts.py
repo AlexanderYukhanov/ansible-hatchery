@@ -118,7 +118,6 @@ class AzureRMDataMaskingPoliciesFacts(AzureRMModuleBase):
 
         :return: deserialized DataMaskingPoliciesinstance state dictionary
         '''
-        self.log("Checking if the DataMaskingPolicies instance {0} is present".format(self.data_masking_policy_name))
         found = False
         try:
             response = self.mgmt_client.data_masking_policies.get(self.resource_group,

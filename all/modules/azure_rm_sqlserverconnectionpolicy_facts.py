@@ -107,7 +107,6 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
 
         :return: deserialized ServerConnectionPoliciesinstance state dictionary
         '''
-        self.log("Checking if the ServerConnectionPolicies instance {0} is present".format(self.connection_policy_name))
         found = False
         try:
             response = self.mgmt_client.server_connection_policies.get(self.resource_group,

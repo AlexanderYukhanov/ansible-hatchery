@@ -110,7 +110,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        self.log("Checking if the ApplicationGateways instance {0} is present".format(self.application_gateway_name))
         found = False
         try:
             response = self.mgmt_client.application_gateways.get(self.resource_group,
@@ -131,7 +130,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        self.log("Checking if the ApplicationGateways instance {0} is present".format(self.application_gateway_name))
         found = False
         try:
             response = self.mgmt_client.application_gateways.list_all()
@@ -151,7 +149,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        self.log("Checking if the ApplicationGateways instance {0} is present".format(self.application_gateway_name))
         found = False
         try:
             response = self.mgmt_client.application_gateways.list_available_waf_rule_sets()
@@ -171,7 +168,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        self.log("Checking if the ApplicationGateways instance {0} is present".format(self.application_gateway_name))
         found = False
         try:
             response = self.mgmt_client.application_gateways.list_available_ssl_options()
@@ -191,7 +187,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationGatewaysinstance state dictionary
         '''
-        self.log("Checking if the ApplicationGateways instance {0} is present".format(self.application_gateway_name))
         found = False
         try:
             response = self.mgmt_client.application_gateways.list_available_ssl_predefined_policies()

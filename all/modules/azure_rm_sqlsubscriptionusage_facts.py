@@ -101,7 +101,6 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
 
         :return: deserialized SubscriptionUsagesinstance state dictionary
         '''
-        self.log("Checking if the SubscriptionUsages instance {0} is present".format(self.usage_name))
         found = False
         try:
             response = self.mgmt_client.subscription_usages.get(self.location_name,
@@ -122,7 +121,6 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
 
         :return: deserialized SubscriptionUsagesinstance state dictionary
         '''
-        self.log("Checking if the SubscriptionUsages instance {0} is present".format(self.usage_name))
         found = False
         try:
             response = self.mgmt_client.subscription_usages.list_by_location(self.location_name)

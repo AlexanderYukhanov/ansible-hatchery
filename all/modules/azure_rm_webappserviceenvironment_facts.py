@@ -384,7 +384,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_metrics(self.resource_group,
@@ -405,7 +404,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metrics(self.resource_group,
@@ -428,7 +426,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_worker_metrics(self.resource_group,
@@ -450,7 +447,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_metrics(self.resource_group,
@@ -471,7 +467,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metrics(self.resource_group,
@@ -493,7 +488,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metric_definitions(self.resource_group,
@@ -516,7 +510,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metric_definitions(self.resource_group,
@@ -538,7 +531,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_apps(self.resource_group,
@@ -559,7 +551,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_usages(self.resource_group,
@@ -580,7 +571,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_worker_metric_definitions(self.resource_group,
@@ -602,7 +592,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pool_skus(self.resource_group,
@@ -624,7 +613,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_web_worker_usages(self.resource_group,
@@ -646,7 +634,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.get(self.resource_group,
@@ -667,7 +654,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_capacities(self.resource_group,
@@ -688,7 +674,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_vips(self.resource_group,
@@ -709,7 +694,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_diagnostics(self.resource_group,
@@ -730,7 +714,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_metric_definitions(self.resource_group,
@@ -751,7 +734,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pools(self.resource_group,
@@ -772,7 +754,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_metric_definitions(self.resource_group,
@@ -793,7 +774,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_pool_skus(self.resource_group,
@@ -814,7 +794,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_multi_role_usages(self.resource_group,
@@ -835,7 +814,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_operations(self.resource_group,
@@ -856,7 +834,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_app_service_plans(self.resource_group,
@@ -877,7 +854,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_worker_pools(self.resource_group,
@@ -898,7 +874,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         :return: deserialized AppServiceEnvironmentsinstance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.list_by_resource_group(self.resource_group)

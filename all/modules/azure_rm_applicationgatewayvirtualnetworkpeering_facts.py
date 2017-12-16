@@ -107,7 +107,6 @@ class AzureRMVirtualNetworkPeeringsFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkPeeringsinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkPeerings instance {0} is present".format(self.virtual_network_peering_name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_peerings.get(self.resource_group,

@@ -114,7 +114,6 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
 
         :return: deserialized RestorableDroppedDatabasesinstance state dictionary
         '''
-        self.log("Checking if the RestorableDroppedDatabases instance {0} is present".format(self.restorable_droppeded_database_id))
         found = False
         try:
             response = self.mgmt_client.restorable_dropped_databases.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
 
         :return: deserialized RestorableDroppedDatabasesinstance state dictionary
         '''
-        self.log("Checking if the RestorableDroppedDatabases instance {0} is present".format(self.restorable_droppeded_database_id))
         found = False
         try:
             response = self.mgmt_client.restorable_dropped_databases.list_by_server(self.resource_group,

@@ -124,7 +124,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncAgentsinstance state dictionary
         '''
-        self.log("Checking if the SyncAgents instance {0} is present".format(self.sync_agent_name))
         found = False
         try:
             response = self.mgmt_client.sync_agents.get(self.resource_group,
@@ -146,7 +145,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncAgentsinstance state dictionary
         '''
-        self.log("Checking if the SyncAgents instance {0} is present".format(self.sync_agent_name))
         found = False
         try:
             response = self.mgmt_client.sync_agents.list_linked_databases(self.resource_group,
@@ -168,7 +166,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncAgentsinstance state dictionary
         '''
-        self.log("Checking if the SyncAgents instance {0} is present".format(self.sync_agent_name))
         found = False
         try:
             response = self.mgmt_client.sync_agents.list_by_server(self.resource_group,

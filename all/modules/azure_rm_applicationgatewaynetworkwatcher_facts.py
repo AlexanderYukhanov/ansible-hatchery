@@ -116,7 +116,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkWatchersinstance state dictionary
         '''
-        self.log("Checking if the NetworkWatchers instance {0} is present".format(self.network_watcher_name))
         found = False
         try:
             response = self.mgmt_client.network_watchers.list_available_providers(self.resource_group,
@@ -138,7 +137,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkWatchersinstance state dictionary
         '''
-        self.log("Checking if the NetworkWatchers instance {0} is present".format(self.network_watcher_name))
         found = False
         try:
             response = self.mgmt_client.network_watchers.get(self.resource_group,
@@ -159,7 +157,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkWatchersinstance state dictionary
         '''
-        self.log("Checking if the NetworkWatchers instance {0} is present".format(self.network_watcher_name))
         found = False
         try:
             response = self.mgmt_client.network_watchers.list_all()

@@ -107,7 +107,6 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
 
         :return: deserialized PacketCapturesinstance state dictionary
         '''
-        self.log("Checking if the PacketCaptures instance {0} is present".format(self.packet_capture_name))
         found = False
         try:
             response = self.mgmt_client.packet_captures.get(self.resource_group,

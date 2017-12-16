@@ -101,7 +101,6 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
 
         :return: deserialized Certificatesinstance state dictionary
         '''
-        self.log("Checking if the Certificates instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.certificates.get(self.resource_group,
@@ -122,7 +121,6 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
 
         :return: deserialized Certificatesinstance state dictionary
         '''
-        self.log("Checking if the Certificates instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.certificates.list_by_resource_group(self.resource_group)

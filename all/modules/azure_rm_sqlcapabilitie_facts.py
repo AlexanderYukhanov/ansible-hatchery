@@ -85,7 +85,6 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
 
         :return: deserialized Capabilitiesinstance state dictionary
         '''
-        self.log("Checking if the Capabilities instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.capabilities.list_by_location(self.location_id)

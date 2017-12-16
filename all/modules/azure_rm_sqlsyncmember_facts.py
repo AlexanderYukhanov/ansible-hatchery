@@ -154,7 +154,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
 
         :return: deserialized SyncMembersinstance state dictionary
         '''
-        self.log("Checking if the SyncMembers instance {0} is present".format(self.sync_member_name))
         found = False
         try:
             response = self.mgmt_client.sync_members.get(self.resource_group,
@@ -178,7 +177,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
 
         :return: deserialized SyncMembersinstance state dictionary
         '''
-        self.log("Checking if the SyncMembers instance {0} is present".format(self.sync_member_name))
         found = False
         try:
             response = self.mgmt_client.sync_members.list_member_schemas(self.resource_group,
@@ -202,7 +200,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
 
         :return: deserialized SyncMembersinstance state dictionary
         '''
-        self.log("Checking if the SyncMembers instance {0} is present".format(self.sync_member_name))
         found = False
         try:
             response = self.mgmt_client.sync_members.list_by_sync_group(self.resource_group,

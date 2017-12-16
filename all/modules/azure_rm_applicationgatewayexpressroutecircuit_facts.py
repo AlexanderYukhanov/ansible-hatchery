@@ -150,7 +150,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuits instance {0} is present".format(self.circuit_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuits.list_arp_table(self.resource_group,
@@ -173,7 +172,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuits instance {0} is present".format(self.circuit_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuits.list_routes_table(self.resource_group,
@@ -196,7 +194,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuits instance {0} is present".format(self.circuit_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuits.list_routes_table_summary(self.resource_group,
@@ -219,7 +216,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuits instance {0} is present".format(self.circuit_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuits.get(self.resource_group,
@@ -240,7 +236,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitsinstance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuits instance {0} is present".format(self.circuit_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuits.list_all()

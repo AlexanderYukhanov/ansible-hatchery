@@ -107,7 +107,6 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
 
         :return: deserialized SecurityRulesinstance state dictionary
         '''
-        self.log("Checking if the SecurityRules instance {0} is present".format(self.security_rule_name))
         found = False
         try:
             response = self.mgmt_client.security_rules.get(self.resource_group,

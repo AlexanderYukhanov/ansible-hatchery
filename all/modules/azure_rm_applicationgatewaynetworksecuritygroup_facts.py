@@ -107,7 +107,6 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkSecurityGroupsinstance state dictionary
         '''
-        self.log("Checking if the NetworkSecurityGroups instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_security_groups.get(self.resource_group,
@@ -128,7 +127,6 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkSecurityGroupsinstance state dictionary
         '''
-        self.log("Checking if the NetworkSecurityGroups instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.network_security_groups.list_all()

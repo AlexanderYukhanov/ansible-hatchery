@@ -130,7 +130,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        self.log("Checking if the Domains instance {0} is present".format(self.domain_name))
         found = False
         try:
             response = self.mgmt_client.domains.list_recommendations()
@@ -150,7 +149,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        self.log("Checking if the Domains instance {0} is present".format(self.domain_name))
         found = False
         try:
             response = self.mgmt_client.domains.get(self.resource_group,
@@ -171,7 +169,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        self.log("Checking if the Domains instance {0} is present".format(self.domain_name))
         found = False
         try:
             response = self.mgmt_client.domains.list_ownership_identifiers(self.resource_group,
@@ -192,7 +189,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         :return: deserialized Domainsinstance state dictionary
         '''
-        self.log("Checking if the Domains instance {0} is present".format(self.domain_name))
         found = False
         try:
             response = self.mgmt_client.domains.list_by_resource_group(self.resource_group)

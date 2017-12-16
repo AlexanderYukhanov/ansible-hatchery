@@ -118,7 +118,6 @@ class AzureRMDatabaseThreatDetectionPoliciesFacts(AzureRMModuleBase):
 
         :return: deserialized DatabaseThreatDetectionPoliciesinstance state dictionary
         '''
-        self.log("Checking if the DatabaseThreatDetectionPolicies instance {0} is present".format(self.security_alert_policy_name))
         found = False
         try:
             response = self.mgmt_client.database_threat_detection_policies.get(self.resource_group,

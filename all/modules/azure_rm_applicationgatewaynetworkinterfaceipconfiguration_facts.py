@@ -107,7 +107,6 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
 
         :return: deserialized NetworkInterfaceIPConfigurationsinstance state dictionary
         '''
-        self.log("Checking if the NetworkInterfaceIPConfigurations instance {0} is present".format(self.ip_configuration_name))
         found = False
         try:
             response = self.mgmt_client.network_interface_ip_configurations.get(self.resource_group,

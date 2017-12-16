@@ -96,7 +96,6 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
 
         :return: deserialized RoleDefinitionsinstance state dictionary
         '''
-        self.log("Checking if the RoleDefinitions instance {0} is present".format(self.role_definition_id))
         found = False
         try:
             response = self.mgmt_client.role_definitions.get(self.scope,

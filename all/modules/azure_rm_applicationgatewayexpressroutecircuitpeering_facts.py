@@ -107,7 +107,6 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
 
         :return: deserialized ExpressRouteCircuitPeeringsinstance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuitPeerings instance {0} is present".format(self.peering_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuit_peerings.get(self.resource_group,

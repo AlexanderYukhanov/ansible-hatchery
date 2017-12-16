@@ -96,7 +96,6 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
 
         :return: deserialized VirtualNetworkGatewayConnectionsinstance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkGatewayConnections instance {0} is present".format(self.virtual_network_gateway_connection_name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_gateway_connections.get(self.resource_group,

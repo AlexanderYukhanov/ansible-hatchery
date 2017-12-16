@@ -114,7 +114,6 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ServerCommunicationLinksinstance state dictionary
         '''
-        self.log("Checking if the ServerCommunicationLinks instance {0} is present".format(self.communication_link_name))
         found = False
         try:
             response = self.mgmt_client.server_communication_links.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
 
         :return: deserialized ServerCommunicationLinksinstance state dictionary
         '''
-        self.log("Checking if the ServerCommunicationLinks instance {0} is present".format(self.communication_link_name))
         found = False
         try:
             response = self.mgmt_client.server_communication_links.list_by_server(self.resource_group,

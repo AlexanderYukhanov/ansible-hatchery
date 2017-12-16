@@ -201,7 +201,6 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
             response = self.mgmt_client.sync_groups.list_logs(self.resource_group,
@@ -227,7 +226,6 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
             response = self.mgmt_client.sync_groups.list_hub_schemas(self.resource_group,
@@ -250,7 +248,6 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
             response = self.mgmt_client.sync_groups.get(self.resource_group,
@@ -273,7 +270,6 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
             response = self.mgmt_client.sync_groups.list_by_database(self.resource_group,
@@ -295,7 +291,6 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized SyncGroupsinstance state dictionary
         '''
-        self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
             response = self.mgmt_client.sync_groups.list_sync_database_ids(self.location_name)

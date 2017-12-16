@@ -107,7 +107,6 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
 
         :return: deserialized LoadBalancersinstance state dictionary
         '''
-        self.log("Checking if the LoadBalancers instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.load_balancers.get(self.resource_group,
@@ -128,7 +127,6 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
 
         :return: deserialized LoadBalancersinstance state dictionary
         '''
-        self.log("Checking if the LoadBalancers instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.load_balancers.list_all()

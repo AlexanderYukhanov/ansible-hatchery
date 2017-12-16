@@ -114,7 +114,6 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
         :return: deserialized ServerDnsAliasesinstance state dictionary
         '''
-        self.log("Checking if the ServerDnsAliases instance {0} is present".format(self.dns_alias_name))
         found = False
         try:
             response = self.mgmt_client.server_dns_aliases.get(self.resource_group,
@@ -136,7 +135,6 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
         :return: deserialized ServerDnsAliasesinstance state dictionary
         '''
-        self.log("Checking if the ServerDnsAliases instance {0} is present".format(self.dns_alias_name))
         found = False
         try:
             response = self.mgmt_client.server_dns_aliases.list_by_server(self.resource_group,

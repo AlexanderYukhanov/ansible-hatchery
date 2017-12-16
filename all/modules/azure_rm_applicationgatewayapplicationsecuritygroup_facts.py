@@ -98,7 +98,6 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationSecurityGroupsinstance state dictionary
         '''
-        self.log("Checking if the ApplicationSecurityGroups instance {0} is present".format(self.application_security_group_name))
         found = False
         try:
             response = self.mgmt_client.application_security_groups.get(self.resource_group,
@@ -119,7 +118,6 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
         :return: deserialized ApplicationSecurityGroupsinstance state dictionary
         '''
-        self.log("Checking if the ApplicationSecurityGroups instance {0} is present".format(self.application_security_group_name))
         found = False
         try:
             response = self.mgmt_client.application_security_groups.list_all()
