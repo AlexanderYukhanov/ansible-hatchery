@@ -132,8 +132,12 @@ class AzureRMServersFacts(AzureRMModuleBase):
             self.log('Could not get facts for Servers.')
         if found is True:
             return response.as_dict()
+        
+        results = []
+        for item in response:
+            results.append(item.as_dict())
 
-        return False
+        return results
 
 
 def main():
