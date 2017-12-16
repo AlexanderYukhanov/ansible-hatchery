@@ -3,44 +3,15 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
-- name: Create MySQL Server
-  azure_rm_mysqlserver:
-    resource_group: "{{ resource_group }}"
-    name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
-    location: westus
-    version: 5.6
-    admin_username: zimxyz
-    admin_password: Testpasswordxyz12!
-
-- name: Create instance of LogFiles -- check mode
+- name: Gather facts LogFiles
   azure_rm_mysqllogfile_facts:
     resource_group: "{{ resource_group }}"
-  check_mode: yes
+    server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   register: output
-- name: Assert the resource instance is well created
+- name: Assert that facts are returned
   assert:
     that:
-      - output.changed
-
-- name: Create instance of LogFiles
-  azure_rm_mysqllogfile_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert the resource instance is well created
-  assert:
-    that:
-      - output.changed
-      - output.state == 'Ready'
-
-- name: Create again instance of LogFiles
-  azure_rm_mysqllogfile_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-      - output.state == 'Ready'
+      - output.changed == False
 
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:

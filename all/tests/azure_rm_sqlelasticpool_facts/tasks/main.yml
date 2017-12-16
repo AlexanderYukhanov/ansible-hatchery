@@ -3,32 +3,38 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of ElasticPools -- check mode
+- name: Gather facts ElasticPools
   azure_rm_sqlelasticpool_facts:
     resource_group: "{{ resource_group }}"
-  check_mode: yes
   register: output
-- name: Assert the resource instance is well created
+- name: Assert that facts are returned
   assert:
     that:
-      - output.changed
+      - output.changed == False
 
-- name: Create instance of ElasticPools
+- name: Gather facts ElasticPools
   azure_rm_sqlelasticpool_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert the resource instance is well created
+- name: Assert that facts are returned
   assert:
     that:
-      - output.changed
-      - output.state == 'Ready'
+      - output.changed == False
 
-- name: Create again instance of ElasticPools
+- name: Gather facts ElasticPools
   azure_rm_sqlelasticpool_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert the state has not changed
+- name: Assert that facts are returned
   assert:
     that:
-      - output.changed == false
-      - output.state == 'Ready'
+      - output.changed == False
+
+- name: Gather facts ElasticPools
+  azure_rm_sqlelasticpool_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False

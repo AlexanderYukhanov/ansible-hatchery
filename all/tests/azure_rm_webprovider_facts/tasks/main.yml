@@ -3,29 +3,10 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of Provider -- check mode
-  azure_rm_webprovider_facts:
-  check_mode: yes
-  register: output
-- name: Assert the resource instance is well created
-  assert:
-    that:
-      - output.changed
-
-- name: Create instance of Provider
+- name: Gather facts Provider
   azure_rm_webprovider_facts:
   register: output
-- name: Assert the resource instance is well created
+- name: Assert that facts are returned
   assert:
     that:
-      - output.changed
-      - output.state == 'Ready'
-
-- name: Create again instance of Provider
-  azure_rm_webprovider_facts:
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-      - output.state == 'Ready'
+      - output.changed == False
