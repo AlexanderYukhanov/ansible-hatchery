@@ -1846,7 +1846,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -1864,7 +1864,7 @@
           "DefaultValueSample": {
             "default": "configuration_name"
           },
-          "DefaultValueTest": "",
+          "DefaultValueTest": "event_scheduler",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -1897,12 +1897,12 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_postgresqlconfiguration",
       "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
-      "ObjectName": "Configurations",
+      "ObjectName": "PostgreSQL Configuration",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,

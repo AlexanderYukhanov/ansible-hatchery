@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_mysqlconfiguration_facts
 version_added: "2.5"
-short_description: Get Configurations facts.
+short_description: Get MySQL Configuration facts.
 description:
-    - Get facts of Configurations.
+    - Get facts of MySQL Configuration.
 
 options:
     resource_group:
@@ -44,13 +44,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of Configurations
+  - name: Get instance of MySQL Configuration
     azure_rm_mysqlconfiguration_facts:
       resource_group: resource_group_name
       server_name: server_name
       configuration_name: configuration_name
 
-  - name: List instances of Configurations
+  - name: List instances of MySQL Configuration
     azure_rm_mysqlconfiguration_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -113,9 +113,9 @@ class AzureRMConfigurationsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified Configurations.
+        Gets facts of the specified MySQL Configuration.
 
-        :return: deserialized Configurationsinstance state dictionary
+        :return: deserialized MySQL Configurationinstance state dictionary
         '''
         response = None
         results = False
@@ -134,9 +134,9 @@ class AzureRMConfigurationsFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified Configurations.
+        Gets facts of the specified MySQL Configuration.
 
-        :return: deserialized Configurationsinstance state dictionary
+        :return: deserialized MySQL Configurationinstance state dictionary
         '''
         response = None
         results = False
