@@ -114,12 +114,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
             self.log('Could not get facts for Servers.')
 
         if response is not None:
-            if isinstance(response, list):
-                results = []
-                for item in response:
-                    results.append(item.as_dict())
-            else:
-                results = response.as_dict()
+            results = response.as_dict()
 
         return results
 
@@ -138,12 +133,9 @@ class AzureRMServersFacts(AzureRMModuleBase):
             self.log('Could not get facts for Servers.')
 
         if response is not None:
-            if isinstance(response, list):
-                results = []
-                for item in response:
-                    results.append(item.as_dict())
-            else:
-                results = response.as_dict()
+            results = []
+            for item in response:
+                results.append(item.as_dict())
 
         return results
 
