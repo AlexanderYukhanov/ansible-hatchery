@@ -3,7 +3,7 @@ git pull
 
 cd ~/azure_preview_modules
 git checkout hatchery-pr-branch 2>/dev/null || git checkout -b hatchery-pr-branch;
-
+git pull
 cp -rfv ~/ansible-hatchery/role/modules/* ~/azure_preview_modules/library
 cp -rfv ~/ansible-hatchery/role/tests/* ~/azure_preview_modules/tests/integration/targets
 
