@@ -85,7 +85,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
 
-        if (self.resource_group_name is not None and
+        if (self.resource_group is not None and
                 self.server_name is not None):
             self.results['ansible_facts']['list_by_server'] = self.list_by_server()
         return self.results
