@@ -21,7 +21,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of ServerConnectionPolicies
   azure_rm_sqlserverconnectionpolicy:
@@ -31,4 +30,3 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'

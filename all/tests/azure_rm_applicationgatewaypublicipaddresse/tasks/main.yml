@@ -25,7 +25,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of PublicIPAddresses
   azure_rm_applicationgatewaypublicipaddresse:
@@ -37,7 +36,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of PublicIPAddresses -- check mode
   azure_rm_applicationgatewaypublicipaddresse:

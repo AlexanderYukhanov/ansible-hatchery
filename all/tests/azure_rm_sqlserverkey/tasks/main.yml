@@ -21,7 +21,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of ServerKeys
   azure_rm_sqlserverkey:
@@ -31,7 +30,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of ServerKeys -- check mode
   azure_rm_sqlserverkey:

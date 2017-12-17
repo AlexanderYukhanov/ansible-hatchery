@@ -29,7 +29,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of RoleAssignments
   azure_rm_authorizationroleassignment:
@@ -43,7 +42,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of RoleAssignments -- check mode
   azure_rm_authorizationroleassignment:

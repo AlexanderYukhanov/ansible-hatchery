@@ -27,7 +27,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of FailoverGroups
   azure_rm_sqlfailovergroup:
@@ -40,7 +39,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of FailoverGroups -- check mode
   azure_rm_sqlfailovergroup:

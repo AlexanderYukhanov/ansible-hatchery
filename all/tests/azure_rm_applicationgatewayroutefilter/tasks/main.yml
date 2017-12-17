@@ -87,7 +87,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of RouteFilters
   azure_rm_applicationgatewayroutefilter:
@@ -130,7 +129,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of RouteFilters -- check mode
   azure_rm_applicationgatewayroutefilter:

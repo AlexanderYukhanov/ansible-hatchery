@@ -101,7 +101,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of VirtualNetworks
   azure_rm_applicationgatewayvirtualnetwork:
@@ -151,7 +150,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of VirtualNetworks -- check mode
   azure_rm_applicationgatewayvirtualnetwork:

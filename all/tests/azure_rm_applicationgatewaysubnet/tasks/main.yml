@@ -79,7 +79,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of Subnets
   azure_rm_applicationgatewaysubnet:
@@ -118,7 +117,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of Subnets -- check mode
   azure_rm_applicationgatewaysubnet:

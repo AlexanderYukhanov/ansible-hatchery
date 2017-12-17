@@ -27,7 +27,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of SyncGroups
   azure_rm_sqlsyncgroup:
@@ -40,7 +39,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of SyncGroups -- check mode
   azure_rm_sqlsyncgroup:

@@ -23,7 +23,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of PacketCaptures
   azure_rm_applicationgatewaypacketcapture:
@@ -34,7 +33,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of PacketCaptures -- check mode
   azure_rm_applicationgatewaypacketcapture:

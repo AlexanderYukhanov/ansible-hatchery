@@ -35,7 +35,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of ElasticPool
   azure_rm_sqlelasticpool:
@@ -48,7 +47,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of ElasticPool -- check mode
   azure_rm_sqlelasticpool:

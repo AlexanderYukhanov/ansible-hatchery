@@ -117,7 +117,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of ExpressRouteCircuitPeerings
   azure_rm_applicationgatewayexpressroutecircuitpeering:
@@ -175,7 +174,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of ExpressRouteCircuitPeerings -- check mode
   azure_rm_applicationgatewayexpressroutecircuitpeering:

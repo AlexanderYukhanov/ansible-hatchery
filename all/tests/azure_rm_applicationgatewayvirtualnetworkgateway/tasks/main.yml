@@ -39,7 +39,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of VirtualNetworkGateways
   azure_rm_applicationgatewayvirtualnetworkgateway:
@@ -58,7 +57,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of VirtualNetworkGateways -- check mode
   azure_rm_applicationgatewayvirtualnetworkgateway:

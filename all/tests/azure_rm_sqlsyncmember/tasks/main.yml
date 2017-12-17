@@ -21,7 +21,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of SyncMembers
   azure_rm_sqlsyncmember:
@@ -31,7 +30,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of SyncMembers -- check mode
   azure_rm_sqlsyncmember:

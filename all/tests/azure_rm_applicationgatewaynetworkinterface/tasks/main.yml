@@ -181,7 +181,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of NetworkInterfaces
   azure_rm_applicationgatewaynetworkinterface:
@@ -271,7 +270,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of NetworkInterfaces -- check mode
   azure_rm_applicationgatewaynetworkinterface:

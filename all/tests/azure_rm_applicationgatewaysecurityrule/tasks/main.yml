@@ -41,7 +41,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of SecurityRules
   azure_rm_applicationgatewaysecurityrule:
@@ -61,7 +60,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of SecurityRules -- check mode
   azure_rm_applicationgatewaysecurityrule:

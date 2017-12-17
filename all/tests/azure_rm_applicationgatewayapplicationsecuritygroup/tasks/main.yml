@@ -21,7 +21,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of ApplicationSecurityGroups
   azure_rm_applicationgatewayapplicationsecuritygroup:
@@ -31,7 +30,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of ApplicationSecurityGroups -- check mode
   azure_rm_applicationgatewayapplicationsecuritygroup:

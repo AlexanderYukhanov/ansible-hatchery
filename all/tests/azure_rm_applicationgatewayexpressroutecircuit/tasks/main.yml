@@ -83,7 +83,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of ExpressRouteCircuits
   azure_rm_applicationgatewayexpressroutecircuit:
@@ -124,7 +123,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of ExpressRouteCircuits -- check mode
   azure_rm_applicationgatewayexpressroutecircuit:

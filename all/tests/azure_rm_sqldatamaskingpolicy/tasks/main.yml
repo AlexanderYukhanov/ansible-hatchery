@@ -21,7 +21,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of DataMaskingPolicies
   azure_rm_sqldatamaskingpolicy:
@@ -31,4 +30,3 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'

@@ -65,7 +65,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of NetworkSecurityGroups
   azure_rm_applicationgatewaynetworksecuritygroup:
@@ -97,7 +96,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of NetworkSecurityGroups -- check mode
   azure_rm_applicationgatewaynetworksecuritygroup:

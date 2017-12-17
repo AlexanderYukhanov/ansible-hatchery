@@ -107,7 +107,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of LoadBalancers
   azure_rm_applicationgatewayloadbalancer:
@@ -160,7 +159,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of LoadBalancers -- check mode
   azure_rm_applicationgatewayloadbalancer:

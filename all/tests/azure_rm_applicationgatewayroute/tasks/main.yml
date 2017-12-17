@@ -21,7 +21,6 @@
   assert:
     that:
       - output.changed
-      - output.state == 'Ready'
 
 - name: Create again instance of Routes
   azure_rm_applicationgatewayroute:
@@ -31,7 +30,6 @@
   assert:
     that:
       - output.changed == false
-      - output.state == 'Ready'
 
 - name: Delete instance of Routes -- check mode
   azure_rm_applicationgatewayroute:
