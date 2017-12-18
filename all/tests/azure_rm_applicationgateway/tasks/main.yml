@@ -17,32 +17,6 @@
     ssl_certificates:
     frontend_ip_configurations:
     frontend_ports:
-    probes:
-      - match:
-          status_codes:
-            - CCC
-    backend_address_pools: []
-    backend_http_settings_collection:
-      - authentication_certificates:
-    http_listeners:
-    url_path_maps:
-      - path_rules:
-          - paths:
-              - FFF
-    request_routing_rules:
-    redirect_configurations:
-      - request_routing_rules:
-        url_path_maps:
-        path_rules:
-    web_application_firewall_configuration:
-      enabled: False
-      disabled_rule_groups:
-        - rule_group_name: rulegroup
-          rules:
-            - 10
-      rule_set_version: 12
-      rule_set_type: OWASP
-      firewall_mode: Prevention
   register: output
 - name: Assert the resource instance is well created
   assert:
