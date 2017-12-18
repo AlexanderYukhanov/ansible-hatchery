@@ -66,6 +66,7 @@
           rules:
             - 10
       rule_set_version: 12
+      rule_set_type: OWASP
       firewall_mode: Prevention
   register: output
 - name: Assert the resource instance is well created
