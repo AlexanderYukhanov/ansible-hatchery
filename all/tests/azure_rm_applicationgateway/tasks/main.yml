@@ -21,6 +21,7 @@
       - match:
           status_codes:
             - CCC
+    backend_address_pools:
     backend_http_settings_collection:
       - authentication_certificates:
     http_listeners:
