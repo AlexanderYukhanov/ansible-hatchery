@@ -22,7 +22,6 @@
           status_codes:
             - CCC
     backend_address_pools:
-      - id: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/ansible-demo-rg/providers/Microsoft.Network/virtualNetworks/myVMVNET"
     backend_http_settings_collection:
       - authentication_certificates:
     http_listeners:
