@@ -60,6 +60,7 @@
         url_path_maps:
         path_rules:
     web_application_firewall_configuration:
+      enabled: False
       disabled_rule_groups:
         - rule_group_name: rulegroup
           rules:
