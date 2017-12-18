@@ -64,6 +64,7 @@
         - rule_group_name: rulegroup
           rules:
             - 10
+      rule_set_version: 12
   register: output
 - name: Assert the resource instance is well created
   assert:
