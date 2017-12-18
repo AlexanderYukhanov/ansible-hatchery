@@ -1625,7 +1625,7 @@
           "DefaultValueSample": {
             "default": "array_nulls"
           },
-          "DefaultValueTest": "event_scheduler",
+          "DefaultValueTest": "deadlock_timeout",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -1661,7 +1661,7 @@
           "DefaultValueSample": {
             "default": ""
           },
-          "DefaultValueTest": "\"ON\"",
+          "DefaultValueTest": "2000",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
