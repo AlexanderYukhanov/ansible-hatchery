@@ -9,9 +9,9 @@
     name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     ssl_policy:
       disabled_ssl_protocols:
-        - XXXX - list of values -- not implemented str
+        - AAA
       cipher_suites:
-        - XXXX - list of values -- not implemented str
+        - BBB
     gateway_ip_configurations:
     authentication_certificates:
     ssl_certificates:
@@ -20,7 +20,7 @@
     probes:
       - match:
           status_codes:
-            - XXXX - list of values -- not implemented str
+            - CCC
     backend_address_pools:
       - backend_ip_configurations:
           - application_gateway_backend_address_pools:
@@ -40,11 +40,11 @@
                 routes:
               service_endpoints:
                 - locations:
-                    - XXXX - list of values -- not implemented str
+                    - DDD
               resource_navigation_links:
             public_ip_address:
               zones:
-                - XXXX - list of values -- not implemented str
+                - EEE
             application_security_groups:
         backend_addresses:
     backend_http_settings_collection:
@@ -53,7 +53,7 @@
     url_path_maps:
       - path_rules:
           - paths:
-              - XXXX - list of values -- not implemented str
+              - FFF
     request_routing_rules:
     redirect_configurations:
       - request_routing_rules:
@@ -62,8 +62,7 @@
     web_application_firewall_configuration:
       disabled_rule_groups:
         - rules:
-            - XXXX - list of values -- not implemented int
-  check_mode: yes
+            - GGG
   register: output
 - name: Assert the resource instance is well created
   assert:
