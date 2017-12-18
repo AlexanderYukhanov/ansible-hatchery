@@ -1800,8 +1800,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
-      "AssertStateVariable": "value",
-      "AssertStateExpectedValue": "ON",
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations",

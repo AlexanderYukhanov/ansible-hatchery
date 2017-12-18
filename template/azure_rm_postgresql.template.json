@@ -1800,8 +1800,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_postgresqlserver",
-      "AssertStateVariable": "value",
-      "AssertStateExpectedValue": "ON",
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
       "ModuleOperationName": "configurations",
       "ObjectName": "Configurations",
