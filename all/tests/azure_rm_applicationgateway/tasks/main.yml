@@ -61,7 +61,7 @@
         path_rules:
     web_application_firewall_configuration:
       disabled_rule_groups:
-        - name: rulegroup
+        - rule_group_name: rulegroup
           rules:
             - 10
   register: output
