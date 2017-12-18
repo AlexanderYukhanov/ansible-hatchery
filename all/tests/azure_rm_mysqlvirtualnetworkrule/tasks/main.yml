@@ -34,7 +34,7 @@
     name: test-virtual-network-rule
     virtual_network_subnet_id: my_test_network
   check_mode: yes
-  register: output
+  register: vn_output
 - name: Assert the resource instance is well created
   assert:
     that:
@@ -45,7 +45,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
-    virtual_network_subnet_id: my_test_network
+    virtual_network_subnet_id: "{{ vn_output.state.id }}"
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -57,7 +57,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
-    virtual_network_subnet_id: my_test_network
+    virtual_network_subnet_id: "{{ vn_output.state.id }}"
   register: output
 - name: Assert the state has not changed
   assert:
@@ -69,6 +69,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
+    virtual_network_subnet_id: "{{ vn_output.state.id }}"
     state: absent
   check_mode: yes
   register: output
