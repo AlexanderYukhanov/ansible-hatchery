@@ -7,47 +7,6 @@
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
     name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
-    ssl_policy:
-      disabled_ssl_protocols:
-        - TLSv1_0
-      cipher_suites:
-        - BBB
-    gateway_ip_configurations:
-    authentication_certificates:
-    ssl_certificates:
-    frontend_ip_configurations:
-    frontend_ports:
-    probes:
-      - match:
-          status_codes:
-            - CCC
-    backend_address_pools:
-      - backend_ip_configurations:
-          - id: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/networkInterfaces/zims-nic/ipConfigurations/zims-ipconfig"
-        backend_addresses:
-          - fqdn: test.domain.com
-            ip_address: 127.0.0.1
-    backend_http_settings_collection:
-      - authentication_certificates:
-    http_listeners:
-    url_path_maps:
-      - path_rules:
-          - paths:
-              - FFF
-    request_routing_rules:
-    redirect_configurations:
-      - request_routing_rules:
-        url_path_maps:
-        path_rules:
-    web_application_firewall_configuration:
-      enabled: False
-      disabled_rule_groups:
-        - rule_group_name: rulegroup
-          rules:
-            - 10
-      rule_set_version: 12
-      rule_set_type: OWASP
-      firewall_mode: Prevention
   register: output
 - name: Assert the resource instance is well created
   assert:
