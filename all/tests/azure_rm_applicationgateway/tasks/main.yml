@@ -27,29 +27,7 @@
             - XXXX - list of values -- not implemented str
     backend_address_pools:
       - backend_ip_configurations:
-          - application_gateway_backend_address_pools:
-              - backend_ip_configurations:
-                  - application_gateway_backend_address_pools:
-                    load_balancer_backend_address_pools:
-                    load_balancer_inbound_nat_rules:
-                    application_security_groups:
-                backend_addresses:
-            load_balancer_backend_address_pools:
-            load_balancer_inbound_nat_rules:
-            subnet:
-              network_security_group:
-                security_rules:
-                default_security_rules:
-              route_table:
-                routes:
-              service_endpoints:
-                - locations:
-                    - XXXX - list of values -- not implemented str
-              resource_navigation_links:
-            public_ip_address:
-              zones:
-                - XXXX - list of values -- not implemented str
-            application_security_groups:
+          - id: "abc"
         backend_addresses:
     backend_http_settings_collection:
       - authentication_certificates:
