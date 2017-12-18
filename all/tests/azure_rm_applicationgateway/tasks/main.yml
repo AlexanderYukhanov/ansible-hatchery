@@ -23,29 +23,7 @@
             - CCC
     backend_address_pools:
       - backend_ip_configurations:
-          - application_gateway_backend_address_pools:
-              - backend_ip_configurations:
-                  - application_gateway_backend_address_pools:
-                    load_balancer_backend_address_pools:
-                    load_balancer_inbound_nat_rules:
-                    application_security_groups:
-                backend_addresses:
-            load_balancer_backend_address_pools:
-            load_balancer_inbound_nat_rules:
-            subnet:
-              network_security_group:
-                security_rules:
-                default_security_rules:
-              route_table:
-                routes:
-              service_endpoints:
-                - locations:
-                    - DDD
-              resource_navigation_links:
-            public_ip_address:
-              zones:
-                - EEE
-            application_security_groups:
+          - "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/test-vn/subnets/test-subnet"
         backend_addresses:
     backend_http_settings_collection:
       - authentication_certificates:
