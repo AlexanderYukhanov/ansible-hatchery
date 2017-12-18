@@ -16,7 +16,7 @@
       testing: testing
       delete: on-exit
     resource_group: "{{ resource_group }}"
-  register: output
+  register: vn_output
 
 - name: Create MySQL Server
   azure_rm_mysqlserver:
@@ -32,9 +32,9 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     name: test-virtual-network-rule
-    virtual_network_subnet_id: my_test_network
+    virtual_network_subnet_id: "{{ vn_output.state.id }}"
   check_mode: yes
-  register: vn_output
+  register: output
 - name: Assert the resource instance is well created
   assert:
     that:
