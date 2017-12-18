@@ -9,7 +9,7 @@
     name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     ssl_policy:
       disabled_ssl_protocols:
-        - AAA
+        - TLSv1_0
       cipher_suites:
         - BBB
     gateway_ip_configurations:
