@@ -61,7 +61,8 @@
         path_rules:
     web_application_firewall_configuration:
       disabled_rule_groups:
-        - rules:
+        - name: rulegroup
+          rules:
             - 10
   register: output
 - name: Assert the resource instance is well created
