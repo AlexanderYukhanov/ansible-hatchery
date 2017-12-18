@@ -11421,7 +11421,7 @@
       "ModuleOperationNameUpper": "VirtualNetworkRules",
       "ModuleOperationName": "virtual_network_rules",
       "ObjectName": "VirtualNetworkRules",
-      "ReleaseStatus": "RP",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
