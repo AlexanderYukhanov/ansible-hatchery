@@ -62,7 +62,7 @@
     web_application_firewall_configuration:
       disabled_rule_groups:
         - rules:
-            - GGG
+            - 10
   register: output
 - name: Assert the resource instance is well created
   assert:
