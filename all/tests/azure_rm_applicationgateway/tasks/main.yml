@@ -10,8 +10,69 @@
     sku:
       name: Standard_Small
       capacity: 1
+    ssl_policy:
+    ssl_policy:
+      disabled_ssl_protocols:
+        - TLSv1_0
+      cipher_suites:
+        - BBB
+    gateway_ip_configurations:
+    authentication_certificates:
+    ssl_certificates:
+    frontend_ip_configurations:
+    frontend_ports:
+    probes:
+      - match:
+          status_codes:
+            - XXXX - list of values -- not implemented str
     backend_address_pools:
       - backend_ip_configurations:
+          - application_gateway_backend_address_pools:
+              - backend_ip_configurations:
+                  - application_gateway_backend_address_pools:
+                    load_balancer_backend_address_pools:
+                    load_balancer_inbound_nat_rules:
+                    application_security_groups:
+                backend_addresses:
+            load_balancer_backend_address_pools:
+            load_balancer_inbound_nat_rules:
+            subnet:
+              network_security_group:
+                security_rules:
+                default_security_rules:
+              route_table:
+                routes:
+              service_endpoints:
+                - locations:
+                    - XXXX - list of values -- not implemented str
+              resource_navigation_links:
+            public_ip_address:
+              zones:
+                - XXXX - list of values -- not implemented str
+            application_security_groups:
+        backend_addresses:
+    backend_http_settings_collection:
+      - authentication_certificates:
+    http_listeners:
+    url_path_maps:
+      - path_rules:
+          - paths:
+              - XXXX - list of values -- not implemented str
+    request_routing_rules:
+    redirect_configurations:
+      - request_routing_rules:
+        url_path_maps:
+        path_rules:
+    web_application_firewall_configuration:
+      enabled: False
+      disabled_rule_groups:
+        - rule_group_name: rulegroup
+          rules:
+            - 10
+      rule_set_version: 12
+      rule_set_type: OWASP
+      firewall_mode: Prevention
+  check_mode: yes
   register: output
 - name: Assert the resource instance is well created
   assert:
