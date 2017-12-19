@@ -35,20 +35,20 @@
     http_listeners:
       - name: sample_http_listener
 #        frontend_ip_configuration:
-#          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config"
+#          id: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config"
 #        frontend_port:
-#          id:  "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port"
+#          id:  "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port"
 #        protocol: Http
 #        ssl_certificate: "None"
     request_routing_rules:
       - name: rule1
         rule_type: Basic
         http_listener:
-          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener"
+          id: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener"
         backend_address_pool:
-          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool"
+          id: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool"
         backend_http_settings:
-          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings"
+          id: "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings"
 
 - name: Assert the resource instance is well created
   assert:
