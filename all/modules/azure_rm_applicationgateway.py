@@ -1256,6 +1256,8 @@ class AzureRMApplicationGateways(AzureRMModuleBase):
 
         if response:
             self.results["id"] = response["id"]
+            self.results["xoldx"] = old_response
+            self.results["xnewx"] = response
 
         return self.results
 
