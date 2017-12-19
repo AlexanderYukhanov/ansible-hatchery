@@ -6,39 +6,6 @@
 - name: Create instance of RouteFilters -- check mode
   azure_rm_applicationgatewayroutefilter:
     resource_group: "{{ resource_group }}"
-    rules:
-      - communities:
-          - XXXX - list of values -- not implemented str
-    peerings:
-      - microsoft_peering_config:
-          advertised_public_prefixes:
-            - XXXX - list of values -- not implemented str
-          advertised_communities:
-            - XXXX - list of values -- not implemented str
-        route_filter:
-          rules:
-            - communities:
-                - XXXX - list of values -- not implemented str
-          peerings:
-            - microsoft_peering_config:
-                advertised_public_prefixes:
-                  - XXXX - list of values -- not implemented str
-                advertised_communities:
-                  - XXXX - list of values -- not implemented str
-              route_filter:
-                rules:
-                peerings:
-        ipv6_peering_config:
-          microsoft_peering_config:
-            advertised_public_prefixes:
-              - XXXX - list of values -- not implemented str
-            advertised_communities:
-              - XXXX - list of values -- not implemented str
-          route_filter:
-            rules:
-              - communities:
-                  - XXXX - list of values -- not implemented str
-            peerings:
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -49,39 +16,6 @@
 - name: Create instance of RouteFilters
   azure_rm_applicationgatewayroutefilter:
     resource_group: "{{ resource_group }}"
-    rules:
-      - communities:
-          - XXXX - list of values -- not implemented str
-    peerings:
-      - microsoft_peering_config:
-          advertised_public_prefixes:
-            - XXXX - list of values -- not implemented str
-          advertised_communities:
-            - XXXX - list of values -- not implemented str
-        route_filter:
-          rules:
-            - communities:
-                - XXXX - list of values -- not implemented str
-          peerings:
-            - microsoft_peering_config:
-                advertised_public_prefixes:
-                  - XXXX - list of values -- not implemented str
-                advertised_communities:
-                  - XXXX - list of values -- not implemented str
-              route_filter:
-                rules:
-                peerings:
-        ipv6_peering_config:
-          microsoft_peering_config:
-            advertised_public_prefixes:
-              - XXXX - list of values -- not implemented str
-            advertised_communities:
-              - XXXX - list of values -- not implemented str
-          route_filter:
-            rules:
-              - communities:
-                  - XXXX - list of values -- not implemented str
-            peerings:
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -91,39 +25,6 @@
 - name: Create again instance of RouteFilters
   azure_rm_applicationgatewayroutefilter:
     resource_group: "{{ resource_group }}"
-    rules:
-      - communities:
-          - XXXX - list of values -- not implemented str
-    peerings:
-      - microsoft_peering_config:
-          advertised_public_prefixes:
-            - XXXX - list of values -- not implemented str
-          advertised_communities:
-            - XXXX - list of values -- not implemented str
-        route_filter:
-          rules:
-            - communities:
-                - XXXX - list of values -- not implemented str
-          peerings:
-            - microsoft_peering_config:
-                advertised_public_prefixes:
-                  - XXXX - list of values -- not implemented str
-                advertised_communities:
-                  - XXXX - list of values -- not implemented str
-              route_filter:
-                rules:
-                peerings:
-        ipv6_peering_config:
-          microsoft_peering_config:
-            advertised_public_prefixes:
-              - XXXX - list of values -- not implemented str
-            advertised_communities:
-              - XXXX - list of values -- not implemented str
-          route_filter:
-            rules:
-              - communities:
-                  - XXXX - list of values -- not implemented str
-            peerings:
   register: output
 - name: Assert the state has not changed
   assert:

@@ -6,11 +6,6 @@
 - name: Create instance of AppServiceEnvironments -- check mode
   azure_rm_webappserviceenvironment:
     resource_group: "{{ resource_group }}"
-    worker_pools:
-    network_access_control_list:
-    cluster_settings:
-    user_whitelisted_ip_ranges:
-      - XXXX - list of values -- not implemented str
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -21,11 +16,6 @@
 - name: Create instance of AppServiceEnvironments
   azure_rm_webappserviceenvironment:
     resource_group: "{{ resource_group }}"
-    worker_pools:
-    network_access_control_list:
-    cluster_settings:
-    user_whitelisted_ip_ranges:
-      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -35,11 +25,6 @@
 - name: Create again instance of AppServiceEnvironments
   azure_rm_webappserviceenvironment:
     resource_group: "{{ resource_group }}"
-    worker_pools:
-    network_access_control_list:
-    cluster_settings:
-    user_whitelisted_ip_ranges:
-      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the state has not changed
   assert:

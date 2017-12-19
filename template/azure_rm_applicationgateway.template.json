@@ -122,7 +122,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Standard_Small",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -140,7 +140,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Standard",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -158,7 +158,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "2",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -337,7 +337,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -377,7 +377,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "app_gateway_ip_config",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false

@@ -6,35 +6,6 @@
 - name: Create instance of Subnets -- check mode
   azure_rm_applicationgatewaysubnet:
     resource_group: "{{ resource_group }}"
-    network_security_group:
-      security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
-      default_security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
-    route_table:
-      routes:
-    service_endpoints:
-      - locations:
-          - XXXX - list of values -- not implemented str
-    resource_navigation_links:
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -45,35 +16,6 @@
 - name: Create instance of Subnets
   azure_rm_applicationgatewaysubnet:
     resource_group: "{{ resource_group }}"
-    network_security_group:
-      security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
-      default_security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
-    route_table:
-      routes:
-    service_endpoints:
-      - locations:
-          - XXXX - list of values -- not implemented str
-    resource_navigation_links:
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -83,35 +25,6 @@
 - name: Create again instance of Subnets
   azure_rm_applicationgatewaysubnet:
     resource_group: "{{ resource_group }}"
-    network_security_group:
-      security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
-      default_security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
-    route_table:
-      routes:
-    service_endpoints:
-      - locations:
-          - XXXX - list of values -- not implemented str
-    resource_navigation_links:
   register: output
 - name: Assert the state has not changed
   assert:

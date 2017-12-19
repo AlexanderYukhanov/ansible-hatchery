@@ -6,7 +6,6 @@
 - name: Create instance of PacketCaptures -- check mode
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
-    filters:
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -17,7 +16,6 @@
 - name: Create instance of PacketCaptures
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
-    filters:
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -27,7 +25,6 @@
 - name: Create again instance of PacketCaptures
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
-    filters:
   register: output
 - name: Assert the state has not changed
   assert:

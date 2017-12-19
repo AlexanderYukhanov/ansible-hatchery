@@ -6,16 +6,6 @@
 - name: Create instance of SecurityRules -- check mode
   azure_rm_applicationgatewaysecurityrule:
     resource_group: "{{ resource_group }}"
-    source_address_prefixes:
-      - XXXX - list of values -- not implemented str
-    source_application_security_groups:
-    destination_address_prefixes:
-      - XXXX - list of values -- not implemented str
-    destination_application_security_groups:
-    source_port_ranges:
-      - XXXX - list of values -- not implemented str
-    destination_port_ranges:
-      - XXXX - list of values -- not implemented str
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -26,16 +16,6 @@
 - name: Create instance of SecurityRules
   azure_rm_applicationgatewaysecurityrule:
     resource_group: "{{ resource_group }}"
-    source_address_prefixes:
-      - XXXX - list of values -- not implemented str
-    source_application_security_groups:
-    destination_address_prefixes:
-      - XXXX - list of values -- not implemented str
-    destination_application_security_groups:
-    source_port_ranges:
-      - XXXX - list of values -- not implemented str
-    destination_port_ranges:
-      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -45,16 +25,6 @@
 - name: Create again instance of SecurityRules
   azure_rm_applicationgatewaysecurityrule:
     resource_group: "{{ resource_group }}"
-    source_address_prefixes:
-      - XXXX - list of values -- not implemented str
-    source_application_security_groups:
-    destination_address_prefixes:
-      - XXXX - list of values -- not implemented str
-    destination_application_security_groups:
-    source_port_ranges:
-      - XXXX - list of values -- not implemented str
-    destination_port_ranges:
-      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the state has not changed
   assert:

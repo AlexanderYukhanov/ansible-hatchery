@@ -6,7 +6,6 @@
 - name: Create instance of RouteTables -- check mode
   azure_rm_applicationgatewayroutetable:
     resource_group: "{{ resource_group }}"
-    routes:
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -17,7 +16,6 @@
 - name: Create instance of RouteTables
   azure_rm_applicationgatewayroutetable:
     resource_group: "{{ resource_group }}"
-    routes:
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -27,7 +25,6 @@
 - name: Create again instance of RouteTables
   azure_rm_applicationgatewayroutetable:
     resource_group: "{{ resource_group }}"
-    routes:
   register: output
 - name: Assert the state has not changed
   assert:

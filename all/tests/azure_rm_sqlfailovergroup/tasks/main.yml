@@ -6,9 +6,6 @@
 - name: Create instance of FailoverGroups -- check mode
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"
-    partner_servers:
-    databases:
-      - XXXX - list of values -- not implemented str
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -19,9 +16,6 @@
 - name: Create instance of FailoverGroups
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"
-    partner_servers:
-    databases:
-      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -31,9 +25,6 @@
 - name: Create again instance of FailoverGroups
   azure_rm_sqlfailovergroup:
     resource_group: "{{ resource_group }}"
-    partner_servers:
-    databases:
-      - XXXX - list of values -- not implemented str
   register: output
 - name: Assert the state has not changed
   assert:
