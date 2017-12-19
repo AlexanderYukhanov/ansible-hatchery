@@ -37,9 +37,9 @@
         frontend_ip_configuration:
           id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config"
         frontend_port:
-          id:  "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port"
+          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port"
         protocol: Http
-        ssl_certificate: "None"
+        ssl_certificate: None
 
 - name: Assert the resource instance is well created
   assert:
