@@ -3,6 +3,27 @@
     random_postfix: "{{ 1000 | random }}"
   run_once: yes
 
+- name: Create a virtual network
+      azure_rm_virtualnetwork:
+        name: sample-vnet
+        resource_group: "{{ resource_group }}"
+        address_prefixes_cidr:
+            - "10.1.0.0/16"
+            - "172.100.0.0/16"
+        dns_servers:
+            - "127.0.0.1"
+            - "127.0.0.2"
+        tags:
+            testing: testing
+            delete: on-exit
+
+- name: Create a subnet
+      azure_rm_subnet:
+        name: sample-subnet
+        virtual_network_name: sample-vnet
+        resource_group: "{{ resource_group }}"
+        address_prefix_cidr: "10.1.0.0/24"
+
 - name: Create instance of Application Gateway -- check mode
   azure_rm_applicationgateway:
     resource_group: "{{ resource_group }}"
@@ -13,11 +34,11 @@
       capacity: 2
     gateway_ip_configurations:
       - subnet:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
         name: app_gateway_ip_config
     frontend_ip_configurations:
       - subnet:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
         name: sample_gateway_frontend_ip_config
     frontend_ports:
       - port: 90
@@ -33,18 +54,18 @@
         name: sample_appgateway_http_settings
     http_listeners:
       - frontend_ip_configuration:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
         frontend_port:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port
         name: sample_http_listener
     request_routing_rules:
       - rule_type: Basic
         backend_address_pool:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool
         backend_http_settings:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings
         http_listener:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener
         name: rule1
   check_mode: yes
   register: output
@@ -63,11 +84,11 @@
       capacity: 2
     gateway_ip_configurations:
       - subnet:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
         name: app_gateway_ip_config
     frontend_ip_configurations:
       - subnet:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
         name: sample_gateway_frontend_ip_config
     frontend_ports:
       - port: 90
@@ -83,18 +104,18 @@
         name: sample_appgateway_http_settings
     http_listeners:
       - frontend_ip_configuration:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
         frontend_port:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port
         name: sample_http_listener
     request_routing_rules:
       - rule_type: Basic
         backend_address_pool:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool
         backend_http_settings:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings
         http_listener:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener
         name: rule1
   register: output
 - name: Assert the resource instance is well created
@@ -112,11 +133,11 @@
       capacity: 2
     gateway_ip_configurations:
       - subnet:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
         name: app_gateway_ip_config
     frontend_ip_configurations:
       - subnet:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
         name: sample_gateway_frontend_ip_config
     frontend_ports:
       - port: 90
@@ -132,18 +153,18 @@
         name: sample_appgateway_http_settings
     http_listeners:
       - frontend_ip_configuration:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
         frontend_port:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port
         name: sample_http_listener
     request_routing_rules:
       - rule_type: Basic
         backend_address_pool:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool
         backend_http_settings:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings
         http_listener:
-          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener
+          id: /subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener
         name: rule1
   register: output
 - name: Assert the state has not changed
@@ -184,3 +205,9 @@
   assert:
     that:
       - output.changed == false
+
+- name: Remove virtual network
+  azure_rm_virtualnetwork:
+    name: sample-vnet
+    resource_group: "{{ resource_group }}"
+    state: absent
