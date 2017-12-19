@@ -809,7 +809,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -886,7 +886,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "sample_gateway_frontend_ip_config",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -977,7 +977,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "90",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -1013,7 +1013,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "ag_frontend_port",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -3261,7 +3261,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "10.0.0.4",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -3301,7 +3301,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "test_backend_address_pool",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -3701,7 +3701,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "sample_appgateway_http_settings",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -3807,7 +3807,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -3844,7 +3844,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -3975,7 +3975,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "sample_http_listener",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -4524,7 +4524,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Basic",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -4557,7 +4557,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -4594,7 +4594,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -4631,7 +4631,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "",
+                  "DefaultValueTest": "/subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -4745,7 +4745,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "rule1",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
