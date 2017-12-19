@@ -3392,7 +3392,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "80",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -3410,7 +3410,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Http",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -3428,7 +3428,7 @@
               "DefaultValueSample": {
                 "default": ""
               },
-              "DefaultValueTest": "",
+              "DefaultValueTest": "Enabled",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false

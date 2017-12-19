@@ -27,7 +27,10 @@
           - ip_address: 10.0.0.4
         name: test_backend_address_pool
     backend_http_settings_collection:
-      - name: sample_appgateway_http_settings
+      - port: 80
+        protocol: Http
+        cookie_based_affinity: Enabled
+        name: sample_appgateway_http_settings
     http_listeners:
       - frontend_ip_configuration:
           id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
@@ -74,7 +77,10 @@
           - ip_address: 10.0.0.4
         name: test_backend_address_pool
     backend_http_settings_collection:
-      - name: sample_appgateway_http_settings
+      - port: 80
+        protocol: Http
+        cookie_based_affinity: Enabled
+        name: sample_appgateway_http_settings
     http_listeners:
       - frontend_ip_configuration:
           id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
@@ -120,7 +126,10 @@
           - ip_address: 10.0.0.4
         name: test_backend_address_pool
     backend_http_settings_collection:
-      - name: sample_appgateway_http_settings
+      - port: 80
+        protocol: Http
+        cookie_based_affinity: Enabled
+        name: sample_appgateway_http_settings
     http_listeners:
       - frontend_ip_configuration:
           id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config
