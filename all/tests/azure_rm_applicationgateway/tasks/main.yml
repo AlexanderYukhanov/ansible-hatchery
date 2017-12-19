@@ -27,6 +27,11 @@
         backend_addresses:
           - ip_address: 10.0.0.4
           - ip_address: 10.0.0.5
+    backend_http_settings_collection:
+      - name: sample_appgateway_http_settings
+        port: 80
+        protocol: Http
+        cookie_based_affinity: Enabled
 
 - name: Assert the resource instance is well created
   assert:
