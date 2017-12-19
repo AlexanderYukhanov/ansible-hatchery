@@ -9,48 +9,46 @@
     name: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
     sku:
       name: Standard_Small
-      capacity: 1
-    ssl_policy:
-    ssl_policy:
-      disabled_ssl_protocols:
-        - TLSv1_0
-      cipher_suites:
-        - BBB
+      tier: Standard
+      capacity: 2
     gateway_ip_configurations:
-    authentication_certificates:
-    ssl_certificates:
+      - name: app_gateway_ip_config
+        subnet:
+          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
     frontend_ip_configurations:
+      - name: sample_gateway_frontend_ip_config
+        subnet:
+          id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet
     frontend_ports:
-    probes:
-      - match:
-          status_codes:
-            - XXXX - list of values -- not implemented str
+      - name: ag_frontent_port
+        port: 90
     backend_address_pools:
-      - backend_ip_configurations:
-          - id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zims-rg1/providers/Microsoft.Network/networkInterfaces/zims-nic/ipConfigurations/zims-ipconfig
+      - name: test_backend_address_pool
         backend_addresses:
+          - ip_address: 10.0.0.4
+          - ip_address: 10.0.0.5
     backend_http_settings_collection:
-      - authentication_certificates:
+      - name: sample_appgateway_http_settings
+        port: 80
+        protocol: http_listeners
+        cookie_based_affinity: enabled
     http_listeners:
-    url_path_maps:
-      - path_rules:
-          - paths:
-              - XXXX - list of values -- not implemented str
+      - name: sample_http_listener
+        frontend_ip_configuration:
+          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config"
+        frontend_port:
+          id:  "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port"
+        protocol: Http
+        ssl_certificate: "None"
     request_routing_rules:
-    redirect_configurations:
-      - request_routing_rules:
-        url_path_maps:
-        path_rules:
-    web_application_firewall_configuration:
-      enabled: False
-      disabled_rule_groups:
-        - rule_group_name: rulegroup
-          rules:
-            - 10
-      rule_set_version: 12
-      rule_set_type: OWASP
-      firewall_mode: Prevention
-  register: output
+      - name: rule1
+        rule_type: Basic
+        http_listener:
+          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener"
+        backend_address_pool:
+          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool"
+        backend_http_settings:
+          id: "appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings"
 - name: Assert the resource instance is well created
   assert:
     that:
