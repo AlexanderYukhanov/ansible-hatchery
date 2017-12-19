@@ -414,46 +414,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewayvirtualnetwork:
       resource_group: rg1
       virtual_network_name: test-vnet
-      address_space:
-        address_prefixes:
-          - XXXX - list of values -- not implemented str
-      dhcp_options:
-        dns_servers:
-          - XXXX - list of values -- not implemented str
-      subnets:
-        - network_security_group:
-            security_rules:
-              - source_address_prefixes:
-                  - XXXX - list of values -- not implemented str
-                source_application_security_groups:
-                destination_address_prefixes:
-                  - XXXX - list of values -- not implemented str
-                destination_application_security_groups:
-                source_port_ranges:
-                  - XXXX - list of values -- not implemented str
-                destination_port_ranges:
-                  - XXXX - list of values -- not implemented str
-            default_security_rules:
-              - source_address_prefixes:
-                  - XXXX - list of values -- not implemented str
-                source_application_security_groups:
-                destination_address_prefixes:
-                  - XXXX - list of values -- not implemented str
-                destination_application_security_groups:
-                source_port_ranges:
-                  - XXXX - list of values -- not implemented str
-                destination_port_ranges:
-                  - XXXX - list of values -- not implemented str
-          route_table:
-            routes:
-          service_endpoints:
-            - locations:
-                - XXXX - list of values -- not implemented str
-          resource_navigation_links:
-      virtual_network_peerings:
-        - remote_address_space:
-            address_prefixes:
-              - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

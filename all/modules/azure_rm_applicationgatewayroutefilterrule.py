@@ -71,8 +71,6 @@ EXAMPLES = '''
       resource_group: rg1
       route_filter_name: filterName
       rule_name: ruleName
-      communities:
-        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

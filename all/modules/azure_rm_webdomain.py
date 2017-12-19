@@ -319,9 +319,6 @@ EXAMPLES = '''
     azure_rm_webdomain:
       resource_group: NOT FOUND
       domain_name: NOT FOUND
-      consent:
-        agreement_keys:
-          - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

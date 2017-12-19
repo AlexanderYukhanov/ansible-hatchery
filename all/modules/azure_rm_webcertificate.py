@@ -71,8 +71,6 @@ EXAMPLES = '''
       resource_group: testrg123
       name: testc6282
       location: East US
-      host_names:
-        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

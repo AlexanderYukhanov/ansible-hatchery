@@ -83,9 +83,6 @@ EXAMPLES = '''
       resource_group: Default
       server_name: failover-group-primary-server
       failover_group_name: failover-group-test-3
-      partner_servers:
-      databases:
-        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

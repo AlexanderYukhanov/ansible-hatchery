@@ -97,9 +97,6 @@ EXAMPLES = '''
       server_name: syncgroupcrud-8475
       database_name: syncgroupcrud-4328
       sync_group_name: syncgroupcrud-3187
-      schema:
-        tables:
-          - columns:
 '''
 
 RETURN = '''

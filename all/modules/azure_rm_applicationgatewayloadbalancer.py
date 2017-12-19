@@ -655,49 +655,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewayloadbalancer:
       resource_group: rg1
       load_balancer_name: lb
-      frontend_ip_configurations:
-        - subnet:
-            network_security_group:
-              security_rules:
-                - source_address_prefixes:
-                    - XXXX - list of values -- not implemented str
-                  source_application_security_groups:
-                  destination_address_prefixes:
-                    - XXXX - list of values -- not implemented str
-                  destination_application_security_groups:
-                  source_port_ranges:
-                    - XXXX - list of values -- not implemented str
-                  destination_port_ranges:
-                    - XXXX - list of values -- not implemented str
-              default_security_rules:
-                - source_address_prefixes:
-                    - XXXX - list of values -- not implemented str
-                  source_application_security_groups:
-                  destination_address_prefixes:
-                    - XXXX - list of values -- not implemented str
-                  destination_application_security_groups:
-                  source_port_ranges:
-                    - XXXX - list of values -- not implemented str
-                  destination_port_ranges:
-                    - XXXX - list of values -- not implemented str
-            route_table:
-              routes:
-            service_endpoints:
-              - locations:
-                  - XXXX - list of values -- not implemented str
-            resource_navigation_links:
-          public_ip_address:
-            zones:
-              - XXXX - list of values -- not implemented str
-          zones:
-            - XXXX - list of values -- not implemented str
-      backend_address_pools:
-      load_balancing_rules:
-      probes:
-      inbound_nat_rules:
-      inbound_nat_pools:
-      outbound_nat_rules:
-        - frontend_ip_configurations:
 '''
 
 RETURN = '''

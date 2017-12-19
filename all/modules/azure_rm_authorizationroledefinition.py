@@ -67,13 +67,6 @@ EXAMPLES = '''
     azure_rm_authorizationroledefinition:
       scope: scope
       role_definition_id: roleDefinitionId
-      properties_permissions:
-        - actions:
-            - XXXX - list of values -- not implemented str
-          not_actions:
-            - XXXX - list of values -- not implemented str
-      properties_assignable_scopes:
-        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

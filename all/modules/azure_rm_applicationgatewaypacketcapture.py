@@ -103,7 +103,6 @@ EXAMPLES = '''
       resource_group: NOT FOUND
       network_watcher_name: NOT FOUND
       packet_capture_name: NOT FOUND
-      filters:
 '''
 
 RETURN = '''

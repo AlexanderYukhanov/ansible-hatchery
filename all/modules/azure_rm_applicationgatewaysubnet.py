@@ -325,35 +325,6 @@ EXAMPLES = '''
       resource_group: subnet-test
       virtual_network_name: vnetname
       subnet_name: subnet1
-      network_security_group:
-        security_rules:
-          - source_address_prefixes:
-              - XXXX - list of values -- not implemented str
-            source_application_security_groups:
-            destination_address_prefixes:
-              - XXXX - list of values -- not implemented str
-            destination_application_security_groups:
-            source_port_ranges:
-              - XXXX - list of values -- not implemented str
-            destination_port_ranges:
-              - XXXX - list of values -- not implemented str
-        default_security_rules:
-          - source_address_prefixes:
-              - XXXX - list of values -- not implemented str
-            source_application_security_groups:
-            destination_address_prefixes:
-              - XXXX - list of values -- not implemented str
-            destination_application_security_groups:
-            source_port_ranges:
-              - XXXX - list of values -- not implemented str
-            destination_port_ranges:
-              - XXXX - list of values -- not implemented str
-      route_table:
-        routes:
-      service_endpoints:
-        - locations:
-            - XXXX - list of values -- not implemented str
-      resource_navigation_links:
 '''
 
 RETURN = '''

@@ -608,54 +608,6 @@ EXAMPLES = '''
       resource_group: NOT FOUND
       circuit_name: NOT FOUND
       peering_name: NOT FOUND
-      microsoft_peering_config:
-        advertised_public_prefixes:
-          - XXXX - list of values -- not implemented str
-        advertised_communities:
-          - XXXX - list of values -- not implemented str
-      route_filter:
-        rules:
-          - communities:
-              - XXXX - list of values -- not implemented str
-        peerings:
-          - microsoft_peering_config:
-              advertised_public_prefixes:
-                - XXXX - list of values -- not implemented str
-              advertised_communities:
-                - XXXX - list of values -- not implemented str
-            route_filter:
-              rules:
-                - communities:
-                    - XXXX - list of values -- not implemented str
-              peerings:
-            ipv6_peering_config:
-              microsoft_peering_config:
-                advertised_public_prefixes:
-                  - XXXX - list of values -- not implemented str
-                advertised_communities:
-                  - XXXX - list of values -- not implemented str
-              route_filter:
-                rules:
-                peerings:
-      ipv6_peering_config:
-        microsoft_peering_config:
-          advertised_public_prefixes:
-            - XXXX - list of values -- not implemented str
-          advertised_communities:
-            - XXXX - list of values -- not implemented str
-        route_filter:
-          rules:
-            - communities:
-                - XXXX - list of values -- not implemented str
-          peerings:
-            - microsoft_peering_config:
-                advertised_public_prefixes:
-                  - XXXX - list of values -- not implemented str
-                advertised_communities:
-                  - XXXX - list of values -- not implemented str
-              route_filter:
-                rules:
-                peerings:
 '''
 
 RETURN = '''

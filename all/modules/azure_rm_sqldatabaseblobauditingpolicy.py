@@ -78,8 +78,6 @@ EXAMPLES = '''
       server_name: blobauditingtest-6440
       database_name: testdb
       blob_auditing_policy_name: default
-      audit_actions_and_groups:
-        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

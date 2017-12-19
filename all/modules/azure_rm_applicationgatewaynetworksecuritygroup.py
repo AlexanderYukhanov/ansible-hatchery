@@ -224,28 +224,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewaynetworksecuritygroup:
       resource_group: rg1
       network_security_group_name: testnsg
-      security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
-      default_security_rules:
-        - source_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          source_application_security_groups:
-          destination_address_prefixes:
-            - XXXX - list of values -- not implemented str
-          destination_application_security_groups:
-          source_port_ranges:
-            - XXXX - list of values -- not implemented str
-          destination_port_ranges:
-            - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

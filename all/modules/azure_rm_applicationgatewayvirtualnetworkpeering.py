@@ -95,9 +95,6 @@ EXAMPLES = '''
       resource_group: peerTest
       virtual_network_name: vnet1
       virtual_network_peering_name: peer
-      remote_address_space:
-        address_prefixes:
-          - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

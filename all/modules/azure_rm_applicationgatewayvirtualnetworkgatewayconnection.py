@@ -461,31 +461,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewayvirtualnetworkgatewayconnection:
       resource_group: NOT FOUND
       virtual_network_gateway_connection_name: NOT FOUND
-      virtual_network_gateway1:
-        ip_configurations:
-        vpn_client_configuration:
-          vpn_client_address_pool:
-            address_prefixes:
-              - XXXX - list of values -- not implemented str
-          vpn_client_root_certificates:
-          vpn_client_revoked_certificates:
-          vpn_client_protocols:
-            - XXXX - list of values -- not implemented str
-      virtual_network_gateway2:
-        ip_configurations:
-        vpn_client_configuration:
-          vpn_client_address_pool:
-            address_prefixes:
-              - XXXX - list of values -- not implemented str
-          vpn_client_root_certificates:
-          vpn_client_revoked_certificates:
-          vpn_client_protocols:
-            - XXXX - list of values -- not implemented str
-      local_network_gateway2:
-        local_network_address_space:
-          address_prefixes:
-            - XXXX - list of values -- not implemented str
-      ipsec_policies:
 '''
 
 RETURN = '''

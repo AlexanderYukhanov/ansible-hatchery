@@ -99,8 +99,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewaypublicipaddresse:
       resource_group: rg1
       public_ip_address_name: test-ip
-      zones:
-        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

@@ -1000,62 +1000,6 @@ EXAMPLES = '''
     azure_rm_applicationgateway:
       resource_group: NOT FOUND
       name: NOT FOUND
-      ssl_policy:
-        disabled_ssl_protocols:
-          - XXXX - list of values -- not implemented str
-        cipher_suites:
-          - XXXX - list of values -- not implemented str
-      gateway_ip_configurations:
-      authentication_certificates:
-      ssl_certificates:
-      frontend_ip_configurations:
-      frontend_ports:
-      probes:
-        - match:
-            status_codes:
-              - XXXX - list of values -- not implemented str
-      backend_address_pools:
-        - backend_ip_configurations:
-            - application_gateway_backend_address_pools:
-                - backend_ip_configurations:
-                    - application_gateway_backend_address_pools:
-                      load_balancer_backend_address_pools:
-                      load_balancer_inbound_nat_rules:
-                      application_security_groups:
-                  backend_addresses:
-              load_balancer_backend_address_pools:
-              load_balancer_inbound_nat_rules:
-              subnet:
-                network_security_group:
-                  security_rules:
-                  default_security_rules:
-                route_table:
-                  routes:
-                service_endpoints:
-                  - locations:
-                      - XXXX - list of values -- not implemented str
-                resource_navigation_links:
-              public_ip_address:
-                zones:
-                  - XXXX - list of values -- not implemented str
-              application_security_groups:
-          backend_addresses:
-      backend_http_settings_collection:
-        - authentication_certificates:
-      http_listeners:
-      url_path_maps:
-        - path_rules:
-            - paths:
-                - XXXX - list of values -- not implemented str
-      request_routing_rules:
-      redirect_configurations:
-        - request_routing_rules:
-          url_path_maps:
-          path_rules:
-      web_application_firewall_configuration:
-        disabled_rule_groups:
-          - rules:
-              - XXXX - list of values -- not implemented int
 '''
 
 RETURN = '''

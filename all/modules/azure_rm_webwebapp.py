@@ -537,24 +537,6 @@ EXAMPLES = '''
     azure_rm_webwebapp:
       resource_group: NOT FOUND
       name: NOT FOUND
-      host_name_ssl_states:
-      site_config:
-        default_documents:
-          - XXXX - list of values -- not implemented str
-        app_settings:
-        connection_strings:
-        handler_mappings:
-        virtual_applications:
-          - virtual_directories:
-        experiments:
-          ramp_up_rules:
-        auto_heal_rules:
-          triggers:
-            status_codes:
-        cors:
-          allowed_origins:
-            - XXXX - list of values -- not implemented str
-        ip_security_restrictions:
       skip_dns_registration: NOT FOUND
       skip_custom_domain_verification: NOT FOUND
       force_dns_registration: NOT FOUND

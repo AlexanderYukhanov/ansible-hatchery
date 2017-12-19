@@ -155,11 +155,6 @@ EXAMPLES = '''
     azure_rm_webappserviceenvironment:
       resource_group: NOT FOUND
       name: NOT FOUND
-      worker_pools:
-      network_access_control_list:
-      cluster_settings:
-      user_whitelisted_ip_ranges:
-        - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

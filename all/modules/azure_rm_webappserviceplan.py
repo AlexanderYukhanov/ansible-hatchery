@@ -146,9 +146,6 @@ EXAMPLES = '''
         size: P1
         family: P
         capacity: 1
-        locations:
-          - XXXX - list of values -- not implemented str
-        capabilities:
 '''
 
 RETURN = '''

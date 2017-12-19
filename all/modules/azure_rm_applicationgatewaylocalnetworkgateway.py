@@ -80,9 +80,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewaylocalnetworkgateway:
       resource_group: NOT FOUND
       local_network_gateway_name: NOT FOUND
-      local_network_address_space:
-        address_prefixes:
-          - XXXX - list of values -- not implemented str
 '''
 
 RETURN = '''

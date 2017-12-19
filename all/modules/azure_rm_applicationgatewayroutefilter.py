@@ -462,39 +462,6 @@ EXAMPLES = '''
       resource_group: rg1
       route_filter_name: filterName
       location: West US
-      rules:
-        - communities:
-            - XXXX - list of values -- not implemented str
-      peerings:
-        - microsoft_peering_config:
-            advertised_public_prefixes:
-              - XXXX - list of values -- not implemented str
-            advertised_communities:
-              - XXXX - list of values -- not implemented str
-          route_filter:
-            rules:
-              - communities:
-                  - XXXX - list of values -- not implemented str
-            peerings:
-              - microsoft_peering_config:
-                  advertised_public_prefixes:
-                    - XXXX - list of values -- not implemented str
-                  advertised_communities:
-                    - XXXX - list of values -- not implemented str
-                route_filter:
-                  rules:
-                  peerings:
-          ipv6_peering_config:
-            microsoft_peering_config:
-              advertised_public_prefixes:
-                - XXXX - list of values -- not implemented str
-              advertised_communities:
-                - XXXX - list of values -- not implemented str
-            route_filter:
-              rules:
-                - communities:
-                    - XXXX - list of values -- not implemented str
-              peerings:
 '''
 
 RETURN = '''
