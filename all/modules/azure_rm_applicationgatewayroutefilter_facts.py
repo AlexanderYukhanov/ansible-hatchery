@@ -59,7 +59,7 @@ from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 try:
     from msrestazure.azure_exceptions import CloudError
     from msrestazure.azure_operation import AzureOperationPoller
-    from azure.mgmt.applicationgateway import NetworkManagementClient
+    from azure.mgmt.network import NetworkManagementClient
     from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common

@@ -101,6 +101,10 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.application_gateway_name is not None):
             self.results['ansible_facts']['get'] = self.get()
+            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['ansible_facts']['list_available_waf_rule_sets'] = self.list_available_waf_rule_sets()
+            self.results['ansible_facts']['list_available_ssl_options'] = self.list_available_ssl_options()
+            self.results['ansible_facts']['list_available_ssl_predefined_policies'] = self.list_available_ssl_predefined_policies()
         return self.results
 
     def get(self):
