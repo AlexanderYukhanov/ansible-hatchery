@@ -8730,6 +8730,12 @@
         "    address_prefix_cidr: 10.1.0.0/24"
       ],
       "TestPostrequisites": [
+        "- name: Remove subnet",
+        "  azure_rm_subnet:",
+        "    name: sample-subnet",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    state: absent",
+        "",
         "- name: Remove virtual network",
         "  azure_rm_virtualnetwork:",
         "    name: sample-vnet",
