@@ -519,6 +519,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "user_visible_state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
@@ -526,6 +528,7 @@
       "ObjectName": "MySQL Server",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -595,6 +598,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
@@ -602,6 +607,7 @@
       "ObjectName": "MySQL Server",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -811,6 +817,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
@@ -818,6 +826,7 @@
       "ObjectName": "FirewallRules",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": [
         {
           "Option": [
@@ -926,6 +935,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": "azure_rm_mysqlfirewallrule",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
@@ -933,6 +944,7 @@
       "ObjectName": "MySQL Firewall Rule",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1150,6 +1162,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
@@ -1157,6 +1171,7 @@
       "ObjectName": "VirtualNetworkRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1248,6 +1263,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": "azure_rm_mysqlvirtualnetworkrule",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",
@@ -1255,6 +1272,7 @@
       "ObjectName": "MySQL Virtual Network Rule",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1463,6 +1481,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "name",
       "AssertStateExpectedValue": "testdatabase",
       "ModuleOperationNameUpper": "Databases",
@@ -1470,6 +1490,7 @@
       "ObjectName": "MySQL Database",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": true,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1561,6 +1582,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": "azure_rm_mysqldatabase",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Databases",
@@ -1568,6 +1591,7 @@
       "ObjectName": "MySQL Database",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1800,6 +1824,8 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
@@ -1807,6 +1833,7 @@
       "ObjectName": "Configurations",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1898,6 +1925,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": "azure_rm_mysqlconfiguration",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Configurations",
@@ -1905,6 +1934,7 @@
       "ObjectName": "MySQL Configuration",
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1965,6 +1995,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LogFiles",
@@ -1972,6 +2004,7 @@
       "ObjectName": "LogFiles",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null

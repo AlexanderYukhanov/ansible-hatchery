@@ -125,6 +125,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Permissions",
@@ -132,6 +134,7 @@
       "ObjectName": "Permissions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -191,6 +194,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ProviderOperationsMetadata",
@@ -198,6 +203,7 @@
       "ObjectName": "ProviderOperationsMetadata",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -420,6 +426,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RoleAssignments",
@@ -427,6 +435,7 @@
       "ObjectName": "RoleAssignments",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -633,6 +642,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RoleAssignments",
@@ -640,6 +651,7 @@
       "ObjectName": "RoleAssignments",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -989,6 +1001,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RoleDefinitions",
@@ -996,6 +1010,7 @@
       "ObjectName": "RoleDefinitions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -1056,6 +1071,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RoleDefinitions",
@@ -1063,6 +1080,7 @@
       "ObjectName": "RoleDefinitions",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null

@@ -337,7 +337,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -809,7 +809,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -3807,7 +3807,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendIPConfigurations/sample_gateway_frontend_ip_config",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -3844,7 +3844,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/frontendPorts/ag_frontend_port",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -4557,7 +4557,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendAddressPools/test_backend_address_pool",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -4594,7 +4594,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/backendHttpSettingsCollection/sample_appgateway_http_settings",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -4631,7 +4631,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/applicationGateways/appgateway{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}/httpListeners/sample_http_listener",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -8710,6 +8710,32 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": [
+        "- name: Create a virtual network",
+        "  azure_rm_virtualnetwork:",
+        "    name: sample-vnet",
+        "    resource_group: {{ resource_group }}",
+        "    address_prefixes_cidr:",
+        "        - 10.1.0.0/16",
+        "        - 172.100.0.0/16",
+        "    dns_servers:",
+        "        - 127.0.0.1",
+        "        - 127.0.0.2",
+        "",
+        "- name: Create a subnet",
+        "  azure_rm_subnet:",
+        "    name: sample-subnet",
+        "    virtual_network_name: sample-vnet",
+        "    resource_group: {{ resource_group }}",
+        "    address_prefix_cidr: 10.1.0.0/24"
+      ],
+      "TestPostrequisites": [
+        "- name: Remove virtual network",
+        "  azure_rm_virtualnetwork:",
+        "    name: sample-vnet",
+        "    resource_group: {{ resource_group }}",
+        "    state: absent"
+      ],
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ApplicationGateways",
@@ -8717,6 +8743,7 @@
       "ObjectName": "Application Gateway",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -8797,6 +8824,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ApplicationGateways",
@@ -8804,6 +8833,7 @@
       "ObjectName": "ApplicationGateways",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -9015,6 +9045,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ApplicationSecurityGroups",
@@ -9022,6 +9054,7 @@
       "ObjectName": "ApplicationSecurityGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -9087,6 +9120,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ApplicationSecurityGroups",
@@ -9094,6 +9129,7 @@
       "ObjectName": "ApplicationSecurityGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -9365,6 +9401,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ExpressRouteCircuitAuthorizations",
@@ -9372,6 +9410,7 @@
       "ObjectName": "ExpressRouteCircuitAuthorizations",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -9452,6 +9491,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ExpressRouteCircuitAuthorizations",
@@ -9459,6 +9500,7 @@
       "ObjectName": "ExpressRouteCircuitAuthorizations",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -14589,6 +14631,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ExpressRouteCircuitPeerings",
@@ -14596,6 +14640,7 @@
       "ObjectName": "ExpressRouteCircuitPeerings",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -14676,6 +14721,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ExpressRouteCircuitPeerings",
@@ -14683,6 +14730,7 @@
       "ObjectName": "ExpressRouteCircuitPeerings",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -18890,6 +18938,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ExpressRouteCircuits",
@@ -18897,6 +18947,7 @@
       "ObjectName": "ExpressRouteCircuits",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -19043,6 +19094,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ExpressRouteCircuits",
@@ -19050,6 +19103,7 @@
       "ObjectName": "ExpressRouteCircuits",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -28266,6 +28320,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LoadBalancers",
@@ -28273,6 +28329,7 @@
       "ObjectName": "LoadBalancers",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -28357,6 +28414,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LoadBalancers",
@@ -28364,6 +28423,7 @@
       "ObjectName": "LoadBalancers",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -28444,6 +28504,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LoadBalancerBackendAddressPools",
@@ -28451,6 +28513,7 @@
       "ObjectName": "LoadBalancerBackendAddressPools",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -28531,6 +28594,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LoadBalancerFrontendIPConfigurations",
@@ -28538,6 +28603,7 @@
       "ObjectName": "LoadBalancerFrontendIPConfigurations",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -33353,6 +33419,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "InboundNatRules",
@@ -33360,6 +33428,7 @@
       "ObjectName": "InboundNatRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -33459,6 +33528,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "InboundNatRules",
@@ -33466,6 +33537,7 @@
       "ObjectName": "InboundNatRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -33546,6 +33618,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LoadBalancerLoadBalancingRules",
@@ -33553,6 +33627,7 @@
       "ObjectName": "LoadBalancerLoadBalancingRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -33633,6 +33708,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LoadBalancerProbes",
@@ -33640,6 +33717,7 @@
       "ObjectName": "LoadBalancerProbes",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -46754,6 +46832,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "NetworkInterfaces",
@@ -46761,6 +46841,7 @@
       "ObjectName": "NetworkInterfaces",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -46932,6 +47013,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "NetworkInterfaces",
@@ -46939,6 +47022,7 @@
       "ObjectName": "NetworkInterfaces",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -47019,6 +47103,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "NetworkInterfaceIPConfigurations",
@@ -47026,6 +47112,7 @@
       "ObjectName": "NetworkInterfaceIPConfigurations",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -55406,6 +55493,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "NetworkSecurityGroups",
@@ -55413,6 +55502,7 @@
       "ObjectName": "NetworkSecurityGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -55497,6 +55587,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "NetworkSecurityGroups",
@@ -55504,6 +55596,7 @@
       "ObjectName": "NetworkSecurityGroups",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -56364,6 +56457,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SecurityRules",
@@ -56371,6 +56466,7 @@
       "ObjectName": "SecurityRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -56451,6 +56547,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "SecurityRules",
@@ -56458,6 +56556,7 @@
       "ObjectName": "SecurityRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -56538,6 +56637,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "DefaultSecurityRules",
@@ -56545,6 +56646,7 @@
       "ObjectName": "DefaultSecurityRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -56765,6 +56867,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "NetworkWatchers",
@@ -56772,6 +56876,7 @@
       "ObjectName": "NetworkWatchers",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -56868,6 +56973,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "NetworkWatchers",
@@ -56875,6 +56982,7 @@
       "ObjectName": "NetworkWatchers",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -57420,6 +57528,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "PacketCaptures",
@@ -57427,6 +57537,7 @@
       "ObjectName": "PacketCaptures",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -57507,6 +57618,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "PacketCaptures",
@@ -57514,6 +57627,7 @@
       "ObjectName": "PacketCaptures",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -60073,6 +60187,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "PublicIPAddresses",
@@ -60080,6 +60196,7 @@
       "ObjectName": "PublicIPAddresses",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -60264,6 +60381,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "PublicIPAddresses",
@@ -60271,6 +60390,7 @@
       "ObjectName": "PublicIPAddresses",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -64137,6 +64257,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RouteFilters",
@@ -64144,6 +64266,7 @@
       "ObjectName": "RouteFilters",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -64232,6 +64355,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RouteFilters",
@@ -64239,6 +64364,7 @@
       "ObjectName": "RouteFilters",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -64570,6 +64696,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RouteFilterRules",
@@ -64577,6 +64705,7 @@
       "ObjectName": "RouteFilterRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -64668,6 +64797,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RouteFilterRules",
@@ -64675,6 +64806,7 @@
       "ObjectName": "RouteFilterRules",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -68349,6 +68481,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RouteTables",
@@ -68356,6 +68490,7 @@
       "ObjectName": "RouteTables",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -68440,6 +68575,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "RouteTables",
@@ -68447,6 +68584,7 @@
       "ObjectName": "RouteTables",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -68763,6 +68901,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Routes",
@@ -68770,6 +68910,7 @@
       "ObjectName": "Routes",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -68850,6 +68991,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Routes",
@@ -68857,6 +69000,7 @@
       "ObjectName": "Routes",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -74369,6 +74513,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworks",
@@ -74376,6 +74522,7 @@
       "ObjectName": "VirtualNetworks",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -74471,6 +74618,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworks",
@@ -74478,6 +74627,7 @@
       "ObjectName": "VirtualNetworks",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -83539,6 +83689,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Subnets",
@@ -83546,6 +83698,7 @@
       "ObjectName": "Subnets",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -83645,6 +83798,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Subnets",
@@ -83652,6 +83807,7 @@
       "ObjectName": "Subnets",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -84134,6 +84290,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkPeerings",
@@ -84141,6 +84299,7 @@
       "ObjectName": "VirtualNetworkPeerings",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -84221,6 +84380,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkPeerings",
@@ -84228,6 +84389,7 @@
       "ObjectName": "VirtualNetworkPeerings",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -85575,6 +85737,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkGateways",
@@ -85582,6 +85746,7 @@
       "ObjectName": "VirtualNetworkGateways",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -85653,6 +85818,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkGateways",
@@ -85660,6 +85827,7 @@
       "ObjectName": "VirtualNetworkGateways",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -89364,6 +89532,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkGatewayConnections",
@@ -89371,6 +89541,7 @@
       "ObjectName": "VirtualNetworkGatewayConnections",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -89431,6 +89602,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkGatewayConnections",
@@ -89438,6 +89611,7 @@
       "ObjectName": "VirtualNetworkGatewayConnections",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -89878,6 +90052,8 @@
         }
       ],
       "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LocalNetworkGateways",
@@ -89885,6 +90061,7 @@
       "ObjectName": "LocalNetworkGateways",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
@@ -89945,6 +90122,8 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LocalNetworkGateways",
@@ -89952,6 +90131,7 @@
       "ObjectName": "LocalNetworkGateways",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
