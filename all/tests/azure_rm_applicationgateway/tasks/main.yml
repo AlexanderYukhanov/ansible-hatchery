@@ -156,5 +156,5 @@
 - name: Remove virtual network
   azure_rm_virtualnetwork:
     name: sample-vnet
-    resource_group: {{ resource_group }}
+    resource_group: "{{ resource_group }}"
     state: absent
