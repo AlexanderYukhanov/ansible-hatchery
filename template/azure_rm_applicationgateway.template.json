@@ -8729,20 +8729,7 @@
         "    resource_group: \"{{ resource_group }}\"",
         "    address_prefix_cidr: 10.1.0.0/24"
       ],
-      "TestPostrequisites": [
-        "- name: Remove subnet",
-        "  azure_rm_subnet:",
-        "    name: subnet{{ rpfx }}",
-        "    virtual_network_name: vnet{{ rpfx }}",
-        "    resource_group: \"{{ resource_group }}\"",
-        "    state: absent",
-        "",
-        "- name: Remove virtual network",
-        "  azure_rm_virtualnetwork:",
-        "    name: vnet{{ rpfx }}",
-        "    resource_group: \"{{ resource_group }}\"",
-        "    state: absent"
-      ],
+      "TestPostrequisites": [],
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ApplicationGateways",
