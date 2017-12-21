@@ -15,9 +15,9 @@
           "Documentation": "The name of the resource group containing the resource. The name is case insensitive.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_group_name"
+            "default": "resource_group_name",
+            "test:default": "\"{{ resource_group }}\""
           },
-          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -33,9 +33,9 @@
           "Documentation": "The namespace of the resource provider.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_provider_namespace"
+            "default": "resource_provider_namespace",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -51,9 +51,9 @@
           "Documentation": "The parent resource identity.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "parent_resource_path"
+            "default": "parent_resource_path",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -69,9 +69,9 @@
           "Documentation": "The resource type of the resource.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_type"
+            "default": "resource_type",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -87,9 +87,9 @@
           "Documentation": "The name of the resource to get the permissions for.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_name"
+            "default": "resource_name",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -154,9 +154,9 @@
           "Documentation": "The namespace of the resource provider.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_provider_namespace"
+            "default": "resource_provider_namespace",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -172,9 +172,9 @@
           "Documentation": "Specifies whether to expand the values.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "expand"
+            "default": "expand",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -223,9 +223,9 @@
           "Documentation": "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "scope"
+            "default": "scope",
+            "test:default": "\"/subscriptions/{{ azure_subscription_id }}\""
           },
-          "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -241,9 +241,9 @@
           "Documentation": "The name of the role assignment to create. It can be any valid GUID.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "roleAssignmentName"
+            "default": "roleAssignmentName",
+            "test:default": "\"d3881f73-7777-8888-8283-e981cbba0404\""
           },
-          "DefaultValueTest": "\"d3881f73-7777-8888-8283-e981cbba0404\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -259,9 +259,9 @@
           "Documentation": "Parameters for the role assignment.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "parameters"
+            "default": "parameters",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -277,9 +277,9 @@
           "Documentation": "Role assignment properties.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "{\r\n  \"roleDefinitionId\": \"/subscriptions/4004a9fd-d58e-48dc-aeb2-4a4aec58606f/providers/Microsoft.Authorization/roleDefinitions/de139f84-1756-47ae-9be6-808fbbe84772\",\r\n  \"principalId\": \"d93a38bc-d029-4160-bfb0-fbda779ac214\"\r\n}"
+            "default": "{\r\n  \"roleDefinitionId\": \"/subscriptions/4004a9fd-d58e-48dc-aeb2-4a4aec58606f/providers/Microsoft.Authorization/roleDefinitions/de139f84-1756-47ae-9be6-808fbbe84772\",\r\n  \"principalId\": \"d93a38bc-d029-4160-bfb0-fbda779ac214\"\r\n}",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": [
             {
               "Name": "role_definition_id",
@@ -292,9 +292,9 @@
               "Documentation": "The role definition ID used in the role assignment.",
               "DefaultValue": null,
               "DefaultValueSample": {
-                "default": "/subscriptions/4004a9fd-d58e-48dc-aeb2-4a4aec58606f/providers/Microsoft.Authorization/roleDefinitions/de139f84-1756-47ae-9be6-808fbbe84772"
+                "default": "/subscriptions/4004a9fd-d58e-48dc-aeb2-4a4aec58606f/providers/Microsoft.Authorization/roleDefinitions/de139f84-1756-47ae-9be6-808fbbe84772",
+                "test:default": "\"/subscriptions/{{ azure_subscription_id }}/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c\""
               },
-              "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c\"",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -310,9 +310,9 @@
               "Documentation": "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.",
               "DefaultValue": null,
               "DefaultValueSample": {
-                "default": "d93a38bc-d029-4160-bfb0-fbda779ac214"
+                "default": "d93a38bc-d029-4160-bfb0-fbda779ac214",
+                "test:default": "\"98b422c6-7bea-4706-b6f3-920a782746d4\""
               },
-              "DefaultValueTest": "\"98b422c6-7bea-4706-b6f3-920a782746d4\"",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -455,9 +455,9 @@
           "Documentation": "The name of the resource group.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_group_name"
+            "default": "resource_group_name",
+            "test:default": "\"{{ resource_group }}\""
           },
-          "DefaultValueTest": "\"{{ resource_group }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -473,9 +473,9 @@
           "Documentation": "The namespace of the resource provider.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_provider_namespace"
+            "default": "resource_provider_namespace",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -491,9 +491,9 @@
           "Documentation": "The parent resource identity.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "parent_resource_path"
+            "default": "parent_resource_path",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -509,9 +509,9 @@
           "Documentation": "The resource type of the resource.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_type"
+            "default": "resource_type",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -527,9 +527,9 @@
           "Documentation": "The name of the resource to get role assignments for.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_name"
+            "default": "resource_name",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -545,9 +545,9 @@
           "Documentation": "The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "filter"
+            "default": "filter",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -563,9 +563,9 @@
           "Documentation": "The scope of the role assignment.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "scope"
+            "default": "scope",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -581,9 +581,9 @@
           "Documentation": "The name of the role assignment to get.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "role_assignment_name"
+            "default": "role_assignment_name",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -671,9 +671,9 @@
           "Documentation": "The scope of the role definition.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "scope"
+            "default": "scope",
+            "test:default": "\"/subscriptions/{{ azure_subscription_id }}\""
           },
-          "DefaultValueTest": "\"/subscriptions/{{ azure_subscription_id }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -689,9 +689,9 @@
           "Documentation": "The ID of the role definition.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "roleDefinitionId"
+            "default": "roleDefinitionId",
+            "test:default": "rolexyz"
           },
-          "DefaultValueTest": "rolexyz",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -707,9 +707,9 @@
           "Documentation": "The values for the role definition.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "role_definition"
+            "default": "role_definition",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -725,9 +725,9 @@
           "Documentation": "Role definition properties.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": ""
+            "default": "",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -743,9 +743,9 @@
           "Documentation": "The role name.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": ""
+            "default": "",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -761,9 +761,9 @@
           "Documentation": "The role definition description.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": ""
+            "default": "",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -779,9 +779,9 @@
           "Documentation": "The role type.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": ""
+            "default": "",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -797,9 +797,9 @@
           "Documentation": "Role definition permissions.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": ""
+            "default": "",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": [
             {
               "Name": "actions",
@@ -812,9 +812,9 @@
               "Documentation": "Allowed actions.",
               "DefaultValue": null,
               "DefaultValueSample": {
-                "default": ""
+                "default": "",
+                "test:default": ""
               },
-              "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -830,9 +830,9 @@
               "Documentation": "Denied actions.",
               "DefaultValue": null,
               "DefaultValueSample": {
-                "default": ""
+                "default": "",
+                "test:default": ""
               },
-              "DefaultValueTest": "",
               "SubOptions": [],
               "RequiredCount": 0,
               "NoLog": false
@@ -852,9 +852,9 @@
           "Documentation": "Role definition assignable scopes.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": ""
+            "default": "",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false
@@ -1030,9 +1030,9 @@
           "Documentation": "The scope of the role definition.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "scope"
+            "default": "scope",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -1048,9 +1048,9 @@
           "Documentation": "The ID of the role definition.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "role_definition_id"
+            "default": "role_definition_id",
+            "test:default": ""
           },
-          "DefaultValueTest": "",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
