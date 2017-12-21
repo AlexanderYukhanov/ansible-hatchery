@@ -35,7 +35,7 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -568,7 +568,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false
@@ -647,7 +647,7 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -883,7 +883,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -984,7 +984,7 @@
           "DefaultValueSample": {
             "default": "vnet-test-svr"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -1211,7 +1211,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -1312,7 +1312,7 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -1530,7 +1530,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false
@@ -1631,7 +1631,7 @@
           "DefaultValueSample": {
             "default": "testserver"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -1873,7 +1873,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "\"postgresqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"postgresqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 2,
           "NoLog": false

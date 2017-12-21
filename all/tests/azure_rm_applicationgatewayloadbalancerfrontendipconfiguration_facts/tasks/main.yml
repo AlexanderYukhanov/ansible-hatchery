@@ -1,6 +1,6 @@
 - name: Prepare random number
   set_fact:
-    random_postfix: "{{ 1000 | random }}"
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
 - name: Gather facts LoadBalancerFrontendIPConfigurations

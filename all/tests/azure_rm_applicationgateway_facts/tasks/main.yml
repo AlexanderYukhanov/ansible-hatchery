@@ -1,43 +1,44 @@
 - name: Prepare random number
   set_fact:
-    random_postfix: "{{ 1000 | random }}"
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway_facts:
+- name: Gather facts Application Gateway
+  azure_rm_applicationgateway_facts:
     resource_group: "{{ resource_group }}"
+    name: "appgateway{{ rpfx }}"
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
 
-- name: Gather facts ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway_facts:
+- name: Gather facts Application Gateway
+  azure_rm_applicationgateway_facts:
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
 
-- name: Gather facts ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway_facts:
+- name: Gather facts Application Gateway
+  azure_rm_applicationgateway_facts:
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
 
-- name: Gather facts ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway_facts:
+- name: Gather facts Application Gateway
+  azure_rm_applicationgateway_facts:
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
 
-- name: Gather facts ApplicationGateways
-  azure_rm_applicationgatewayapplicationgateway_facts:
+- name: Gather facts Application Gateway
+  azure_rm_applicationgateway_facts:
   register: output
 - name: Assert that facts are returned
   assert:

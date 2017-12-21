@@ -3414,7 +3414,7 @@
           "DefaultValueSample": {
             "default": "sqlcrudtest-5961"
           },
-          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"sqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -4608,7 +4608,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"sqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 6,
           "NoLog": false
@@ -6287,7 +6287,7 @@
           "DefaultValueSample": {
             "default": "sqlcrudtest-4645"
           },
-          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"sqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 0,
           "NoLog": false
@@ -6657,7 +6657,7 @@
           "DefaultValueSample": {
             "default": "server_name"
           },
-          "DefaultValueTest": "\"sqlsrv{{ random_postfix }}{{ resource_group | hash('md5') | truncate(7, True, '') }}\"",
+          "DefaultValueTest": "\"sqlsrv{{ rpfx }}\"",
           "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false

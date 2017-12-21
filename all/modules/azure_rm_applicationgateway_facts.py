@@ -15,17 +15,17 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_applicationgatewayapplicationgateway_facts
+module: azure_rm_applicationgateway_facts
 version_added: "2.5"
-short_description: Get ApplicationGateways facts.
+short_description: Get Application Gateway facts.
 description:
-    - Get facts of ApplicationGateways.
+    - Get facts of Application Gateway.
 
 options:
     resource_group:
         description:
             - The name of the resource group.
-    application_gateway_name:
+    name:
         description:
             - The name of the application gateway.
 
@@ -39,22 +39,22 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ApplicationGateways
-    azure_rm_applicationgatewayapplicationgateway_facts:
+  - name: Get instance of Application Gateway
+    azure_rm_applicationgateway_facts:
       resource_group: resource_group_name
-      application_gateway_name: application_gateway_name
+      name: application_gateway_name
 
-  - name: List instances of ApplicationGateways
-    azure_rm_applicationgatewayapplicationgateway_facts:
+  - name: List instances of Application Gateway
+    azure_rm_applicationgateway_facts:
 
-  - name: List instances of ApplicationGateways
-    azure_rm_applicationgatewayapplicationgateway_facts:
+  - name: List instances of Application Gateway
+    azure_rm_applicationgateway_facts:
 
-  - name: List instances of ApplicationGateways
-    azure_rm_applicationgatewayapplicationgateway_facts:
+  - name: List instances of Application Gateway
+    azure_rm_applicationgateway_facts:
 
-  - name: List instances of ApplicationGateways
-    azure_rm_applicationgatewayapplicationgateway_facts:
+  - name: List instances of Application Gateway
+    azure_rm_applicationgateway_facts:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -77,7 +77,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
                 type='str',
                 required=False
             ),
-            application_gateway_name=dict(
+            name=dict(
                 type='str',
                 required=False
             ),
@@ -89,7 +89,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         )
         self.mgmt_client = None
         self.resource_group = None
-        self.application_gateway_name = None
+        self.name = None
         super(AzureRMApplicationGatewaysFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -109,15 +109,15 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ApplicationGateways.
+        Gets facts of the specified Application Gateway.
 
-        :return: deserialized ApplicationGatewaysinstance state dictionary
+        :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
         results = False
         try:
             response = self.mgmt_client.application_gateways.get(self.resource_group,
-                                                                 self.application_gateway_name)
+                                                                 self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')
@@ -129,9 +129,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified ApplicationGateways.
+        Gets facts of the specified Application Gateway.
 
-        :return: deserialized ApplicationGatewaysinstance state dictionary
+        :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
         results = False
@@ -150,9 +150,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
     def list_available_waf_rule_sets(self):
         '''
-        Gets facts of the specified ApplicationGateways.
+        Gets facts of the specified Application Gateway.
 
-        :return: deserialized ApplicationGatewaysinstance state dictionary
+        :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
         results = False
@@ -171,9 +171,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
     def list_available_ssl_options(self):
         '''
-        Gets facts of the specified ApplicationGateways.
+        Gets facts of the specified Application Gateway.
 
-        :return: deserialized ApplicationGatewaysinstance state dictionary
+        :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
         results = False
@@ -192,9 +192,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
     def list_available_ssl_predefined_policies(self):
         '''
-        Gets facts of the specified ApplicationGateways.
+        Gets facts of the specified Application Gateway.
 
-        :return: deserialized ApplicationGatewaysinstance state dictionary
+        :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
         results = False
