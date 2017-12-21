@@ -337,7 +337,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -809,7 +809,7 @@
                   "DefaultValueSample": {
                     "default": ""
                   },
-                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/sample-vnet/subnets/sample-subnet",
+                  "DefaultValueTest": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}",
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false
@@ -8713,7 +8713,7 @@
       "TestPrerequisites": [
         "- name: Create a virtual network",
         "  azure_rm_virtualnetwork:",
-        "    name: sample-vnet",
+        "    name: vnet{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    address_prefixes_cidr:",
         "        - 10.1.0.0/16",
@@ -8724,22 +8724,22 @@
         "",
         "- name: Create a subnet",
         "  azure_rm_subnet:",
-        "    name: sample-subnet",
-        "    virtual_network_name: sample-vnet",
+        "    name: subnet{{ rpfx }}",
+        "    virtual_network_name: vnet{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    address_prefix_cidr: 10.1.0.0/24"
       ],
       "TestPostrequisites": [
         "- name: Remove subnet",
         "  azure_rm_subnet:",
-        "    name: sample-subnet",
-        "    virtual_network_name: sample-vnet",
+        "    name: subnet{{ rpfx }}",
+        "    virtual_network_name: vnet{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    state: absent",
         "",
         "- name: Remove virtual network",
         "  azure_rm_virtualnetwork:",
-        "    name: sample-vnet",
+        "    name: vnet{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    state: absent"
       ],
