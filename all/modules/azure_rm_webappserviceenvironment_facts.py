@@ -390,8 +390,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_multi_role_metrics(self.resource_group,
-                                                                                         self.name)
+            response = self.mgmt_client.app_service_environments.list_multi_role_metrics(resource_group_name=self.resource_group,
+                                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -412,10 +412,10 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metrics(self.resource_group,
-                                                                                                   self.name,
-                                                                                                   self.worker_pool_name,
-                                                                                                   self.instance)
+            response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metrics(resource_group_name=self.resource_group,
+                                                                                                   name=self.name,
+                                                                                                   worker_pool_name=self.worker_pool_name,
+                                                                                                   instance=self.instance)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -436,9 +436,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_web_worker_metrics(self.resource_group,
-                                                                                         self.name,
-                                                                                         self.worker_pool_name)
+            response = self.mgmt_client.app_service_environments.list_web_worker_metrics(resource_group_name=self.resource_group,
+                                                                                         name=self.name,
+                                                                                         worker_pool_name=self.worker_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -459,8 +459,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_metrics(self.resource_group,
-                                                                              self.name)
+            response = self.mgmt_client.app_service_environments.list_metrics(resource_group_name=self.resource_group,
+                                                                              name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -481,9 +481,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metrics(self.resource_group,
-                                                                                                       self.name,
-                                                                                                       self.instance)
+            response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metrics(resource_group_name=self.resource_group,
+                                                                                                       name=self.name,
+                                                                                                       instance=self.instance)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -504,10 +504,10 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metric_definitions(self.resource_group,
-                                                                                                              self.name,
-                                                                                                              self.worker_pool_name,
-                                                                                                              self.instance)
+            response = self.mgmt_client.app_service_environments.list_worker_pool_instance_metric_definitions(resource_group_name=self.resource_group,
+                                                                                                              name=self.name,
+                                                                                                              worker_pool_name=self.worker_pool_name,
+                                                                                                              instance=self.instance)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -528,9 +528,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metric_definitions(self.resource_group,
-                                                                                                                  self.name,
-                                                                                                                  self.instance)
+            response = self.mgmt_client.app_service_environments.list_multi_role_pool_instance_metric_definitions(resource_group_name=self.resource_group,
+                                                                                                                  name=self.name,
+                                                                                                                  instance=self.instance)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -551,8 +551,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_web_apps(self.resource_group,
-                                                                               self.name)
+            response = self.mgmt_client.app_service_environments.list_web_apps(resource_group_name=self.resource_group,
+                                                                               name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -573,8 +573,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_usages(self.resource_group,
-                                                                             self.name)
+            response = self.mgmt_client.app_service_environments.list_usages(resource_group_name=self.resource_group,
+                                                                             name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -595,9 +595,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_web_worker_metric_definitions(self.resource_group,
-                                                                                                    self.name,
-                                                                                                    self.worker_pool_name)
+            response = self.mgmt_client.app_service_environments.list_web_worker_metric_definitions(resource_group_name=self.resource_group,
+                                                                                                    name=self.name,
+                                                                                                    worker_pool_name=self.worker_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -618,9 +618,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_worker_pool_skus(self.resource_group,
-                                                                                       self.name,
-                                                                                       self.worker_pool_name)
+            response = self.mgmt_client.app_service_environments.list_worker_pool_skus(resource_group_name=self.resource_group,
+                                                                                       name=self.name,
+                                                                                       worker_pool_name=self.worker_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -641,9 +641,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_web_worker_usages(self.resource_group,
-                                                                                        self.name,
-                                                                                        self.worker_pool_name)
+            response = self.mgmt_client.app_service_environments.list_web_worker_usages(resource_group_name=self.resource_group,
+                                                                                        name=self.name,
+                                                                                        worker_pool_name=self.worker_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -664,8 +664,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.get(self.resource_group,
-                                                                     self.name)
+            response = self.mgmt_client.app_service_environments.get(resource_group_name=self.resource_group,
+                                                                     name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -684,8 +684,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_capacities(self.resource_group,
-                                                                                 self.name)
+            response = self.mgmt_client.app_service_environments.list_capacities(resource_group_name=self.resource_group,
+                                                                                 name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -706,8 +706,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_vips(self.resource_group,
-                                                                           self.name)
+            response = self.mgmt_client.app_service_environments.list_vips(resource_group_name=self.resource_group,
+                                                                           name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -728,8 +728,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_diagnostics(self.resource_group,
-                                                                                  self.name)
+            response = self.mgmt_client.app_service_environments.list_diagnostics(resource_group_name=self.resource_group,
+                                                                                  name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -750,8 +750,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_metric_definitions(self.resource_group,
-                                                                                         self.name)
+            response = self.mgmt_client.app_service_environments.list_metric_definitions(resource_group_name=self.resource_group,
+                                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -772,8 +772,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_multi_role_pools(self.resource_group,
-                                                                                       self.name)
+            response = self.mgmt_client.app_service_environments.list_multi_role_pools(resource_group_name=self.resource_group,
+                                                                                       name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -794,8 +794,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_multi_role_metric_definitions(self.resource_group,
-                                                                                                    self.name)
+            response = self.mgmt_client.app_service_environments.list_multi_role_metric_definitions(resource_group_name=self.resource_group,
+                                                                                                    name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -816,8 +816,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_multi_role_pool_skus(self.resource_group,
-                                                                                           self.name)
+            response = self.mgmt_client.app_service_environments.list_multi_role_pool_skus(resource_group_name=self.resource_group,
+                                                                                           name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -838,8 +838,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_multi_role_usages(self.resource_group,
-                                                                                        self.name)
+            response = self.mgmt_client.app_service_environments.list_multi_role_usages(resource_group_name=self.resource_group,
+                                                                                        name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -860,8 +860,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_operations(self.resource_group,
-                                                                                 self.name)
+            response = self.mgmt_client.app_service_environments.list_operations(resource_group_name=self.resource_group,
+                                                                                 name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -882,8 +882,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_app_service_plans(self.resource_group,
-                                                                                        self.name)
+            response = self.mgmt_client.app_service_environments.list_app_service_plans(resource_group_name=self.resource_group,
+                                                                                        name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -904,8 +904,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_worker_pools(self.resource_group,
-                                                                                   self.name)
+            response = self.mgmt_client.app_service_environments.list_worker_pools(resource_group_name=self.resource_group,
+                                                                                   name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
@@ -926,7 +926,7 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_environments.list_by_resource_group(self.resource_group)
+            response = self.mgmt_client.app_service_environments.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')

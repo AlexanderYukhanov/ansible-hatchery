@@ -115,8 +115,8 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_certificate_orders.get(self.resource_group,
-                                                                           self.certificate_order_name)
+            response = self.mgmt_client.app_service_certificate_orders.get(resource_group_name=self.resource_group,
+                                                                           certificate_order_name=self.certificate_order_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceCertificateOrders.')
@@ -135,8 +135,8 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_certificate_orders.list_certificates(self.resource_group,
-                                                                                         self.certificate_order_name)
+            response = self.mgmt_client.app_service_certificate_orders.list_certificates(resource_group_name=self.resource_group,
+                                                                                         certificate_order_name=self.certificate_order_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceCertificateOrders.')
@@ -157,7 +157,7 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_certificate_orders.list_by_resource_group(self.resource_group)
+            response = self.mgmt_client.app_service_certificate_orders.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceCertificateOrders.')

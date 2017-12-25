@@ -312,12 +312,12 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
         self.log("Creating / Updating the DataMaskingRules instance {0}".format(self.))
 
         try:
-            response = self.mgmt_client.data_masking_rules.create_or_update(self.resource_group,
-                                                                            self.server_name,
-                                                                            self.database_name,
-                                                                            self.data_masking_policy_name,
-                                                                            self.data_masking_rule_name,
-                                                                            self.parameters)
+            response = self.mgmt_client.data_masking_rules.create_or_update(resource_group_name=self.resource_group,
+                                                                            server_name=self.server_name,
+                                                                            database_name=self.database_name,
+                                                                            data_masking_policy_name=self.data_masking_policy_name,
+                                                                            data_masking_rule_name=self.data_masking_rule_name,
+                                                                            parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

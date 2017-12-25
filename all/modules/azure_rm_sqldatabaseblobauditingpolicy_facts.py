@@ -124,10 +124,10 @@ class AzureRMDatabaseBlobAuditingPoliciesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.database_blob_auditing_policies.get(self.resource_group,
-                                                                            self.server_name,
-                                                                            self.database_name,
-                                                                            self.blob_auditing_policy_name)
+            response = self.mgmt_client.database_blob_auditing_policies.get(resource_group_name=self.resource_group,
+                                                                            server_name=self.server_name,
+                                                                            database_name=self.database_name,
+                                                                            blob_auditing_policy_name=self.blob_auditing_policy_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for DatabaseBlobAuditingPolicies.')

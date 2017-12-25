@@ -116,8 +116,8 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.route_filters.get(self.resource_group,
-                                                          self.route_filter_name)
+            response = self.mgmt_client.route_filters.get(resource_group_name=self.resource_group,
+                                                          route_filter_name=self.route_filter_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RouteFilters.')
@@ -136,7 +136,7 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.route_filters.list_by_resource_group(self.resource_group)
+            response = self.mgmt_client.route_filters.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RouteFilters.')

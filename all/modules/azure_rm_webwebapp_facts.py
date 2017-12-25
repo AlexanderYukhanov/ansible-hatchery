@@ -1095,11 +1095,11 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_backup_status_secrets_slot(self.resource_group,
-                                                                                 self.name,
-                                                                                 self.backup_id,
-                                                                                 self.request,
-                                                                                 self.slot)
+            response = self.mgmt_client.web_apps.list_backup_status_secrets_slot(resource_group_name=self.resource_group,
+                                                                                 name=self.name,
+                                                                                 backup_id=self.backup_id,
+                                                                                 request=self.request,
+                                                                                 slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1120,11 +1120,11 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_hybrid_connection_keys_slot(self.resource_group,
-                                                                                  self.name,
-                                                                                  self.namespace_name,
-                                                                                  self.relay_name,
-                                                                                  self.slot)
+            response = self.mgmt_client.web_apps.list_hybrid_connection_keys_slot(resource_group_name=self.resource_group,
+                                                                                  name=self.name,
+                                                                                  namespace_name=self.namespace_name,
+                                                                                  relay_name=self.relay_name,
+                                                                                  slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1145,11 +1145,11 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_process_modules_slot(self.resource_group,
-                                                                                    self.name,
-                                                                                    self.process_id,
-                                                                                    self.slot,
-                                                                                    self.instance_id)
+            response = self.mgmt_client.web_apps.list_instance_process_modules_slot(resource_group_name=self.resource_group,
+                                                                                    name=self.name,
+                                                                                    process_id=self.process_id,
+                                                                                    slot=self.slot,
+                                                                                    instance_id=self.instance_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1170,11 +1170,11 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_process_threads_slot(self.resource_group,
-                                                                                    self.name,
-                                                                                    self.process_id,
-                                                                                    self.slot,
-                                                                                    self.instance_id)
+            response = self.mgmt_client.web_apps.list_instance_process_threads_slot(resource_group_name=self.resource_group,
+                                                                                    name=self.name,
+                                                                                    process_id=self.process_id,
+                                                                                    slot=self.slot,
+                                                                                    instance_id=self.instance_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1195,9 +1195,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_metrics_slot(self.resource_group,
-                                                                   self.name,
-                                                                   self.slot)
+            response = self.mgmt_client.web_apps.list_metrics_slot(resource_group_name=self.resource_group,
+                                                                   name=self.name,
+                                                                   slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1218,11 +1218,11 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_slot_differences_slot(self.resource_group,
-                                                                            self.name,
-                                                                            self.slot,
-                                                                            self.target_slot,
-                                                                            self.preserve_vnet)
+            response = self.mgmt_client.web_apps.list_slot_differences_slot(resource_group_name=self.resource_group,
+                                                                            name=self.name,
+                                                                            slot=self.slot,
+                                                                            target_slot=self.target_slot,
+                                                                            preserve_vnet=self.preserve_vnet)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1243,10 +1243,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_backup_status_secrets(self.resource_group,
-                                                                            self.name,
-                                                                            self.backup_id,
-                                                                            self.request)
+            response = self.mgmt_client.web_apps.list_backup_status_secrets(resource_group_name=self.resource_group,
+                                                                            name=self.name,
+                                                                            backup_id=self.backup_id,
+                                                                            request=self.request)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1267,10 +1267,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_hybrid_connection_keys(self.resource_group,
-                                                                             self.name,
-                                                                             self.namespace_name,
-                                                                             self.relay_name)
+            response = self.mgmt_client.web_apps.list_hybrid_connection_keys(resource_group_name=self.resource_group,
+                                                                             name=self.name,
+                                                                             namespace_name=self.namespace_name,
+                                                                             relay_name=self.relay_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1291,10 +1291,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_process_modules(self.resource_group,
-                                                                               self.name,
-                                                                               self.process_id,
-                                                                               self.instance_id)
+            response = self.mgmt_client.web_apps.list_instance_process_modules(resource_group_name=self.resource_group,
+                                                                               name=self.name,
+                                                                               process_id=self.process_id,
+                                                                               instance_id=self.instance_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1315,10 +1315,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_process_threads(self.resource_group,
-                                                                               self.name,
-                                                                               self.process_id,
-                                                                               self.instance_id)
+            response = self.mgmt_client.web_apps.list_instance_process_threads(resource_group_name=self.resource_group,
+                                                                               name=self.name,
+                                                                               process_id=self.process_id,
+                                                                               instance_id=self.instance_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1339,8 +1339,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_metrics(self.resource_group,
-                                                              self.name)
+            response = self.mgmt_client.web_apps.list_metrics(resource_group_name=self.resource_group,
+                                                              name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1361,10 +1361,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_deployment_log_slot(self.resource_group,
-                                                                          self.name,
-                                                                          self.id,
-                                                                          self.slot)
+            response = self.mgmt_client.web_apps.list_deployment_log_slot(resource_group_name=self.resource_group,
+                                                                          name=self.name,
+                                                                          id=self.id,
+                                                                          slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1385,10 +1385,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_function_secrets_slot(self.resource_group,
-                                                                            self.name,
-                                                                            self.function_name,
-                                                                            self.slot)
+            response = self.mgmt_client.web_apps.list_function_secrets_slot(resource_group_name=self.resource_group,
+                                                                            name=self.name,
+                                                                            function_name=self.function_name,
+                                                                            slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1409,10 +1409,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_processes_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot,
-                                                                              self.instance_id)
+            response = self.mgmt_client.web_apps.list_instance_processes_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot,
+                                                                              instance_id=self.instance_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1433,10 +1433,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_network_features_slot(self.resource_group,
-                                                                            self.name,
-                                                                            self.view,
-                                                                            self.slot)
+            response = self.mgmt_client.web_apps.list_network_features_slot(resource_group_name=self.resource_group,
+                                                                            name=self.name,
+                                                                            view=self.view,
+                                                                            slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1457,9 +1457,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_perf_mon_counters_slot(self.resource_group,
-                                                                             self.name,
-                                                                             self.slot)
+            response = self.mgmt_client.web_apps.list_perf_mon_counters_slot(resource_group_name=self.resource_group,
+                                                                             name=self.name,
+                                                                             slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1480,10 +1480,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_process_modules_slot(self.resource_group,
-                                                                           self.name,
-                                                                           self.process_id,
-                                                                           self.slot)
+            response = self.mgmt_client.web_apps.list_process_modules_slot(resource_group_name=self.resource_group,
+                                                                           name=self.name,
+                                                                           process_id=self.process_id,
+                                                                           slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1504,10 +1504,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_process_threads_slot(self.resource_group,
-                                                                           self.name,
-                                                                           self.process_id,
-                                                                           self.slot)
+            response = self.mgmt_client.web_apps.list_process_threads_slot(resource_group_name=self.resource_group,
+                                                                           name=self.name,
+                                                                           process_id=self.process_id,
+                                                                           slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1528,9 +1528,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets_slot(self.resource_group,
-                                                                                               self.name,
-                                                                                               self.slot)
+            response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets_slot(resource_group_name=self.resource_group,
+                                                                                               name=self.name,
+                                                                                               slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1551,10 +1551,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_triggered_web_job_history_slot(self.resource_group,
-                                                                                     self.name,
-                                                                                     self.web_job_name,
-                                                                                     self.slot)
+            response = self.mgmt_client.web_apps.list_triggered_web_job_history_slot(resource_group_name=self.resource_group,
+                                                                                     name=self.name,
+                                                                                     web_job_name=self.web_job_name,
+                                                                                     slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1575,9 +1575,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_usages_slot(self.resource_group,
-                                                                  self.name,
-                                                                  self.slot)
+            response = self.mgmt_client.web_apps.list_usages_slot(resource_group_name=self.resource_group,
+                                                                  name=self.name,
+                                                                  slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1598,10 +1598,10 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_slot_differences_from_production(self.resource_group,
-                                                                                       self.name,
-                                                                                       self.target_slot,
-                                                                                       self.preserve_vnet)
+            response = self.mgmt_client.web_apps.list_slot_differences_from_production(resource_group_name=self.resource_group,
+                                                                                       name=self.name,
+                                                                                       target_slot=self.target_slot,
+                                                                                       preserve_vnet=self.preserve_vnet)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1622,9 +1622,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_deployment_log(self.resource_group,
-                                                                     self.name,
-                                                                     self.id)
+            response = self.mgmt_client.web_apps.list_deployment_log(resource_group_name=self.resource_group,
+                                                                     name=self.name,
+                                                                     id=self.id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1645,9 +1645,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_function_secrets(self.resource_group,
-                                                                       self.name,
-                                                                       self.function_name)
+            response = self.mgmt_client.web_apps.list_function_secrets(resource_group_name=self.resource_group,
+                                                                       name=self.name,
+                                                                       function_name=self.function_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1668,9 +1668,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_processes(self.resource_group,
-                                                                         self.name,
-                                                                         self.instance_id)
+            response = self.mgmt_client.web_apps.list_instance_processes(resource_group_name=self.resource_group,
+                                                                         name=self.name,
+                                                                         instance_id=self.instance_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1691,9 +1691,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_network_features(self.resource_group,
-                                                                       self.name,
-                                                                       self.view)
+            response = self.mgmt_client.web_apps.list_network_features(resource_group_name=self.resource_group,
+                                                                       name=self.name,
+                                                                       view=self.view)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1714,8 +1714,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_perf_mon_counters(self.resource_group,
-                                                                        self.name)
+            response = self.mgmt_client.web_apps.list_perf_mon_counters(resource_group_name=self.resource_group,
+                                                                        name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1736,9 +1736,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_process_modules(self.resource_group,
-                                                                      self.name,
-                                                                      self.process_id)
+            response = self.mgmt_client.web_apps.list_process_modules(resource_group_name=self.resource_group,
+                                                                      name=self.name,
+                                                                      process_id=self.process_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1759,9 +1759,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_process_threads(self.resource_group,
-                                                                      self.name,
-                                                                      self.process_id)
+            response = self.mgmt_client.web_apps.list_process_threads(resource_group_name=self.resource_group,
+                                                                      name=self.name,
+                                                                      process_id=self.process_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1782,8 +1782,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets(self.resource_group,
-                                                                                          self.name)
+            response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets(resource_group_name=self.resource_group,
+                                                                                          name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1804,9 +1804,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_backups_slot(self.resource_group,
-                                                                   self.name,
-                                                                   self.slot)
+            response = self.mgmt_client.web_apps.list_backups_slot(resource_group_name=self.resource_group,
+                                                                   name=self.name,
+                                                                   slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1827,9 +1827,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_configurations_slot(self.resource_group,
-                                                                          self.name,
-                                                                          self.slot)
+            response = self.mgmt_client.web_apps.list_configurations_slot(resource_group_name=self.resource_group,
+                                                                          name=self.name,
+                                                                          slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1850,9 +1850,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_application_settings_slot(self.resource_group,
-                                                                                self.name,
-                                                                                self.slot)
+            response = self.mgmt_client.web_apps.list_application_settings_slot(resource_group_name=self.resource_group,
+                                                                                name=self.name,
+                                                                                slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1873,9 +1873,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_connection_strings_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot)
+            response = self.mgmt_client.web_apps.list_connection_strings_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1896,9 +1896,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_metadata_slot(self.resource_group,
-                                                                    self.name,
-                                                                    self.slot)
+            response = self.mgmt_client.web_apps.list_metadata_slot(resource_group_name=self.resource_group,
+                                                                    name=self.name,
+                                                                    slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1919,9 +1919,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_publishing_credentials_slot(self.resource_group,
-                                                                                  self.name,
-                                                                                  self.slot)
+            response = self.mgmt_client.web_apps.list_publishing_credentials_slot(resource_group_name=self.resource_group,
+                                                                                  name=self.name,
+                                                                                  slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1942,9 +1942,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_site_push_settings_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot)
+            response = self.mgmt_client.web_apps.list_site_push_settings_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1965,9 +1965,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_configuration_snapshot_info_slot(self.resource_group,
-                                                                                       self.name,
-                                                                                       self.slot)
+            response = self.mgmt_client.web_apps.list_configuration_snapshot_info_slot(resource_group_name=self.resource_group,
+                                                                                       name=self.name,
+                                                                                       slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -1988,9 +1988,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_continuous_web_jobs_slot(self.resource_group,
-                                                                               self.name,
-                                                                               self.slot)
+            response = self.mgmt_client.web_apps.list_continuous_web_jobs_slot(resource_group_name=self.resource_group,
+                                                                               name=self.name,
+                                                                               slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2011,9 +2011,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_deployments_slot(self.resource_group,
-                                                                       self.name,
-                                                                       self.slot)
+            response = self.mgmt_client.web_apps.list_deployments_slot(resource_group_name=self.resource_group,
+                                                                       name=self.name,
+                                                                       slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2034,9 +2034,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_domain_ownership_identifiers_slot(self.resource_group,
-                                                                                        self.name,
-                                                                                        self.slot)
+            response = self.mgmt_client.web_apps.list_domain_ownership_identifiers_slot(resource_group_name=self.resource_group,
+                                                                                        name=self.name,
+                                                                                        slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2057,9 +2057,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_functions_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot)
+            response = self.mgmt_client.web_apps.list_instance_functions_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2080,9 +2080,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_host_name_bindings_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot)
+            response = self.mgmt_client.web_apps.list_host_name_bindings_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2103,9 +2103,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_hybrid_connections_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot)
+            response = self.mgmt_client.web_apps.list_hybrid_connections_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2126,9 +2126,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_relay_service_connections_slot(self.resource_group,
-                                                                                     self.name,
-                                                                                     self.slot)
+            response = self.mgmt_client.web_apps.list_relay_service_connections_slot(resource_group_name=self.resource_group,
+                                                                                     name=self.name,
+                                                                                     slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2149,9 +2149,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_identifiers_slot(self.resource_group,
-                                                                                self.name,
-                                                                                self.slot)
+            response = self.mgmt_client.web_apps.list_instance_identifiers_slot(resource_group_name=self.resource_group,
+                                                                                name=self.name,
+                                                                                slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2172,9 +2172,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_sync_function_triggers_slot(self.resource_group,
-                                                                                  self.name,
-                                                                                  self.slot)
+            response = self.mgmt_client.web_apps.list_sync_function_triggers_slot(resource_group_name=self.resource_group,
+                                                                                  name=self.name,
+                                                                                  slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2195,9 +2195,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_metric_definitions_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot)
+            response = self.mgmt_client.web_apps.list_metric_definitions_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2218,9 +2218,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_premier_add_ons_slot(self.resource_group,
-                                                                           self.name,
-                                                                           self.slot)
+            response = self.mgmt_client.web_apps.list_premier_add_ons_slot(resource_group_name=self.resource_group,
+                                                                           name=self.name,
+                                                                           slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2241,9 +2241,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_processes_slot(self.resource_group,
-                                                                     self.name,
-                                                                     self.slot)
+            response = self.mgmt_client.web_apps.list_processes_slot(resource_group_name=self.resource_group,
+                                                                     name=self.name,
+                                                                     slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2264,9 +2264,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_public_certificates_slot(self.resource_group,
-                                                                               self.name,
-                                                                               self.slot)
+            response = self.mgmt_client.web_apps.list_public_certificates_slot(resource_group_name=self.resource_group,
+                                                                               name=self.name,
+                                                                               slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2287,9 +2287,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_site_extensions_slot(self.resource_group,
-                                                                           self.name,
-                                                                           self.slot)
+            response = self.mgmt_client.web_apps.list_site_extensions_slot(resource_group_name=self.resource_group,
+                                                                           name=self.name,
+                                                                           slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2310,9 +2310,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_snapshots_slot(self.resource_group,
-                                                                     self.name,
-                                                                     self.slot)
+            response = self.mgmt_client.web_apps.list_snapshots_slot(resource_group_name=self.resource_group,
+                                                                     name=self.name,
+                                                                     slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2333,9 +2333,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_triggered_web_jobs_slot(self.resource_group,
-                                                                              self.name,
-                                                                              self.slot)
+            response = self.mgmt_client.web_apps.list_triggered_web_jobs_slot(resource_group_name=self.resource_group,
+                                                                              name=self.name,
+                                                                              slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2356,9 +2356,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_vnet_connections_slot(self.resource_group,
-                                                                            self.name,
-                                                                            self.slot)
+            response = self.mgmt_client.web_apps.list_vnet_connections_slot(resource_group_name=self.resource_group,
+                                                                            name=self.name,
+                                                                            slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2379,9 +2379,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_web_jobs_slot(self.resource_group,
-                                                                    self.name,
-                                                                    self.slot)
+            response = self.mgmt_client.web_apps.list_web_jobs_slot(resource_group_name=self.resource_group,
+                                                                    name=self.name,
+                                                                    slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2402,9 +2402,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_triggered_web_job_history(self.resource_group,
-                                                                                self.name,
-                                                                                self.web_job_name)
+            response = self.mgmt_client.web_apps.list_triggered_web_job_history(resource_group_name=self.resource_group,
+                                                                                name=self.name,
+                                                                                web_job_name=self.web_job_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2425,8 +2425,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_usages(self.resource_group,
-                                                             self.name)
+            response = self.mgmt_client.web_apps.list_usages(resource_group_name=self.resource_group,
+                                                             name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2447,7 +2447,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_by_resource_group(self.resource_group)
+            response = self.mgmt_client.web_apps.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2468,8 +2468,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.get(self.resource_group,
-                                                     self.name)
+            response = self.mgmt_client.web_apps.get(resource_group_name=self.resource_group,
+                                                     name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2488,8 +2488,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_backups(self.resource_group,
-                                                              self.name)
+            response = self.mgmt_client.web_apps.list_backups(resource_group_name=self.resource_group,
+                                                              name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2510,8 +2510,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_configurations(self.resource_group,
-                                                                     self.name)
+            response = self.mgmt_client.web_apps.list_configurations(resource_group_name=self.resource_group,
+                                                                     name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2532,8 +2532,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_application_settings(self.resource_group,
-                                                                           self.name)
+            response = self.mgmt_client.web_apps.list_application_settings(resource_group_name=self.resource_group,
+                                                                           name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2554,8 +2554,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_connection_strings(self.resource_group,
-                                                                         self.name)
+            response = self.mgmt_client.web_apps.list_connection_strings(resource_group_name=self.resource_group,
+                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2576,8 +2576,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_metadata(self.resource_group,
-                                                               self.name)
+            response = self.mgmt_client.web_apps.list_metadata(resource_group_name=self.resource_group,
+                                                               name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2598,8 +2598,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_publishing_credentials(self.resource_group,
-                                                                             self.name)
+            response = self.mgmt_client.web_apps.list_publishing_credentials(resource_group_name=self.resource_group,
+                                                                             name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2620,8 +2620,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_site_push_settings(self.resource_group,
-                                                                         self.name)
+            response = self.mgmt_client.web_apps.list_site_push_settings(resource_group_name=self.resource_group,
+                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2642,8 +2642,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_slot_configuration_names(self.resource_group,
-                                                                               self.name)
+            response = self.mgmt_client.web_apps.list_slot_configuration_names(resource_group_name=self.resource_group,
+                                                                               name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2664,8 +2664,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_configuration_snapshot_info(self.resource_group,
-                                                                                  self.name)
+            response = self.mgmt_client.web_apps.list_configuration_snapshot_info(resource_group_name=self.resource_group,
+                                                                                  name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2686,8 +2686,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_continuous_web_jobs(self.resource_group,
-                                                                          self.name)
+            response = self.mgmt_client.web_apps.list_continuous_web_jobs(resource_group_name=self.resource_group,
+                                                                          name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2708,8 +2708,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_deployments(self.resource_group,
-                                                                  self.name)
+            response = self.mgmt_client.web_apps.list_deployments(resource_group_name=self.resource_group,
+                                                                  name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2730,8 +2730,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_domain_ownership_identifiers(self.resource_group,
-                                                                                   self.name)
+            response = self.mgmt_client.web_apps.list_domain_ownership_identifiers(resource_group_name=self.resource_group,
+                                                                                   name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2752,8 +2752,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_functions(self.resource_group,
-                                                                self.name)
+            response = self.mgmt_client.web_apps.list_functions(resource_group_name=self.resource_group,
+                                                                name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2774,8 +2774,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_host_name_bindings(self.resource_group,
-                                                                         self.name)
+            response = self.mgmt_client.web_apps.list_host_name_bindings(resource_group_name=self.resource_group,
+                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2796,8 +2796,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_hybrid_connections(self.resource_group,
-                                                                         self.name)
+            response = self.mgmt_client.web_apps.list_hybrid_connections(resource_group_name=self.resource_group,
+                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2818,8 +2818,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_relay_service_connections(self.resource_group,
-                                                                                self.name)
+            response = self.mgmt_client.web_apps.list_relay_service_connections(resource_group_name=self.resource_group,
+                                                                                name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2840,8 +2840,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_instance_identifiers(self.resource_group,
-                                                                           self.name)
+            response = self.mgmt_client.web_apps.list_instance_identifiers(resource_group_name=self.resource_group,
+                                                                           name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2862,8 +2862,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_sync_function_triggers(self.resource_group,
-                                                                             self.name)
+            response = self.mgmt_client.web_apps.list_sync_function_triggers(resource_group_name=self.resource_group,
+                                                                             name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2884,8 +2884,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_metric_definitions(self.resource_group,
-                                                                         self.name)
+            response = self.mgmt_client.web_apps.list_metric_definitions(resource_group_name=self.resource_group,
+                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2906,8 +2906,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_premier_add_ons(self.resource_group,
-                                                                      self.name)
+            response = self.mgmt_client.web_apps.list_premier_add_ons(resource_group_name=self.resource_group,
+                                                                      name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2928,8 +2928,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_processes(self.resource_group,
-                                                                self.name)
+            response = self.mgmt_client.web_apps.list_processes(resource_group_name=self.resource_group,
+                                                                name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2950,8 +2950,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_public_certificates(self.resource_group,
-                                                                          self.name)
+            response = self.mgmt_client.web_apps.list_public_certificates(resource_group_name=self.resource_group,
+                                                                          name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2972,8 +2972,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_site_extensions(self.resource_group,
-                                                                      self.name)
+            response = self.mgmt_client.web_apps.list_site_extensions(resource_group_name=self.resource_group,
+                                                                      name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -2994,8 +2994,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_slots(self.resource_group,
-                                                            self.name)
+            response = self.mgmt_client.web_apps.list_slots(resource_group_name=self.resource_group,
+                                                            name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -3016,8 +3016,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_snapshots(self.resource_group,
-                                                                self.name)
+            response = self.mgmt_client.web_apps.list_snapshots(resource_group_name=self.resource_group,
+                                                                name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -3038,8 +3038,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_triggered_web_jobs(self.resource_group,
-                                                                         self.name)
+            response = self.mgmt_client.web_apps.list_triggered_web_jobs(resource_group_name=self.resource_group,
+                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -3060,8 +3060,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_vnet_connections(self.resource_group,
-                                                                       self.name)
+            response = self.mgmt_client.web_apps.list_vnet_connections(resource_group_name=self.resource_group,
+                                                                       name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')
@@ -3082,8 +3082,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.web_apps.list_web_jobs(self.resource_group,
-                                                               self.name)
+            response = self.mgmt_client.web_apps.list_web_jobs(resource_group_name=self.resource_group,
+                                                               name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')

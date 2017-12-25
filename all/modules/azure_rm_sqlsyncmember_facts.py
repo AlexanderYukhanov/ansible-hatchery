@@ -160,11 +160,11 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_members.get(self.resource_group,
-                                                         self.server_name,
-                                                         self.database_name,
-                                                         self.sync_group_name,
-                                                         self.sync_member_name)
+            response = self.mgmt_client.sync_members.get(resource_group_name=self.resource_group,
+                                                         server_name=self.server_name,
+                                                         database_name=self.database_name,
+                                                         sync_group_name=self.sync_group_name,
+                                                         sync_member_name=self.sync_member_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncMembers.')
@@ -183,11 +183,11 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_members.list_member_schemas(self.resource_group,
-                                                                         self.server_name,
-                                                                         self.database_name,
-                                                                         self.sync_group_name,
-                                                                         self.sync_member_name)
+            response = self.mgmt_client.sync_members.list_member_schemas(resource_group_name=self.resource_group,
+                                                                         server_name=self.server_name,
+                                                                         database_name=self.database_name,
+                                                                         sync_group_name=self.sync_group_name,
+                                                                         sync_member_name=self.sync_member_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncMembers.')
@@ -208,10 +208,10 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_members.list_by_sync_group(self.resource_group,
-                                                                        self.server_name,
-                                                                        self.database_name,
-                                                                        self.sync_group_name)
+            response = self.mgmt_client.sync_members.list_by_sync_group(resource_group_name=self.resource_group,
+                                                                        server_name=self.server_name,
+                                                                        database_name=self.database_name,
+                                                                        sync_group_name=self.sync_group_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncMembers.')

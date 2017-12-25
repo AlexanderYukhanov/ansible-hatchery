@@ -113,9 +113,9 @@ class AzureRMRoutesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.routes.get(self.resource_group,
-                                                   self.route_table_name,
-                                                   self.route_name)
+            response = self.mgmt_client.routes.get(resource_group_name=self.resource_group,
+                                                   route_table_name=self.route_table_name,
+                                                   route_name=self.route_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Routes.')

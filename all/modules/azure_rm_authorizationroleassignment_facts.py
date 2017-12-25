@@ -178,11 +178,11 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.role_assignments.list_for_resource(self.resource_group,
-                                                                           self.resource_provider_namespace,
-                                                                           self.parent_resource_path,
-                                                                           self.resource_type,
-                                                                           self.resource_name)
+            response = self.mgmt_client.role_assignments.list_for_resource(resource_group_name=self.resource_group,
+                                                                           resource_provider_namespace=self.resource_provider_namespace,
+                                                                           parent_resource_path=self.parent_resource_path,
+                                                                           resource_type=self.resource_type,
+                                                                           resource_name=self.resource_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')
@@ -203,7 +203,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.role_assignments.list_for_resource_group(self.resource_group)
+            response = self.mgmt_client.role_assignments.list_for_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')
@@ -224,8 +224,8 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.role_assignments.get(self.scope,
-                                                             self.role_assignment_name)
+            response = self.mgmt_client.role_assignments.get(scope=self.scope,
+                                                             role_assignment_name=self.role_assignment_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')
@@ -244,7 +244,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.role_assignments.list_for_scope(self.scope)
+            response = self.mgmt_client.role_assignments.list_for_scope(scope=self.scope)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')

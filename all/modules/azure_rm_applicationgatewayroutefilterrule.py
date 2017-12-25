@@ -250,10 +250,10 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
         self.log("Creating / Updating the RouteFilterRules instance {0}".format(self.rule_name))
 
         try:
-            response = self.mgmt_client.route_filter_rules.create_or_update(self.resource_group,
-                                                                            self.route_filter_name,
-                                                                            self.rule_name,
-                                                                            self.route_filter_rule_parameters)
+            response = self.mgmt_client.route_filter_rules.create_or_update(resource_group_name=self.resource_group,
+                                                                            route_filter_name=self.route_filter_name,
+                                                                            rule_name=self.rule_name,
+                                                                            route_filter_rule_parameters=self.route_filter_rule_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -270,9 +270,9 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
         '''
         self.log("Deleting the RouteFilterRules instance {0}".format(self.rule_name))
         try:
-            response = self.mgmt_client.route_filter_rules.delete(self.resource_group,
-                                                                  self.route_filter_name,
-                                                                  self.rule_name)
+            response = self.mgmt_client.route_filter_rules.delete(resource_group_name=self.resource_group,
+                                                                  route_filter_name=self.route_filter_name,
+                                                                  rule_name=self.rule_name)
         except CloudError as e:
             self.log('Error attempting to delete the RouteFilterRules instance.')
             self.fail("Error deleting the RouteFilterRules instance: {0}".format(str(e)))
@@ -288,9 +288,9 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
         self.log("Checking if the RouteFilterRules instance {0} is present".format(self.rule_name))
         found = False
         try:
-            response = self.mgmt_client.route_filter_rules.get(self.resource_group,
-                                                               self.route_filter_name,
-                                                               self.rule_name)
+            response = self.mgmt_client.route_filter_rules.get(resource_group_name=self.resource_group,
+                                                               route_filter_name=self.route_filter_name,
+                                                               rule_name=self.rule_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("RouteFilterRules instance : {0} found".format(response.name))

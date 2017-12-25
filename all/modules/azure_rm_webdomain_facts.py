@@ -157,8 +157,8 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.domains.get(self.resource_group,
-                                                    self.domain_name)
+            response = self.mgmt_client.domains.get(resource_group_name=self.resource_group,
+                                                    domain_name=self.domain_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')
@@ -177,8 +177,8 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.domains.list_ownership_identifiers(self.resource_group,
-                                                                           self.domain_name)
+            response = self.mgmt_client.domains.list_ownership_identifiers(resource_group_name=self.resource_group,
+                                                                           domain_name=self.domain_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')
@@ -199,7 +199,7 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.domains.list_by_resource_group(self.resource_group)
+            response = self.mgmt_client.domains.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')

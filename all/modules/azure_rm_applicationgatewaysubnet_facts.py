@@ -122,9 +122,9 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.subnets.get(self.resource_group,
-                                                    self.virtual_network_name,
-                                                    self.subnet_name)
+            response = self.mgmt_client.subnets.get(resource_group_name=self.resource_group,
+                                                    virtual_network_name=self.virtual_network_name,
+                                                    subnet_name=self.subnet_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Subnets.')

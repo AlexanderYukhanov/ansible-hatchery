@@ -130,9 +130,9 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.recommended_elastic_pools.get(self.resource_group,
-                                                                      self.server_name,
-                                                                      self.recommended_elastic_pool_name)
+            response = self.mgmt_client.recommended_elastic_pools.get(resource_group_name=self.resource_group,
+                                                                      server_name=self.server_name,
+                                                                      recommended_elastic_pool_name=self.recommended_elastic_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RecommendedElasticPools.')
@@ -151,9 +151,9 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.recommended_elastic_pools.list_metrics(self.resource_group,
-                                                                               self.server_name,
-                                                                               self.recommended_elastic_pool_name)
+            response = self.mgmt_client.recommended_elastic_pools.list_metrics(resource_group_name=self.resource_group,
+                                                                               server_name=self.server_name,
+                                                                               recommended_elastic_pool_name=self.recommended_elastic_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RecommendedElasticPools.')
@@ -174,8 +174,8 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.recommended_elastic_pools.list_by_server(self.resource_group,
-                                                                                 self.server_name)
+            response = self.mgmt_client.recommended_elastic_pools.list_by_server(resource_group_name=self.resource_group,
+                                                                                 server_name=self.server_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RecommendedElasticPools.')

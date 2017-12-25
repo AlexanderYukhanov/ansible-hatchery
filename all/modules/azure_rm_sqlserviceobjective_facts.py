@@ -120,9 +120,9 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.service_objectives.get(self.resource_group,
-                                                               self.server_name,
-                                                               self.service_objective_name)
+            response = self.mgmt_client.service_objectives.get(resource_group_name=self.resource_group,
+                                                               server_name=self.server_name,
+                                                               service_objective_name=self.service_objective_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServiceObjectives.')
@@ -141,8 +141,8 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.service_objectives.list_by_server(self.resource_group,
-                                                                          self.server_name)
+            response = self.mgmt_client.service_objectives.list_by_server(resource_group_name=self.resource_group,
+                                                                          server_name=self.server_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServiceObjectives.')

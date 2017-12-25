@@ -113,9 +113,9 @@ class AzureRMDatabaseOperationsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.database_operations.list_by_database(self.resource_group,
-                                                                             self.server_name,
-                                                                             self.database_name)
+            response = self.mgmt_client.database_operations.list_by_database(resource_group_name=self.resource_group,
+                                                                             server_name=self.server_name,
+                                                                             database_name=self.database_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for DatabaseOperations.')

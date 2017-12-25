@@ -513,10 +513,10 @@ class AzureRMSubnets(AzureRMModuleBase):
         self.log("Creating / Updating the Subnets instance {0}".format(self.subnet_name))
 
         try:
-            response = self.mgmt_client.subnets.create_or_update(self.resource_group,
-                                                                 self.virtual_network_name,
-                                                                 self.subnet_name,
-                                                                 self.subnet_parameters)
+            response = self.mgmt_client.subnets.create_or_update(resource_group_name=self.resource_group,
+                                                                 virtual_network_name=self.virtual_network_name,
+                                                                 subnet_name=self.subnet_name,
+                                                                 subnet_parameters=self.subnet_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -533,9 +533,9 @@ class AzureRMSubnets(AzureRMModuleBase):
         '''
         self.log("Deleting the Subnets instance {0}".format(self.subnet_name))
         try:
-            response = self.mgmt_client.subnets.delete(self.resource_group,
-                                                       self.virtual_network_name,
-                                                       self.subnet_name)
+            response = self.mgmt_client.subnets.delete(resource_group_name=self.resource_group,
+                                                       virtual_network_name=self.virtual_network_name,
+                                                       subnet_name=self.subnet_name)
         except CloudError as e:
             self.log('Error attempting to delete the Subnets instance.')
             self.fail("Error deleting the Subnets instance: {0}".format(str(e)))
@@ -551,9 +551,9 @@ class AzureRMSubnets(AzureRMModuleBase):
         self.log("Checking if the Subnets instance {0} is present".format(self.subnet_name))
         found = False
         try:
-            response = self.mgmt_client.subnets.get(self.resource_group,
-                                                    self.virtual_network_name,
-                                                    self.subnet_name)
+            response = self.mgmt_client.subnets.get(resource_group_name=self.resource_group,
+                                                    virtual_network_name=self.virtual_network_name,
+                                                    subnet_name=self.subnet_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Subnets instance : {0} found".format(response.name))

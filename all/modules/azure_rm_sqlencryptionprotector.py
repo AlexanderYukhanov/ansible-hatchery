@@ -219,10 +219,10 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
         self.log("Creating / Updating the EncryptionProtectors instance {0}".format(self.encryption_protector_name))
 
         try:
-            response = self.mgmt_client.encryption_protectors.create_or_update(self.resource_group,
-                                                                               self.server_name,
-                                                                               self.encryption_protector_name,
-                                                                               self.parameters)
+            response = self.mgmt_client.encryption_protectors.create_or_update(resource_group_name=self.resource_group,
+                                                                               server_name=self.server_name,
+                                                                               encryption_protector_name=self.encryption_protector_name,
+                                                                               parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -255,9 +255,9 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
         self.log("Checking if the EncryptionProtectors instance {0} is present".format(self.encryption_protector_name))
         found = False
         try:
-            response = self.mgmt_client.encryption_protectors.get(self.resource_group,
-                                                                  self.server_name,
-                                                                  self.encryption_protector_name)
+            response = self.mgmt_client.encryption_protectors.get(resource_group_name=self.resource_group,
+                                                                  server_name=self.server_name,
+                                                                  encryption_protector_name=self.encryption_protector_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("EncryptionProtectors instance : {0} found".format(response.name))

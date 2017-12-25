@@ -100,7 +100,7 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.provider_operations_metadata.get(self.resource_provider_namespace)
+            response = self.mgmt_client.provider_operations_metadata.get(resource_provider_namespace=self.resource_provider_namespace)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ProviderOperationsMetadata.')

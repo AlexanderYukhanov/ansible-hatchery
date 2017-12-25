@@ -266,9 +266,9 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
         self.log("Creating / Updating the AppServiceCertificateOrders instance {0}".format(self.certificate_order_name))
 
         try:
-            response = self.mgmt_client.app_service_certificate_orders.create_or_update(self.resource_group,
-                                                                                        self.certificate_order_name,
-                                                                                        self.certificate_distinguished_name)
+            response = self.mgmt_client.app_service_certificate_orders.create_or_update(resource_group_name=self.resource_group,
+                                                                                        certificate_order_name=self.certificate_order_name,
+                                                                                        certificate_distinguished_name=self.certificate_distinguished_name)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -285,8 +285,8 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
         '''
         self.log("Deleting the AppServiceCertificateOrders instance {0}".format(self.certificate_order_name))
         try:
-            response = self.mgmt_client.app_service_certificate_orders.delete(self.resource_group,
-                                                                              self.certificate_order_name)
+            response = self.mgmt_client.app_service_certificate_orders.delete(resource_group_name=self.resource_group,
+                                                                              certificate_order_name=self.certificate_order_name)
         except CloudError as e:
             self.log('Error attempting to delete the AppServiceCertificateOrders instance.')
             self.fail("Error deleting the AppServiceCertificateOrders instance: {0}".format(str(e)))
@@ -302,8 +302,8 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
         self.log("Checking if the AppServiceCertificateOrders instance {0} is present".format(self.certificate_order_name))
         found = False
         try:
-            response = self.mgmt_client.app_service_certificate_orders.get(self.resource_group,
-                                                                           self.certificate_order_name)
+            response = self.mgmt_client.app_service_certificate_orders.get(resource_group_name=self.resource_group,
+                                                                           certificate_order_name=self.certificate_order_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("AppServiceCertificateOrders instance : {0} found".format(response.name))

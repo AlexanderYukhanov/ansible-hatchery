@@ -113,9 +113,9 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_interface_ip_configurations.get(self.resource_group,
-                                                                                self.network_interface_name,
-                                                                                self.ip_configuration_name)
+            response = self.mgmt_client.network_interface_ip_configurations.get(resource_group_name=self.resource_group,
+                                                                                network_interface_name=self.network_interface_name,
+                                                                                ip_configuration_name=self.ip_configuration_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaceIPConfigurations.')

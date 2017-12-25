@@ -253,9 +253,9 @@ class AzureRMCertificates(AzureRMModuleBase):
         self.log("Creating / Updating the Certificates instance {0}".format(self.name))
 
         try:
-            response = self.mgmt_client.certificates.create_or_update(self.resource_group,
-                                                                      self.name,
-                                                                      self.certificate_envelope)
+            response = self.mgmt_client.certificates.create_or_update(resource_group_name=self.resource_group,
+                                                                      name=self.name,
+                                                                      certificate_envelope=self.certificate_envelope)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -272,8 +272,8 @@ class AzureRMCertificates(AzureRMModuleBase):
         '''
         self.log("Deleting the Certificates instance {0}".format(self.name))
         try:
-            response = self.mgmt_client.certificates.delete(self.resource_group,
-                                                            self.name)
+            response = self.mgmt_client.certificates.delete(resource_group_name=self.resource_group,
+                                                            name=self.name)
         except CloudError as e:
             self.log('Error attempting to delete the Certificates instance.')
             self.fail("Error deleting the Certificates instance: {0}".format(str(e)))
@@ -289,8 +289,8 @@ class AzureRMCertificates(AzureRMModuleBase):
         self.log("Checking if the Certificates instance {0} is present".format(self.name))
         found = False
         try:
-            response = self.mgmt_client.certificates.get(self.resource_group,
-                                                         self.name)
+            response = self.mgmt_client.certificates.get(resource_group_name=self.resource_group,
+                                                         name=self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Certificates instance : {0} found".format(response.name))

@@ -369,10 +369,10 @@ class AzureRMSecurityRules(AzureRMModuleBase):
         self.log("Creating / Updating the SecurityRules instance {0}".format(self.security_rule_name))
 
         try:
-            response = self.mgmt_client.security_rules.create_or_update(self.resource_group,
-                                                                        self.network_security_group_name,
-                                                                        self.security_rule_name,
-                                                                        self.security_rule_parameters)
+            response = self.mgmt_client.security_rules.create_or_update(resource_group_name=self.resource_group,
+                                                                        network_security_group_name=self.network_security_group_name,
+                                                                        security_rule_name=self.security_rule_name,
+                                                                        security_rule_parameters=self.security_rule_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -389,9 +389,9 @@ class AzureRMSecurityRules(AzureRMModuleBase):
         '''
         self.log("Deleting the SecurityRules instance {0}".format(self.security_rule_name))
         try:
-            response = self.mgmt_client.security_rules.delete(self.resource_group,
-                                                              self.network_security_group_name,
-                                                              self.security_rule_name)
+            response = self.mgmt_client.security_rules.delete(resource_group_name=self.resource_group,
+                                                              network_security_group_name=self.network_security_group_name,
+                                                              security_rule_name=self.security_rule_name)
         except CloudError as e:
             self.log('Error attempting to delete the SecurityRules instance.')
             self.fail("Error deleting the SecurityRules instance: {0}".format(str(e)))
@@ -407,9 +407,9 @@ class AzureRMSecurityRules(AzureRMModuleBase):
         self.log("Checking if the SecurityRules instance {0} is present".format(self.security_rule_name))
         found = False
         try:
-            response = self.mgmt_client.security_rules.get(self.resource_group,
-                                                           self.network_security_group_name,
-                                                           self.security_rule_name)
+            response = self.mgmt_client.security_rules.get(resource_group_name=self.resource_group,
+                                                           network_security_group_name=self.network_security_group_name,
+                                                           security_rule_name=self.security_rule_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("SecurityRules instance : {0} found".format(response.name))

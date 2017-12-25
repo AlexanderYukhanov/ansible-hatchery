@@ -102,8 +102,8 @@ class AzureRMServerUsagesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.server_usages.list_by_server(self.resource_group,
-                                                                     self.server_name)
+            response = self.mgmt_client.server_usages.list_by_server(resource_group_name=self.resource_group,
+                                                                     server_name=self.server_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServerUsages.')

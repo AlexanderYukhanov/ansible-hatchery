@@ -218,10 +218,10 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.log("Creating / Updating the VirtualNetworkRules instance {0}".format(self.name))
 
         try:
-            response = self.mgmt_client.virtual_network_rules.create_or_update(self.resource_group,
-                                                                               self.server_name,
-                                                                               self.name,
-                                                                               self.parameters)
+            response = self.mgmt_client.virtual_network_rules.create_or_update(resource_group_name=self.resource_group,
+                                                                               server_name=self.server_name,
+                                                                               virtual_network_rule_name=self.name,
+                                                                               parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -238,9 +238,9 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         '''
         self.log("Deleting the VirtualNetworkRules instance {0}".format(self.name))
         try:
-            response = self.mgmt_client.virtual_network_rules.delete(self.resource_group,
-                                                                     self.server_name,
-                                                                     self.name)
+            response = self.mgmt_client.virtual_network_rules.delete(resource_group_name=self.resource_group,
+                                                                     server_name=self.server_name,
+                                                                     virtual_network_rule_name=self.name)
         except CloudError as e:
             self.log('Error attempting to delete the VirtualNetworkRules instance.')
             self.fail("Error deleting the VirtualNetworkRules instance: {0}".format(str(e)))
@@ -256,9 +256,9 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.log("Checking if the VirtualNetworkRules instance {0} is present".format(self.name))
         found = False
         try:
-            response = self.mgmt_client.virtual_network_rules.get(self.resource_group,
-                                                                  self.server_name,
-                                                                  self.name)
+            response = self.mgmt_client.virtual_network_rules.get(resource_group_name=self.resource_group,
+                                                                  server_name=self.server_name,
+                                                                  virtual_network_rule_name=self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("VirtualNetworkRules instance : {0} found".format(response.name))

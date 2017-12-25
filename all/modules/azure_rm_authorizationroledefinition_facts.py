@@ -102,8 +102,8 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.role_definitions.get(self.scope,
-                                                             self.role_definition_id)
+            response = self.mgmt_client.role_definitions.get(scope=self.scope,
+                                                             role_definition_id=self.role_definition_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleDefinitions.')

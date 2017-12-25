@@ -121,8 +121,8 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.virtual_networks.get(self.resource_group,
-                                                             self.virtual_network_name)
+            response = self.mgmt_client.virtual_networks.get(resource_group_name=self.resource_group,
+                                                             virtual_network_name=self.virtual_network_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworks.')
@@ -141,8 +141,8 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.virtual_networks.list_usage(self.resource_group,
-                                                                    self.virtual_network_name)
+            response = self.mgmt_client.virtual_networks.list_usage(resource_group_name=self.resource_group,
+                                                                    virtual_network_name=self.virtual_network_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworks.')

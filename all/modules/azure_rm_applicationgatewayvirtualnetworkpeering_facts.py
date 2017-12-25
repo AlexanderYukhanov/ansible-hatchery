@@ -113,9 +113,9 @@ class AzureRMVirtualNetworkPeeringsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.virtual_network_peerings.get(self.resource_group,
-                                                                     self.virtual_network_name,
-                                                                     self.virtual_network_peering_name)
+            response = self.mgmt_client.virtual_network_peerings.get(resource_group_name=self.resource_group,
+                                                                     virtual_network_name=self.virtual_network_name,
+                                                                     virtual_network_peering_name=self.virtual_network_peering_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworkPeerings.')

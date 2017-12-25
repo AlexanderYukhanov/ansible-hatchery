@@ -260,8 +260,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_web_apps(self.resource_group,
-                                                                        self.name)
+            response = self.mgmt_client.app_service_plans.list_web_apps(resource_group_name=self.resource_group,
+                                                                        name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -282,10 +282,10 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_hybrid_connection_keys(self.resource_group,
-                                                                                      self.name,
-                                                                                      self.namespace_name,
-                                                                                      self.relay_name)
+            response = self.mgmt_client.app_service_plans.list_hybrid_connection_keys(resource_group_name=self.resource_group,
+                                                                                      name=self.name,
+                                                                                      namespace_name=self.namespace_name,
+                                                                                      relay_name=self.relay_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -306,10 +306,10 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_web_apps_by_hybrid_connection(self.resource_group,
-                                                                                             self.name,
-                                                                                             self.namespace_name,
-                                                                                             self.relay_name)
+            response = self.mgmt_client.app_service_plans.list_web_apps_by_hybrid_connection(resource_group_name=self.resource_group,
+                                                                                             name=self.name,
+                                                                                             namespace_name=self.namespace_name,
+                                                                                             relay_name=self.relay_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -330,8 +330,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_metrics(self.resource_group,
-                                                                       self.name)
+            response = self.mgmt_client.app_service_plans.list_metrics(resource_group_name=self.resource_group,
+                                                                       name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -352,8 +352,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_usages(self.resource_group,
-                                                                      self.name)
+            response = self.mgmt_client.app_service_plans.list_usages(resource_group_name=self.resource_group,
+                                                                      name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -374,9 +374,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_routes_for_vnet(self.resource_group,
-                                                                               self.name,
-                                                                               self.vnet_name)
+            response = self.mgmt_client.app_service_plans.list_routes_for_vnet(resource_group_name=self.resource_group,
+                                                                               name=self.name,
+                                                                               vnet_name=self.vnet_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -397,8 +397,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.get(self.resource_group,
-                                                              self.name)
+            response = self.mgmt_client.app_service_plans.get(resource_group_name=self.resource_group,
+                                                              name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -417,8 +417,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_capabilities(self.resource_group,
-                                                                            self.name)
+            response = self.mgmt_client.app_service_plans.list_capabilities(resource_group_name=self.resource_group,
+                                                                            name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -439,8 +439,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_hybrid_connections(self.resource_group,
-                                                                                  self.name)
+            response = self.mgmt_client.app_service_plans.list_hybrid_connections(resource_group_name=self.resource_group,
+                                                                                  name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -461,8 +461,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_metric_defintions(self.resource_group,
-                                                                                 self.name)
+            response = self.mgmt_client.app_service_plans.list_metric_defintions(resource_group_name=self.resource_group,
+                                                                                 name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -483,8 +483,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_vnets(self.resource_group,
-                                                                     self.name)
+            response = self.mgmt_client.app_service_plans.list_vnets(resource_group_name=self.resource_group,
+                                                                     name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')
@@ -505,7 +505,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.app_service_plans.list_by_resource_group(self.resource_group)
+            response = self.mgmt_client.app_service_plans.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServicePlans.')

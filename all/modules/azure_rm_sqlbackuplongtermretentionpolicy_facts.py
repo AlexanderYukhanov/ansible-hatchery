@@ -133,10 +133,10 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.backup_long_term_retention_policies.get(self.resource_group,
-                                                                                self.server_name,
-                                                                                self.database_name,
-                                                                                self.backup_long_term_retention_policy_name)
+            response = self.mgmt_client.backup_long_term_retention_policies.get(resource_group_name=self.resource_group,
+                                                                                server_name=self.server_name,
+                                                                                database_name=self.database_name,
+                                                                                backup_long_term_retention_policy_name=self.backup_long_term_retention_policy_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for BackupLongTermRetentionPolicies.')
@@ -155,9 +155,9 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.backup_long_term_retention_policies.list_by_database(self.resource_group,
-                                                                                             self.server_name,
-                                                                                             self.database_name)
+            response = self.mgmt_client.backup_long_term_retention_policies.list_by_database(resource_group_name=self.resource_group,
+                                                                                             server_name=self.server_name,
+                                                                                             database_name=self.database_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for BackupLongTermRetentionPolicies.')

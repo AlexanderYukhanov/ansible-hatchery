@@ -113,9 +113,9 @@ class AzureRMElasticPoolDatabaseActivitiesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.elastic_pool_database_activities.list_by_elastic_pool(self.resource_group,
-                                                                                              self.server_name,
-                                                                                              self.elastic_pool_name)
+            response = self.mgmt_client.elastic_pool_database_activities.list_by_elastic_pool(resource_group_name=self.resource_group,
+                                                                                              server_name=self.server_name,
+                                                                                              elastic_pool_name=self.elastic_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPoolDatabaseActivities.')

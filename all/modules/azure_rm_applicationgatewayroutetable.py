@@ -258,9 +258,9 @@ class AzureRMRouteTables(AzureRMModuleBase):
         self.log("Creating / Updating the RouteTables instance {0}".format(self.route_table_name))
 
         try:
-            response = self.mgmt_client.route_tables.create_or_update(self.resource_group,
-                                                                      self.route_table_name,
-                                                                      self.parameters)
+            response = self.mgmt_client.route_tables.create_or_update(resource_group_name=self.resource_group,
+                                                                      route_table_name=self.route_table_name,
+                                                                      parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -277,8 +277,8 @@ class AzureRMRouteTables(AzureRMModuleBase):
         '''
         self.log("Deleting the RouteTables instance {0}".format(self.route_table_name))
         try:
-            response = self.mgmt_client.route_tables.delete(self.resource_group,
-                                                            self.route_table_name)
+            response = self.mgmt_client.route_tables.delete(resource_group_name=self.resource_group,
+                                                            route_table_name=self.route_table_name)
         except CloudError as e:
             self.log('Error attempting to delete the RouteTables instance.')
             self.fail("Error deleting the RouteTables instance: {0}".format(str(e)))
@@ -294,8 +294,8 @@ class AzureRMRouteTables(AzureRMModuleBase):
         self.log("Checking if the RouteTables instance {0} is present".format(self.route_table_name))
         found = False
         try:
-            response = self.mgmt_client.route_tables.get(self.resource_group,
-                                                         self.route_table_name)
+            response = self.mgmt_client.route_tables.get(resource_group_name=self.resource_group,
+                                                         route_table_name=self.route_table_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("RouteTables instance : {0} found".format(response.name))

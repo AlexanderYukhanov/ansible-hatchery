@@ -116,8 +116,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.application_gateways.get(self.resource_group,
-                                                                 self.name)
+            response = self.mgmt_client.application_gateways.get(resource_group_name=self.resource_group,
+                                                                 application_gateway_name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')

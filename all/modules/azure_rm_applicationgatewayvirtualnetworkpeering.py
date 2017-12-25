@@ -293,10 +293,10 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
         self.log("Creating / Updating the VirtualNetworkPeerings instance {0}".format(self.virtual_network_peering_name))
 
         try:
-            response = self.mgmt_client.virtual_network_peerings.create_or_update(self.resource_group,
-                                                                                  self.virtual_network_name,
-                                                                                  self.virtual_network_peering_name,
-                                                                                  self.virtual_network_peering_parameters)
+            response = self.mgmt_client.virtual_network_peerings.create_or_update(resource_group_name=self.resource_group,
+                                                                                  virtual_network_name=self.virtual_network_name,
+                                                                                  virtual_network_peering_name=self.virtual_network_peering_name,
+                                                                                  virtual_network_peering_parameters=self.virtual_network_peering_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -313,9 +313,9 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
         '''
         self.log("Deleting the VirtualNetworkPeerings instance {0}".format(self.virtual_network_peering_name))
         try:
-            response = self.mgmt_client.virtual_network_peerings.delete(self.resource_group,
-                                                                        self.virtual_network_name,
-                                                                        self.virtual_network_peering_name)
+            response = self.mgmt_client.virtual_network_peerings.delete(resource_group_name=self.resource_group,
+                                                                        virtual_network_name=self.virtual_network_name,
+                                                                        virtual_network_peering_name=self.virtual_network_peering_name)
         except CloudError as e:
             self.log('Error attempting to delete the VirtualNetworkPeerings instance.')
             self.fail("Error deleting the VirtualNetworkPeerings instance: {0}".format(str(e)))
@@ -331,9 +331,9 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
         self.log("Checking if the VirtualNetworkPeerings instance {0} is present".format(self.virtual_network_peering_name))
         found = False
         try:
-            response = self.mgmt_client.virtual_network_peerings.get(self.resource_group,
-                                                                     self.virtual_network_name,
-                                                                     self.virtual_network_peering_name)
+            response = self.mgmt_client.virtual_network_peerings.get(resource_group_name=self.resource_group,
+                                                                     virtual_network_name=self.virtual_network_name,
+                                                                     virtual_network_peering_name=self.virtual_network_peering_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("VirtualNetworkPeerings instance : {0} found".format(response.name))

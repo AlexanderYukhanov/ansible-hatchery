@@ -233,10 +233,10 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
         self.log("Creating / Updating the ServerAzureADAdministrators instance {0}".format(self.administrator_name))
 
         try:
-            response = self.mgmt_client.server_azure_ad_administrators.create_or_update(self.resource_group,
-                                                                                        self.server_name,
-                                                                                        self.administrator_name,
-                                                                                        self.properties)
+            response = self.mgmt_client.server_azure_ad_administrators.create_or_update(resource_group_name=self.resource_group,
+                                                                                        server_name=self.server_name,
+                                                                                        administrator_name=self.administrator_name,
+                                                                                        properties=self.properties)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -253,9 +253,9 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
         '''
         self.log("Deleting the ServerAzureADAdministrators instance {0}".format(self.administrator_name))
         try:
-            response = self.mgmt_client.server_azure_ad_administrators.delete(self.resource_group,
-                                                                              self.server_name,
-                                                                              self.administrator_name)
+            response = self.mgmt_client.server_azure_ad_administrators.delete(resource_group_name=self.resource_group,
+                                                                              server_name=self.server_name,
+                                                                              administrator_name=self.administrator_name)
         except CloudError as e:
             self.log('Error attempting to delete the ServerAzureADAdministrators instance.')
             self.fail("Error deleting the ServerAzureADAdministrators instance: {0}".format(str(e)))
@@ -271,9 +271,9 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
         self.log("Checking if the ServerAzureADAdministrators instance {0} is present".format(self.administrator_name))
         found = False
         try:
-            response = self.mgmt_client.server_azure_ad_administrators.get(self.resource_group,
-                                                                           self.server_name,
-                                                                           self.administrator_name)
+            response = self.mgmt_client.server_azure_ad_administrators.get(resource_group_name=self.resource_group,
+                                                                           server_name=self.server_name,
+                                                                           administrator_name=self.administrator_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("ServerAzureADAdministrators instance : {0} found".format(response.name))

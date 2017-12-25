@@ -191,9 +191,9 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
         self.log("Creating / Updating the ServerDnsAliases instance {0}".format(self.dns_alias_name))
 
         try:
-            response = self.mgmt_client.server_dns_aliases.create_or_update(self.resource_group,
-                                                                            self.server_name,
-                                                                            self.dns_alias_name)
+            response = self.mgmt_client.server_dns_aliases.create_or_update(resource_group_name=self.resource_group,
+                                                                            server_name=self.server_name,
+                                                                            dns_alias_name=self.dns_alias_name)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -210,9 +210,9 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
         '''
         self.log("Deleting the ServerDnsAliases instance {0}".format(self.dns_alias_name))
         try:
-            response = self.mgmt_client.server_dns_aliases.delete(self.resource_group,
-                                                                  self.server_name,
-                                                                  self.dns_alias_name)
+            response = self.mgmt_client.server_dns_aliases.delete(resource_group_name=self.resource_group,
+                                                                  server_name=self.server_name,
+                                                                  dns_alias_name=self.dns_alias_name)
         except CloudError as e:
             self.log('Error attempting to delete the ServerDnsAliases instance.')
             self.fail("Error deleting the ServerDnsAliases instance: {0}".format(str(e)))
@@ -228,9 +228,9 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
         self.log("Checking if the ServerDnsAliases instance {0} is present".format(self.dns_alias_name))
         found = False
         try:
-            response = self.mgmt_client.server_dns_aliases.get(self.resource_group,
-                                                               self.server_name,
-                                                               self.dns_alias_name)
+            response = self.mgmt_client.server_dns_aliases.get(resource_group_name=self.resource_group,
+                                                               server_name=self.server_name,
+                                                               dns_alias_name=self.dns_alias_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("ServerDnsAliases instance : {0} found".format(response.name))

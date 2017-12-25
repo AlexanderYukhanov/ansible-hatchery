@@ -207,9 +207,9 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
 
         try:
             if self.to_do == Actions.Create:
-                response = self.mgmt_client.role_assignments.create(self.scope,
-                                                                    self.role_assignment_name,
-                                                                    self.properties)
+                response = self.mgmt_client.role_assignments.create(scope=self.scope,
+                                                                    role_assignment_name=self.role_assignment_name,
+                                                                    properties=self.properties)
             else:
                 response = self.mgmt_client.role_assignments.update()
             if isinstance(response, AzureOperationPoller):
@@ -228,8 +228,8 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         '''
         self.log("Deleting the RoleAssignments instance {0}".format(self.role_assignment_name))
         try:
-            response = self.mgmt_client.role_assignments.delete(self.scope,
-                                                                self.role_assignment_name)
+            response = self.mgmt_client.role_assignments.delete(scope=self.scope,
+                                                                role_assignment_name=self.role_assignment_name)
         except CloudError as e:
             self.log('Error attempting to delete the RoleAssignments instance.')
             self.fail("Error deleting the RoleAssignments instance: {0}".format(str(e)))
@@ -245,8 +245,8 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         self.log("Checking if the RoleAssignments instance {0} is present".format(self.role_assignment_name))
         found = False
         try:
-            response = self.mgmt_client.role_assignments.get(self.scope,
-                                                             self.role_assignment_name)
+            response = self.mgmt_client.role_assignments.get(scope=self.scope,
+                                                             role_assignment_name=self.role_assignment_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("RoleAssignments instance : {0} found".format(response.name))

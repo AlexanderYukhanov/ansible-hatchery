@@ -168,10 +168,10 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_ip_configurations(self.resource_group,
-                                                                                                            self.virtual_machine_scale_set_name,
-                                                                                                            self.virtualmachine_index,
-                                                                                                            self.network_interface_name)
+            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_ip_configurations(resource_group_name=self.resource_group,
+                                                                                                            virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
+                                                                                                            virtualmachine_index=self.virtualmachine_index,
+                                                                                                            network_interface_name=self.network_interface_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
@@ -192,8 +192,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_interfaces.get(self.resource_group,
-                                                               self.network_interface_name)
+            response = self.mgmt_client.network_interfaces.get(resource_group_name=self.resource_group,
+                                                               network_interface_name=self.network_interface_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
@@ -212,9 +212,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_vm_network_interfaces(self.resource_group,
-                                                                                                                self.virtual_machine_scale_set_name,
-                                                                                                                self.virtualmachine_index)
+            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_vm_network_interfaces(resource_group_name=self.resource_group,
+                                                                                                                virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
+                                                                                                                virtualmachine_index=self.virtualmachine_index)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
@@ -235,8 +235,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_interfaces.list_effective_network_security_groups(self.resource_group,
-                                                                                                  self.network_interface_name)
+            response = self.mgmt_client.network_interfaces.list_effective_network_security_groups(resource_group_name=self.resource_group,
+                                                                                                  network_interface_name=self.network_interface_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')
@@ -257,8 +257,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_network_interfaces(self.resource_group,
-                                                                                                             self.virtual_machine_scale_set_name)
+            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_network_interfaces(resource_group_name=self.resource_group,
+                                                                                                             virtual_machine_scale_set_name=self.virtual_machine_scale_set_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')

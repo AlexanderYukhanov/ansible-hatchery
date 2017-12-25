@@ -124,10 +124,10 @@ class AzureRMDataMaskingRulesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.data_masking_rules.list_by_database(self.resource_group,
-                                                                            self.server_name,
-                                                                            self.database_name,
-                                                                            self.data_masking_policy_name)
+            response = self.mgmt_client.data_masking_rules.list_by_database(resource_group_name=self.resource_group,
+                                                                            server_name=self.server_name,
+                                                                            database_name=self.database_name,
+                                                                            data_masking_policy_name=self.data_masking_policy_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for DataMaskingRules.')

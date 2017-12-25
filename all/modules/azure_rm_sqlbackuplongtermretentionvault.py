@@ -201,10 +201,10 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
         self.log("Creating / Updating the BackupLongTermRetentionVaults instance {0}".format(self.backup_long_term_retention_vault_name))
 
         try:
-            response = self.mgmt_client.backup_long_term_retention_vaults.create_or_update(self.resource_group,
-                                                                                           self.server_name,
-                                                                                           self.backup_long_term_retention_vault_name,
-                                                                                           self.recovery_services_vault_resource_id)
+            response = self.mgmt_client.backup_long_term_retention_vaults.create_or_update(resource_group_name=self.resource_group,
+                                                                                           server_name=self.server_name,
+                                                                                           backup_long_term_retention_vault_name=self.backup_long_term_retention_vault_name,
+                                                                                           recovery_services_vault_resource_id=self.recovery_services_vault_resource_id)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -237,9 +237,9 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
         self.log("Checking if the BackupLongTermRetentionVaults instance {0} is present".format(self.backup_long_term_retention_vault_name))
         found = False
         try:
-            response = self.mgmt_client.backup_long_term_retention_vaults.get(self.resource_group,
-                                                                              self.server_name,
-                                                                              self.backup_long_term_retention_vault_name)
+            response = self.mgmt_client.backup_long_term_retention_vaults.get(resource_group_name=self.resource_group,
+                                                                              server_name=self.server_name,
+                                                                              backup_long_term_retention_vault_name=self.backup_long_term_retention_vault_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("BackupLongTermRetentionVaults instance : {0} found".format(response.name))

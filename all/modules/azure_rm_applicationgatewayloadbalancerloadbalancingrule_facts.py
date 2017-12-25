@@ -113,9 +113,9 @@ class AzureRMLoadBalancerLoadBalancingRulesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.load_balancer_load_balancing_rules.get(self.resource_group,
-                                                                               self.load_balancer_name,
-                                                                               self.load_balancing_rule_name)
+            response = self.mgmt_client.load_balancer_load_balancing_rules.get(resource_group_name=self.resource_group,
+                                                                               load_balancer_name=self.load_balancer_name,
+                                                                               load_balancing_rule_name=self.load_balancing_rule_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for LoadBalancerLoadBalancingRules.')

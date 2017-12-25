@@ -1131,9 +1131,9 @@ class AzureRMNetworkInterfaces(AzureRMModuleBase):
         self.log("Creating / Updating the NetworkInterfaces instance {0}".format(self.network_interface_name))
 
         try:
-            response = self.mgmt_client.network_interfaces.create_or_update(self.resource_group,
-                                                                            self.network_interface_name,
-                                                                            self.parameters)
+            response = self.mgmt_client.network_interfaces.create_or_update(resource_group_name=self.resource_group,
+                                                                            network_interface_name=self.network_interface_name,
+                                                                            parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -1150,8 +1150,8 @@ class AzureRMNetworkInterfaces(AzureRMModuleBase):
         '''
         self.log("Deleting the NetworkInterfaces instance {0}".format(self.network_interface_name))
         try:
-            response = self.mgmt_client.network_interfaces.delete(self.resource_group,
-                                                                  self.network_interface_name)
+            response = self.mgmt_client.network_interfaces.delete(resource_group_name=self.resource_group,
+                                                                  network_interface_name=self.network_interface_name)
         except CloudError as e:
             self.log('Error attempting to delete the NetworkInterfaces instance.')
             self.fail("Error deleting the NetworkInterfaces instance: {0}".format(str(e)))
@@ -1167,8 +1167,8 @@ class AzureRMNetworkInterfaces(AzureRMModuleBase):
         self.log("Checking if the NetworkInterfaces instance {0} is present".format(self.network_interface_name))
         found = False
         try:
-            response = self.mgmt_client.network_interfaces.get(self.resource_group,
-                                                               self.network_interface_name)
+            response = self.mgmt_client.network_interfaces.get(resource_group_name=self.resource_group,
+                                                               network_interface_name=self.network_interface_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("NetworkInterfaces instance : {0} found".format(response.name))

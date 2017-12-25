@@ -167,11 +167,11 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_vm_public_ip_addresses(self.resource_group,
-                                                                                                                  self.virtual_machine_scale_set_name,
-                                                                                                                  self.virtualmachine_index,
-                                                                                                                  self.network_interface_name,
-                                                                                                                  self.ip_configuration_name)
+            response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_vm_public_ip_addresses(resource_group_name=self.resource_group,
+                                                                                                                  virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
+                                                                                                                  virtualmachine_index=self.virtualmachine_index,
+                                                                                                                  network_interface_name=self.network_interface_name,
+                                                                                                                  ip_configuration_name=self.ip_configuration_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')
@@ -192,8 +192,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.public_ip_addresses.get(self.resource_group,
-                                                                self.public_ip_address_name)
+            response = self.mgmt_client.public_ip_addresses.get(resource_group_name=self.resource_group,
+                                                                public_ip_address_name=self.public_ip_address_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')
@@ -212,8 +212,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_public_ip_addresses(self.resource_group,
-                                                                                                               self.virtual_machine_scale_set_name)
+            response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_public_ip_addresses(resource_group_name=self.resource_group,
+                                                                                                               virtual_machine_scale_set_name=self.virtual_machine_scale_set_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')

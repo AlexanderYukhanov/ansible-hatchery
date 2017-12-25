@@ -279,10 +279,10 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
         self.log("Creating / Updating the InboundNatRules instance {0}".format(self.inbound_nat_rule_name))
 
         try:
-            response = self.mgmt_client.inbound_nat_rules.create_or_update(self.resource_group,
-                                                                           self.load_balancer_name,
-                                                                           self.inbound_nat_rule_name,
-                                                                           self.inbound_nat_rule_parameters)
+            response = self.mgmt_client.inbound_nat_rules.create_or_update(resource_group_name=self.resource_group,
+                                                                           load_balancer_name=self.load_balancer_name,
+                                                                           inbound_nat_rule_name=self.inbound_nat_rule_name,
+                                                                           inbound_nat_rule_parameters=self.inbound_nat_rule_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -299,9 +299,9 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
         '''
         self.log("Deleting the InboundNatRules instance {0}".format(self.inbound_nat_rule_name))
         try:
-            response = self.mgmt_client.inbound_nat_rules.delete(self.resource_group,
-                                                                 self.load_balancer_name,
-                                                                 self.inbound_nat_rule_name)
+            response = self.mgmt_client.inbound_nat_rules.delete(resource_group_name=self.resource_group,
+                                                                 load_balancer_name=self.load_balancer_name,
+                                                                 inbound_nat_rule_name=self.inbound_nat_rule_name)
         except CloudError as e:
             self.log('Error attempting to delete the InboundNatRules instance.')
             self.fail("Error deleting the InboundNatRules instance: {0}".format(str(e)))
@@ -317,9 +317,9 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
         self.log("Checking if the InboundNatRules instance {0} is present".format(self.inbound_nat_rule_name))
         found = False
         try:
-            response = self.mgmt_client.inbound_nat_rules.get(self.resource_group,
-                                                              self.load_balancer_name,
-                                                              self.inbound_nat_rule_name)
+            response = self.mgmt_client.inbound_nat_rules.get(resource_group_name=self.resource_group,
+                                                              load_balancer_name=self.load_balancer_name,
+                                                              inbound_nat_rule_name=self.inbound_nat_rule_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("InboundNatRules instance : {0} found".format(response.name))

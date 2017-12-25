@@ -709,9 +709,9 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
         self.log("Creating / Updating the ExpressRouteCircuits instance {0}".format(self.circuit_name))
 
         try:
-            response = self.mgmt_client.express_route_circuits.create_or_update(self.resource_group,
-                                                                                self.circuit_name,
-                                                                                self.parameters)
+            response = self.mgmt_client.express_route_circuits.create_or_update(resource_group_name=self.resource_group,
+                                                                                circuit_name=self.circuit_name,
+                                                                                parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -728,8 +728,8 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
         '''
         self.log("Deleting the ExpressRouteCircuits instance {0}".format(self.circuit_name))
         try:
-            response = self.mgmt_client.express_route_circuits.delete(self.resource_group,
-                                                                      self.circuit_name)
+            response = self.mgmt_client.express_route_circuits.delete(resource_group_name=self.resource_group,
+                                                                      circuit_name=self.circuit_name)
         except CloudError as e:
             self.log('Error attempting to delete the ExpressRouteCircuits instance.')
             self.fail("Error deleting the ExpressRouteCircuits instance: {0}".format(str(e)))
@@ -745,8 +745,8 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
         self.log("Checking if the ExpressRouteCircuits instance {0} is present".format(self.circuit_name))
         found = False
         try:
-            response = self.mgmt_client.express_route_circuits.get(self.resource_group,
-                                                                   self.circuit_name)
+            response = self.mgmt_client.express_route_circuits.get(resource_group_name=self.resource_group,
+                                                                   circuit_name=self.circuit_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("ExpressRouteCircuits instance : {0} found".format(response.name))

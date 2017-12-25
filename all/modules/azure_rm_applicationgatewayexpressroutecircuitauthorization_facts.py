@@ -113,9 +113,9 @@ class AzureRMExpressRouteCircuitAuthorizationsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.express_route_circuit_authorizations.get(self.resource_group,
-                                                                                 self.circuit_name,
-                                                                                 self.authorization_name)
+            response = self.mgmt_client.express_route_circuit_authorizations.get(resource_group_name=self.resource_group,
+                                                                                 circuit_name=self.circuit_name,
+                                                                                 authorization_name=self.authorization_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuitAuthorizations.')

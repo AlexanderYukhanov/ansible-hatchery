@@ -110,8 +110,8 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.virtual_network_gateways.get(self.resource_group,
-                                                                     self.virtual_network_gateway_name)
+            response = self.mgmt_client.virtual_network_gateways.get(resource_group_name=self.resource_group,
+                                                                     virtual_network_gateway_name=self.virtual_network_gateway_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworkGateways.')
@@ -130,8 +130,8 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.virtual_network_gateways.list_connections(self.resource_group,
-                                                                                  self.virtual_network_gateway_name)
+            response = self.mgmt_client.virtual_network_gateways.list_connections(resource_group_name=self.resource_group,
+                                                                                  virtual_network_gateway_name=self.virtual_network_gateway_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworkGateways.')

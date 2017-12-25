@@ -113,8 +113,8 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.load_balancers.get(self.resource_group,
-                                                           self.load_balancer_name)
+            response = self.mgmt_client.load_balancers.get(resource_group_name=self.resource_group,
+                                                           load_balancer_name=self.load_balancer_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for LoadBalancers.')

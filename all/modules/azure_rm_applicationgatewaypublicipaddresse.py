@@ -300,9 +300,9 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
         self.log("Creating / Updating the PublicIPAddresses instance {0}".format(self.public_ip_address_name))
 
         try:
-            response = self.mgmt_client.public_ip_addresses.create_or_update(self.resource_group,
-                                                                             self.public_ip_address_name,
-                                                                             self.parameters)
+            response = self.mgmt_client.public_ip_addresses.create_or_update(resource_group_name=self.resource_group,
+                                                                             public_ip_address_name=self.public_ip_address_name,
+                                                                             parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -319,8 +319,8 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
         '''
         self.log("Deleting the PublicIPAddresses instance {0}".format(self.public_ip_address_name))
         try:
-            response = self.mgmt_client.public_ip_addresses.delete(self.resource_group,
-                                                                   self.public_ip_address_name)
+            response = self.mgmt_client.public_ip_addresses.delete(resource_group_name=self.resource_group,
+                                                                   public_ip_address_name=self.public_ip_address_name)
         except CloudError as e:
             self.log('Error attempting to delete the PublicIPAddresses instance.')
             self.fail("Error deleting the PublicIPAddresses instance: {0}".format(str(e)))
@@ -336,8 +336,8 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
         self.log("Checking if the PublicIPAddresses instance {0} is present".format(self.public_ip_address_name))
         found = False
         try:
-            response = self.mgmt_client.public_ip_addresses.get(self.resource_group,
-                                                                self.public_ip_address_name)
+            response = self.mgmt_client.public_ip_addresses.get(resource_group_name=self.resource_group,
+                                                                public_ip_address_name=self.public_ip_address_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("PublicIPAddresses instance : {0} found".format(response.name))

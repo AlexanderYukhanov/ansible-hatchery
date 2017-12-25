@@ -115,7 +115,7 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.top_level_domains.list_agreements(self.name)
+            response = self.mgmt_client.top_level_domains.list_agreements(name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for TopLevelDomains.')
@@ -136,7 +136,7 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.top_level_domains.get(self.name)
+            response = self.mgmt_client.top_level_domains.get(name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for TopLevelDomains.')

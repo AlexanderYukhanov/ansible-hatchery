@@ -156,10 +156,10 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.express_route_circuits.list_arp_table(self.resource_group,
-                                                                              self.circuit_name,
-                                                                              self.peering_name,
-                                                                              self.device_path)
+            response = self.mgmt_client.express_route_circuits.list_arp_table(resource_group_name=self.resource_group,
+                                                                              circuit_name=self.circuit_name,
+                                                                              peering_name=self.peering_name,
+                                                                              device_path=self.device_path)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
@@ -180,10 +180,10 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.express_route_circuits.list_routes_table(self.resource_group,
-                                                                                 self.circuit_name,
-                                                                                 self.peering_name,
-                                                                                 self.device_path)
+            response = self.mgmt_client.express_route_circuits.list_routes_table(resource_group_name=self.resource_group,
+                                                                                 circuit_name=self.circuit_name,
+                                                                                 peering_name=self.peering_name,
+                                                                                 device_path=self.device_path)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
@@ -204,10 +204,10 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.express_route_circuits.list_routes_table_summary(self.resource_group,
-                                                                                         self.circuit_name,
-                                                                                         self.peering_name,
-                                                                                         self.device_path)
+            response = self.mgmt_client.express_route_circuits.list_routes_table_summary(resource_group_name=self.resource_group,
+                                                                                         circuit_name=self.circuit_name,
+                                                                                         peering_name=self.peering_name,
+                                                                                         device_path=self.device_path)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')
@@ -228,8 +228,8 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.express_route_circuits.get(self.resource_group,
-                                                                   self.circuit_name)
+            response = self.mgmt_client.express_route_circuits.get(resource_group_name=self.resource_group,
+                                                                   circuit_name=self.circuit_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ExpressRouteCircuits.')

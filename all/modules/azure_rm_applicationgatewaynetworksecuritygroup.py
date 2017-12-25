@@ -400,9 +400,9 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
         self.log("Creating / Updating the NetworkSecurityGroups instance {0}".format(self.network_security_group_name))
 
         try:
-            response = self.mgmt_client.network_security_groups.create_or_update(self.resource_group,
-                                                                                 self.network_security_group_name,
-                                                                                 self.parameters)
+            response = self.mgmt_client.network_security_groups.create_or_update(resource_group_name=self.resource_group,
+                                                                                 network_security_group_name=self.network_security_group_name,
+                                                                                 parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -419,8 +419,8 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
         '''
         self.log("Deleting the NetworkSecurityGroups instance {0}".format(self.network_security_group_name))
         try:
-            response = self.mgmt_client.network_security_groups.delete(self.resource_group,
-                                                                       self.network_security_group_name)
+            response = self.mgmt_client.network_security_groups.delete(resource_group_name=self.resource_group,
+                                                                       network_security_group_name=self.network_security_group_name)
         except CloudError as e:
             self.log('Error attempting to delete the NetworkSecurityGroups instance.')
             self.fail("Error deleting the NetworkSecurityGroups instance: {0}".format(str(e)))
@@ -436,8 +436,8 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
         self.log("Checking if the NetworkSecurityGroups instance {0} is present".format(self.network_security_group_name))
         found = False
         try:
-            response = self.mgmt_client.network_security_groups.get(self.resource_group,
-                                                                    self.network_security_group_name)
+            response = self.mgmt_client.network_security_groups.get(resource_group_name=self.resource_group,
+                                                                    network_security_group_name=self.network_security_group_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("NetworkSecurityGroups instance : {0} found".format(response.name))

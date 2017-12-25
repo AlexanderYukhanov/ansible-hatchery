@@ -248,10 +248,10 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
         self.log("Creating / Updating the FailoverGroups instance {0}".format(self.failover_group_name))
 
         try:
-            response = self.mgmt_client.failover_groups.create_or_update(self.resource_group,
-                                                                         self.server_name,
-                                                                         self.failover_group_name,
-                                                                         self.parameters)
+            response = self.mgmt_client.failover_groups.create_or_update(resource_group_name=self.resource_group,
+                                                                         server_name=self.server_name,
+                                                                         failover_group_name=self.failover_group_name,
+                                                                         parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -268,9 +268,9 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
         '''
         self.log("Deleting the FailoverGroups instance {0}".format(self.failover_group_name))
         try:
-            response = self.mgmt_client.failover_groups.delete(self.resource_group,
-                                                               self.server_name,
-                                                               self.failover_group_name)
+            response = self.mgmt_client.failover_groups.delete(resource_group_name=self.resource_group,
+                                                               server_name=self.server_name,
+                                                               failover_group_name=self.failover_group_name)
         except CloudError as e:
             self.log('Error attempting to delete the FailoverGroups instance.')
             self.fail("Error deleting the FailoverGroups instance: {0}".format(str(e)))
@@ -286,9 +286,9 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
         self.log("Checking if the FailoverGroups instance {0} is present".format(self.failover_group_name))
         found = False
         try:
-            response = self.mgmt_client.failover_groups.get(self.resource_group,
-                                                            self.server_name,
-                                                            self.failover_group_name)
+            response = self.mgmt_client.failover_groups.get(resource_group_name=self.resource_group,
+                                                            server_name=self.server_name,
+                                                            failover_group_name=self.failover_group_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("FailoverGroups instance : {0} found".format(response.name))

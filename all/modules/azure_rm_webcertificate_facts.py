@@ -107,8 +107,8 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.certificates.get(self.resource_group,
-                                                         self.name)
+            response = self.mgmt_client.certificates.get(resource_group_name=self.resource_group,
+                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Certificates.')
@@ -127,7 +127,7 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.certificates.list_by_resource_group(self.resource_group)
+            response = self.mgmt_client.certificates.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Certificates.')

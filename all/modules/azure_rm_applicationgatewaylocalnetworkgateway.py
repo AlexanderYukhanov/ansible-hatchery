@@ -256,9 +256,9 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
         self.log("Creating / Updating the LocalNetworkGateways instance {0}".format(self.local_network_gateway_name))
 
         try:
-            response = self.mgmt_client.local_network_gateways.create_or_update(self.resource_group,
-                                                                                self.local_network_gateway_name,
-                                                                                self.parameters)
+            response = self.mgmt_client.local_network_gateways.create_or_update(resource_group_name=self.resource_group,
+                                                                                local_network_gateway_name=self.local_network_gateway_name,
+                                                                                parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -275,8 +275,8 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
         '''
         self.log("Deleting the LocalNetworkGateways instance {0}".format(self.local_network_gateway_name))
         try:
-            response = self.mgmt_client.local_network_gateways.delete(self.resource_group,
-                                                                      self.local_network_gateway_name)
+            response = self.mgmt_client.local_network_gateways.delete(resource_group_name=self.resource_group,
+                                                                      local_network_gateway_name=self.local_network_gateway_name)
         except CloudError as e:
             self.log('Error attempting to delete the LocalNetworkGateways instance.')
             self.fail("Error deleting the LocalNetworkGateways instance: {0}".format(str(e)))
@@ -292,8 +292,8 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
         self.log("Checking if the LocalNetworkGateways instance {0} is present".format(self.local_network_gateway_name))
         found = False
         try:
-            response = self.mgmt_client.local_network_gateways.get(self.resource_group,
-                                                                   self.local_network_gateway_name)
+            response = self.mgmt_client.local_network_gateways.get(resource_group_name=self.resource_group,
+                                                                   local_network_gateway_name=self.local_network_gateway_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("LocalNetworkGateways instance : {0} found".format(response.name))

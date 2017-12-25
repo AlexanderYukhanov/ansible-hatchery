@@ -113,9 +113,9 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.packet_captures.get(self.resource_group,
-                                                            self.network_watcher_name,
-                                                            self.packet_capture_name)
+            response = self.mgmt_client.packet_captures.get(resource_group_name=self.resource_group,
+                                                            network_watcher_name=self.network_watcher_name,
+                                                            packet_capture_name=self.packet_capture_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PacketCaptures.')

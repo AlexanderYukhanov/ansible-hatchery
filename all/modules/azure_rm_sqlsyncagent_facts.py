@@ -130,9 +130,9 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_agents.get(self.resource_group,
-                                                        self.server_name,
-                                                        self.sync_agent_name)
+            response = self.mgmt_client.sync_agents.get(resource_group_name=self.resource_group,
+                                                        server_name=self.server_name,
+                                                        sync_agent_name=self.sync_agent_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncAgents.')
@@ -151,9 +151,9 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_agents.list_linked_databases(self.resource_group,
-                                                                          self.server_name,
-                                                                          self.sync_agent_name)
+            response = self.mgmt_client.sync_agents.list_linked_databases(resource_group_name=self.resource_group,
+                                                                          server_name=self.server_name,
+                                                                          sync_agent_name=self.sync_agent_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncAgents.')
@@ -174,8 +174,8 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_agents.list_by_server(self.resource_group,
-                                                                   self.server_name)
+            response = self.mgmt_client.sync_agents.list_by_server(resource_group_name=self.resource_group,
+                                                                   server_name=self.server_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncAgents.')

@@ -122,9 +122,9 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_watchers.list_available_providers(self.resource_group,
-                                                                                  self.network_watcher_name,
-                                                                                  self.parameters)
+            response = self.mgmt_client.network_watchers.list_available_providers(resource_group_name=self.resource_group,
+                                                                                  network_watcher_name=self.network_watcher_name,
+                                                                                  parameters=self.parameters)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkWatchers.')
@@ -145,8 +145,8 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.network_watchers.get(self.resource_group,
-                                                             self.network_watcher_name)
+            response = self.mgmt_client.network_watchers.get(resource_group_name=self.resource_group,
+                                                             network_watcher_name=self.network_watcher_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkWatchers.')

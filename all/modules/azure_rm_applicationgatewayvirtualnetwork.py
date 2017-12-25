@@ -610,9 +610,9 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
         self.log("Creating / Updating the VirtualNetworks instance {0}".format(self.virtual_network_name))
 
         try:
-            response = self.mgmt_client.virtual_networks.create_or_update(self.resource_group,
-                                                                          self.virtual_network_name,
-                                                                          self.parameters)
+            response = self.mgmt_client.virtual_networks.create_or_update(resource_group_name=self.resource_group,
+                                                                          virtual_network_name=self.virtual_network_name,
+                                                                          parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -629,8 +629,8 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
         '''
         self.log("Deleting the VirtualNetworks instance {0}".format(self.virtual_network_name))
         try:
-            response = self.mgmt_client.virtual_networks.delete(self.resource_group,
-                                                                self.virtual_network_name)
+            response = self.mgmt_client.virtual_networks.delete(resource_group_name=self.resource_group,
+                                                                virtual_network_name=self.virtual_network_name)
         except CloudError as e:
             self.log('Error attempting to delete the VirtualNetworks instance.')
             self.fail("Error deleting the VirtualNetworks instance: {0}".format(str(e)))
@@ -646,8 +646,8 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
         self.log("Checking if the VirtualNetworks instance {0} is present".format(self.virtual_network_name))
         found = False
         try:
-            response = self.mgmt_client.virtual_networks.get(self.resource_group,
-                                                             self.virtual_network_name)
+            response = self.mgmt_client.virtual_networks.get(resource_group_name=self.resource_group,
+                                                             virtual_network_name=self.virtual_network_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("VirtualNetworks instance : {0} found".format(response.name))

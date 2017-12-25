@@ -228,9 +228,9 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         self.log("Creating / Updating the RoleDefinitions instance {0}".format(self.role_definition_id))
 
         try:
-            response = self.mgmt_client.role_definitions.create_or_update(self.scope,
-                                                                          self.role_definition_id,
-                                                                          self.role_definition)
+            response = self.mgmt_client.role_definitions.create_or_update(scope=self.scope,
+                                                                          role_definition_id=self.role_definition_id,
+                                                                          role_definition=self.role_definition)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -247,8 +247,8 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         '''
         self.log("Deleting the RoleDefinitions instance {0}".format(self.role_definition_id))
         try:
-            response = self.mgmt_client.role_definitions.delete(self.scope,
-                                                                self.role_definition_id)
+            response = self.mgmt_client.role_definitions.delete(scope=self.scope,
+                                                                role_definition_id=self.role_definition_id)
         except CloudError as e:
             self.log('Error attempting to delete the RoleDefinitions instance.')
             self.fail("Error deleting the RoleDefinitions instance: {0}".format(str(e)))
@@ -264,8 +264,8 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         self.log("Checking if the RoleDefinitions instance {0} is present".format(self.role_definition_id))
         found = False
         try:
-            response = self.mgmt_client.role_definitions.get(self.scope,
-                                                             self.role_definition_id)
+            response = self.mgmt_client.role_definitions.get(scope=self.scope,
+                                                             role_definition_id=self.role_definition_id)
             found = True
             self.log("Response : {0}".format(response))
             self.log("RoleDefinitions instance : {0} found".format(response.name))

@@ -270,11 +270,11 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
         self.log("Creating / Updating the DatabaseBlobAuditingPolicies instance {0}".format(self.blob_auditing_policy_name))
 
         try:
-            response = self.mgmt_client.database_blob_auditing_policies.create_or_update(self.resource_group,
-                                                                                         self.server_name,
-                                                                                         self.database_name,
-                                                                                         self.blob_auditing_policy_name,
-                                                                                         self.parameters)
+            response = self.mgmt_client.database_blob_auditing_policies.create_or_update(resource_group_name=self.resource_group,
+                                                                                         server_name=self.server_name,
+                                                                                         database_name=self.database_name,
+                                                                                         blob_auditing_policy_name=self.blob_auditing_policy_name,
+                                                                                         parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -307,10 +307,10 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
         self.log("Checking if the DatabaseBlobAuditingPolicies instance {0} is present".format(self.blob_auditing_policy_name))
         found = False
         try:
-            response = self.mgmt_client.database_blob_auditing_policies.get(self.resource_group,
-                                                                            self.server_name,
-                                                                            self.database_name,
-                                                                            self.blob_auditing_policy_name)
+            response = self.mgmt_client.database_blob_auditing_policies.get(resource_group_name=self.resource_group,
+                                                                            server_name=self.server_name,
+                                                                            database_name=self.database_name,
+                                                                            blob_auditing_policy_name=self.blob_auditing_policy_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("DatabaseBlobAuditingPolicies instance : {0} found".format(response.name))

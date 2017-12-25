@@ -130,8 +130,8 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.recommendations.list_recommended_rules_for_web_app(self.resource_group,
-                                                                                           self.site_name)
+            response = self.mgmt_client.recommendations.list_recommended_rules_for_web_app(resource_group_name=self.resource_group,
+                                                                                           site_name=self.site_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Recommendations.')
@@ -152,8 +152,8 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.recommendations.list_history_for_web_app(self.resource_group,
-                                                                                 self.site_name)
+            response = self.mgmt_client.recommendations.list_history_for_web_app(resource_group_name=self.resource_group,
+                                                                                 site_name=self.site_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Recommendations.')

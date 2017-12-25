@@ -207,13 +207,13 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_groups.list_logs(self.resource_group,
-                                                              self.server_name,
-                                                              self.database_name,
-                                                              self.sync_group_name,
-                                                              self.start_time,
-                                                              self.end_time,
-                                                              self.type)
+            response = self.mgmt_client.sync_groups.list_logs(resource_group_name=self.resource_group,
+                                                              server_name=self.server_name,
+                                                              database_name=self.database_name,
+                                                              sync_group_name=self.sync_group_name,
+                                                              start_time=self.start_time,
+                                                              end_time=self.end_time,
+                                                              type=self.type)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
@@ -234,10 +234,10 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_groups.list_hub_schemas(self.resource_group,
-                                                                     self.server_name,
-                                                                     self.database_name,
-                                                                     self.sync_group_name)
+            response = self.mgmt_client.sync_groups.list_hub_schemas(resource_group_name=self.resource_group,
+                                                                     server_name=self.server_name,
+                                                                     database_name=self.database_name,
+                                                                     sync_group_name=self.sync_group_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
@@ -258,10 +258,10 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_groups.get(self.resource_group,
-                                                        self.server_name,
-                                                        self.database_name,
-                                                        self.sync_group_name)
+            response = self.mgmt_client.sync_groups.get(resource_group_name=self.resource_group,
+                                                        server_name=self.server_name,
+                                                        database_name=self.database_name,
+                                                        sync_group_name=self.sync_group_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
@@ -280,9 +280,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_groups.list_by_database(self.resource_group,
-                                                                     self.server_name,
-                                                                     self.database_name)
+            response = self.mgmt_client.sync_groups.list_by_database(resource_group_name=self.resource_group,
+                                                                     server_name=self.server_name,
+                                                                     database_name=self.database_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')
@@ -303,7 +303,7 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.sync_groups.list_sync_database_ids(self.location_name)
+            response = self.mgmt_client.sync_groups.list_sync_database_ids(location_name=self.location_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')

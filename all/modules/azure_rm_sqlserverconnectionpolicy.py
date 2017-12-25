@@ -201,10 +201,10 @@ class AzureRMServerConnectionPolicies(AzureRMModuleBase):
         self.log("Creating / Updating the ServerConnectionPolicies instance {0}".format(self.connection_policy_name))
 
         try:
-            response = self.mgmt_client.server_connection_policies.create_or_update(self.resource_group,
-                                                                                    self.server_name,
-                                                                                    self.connection_policy_name,
-                                                                                    self.connection_type)
+            response = self.mgmt_client.server_connection_policies.create_or_update(resource_group_name=self.resource_group,
+                                                                                    server_name=self.server_name,
+                                                                                    connection_policy_name=self.connection_policy_name,
+                                                                                    connection_type=self.connection_type)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -237,9 +237,9 @@ class AzureRMServerConnectionPolicies(AzureRMModuleBase):
         self.log("Checking if the ServerConnectionPolicies instance {0} is present".format(self.connection_policy_name))
         found = False
         try:
-            response = self.mgmt_client.server_connection_policies.get(self.resource_group,
-                                                                       self.server_name,
-                                                                       self.connection_policy_name)
+            response = self.mgmt_client.server_connection_policies.get(resource_group_name=self.resource_group,
+                                                                       server_name=self.server_name,
+                                                                       connection_policy_name=self.connection_policy_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("ServerConnectionPolicies instance : {0} found".format(response.name))

@@ -412,9 +412,9 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
         self.log("Creating / Updating the AppServiceEnvironments instance {0}".format(self.name))
 
         try:
-            response = self.mgmt_client.app_service_environments.create_or_update(self.resource_group,
-                                                                                  self.name,
-                                                                                  self.hosting_environment_envelope)
+            response = self.mgmt_client.app_service_environments.create_or_update(resource_group_name=self.resource_group,
+                                                                                  name=self.name,
+                                                                                  hosting_environment_envelope=self.hosting_environment_envelope)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -431,8 +431,8 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
         '''
         self.log("Deleting the AppServiceEnvironments instance {0}".format(self.name))
         try:
-            response = self.mgmt_client.app_service_environments.delete(self.resource_group,
-                                                                        self.name)
+            response = self.mgmt_client.app_service_environments.delete(resource_group_name=self.resource_group,
+                                                                        name=self.name)
         except CloudError as e:
             self.log('Error attempting to delete the AppServiceEnvironments instance.')
             self.fail("Error deleting the AppServiceEnvironments instance: {0}".format(str(e)))
@@ -448,8 +448,8 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
         self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
         found = False
         try:
-            response = self.mgmt_client.app_service_environments.get(self.resource_group,
-                                                                     self.name)
+            response = self.mgmt_client.app_service_environments.get(resource_group_name=self.resource_group,
+                                                                     name=self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("AppServiceEnvironments instance : {0} found".format(response.name))

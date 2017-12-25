@@ -279,10 +279,10 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
 
         try:
             if self.to_do == Actions.Create:
-                response = self.mgmt_client.packet_captures.create(self.resource_group,
-                                                                   self.network_watcher_name,
-                                                                   self.packet_capture_name,
-                                                                   self.parameters)
+                response = self.mgmt_client.packet_captures.create(resource_group_name=self.resource_group,
+                                                                   network_watcher_name=self.network_watcher_name,
+                                                                   packet_capture_name=self.packet_capture_name,
+                                                                   parameters=self.parameters)
             else:
                 response = self.mgmt_client.packet_captures.update()
             if isinstance(response, AzureOperationPoller):
@@ -301,9 +301,9 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
         '''
         self.log("Deleting the PacketCaptures instance {0}".format(self.packet_capture_name))
         try:
-            response = self.mgmt_client.packet_captures.delete(self.resource_group,
-                                                               self.network_watcher_name,
-                                                               self.packet_capture_name)
+            response = self.mgmt_client.packet_captures.delete(resource_group_name=self.resource_group,
+                                                               network_watcher_name=self.network_watcher_name,
+                                                               packet_capture_name=self.packet_capture_name)
         except CloudError as e:
             self.log('Error attempting to delete the PacketCaptures instance.')
             self.fail("Error deleting the PacketCaptures instance: {0}".format(str(e)))
@@ -319,9 +319,9 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
         self.log("Checking if the PacketCaptures instance {0} is present".format(self.packet_capture_name))
         found = False
         try:
-            response = self.mgmt_client.packet_captures.get(self.resource_group,
-                                                            self.network_watcher_name,
-                                                            self.packet_capture_name)
+            response = self.mgmt_client.packet_captures.get(resource_group_name=self.resource_group,
+                                                            network_watcher_name=self.network_watcher_name,
+                                                            packet_capture_name=self.packet_capture_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("PacketCaptures instance : {0} found".format(response.name))

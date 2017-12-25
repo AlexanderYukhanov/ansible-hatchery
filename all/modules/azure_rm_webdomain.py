@@ -525,9 +525,9 @@ class AzureRMDomains(AzureRMModuleBase):
         self.log("Creating / Updating the Domains instance {0}".format(self.domain_name))
 
         try:
-            response = self.mgmt_client.domains.create_or_update(self.resource_group,
-                                                                 self.domain_name,
-                                                                 self.domain)
+            response = self.mgmt_client.domains.create_or_update(resource_group_name=self.resource_group,
+                                                                 domain_name=self.domain_name,
+                                                                 domain=self.domain)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -544,8 +544,8 @@ class AzureRMDomains(AzureRMModuleBase):
         '''
         self.log("Deleting the Domains instance {0}".format(self.domain_name))
         try:
-            response = self.mgmt_client.domains.delete(self.resource_group,
-                                                       self.domain_name)
+            response = self.mgmt_client.domains.delete(resource_group_name=self.resource_group,
+                                                       domain_name=self.domain_name)
         except CloudError as e:
             self.log('Error attempting to delete the Domains instance.')
             self.fail("Error deleting the Domains instance: {0}".format(str(e)))
@@ -561,8 +561,8 @@ class AzureRMDomains(AzureRMModuleBase):
         self.log("Checking if the Domains instance {0} is present".format(self.domain_name))
         found = False
         try:
-            response = self.mgmt_client.domains.get(self.resource_group,
-                                                    self.domain_name)
+            response = self.mgmt_client.domains.get(resource_group_name=self.resource_group,
+                                                    domain_name=self.domain_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Domains instance : {0} found".format(response.name))

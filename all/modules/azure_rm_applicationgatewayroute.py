@@ -252,10 +252,10 @@ class AzureRMRoutes(AzureRMModuleBase):
         self.log("Creating / Updating the Routes instance {0}".format(self.route_name))
 
         try:
-            response = self.mgmt_client.routes.create_or_update(self.resource_group,
-                                                                self.route_table_name,
-                                                                self.route_name,
-                                                                self.route_parameters)
+            response = self.mgmt_client.routes.create_or_update(resource_group_name=self.resource_group,
+                                                                route_table_name=self.route_table_name,
+                                                                route_name=self.route_name,
+                                                                route_parameters=self.route_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -272,9 +272,9 @@ class AzureRMRoutes(AzureRMModuleBase):
         '''
         self.log("Deleting the Routes instance {0}".format(self.route_name))
         try:
-            response = self.mgmt_client.routes.delete(self.resource_group,
-                                                      self.route_table_name,
-                                                      self.route_name)
+            response = self.mgmt_client.routes.delete(resource_group_name=self.resource_group,
+                                                      route_table_name=self.route_table_name,
+                                                      route_name=self.route_name)
         except CloudError as e:
             self.log('Error attempting to delete the Routes instance.')
             self.fail("Error deleting the Routes instance: {0}".format(str(e)))
@@ -290,9 +290,9 @@ class AzureRMRoutes(AzureRMModuleBase):
         self.log("Checking if the Routes instance {0} is present".format(self.route_name))
         found = False
         try:
-            response = self.mgmt_client.routes.get(self.resource_group,
-                                                   self.route_table_name,
-                                                   self.route_name)
+            response = self.mgmt_client.routes.get(resource_group_name=self.resource_group,
+                                                   route_table_name=self.route_table_name,
+                                                   route_name=self.route_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("Routes instance : {0} found".format(response.name))

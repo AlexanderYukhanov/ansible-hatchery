@@ -120,9 +120,9 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.restorable_dropped_databases.get(self.resource_group,
-                                                                         self.server_name,
-                                                                         self.restorable_droppeded_database_id)
+            response = self.mgmt_client.restorable_dropped_databases.get(resource_group_name=self.resource_group,
+                                                                         server_name=self.server_name,
+                                                                         restorable_droppeded_database_id=self.restorable_droppeded_database_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RestorableDroppedDatabases.')
@@ -141,8 +141,8 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.restorable_dropped_databases.list_by_server(self.resource_group,
-                                                                                    self.server_name)
+            response = self.mgmt_client.restorable_dropped_databases.list_by_server(resource_group_name=self.resource_group,
+                                                                                    server_name=self.server_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RestorableDroppedDatabases.')

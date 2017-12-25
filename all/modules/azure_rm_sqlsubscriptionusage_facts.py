@@ -107,8 +107,8 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.subscription_usages.get(self.location_name,
-                                                                self.usage_name)
+            response = self.mgmt_client.subscription_usages.get(location_name=self.location_name,
+                                                                usage_name=self.usage_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SubscriptionUsages.')
@@ -127,7 +127,7 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.subscription_usages.list_by_location(self.location_name)
+            response = self.mgmt_client.subscription_usages.list_by_location(location_name=self.location_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SubscriptionUsages.')

@@ -359,9 +359,9 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
         self.log("Creating / Updating the AppServicePlans instance {0}".format(self.name))
 
         try:
-            response = self.mgmt_client.app_service_plans.create_or_update(self.resource_group,
-                                                                           self.name,
-                                                                           self.app_service_plan)
+            response = self.mgmt_client.app_service_plans.create_or_update(resource_group_name=self.resource_group,
+                                                                           name=self.name,
+                                                                           app_service_plan=self.app_service_plan)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -378,8 +378,8 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
         '''
         self.log("Deleting the AppServicePlans instance {0}".format(self.name))
         try:
-            response = self.mgmt_client.app_service_plans.delete(self.resource_group,
-                                                                 self.name)
+            response = self.mgmt_client.app_service_plans.delete(resource_group_name=self.resource_group,
+                                                                 name=self.name)
         except CloudError as e:
             self.log('Error attempting to delete the AppServicePlans instance.')
             self.fail("Error deleting the AppServicePlans instance: {0}".format(str(e)))
@@ -395,8 +395,8 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
         self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
         found = False
         try:
-            response = self.mgmt_client.app_service_plans.get(self.resource_group,
-                                                              self.name)
+            response = self.mgmt_client.app_service_plans.get(resource_group_name=self.resource_group,
+                                                              name=self.name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("AppServicePlans instance : {0} found".format(response.name))

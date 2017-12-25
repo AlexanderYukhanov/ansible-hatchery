@@ -220,11 +220,11 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
         self.log("Creating / Updating the DataMaskingPolicies instance {0}".format(self.data_masking_policy_name))
 
         try:
-            response = self.mgmt_client.data_masking_policies.create_or_update(self.resource_group,
-                                                                               self.server_name,
-                                                                               self.database_name,
-                                                                               self.data_masking_policy_name,
-                                                                               self.data_masking_state)
+            response = self.mgmt_client.data_masking_policies.create_or_update(resource_group_name=self.resource_group,
+                                                                               server_name=self.server_name,
+                                                                               database_name=self.database_name,
+                                                                               data_masking_policy_name=self.data_masking_policy_name,
+                                                                               data_masking_state=self.data_masking_state)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -257,10 +257,10 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
         self.log("Checking if the DataMaskingPolicies instance {0} is present".format(self.data_masking_policy_name))
         found = False
         try:
-            response = self.mgmt_client.data_masking_policies.get(self.resource_group,
-                                                                  self.server_name,
-                                                                  self.database_name,
-                                                                  self.data_masking_policy_name)
+            response = self.mgmt_client.data_masking_policies.get(resource_group_name=self.resource_group,
+                                                                  server_name=self.server_name,
+                                                                  database_name=self.database_name,
+                                                                  data_masking_policy_name=self.data_masking_policy_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("DataMaskingPolicies instance : {0} found".format(response.name))

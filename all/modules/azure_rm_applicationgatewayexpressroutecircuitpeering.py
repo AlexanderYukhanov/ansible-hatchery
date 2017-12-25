@@ -853,10 +853,10 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
         self.log("Creating / Updating the ExpressRouteCircuitPeerings instance {0}".format(self.peering_name))
 
         try:
-            response = self.mgmt_client.express_route_circuit_peerings.create_or_update(self.resource_group,
-                                                                                        self.circuit_name,
-                                                                                        self.peering_name,
-                                                                                        self.peering_parameters)
+            response = self.mgmt_client.express_route_circuit_peerings.create_or_update(resource_group_name=self.resource_group,
+                                                                                        circuit_name=self.circuit_name,
+                                                                                        peering_name=self.peering_name,
+                                                                                        peering_parameters=self.peering_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -873,9 +873,9 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
         '''
         self.log("Deleting the ExpressRouteCircuitPeerings instance {0}".format(self.peering_name))
         try:
-            response = self.mgmt_client.express_route_circuit_peerings.delete(self.resource_group,
-                                                                              self.circuit_name,
-                                                                              self.peering_name)
+            response = self.mgmt_client.express_route_circuit_peerings.delete(resource_group_name=self.resource_group,
+                                                                              circuit_name=self.circuit_name,
+                                                                              peering_name=self.peering_name)
         except CloudError as e:
             self.log('Error attempting to delete the ExpressRouteCircuitPeerings instance.')
             self.fail("Error deleting the ExpressRouteCircuitPeerings instance: {0}".format(str(e)))
@@ -891,9 +891,9 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
         self.log("Checking if the ExpressRouteCircuitPeerings instance {0} is present".format(self.peering_name))
         found = False
         try:
-            response = self.mgmt_client.express_route_circuit_peerings.get(self.resource_group,
-                                                                           self.circuit_name,
-                                                                           self.peering_name)
+            response = self.mgmt_client.express_route_circuit_peerings.get(resource_group_name=self.resource_group,
+                                                                           circuit_name=self.circuit_name,
+                                                                           peering_name=self.peering_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("ExpressRouteCircuitPeerings instance : {0} found".format(response.name))

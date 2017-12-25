@@ -150,10 +150,10 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.elastic_pools.list_metrics(self.resource_group,
-                                                                   self.server_name,
-                                                                   self.elastic_pool_name,
-                                                                   self.filter)
+            response = self.mgmt_client.elastic_pools.list_metrics(resource_group_name=self.resource_group,
+                                                                   server_name=self.server_name,
+                                                                   elastic_pool_name=self.elastic_pool_name,
+                                                                   filter=self.filter)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')
@@ -174,9 +174,9 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.elastic_pools.list_metric_definitions(self.resource_group,
-                                                                              self.server_name,
-                                                                              self.elastic_pool_name)
+            response = self.mgmt_client.elastic_pools.list_metric_definitions(resource_group_name=self.resource_group,
+                                                                              server_name=self.server_name,
+                                                                              elastic_pool_name=self.elastic_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')
@@ -197,9 +197,9 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.elastic_pools.get(self.resource_group,
-                                                          self.server_name,
-                                                          self.elastic_pool_name)
+            response = self.mgmt_client.elastic_pools.get(resource_group_name=self.resource_group,
+                                                          server_name=self.server_name,
+                                                          elastic_pool_name=self.elastic_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')
@@ -218,8 +218,8 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.elastic_pools.list_by_server(self.resource_group,
-                                                                     self.server_name)
+            response = self.mgmt_client.elastic_pools.list_by_server(resource_group_name=self.resource_group,
+                                                                     server_name=self.server_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ElasticPools.')

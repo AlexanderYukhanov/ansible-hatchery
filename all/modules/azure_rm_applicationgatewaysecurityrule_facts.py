@@ -113,9 +113,9 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.security_rules.get(self.resource_group,
-                                                           self.network_security_group_name,
-                                                           self.security_rule_name)
+            response = self.mgmt_client.security_rules.get(resource_group_name=self.resource_group,
+                                                           network_security_group_name=self.network_security_group_name,
+                                                           security_rule_name=self.security_rule_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SecurityRules.')

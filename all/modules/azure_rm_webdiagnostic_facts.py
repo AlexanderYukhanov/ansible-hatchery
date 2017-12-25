@@ -172,10 +172,10 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.diagnostics.list_site_analyses_slot(self.resource_group,
-                                                                            self.site_name,
-                                                                            self.diagnostic_category,
-                                                                            self.slot)
+            response = self.mgmt_client.diagnostics.list_site_analyses_slot(resource_group_name=self.resource_group,
+                                                                            site_name=self.site_name,
+                                                                            diagnostic_category=self.diagnostic_category,
+                                                                            slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
@@ -196,10 +196,10 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.diagnostics.list_site_detectors_slot(self.resource_group,
-                                                                             self.site_name,
-                                                                             self.diagnostic_category,
-                                                                             self.slot)
+            response = self.mgmt_client.diagnostics.list_site_detectors_slot(resource_group_name=self.resource_group,
+                                                                             site_name=self.site_name,
+                                                                             diagnostic_category=self.diagnostic_category,
+                                                                             slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
@@ -220,9 +220,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.diagnostics.list_site_analyses(self.resource_group,
-                                                                       self.site_name,
-                                                                       self.diagnostic_category)
+            response = self.mgmt_client.diagnostics.list_site_analyses(resource_group_name=self.resource_group,
+                                                                       site_name=self.site_name,
+                                                                       diagnostic_category=self.diagnostic_category)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
@@ -243,9 +243,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.diagnostics.list_site_detectors(self.resource_group,
-                                                                        self.site_name,
-                                                                        self.diagnostic_category)
+            response = self.mgmt_client.diagnostics.list_site_detectors(resource_group_name=self.resource_group,
+                                                                        site_name=self.site_name,
+                                                                        diagnostic_category=self.diagnostic_category)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
@@ -266,9 +266,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.diagnostics.list_site_diagnostic_categories_slot(self.resource_group,
-                                                                                         self.site_name,
-                                                                                         self.slot)
+            response = self.mgmt_client.diagnostics.list_site_diagnostic_categories_slot(resource_group_name=self.resource_group,
+                                                                                         site_name=self.site_name,
+                                                                                         slot=self.slot)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')
@@ -289,8 +289,8 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.diagnostics.list_site_diagnostic_categories(self.resource_group,
-                                                                                    self.site_name)
+            response = self.mgmt_client.diagnostics.list_site_diagnostic_categories(resource_group_name=self.resource_group,
+                                                                                    site_name=self.site_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Diagnostics.')

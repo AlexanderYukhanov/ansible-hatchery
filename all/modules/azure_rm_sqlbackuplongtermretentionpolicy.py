@@ -228,12 +228,12 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
         self.log("Creating / Updating the BackupLongTermRetentionPolicies instance {0}".format(self.backup_long_term_retention_policy_name))
 
         try:
-            response = self.mgmt_client.backup_long_term_retention_policies.create_or_update(self.resource_group,
-                                                                                             self.server_name,
-                                                                                             self.database_name,
-                                                                                             self.backup_long_term_retention_policy_name,
-                                                                                             self.state,
-                                                                                             self.recovery_services_backup_policy_resource_id)
+            response = self.mgmt_client.backup_long_term_retention_policies.create_or_update(resource_group_name=self.resource_group,
+                                                                                             server_name=self.server_name,
+                                                                                             database_name=self.database_name,
+                                                                                             backup_long_term_retention_policy_name=self.backup_long_term_retention_policy_name,
+                                                                                             state=self.state,
+                                                                                             recovery_services_backup_policy_resource_id=self.recovery_services_backup_policy_resource_id)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -266,10 +266,10 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
         self.log("Checking if the BackupLongTermRetentionPolicies instance {0} is present".format(self.backup_long_term_retention_policy_name))
         found = False
         try:
-            response = self.mgmt_client.backup_long_term_retention_policies.get(self.resource_group,
-                                                                                self.server_name,
-                                                                                self.database_name,
-                                                                                self.backup_long_term_retention_policy_name)
+            response = self.mgmt_client.backup_long_term_retention_policies.get(resource_group_name=self.resource_group,
+                                                                                server_name=self.server_name,
+                                                                                database_name=self.database_name,
+                                                                                backup_long_term_retention_policy_name=self.backup_long_term_retention_policy_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("BackupLongTermRetentionPolicies instance : {0} found".format(response.name))

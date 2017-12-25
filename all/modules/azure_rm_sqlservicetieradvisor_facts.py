@@ -133,10 +133,10 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.service_tier_advisors.get(self.resource_group,
-                                                                  self.server_name,
-                                                                  self.database_name,
-                                                                  self.service_tier_advisor_name)
+            response = self.mgmt_client.service_tier_advisors.get(resource_group_name=self.resource_group,
+                                                                  server_name=self.server_name,
+                                                                  database_name=self.database_name,
+                                                                  service_tier_advisor_name=self.service_tier_advisor_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServiceTierAdvisors.')
@@ -155,9 +155,9 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.service_tier_advisors.list_by_database(self.resource_group,
-                                                                               self.server_name,
-                                                                               self.database_name)
+            response = self.mgmt_client.service_tier_advisors.list_by_database(resource_group_name=self.resource_group,
+                                                                               server_name=self.server_name,
+                                                                               database_name=self.database_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ServiceTierAdvisors.')

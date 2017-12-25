@@ -91,7 +91,7 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
         response = None
         results = False
         try:
-            response = self.mgmt_client.capabilities.list_by_location(self.location_id)
+            response = self.mgmt_client.capabilities.list_by_location(location_id=self.location_id)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Capabilities.')

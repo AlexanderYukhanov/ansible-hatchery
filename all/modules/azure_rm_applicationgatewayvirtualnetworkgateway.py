@@ -393,9 +393,9 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
         self.log("Creating / Updating the VirtualNetworkGateways instance {0}".format(self.virtual_network_gateway_name))
 
         try:
-            response = self.mgmt_client.virtual_network_gateways.create_or_update(self.resource_group,
-                                                                                  self.virtual_network_gateway_name,
-                                                                                  self.parameters)
+            response = self.mgmt_client.virtual_network_gateways.create_or_update(resource_group_name=self.resource_group,
+                                                                                  virtual_network_gateway_name=self.virtual_network_gateway_name,
+                                                                                  parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -412,8 +412,8 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
         '''
         self.log("Deleting the VirtualNetworkGateways instance {0}".format(self.virtual_network_gateway_name))
         try:
-            response = self.mgmt_client.virtual_network_gateways.delete(self.resource_group,
-                                                                        self.virtual_network_gateway_name)
+            response = self.mgmt_client.virtual_network_gateways.delete(resource_group_name=self.resource_group,
+                                                                        virtual_network_gateway_name=self.virtual_network_gateway_name)
         except CloudError as e:
             self.log('Error attempting to delete the VirtualNetworkGateways instance.')
             self.fail("Error deleting the VirtualNetworkGateways instance: {0}".format(str(e)))
@@ -429,8 +429,8 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
         self.log("Checking if the VirtualNetworkGateways instance {0} is present".format(self.virtual_network_gateway_name))
         found = False
         try:
-            response = self.mgmt_client.virtual_network_gateways.get(self.resource_group,
-                                                                     self.virtual_network_gateway_name)
+            response = self.mgmt_client.virtual_network_gateways.get(resource_group_name=self.resource_group,
+                                                                     virtual_network_gateway_name=self.virtual_network_gateway_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("VirtualNetworkGateways instance : {0} found".format(response.name))

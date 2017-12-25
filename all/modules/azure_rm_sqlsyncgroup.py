@@ -276,11 +276,11 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         self.log("Creating / Updating the SyncGroups instance {0}".format(self.sync_group_name))
 
         try:
-            response = self.mgmt_client.sync_groups.create_or_update(self.resource_group,
-                                                                     self.server_name,
-                                                                     self.database_name,
-                                                                     self.sync_group_name,
-                                                                     self.parameters)
+            response = self.mgmt_client.sync_groups.create_or_update(resource_group_name=self.resource_group,
+                                                                     server_name=self.server_name,
+                                                                     database_name=self.database_name,
+                                                                     sync_group_name=self.sync_group_name,
+                                                                     parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -297,10 +297,10 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         '''
         self.log("Deleting the SyncGroups instance {0}".format(self.sync_group_name))
         try:
-            response = self.mgmt_client.sync_groups.delete(self.resource_group,
-                                                           self.server_name,
-                                                           self.database_name,
-                                                           self.sync_group_name)
+            response = self.mgmt_client.sync_groups.delete(resource_group_name=self.resource_group,
+                                                           server_name=self.server_name,
+                                                           database_name=self.database_name,
+                                                           sync_group_name=self.sync_group_name)
         except CloudError as e:
             self.log('Error attempting to delete the SyncGroups instance.')
             self.fail("Error deleting the SyncGroups instance: {0}".format(str(e)))
@@ -316,10 +316,10 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
         found = False
         try:
-            response = self.mgmt_client.sync_groups.get(self.resource_group,
-                                                        self.server_name,
-                                                        self.database_name,
-                                                        self.sync_group_name)
+            response = self.mgmt_client.sync_groups.get(resource_group_name=self.resource_group,
+                                                        server_name=self.server_name,
+                                                        database_name=self.database_name,
+                                                        sync_group_name=self.sync_group_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("SyncGroups instance : {0} found".format(response.name))

@@ -861,9 +861,9 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
         self.log("Creating / Updating the LoadBalancers instance {0}".format(self.load_balancer_name))
 
         try:
-            response = self.mgmt_client.load_balancers.create_or_update(self.resource_group,
-                                                                        self.load_balancer_name,
-                                                                        self.parameters)
+            response = self.mgmt_client.load_balancers.create_or_update(resource_group_name=self.resource_group,
+                                                                        load_balancer_name=self.load_balancer_name,
+                                                                        parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
@@ -880,8 +880,8 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
         '''
         self.log("Deleting the LoadBalancers instance {0}".format(self.load_balancer_name))
         try:
-            response = self.mgmt_client.load_balancers.delete(self.resource_group,
-                                                              self.load_balancer_name)
+            response = self.mgmt_client.load_balancers.delete(resource_group_name=self.resource_group,
+                                                              load_balancer_name=self.load_balancer_name)
         except CloudError as e:
             self.log('Error attempting to delete the LoadBalancers instance.')
             self.fail("Error deleting the LoadBalancers instance: {0}".format(str(e)))
@@ -897,8 +897,8 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
         self.log("Checking if the LoadBalancers instance {0} is present".format(self.load_balancer_name))
         found = False
         try:
-            response = self.mgmt_client.load_balancers.get(self.resource_group,
-                                                           self.load_balancer_name)
+            response = self.mgmt_client.load_balancers.get(resource_group_name=self.resource_group,
+                                                           load_balancer_name=self.load_balancer_name)
             found = True
             self.log("Response : {0}".format(response))
             self.log("LoadBalancers instance : {0} found".format(response.name))
