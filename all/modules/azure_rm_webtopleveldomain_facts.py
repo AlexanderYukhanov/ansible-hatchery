@@ -75,13 +75,11 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
                 required=True
             ),
             include_privacy=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             for_transfer=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

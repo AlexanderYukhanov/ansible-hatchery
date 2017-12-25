@@ -109,9 +109,8 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
                 required=True
             ),
             sync_member_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

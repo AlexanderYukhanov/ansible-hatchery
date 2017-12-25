@@ -235,41 +235,32 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
                 required=True
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             start_time=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             end_time=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             time_grain=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             details=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             filter=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             worker_pool_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             instance=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             properties_to_include=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

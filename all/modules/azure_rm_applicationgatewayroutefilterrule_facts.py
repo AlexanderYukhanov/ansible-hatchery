@@ -81,9 +81,8 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
                 required=True
             ),
             rule_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

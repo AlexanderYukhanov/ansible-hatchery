@@ -91,9 +91,8 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
                 required=True
             ),
             geo_backup_policy_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

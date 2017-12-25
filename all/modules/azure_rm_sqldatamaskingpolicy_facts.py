@@ -88,7 +88,7 @@ class AzureRMDataMaskingPoliciesFacts(AzureRMModuleBase):
             data_masking_policy_name=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(

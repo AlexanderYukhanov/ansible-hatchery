@@ -640,77 +640,59 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
                 required=True
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             backup_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             request=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             slot=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             namespace_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             relay_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             process_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             instance_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             details=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             filter=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             target_slot=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             preserve_vnet=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             function_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             view=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             format=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             web_job_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             include_slots=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

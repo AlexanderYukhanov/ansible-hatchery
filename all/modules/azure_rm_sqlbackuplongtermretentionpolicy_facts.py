@@ -91,9 +91,8 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
                 required=True
             ),
             backup_long_term_retention_policy_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

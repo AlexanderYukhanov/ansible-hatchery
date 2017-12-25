@@ -79,7 +79,7 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
             packet_capture_name=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(

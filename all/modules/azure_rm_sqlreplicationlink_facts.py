@@ -91,9 +91,8 @@ class AzureRMReplicationLinksFacts(AzureRMModuleBase):
                 required=True
             ),
             link_id=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

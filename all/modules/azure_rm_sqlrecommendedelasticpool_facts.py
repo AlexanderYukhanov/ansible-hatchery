@@ -87,9 +87,8 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
                 required=True
             ),
             recommended_elastic_pool_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

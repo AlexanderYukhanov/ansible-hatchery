@@ -71,9 +71,8 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
                 required=True
             ),
             usage_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

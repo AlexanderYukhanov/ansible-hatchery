@@ -88,7 +88,7 @@ class AzureRMDatabaseThreatDetectionPoliciesFacts(AzureRMModuleBase):
             security_alert_policy_name=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(

@@ -74,17 +74,14 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             network_watcher_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             parameters=dict(
-                type='dict',
-                required=False
-            ),
+                type='dict'
+            )
         )
         # store the results of the module operation
         self.results = dict(

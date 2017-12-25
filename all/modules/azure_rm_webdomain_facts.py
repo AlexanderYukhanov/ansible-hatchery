@@ -82,21 +82,17 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             keywords=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             max_domain_recommendations=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             resource_group=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             domain_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

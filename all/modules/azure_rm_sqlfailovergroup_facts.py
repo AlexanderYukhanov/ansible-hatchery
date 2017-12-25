@@ -81,9 +81,8 @@ class AzureRMFailoverGroupsFacts(AzureRMModuleBase):
                 required=True
             ),
             failover_group_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

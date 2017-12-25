@@ -76,9 +76,8 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
                 required=True
             ),
             certificate_order_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

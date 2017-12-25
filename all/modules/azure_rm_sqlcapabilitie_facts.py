@@ -61,7 +61,7 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
             location_id=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(

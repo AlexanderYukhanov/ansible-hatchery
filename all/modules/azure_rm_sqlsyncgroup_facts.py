@@ -113,41 +113,32 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             server_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             database_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             sync_group_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             start_time=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             end_time=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             continuation_token=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

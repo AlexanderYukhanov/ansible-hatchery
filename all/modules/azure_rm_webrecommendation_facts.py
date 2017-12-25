@@ -87,13 +87,11 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
                 required=True
             ),
             featured=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             filter=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

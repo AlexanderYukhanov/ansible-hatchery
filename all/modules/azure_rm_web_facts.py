@@ -71,13 +71,11 @@ class AzureRMFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             sku=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             linux_workers_enabled=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

@@ -88,7 +88,7 @@ class AzureRMTransparentDataEncryptionsFacts(AzureRMModuleBase):
             transparent_data_encryption_name=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(

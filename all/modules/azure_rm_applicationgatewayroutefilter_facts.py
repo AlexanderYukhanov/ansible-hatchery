@@ -75,13 +75,11 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
                 required=True
             ),
             route_filter_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             expand=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

@@ -87,9 +87,8 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
                 required=True
             ),
             sync_agent_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

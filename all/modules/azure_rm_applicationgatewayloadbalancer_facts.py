@@ -69,17 +69,14 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             load_balancer_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             expand=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

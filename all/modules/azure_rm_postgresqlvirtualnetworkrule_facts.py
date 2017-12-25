@@ -81,9 +81,8 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
                 required=True
             ),
             virtual_network_rule_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

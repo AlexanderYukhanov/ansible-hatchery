@@ -100,37 +100,29 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             resource_provider_namespace=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             parent_resource_path=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             resource_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             resource_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             filter=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             scope=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             role_assignment_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

@@ -79,7 +79,7 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
             ip_configuration_name=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(

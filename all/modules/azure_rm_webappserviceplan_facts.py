@@ -154,37 +154,29 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
                 required=True
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             skip_token=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             filter=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             top=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             namespace_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             relay_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             details=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             vnet_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

@@ -81,9 +81,8 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
                 required=True
             ),
             service_objective_name=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

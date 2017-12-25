@@ -97,13 +97,11 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
                 required=True
             ),
             elastic_pool_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             filter=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

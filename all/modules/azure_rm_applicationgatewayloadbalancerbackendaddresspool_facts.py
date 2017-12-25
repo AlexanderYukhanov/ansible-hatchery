@@ -79,7 +79,7 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
             backend_address_pool_name=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(

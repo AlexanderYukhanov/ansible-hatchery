@@ -110,13 +110,11 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                 required=True
             ),
             diagnostic_category=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             slot=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

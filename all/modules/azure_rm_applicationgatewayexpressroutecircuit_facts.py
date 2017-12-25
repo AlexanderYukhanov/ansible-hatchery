@@ -92,21 +92,17 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             circuit_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             peering_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             device_path=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

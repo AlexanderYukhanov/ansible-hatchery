@@ -81,9 +81,8 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
                 required=True
             ),
             restorable_droppeded_database_id=dict(
-                type='str',
-                required=False
-            ),
+                type='str'
+            )
         )
         # store the results of the module operation
         self.results = dict(

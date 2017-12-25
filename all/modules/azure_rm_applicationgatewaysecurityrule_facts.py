@@ -79,7 +79,7 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
             security_rule_name=dict(
                 type='str',
                 required=True
-            ),
+            )
         )
         # store the results of the module operation
         self.results = dict(
