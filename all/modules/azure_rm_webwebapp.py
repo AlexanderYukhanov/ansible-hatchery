@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webwebapp
 version_added: "2.5"
-short_description: Manage WebApps instance
+short_description: Manage WebApps instance.
 description:
-    - Create, update and delete instance of WebApps
+    - Create, update and delete instance of WebApps.
 
 options:
     resource_group:
@@ -589,96 +589,73 @@ class AzureRMWebApps(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             enabled=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             host_name_ssl_states=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             server_farm_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             reserved=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             site_config=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             scm_site_also_stopped=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             hosting_environment_profile=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             client_affinity_enabled=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             client_cert_enabled=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             host_names_disabled=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             container_size=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             daily_memory_time_quota=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             cloning_info=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             snapshot_info=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             https_only=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             identity=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             skip_dns_registration=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             skip_custom_domain_verification=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             force_dns_registration=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             ttl_in_seconds=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

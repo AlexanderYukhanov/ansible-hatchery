@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlbackuplongtermretentionvault
 version_added: "2.5"
-short_description: Manage BackupLongTermRetentionVaults instance
+short_description: Manage BackupLongTermRetentionVaults instance.
 description:
-    - Create, update and delete instance of BackupLongTermRetentionVaults
+    - Create, update and delete instance of BackupLongTermRetentionVaults.
 
 options:
     resource_group:
@@ -106,7 +106,6 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

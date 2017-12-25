@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaysecurityrule
 version_added: "2.5"
-short_description: Manage SecurityRules instance
+short_description: Manage SecurityRules instance.
 description:
-    - Create, update and delete instance of SecurityRules
+    - Create, update and delete instance of SecurityRules.
 
 options:
     resource_group:
@@ -174,84 +174,67 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             description=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             protocol=dict(
                 type='str',
                 required=True
             ),
             source_port_range=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             destination_port_range=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             source_address_prefix=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             source_address_prefixes=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             source_application_security_groups=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             destination_address_prefix=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             destination_address_prefixes=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             destination_application_security_groups=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             source_port_ranges=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             destination_port_ranges=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             access=dict(
                 type='str',
                 required=True
             ),
             priority=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             direction=dict(
                 type='str',
                 required=True
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

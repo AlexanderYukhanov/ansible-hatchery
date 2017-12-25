@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncagent
 version_added: "2.5"
-short_description: Manage SyncAgents instance
+short_description: Manage SyncAgents instance.
 description:
-    - Create, update and delete instance of SyncAgents
+    - Create, update and delete instance of SyncAgents.
 
 options:
     resource_group:
@@ -112,12 +112,10 @@ class AzureRMSyncAgents(AzureRMModuleBase):
                 required=True
             ),
             sync_database_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

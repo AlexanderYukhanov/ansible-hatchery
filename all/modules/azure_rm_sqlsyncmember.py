@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncmember
 version_added: "2.5"
-short_description: Manage SyncMembers instance
+short_description: Manage SyncMembers instance.
 description:
-    - Create, update and delete instance of SyncMembers
+    - Create, update and delete instance of SyncMembers.
 
 options:
     resource_group:
@@ -138,41 +138,32 @@ class AzureRMSyncMembers(AzureRMModuleBase):
                 required=True
             ),
             database_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             sync_agent_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             sql_server_database_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             server_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             database_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             user_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             password=dict(
                 type='str',
-                no_log=True,
-                required=False
+                no_log=True
             ),
             sync_direction=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

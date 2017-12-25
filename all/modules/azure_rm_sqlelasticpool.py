@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlelasticpool
 version_added: "2.5"
-short_description: Manage ElasticPool instance
+short_description: Manage ElasticPool instance.
 description:
-    - Create, update and delete instance of ElasticPool
+    - Create, update and delete instance of ElasticPool.
 
 options:
     resource_group:
@@ -125,36 +125,28 @@ class AzureRMElasticPools(AzureRMModuleBase):
                 required=True
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             edition=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             dtu=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             database_dtu_max=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             database_dtu_min=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             storage_mb=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             zone_redundant=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

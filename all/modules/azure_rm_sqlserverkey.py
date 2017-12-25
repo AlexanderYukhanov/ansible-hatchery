@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverkey
 version_added: "2.5"
-short_description: Manage ServerKeys instance
+short_description: Manage ServerKeys instance.
 description:
-    - Create, update and delete instance of ServerKeys
+    - Create, update and delete instance of ServerKeys.
 
 options:
     resource_group:
@@ -114,28 +114,23 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             server_key_type=dict(
                 type='str',
                 required=True
             ),
             uri=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             thumbprint=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             creation_date=dict(
-                type='datetime',
-                required=False
+                type='datetime'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

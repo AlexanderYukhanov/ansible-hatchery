@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabaseblobauditingpolicy
 version_added: "2.5"
-short_description: Manage DatabaseBlobAuditingPolicies instance
+short_description: Manage DatabaseBlobAuditingPolicies instance.
 description:
-    - Create, update and delete instance of DatabaseBlobAuditingPolicies
+    - Create, update and delete instance of DatabaseBlobAuditingPolicies.
 
 options:
     resource_group:
@@ -139,32 +139,25 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
                 required=True
             ),
             storage_endpoint=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             storage_account_access_key=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             retention_days=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             audit_actions_and_groups=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             storage_account_subscription_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             is_storage_secondary_key_in_use=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

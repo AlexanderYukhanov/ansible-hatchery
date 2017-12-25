@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayroutefilter
 version_added: "2.5"
-short_description: Manage RouteFilters instance
+short_description: Manage RouteFilters instance.
 description:
-    - Create, update and delete instance of RouteFilters
+    - Create, update and delete instance of RouteFilters.
 
 options:
     resource_group:
@@ -504,24 +504,19 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             rules=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             peerings=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

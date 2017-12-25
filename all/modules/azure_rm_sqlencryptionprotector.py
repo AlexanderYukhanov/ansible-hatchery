@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlencryptionprotector
 version_added: "2.5"
-short_description: Manage EncryptionProtectors instance
+short_description: Manage EncryptionProtectors instance.
 description:
-    - Create, update and delete instance of EncryptionProtectors
+    - Create, update and delete instance of EncryptionProtectors.
 
 options:
     resource_group:
@@ -106,12 +106,10 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             server_key_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             server_key_type=dict(
                 type='str',
@@ -119,7 +117,6 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

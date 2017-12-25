@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaypublicipaddresse
 version_added: "2.5"
-short_description: Manage PublicIPAddresses instance
+short_description: Manage PublicIPAddresses instance.
 description:
-    - Create, update and delete instance of PublicIPAddresses
+    - Create, update and delete instance of PublicIPAddresses.
 
 options:
     resource_group:
@@ -141,56 +141,43 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             sku=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             public_ip_allocation_method=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             public_ip_address_version=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             dns_settings=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             ip_address=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             idle_timeout_in_minutes=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             zones=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

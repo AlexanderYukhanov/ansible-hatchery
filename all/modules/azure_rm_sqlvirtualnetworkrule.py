@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlvirtualnetworkrule
 version_added: "2.5"
-short_description: Manage VirtualNetworkRules instance
+short_description: Manage VirtualNetworkRules instance.
 description:
-    - Create, update and delete instance of VirtualNetworkRules
+    - Create, update and delete instance of VirtualNetworkRules.
 
 options:
     resource_group:
@@ -115,12 +115,10 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
                 required=True
             ),
             ignore_missing_vnet_service_endpoint=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

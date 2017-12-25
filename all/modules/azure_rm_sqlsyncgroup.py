@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncgroup
 version_added: "2.5"
-short_description: Manage SyncGroups instance
+short_description: Manage SyncGroups instance.
 description:
-    - Create, update and delete instance of SyncGroups
+    - Create, update and delete instance of SyncGroups.
 
 options:
     resource_group:
@@ -147,33 +147,26 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                 required=True
             ),
             interval=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             conflict_resolution_policy=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             sync_database_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             hub_database_user_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             hub_database_password=dict(
                 type='str',
-                no_log=True,
-                required=False
+                no_log=True
             ),
             schema=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

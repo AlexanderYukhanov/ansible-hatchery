@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappserviceenvironment
 version_added: "2.5"
-short_description: Manage AppServiceEnvironments instance
+short_description: Manage AppServiceEnvironments instance.
 description:
-    - Create, update and delete instance of AppServiceEnvironments
+    - Create, update and delete instance of AppServiceEnvironments.
 
 options:
     resource_group:
@@ -203,12 +203,10 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             app_service_environment_resource_name=dict(
                 type='str',
@@ -219,76 +217,60 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 required=True
             ),
             vnet_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             vnet_resource_group_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             vnet_subnet_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             virtual_network=dict(
                 type='dict',
                 required=True
             ),
             internal_load_balancing_mode=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             multi_size=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             multi_role_count=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             worker_pools=dict(
                 type='list',
                 required=True
             ),
             ipssl_address_count=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             dns_suffix=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             network_access_control_list=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             front_end_scale_factor=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             api_management_account_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             suspended=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             dynamic_cache_enabled=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             cluster_settings=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             user_whitelisted_ip_ranges=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

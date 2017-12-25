@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuit
 version_added: "2.5"
-short_description: Manage ExpressRouteCircuits instance
+short_description: Manage ExpressRouteCircuits instance.
 description:
-    - Create, update and delete instance of ExpressRouteCircuits
+    - Create, update and delete instance of ExpressRouteCircuits.
 
 options:
     resource_group:
@@ -545,60 +545,46 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             sku=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             allow_classic_operations=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             circuit_provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             service_provider_provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             authorizations=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             peerings=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             service_key=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             service_provider_notes=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             service_provider_properties=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             gateway_manager_etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

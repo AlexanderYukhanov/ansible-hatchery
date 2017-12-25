@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webdomain
 version_added: "2.5"
-short_description: Manage Domains instance
+short_description: Manage Domains instance.
 description:
-    - Create, update and delete instance of Domains
+    - Create, update and delete instance of Domains.
 
 options:
     resource_group:
@@ -361,60 +361,46 @@ class AzureRMDomains(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             contact_admin=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             contact_billing=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             contact_registrant=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             contact_tech=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             privacy=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             auto_renew=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             consent=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             dns_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             dns_zone_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             target_dns_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             auth_code=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

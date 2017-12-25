@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayapplicationsecuritygroup
 version_added: "2.5"
-short_description: Manage ApplicationSecurityGroups instance
+short_description: Manage ApplicationSecurityGroups instance.
 description:
-    - Create, update and delete instance of ApplicationSecurityGroups
+    - Create, update and delete instance of ApplicationSecurityGroups.
 
 options:
     resource_group:
@@ -94,16 +94,13 @@ class AzureRMApplicationSecurityGroups(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

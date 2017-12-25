@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetwork
 version_added: "2.5"
-short_description: Manage VirtualNetworks instance
+short_description: Manage VirtualNetworks instance.
 description:
-    - Create, update and delete instance of VirtualNetworks
+    - Create, update and delete instance of VirtualNetworks.
 
 options:
     resource_group:
@@ -456,52 +456,40 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             address_space=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             dhcp_options=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             subnets=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             virtual_network_peerings=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             enable_ddos_protection=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             enable_vm_protection=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

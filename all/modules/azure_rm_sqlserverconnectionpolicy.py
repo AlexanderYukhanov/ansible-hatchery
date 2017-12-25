@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverconnectionpolicy
 version_added: "2.5"
-short_description: Manage ServerConnectionPolicies instance
+short_description: Manage ServerConnectionPolicies instance.
 description:
-    - Create, update and delete instance of ServerConnectionPolicies
+    - Create, update and delete instance of ServerConnectionPolicies.
 
 options:
     resource_group:
@@ -106,7 +106,6 @@ class AzureRMServerConnectionPolicies(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

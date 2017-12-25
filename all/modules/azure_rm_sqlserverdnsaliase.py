@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverdnsaliase
 version_added: "2.5"
-short_description: Manage ServerDnsAliases instance
+short_description: Manage ServerDnsAliases instance.
 description:
-    - Create, update and delete instance of ServerDnsAliases
+    - Create, update and delete instance of ServerDnsAliases.
 
 options:
     resource_group:
@@ -97,7 +97,6 @@ class AzureRMServerDnsAliases(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

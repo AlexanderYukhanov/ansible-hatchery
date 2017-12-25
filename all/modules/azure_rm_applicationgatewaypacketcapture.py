@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaypacketcapture
 version_added: "2.5"
-short_description: Manage PacketCaptures instance
+short_description: Manage PacketCaptures instance.
 description:
-    - Create, update and delete instance of PacketCaptures
+    - Create, update and delete instance of PacketCaptures.
 
 options:
     resource_group:
@@ -153,28 +153,23 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
                 required=True
             ),
             bytes_to_capture_per_packet=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             total_bytes_per_session=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             time_limit_in_seconds=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             storage_location=dict(
                 type='dict',
                 required=True
             ),
             filters=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

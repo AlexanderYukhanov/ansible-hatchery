@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationroleassignment
 version_added: "2.5"
-short_description: Manage RoleAssignments instance
+short_description: Manage RoleAssignments instance.
 description:
-    - Create, update and delete instance of RoleAssignments
+    - Create, update and delete instance of RoleAssignments.
 
 options:
     scope:
@@ -107,16 +107,13 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
                 required=True
             ),
             parameters=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             properties=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

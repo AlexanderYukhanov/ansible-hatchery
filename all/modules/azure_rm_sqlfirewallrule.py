@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlfirewallrule
 version_added: "2.5"
-short_description: Manage FirewallRules instance
+short_description: Manage FirewallRules instance.
 description:
-    - Create, update and delete instance of FirewallRules
+    - Create, update and delete instance of FirewallRules.
 
 options:
     resource_group:
@@ -116,7 +116,6 @@ class AzureRMFirewallRules(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

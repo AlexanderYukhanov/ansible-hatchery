@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetworkpeering
 version_added: "2.5"
-short_description: Manage VirtualNetworkPeerings instance
+short_description: Manage VirtualNetworkPeerings instance.
 description:
-    - Create, update and delete instance of VirtualNetworkPeerings
+    - Create, update and delete instance of VirtualNetworkPeerings.
 
 options:
     resource_group:
@@ -141,52 +141,40 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             allow_virtual_network_access=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             allow_forwarded_traffic=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             allow_gateway_transit=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             use_remote_gateways=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             remote_virtual_network=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             remote_address_space=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             peering_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlfailovergroup
 version_added: "2.5"
-short_description: Manage FailoverGroups instance
+short_description: Manage FailoverGroups instance.
 description:
-    - Create, update and delete instance of FailoverGroups
+    - Create, update and delete instance of FailoverGroups.
 
 options:
     resource_group:
@@ -133,20 +133,17 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
                 required=True
             ),
             read_only_endpoint=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             partner_servers=dict(
                 type='list',
                 required=True
             ),
             databases=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

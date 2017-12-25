@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappserviceplan
 version_added: "2.5"
-short_description: Manage AppServicePlans instance
+short_description: Manage AppServicePlans instance.
 description:
-    - Create, update and delete instance of AppServicePlans
+    - Create, update and delete instance of AppServicePlans.
 
 options:
     resource_group:
@@ -194,60 +194,46 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             app_service_plan_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             worker_tier_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             admin_site_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             hosting_environment_profile=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             per_site_scaling=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             is_spot=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             spot_expiration_time=dict(
-                type='datetime',
-                required=False
+                type='datetime'
             ),
             reserved=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             target_worker_count=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             target_worker_size_id=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             sku=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

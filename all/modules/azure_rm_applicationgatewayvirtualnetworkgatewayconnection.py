@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetworkgatewayconnection
 version_added: "2.5"
-short_description: Manage VirtualNetworkGatewayConnections instance
+short_description: Manage VirtualNetworkGatewayConnections instance.
 description:
-    - Create, update and delete instance of VirtualNetworkGatewayConnections
+    - Create, update and delete instance of VirtualNetworkGatewayConnections.
 
 options:
     resource_group:
@@ -503,68 +503,54 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             authorization_key=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             virtual_network_gateway1=dict(
                 type='dict',
                 required=True
             ),
             virtual_network_gateway2=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             local_network_gateway2=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             connection_type=dict(
                 type='str',
                 required=True
             ),
             routing_weight=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             shared_key=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             peer=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             enable_bgp=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             use_policy_based_traffic_selectors=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             ipsec_policies=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

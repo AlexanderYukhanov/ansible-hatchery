@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuitpeering
 version_added: "2.5"
-short_description: Manage ExpressRouteCircuitPeerings instance
+short_description: Manage ExpressRouteCircuitPeerings instance.
 description:
-    - Create, update and delete instance of ExpressRouteCircuitPeerings
+    - Create, update and delete instance of ExpressRouteCircuitPeerings.
 
 options:
     resource_group:
@@ -660,84 +660,64 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             peering_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             azure_asn=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             peer_asn=dict(
-                type='long',
-                required=False
+                type='long'
             ),
             primary_peer_address_prefix=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             secondary_peer_address_prefix=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             primary_azure_port=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             secondary_azure_port=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             shared_key=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             vlan_id=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             microsoft_peering_config=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             stats=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             gateway_manager_etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             last_modified_by=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             route_filter=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             ipv6_peering_config=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

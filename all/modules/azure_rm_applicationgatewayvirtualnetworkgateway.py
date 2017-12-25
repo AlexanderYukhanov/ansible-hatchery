@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetworkgateway
 version_added: "2.5"
-short_description: Manage VirtualNetworkGateways instance
+short_description: Manage VirtualNetworkGateways instance.
 description:
-    - Create, update and delete instance of VirtualNetworkGateways
+    - Create, update and delete instance of VirtualNetworkGateways.
 
 options:
     resource_group:
@@ -229,60 +229,46 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             ip_configurations=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             gateway_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             vpn_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             enable_bgp=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             active_active=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             gateway_default_site=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             sku=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             vpn_client_configuration=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             bgp_settings=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

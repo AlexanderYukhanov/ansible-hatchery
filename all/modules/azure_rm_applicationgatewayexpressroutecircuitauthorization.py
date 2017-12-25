@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuitauthorization
 version_added: "2.5"
-short_description: Manage ExpressRouteCircuitAuthorizations instance
+short_description: Manage ExpressRouteCircuitAuthorizations instance.
 description:
-    - Create, update and delete instance of ExpressRouteCircuitAuthorizations
+    - Create, update and delete instance of ExpressRouteCircuitAuthorizations.
 
 options:
     resource_group:
@@ -111,28 +111,22 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             authorization_key=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             authorization_use_status=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

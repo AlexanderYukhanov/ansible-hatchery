@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatamaskingrule
 version_added: "2.5"
-short_description: Manage DataMaskingRules instance
+short_description: Manage DataMaskingRules instance.
 description:
-    - Create, update and delete instance of DataMaskingRules
+    - Create, update and delete instance of DataMaskingRules.
 
 options:
     resource_group:
@@ -154,12 +154,10 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 required=True
             ),
             alias_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             rule_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             schema_name=dict(
                 type='str',
@@ -178,28 +176,22 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 required=True
             ),
             number_from=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             number_to=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             prefix_size=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             suffix_size=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             replacement_string=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

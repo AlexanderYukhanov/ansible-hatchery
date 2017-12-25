@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayinboundnatrule
 version_added: "2.5"
-short_description: Manage InboundNatRules instance
+short_description: Manage InboundNatRules instance.
 description:
-    - Create, update and delete instance of InboundNatRules
+    - Create, update and delete instance of InboundNatRules.
 
 options:
     resource_group:
@@ -132,48 +132,37 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             frontend_ip_configuration=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             protocol=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             frontend_port=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             backend_port=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             idle_timeout_in_minutes=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             enable_floating_ip=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

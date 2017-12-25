@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworksecuritygroup
 version_added: "2.5"
-short_description: Manage NetworkSecurityGroups instance
+short_description: Manage NetworkSecurityGroups instance.
 description:
-    - Create, update and delete instance of NetworkSecurityGroups
+    - Create, update and delete instance of NetworkSecurityGroups.
 
 options:
     resource_group:
@@ -266,36 +266,28 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             security_rules=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             default_security_rules=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

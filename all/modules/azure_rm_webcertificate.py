@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webcertificate
 version_added: "2.5"
-short_description: Manage Certificates instance
+short_description: Manage Certificates instance.
 description:
-    - Create, update and delete instance of Certificates
+    - Create, update and delete instance of Certificates.
 
 options:
     resource_group:
@@ -113,41 +113,32 @@ class AzureRMCertificates(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             host_names=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             pfx_blob=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             password=dict(
                 type='str',
-                no_log=True,
-                required=False
+                no_log=True
             ),
             key_vault_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             key_vault_secret_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             server_farm_id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayroute
 version_added: "2.5"
-short_description: Manage Routes instance
+short_description: Manage Routes instance.
 description:
-    - Create, update and delete instance of Routes
+    - Create, update and delete instance of Routes.
 
 options:
     resource_group:
@@ -119,36 +119,29 @@ class AzureRMRoutes(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             address_prefix=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             next_hop_type=dict(
                 type='str',
                 required=True
             ),
             next_hop_ip_address=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

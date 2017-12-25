@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatamaskingpolicy
 version_added: "2.5"
-short_description: Manage DataMaskingPolicies instance
+short_description: Manage DataMaskingPolicies instance.
 description:
-    - Create, update and delete instance of DataMaskingPolicies
+    - Create, update and delete instance of DataMaskingPolicies.
 
 options:
     resource_group:
@@ -119,12 +119,10 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
                 required=True
             ),
             exempt_principals=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

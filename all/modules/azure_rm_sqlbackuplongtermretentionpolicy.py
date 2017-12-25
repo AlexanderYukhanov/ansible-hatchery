@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlbackuplongtermretentionpolicy
 version_added: "2.5"
-short_description: Manage BackupLongTermRetentionPolicies instance
+short_description: Manage BackupLongTermRetentionPolicies instance.
 description:
-    - Create, update and delete instance of BackupLongTermRetentionPolicies
+    - Create, update and delete instance of BackupLongTermRetentionPolicies.
 
 options:
     resource_group:
@@ -130,7 +130,6 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

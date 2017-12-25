@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayloadbalancer
 version_added: "2.5"
-short_description: Manage LoadBalancers instance
+short_description: Manage LoadBalancers instance.
 description:
-    - Create, update and delete instance of LoadBalancers
+    - Create, update and delete instance of LoadBalancers.
 
 options:
     resource_group:
@@ -697,60 +697,46 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             sku=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             frontend_ip_configurations=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             backend_address_pools=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             load_balancing_rules=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             probes=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             inbound_nat_rules=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             inbound_nat_pools=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             outbound_nat_rules=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

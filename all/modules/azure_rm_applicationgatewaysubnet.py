@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaysubnet
 version_added: "2.5"
-short_description: Manage Subnets instance
+short_description: Manage Subnets instance.
 description:
-    - Create, update and delete instance of Subnets
+    - Create, update and delete instance of Subnets.
 
 options:
     resource_group:
@@ -371,44 +371,34 @@ class AzureRMSubnets(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             address_prefix=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             network_security_group=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             route_table=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             service_endpoints=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             resource_navigation_links=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

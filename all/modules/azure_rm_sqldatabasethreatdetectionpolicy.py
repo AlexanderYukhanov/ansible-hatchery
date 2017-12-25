@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabasethreatdetectionpolicy
 version_added: "2.5"
-short_description: Manage DatabaseThreatDetectionPolicies instance
+short_description: Manage DatabaseThreatDetectionPolicies instance.
 description:
-    - Create, update and delete instance of DatabaseThreatDetectionPolicies
+    - Create, update and delete instance of DatabaseThreatDetectionPolicies.
 
 options:
     resource_group:
@@ -143,44 +143,35 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 required=True
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
                 required=True
             ),
             disabled_alerts=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             email_addresses=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             email_account_admins=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             storage_endpoint=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             storage_account_access_key=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             retention_days=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             use_server_default=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

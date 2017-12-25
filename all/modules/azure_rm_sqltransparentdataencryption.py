@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqltransparentdataencryption
 version_added: "2.5"
-short_description: Manage TransparentDataEncryptions instance
+short_description: Manage TransparentDataEncryptions instance.
 description:
-    - Create, update and delete instance of TransparentDataEncryptions
+    - Create, update and delete instance of TransparentDataEncryptions.
 
 options:
     resource_group:
@@ -115,12 +115,10 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                 required=True
             ),
             status=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappservicecertificateorder
 version_added: "2.5"
-short_description: Manage AppServiceCertificateOrders instance
+short_description: Manage AppServiceCertificateOrders instance.
 description:
-    - Create, update and delete instance of AppServiceCertificateOrders
+    - Create, update and delete instance of AppServiceCertificateOrders.
 
 options:
     resource_group:
@@ -121,44 +121,34 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
                 required=True
             ),
             kind=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             certificates=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             distinguished_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             validity_in_years=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             key_size=dict(
-                type='int',
-                required=False
+                type='int'
             ),
             product_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             auto_renew=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             csr=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

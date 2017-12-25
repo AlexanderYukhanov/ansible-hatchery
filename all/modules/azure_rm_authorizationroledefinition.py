@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationroledefinition
 version_added: "2.5"
-short_description: Manage RoleDefinitions instance
+short_description: Manage RoleDefinitions instance.
 description:
-    - Create, update and delete instance of RoleDefinitions
+    - Create, update and delete instance of RoleDefinitions.
 
 options:
     scope:
@@ -109,28 +109,22 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 required=True
             ),
             properties_role_name=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             properties_description=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             properties_type=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             properties_permissions=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             properties_assignable_scopes=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

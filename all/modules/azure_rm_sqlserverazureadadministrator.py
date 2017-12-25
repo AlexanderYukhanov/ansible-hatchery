@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverazureadadministrator
 version_added: "2.5"
-short_description: Manage ServerAzureADAdministrators instance
+short_description: Manage ServerAzureADAdministrators instance.
 description:
-    - Create, update and delete instance of ServerAzureADAdministrators
+    - Create, update and delete instance of ServerAzureADAdministrators.
 
 options:
     resource_group:
@@ -129,7 +129,6 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

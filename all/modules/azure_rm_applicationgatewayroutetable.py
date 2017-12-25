@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayroutetable
 version_added: "2.5"
-short_description: Manage RouteTables instance
+short_description: Manage RouteTables instance.
 description:
-    - Create, update and delete instance of RouteTables
+    - Create, update and delete instance of RouteTables.
 
 options:
     resource_group:
@@ -129,32 +129,25 @@ class AzureRMRouteTables(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             routes=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             disable_bgp_route_propagation=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

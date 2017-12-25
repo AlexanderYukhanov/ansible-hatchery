@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworkinterface
 version_added: "2.5"
-short_description: Manage NetworkInterfaces instance
+short_description: Manage NetworkInterfaces instance.
 description:
-    - Create, update and delete instance of NetworkInterfaces
+    - Create, update and delete instance of NetworkInterfaces.
 
 options:
     resource_group:
@@ -967,60 +967,46 @@ class AzureRMNetworkInterfaces(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             virtual_machine=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             network_security_group=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             ip_configurations=dict(
-                type='list',
-                required=False
+                type='list'
             ),
             dns_settings=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             mac_address=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             primary=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             enable_accelerated_networking=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             enable_ip_forwarding=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             provisioning_state=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlservercommunicationlink
 version_added: "2.5"
-short_description: Manage ServerCommunicationLinks instance
+short_description: Manage ServerCommunicationLinks instance.
 description:
-    - Create, update and delete instance of ServerCommunicationLinks
+    - Create, update and delete instance of ServerCommunicationLinks.
 
 options:
     resource_group:
@@ -112,7 +112,6 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )

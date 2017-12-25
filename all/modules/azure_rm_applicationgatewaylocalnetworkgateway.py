@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaylocalnetworkgateway
 version_added: "2.5"
-short_description: Manage LocalNetworkGateways instance
+short_description: Manage LocalNetworkGateways instance.
 description:
-    - Create, update and delete instance of LocalNetworkGateways
+    - Create, update and delete instance of LocalNetworkGateways.
 
 options:
     resource_group:
@@ -122,36 +122,28 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
                 required=True
             ),
             id=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             location=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             local_network_address_space=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             gateway_ip_address=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             bgp_settings=dict(
-                type='dict',
-                required=False
+                type='dict'
             ),
             resource_guid=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             etag=dict(
-                type='str',
-                required=False
+                type='str'
             ),
             state=dict(
                 type='str',
-                required=False,
                 default='present',
                 choices=['present', 'absent']
             )
