@@ -3,9 +3,15 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
+- name: Create ApplicationSecurityGroups
+  azure_rm_applicationgatewayapplicationsecuritygroup:
+    resource_group: "{{ resource_group }}"
+    application_security_group_name: appgwsg{{ rpfx }}
+
 - name: Gather facts ApplicationSecurityGroups
   azure_rm_applicationgatewayapplicationsecuritygroup_facts:
     resource_group: "{{ resource_group }}"
+    application_security_group_name: appgwsg{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
@@ -19,3 +25,9 @@
   assert:
     that:
       - output.changed == False
+
+- name: Delete instance of ApplicationSecurityGroups
+  azure_rm_applicationgatewayapplicationsecuritygroup:
+    resource_group: "{{ resource_group }}"
+    application_security_group_name: appgwsg{{ rpfx }}
+    state: absent

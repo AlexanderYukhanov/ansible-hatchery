@@ -8866,7 +8866,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "test-asg",
-            "test:default": ""
+            "test:default": "appgwsg{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -9087,7 +9087,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "application_security_group_name",
-            "test:default": ""
+            "test:default": "appgwsg{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -9113,7 +9113,7 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_applicationgatewayapplicationsecuritygroup",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
