@@ -13,6 +13,7 @@
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}
     route_name: testroute{{ rpfx }}
+    address_prefix: 208.128.0.0/11
     next_hop_type: "None"
   check_mode: yes
   register: output
@@ -26,6 +27,7 @@
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}
     route_name: testroute{{ rpfx }}
+    address_prefix: 208.128.0.0/11
     next_hop_type: "None"
   register: output
 - name: Assert the resource instance is well created
@@ -38,6 +40,7 @@
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}
     route_name: testroute{{ rpfx }}
+    address_prefix: 208.128.0.0/11
     next_hop_type: "None"
   register: output
 - name: Assert the state has not changed
