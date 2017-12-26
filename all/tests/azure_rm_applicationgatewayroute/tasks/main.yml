@@ -3,11 +3,16 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
+- name: Create RouteTables
+  azure_rm_applicationgatewayroutetable:
+    resource_group: "{{ resource_group }}"
+    route_table_name: routetablename{{ rpfx }}
+
 - name: Create instance of Routes -- check mode
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
-    route_table_name: routetablename
-    route_name: testroute
+    route_table_name: routetablename{{ rpfx }}
+    route_name: testroute{{ rpfx }}
     next_hop_type: "None"
   check_mode: yes
   register: output
@@ -19,8 +24,8 @@
 - name: Create instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
-    route_table_name: routetablename
-    route_name: testroute
+    route_table_name: routetablename{{ rpfx }}
+    route_name: testroute{{ rpfx }}
     next_hop_type: "None"
   register: output
 - name: Assert the resource instance is well created
@@ -31,8 +36,8 @@
 - name: Create again instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
-    route_table_name: routetablename
-    route_name: testroute
+    route_table_name: routetablename{{ rpfx }}
+    route_name: testroute{{ rpfx }}
     next_hop_type: "None"
   register: output
 - name: Assert the state has not changed
@@ -43,8 +48,8 @@
 - name: Delete instance of Routes -- check mode
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
-    route_table_name: routetablename
-    route_name: testroute
+    route_table_name: routetablename{{ rpfx }}
+    route_name: testroute{{ rpfx }}
     state: absent
   check_mode: yes
   register: output
@@ -56,8 +61,8 @@
 - name: Delete instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
-    route_table_name: routetablename
-    route_name: testroute
+    route_table_name: routetablename{{ rpfx }}
+    route_name: testroute{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -68,11 +73,17 @@
 - name: Delete unexisting instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
-    route_table_name: routetablename
-    route_name: testroute
+    route_table_name: routetablename{{ rpfx }}
+    route_name: testroute{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed == false
+
+- name: Delete instance of RouteTables
+  azure_rm_applicationgatewayroutetable:
+    resource_group: "{{ resource_group }}"
+    route_table_name: routetablename{{ rpfx }}
+    state: absent

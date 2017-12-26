@@ -64839,7 +64839,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testrt",
-            "test:default": ""
+            "test:default": "routetablename{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -68617,7 +68617,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testrt",
-            "test:default": "routetablename"
+            "test:default": "routetablename{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -68635,7 +68635,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "route1",
-            "test:default": "testroute"
+            "test:default": "testroute{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -68894,7 +68894,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_applicationgatewayroutetable",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
