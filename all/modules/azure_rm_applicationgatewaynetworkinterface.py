@@ -925,6 +925,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewaynetworkinterface:
       resource_group: rg1
       network_interface_name: test-nic
+      location: eastus
 '''
 
 RETURN = '''

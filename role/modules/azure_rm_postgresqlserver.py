@@ -89,7 +89,7 @@ EXAMPLES = '''
         name: SkuName
         tier: Basic
         capacity: 100
-      location: OneBox
+      location: eastus
       storage_mb: 1024
       enforce_ssl: Enabled
       admin_username: cloudsa

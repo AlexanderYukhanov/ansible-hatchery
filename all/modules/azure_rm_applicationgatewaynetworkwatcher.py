@@ -54,6 +54,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewaynetworkwatcher:
       resource_group: NOT FOUND
       network_watcher_name: NOT FOUND
+      location: eastus
 '''
 
 RETURN = '''

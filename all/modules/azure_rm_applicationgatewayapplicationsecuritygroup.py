@@ -51,7 +51,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewayapplicationsecuritygroup:
       resource_group: rg1
       application_security_group_name: test-asg
-      location: westus
+      location: eastus
 '''
 
 RETURN = '''

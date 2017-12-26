@@ -504,6 +504,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewayexpressroutecircuit:
       resource_group: NOT FOUND
       circuit_name: NOT FOUND
+      location: eastus
 '''
 
 RETURN = '''

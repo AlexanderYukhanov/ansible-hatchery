@@ -80,6 +80,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewaylocalnetworkgateway:
       resource_group: NOT FOUND
       local_network_gateway_name: NOT FOUND
+      location: eastus
 '''
 
 RETURN = '''

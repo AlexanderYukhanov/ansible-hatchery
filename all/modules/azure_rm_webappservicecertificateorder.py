@@ -72,6 +72,7 @@ EXAMPLES = '''
     azure_rm_webappservicecertificateorder:
       resource_group: NOT FOUND
       certificate_order_name: NOT FOUND
+      location: eastus
 '''
 
 RETURN = '''

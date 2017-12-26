@@ -462,7 +462,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewayroutefilter:
       resource_group: rg1
       route_filter_name: filterName
-      location: West US
+      location: eastus
 '''
 
 RETURN = '''

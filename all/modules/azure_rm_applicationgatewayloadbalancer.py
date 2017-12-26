@@ -653,6 +653,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewayloadbalancer:
       resource_group: rg1
       load_balancer_name: lb
+      location: eastus
 '''
 
 RETURN = '''

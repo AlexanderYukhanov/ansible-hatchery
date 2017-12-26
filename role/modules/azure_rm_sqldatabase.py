@@ -129,7 +129,7 @@ EXAMPLES = '''
       resource_group: sqlcrudtest-4799
       server_name: sqlcrudtest-5961
       name: testdb
-      location: Japan East
+      location: eastus
 '''
 
 RETURN = '''

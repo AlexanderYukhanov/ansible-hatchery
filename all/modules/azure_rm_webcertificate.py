@@ -70,7 +70,7 @@ EXAMPLES = '''
     azure_rm_webcertificate:
       resource_group: testrg123
       name: testc6282
-      location: East US
+      location: eastus
 '''
 
 RETURN = '''

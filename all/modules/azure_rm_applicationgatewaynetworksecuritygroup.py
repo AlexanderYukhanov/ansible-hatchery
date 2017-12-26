@@ -224,6 +224,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewaynetworksecuritygroup:
       resource_group: rg1
       network_security_group_name: testnsg
+      location: eastus
 '''
 
 RETURN = '''

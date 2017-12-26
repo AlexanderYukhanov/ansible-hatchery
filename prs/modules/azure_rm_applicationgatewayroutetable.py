@@ -87,6 +87,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewayroutetable:
       resource_group: rg1
       route_table_name: testrt
+      location: eastus
 '''
 
 RETURN = '''

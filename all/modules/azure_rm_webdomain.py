@@ -319,6 +319,7 @@ EXAMPLES = '''
     azure_rm_webdomain:
       resource_group: NOT FOUND
       domain_name: NOT FOUND
+      location: eastus
 '''
 
 RETURN = '''

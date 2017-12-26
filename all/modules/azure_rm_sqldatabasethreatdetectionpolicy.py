@@ -86,6 +86,7 @@ EXAMPLES = '''
       server_name: securityalert-6440
       database_name: testdb
       security_alert_policy_name: default
+      location: eastus
 '''
 
 RETURN = '''

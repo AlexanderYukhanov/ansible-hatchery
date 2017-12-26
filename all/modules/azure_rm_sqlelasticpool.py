@@ -72,7 +72,7 @@ EXAMPLES = '''
       resource_group: sqlcrudtest-2369
       server_name: sqlcrudtest-8069
       name: sqlcrudtest-8102
-      location: Japan East
+      location: eastus
 '''
 
 RETURN = '''

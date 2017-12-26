@@ -99,6 +99,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewaypublicipaddresse:
       resource_group: rg1
       public_ip_address_name: test-ip
+      location: eastus
 '''
 
 RETURN = '''

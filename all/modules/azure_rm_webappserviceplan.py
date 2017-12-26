@@ -138,7 +138,7 @@ EXAMPLES = '''
       resource_group: testrg123
       name: testsf6141
       kind: app
-      location: East US
+      location: eastus
       app_service_plan_name: testsf6141
       sku:
         name: P1

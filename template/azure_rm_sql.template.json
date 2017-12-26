@@ -1408,7 +1408,7 @@
           "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "",
+            "default": "eastus",
             "test:default": ""
           },
           "SubOptions": [],
@@ -3676,7 +3676,7 @@
           "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "Japan East",
+            "default": "eastus",
             "test:default": "eastus"
           },
           "SubOptions": [],
@@ -5152,7 +5152,7 @@
           "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "Japan East",
+            "default": "eastus",
             "test:default": "westus"
           },
           "SubOptions": [],

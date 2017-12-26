@@ -414,6 +414,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewayvirtualnetwork:
       resource_group: rg1
       virtual_network_name: test-vnet
+      location: eastus
 '''
 
 RETURN = '''

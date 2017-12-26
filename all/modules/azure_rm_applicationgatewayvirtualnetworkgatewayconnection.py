@@ -461,6 +461,7 @@ EXAMPLES = '''
     azure_rm_applicationgatewayvirtualnetworkgatewayconnection:
       resource_group: NOT FOUND
       virtual_network_gateway_connection_name: NOT FOUND
+      location: eastus
 '''
 
 RETURN = '''

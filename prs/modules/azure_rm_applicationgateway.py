@@ -1000,6 +1000,7 @@ EXAMPLES = '''
     azure_rm_applicationgateway:
       resource_group: NOT FOUND
       name: NOT FOUND
+      location: eastus
 '''
 
 RETURN = '''

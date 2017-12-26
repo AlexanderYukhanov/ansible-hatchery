@@ -537,6 +537,7 @@ EXAMPLES = '''
     azure_rm_webwebapp:
       resource_group: NOT FOUND
       name: NOT FOUND
+      location: eastus
       skip_dns_registration: NOT FOUND
       skip_custom_domain_verification: NOT FOUND
       force_dns_registration: NOT FOUND
