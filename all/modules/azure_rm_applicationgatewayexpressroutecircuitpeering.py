@@ -672,7 +672,7 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 type='int'
             ),
             peer_asn=dict(
-                type='long'
+                type='int'
             ),
             primary_peer_address_prefix=dict(
                 type='str'

@@ -3862,7 +3862,7 @@
           "Name": "containment_state",
           "NameAlt": "x",
           "Description": "The containment state of the database.",
-          "Type": "long",
+          "Type": "int",
           "Returned": "always",
           "SampleValue": "containment_state",
           "SubFields": []

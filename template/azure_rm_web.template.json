@@ -5824,7 +5824,7 @@
                   "Name": "max_memory_in_mb",
                   "NameAlt": "max_memory_in_mb",
                   "Disposition": "default",
-                  "Type": "long",
+                  "Type": "int",
                   "IsList": false,
                   "Required": "False",
                   "VariableValue": "None",
@@ -5842,7 +5842,7 @@
                   "Name": "max_disk_size_in_mb",
                   "NameAlt": "max_disk_size_in_mb",
                   "Disposition": "default",
-                  "Type": "long",
+                  "Type": "int",
                   "IsList": false,
                   "Required": "False",
                   "VariableValue": "None",
@@ -8087,7 +8087,7 @@
                   "Name": "max_memory_in_mb",
                   "NameAlt": "x",
                   "Description": "Maximum allowed memory usage in MB.",
-                  "Type": "long",
+                  "Type": "int",
                   "Returned": "always",
                   "SampleValue": "max_memory_in_mb",
                   "SubFields": []
@@ -8096,7 +8096,7 @@
                   "Name": "max_disk_size_in_mb",
                   "NameAlt": "x",
                   "Description": "Maximum allowed disk size usage in MB.",
-                  "Type": "long",
+                  "Type": "int",
                   "Returned": "always",
                   "SampleValue": "max_disk_size_in_mb",
                   "SubFields": []
@@ -11607,7 +11607,7 @@
               "Name": "available_capacity",
               "NameAlt": "x",
               "Description": "Available capacity (# of machines, bytes of storage etc...).",
-              "Type": "long",
+              "Type": "int",
               "Returned": "always",
               "SampleValue": "available_capacity",
               "SubFields": []
@@ -11616,7 +11616,7 @@
               "Name": "total_capacity",
               "NameAlt": "x",
               "Description": "Total capacity (# of machines, bytes of storage etc...).",
-              "Type": "long",
+              "Type": "int",
               "Returned": "always",
               "SampleValue": "total_capacity",
               "SubFields": []

@@ -160,7 +160,7 @@ class AzureRMServers(AzureRMModuleBase):
                 type='str'
             ),
             storage_mb=dict(
-                type='long'
+                type='int'
             ),
             version=dict(
                 type='str'

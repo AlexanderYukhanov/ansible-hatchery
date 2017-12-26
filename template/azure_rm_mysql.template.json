@@ -207,7 +207,7 @@
           "Name": "storage_mb",
           "NameAlt": "storage_mb",
           "Disposition": "parameters:properties",
-          "Type": "long",
+          "Type": "int",
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
@@ -476,7 +476,7 @@
           "Name": "storage_mb",
           "NameAlt": "x",
           "Description": "The maximum storage allowed for a server.",
-          "Type": "long",
+          "Type": "int",
           "Returned": "always",
           "SampleValue": "storage_mb",
           "SubFields": []
