@@ -68904,7 +68904,7 @@
       "ObjectName": "Routes",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
-      "CannotTestUpdate": true,
+      "CannotTestUpdate": false,
       "UpdateComparisonRules": null,
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null

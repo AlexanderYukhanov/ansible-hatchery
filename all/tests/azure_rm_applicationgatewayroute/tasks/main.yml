@@ -35,19 +35,6 @@
     that:
       - output.changed
 
-- name: Create again instance of Routes
-  azure_rm_applicationgatewayroute:
-    resource_group: "{{ resource_group }}"
-    route_table_name: routetablename{{ rpfx }}
-    route_name: testroute{{ rpfx }}
-    address_prefix: 208.128.0.0/11
-    next_hop_type: "None"
-  register: output
-- name: Assert the state has not changed
-  assert:
-    that:
-      - output.changed == false
-
 - name: Delete instance of Routes -- check mode
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
