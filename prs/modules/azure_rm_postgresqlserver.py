@@ -58,7 +58,7 @@ options:
     version:
         description:
             - Server version. Possible values include: C(9.5), C(9.6)
-    ssl_enforcement:
+    enforce_ssl:
         description:
             - Enable ssl enforcement or not when connect to server. Possible values include: C(Enabled), C(Disabled)
     create_mode:
@@ -91,7 +91,7 @@ EXAMPLES = '''
         capacity: 100
       location: OneBox
       storage_mb: 1024
-      ssl_enforcement: Enabled
+      enforce_ssl: Enabled
       admin_username: cloudsa
       admin_password: password
 '''
@@ -165,8 +165,8 @@ class AzureRMServers(AzureRMModuleBase):
             version=dict(
                 type='str'
             ),
-            ssl_enforcement=dict(
-                type='str'
+            enforce_ssl=dict(
+                type='bool'
             ),
             create_mode=dict(
                 type='str',
@@ -214,8 +214,8 @@ class AzureRMServers(AzureRMModuleBase):
                     self.parameters.setdefault("properties", {})["storage_mb"] = kwargs[key]
                 elif key == "version":
                     self.parameters.setdefault("properties", {})["version"] = kwargs[key]
-                elif key == "ssl_enforcement":
-                    self.parameters.setdefault("properties", {})["ssl_enforcement"] = kwargs[key]
+                elif key == "enforce_ssl":
+                    self.parameters.setdefault("properties", {})["ssl_enforcement"] = 'Enabled' if kwargs[key] else 'Disabled'
                 elif key == "create_mode":
                     self.parameters.setdefault("properties", {})["create_mode"] = kwargs[key]
                 elif key == "admin_username":
