@@ -35,7 +35,7 @@ options:
             - Kind of resource.
     location:
         description:
-            - Resource Location.
+            - Resource location. If not set, location from the resource group will be used as default.
     enabled:
         description:
             - <code>true</code> if the app is enabled; otherwise, <code>false</code>. Setting this value to false disables the app (takes the app offline).

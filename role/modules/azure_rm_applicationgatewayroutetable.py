@@ -35,7 +35,7 @@ options:
             - Resource ID.
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
     routes:
         description:
             - Collection of routes contained within a route table.

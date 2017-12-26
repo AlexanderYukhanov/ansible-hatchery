@@ -32,7 +32,7 @@ options:
         required: True
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
     admin_username:
         description:
             - Administrator username for the server. Once created it cannot be changed.

@@ -193,7 +193,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The location the resource resides in.",
+          "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "OneBox",

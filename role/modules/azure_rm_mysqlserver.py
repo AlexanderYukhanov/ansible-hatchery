@@ -51,7 +51,7 @@ options:
                     - The family of hardware.
     location:
         description:
-            - The location the resource resides in.
+            - Resource location. If not set, location from the resource group will be used as default.
     storage_mb:
         description:
             - The maximum storage allowed for a server.

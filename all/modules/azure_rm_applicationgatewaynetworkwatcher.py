@@ -35,7 +35,7 @@ options:
             - Resource ID.
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.

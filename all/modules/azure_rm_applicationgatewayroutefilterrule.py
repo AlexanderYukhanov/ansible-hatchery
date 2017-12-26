@@ -54,7 +54,7 @@ options:
             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
 
 extends_documentation_fragment:
     - azure

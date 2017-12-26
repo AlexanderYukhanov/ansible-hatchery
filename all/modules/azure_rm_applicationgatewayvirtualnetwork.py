@@ -35,7 +35,7 @@ options:
             - Resource ID.
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
     address_space:
         description:
             - The AddressSpace that contains an array of IP address ranges that can be used by subnets.

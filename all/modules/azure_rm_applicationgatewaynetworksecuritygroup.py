@@ -35,7 +35,7 @@ options:
             - Resource ID.
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
     security_rules:
         description:
             - A collection of security rules of the network security group.

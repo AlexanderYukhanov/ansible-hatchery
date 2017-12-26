@@ -35,7 +35,7 @@ options:
             - Resource ID.
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
     local_network_address_space:
         description:
             - Local network site address space.

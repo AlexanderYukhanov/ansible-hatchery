@@ -35,7 +35,7 @@ options:
             - Kind of resource.
     location:
         description:
-            - Resource Location.
+            - Resource location. If not set, location from the resource group will be used as default.
     certificates:
         description:
             - State of the Key Vault secret.

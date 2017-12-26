@@ -1325,7 +1325,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The geo-location where the resource lives",
+          "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -3463,7 +3463,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Resource location.",
+          "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "Japan East",
@@ -4887,7 +4887,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Resource location.",
+          "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "Japan East",
@@ -6318,7 +6318,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Resource location.",
+          "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "westus",

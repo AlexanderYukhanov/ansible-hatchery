@@ -35,7 +35,7 @@ options:
             - Kind of resource.
     location:
         description:
-            - Resource Location.
+            - Resource location. If not set, location from the resource group will be used as default.
     app_service_environment_resource_name:
         description:
             - Name of the App Service Environment.

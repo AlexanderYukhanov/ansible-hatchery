@@ -40,7 +40,7 @@ options:
         required: True
     location:
         description:
-            - The geo-location where the resource lives
+            - Resource location. If not set, location from the resource group will be used as default.
     state:
         description:
             - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(N

@@ -36,7 +36,7 @@ options:
         required: True
     location:
         description:
-            - Resource location.
+            - Resource location. If not set, location from the resource group will be used as default.
     edition:
         description:
             - The edition of the elastic pool. Possible values include: C(Basic), C(Standard), C(Premium)
