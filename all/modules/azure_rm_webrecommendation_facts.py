@@ -35,8 +35,8 @@ options:
             - Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.
     filter:
         description:
-            - "Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channels eq 'Api' or channel eq 'Not
-               ification'"
+            - "Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channels eq C(Api) or channel eq C(N
+               otification)"
 
 extends_documentation_fragment:
     - azure

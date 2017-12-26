@@ -43,8 +43,8 @@ options:
             - The geo-location where the resource lives
     state:
         description:
-            - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Ne
-               w', 'Enabled', 'Disabled'"
+            - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(N
+               ew), C(Enabled), C(Disabled)"
         required: True
     disabled_alerts:
         description:
@@ -55,7 +55,7 @@ options:
             - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
     email_account_admins:
         description:
-            - "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'"
+            - Specifies that the alert is sent to the account administrators. Possible values include: C(Enabled), C(Disabled)
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
@@ -68,7 +68,7 @@ options:
             - Specifies the number of days to keep in the Threat Detection audit logs.
     use_server_default:
         description:
-            - "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'"
+            - Specifies whether to use the default server policy. Possible values include: C(Enabled), C(Disabled)
 
 extends_documentation_fragment:
     - azure
@@ -97,8 +97,8 @@ id:
     sample: id
 state:
     description:
-        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'New',
-           'Enabled', 'Disabled'"
+        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(New),
+            C(Enabled), C(Disabled)"
     returned: always
     type: str
     sample: state

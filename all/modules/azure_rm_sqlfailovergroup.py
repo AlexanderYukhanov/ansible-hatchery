@@ -42,7 +42,7 @@ options:
             failover_policy:
                 description:
                     - "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriod
-                       Minutes is required. Possible values include: 'Manual', 'Automatic'"
+                       Minutes is required. Possible values include: C(Manual), C(Automatic)"
                 required: True
             failover_with_data_loss_grace_period_minutes:
                 description:
@@ -54,7 +54,7 @@ options:
         suboptions:
             failover_policy:
                 description:
-                    - "Failover policy of the read-only endpoint for the failover group. Possible values include: 'Disabled', 'Enabled'"
+                    - Failover policy of the read-only endpoint for the failover group. Possible values include: C(Disabled), C(Enabled)
     partner_servers:
         description:
             - List of partner server information for the failover group.

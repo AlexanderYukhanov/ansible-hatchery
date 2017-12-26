@@ -32,16 +32,16 @@ options:
         required: True
     key_name:
         description:
-            - "The name of the server key to be operated on (updated or created). The key name is required to be in the format of 'vault_key_version'. For ex
-               ample, if the keyId is https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901, then the server key name shoul
-               d be formatted as: YourVaultName_YourKeyName_01234567890123456789012345678901"
+            - "The name of the server key to be operated on (updated or created). The key name is required to be in the format of C(vault_key_version). For e
+               xample, if the keyId is https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901, then the server key name shou
+               ld be formatted as: YourVaultName_YourKeyName_01234567890123456789012345678901"
         required: True
     kind:
         description:
             - Kind of encryption protector. This is metadata used for the Azure portal experience.
     server_key_type:
         description:
-            - "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'"
+            - The server key type like C(ServiceManaged), C(AzureKeyVault). Possible values include: C(ServiceManaged), C(AzureKeyVault)
         required: True
     uri:
         description:

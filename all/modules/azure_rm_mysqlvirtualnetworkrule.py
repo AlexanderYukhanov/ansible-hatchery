@@ -68,7 +68,7 @@ id:
     sample: id
 state:
     description:
-        - "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'"
+        - Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)
     returned: always
     type: str
     sample: state

@@ -50,7 +50,7 @@ options:
             - Certificate key size.
     product_type:
         description:
-            - "Certificate product type. Possible values include: 'StandardDomainValidatedSsl', 'StandardDomainValidatedWildCardSsl'"
+            - Certificate product type. Possible values include: C(StandardDomainValidatedSsl), C(StandardDomainValidatedWildCardSsl)
     auto_renew:
         description:
             - <code>true</code> if the certificate should be automatically renewed when it expires; otherwise, <code>false</code>.
@@ -83,8 +83,8 @@ id:
     sample: id
 status:
     description:
-        - "Current order status. Possible values include: 'Pendingissuance', 'Issued', 'Revoked', 'Canceled', 'Denied', 'Pendingrevocation', 'PendingRekey',
-           'Unused', 'Expired', 'NotSubmitted'"
+        - "Current order status. Possible values include: C(Pendingissuance), C(Issued), C(Revoked), C(Canceled), C(Denied), C(Pendingrevocation), C(PendingR
+           ekey), C(Unused), C(Expired), C(NotSubmitted)"
     returned: always
     type: str
     sample: status

@@ -40,7 +40,7 @@ options:
         required: True
     status:
         description:
-            - "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'"
+            - The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)
 
 extends_documentation_fragment:
     - azure
@@ -70,7 +70,7 @@ id:
     sample: id
 status:
     description:
-        - "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'"
+        - The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)
     returned: always
     type: str
     sample: status

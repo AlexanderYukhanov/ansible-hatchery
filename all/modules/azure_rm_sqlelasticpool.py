@@ -39,7 +39,7 @@ options:
             - Resource location.
     edition:
         description:
-            - "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'"
+            - The edition of the elastic pool. Possible values include: C(Basic), C(Standard), C(Premium)
     dtu:
         description:
             - The total shared DTU for the database elastic pool.
@@ -84,7 +84,7 @@ id:
     sample: id
 state:
     description:
-        - "The state of the elastic pool. Possible values include: 'Creating', 'Ready', 'Disabled'"
+        - The state of the elastic pool. Possible values include: C(Creating), C(Ready), C(Disabled)
     returned: always
     type: str
     sample: state

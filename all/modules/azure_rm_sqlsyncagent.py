@@ -65,7 +65,7 @@ id:
     sample: id
 state:
     description:
-        - "State of the sync agent. Possible values include: 'Online', 'Offline', 'NeverConnected'"
+        - State of the sync agent. Possible values include: C(Online), C(Offline), C(NeverConnected)
     returned: always
     type: str
     sample: state

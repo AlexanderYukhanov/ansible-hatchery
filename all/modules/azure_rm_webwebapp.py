@@ -48,7 +48,7 @@ options:
                     - Hostname.
             ssl_state:
                 description:
-                    - "SSL type. Possible values include: 'Disabled', 'SniEnabled', 'IpBasedEnabled'"
+                    - SSL type. Possible values include: C(Disabled), C(SniEnabled), C(IpBasedEnabled)
             virtual_ip:
                 description:
                     - Virtual IP address assigned to the hostname if IP based SSL is enabled.
@@ -60,7 +60,7 @@ options:
                     - Set to <code>true</code> to update existing hostname.
             host_type:
                 description:
-                    - "Indicates whether the hostname is a standard or repository hostname. Possible values include: 'Standard', 'Repository'"
+                    - Indicates whether the hostname is a standard or repository hostname. Possible values include: C(Standard), C(Repository)
     server_farm_id:
         description:
             - "Resource ID of the associated App Service plan, formatted as: '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.
@@ -139,8 +139,8 @@ options:
                             - Connection string value.
                     type:
                         description:
-                            - "Type of database. Possible values include: 'MySql', 'SQLServer', 'SQLAzure', 'Custom', 'NotificationHub', 'ServiceBus', 'Event
-                               Hub', 'ApiHub', 'DocDb', 'RedisCache', 'PostgreSQL'"
+                            - "Type of database. Possible values include: C(MySql), C(SQLServer), C(SQLAzure), C(Custom), C(NotificationHub), C(ServiceBus),
+                               C(EventHub), C(ApiHub), C(DocDb), C(RedisCache), C(PostgreSQL)"
             handler_mappings:
                 description:
                     - Handler mappings.
@@ -159,8 +159,8 @@ options:
                     - Document root.
             scm_type:
                 description:
-                    - "SCM type. Possible values include: 'None', 'Dropbox', 'Tfs', 'LocalGit', 'GitHub', 'CodePlexGit', 'CodePlexHg', 'BitbucketGit', 'Bitbu
-                       cketHg', 'ExternalGit', 'ExternalHg', 'OneDrive', 'VSO'"
+                    - "SCM type. Possible values include: C(None), C(Dropbox), C(Tfs), C(LocalGit), C(GitHub), C(CodePlexGit), C(CodePlexHg), C(BitbucketGit)
+                       , C(BitbucketHg), C(ExternalGit), C(ExternalHg), C(OneDrive), C(VSO)"
             use32_bit_worker_process:
                 description:
                     - <code>true</code> to use 32-bit worker process; otherwise, <code>false</code>.
@@ -184,7 +184,7 @@ options:
                     - App command line to launch.
             managed_pipeline_mode:
                 description:
-                    - "Managed pipeline mode. Possible values include: 'Integrated', 'Classic'"
+                    - Managed pipeline mode. Possible values include: C(Integrated), C(Classic)
             virtual_applications:
                 description:
                     - Virtual applications.
@@ -210,8 +210,8 @@ options:
                                     - Physical path.
             load_balancing:
                 description:
-                    - "Site load balancing. Possible values include: 'WeightedRoundRobin', 'LeastRequests', 'LeastResponseTime', 'WeightedTotalTraffic', 'Req
-                       uestHash'"
+                    - "Site load balancing. Possible values include: C(WeightedRoundRobin), C(LeastRequests), C(LeastResponseTime), C(WeightedTotalTraffic),
+                       C(RequestHash)"
             experiments:
                 description:
                     - This is work around for polymophic types.
@@ -324,7 +324,7 @@ options:
                         suboptions:
                             action_type:
                                 description:
-                                    - "Predefined action to be taken. Possible values include: 'Recycle', 'LogEvent', 'CustomAction'"
+                                    - Predefined action to be taken. Possible values include: C(Recycle), C(LogEvent), C(CustomAction)
                             custom_action:
                                 description:
                                     - Custom action to be taken.
@@ -368,8 +368,8 @@ options:
                     tags_requiring_auth:
                         description:
                             - "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endp
-                               oint.\nTags can consist of alphanumeric characters and the following:\n'_', '@', '#', '.', ':', '-'. \nValidation should be pe
-                               rformed at the PushRequestHandler."
+                               oint.\nTags can consist of alphanumeric characters and the following:\nC(_), C(@), C(#), C(.), C(:), C(-). \nValidation should
+                                be performed at the PushRequestHandler."
                     dynamic_tags_json:
                         description:
                             - "Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration

@@ -24,9 +24,9 @@ description:
 options:
     scope:
         description:
-            - "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/'
-               for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscri
-               ption-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource."
+            - "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use C(/subscriptions/{subscription-id}/)
+                for a subscription, C(/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}) for a resource group, and C(/subscriptions/{subs
+               cription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}) for a resource."
         required: True
     role_assignment_name:
         description:

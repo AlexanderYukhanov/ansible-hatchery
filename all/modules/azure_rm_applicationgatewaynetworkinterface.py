@@ -65,18 +65,19 @@ options:
                             - A description for this rule. Restricted to 140 chars.
                     protocol:
                         description:
-                            - "Network protocol this rule applies to. Possible values are 'Tcp', 'Udp', and '*'. Possible values include: 'Tcp', 'Udp', '*'"
+                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                         required: True
                     source_port_range:
                         description:
-                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     destination_port_range:
                         description:
-                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'Azu
-                               reLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                            - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetwork), C(
+                               AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates fr
+                               om. "
                     source_address_prefixes:
                         description:
                             - The CIDR or source IP ranges.
@@ -92,8 +93,8 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. Default ta
-                               gs such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. Default t
+                               ags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                     destination_address_prefixes:
                         description:
                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -115,7 +116,7 @@ options:
                             - The destination port ranges.
                     access:
                         description:
-                            - "The network traffic is allowed or denied. Possible values are: 'Allow' and 'Deny'. Possible values include: 'Allow', 'Deny'"
+                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                         required: True
                     priority:
                         description:
@@ -124,11 +125,11 @@ options:
                     direction:
                         description:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                                are: 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
+                                are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                         required: True
                     provisioning_state:
                         description:
-                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -147,18 +148,19 @@ options:
                             - A description for this rule. Restricted to 140 chars.
                     protocol:
                         description:
-                            - "Network protocol this rule applies to. Possible values are 'Tcp', 'Udp', and '*'. Possible values include: 'Tcp', 'Udp', '*'"
+                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                         required: True
                     source_port_range:
                         description:
-                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     destination_port_range:
                         description:
-                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'Azu
-                               reLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                            - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetwork), C(
+                               AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates fr
+                               om. "
                     source_address_prefixes:
                         description:
                             - The CIDR or source IP ranges.
@@ -174,8 +176,8 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. Default ta
-                               gs such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. Default t
+                               ags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                     destination_address_prefixes:
                         description:
                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -197,7 +199,7 @@ options:
                             - The destination port ranges.
                     access:
                         description:
-                            - "The network traffic is allowed or denied. Possible values are: 'Allow' and 'Deny'. Possible values include: 'Allow', 'Deny'"
+                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                         required: True
                     priority:
                         description:
@@ -206,11 +208,11 @@ options:
                     direction:
                         description:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                                are: 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
+                                are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                         required: True
                     provisioning_state:
                         description:
-                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -222,7 +224,7 @@ options:
                     - The resource GUID property of the network security group resource.
             provisioning_state:
                 description:
-                    - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                    - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
             etag:
                 description:
                     - A unique read-only string that changes whenever the resource is updated.
@@ -262,8 +264,8 @@ options:
                                             - Backend addresses
                                     provisioning_state:
                                         description:
-                                            - "Provisioning state of the backend address pool resource. Possible values are: 'Updating', 'Deleting', and 'Fai
-                                               led'."
+                                            - "Provisioning state of the backend address pool resource. Possible values are: C(Updating), C(Deleting), and C(
+                                               Failed)."
                                     name:
                                         description:
                                             - Resource that is unique within a resource group. This name can be used to access the resource.
@@ -282,7 +284,7 @@ options:
                                             - Resource ID.
                                     provisioning_state:
                                         description:
-                                            - "Get provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                            - Get provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                                     name:
                                         description:
                                             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -301,7 +303,7 @@ options:
                                             - A reference to frontend IP addresses.
                                     protocol:
                                         description:
-                                            - "Possible values include: 'Udp', 'Tcp', 'All'"
+                                            - Possible values include: C(Udp), C(Tcp), C(All)
                                     frontend_port:
                                         description:
                                             - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Accept
@@ -315,13 +317,13 @@ options:
                                                 minutes. This element is only used when the protocol is set to TCP."
                                     enable_floating_ip:
                                         description:
-                                            - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Av
-                                               ailability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This
-                                                setting can't be changed after you create the endpoint."
+                                            - "Configures a virtual machineC(s endpoint for the floating IP capability required to configure a SQL AlwaysOn A
+                                               vailability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. Thi
+                                               s setting can)t be changed after you create the endpoint."
                                     provisioning_state:
                                         description:
-                                            - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Faile
-                                               d'."
+                                            - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Fa
+                                               iled)."
                                     name:
                                         description:
                                             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -333,12 +335,12 @@ options:
                                     - Private IP address of the IP configuration.
                             private_ip_allocation_method:
                                 description:
-                                    - "Defines how a private IP address is assigned. Possible values are: 'Static' and 'Dynamic'. Possible values include: 'S
-                                       tatic', 'Dynamic'"
+                                    - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values include:
+                                       C(Static), C(Dynamic)"
                             private_ip_address_version:
                                 description:
                                     - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Def
-                                       ault is taken as IPv4.  Possible values are: 'IPv4' and 'IPv6'. Possible values include: 'IPv4', 'IPv6'"
+                                       ault is taken as IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)"
                             subnet:
                                 description:
                                     - Subnet bound to the IP configuration.
@@ -388,11 +390,11 @@ options:
                                             - The public IP address SKU.
                                     public_ip_allocation_method:
                                         description:
-                                            - "The public IP allocation method. Possible values are: 'Static' and 'Dynamic'. Possible values include: 'Static
-                                               ', 'Dynamic'"
+                                            - "The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Sta
+                                               tic), C(Dynamic)"
                                     public_ip_address_version:
                                         description:
-                                            - "The public IP address version. Possible values are: 'IPv4' and 'IPv6'. Possible values include: 'IPv4', 'IPv6'"
+                                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
                                     dns_settings:
                                         description:
                                             - The FQDN of the DNS record associated with the public IP address.
@@ -407,7 +409,7 @@ options:
                                             - The resource GUID property of the public IP resource.
                                     provisioning_state:
                                         description:
-                                            - "The provisioning state of the PublicIP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                            - The provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                                     etag:
                                         description:
                                             - A unique read-only string that changes whenever the resource is updated.
@@ -426,8 +428,8 @@ options:
                                             - Resource location.
                             provisioning_state:
                                 description:
-                                    - "The provisioning state of the network interface IP configuration. Possible values are: 'Updating', 'Deleting', and 'Fa
-                                       iled'."
+                                    - "The provisioning state of the network interface IP configuration. Possible values are: C(Updating), C(Deleting), and C
+                                       (Failed)."
                             name:
                                 description:
                                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -446,7 +448,7 @@ options:
                                     - IP address
                     provisioning_state:
                         description:
-                            - "Provisioning state of the backend address pool resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - Provisioning state of the backend address pool resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - Resource that is unique within a resource group. This name can be used to access the resource.
@@ -465,7 +467,7 @@ options:
                             - Resource ID.
                     provisioning_state:
                         description:
-                            - "Get provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - Get provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -488,7 +490,7 @@ options:
                                     - Resource ID.
                     protocol:
                         description:
-                            - "Possible values include: 'Udp', 'Tcp', 'All'"
+                            - Possible values include: C(Udp), C(Tcp), C(All)
                     frontend_port:
                         description:
                             - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values rang
@@ -502,12 +504,12 @@ options:
                                lement is only used when the protocol is set to TCP."
                     enable_floating_ip:
                         description:
-                            - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group
-                               . This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after
-                               you create the endpoint."
+                            - "Configures a virtual machineC(s endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Grou
+                               p. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after
+                                you create the endpoint."
                     provisioning_state:
                         description:
-                            - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -519,12 +521,12 @@ options:
                     - Private IP address of the IP configuration.
             private_ip_allocation_method:
                 description:
-                    - "Defines how a private IP address is assigned. Possible values are: 'Static' and 'Dynamic'. Possible values include: 'Static', 'Dynamic
-                       '"
+                    - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dyn
+                       amic)"
             private_ip_address_version:
                 description:
                     - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as
-                        IPv4.  Possible values are: 'IPv4' and 'IPv6'. Possible values include: 'IPv4', 'IPv6'"
+                        IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)"
             subnet:
                 description:
                     - Subnet bound to the IP configuration.
@@ -557,22 +559,21 @@ options:
                                             - A description for this rule. Restricted to 140 chars.
                                     protocol:
                                         description:
-                                            - "Network protocol this rule applies to. Possible values are 'Tcp', 'Udp', and '*'. Possible values include: 'Tc
-                                               p', 'Udp', '*'"
+                                            - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
+                                               C(Tcp), C(Udp), C(*)"
                                         required: True
                                     source_port_range:
                                         description:
-                                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all port
-                                               s."
+                                            - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                                     destination_port_range:
                                         description:
-                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all
-                                                ports."
+                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match al
+                                               l ports."
                                     source_address_prefix:
                                         description:
-                                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'Virtu
-                                               alNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where n
-                                               etwork traffic originates from. "
+                                            - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(Vir
+                                               tualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies whe
+                                               re network traffic originates from. "
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
@@ -581,8 +582,8 @@ options:
                                             - The application security group specified as source.
                                     destination_address_prefix:
                                         description:
-                                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source
-                                                IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                                            - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all sourc
+                                               e IPs. Default tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -597,8 +598,8 @@ options:
                                             - The destination port ranges.
                                     access:
                                         description:
-                                            - "The network traffic is allowed or denied. Possible values are: 'Allow' and 'Deny'. Possible values include: 'A
-                                               llow', 'Deny'"
+                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
+                                               C(Allow), C(Deny)"
                                         required: True
                                     priority:
                                         description:
@@ -607,11 +608,11 @@ options:
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
+                                                Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                                         required: True
                                     provisioning_state:
                                         description:
-                                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -630,22 +631,21 @@ options:
                                             - A description for this rule. Restricted to 140 chars.
                                     protocol:
                                         description:
-                                            - "Network protocol this rule applies to. Possible values are 'Tcp', 'Udp', and '*'. Possible values include: 'Tc
-                                               p', 'Udp', '*'"
+                                            - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
+                                               C(Tcp), C(Udp), C(*)"
                                         required: True
                                     source_port_range:
                                         description:
-                                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all port
-                                               s."
+                                            - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                                     destination_port_range:
                                         description:
-                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all
-                                                ports."
+                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match al
+                                               l ports."
                                     source_address_prefix:
                                         description:
-                                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'Virtu
-                                               alNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where n
-                                               etwork traffic originates from. "
+                                            - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(Vir
+                                               tualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies whe
+                                               re network traffic originates from. "
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
@@ -654,8 +654,8 @@ options:
                                             - The application security group specified as source.
                                     destination_address_prefix:
                                         description:
-                                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source
-                                                IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                                            - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all sourc
+                                               e IPs. Default tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -670,8 +670,8 @@ options:
                                             - The destination port ranges.
                                     access:
                                         description:
-                                            - "The network traffic is allowed or denied. Possible values are: 'Allow' and 'Deny'. Possible values include: 'A
-                                               llow', 'Deny'"
+                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
+                                               C(Allow), C(Deny)"
                                         required: True
                                     priority:
                                         description:
@@ -680,11 +680,11 @@ options:
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
+                                                Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                                         required: True
                                     provisioning_state:
                                         description:
-                                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -696,7 +696,7 @@ options:
                                     - The resource GUID property of the network security group resource.
                             provisioning_state:
                                 description:
-                                    - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                    - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                             etag:
                                 description:
                                     - A unique read-only string that changes whenever the resource is updated.
@@ -722,9 +722,9 @@ options:
                                             - The destination CIDR to which the route applies.
                                     next_hop_type:
                                         description:
-                                            - "The type of Azure hop the packet should be sent to. Possible values are: 'VirtualNetworkGateway', 'VnetLocal',
-                                                'Internet', 'VirtualAppliance', and 'None'. Possible values include: 'VirtualNetworkGateway', 'VnetLocal', 'I
-                                               nternet', 'VirtualAppliance', 'None'"
+                                            - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal
+                                               ), C(Internet), C(VirtualAppliance), and C(None). Possible values include: C(VirtualNetworkGateway), C(VnetLoc
+                                               al), C(Internet), C(VirtualAppliance), C(None)"
                                         required: True
                                     next_hop_ip_address:
                                         description:
@@ -732,7 +732,7 @@ options:
                                                ype is VirtualAppliance."
                                     provisioning_state:
                                         description:
-                                            - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                            - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -744,7 +744,7 @@ options:
                                     - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
                             provisioning_state:
                                 description:
-                                    - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                    - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                             etag:
                                 description:
                                     - Gets a unique read-only string that changes whenever the resource is updated.
@@ -805,13 +805,13 @@ options:
                         suboptions:
                             name:
                                 description:
-                                    - "Name of a public IP address SKU. Possible values include: 'Basic', 'Standard'"
+                                    - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
                     public_ip_allocation_method:
                         description:
-                            - "The public IP allocation method. Possible values are: 'Static' and 'Dynamic'. Possible values include: 'Static', 'Dynamic'"
+                            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
                     public_ip_address_version:
                         description:
-                            - "The public IP address version. Possible values are: 'IPv4' and 'IPv6'. Possible values include: 'IPv4', 'IPv6'"
+                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
                     dns_settings:
                         description:
                             - The FQDN of the DNS record associated with the public IP address.
@@ -841,7 +841,7 @@ options:
                             - The resource GUID property of the public IP resource.
                     provisioning_state:
                         description:
-                            - "The provisioning state of the PublicIP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - The provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     etag:
                         description:
                             - A unique read-only string that changes whenever the resource is updated.
@@ -860,7 +860,7 @@ options:
                             - Resource location.
             provisioning_state:
                 description:
-                    - "The provisioning state of the network interface IP configuration. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                    - The provisioning state of the network interface IP configuration. Possible values are: C(Updating), C(Deleting), and C(Failed).
             name:
                 description:
                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -873,8 +873,8 @@ options:
         suboptions:
             dns_servers:
                 description:
-                    - "List of DNS servers IP addresses. Use 'AzureProvidedDNS' to switch to azure provided DNS resolution. 'AzureProvidedDNS' value cannot b
-                       e combined with other IPs, it must be the only value in dnsServers collection."
+                    - "List of DNS servers IP addresses. Use C(AzureProvidedDNS) to switch to azure provided DNS resolution. C(AzureProvidedDNS) value cannot
+                        be combined with other IPs, it must be the only value in dnsServers collection."
             applied_dns_servers:
                 description:
                     - "If the VM that uses this NIC is part of an Availability Set, then this list will have the union of all DNS servers from all NICs that
@@ -906,7 +906,7 @@ options:
             - The resource GUID property of the network interface resource.
     provisioning_state:
         description:
-            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.

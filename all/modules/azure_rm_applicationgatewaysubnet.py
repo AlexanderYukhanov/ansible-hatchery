@@ -62,18 +62,19 @@ options:
                             - A description for this rule. Restricted to 140 chars.
                     protocol:
                         description:
-                            - "Network protocol this rule applies to. Possible values are 'Tcp', 'Udp', and '*'. Possible values include: 'Tcp', 'Udp', '*'"
+                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                         required: True
                     source_port_range:
                         description:
-                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     destination_port_range:
                         description:
-                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'Azu
-                               reLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                            - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetwork), C(
+                               AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates fr
+                               om. "
                     source_address_prefixes:
                         description:
                             - The CIDR or source IP ranges.
@@ -89,8 +90,8 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. Default ta
-                               gs such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. Default t
+                               ags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                     destination_address_prefixes:
                         description:
                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -112,7 +113,7 @@ options:
                             - The destination port ranges.
                     access:
                         description:
-                            - "The network traffic is allowed or denied. Possible values are: 'Allow' and 'Deny'. Possible values include: 'Allow', 'Deny'"
+                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                         required: True
                     priority:
                         description:
@@ -121,11 +122,11 @@ options:
                     direction:
                         description:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                                are: 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
+                                are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                         required: True
                     provisioning_state:
                         description:
-                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -144,18 +145,19 @@ options:
                             - A description for this rule. Restricted to 140 chars.
                     protocol:
                         description:
-                            - "Network protocol this rule applies to. Possible values are 'Tcp', 'Udp', and '*'. Possible values include: 'Tcp', 'Udp', '*'"
+                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                         required: True
                     source_port_range:
                         description:
-                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     destination_port_range:
                         description:
-                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'Azu
-                               reLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                            - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetwork), C(
+                               AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates fr
+                               om. "
                     source_address_prefixes:
                         description:
                             - The CIDR or source IP ranges.
@@ -171,8 +173,8 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. Default ta
-                               gs such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. Default t
+                               ags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                     destination_address_prefixes:
                         description:
                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -194,7 +196,7 @@ options:
                             - The destination port ranges.
                     access:
                         description:
-                            - "The network traffic is allowed or denied. Possible values are: 'Allow' and 'Deny'. Possible values include: 'Allow', 'Deny'"
+                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                         required: True
                     priority:
                         description:
@@ -203,11 +205,11 @@ options:
                     direction:
                         description:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                                are: 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
+                                are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                         required: True
                     provisioning_state:
                         description:
-                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -219,7 +221,7 @@ options:
                     - The resource GUID property of the network security group resource.
             provisioning_state:
                 description:
-                    - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                    - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
             etag:
                 description:
                     - A unique read-only string that changes whenever the resource is updated.
@@ -245,9 +247,9 @@ options:
                             - The destination CIDR to which the route applies.
                     next_hop_type:
                         description:
-                            - "The type of Azure hop the packet should be sent to. Possible values are: 'VirtualNetworkGateway', 'VnetLocal', 'Internet', 'Vi
-                               rtualAppliance', and 'None'. Possible values include: 'VirtualNetworkGateway', 'VnetLocal', 'Internet', 'VirtualAppliance', 'N
-                               one'"
+                            - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal), C(Internet),
+                               C(VirtualAppliance), and C(None). Possible values include: C(VirtualNetworkGateway), C(VnetLocal), C(Internet), C(VirtualAppli
+                               ance), C(None)"
                         required: True
                     next_hop_ip_address:
                         description:
@@ -255,7 +257,7 @@ options:
                                pliance."
                     provisioning_state:
                         description:
-                            - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -267,7 +269,7 @@ options:
                     - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
             provisioning_state:
                 description:
-                    - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                    - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
             etag:
                 description:
                     - Gets a unique read-only string that changes whenever the resource is updated.

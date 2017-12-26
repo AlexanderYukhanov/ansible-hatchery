@@ -44,7 +44,7 @@ options:
         required: True
     database_type:
         description:
-            - "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'"
+            - Database type of the sync member. Possible values include: C(AzureSqlDatabase), C(SqlServerDatabase)
     sync_agent_id:
         description:
             - ARM resource id of the sync agent in the sync member.
@@ -65,7 +65,7 @@ options:
             - Password of the member database in the sync member.
     sync_direction:
         description:
-            - "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'"
+            - Sync direction of the sync member. Possible values include: C(Bidirectional), C(OneWayMemberToHub), C(OneWayHubToMember)
 
 extends_documentation_fragment:
     - azure

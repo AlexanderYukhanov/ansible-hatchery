@@ -66,8 +66,8 @@ options:
                     - Subnet within the Virtual Network.
     internal_load_balancing_mode:
         description:
-            - "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values include: 'None', 'Web',
-               'Publishing'"
+            - "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values include: C(None), C(Web)
+               , C(Publishing)"
     multi_size:
         description:
             - "Front-end VM size, e.g. 'Medium', 'Large'."
@@ -84,7 +84,7 @@ options:
                     - Worker size ID for referencing this worker pool.
             compute_mode:
                 description:
-                    - "Shared or dedicated app hosting. Possible values include: 'Shared', 'Dedicated', 'Dynamic'"
+                    - Shared or dedicated app hosting. Possible values include: C(Shared), C(Dedicated), C(Dynamic)
             worker_size:
                 description:
                     - VM size of the worker pool instances.
@@ -103,7 +103,7 @@ options:
         suboptions:
             action:
                 description:
-                    - "Action object. Possible values include: 'Permit', 'Deny'"
+                    - Action object. Possible values include: C(Permit), C(Deny)
             description:
                 description:
                     - Description of network access control entry.
@@ -166,7 +166,7 @@ id:
     sample: id
 status:
     description:
-        - "Current status of the App Service Environment. Possible values include: 'Preparing', 'Ready', 'Scaling', 'Deleting'"
+        - Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)
     returned: always
     type: str
     sample: status

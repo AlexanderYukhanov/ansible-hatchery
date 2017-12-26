@@ -55,8 +55,8 @@ options:
             - "Specify 'true' to include metric details in the response. It is 'false' by default."
     filter:
         description:
-            - "Return only metrics specified in the filter (using OData syntax). For example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') an
-               d startTime eq '2014-01-01T00:00:00Z' and endTime eq '2014-12-31T23:59:59Z' and timeGrain eq duration'[Hour|Minute|Day]'."
+            - "Return only metrics specified in the filter (using OData syntax). For example: $filter=(name.value eq C(Metric1) or name.value eq C(Metric2))
+               and startTime eq C(2014-01-01T00:00:00Z) and endTime eq C(2014-12-31T23:59:59Z) and timeGrain eq durationC([Hour|Minute|Day])."
     target_slot:
         description:
             - Destination deployment slot during swap operation.
@@ -74,7 +74,7 @@ options:
             - "The type of view. This can either be 'summary' or 'detailed'."
     format:
         description:
-            - "Name of the format. Valid values are: \nFileZilla3\nWebDeploy -- default\nFtp. Possible values include: 'FileZilla3', 'WebDeploy', 'Ftp'"
+            - "Name of the format. Valid values are: \nFileZilla3\nWebDeploy -- default\nFtp. Possible values include: C(FileZilla3), C(WebDeploy), C(Ftp)"
     web_job_name:
         description:
             - Name of Web Job.

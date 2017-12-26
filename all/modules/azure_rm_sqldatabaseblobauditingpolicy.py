@@ -40,8 +40,8 @@ options:
         required: True
     state:
         description:
-            - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'En
-               abled', 'Disabled'"
+            - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(E
+               nabled), C(Disabled)"
         required: True
     storage_endpoint:
         description:
@@ -89,8 +89,8 @@ id:
     sample: id
 state:
     description:
-        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Enable
-           d', 'Disabled'"
+        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(Enabl
+           ed), C(Disabled)"
     returned: always
     type: str
     sample: state

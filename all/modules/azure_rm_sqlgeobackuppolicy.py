@@ -40,7 +40,7 @@ options:
         required: True
     state:
         description:
-            - "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'"
+            - The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)
         required: True
 
 extends_documentation_fragment:
@@ -71,7 +71,7 @@ id:
     sample: id
 state:
     description:
-        - "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'"
+        - The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)
     returned: always
     type: str
     sample: state

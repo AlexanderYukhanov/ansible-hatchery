@@ -36,7 +36,7 @@ options:
         required: True
     connection_type:
         description:
-            - "The server connection type. Possible values include: 'Default', 'Proxy', 'Redirect'"
+            - The server connection type. Possible values include: C(Default), C(Proxy), C(Redirect)
         required: True
 
 extends_documentation_fragment:

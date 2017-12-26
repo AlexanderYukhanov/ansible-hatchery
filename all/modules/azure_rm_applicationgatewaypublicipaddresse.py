@@ -42,13 +42,13 @@ options:
         suboptions:
             name:
                 description:
-                    - "Name of a public IP address SKU. Possible values include: 'Basic', 'Standard'"
+                    - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
     public_ip_allocation_method:
         description:
-            - "The public IP allocation method. Possible values are: 'Static' and 'Dynamic'. Possible values include: 'Static', 'Dynamic'"
+            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
     public_ip_address_version:
         description:
-            - "The public IP address version. Possible values are: 'IPv4' and 'IPv6'. Possible values include: 'IPv4', 'IPv6'"
+            - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
     dns_settings:
         description:
             - The FQDN of the DNS record associated with the public IP address.
@@ -77,7 +77,7 @@ options:
             - The resource GUID property of the public IP resource.
     provisioning_state:
         description:
-            - "The provisioning state of the PublicIP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+            - The provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.

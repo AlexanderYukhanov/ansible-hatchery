@@ -45,7 +45,7 @@ options:
                     - Resource ID.
             private_ip_allocation_method:
                 description:
-                    - "The private IP allocation method. Possible values are: 'Static' and 'Dynamic'. Possible values include: 'Static', 'Dynamic'"
+                    - The private IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
             subnet:
                 description:
                     - The reference of the subnet resource.
@@ -68,11 +68,11 @@ options:
                     - A unique read-only string that changes whenever the resource is updated.
     gateway_type:
         description:
-            - "The type of this virtual network gateway. Possible values are: 'Vpn' and 'ExpressRoute'. Possible values include: 'Vpn', 'ExpressRoute'"
+            - The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute). Possible values include: C(Vpn), C(ExpressRoute)
     vpn_type:
         description:
-            - "The type of this virtual network gateway. Possible values are: 'PolicyBased' and 'RouteBased'. Possible values include: 'PolicyBased', 'RouteB
-               ased'"
+            - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased). Possible values include: C(PolicyBased), C(Ro
+               uteBased)"
     enable_bgp:
         description:
             - Whether BGP is enabled for this virtual network gateway or not.
@@ -93,10 +93,10 @@ options:
         suboptions:
             name:
                 description:
-                    - "Gateway SKU name. Possible values include: 'Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3'"
+                    - Gateway SKU name. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2), C(VpnGw3)
             tier:
                 description:
-                    - "Gateway SKU tier. Possible values include: 'Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3'"
+                    - Gateway SKU tier. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2), C(VpnGw3)
             capacity:
                 description:
                     - The capacity.

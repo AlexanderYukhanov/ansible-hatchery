@@ -40,7 +40,7 @@ options:
         required: True
     state:
         description:
-            - "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'"
+            - The status of the backup long term retention policy. Possible values include: C(Disabled), C(Enabled)
         required: True
     recovery_services_backup_policy_resource_id:
         description:
@@ -76,7 +76,7 @@ id:
     sample: id
 state:
     description:
-        - "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'"
+        - The status of the backup long term retention policy. Possible values include: C(Disabled), C(Enabled)
     returned: always
     type: str
     sample: state

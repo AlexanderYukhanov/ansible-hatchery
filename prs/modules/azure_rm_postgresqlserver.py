@@ -39,7 +39,7 @@ options:
                     - The name of the sku, typically, a letter + Number code, e.g. P3.
             tier:
                 description:
-                    - "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'"
+                    - The tier of the particular SKU, e.g. Basic. Possible values include: C(Basic), C(Standard)
             capacity:
                 description:
                     - "The scale up/out capacity, representing server's compute units."
@@ -57,13 +57,13 @@ options:
             - The maximum storage allowed for a server.
     version:
         description:
-            - "Server version. Possible values include: '9.5', '9.6'"
+            - Server version. Possible values include: C(9.5), C(9.6)
     ssl_enforcement:
         description:
-            - "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'"
+            - Enable ssl enforcement or not when connect to server. Possible values include: C(Enabled), C(Disabled)
     create_mode:
         description:
-            - "Currently only 'Default' value supported"
+            - Currently only C(Default) value supported
     admin_username:
         description:
             - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
@@ -105,13 +105,13 @@ id:
     sample: id
 version:
     description:
-        - "Server version. Possible values include: '9.5', '9.6'"
+        - Server version. Possible values include: C(9.5), C(9.6)
     returned: always
     type: str
     sample: version
 user_visible_state:
     description:
-        - "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'"
+        - A state of a server that is visible to user. Possible values include: C(Ready), C(Dropping), C(Disabled)
     returned: always
     type: str
     sample: user_visible_state

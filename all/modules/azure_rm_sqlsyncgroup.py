@@ -43,7 +43,7 @@ options:
             - Sync interval of the sync group.
     conflict_resolution_policy:
         description:
-            - "Conflict resolution policy of the sync group. Possible values include: 'HubWin', 'MemberWin'"
+            - Conflict resolution policy of the sync group. Possible values include: C(HubWin), C(MemberWin)
     sync_database_id:
         description:
             - ARM resource id of the sync database in the sync group.

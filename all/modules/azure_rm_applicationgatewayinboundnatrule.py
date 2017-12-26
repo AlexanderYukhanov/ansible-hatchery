@@ -46,7 +46,7 @@ options:
                     - Resource ID.
     protocol:
         description:
-            - "Possible values include: 'Udp', 'Tcp', 'All'"
+            - Possible values include: C(Udp), C(Tcp), C(All)
     frontend_port:
         description:
             - The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.
@@ -59,11 +59,11 @@ options:
                sed when the protocol is set to TCP."
     enable_floating_ip:
         description:
-            - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting i
-               s required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint."
+            - "Configures a virtual machineC(s endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting
+               is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the endpoint."
     provisioning_state:
         description:
-            - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+            - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
     name:
         description:
             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
