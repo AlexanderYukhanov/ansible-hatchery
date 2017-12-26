@@ -6,6 +6,9 @@
 - name: Create instance of Routes -- check mode
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
+    route_table_name: routetablename
+    route_name: testroute
+    next_hop_type: "None"
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -16,6 +19,9 @@
 - name: Create instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
+    route_table_name: routetablename
+    route_name: testroute
+    next_hop_type: "None"
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -25,6 +31,9 @@
 - name: Create again instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
+    route_table_name: routetablename
+    route_name: testroute
+    next_hop_type: "None"
   register: output
 - name: Assert the state has not changed
   assert:
@@ -34,6 +43,8 @@
 - name: Delete instance of Routes -- check mode
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
+    route_table_name: routetablename
+    route_name: testroute
     state: absent
   check_mode: yes
   register: output
@@ -45,6 +56,8 @@
 - name: Delete instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
+    route_table_name: routetablename
+    route_name: testroute
     state: absent
   register: output
 - name: Assert the state has changed
@@ -55,6 +68,8 @@
 - name: Delete unexisting instance of Routes
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
+    route_table_name: routetablename
+    route_name: testroute
     state: absent
   register: output
 - name: Assert the state has changed
