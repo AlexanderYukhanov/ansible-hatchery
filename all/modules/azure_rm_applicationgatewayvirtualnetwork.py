@@ -85,6 +85,7 @@ options:
                                     - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp),
                                        C(Udp), C(*)"
                                 required: True
+                                choices: ['Tcp', 'Udp', '*']
                             source_port_range:
                                 description:
                                     - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -137,6 +138,7 @@ options:
                                     - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow)
                                        , C(Deny)"
                                 required: True
+                                choices: ['Allow', 'Deny']
                             priority:
                                 description:
                                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in t
@@ -146,6 +148,7 @@ options:
                                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possibl
                                        e values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                                 required: True
+                                choices: ['Inbound', 'Outbound']
                             provisioning_state:
                                 description:
                                     - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -170,6 +173,7 @@ options:
                                     - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp),
                                        C(Udp), C(*)"
                                 required: True
+                                choices: ['Tcp', 'Udp', '*']
                             source_port_range:
                                 description:
                                     - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -222,6 +226,7 @@ options:
                                     - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow)
                                        , C(Deny)"
                                 required: True
+                                choices: ['Allow', 'Deny']
                             priority:
                                 description:
                                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in t
@@ -231,6 +236,7 @@ options:
                                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possibl
                                        e values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                                 required: True
+                                choices: ['Inbound', 'Outbound']
                             provisioning_state:
                                 description:
                                     - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -275,6 +281,7 @@ options:
                                        ernet), C(VirtualAppliance), and C(None). Possible values include: C(VirtualNetworkGateway), C(VnetLocal), C(Internet)
                                        , C(VirtualAppliance), C(None)"
                                 required: True
+                                choices: ['VirtualNetworkGateway', 'VnetLocal', 'Internet', 'VirtualAppliance', 'None']
                             next_hop_ip_address:
                                 description:
                                     - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is V
@@ -375,6 +382,7 @@ options:
                 description:
                     - "The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected). Possible values includ
                        e: C(Initiated), C(Connected), C(Disconnected)"
+                choices: ['Initiated', 'Connected', 'Disconnected']
             provisioning_state:
                 description:
                     - The provisioning state of the resource.

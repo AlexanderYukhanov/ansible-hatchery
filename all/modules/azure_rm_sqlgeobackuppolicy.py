@@ -42,6 +42,7 @@ options:
         description:
             - The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)
         required: True
+        choices: ['Disabled', 'Enabled']
 
 extends_documentation_fragment:
     - azure
@@ -117,6 +118,7 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
+                choices=['Disabled', 'Enabled'],
                 required=True
             ),
             state=dict(

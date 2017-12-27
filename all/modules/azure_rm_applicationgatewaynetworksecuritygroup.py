@@ -50,6 +50,7 @@ options:
                 description:
                     - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                 required: True
+                choices: ['Tcp', 'Udp', '*']
             source_port_range:
                 description:
                     - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -100,6 +101,7 @@ options:
                 description:
                     - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                 required: True
+                choices: ['Allow', 'Deny']
             priority:
                 description:
                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. T
@@ -109,6 +111,7 @@ options:
                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(
                        Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                 required: True
+                choices: ['Inbound', 'Outbound']
             provisioning_state:
                 description:
                     - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -132,6 +135,7 @@ options:
                 description:
                     - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                 required: True
+                choices: ['Tcp', 'Udp', '*']
             source_port_range:
                 description:
                     - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -182,6 +186,7 @@ options:
                 description:
                     - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                 required: True
+                choices: ['Allow', 'Deny']
             priority:
                 description:
                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. T
@@ -191,6 +196,7 @@ options:
                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(
                        Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                 required: True
+                choices: ['Inbound', 'Outbound']
             provisioning_state:
                 description:
                     - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).

@@ -295,12 +295,14 @@ options:
     dns_type:
         description:
             - Current DNS type. Possible values include: C(AzureDns), C(DefaultDomainRegistrarDns)
+        choices: ['AzureDns', 'DefaultDomainRegistrarDns']
     dns_zone_id:
         description:
             - Azure DNS Zone to use
     target_dns_type:
         description:
             - Target DNS type (would be used for migration). Possible values include: C(AzureDns), C(DefaultDomainRegistrarDns)
+        choices: ['AzureDns', 'DefaultDomainRegistrarDns']
     auth_code:
         description:
             -
@@ -389,13 +391,15 @@ class AzureRMDomains(AzureRMModuleBase):
                 type='dict'
             ),
             dns_type=dict(
-                type='str'
+                type='str',
+                choices=['AzureDns', 'DefaultDomainRegistrarDns']
             ),
             dns_zone_id=dict(
                 type='str'
             ),
             target_dns_type=dict(
-                type='str'
+                type='str',
+                choices=['AzureDns', 'DefaultDomainRegistrarDns']
             ),
             auth_code=dict(
                 type='str'

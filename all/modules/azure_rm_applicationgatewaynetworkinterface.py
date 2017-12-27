@@ -67,6 +67,7 @@ options:
                         description:
                             - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                         required: True
+                        choices: ['Tcp', 'Udp', '*']
                     source_port_range:
                         description:
                             - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -118,6 +119,7 @@ options:
                         description:
                             - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                         required: True
+                        choices: ['Allow', 'Deny']
                     priority:
                         description:
                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the colle
@@ -127,6 +129,7 @@ options:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
                                 are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                         required: True
+                        choices: ['Inbound', 'Outbound']
                     provisioning_state:
                         description:
                             - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -150,6 +153,7 @@ options:
                         description:
                             - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
                         required: True
+                        choices: ['Tcp', 'Udp', '*']
                     source_port_range:
                         description:
                             - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -201,6 +205,7 @@ options:
                         description:
                             - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
                         required: True
+                        choices: ['Allow', 'Deny']
                     priority:
                         description:
                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the colle
@@ -210,6 +215,7 @@ options:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
                                 are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                         required: True
+                        choices: ['Inbound', 'Outbound']
                     provisioning_state:
                         description:
                             - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -304,6 +310,7 @@ options:
                                     protocol:
                                         description:
                                             - Possible values include: C(Udp), C(Tcp), C(All)
+                                        choices: ['Udp', 'Tcp', 'All']
                                     frontend_port:
                                         description:
                                             - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Accept
@@ -337,10 +344,12 @@ options:
                                 description:
                                     - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values include:
                                        C(Static), C(Dynamic)"
+                                choices: ['Static', 'Dynamic']
                             private_ip_address_version:
                                 description:
                                     - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Def
                                        ault is taken as IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)"
+                                choices: ['IPv4', 'IPv6']
                             subnet:
                                 description:
                                     - Subnet bound to the IP configuration.
@@ -392,9 +401,11 @@ options:
                                         description:
                                             - "The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Sta
                                                tic), C(Dynamic)"
+                                        choices: ['Static', 'Dynamic']
                                     public_ip_address_version:
                                         description:
                                             - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+                                        choices: ['IPv4', 'IPv6']
                                     dns_settings:
                                         description:
                                             - The FQDN of the DNS record associated with the public IP address.
@@ -491,6 +502,7 @@ options:
                     protocol:
                         description:
                             - Possible values include: C(Udp), C(Tcp), C(All)
+                        choices: ['Udp', 'Tcp', 'All']
                     frontend_port:
                         description:
                             - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values rang
@@ -523,10 +535,12 @@ options:
                 description:
                     - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dyn
                        amic)"
+                choices: ['Static', 'Dynamic']
             private_ip_address_version:
                 description:
                     - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as
                         IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)"
+                choices: ['IPv4', 'IPv6']
             subnet:
                 description:
                     - Subnet bound to the IP configuration.
@@ -562,6 +576,7 @@ options:
                                             - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
                                                C(Tcp), C(Udp), C(*)"
                                         required: True
+                                        choices: ['Tcp', 'Udp', '*']
                                     source_port_range:
                                         description:
                                             - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -601,6 +616,7 @@ options:
                                             - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
                                                C(Allow), C(Deny)"
                                         required: True
+                                        choices: ['Allow', 'Deny']
                                     priority:
                                         description:
                                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each r
@@ -610,6 +626,7 @@ options:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
                                                 Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                                         required: True
+                                        choices: ['Inbound', 'Outbound']
                                     provisioning_state:
                                         description:
                                             - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -634,6 +651,7 @@ options:
                                             - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
                                                C(Tcp), C(Udp), C(*)"
                                         required: True
+                                        choices: ['Tcp', 'Udp', '*']
                                     source_port_range:
                                         description:
                                             - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -673,6 +691,7 @@ options:
                                             - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
                                                C(Allow), C(Deny)"
                                         required: True
+                                        choices: ['Allow', 'Deny']
                                     priority:
                                         description:
                                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each r
@@ -682,6 +701,7 @@ options:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
                                                 Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
                                         required: True
+                                        choices: ['Inbound', 'Outbound']
                                     provisioning_state:
                                         description:
                                             - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -726,6 +746,7 @@ options:
                                                ), C(Internet), C(VirtualAppliance), and C(None). Possible values include: C(VirtualNetworkGateway), C(VnetLoc
                                                al), C(Internet), C(VirtualAppliance), C(None)"
                                         required: True
+                                        choices: ['VirtualNetworkGateway', 'VnetLocal', 'Internet', 'VirtualAppliance', 'None']
                                     next_hop_ip_address:
                                         description:
                                             - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop t
@@ -806,12 +827,15 @@ options:
                             name:
                                 description:
                                     - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
+                                choices: ['Basic', 'Standard']
                     public_ip_allocation_method:
                         description:
                             - The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                        choices: ['Static', 'Dynamic']
                     public_ip_address_version:
                         description:
                             - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+                        choices: ['IPv4', 'IPv6']
                     dns_settings:
                         description:
                             - The FQDN of the DNS record associated with the public IP address.

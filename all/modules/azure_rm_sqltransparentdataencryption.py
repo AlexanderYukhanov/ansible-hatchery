@@ -41,6 +41,7 @@ options:
     status:
         description:
             - The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)
+        choices: ['Enabled', 'Disabled']
 
 extends_documentation_fragment:
     - azure
@@ -115,7 +116,8 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                 required=True
             ),
             status=dict(
-                type='str'
+                type='str',
+                choices=['Enabled', 'Disabled']
             ),
             state=dict(
                 type='str',

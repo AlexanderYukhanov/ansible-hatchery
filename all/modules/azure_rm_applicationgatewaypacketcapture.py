@@ -69,6 +69,7 @@ options:
             protocol:
                 description:
                     - Protocol to be filtered on. Possible values include: C(TCP), C(UDP), C(Any)
+                choices: ['TCP', 'UDP', 'Any']
             local_ip_address:
                 description:
                     - "Local IP Address to be filtered on. Notation: '127.0.0.1' for single address entry. '127.0.0.1-127.0.0.255' for range. '127.0.0.1;127.

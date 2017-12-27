@@ -60,6 +60,7 @@ options:
                     private_ip_allocation_method:
                         description:
                             - The private IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                        choices: ['Static', 'Dynamic']
                     subnet:
                         description:
                             - The reference of the subnet resource.
@@ -84,10 +85,12 @@ options:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute). Possible values include: C(Vpn), C(ExpressR
                        oute)"
+                choices: ['Vpn', 'ExpressRoute']
             vpn_type:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased). Possible values include: C(PolicyBase
                        d), C(RouteBased)"
+                choices: ['PolicyBased', 'RouteBased']
             enable_bgp:
                 description:
                     - Whether BGP is enabled for this virtual network gateway or not.
@@ -110,10 +113,12 @@ options:
                         description:
                             - "Gateway SKU name. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2
                                ), C(VpnGw3)"
+                        choices: ['Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3']
                     tier:
                         description:
                             - "Gateway SKU tier. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2
                                ), C(VpnGw3)"
+                        choices: ['Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3']
                     capacity:
                         description:
                             - The capacity.
@@ -209,6 +214,7 @@ options:
                     private_ip_allocation_method:
                         description:
                             - The private IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                        choices: ['Static', 'Dynamic']
                     subnet:
                         description:
                             - The reference of the subnet resource.
@@ -233,10 +239,12 @@ options:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute). Possible values include: C(Vpn), C(ExpressR
                        oute)"
+                choices: ['Vpn', 'ExpressRoute']
             vpn_type:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased). Possible values include: C(PolicyBase
                        d), C(RouteBased)"
+                choices: ['PolicyBased', 'RouteBased']
             enable_bgp:
                 description:
                     - Whether BGP is enabled for this virtual network gateway or not.
@@ -259,10 +267,12 @@ options:
                         description:
                             - "Gateway SKU name. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2
                                ), C(VpnGw3)"
+                        choices: ['Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3']
                     tier:
                         description:
                             - "Gateway SKU tier. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2
                                ), C(VpnGw3)"
+                        choices: ['Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3']
                     capacity:
                         description:
                             - The capacity.
@@ -382,6 +392,7 @@ options:
             - "Gateway connection type. Possible values are: C(Ipsec),C(Vnet2Vnet),C(ExpressRoute), and C(VPNClient. Possible values include: )IPsecC(, )Vnet
                2VnetC(, )ExpressRouteC(, )VPNClient'"
         required: True
+        choices: ['IPsec', 'Vnet2Vnet', 'ExpressRoute', 'VPNClient']
     routing_weight:
         description:
             - The routing weight.
@@ -418,28 +429,34 @@ options:
                     - "The IPSec encryption algorithm (IKE phase 1). Possible values include: C(None), C(DES), C(DES3), C(AES128), C(AES192), C(AES256), C(GC
                        MAES128), C(GCMAES192), C(GCMAES256)"
                 required: True
+                choices: ['None', 'DES', 'DES3', 'AES128', 'AES192', 'AES256', 'GCMAES128', 'GCMAES192', 'GCMAES256']
             ipsec_integrity:
                 description:
                     - The IPSec integrity algorithm (IKE phase 1). Possible values include: C(MD5), C(SHA1), C(SHA256), C(GCMAES128), C(GCMAES192), C(GCMAES256)
                 required: True
+                choices: ['MD5', 'SHA1', 'SHA256', 'GCMAES128', 'GCMAES192', 'GCMAES256']
             ike_encryption:
                 description:
                     - The IKE encryption algorithm (IKE phase 2). Possible values include: C(DES), C(DES3), C(AES128), C(AES192), C(AES256)
                 required: True
+                choices: ['DES', 'DES3', 'AES128', 'AES192', 'AES256']
             ike_integrity:
                 description:
                     - The IKE integrity algorithm (IKE phase 2). Possible values include: C(MD5), C(SHA1), C(SHA256), C(SHA384)
                 required: True
+                choices: ['MD5', 'SHA1', 'SHA256', 'SHA384']
             dh_group:
                 description:
                     - "The DH Groups used in IKE Phase 1 for initial SA. Possible values include: C(None), C(DHGroup1), C(DHGroup2), C(DHGroup14), C(DHGroup2
                        048), C(ECP256), C(ECP384), C(DHGroup24)"
                 required: True
+                choices: ['None', 'DHGroup1', 'DHGroup2', 'DHGroup14', 'DHGroup2048', 'ECP256', 'ECP384', 'DHGroup24']
             pfs_group:
                 description:
                     - "The DH Groups used in IKE Phase 2 for new child SA. Possible values include: C(None), C(PFS1), C(PFS2), C(PFS2048), C(ECP256), C(ECP38
                        4), C(PFS24)"
                 required: True
+                choices: ['None', 'PFS1', 'PFS2', 'PFS2048', 'ECP256', 'ECP384', 'PFS24']
     resource_guid:
         description:
             - The resource GUID property of the VirtualNetworkGatewayConnection resource.
@@ -524,6 +541,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
             ),
             connection_type=dict(
                 type='str',
+                choices=['IPsec', 'Vnet2Vnet', 'ExpressRoute', 'VPNClient'],
                 required=True
             ),
             routing_weight=dict(

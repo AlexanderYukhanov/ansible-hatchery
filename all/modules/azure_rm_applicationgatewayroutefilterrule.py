@@ -41,6 +41,7 @@ options:
         description:
             - The access type of the rule. Valid values are: C(Allow), C(Deny). Possible values include: C(Allow), C(Deny)
         required: True
+        choices: ['Allow', 'Deny']
     route_filter_rule_type:
         description:
             - The rule type of the rule. Valid value is: C(Community)
@@ -122,6 +123,7 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
             ),
             access=dict(
                 type='str',
+                choices=['Allow', 'Deny'],
                 required=True
             ),
             route_filter_rule_type=dict(

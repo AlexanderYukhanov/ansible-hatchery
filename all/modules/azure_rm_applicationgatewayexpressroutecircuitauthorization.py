@@ -43,6 +43,7 @@ options:
     authorization_use_status:
         description:
             - AuthorizationUseStatus. Possible values are: C(Available) and C(InUse). Possible values include: C(Available), C(InUse)
+        choices: ['Available', 'InUse']
     provisioning_state:
         description:
             - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -117,7 +118,8 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 type='str'
             ),
             authorization_use_status=dict(
-                type='str'
+                type='str',
+                choices=['Available', 'InUse']
             ),
             provisioning_state=dict(
                 type='str'

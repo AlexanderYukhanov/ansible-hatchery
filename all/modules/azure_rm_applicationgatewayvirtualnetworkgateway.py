@@ -46,6 +46,7 @@ options:
             private_ip_allocation_method:
                 description:
                     - The private IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                choices: ['Static', 'Dynamic']
             subnet:
                 description:
                     - The reference of the subnet resource.
@@ -69,10 +70,12 @@ options:
     gateway_type:
         description:
             - The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute). Possible values include: C(Vpn), C(ExpressRoute)
+        choices: ['Vpn', 'ExpressRoute']
     vpn_type:
         description:
             - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased). Possible values include: C(PolicyBased), C(Ro
                uteBased)"
+        choices: ['PolicyBased', 'RouteBased']
     enable_bgp:
         description:
             - Whether BGP is enabled for this virtual network gateway or not.
@@ -94,9 +97,11 @@ options:
             name:
                 description:
                     - Gateway SKU name. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2), C(VpnGw3)
+                choices: ['Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3']
             tier:
                 description:
                     - Gateway SKU tier. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2), C(VpnGw3)
+                choices: ['Basic', 'HighPerformance', 'Standard', 'UltraPerformance', 'VpnGw1', 'VpnGw2', 'VpnGw3']
             capacity:
                 description:
                     - The capacity.
@@ -239,10 +244,12 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                 type='list'
             ),
             gateway_type=dict(
-                type='str'
+                type='str',
+                choices=['Vpn', 'ExpressRoute']
             ),
             vpn_type=dict(
-                type='str'
+                type='str',
+                choices=['PolicyBased', 'RouteBased']
             ),
             enable_bgp=dict(
                 type='str'

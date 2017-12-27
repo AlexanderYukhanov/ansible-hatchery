@@ -43,12 +43,15 @@ options:
             name:
                 description:
                     - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
+                choices: ['Basic', 'Standard']
     public_ip_allocation_method:
         description:
             - The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+        choices: ['Static', 'Dynamic']
     public_ip_address_version:
         description:
             - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+        choices: ['IPv4', 'IPv6']
     dns_settings:
         description:
             - The FQDN of the DNS record associated with the public IP address.
@@ -151,10 +154,12 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                 type='dict'
             ),
             public_ip_allocation_method=dict(
-                type='str'
+                type='str',
+                choices=['Static', 'Dynamic']
             ),
             public_ip_address_version=dict(
-                type='str'
+                type='str',
+                choices=['IPv4', 'IPv6']
             ),
             dns_settings=dict(
                 type='dict'

@@ -44,6 +44,7 @@ options:
         description:
             - The encryption protector type like C(ServiceManaged), C(AzureKeyVault). Possible values include: C(ServiceManaged), C(AzureKeyVault)
         required: True
+        choices: ['ServiceManaged', 'AzureKeyVault']
 
 extends_documentation_fragment:
     - azure
@@ -113,6 +114,7 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
             ),
             server_key_type=dict(
                 type='str',
+                choices=['ServiceManaged', 'AzureKeyVault'],
                 required=True
             ),
             state=dict(

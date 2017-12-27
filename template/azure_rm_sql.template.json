@@ -22,7 +22,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -42,7 +44,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -62,7 +66,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "backup_long_term_retention_policy_name",
@@ -82,7 +88,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "state",
@@ -102,7 +110,12 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Disabled",
+            "Enabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "recovery_services_backup_policy_resource_id",
@@ -122,7 +135,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -254,7 +269,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -274,7 +291,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -294,7 +313,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "backup_long_term_retention_policy_name",
@@ -314,7 +335,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -385,7 +408,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -405,7 +430,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "backup_long_term_retention_vault_name",
@@ -425,7 +452,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "recovery_services_vault_resource_id",
@@ -445,7 +474,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -562,7 +593,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -582,7 +615,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "backup_long_term_retention_vault_name",
@@ -602,7 +637,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -669,7 +706,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -689,7 +728,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -709,7 +750,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -765,7 +808,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -785,7 +830,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -805,7 +852,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -872,7 +921,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -892,7 +943,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "restorable_droppeded_database_id",
@@ -912,7 +965,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -979,7 +1034,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -1031,7 +1088,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -1051,7 +1110,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "connection_policy_name",
@@ -1071,7 +1132,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "connection_type",
@@ -1091,7 +1154,13 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Default",
+            "Proxy",
+            "Redirect"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -1217,7 +1286,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -1237,7 +1308,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "connection_policy_name",
@@ -1257,7 +1330,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -1313,7 +1388,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -1333,7 +1410,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -1353,7 +1432,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "security_alert_policy_name",
@@ -1373,7 +1454,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -1393,7 +1476,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "location",
@@ -1413,7 +1498,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "state",
@@ -1433,7 +1520,13 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "New",
+            "Enabled",
+            "Disabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "disabled_alerts",
@@ -1453,7 +1546,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "email_addresses",
@@ -1473,7 +1568,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "email_account_admins",
@@ -1493,7 +1590,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Enabled",
+            "Disabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "storage_endpoint",
@@ -1513,7 +1615,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "storage_account_access_key",
@@ -1533,7 +1637,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "retention_days",
@@ -1553,7 +1659,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "use_server_default",
@@ -1573,7 +1681,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Enabled",
+            "Disabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -1766,7 +1879,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -1786,7 +1901,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -1806,7 +1923,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "security_alert_policy_name",
@@ -1826,7 +1945,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -1884,7 +2005,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -1904,7 +2027,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -1924,7 +2049,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "data_masking_policy_name",
@@ -1944,7 +2071,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "data_masking_state",
@@ -1964,7 +2093,12 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Disabled",
+            "Enabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "exempt_principals",
@@ -1984,7 +2118,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -2142,7 +2278,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -2162,7 +2300,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -2182,7 +2322,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "data_masking_policy_name",
@@ -2202,7 +2344,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -2260,7 +2404,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -2280,7 +2426,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -2300,7 +2448,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "data_masking_policy_name",
@@ -2320,7 +2470,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "data_masking_rule_name",
@@ -2340,7 +2492,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -2360,7 +2514,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "alias_name",
@@ -2380,7 +2536,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "rule_state",
@@ -2400,7 +2558,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Disabled",
+            "Enabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "schema_name",
@@ -2420,7 +2583,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "table_name",
@@ -2440,7 +2605,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "column_name",
@@ -2460,7 +2627,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "masking_function",
@@ -2480,7 +2649,16 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Default",
+            "CCN",
+            "Email",
+            "Number",
+            "SSN",
+            "Text"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "number_from",
@@ -2500,7 +2678,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "number_to",
@@ -2520,7 +2700,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "prefix_size",
@@ -2540,7 +2722,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "suffix_size",
@@ -2560,7 +2744,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "replacement_string",
@@ -2580,7 +2766,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -2796,7 +2984,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -2816,7 +3006,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -2836,7 +3028,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "data_masking_policy_name",
@@ -2856,7 +3050,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -2914,7 +3110,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -2934,7 +3132,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "firewall_rule_name",
@@ -2954,7 +3154,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "start_ip_address",
@@ -2974,7 +3176,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "end_ip_address",
@@ -2994,7 +3198,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -3144,7 +3350,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -3164,7 +3372,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "firewall_rule_name",
@@ -3184,7 +3394,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -3251,7 +3463,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -3271,7 +3485,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -3291,7 +3507,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "geo_backup_policy_name",
@@ -3311,7 +3529,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "state",
@@ -3331,7 +3551,12 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Disabled",
+            "Enabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -3470,7 +3695,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -3490,7 +3717,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -3510,7 +3739,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "geo_backup_policy_name",
@@ -3530,7 +3761,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -3601,7 +3834,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -3621,7 +3856,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -3641,7 +3878,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -3661,7 +3900,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "location",
@@ -3681,7 +3922,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "collation",
@@ -3701,7 +3944,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "create_mode",
@@ -3721,7 +3966,18 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Copy",
+            "Default",
+            "NonReadableSecondary",
+            "OnlineSecondary",
+            "PointInTimeRestore",
+            "Recovery",
+            "Restore",
+            "RestoreLongTermRetentionBackup"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "source_database_id",
@@ -3741,7 +3997,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "source_database_deletion_date",
@@ -3761,7 +4019,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "restore_point_in_time",
@@ -3781,7 +4041,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "recovery_services_recovery_point_resource_id",
@@ -3801,7 +4063,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "edition",
@@ -3821,7 +4085,20 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Web",
+            "Business",
+            "Basic",
+            "Standard",
+            "Premium",
+            "Free",
+            "Stretch",
+            "DataWarehouse",
+            "System",
+            "System2"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "max_size_bytes",
@@ -3841,7 +4118,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "requested_service_objective_id",
@@ -3861,7 +4140,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "requested_service_objective_name",
@@ -3881,7 +4162,25 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Basic",
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P6",
+            "P11",
+            "P15",
+            "System",
+            "System2",
+            "ElasticPool"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "elastic_pool_name",
@@ -3901,7 +4200,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "read_scale",
@@ -3921,7 +4222,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Enabled",
+            "Disabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "sample_name",
@@ -3941,7 +4247,11 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "AdventureWorksLT"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "zone_redundant",
@@ -3961,7 +4271,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -4833,7 +5145,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 6,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -4853,7 +5167,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 6,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -4873,7 +5189,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "filter",
@@ -4893,7 +5211,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "expand",
@@ -4913,7 +5233,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "elastic_pool_name",
@@ -4933,7 +5255,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "recommended_elastic_pool_name",
@@ -4953,7 +5277,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -5077,7 +5403,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -5097,7 +5425,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "elastic_pool_name",
@@ -5117,7 +5447,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -5137,7 +5469,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "location",
@@ -5157,7 +5491,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "edition",
@@ -5177,7 +5513,13 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Basic",
+            "Standard",
+            "Premium"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "dtu",
@@ -5197,7 +5539,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_dtu_max",
@@ -5217,7 +5561,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_dtu_min",
@@ -5237,7 +5583,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "storage_mb",
@@ -5257,7 +5605,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "zone_redundant",
@@ -5277,7 +5627,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -5503,7 +5855,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 4,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -5523,7 +5877,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 4,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "elastic_pool_name",
@@ -5543,7 +5899,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "filter",
@@ -5563,7 +5921,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -5658,7 +6018,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -5678,7 +6040,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -5698,7 +6062,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "link_id",
@@ -5718,7 +6084,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -5789,7 +6157,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -5809,7 +6179,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "administrator_name",
@@ -5829,7 +6201,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "properties",
@@ -5849,7 +6223,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "administrator_type",
@@ -5869,7 +6245,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "login",
@@ -5889,7 +6267,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sid",
@@ -5909,7 +6289,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "tenant_id",
@@ -5929,7 +6311,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -6077,7 +6461,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -6097,7 +6483,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "administrator_name",
@@ -6117,7 +6505,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -6184,7 +6574,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -6204,7 +6596,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "communication_link_name",
@@ -6224,7 +6618,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "partner_server",
@@ -6244,7 +6640,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -6392,7 +6790,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -6412,7 +6812,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "communication_link_name",
@@ -6432,7 +6834,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -6499,7 +6903,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -6519,7 +6925,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "service_objective_name",
@@ -6539,7 +6947,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -6606,7 +7016,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -6626,7 +7038,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -6646,7 +7060,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "location",
@@ -6666,7 +7082,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "identity",
@@ -6686,7 +7104,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
           "Name": "administrator_login",
@@ -6706,7 +7126,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "administrator_login_password",
@@ -6726,7 +7148,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": true
+          "NoLog": true,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "version",
@@ -6746,7 +7170,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "type",
@@ -6766,7 +7192,11 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "SystemAssigned"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -6994,7 +7424,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7014,7 +7446,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -7077,7 +7511,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7097,7 +7533,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "elastic_pool_name",
@@ -7117,7 +7555,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -7173,7 +7613,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7193,7 +7635,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "elastic_pool_name",
@@ -7213,7 +7657,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -7269,7 +7715,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7289,7 +7737,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "recommended_elastic_pool_name",
@@ -7309,7 +7759,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -7389,7 +7841,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7409,7 +7863,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -7429,7 +7885,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "service_tier_advisor_name",
@@ -7449,7 +7907,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -7520,7 +7980,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -7540,7 +8002,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -7560,7 +8024,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "transparent_data_encryption_name",
@@ -7580,7 +8046,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "status",
@@ -7600,7 +8068,12 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Enabled",
+            "Disabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -7720,7 +8193,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7740,7 +8215,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -7760,7 +8237,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "transparent_data_encryption_name",
@@ -7780,7 +8259,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -7838,7 +8319,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7858,7 +8341,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -7878,7 +8363,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "transparent_data_encryption_name",
@@ -7898,7 +8385,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -7956,7 +8445,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -7976,7 +8467,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -8030,7 +8523,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -8050,7 +8545,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -8070,7 +8567,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -8126,7 +8625,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -8146,7 +8647,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -8166,7 +8669,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "blob_auditing_policy_name",
@@ -8186,7 +8691,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -8206,7 +8713,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "state",
@@ -8226,7 +8735,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Enabled",
+            "Disabled"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "storage_endpoint",
@@ -8246,7 +8760,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "storage_account_access_key",
@@ -8266,7 +8782,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "retention_days",
@@ -8286,7 +8804,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "audit_actions_and_groups",
@@ -8306,7 +8826,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
           "Name": "storage_account_subscription_id",
@@ -8326,7 +8848,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "is_storage_secondary_key_in_use",
@@ -8346,7 +8870,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -8521,7 +9047,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -8541,7 +9069,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -8561,7 +9091,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "blob_auditing_policy_name",
@@ -8581,7 +9113,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -8639,7 +9173,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -8659,7 +9195,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "encryption_protector_name",
@@ -8679,7 +9217,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -8699,7 +9239,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "kind",
@@ -8719,7 +9261,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_key_name",
@@ -8739,7 +9283,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_key_type",
@@ -8759,7 +9305,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "ServiceManaged",
+            "AzureKeyVault"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -8921,7 +9472,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -8941,7 +9494,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "encryption_protector_name",
@@ -8961,7 +9516,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -9028,7 +9585,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -9048,7 +9607,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "failover_group_name",
@@ -9068,7 +9629,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -9088,7 +9651,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "read_write_endpoint",
@@ -9125,7 +9690,12 @@
               },
               "SubOptions": [],
               "RequiredCount": 0,
-              "NoLog": false
+              "NoLog": false,
+              "EnumValues": [
+                "Manual",
+                "Automatic"
+              ],
+              "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             },
             {
               "Name": "failover_with_data_loss_grace_period_minutes",
@@ -9145,11 +9715,15 @@
               },
               "SubOptions": [],
               "RequiredCount": 0,
-              "NoLog": false
+              "NoLog": false,
+              "EnumValues": [],
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
           "Name": "read_only_endpoint",
@@ -9186,11 +9760,18 @@
               },
               "SubOptions": [],
               "RequiredCount": 0,
-              "NoLog": false
+              "NoLog": false,
+              "EnumValues": [
+                "Disabled",
+                "Enabled"
+              ],
+              "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             }
           ],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
           "Name": "partner_servers",
@@ -9227,11 +9808,15 @@
               },
               "SubOptions": [],
               "RequiredCount": 0,
-              "NoLog": false
+              "NoLog": false,
+              "EnumValues": [],
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
           "Name": "databases",
@@ -9251,7 +9836,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         }
       ],
       "Methods": [
@@ -9507,7 +10094,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -9527,7 +10116,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "failover_group_name",
@@ -9547,7 +10138,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -9614,7 +10207,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -9634,7 +10229,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "key_name",
@@ -9654,7 +10251,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -9674,7 +10273,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "kind",
@@ -9694,7 +10295,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_key_type",
@@ -9714,7 +10317,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "ServiceManaged",
+            "AzureKeyVault"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "uri",
@@ -9734,7 +10342,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "thumbprint",
@@ -9754,7 +10364,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "creation_date",
@@ -9774,7 +10386,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -9949,7 +10563,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -9969,7 +10585,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "key_name",
@@ -9989,7 +10607,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -10056,7 +10676,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -10076,7 +10698,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sync_agent_name",
@@ -10096,7 +10720,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sync_database_id",
@@ -10116,7 +10742,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -10290,7 +10918,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -10310,7 +10940,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "sync_agent_name",
@@ -10330,7 +10962,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -10410,7 +11044,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -10430,7 +11066,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -10450,7 +11088,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sync_group_name",
@@ -10470,7 +11110,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -10490,7 +11132,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "interval",
@@ -10510,7 +11154,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "conflict_resolution_policy",
@@ -10530,7 +11176,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "HubWin",
+            "MemberWin"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "sync_database_id",
@@ -10550,7 +11201,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "hub_database_user_name",
@@ -10570,7 +11223,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "hub_database_password",
@@ -10590,7 +11245,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": true
+          "NoLog": true,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "schema",
@@ -10661,7 +11318,9 @@
                       },
                       "SubOptions": [],
                       "RequiredCount": 0,
-                      "NoLog": false
+                      "NoLog": false,
+                      "EnumValues": [],
+                      "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
                       "Name": "data_size",
@@ -10681,7 +11340,9 @@
                       },
                       "SubOptions": [],
                       "RequiredCount": 0,
-                      "NoLog": false
+                      "NoLog": false,
+                      "EnumValues": [],
+                      "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
                       "Name": "data_type",
@@ -10701,11 +11362,15 @@
                       },
                       "SubOptions": [],
                       "RequiredCount": 0,
-                      "NoLog": false
+                      "NoLog": false,
+                      "EnumValues": [],
+                      "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     }
                   ],
                   "RequiredCount": 0,
-                  "NoLog": false
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
                 },
                 {
                   "Name": "quoted_name",
@@ -10725,11 +11390,15 @@
                   },
                   "SubOptions": [],
                   "RequiredCount": 0,
-                  "NoLog": false
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
-              "NoLog": false
+              "NoLog": false,
+              "EnumValues": [],
+              "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
               "Name": "master_sync_member_name",
@@ -10749,11 +11418,15 @@
               },
               "SubOptions": [],
               "RequiredCount": 0,
-              "NoLog": false
+              "NoLog": false,
+              "EnumValues": [],
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- Model"
         }
       ],
       "Methods": [
@@ -11026,7 +11699,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 4,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -11046,7 +11721,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 4,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -11066,7 +11743,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 4,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "sync_group_name",
@@ -11086,7 +11765,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "start_time",
@@ -11106,7 +11787,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "end_time",
@@ -11126,7 +11809,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "type",
@@ -11146,7 +11831,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "continuation_token",
@@ -11166,7 +11853,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "location_name",
@@ -11186,7 +11875,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -11303,7 +11994,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -11323,7 +12016,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -11343,7 +12038,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sync_group_name",
@@ -11363,7 +12060,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sync_member_name",
@@ -11383,7 +12082,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "parameters",
@@ -11403,7 +12104,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_type",
@@ -11423,7 +12126,12 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "AzureSqlDatabase",
+            "SqlServerDatabase"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
           "Name": "sync_agent_id",
@@ -11443,7 +12151,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sql_server_database_id",
@@ -11463,7 +12173,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -11483,7 +12195,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "database_name",
@@ -11503,7 +12217,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "user_name",
@@ -11523,7 +12239,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "password",
@@ -11543,7 +12261,9 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": true
+          "NoLog": true,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "sync_direction",
@@ -11563,7 +12283,13 @@
           },
           "SubOptions": [],
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [
+            "Bidirectional",
+            "OneWayMemberToHub",
+            "OneWayHubToMember"
+          ],
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -11787,7 +12513,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -11807,7 +12535,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -11827,7 +12557,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "sync_group_name",
@@ -11847,7 +12579,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 3,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "sync_member_name",
@@ -11867,7 +12601,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -11959,7 +12695,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "usage_name",
@@ -11979,7 +12717,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -12042,7 +12782,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -12062,7 +12804,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "virtual_network_rule_name",
@@ -12082,7 +12826,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "virtual_network_subnet_id",
@@ -12102,7 +12848,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "ignore_missing_vnet_service_endpoint",
@@ -12122,7 +12870,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -12262,7 +13012,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -12282,7 +13034,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "virtual_network_rule_name",
@@ -12302,7 +13056,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -12369,7 +13125,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -12389,7 +13147,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "database_name",
@@ -12409,7 +13169,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -12465,7 +13227,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "server_name",
@@ -12485,7 +13249,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
           "Name": "dns_alias_name",
@@ -12505,7 +13271,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 0,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": [],
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
       "Methods": [
@@ -12624,7 +13392,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "server_name",
@@ -12644,7 +13414,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 2,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         },
         {
           "Name": "dns_alias_name",
@@ -12664,7 +13436,9 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false
+          "NoLog": false,
+          "EnumValues": null,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [

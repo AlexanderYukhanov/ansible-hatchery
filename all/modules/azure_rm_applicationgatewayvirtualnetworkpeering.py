@@ -70,6 +70,7 @@ options:
         description:
             - "The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected). Possible values include: C(Ini
                tiated), C(Connected), C(Disconnected)"
+        choices: ['Initiated', 'Connected', 'Disconnected']
     provisioning_state:
         description:
             - The provisioning state of the resource.
@@ -162,7 +163,8 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
                 type='dict'
             ),
             peering_state=dict(
-                type='str'
+                type='str',
+                choices=['Initiated', 'Connected', 'Disconnected']
             ),
             provisioning_state=dict(
                 type='str'

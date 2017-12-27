@@ -49,6 +49,7 @@ options:
             ssl_state:
                 description:
                     - SSL type. Possible values include: C(Disabled), C(SniEnabled), C(IpBasedEnabled)
+                choices: ['Disabled', 'SniEnabled', 'IpBasedEnabled']
             virtual_ip:
                 description:
                     - Virtual IP address assigned to the hostname if IP based SSL is enabled.
@@ -61,6 +62,7 @@ options:
             host_type:
                 description:
                     - Indicates whether the hostname is a standard or repository hostname. Possible values include: C(Standard), C(Repository)
+                choices: ['Standard', 'Repository']
     server_farm_id:
         description:
             - "Resource ID of the associated App Service plan, formatted as: '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.
@@ -141,6 +143,7 @@ options:
                         description:
                             - "Type of database. Possible values include: C(MySql), C(SQLServer), C(SQLAzure), C(Custom), C(NotificationHub), C(ServiceBus),
                                C(EventHub), C(ApiHub), C(DocDb), C(RedisCache), C(PostgreSQL)"
+                        choices: ['MySql', 'SQLServer', 'SQLAzure', 'Custom', 'NotificationHub', 'ServiceBus', 'EventHub', 'ApiHub', 'DocDb', 'RedisCache', 'PostgreSQL']
             handler_mappings:
                 description:
                     - Handler mappings.
@@ -161,6 +164,7 @@ options:
                 description:
                     - "SCM type. Possible values include: C(None), C(Dropbox), C(Tfs), C(LocalGit), C(GitHub), C(CodePlexGit), C(CodePlexHg), C(BitbucketGit)
                        , C(BitbucketHg), C(ExternalGit), C(ExternalHg), C(OneDrive), C(VSO)"
+                choices: ['None', 'Dropbox', 'Tfs', 'LocalGit', 'GitHub', 'CodePlexGit', 'CodePlexHg', 'BitbucketGit', 'BitbucketHg', 'ExternalGit', 'ExternalHg', 'OneDrive', 'VSO']
             use32_bit_worker_process:
                 description:
                     - <code>true</code> to use 32-bit worker process; otherwise, <code>false</code>.
@@ -185,6 +189,7 @@ options:
             managed_pipeline_mode:
                 description:
                     - Managed pipeline mode. Possible values include: C(Integrated), C(Classic)
+                choices: ['Integrated', 'Classic']
             virtual_applications:
                 description:
                     - Virtual applications.
@@ -212,6 +217,7 @@ options:
                 description:
                     - "Site load balancing. Possible values include: C(WeightedRoundRobin), C(LeastRequests), C(LeastResponseTime), C(WeightedTotalTraffic),
                        C(RequestHash)"
+                choices: ['WeightedRoundRobin', 'LeastRequests', 'LeastResponseTime', 'WeightedTotalTraffic', 'RequestHash']
             experiments:
                 description:
                     - This is work around for polymophic types.
@@ -325,6 +331,7 @@ options:
                             action_type:
                                 description:
                                     - Predefined action to be taken. Possible values include: C(Recycle), C(LogEvent), C(CustomAction)
+                                choices: ['Recycle', 'LogEvent', 'CustomAction']
                             custom_action:
                                 description:
                                     - Custom action to be taken.

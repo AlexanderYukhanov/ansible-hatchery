@@ -44,6 +44,7 @@ options:
     conflict_resolution_policy:
         description:
             - Conflict resolution policy of the sync group. Possible values include: C(HubWin), C(MemberWin)
+        choices: ['HubWin', 'MemberWin']
     sync_database_id:
         description:
             - ARM resource id of the sync database in the sync group.
@@ -150,7 +151,8 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                 type='int'
             ),
             conflict_resolution_policy=dict(
-                type='str'
+                type='str',
+                choices=['HubWin', 'MemberWin']
             ),
             sync_database_id=dict(
                 type='str'
