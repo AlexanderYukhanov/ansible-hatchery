@@ -275,8 +275,8 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'",
-          "DefaultValue": null,
+          "Documentation": "Enable SSL enforcement.",
+          "DefaultValue": "False",
           "DefaultValueSample": {
             "default": "Enabled",
             "test:default": ""
@@ -535,7 +535,7 @@
         },
         {
           "Name": "user_visible_state",
-          "NameAlt": "user_visible_state",
+          "NameAlt": "state",
           "Description": "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'",
           "Type": "str",
           "Returned": "always",
@@ -555,7 +555,7 @@
       "TestPrerequisitesModule": "",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
-      "AssertStateVariable": "user_visible_state",
+      "AssertStateVariable": "state",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Servers",
       "ModuleOperationName": "servers",
