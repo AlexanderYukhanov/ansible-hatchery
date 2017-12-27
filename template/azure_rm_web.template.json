@@ -14494,7 +14494,7 @@
   "Namespace": "web",
   "NamespaceUpper": "web",
   "Name": "WebSiteManagementClient",
-  "ApiVersion": null,
+  "ApiVersion": "",
   "Operations": [
     "AppServiceCertificateOrders[ list validate_purchase_information list_by_resource_group get create_or_update delete update list_certificates get_certificate create_or_update_certificate delete_certificate update_certificate reissue renew resend_email resend_request_emails retrieve_site_seal verify_domain_ownership retrieve_certificate_actions retrieve_certificate_email_history MAIN FACTS ]",
     "CertificateRegistrationProvider[ list_operations FACTS ]",

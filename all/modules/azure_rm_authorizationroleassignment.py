@@ -143,8 +143,7 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         response = None
 
         self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
-                                                    base_url=self._cloud_environment.endpoints.resource_manager,
-                                                    api_version='2015-07-01')
+                                                    base_url=self._cloud_environment.endpoints.resource_manager)
 
         old_response = self.get_roleassignments()
 
