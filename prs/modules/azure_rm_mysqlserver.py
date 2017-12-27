@@ -63,9 +63,6 @@ options:
     enforce_ssl:
         description:
             - Enable SSL enforcement.
-    create_mode:
-        description:
-            - Currently only C(Default) value supported
     admin_username:
         description:
             - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."

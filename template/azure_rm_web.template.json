@@ -24,6 +24,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -46,6 +48,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -68,6 +72,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -90,6 +96,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -112,6 +120,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -134,6 +144,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
@@ -156,6 +168,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -178,6 +192,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -200,6 +216,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -225,6 +243,8 @@
             "StandardDomainValidatedSsl",
             "StandardDomainValidatedWildCardSsl"
           ],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
@@ -247,6 +267,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -269,6 +291,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
@@ -834,6 +858,8 @@
           "RequiredCount": 3,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -856,6 +882,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -959,6 +987,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -981,6 +1011,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -1003,6 +1035,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -1025,6 +1059,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -1047,6 +1083,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -1103,6 +1141,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1125,6 +1165,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1147,6 +1189,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1169,6 +1213,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1191,6 +1237,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1213,12 +1261,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -1241,6 +1293,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1263,6 +1317,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1285,6 +1341,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1307,6 +1365,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1329,6 +1389,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1351,6 +1413,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1373,6 +1437,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1395,12 +1461,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -1457,6 +1527,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1479,6 +1551,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1501,6 +1575,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1523,6 +1599,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1545,6 +1623,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1567,12 +1647,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -1595,6 +1679,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1617,6 +1703,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1639,6 +1727,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1661,6 +1751,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1683,6 +1775,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1705,6 +1799,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1727,6 +1823,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1749,12 +1847,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -1811,6 +1913,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1833,6 +1937,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1855,6 +1961,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1877,6 +1985,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1899,6 +2009,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -1921,12 +2033,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -1949,6 +2065,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1971,6 +2089,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -1993,6 +2113,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2015,6 +2137,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2037,6 +2161,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2059,6 +2185,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2081,6 +2209,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2103,12 +2233,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -2165,6 +2299,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -2187,6 +2323,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -2209,6 +2347,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -2231,6 +2371,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -2253,6 +2395,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -2275,12 +2419,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -2303,6 +2451,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2325,6 +2475,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2347,6 +2499,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2369,6 +2523,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2391,6 +2547,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2413,6 +2571,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2435,6 +2595,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2457,12 +2619,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -2485,6 +2651,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -2507,6 +2675,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -2546,6 +2716,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -2568,6 +2740,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -2590,12 +2764,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -2621,6 +2799,8 @@
             "AzureDns",
             "DefaultDomainRegistrarDns"
           ],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
@@ -2643,6 +2823,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -2668,6 +2850,8 @@
             "AzureDns",
             "DefaultDomainRegistrarDns"
           ],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
@@ -2690,6 +2874,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
@@ -3650,6 +3836,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -3672,6 +3860,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -3694,6 +3884,8 @@
           "RequiredCount": 3,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -3716,6 +3908,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -3800,6 +3994,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -3822,6 +4018,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -3844,6 +4042,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -3936,6 +4136,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -3958,6 +4160,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -3980,6 +4184,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4002,6 +4208,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -4024,6 +4232,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -4046,6 +4256,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
@@ -4068,6 +4280,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -4090,6 +4304,8 @@
           "RequiredCount": 0,
           "NoLog": true,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -4112,6 +4328,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -4134,6 +4352,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -4156,6 +4376,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
@@ -4512,6 +4734,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4534,6 +4758,8 @@
           "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -4599,6 +4825,8 @@
           "RequiredCount": 6,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4621,6 +4849,8 @@
           "RequiredCount": 6,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4643,6 +4873,8 @@
           "RequiredCount": 4,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4665,6 +4897,8 @@
           "RequiredCount": 3,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -4817,6 +5051,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4839,6 +5075,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4861,6 +5099,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4883,6 +5123,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -4953,6 +5195,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -4975,6 +5219,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -5043,6 +5289,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -5065,6 +5313,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -5087,6 +5337,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -5109,6 +5361,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -5131,6 +5385,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -5153,6 +5409,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -5192,6 +5450,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5218,6 +5478,8 @@
                 "SniEnabled",
                 "IpBasedEnabled"
               ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             },
             {
@@ -5240,6 +5502,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5262,6 +5526,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5284,6 +5550,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5309,12 +5577,16 @@
                 "Standard",
                 "Repository"
               ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
@@ -5337,6 +5609,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -5359,6 +5633,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -5398,6 +5674,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5420,6 +5698,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -5442,6 +5722,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5464,6 +5746,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5486,6 +5770,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5508,6 +5794,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5530,6 +5818,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5552,6 +5842,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5574,6 +5866,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5596,6 +5890,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5618,6 +5914,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5640,6 +5938,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5662,6 +5962,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5684,6 +5986,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5706,6 +6010,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -5745,6 +6051,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -5767,12 +6075,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -5812,6 +6124,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -5834,6 +6148,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -5868,12 +6184,16 @@
                     "RedisCache",
                     "PostgreSQL"
                   ],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- Enum"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -5913,6 +6233,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -5935,6 +6257,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -5957,12 +6281,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -5985,6 +6313,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6021,6 +6351,8 @@
                 "OneDrive",
                 "VSO"
               ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             },
             {
@@ -6043,6 +6375,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6065,6 +6399,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6087,6 +6423,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6109,6 +6447,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6131,6 +6471,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6153,6 +6495,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6175,6 +6519,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6200,6 +6546,8 @@
                 "Integrated",
                 "Classic"
               ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             },
             {
@@ -6239,6 +6587,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -6261,6 +6611,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -6283,6 +6635,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -6322,6 +6676,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6344,18 +6700,24 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     }
                   ],
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -6384,6 +6746,8 @@
                 "WeightedTotalTraffic",
                 "RequestHash"
               ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             },
             {
@@ -6440,6 +6804,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6462,6 +6828,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6484,6 +6852,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6506,6 +6876,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6528,6 +6900,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6550,6 +6924,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6572,6 +6948,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6594,18 +6972,24 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     }
                   ],
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -6645,6 +7029,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -6667,6 +7053,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -6689,12 +7077,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -6717,6 +7109,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -6790,6 +7184,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -6812,12 +7208,16 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         }
                       ],
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- Model"
                     },
                     {
@@ -6840,6 +7240,8 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     },
                     {
@@ -6879,6 +7281,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -6901,6 +7305,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -6923,6 +7329,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -6945,6 +7353,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -6967,12 +7377,16 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         }
                       ],
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
                     },
                     {
@@ -7012,6 +7426,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -7034,6 +7450,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -7056,18 +7474,24 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         }
                       ],
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- Model"
                     }
                   ],
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- Model"
                 },
                 {
@@ -7111,6 +7535,8 @@
                         "LogEvent",
                         "CustomAction"
                       ],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- Enum"
                     },
                     {
@@ -7150,6 +7576,8 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         },
                         {
@@ -7172,12 +7600,16 @@
                           "RequiredCount": 0,
                           "NoLog": false,
                           "EnumValues": [],
+                          "IncludeInDocumentation": true,
+                          "IncludeInArgSpec": true,
                           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                         }
                       ],
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- Model"
                     },
                     {
@@ -7200,18 +7632,24 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
                       "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                     }
                   ],
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- Model"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -7234,6 +7672,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7256,6 +7696,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7295,12 +7737,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -7340,6 +7786,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -7362,6 +7810,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -7384,6 +7834,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -7406,6 +7858,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -7428,12 +7882,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -7473,12 +7931,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -7501,6 +7963,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7523,6 +7987,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7562,6 +8028,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -7584,18 +8052,24 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -7618,6 +8092,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -7657,12 +8133,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -7685,6 +8165,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -7707,6 +8189,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -7729,6 +8213,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -7751,6 +8237,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -7773,6 +8261,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -7812,6 +8302,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7834,6 +8326,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7856,6 +8350,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7878,6 +8374,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7900,6 +8398,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7922,6 +8422,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7944,6 +8446,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -7966,6 +8470,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -7988,6 +8494,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -8010,6 +8518,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -8032,12 +8542,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -8077,6 +8591,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -8099,6 +8615,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -8138,6 +8656,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -8160,12 +8680,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -8188,6 +8712,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -8210,6 +8736,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -8232,12 +8760,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -8260,6 +8792,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -8299,12 +8833,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -8327,6 +8865,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -8349,6 +8889,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -8371,6 +8913,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -8393,6 +8937,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         }
       ],
@@ -10164,6 +10710,8 @@
           "RequiredCount": 88,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10186,6 +10734,8 @@
           "RequiredCount": 87,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10208,6 +10758,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10230,6 +10782,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10252,6 +10806,8 @@
           "RequiredCount": 42,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10274,6 +10830,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10296,6 +10854,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10318,6 +10878,8 @@
           "RequiredCount": 8,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10340,6 +10902,8 @@
           "RequiredCount": 6,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10362,6 +10926,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10384,6 +10950,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10406,6 +10974,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10428,6 +10998,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10450,6 +11022,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10472,6 +11046,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10494,6 +11070,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10516,6 +11094,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10538,6 +11118,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -10560,6 +11142,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -11734,6 +12318,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11756,6 +12342,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11778,6 +12366,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -11800,6 +12390,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11822,6 +12414,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11844,6 +12438,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11866,6 +12462,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11888,6 +12486,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11910,6 +12510,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11932,6 +12534,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -11971,6 +12575,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -11993,12 +12599,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -12025,6 +12635,8 @@
             "Web",
             "Publishing"
           ],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         },
         {
@@ -12047,6 +12659,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12069,6 +12683,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12108,6 +12724,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -12134,6 +12752,8 @@
                 "Dedicated",
                 "Dynamic"
               ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             },
             {
@@ -12156,6 +12776,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -12178,12 +12800,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
@@ -12206,6 +12832,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12228,6 +12856,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12270,6 +12900,8 @@
                 "Permit",
                 "Deny"
               ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             },
             {
@@ -12292,6 +12924,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -12314,6 +12948,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -12336,12 +12972,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
@@ -12364,6 +13004,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12386,6 +13028,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12408,6 +13052,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12430,6 +13076,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -12469,6 +13117,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -12491,12 +13141,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         },
         {
@@ -12519,6 +13173,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
         }
       ],
@@ -13259,6 +13915,8 @@
           "RequiredCount": 25,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13281,6 +13939,8 @@
           "RequiredCount": 24,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13303,6 +13963,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13325,6 +13987,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13347,6 +14011,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13369,6 +14035,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13391,6 +14059,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13413,6 +14083,8 @@
           "RequiredCount": 6,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13435,6 +14107,8 @@
           "RequiredCount": 4,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13457,6 +14131,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
@@ -13809,6 +14485,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -13831,6 +14509,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -13853,6 +14533,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -13875,6 +14557,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -13897,6 +14581,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -13919,6 +14605,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -13941,6 +14629,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -13963,6 +14653,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -14002,12 +14694,16 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         },
         {
@@ -14030,6 +14726,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -14052,6 +14750,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -14074,6 +14774,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -14096,6 +14798,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -14118,6 +14822,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -14140,6 +14846,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
         },
         {
@@ -14179,6 +14887,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -14201,6 +14911,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -14223,6 +14935,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -14245,6 +14959,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -14267,6 +14983,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
@@ -14306,6 +15024,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -14328,6 +15048,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -14350,6 +15072,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -14372,12 +15096,16 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
             },
             {
@@ -14400,6 +15128,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             },
             {
@@ -14439,6 +15169,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -14461,6 +15193,8 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 },
                 {
@@ -14483,18 +15217,24 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
                   "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
                 }
               ],
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
             }
           ],
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Model"
         }
       ],
@@ -14971,6 +15711,8 @@
           "RequiredCount": 12,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -14993,6 +15735,8 @@
           "RequiredCount": 11,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -15015,6 +15759,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -15037,6 +15783,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -15059,6 +15807,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -15081,6 +15831,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -15103,6 +15855,8 @@
           "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -15125,6 +15879,8 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         },
         {
@@ -15147,6 +15903,8 @@
           "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
           "AdditionalInfo": null
         }
       ],
