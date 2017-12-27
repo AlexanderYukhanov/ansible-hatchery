@@ -1157,6 +1157,7 @@
   "Namespace": "authorization",
   "NamespaceUpper": "Authorization",
   "Name": "AuthorizationManagementClient",
+  "ApiVersion": "2015-07-01",
   "Operations": [
     "ClassicAdministrators[ list ]",
     "Permissions[ list_for_resource_group list_for_resource FACTS ]",

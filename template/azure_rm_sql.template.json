@@ -12713,6 +12713,7 @@
   "Namespace": "sql",
   "NamespaceUpper": "sql",
   "Name": "SqlManagementClient",
+  "ApiVersion": null,
   "Operations": [
     "BackupLongTermRetentionPolicies[ get create_or_update list_by_database MAIN FACTS ]",
     "BackupLongTermRetentionVaults[ get create_or_update list_by_server MAIN FACTS ]",
