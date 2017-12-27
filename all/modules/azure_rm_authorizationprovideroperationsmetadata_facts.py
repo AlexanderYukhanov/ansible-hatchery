@@ -84,8 +84,8 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
         for key in self.module_arg_spec:
             setattr(self, key, kwargs[key])
         self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
-                                                    api_version='2015-07-01',
-                                                    base_url=self._cloud_environment.endpoints.resource_manager)
+                                                    base_url=self._cloud_environment.endpoints.resource_manager,
+                                                    api_version='2015-07-01')
 
         if (self.resource_provider_namespace is not None):
             self.results['ansible_facts']['get'] = self.get()
