@@ -107,7 +107,7 @@
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "SkuName",
-                "test:default": ""
+                "test:default": "SkuName"
               },
               "SubOptions": [],
               "RequiredCount": 0,
