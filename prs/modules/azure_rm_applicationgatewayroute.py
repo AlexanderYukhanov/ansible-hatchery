@@ -173,7 +173,18 @@ class AzureRMRoutes(AzureRMModuleBase):
                 elif key == "address_prefix":
                     self.route_parameters["address_prefix"] = kwargs[key]
                 elif key == "next_hop_type":
-                    self.route_parameters["next_hop_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'virtual_network_gateway':
+                        ev = 'VirtualNetworkGateway'
+                    elif ev == 'vnet_local':
+                        ev = 'VnetLocal'
+                    elif ev == 'internet':
+                        ev = 'Internet'
+                    elif ev == 'virtual_appliance':
+                        ev = 'VirtualAppliance'
+                    elif ev == 'none':
+                        ev = 'None'
+                    self.route_parameters["next_hop_type"] = ev
                 elif key == "next_hop_ip_address":
                     self.route_parameters["next_hop_ip_address"] = kwargs[key]
                 elif key == "provisioning_state":

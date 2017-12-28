@@ -196,7 +196,14 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
                 elif key == "frontend_ip_configuration":
                     self.inbound_nat_rule_parameters["frontend_ip_configuration"] = kwargs[key]
                 elif key == "protocol":
-                    self.inbound_nat_rule_parameters["protocol"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'udp':
+                        ev = 'Udp'
+                    elif ev == 'tcp':
+                        ev = 'Tcp'
+                    elif ev == 'all':
+                        ev = 'All'
+                    self.inbound_nat_rule_parameters["protocol"] = ev
                 elif key == "frontend_port":
                     self.inbound_nat_rule_parameters["frontend_port"] = kwargs[key]
                 elif key == "backend_port":

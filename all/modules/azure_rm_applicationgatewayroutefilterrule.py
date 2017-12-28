@@ -171,7 +171,12 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
                 if key == "id":
                     self.route_filter_rule_parameters["id"] = kwargs[key]
                 elif key == "access":
-                    self.route_filter_rule_parameters["access"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'allow':
+                        ev = 'Allow'
+                    elif ev == 'deny':
+                        ev = 'Deny'
+                    self.route_filter_rule_parameters["access"] = ev
                 elif key == "route_filter_rule_type":
                     self.route_filter_rule_parameters["route_filter_rule_type"] = kwargs[key]
                 elif key == "communities":

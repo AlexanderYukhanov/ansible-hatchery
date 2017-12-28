@@ -177,7 +177,10 @@ class AzureRMServers(AzureRMModuleBase):
                 elif key == "version":
                     self.parameters["version"] = kwargs[key]
                 elif key == "identity":
-                    self.parameters.setdefault("identity", {})["type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'system_assigned':
+                        ev = 'SystemAssigned'
+                    self.parameters.setdefault("identity", {})["type"] = ev
 
         old_response = None
         response = None

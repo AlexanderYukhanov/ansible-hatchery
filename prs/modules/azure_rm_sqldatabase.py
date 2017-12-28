@@ -275,7 +275,24 @@ class AzureRMDatabases(AzureRMModuleBase):
                 elif key == "collation":
                     self.parameters["collation"] = kwargs[key]
                 elif key == "create_mode":
-                    self.parameters["create_mode"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'copy':
+                        ev = 'Copy'
+                    elif ev == 'default':
+                        ev = 'Default'
+                    elif ev == 'non_readable_secondary':
+                        ev = 'NonReadableSecondary'
+                    elif ev == 'online_secondary':
+                        ev = 'OnlineSecondary'
+                    elif ev == 'point_in_time_restore':
+                        ev = 'PointInTimeRestore'
+                    elif ev == 'recovery':
+                        ev = 'Recovery'
+                    elif ev == 'restore':
+                        ev = 'Restore'
+                    elif ev == 'restore_long_term_retention_backup':
+                        ev = 'RestoreLongTermRetentionBackup'
+                    self.parameters["create_mode"] = ev
                 elif key == "source_database_id":
                     self.parameters["source_database_id"] = kwargs[key]
                 elif key == "source_database_deletion_date":
@@ -285,19 +302,79 @@ class AzureRMDatabases(AzureRMModuleBase):
                 elif key == "recovery_services_recovery_point_resource_id":
                     self.parameters["recovery_services_recovery_point_resource_id"] = kwargs[key]
                 elif key == "edition":
-                    self.parameters["edition"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'web':
+                        ev = 'Web'
+                    elif ev == 'business':
+                        ev = 'Business'
+                    elif ev == 'basic':
+                        ev = 'Basic'
+                    elif ev == 'standard':
+                        ev = 'Standard'
+                    elif ev == 'premium':
+                        ev = 'Premium'
+                    elif ev == 'free':
+                        ev = 'Free'
+                    elif ev == 'stretch':
+                        ev = 'Stretch'
+                    elif ev == 'data_warehouse':
+                        ev = 'DataWarehouse'
+                    elif ev == 'system':
+                        ev = 'System'
+                    elif ev == 'system2':
+                        ev = 'System2'
+                    self.parameters["edition"] = ev
                 elif key == "max_size_bytes":
                     self.parameters["max_size_bytes"] = kwargs[key]
                 elif key == "requested_service_objective_id":
                     self.parameters["requested_service_objective_id"] = kwargs[key]
                 elif key == "requested_service_objective_name":
-                    self.parameters["requested_service_objective_name"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'basic':
+                        ev = 'Basic'
+                    elif ev == 's0':
+                        ev = 'S0'
+                    elif ev == 's1':
+                        ev = 'S1'
+                    elif ev == 's2':
+                        ev = 'S2'
+                    elif ev == 's3':
+                        ev = 'S3'
+                    elif ev == 'p1':
+                        ev = 'P1'
+                    elif ev == 'p2':
+                        ev = 'P2'
+                    elif ev == 'p3':
+                        ev = 'P3'
+                    elif ev == 'p4':
+                        ev = 'P4'
+                    elif ev == 'p6':
+                        ev = 'P6'
+                    elif ev == 'p11':
+                        ev = 'P11'
+                    elif ev == 'p15':
+                        ev = 'P15'
+                    elif ev == 'system':
+                        ev = 'System'
+                    elif ev == 'system2':
+                        ev = 'System2'
+                    elif ev == 'elastic_pool':
+                        ev = 'ElasticPool'
+                    self.parameters["requested_service_objective_name"] = ev
                 elif key == "elastic_pool_name":
                     self.parameters["elastic_pool_name"] = kwargs[key]
                 elif key == "read_scale":
-                    self.parameters["read_scale"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'enabled':
+                        ev = 'Enabled'
+                    elif ev == 'disabled':
+                        ev = 'Disabled'
+                    self.parameters["read_scale"] = ev
                 elif key == "sample_name":
-                    self.parameters["sample_name"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'adventure_works_lt':
+                        ev = 'AdventureWorksLT'
+                    self.parameters["sample_name"] = ev
                 elif key == "zone_redundant":
                     self.parameters["zone_redundant"] = kwargs[key]
 

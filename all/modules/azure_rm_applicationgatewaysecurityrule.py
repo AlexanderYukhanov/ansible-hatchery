@@ -272,7 +272,12 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 elif key == "description":
                     self.security_rule_parameters["description"] = kwargs[key]
                 elif key == "protocol":
-                    self.security_rule_parameters["protocol"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'tcp':
+                        ev = 'Tcp'
+                    elif ev == 'udp':
+                        ev = 'Udp'
+                    self.security_rule_parameters["protocol"] = ev
                 elif key == "source_port_range":
                     self.security_rule_parameters["source_port_range"] = kwargs[key]
                 elif key == "destination_port_range":
@@ -294,11 +299,21 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 elif key == "destination_port_ranges":
                     self.security_rule_parameters["destination_port_ranges"] = kwargs[key]
                 elif key == "access":
-                    self.security_rule_parameters["access"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'allow':
+                        ev = 'Allow'
+                    elif ev == 'deny':
+                        ev = 'Deny'
+                    self.security_rule_parameters["access"] = ev
                 elif key == "priority":
                     self.security_rule_parameters["priority"] = kwargs[key]
                 elif key == "direction":
-                    self.security_rule_parameters["direction"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'inbound':
+                        ev = 'Inbound'
+                    elif ev == 'outbound':
+                        ev = 'Outbound'
+                    self.security_rule_parameters["direction"] = ev
                 elif key == "provisioning_state":
                     self.security_rule_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":

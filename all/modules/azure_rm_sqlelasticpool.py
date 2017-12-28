@@ -178,7 +178,14 @@ class AzureRMElasticPools(AzureRMModuleBase):
                 if key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "edition":
-                    self.parameters["edition"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'basic':
+                        ev = 'Basic'
+                    elif ev == 'standard':
+                        ev = 'Standard'
+                    elif ev == 'premium':
+                        ev = 'Premium'
+                    self.parameters["edition"] = ev
                 elif key == "dtu":
                     self.parameters["dtu"] = kwargs[key]
                 elif key == "database_dtu_max":

@@ -608,7 +608,16 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                 elif key == "local_network_gateway2":
                     self.parameters["local_network_gateway2"] = kwargs[key]
                 elif key == "connection_type":
-                    self.parameters["connection_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'ipsec':
+                        ev = 'IPsec'
+                    elif ev == 'vnet2_vnet':
+                        ev = 'Vnet2Vnet'
+                    elif ev == 'express_route':
+                        ev = 'ExpressRoute'
+                    elif ev == 'vpn_client':
+                        ev = 'VPNClient'
+                    self.parameters["connection_type"] = ev
                 elif key == "routing_weight":
                     self.parameters["routing_weight"] = kwargs[key]
                 elif key == "shared_key":

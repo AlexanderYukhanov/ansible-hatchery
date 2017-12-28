@@ -227,7 +227,12 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 if key == "alias_name":
                     self.parameters["alias_name"] = kwargs[key]
                 elif key == "rule_state":
-                    self.parameters["rule_state"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'disabled':
+                        ev = 'Disabled'
+                    elif ev == 'enabled':
+                        ev = 'Enabled'
+                    self.parameters["rule_state"] = ev
                 elif key == "schema_name":
                     self.parameters["schema_name"] = kwargs[key]
                 elif key == "table_name":
@@ -235,7 +240,20 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 elif key == "column_name":
                     self.parameters["column_name"] = kwargs[key]
                 elif key == "masking_function":
-                    self.parameters["masking_function"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'default':
+                        ev = 'Default'
+                    elif ev == 'ccn':
+                        ev = 'CCN'
+                    elif ev == 'email':
+                        ev = 'Email'
+                    elif ev == 'number':
+                        ev = 'Number'
+                    elif ev == 'ssn':
+                        ev = 'SSN'
+                    elif ev == 'text':
+                        ev = 'Text'
+                    self.parameters["masking_function"] = ev
                 elif key == "number_from":
                     self.parameters["number_from"] = kwargs[key]
                 elif key == "number_to":

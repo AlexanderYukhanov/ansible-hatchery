@@ -641,7 +641,16 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                 elif key == "circuit_provisioning_state":
                     self.parameters["circuit_provisioning_state"] = kwargs[key]
                 elif key == "service_provider_provisioning_state":
-                    self.parameters["service_provider_provisioning_state"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'not_provisioned':
+                        ev = 'NotProvisioned'
+                    elif ev == 'provisioning':
+                        ev = 'Provisioning'
+                    elif ev == 'provisioned':
+                        ev = 'Provisioned'
+                    elif ev == 'deprovisioning':
+                        ev = 'Deprovisioning'
+                    self.parameters["service_provider_provisioning_state"] = ev
                 elif key == "authorizations":
                     self.parameters["authorizations"] = kwargs[key]
                 elif key == "peerings":

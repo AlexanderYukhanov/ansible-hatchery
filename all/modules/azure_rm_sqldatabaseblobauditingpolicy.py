@@ -188,7 +188,12 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "state":
-                    self.parameters["state"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'enabled':
+                        ev = 'Enabled'
+                    elif ev == 'disabled':
+                        ev = 'Disabled'
+                    self.parameters["state"] = ev
                 elif key == "storage_endpoint":
                     self.parameters["storage_endpoint"] = kwargs[key]
                 elif key == "storage_account_access_key":

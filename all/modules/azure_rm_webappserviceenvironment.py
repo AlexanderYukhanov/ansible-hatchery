@@ -318,7 +318,14 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 elif key == "virtual_network":
                     self.hosting_environment_envelope["virtual_network"] = kwargs[key]
                 elif key == "internal_load_balancing_mode":
-                    self.hosting_environment_envelope["internal_load_balancing_mode"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'none':
+                        ev = 'None'
+                    elif ev == 'web':
+                        ev = 'Web'
+                    elif ev == 'publishing':
+                        ev = 'Publishing'
+                    self.hosting_environment_envelope["internal_load_balancing_mode"] = ev
                 elif key == "multi_size":
                     self.hosting_environment_envelope["multi_size"] = kwargs[key]
                 elif key == "multi_role_count":

@@ -209,13 +209,25 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 if key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "state":
-                    self.parameters["state"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'new':
+                        ev = 'New'
+                    elif ev == 'enabled':
+                        ev = 'Enabled'
+                    elif ev == 'disabled':
+                        ev = 'Disabled'
+                    self.parameters["state"] = ev
                 elif key == "disabled_alerts":
                     self.parameters["disabled_alerts"] = kwargs[key]
                 elif key == "email_addresses":
                     self.parameters["email_addresses"] = kwargs[key]
                 elif key == "email_account_admins":
-                    self.parameters["email_account_admins"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'enabled':
+                        ev = 'Enabled'
+                    elif ev == 'disabled':
+                        ev = 'Disabled'
+                    self.parameters["email_account_admins"] = ev
                 elif key == "storage_endpoint":
                     self.parameters["storage_endpoint"] = kwargs[key]
                 elif key == "storage_account_access_key":
@@ -223,7 +235,12 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 elif key == "retention_days":
                     self.parameters["retention_days"] = kwargs[key]
                 elif key == "use_server_default":
-                    self.parameters["use_server_default"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'enabled':
+                        ev = 'Enabled'
+                    elif ev == 'disabled':
+                        ev = 'Disabled'
+                    self.parameters["use_server_default"] = ev
 
         old_response = None
         response = None

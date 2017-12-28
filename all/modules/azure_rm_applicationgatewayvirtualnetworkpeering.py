@@ -218,7 +218,14 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
                 elif key == "remote_address_space":
                     self.virtual_network_peering_parameters["remote_address_space"] = kwargs[key]
                 elif key == "peering_state":
-                    self.virtual_network_peering_parameters["peering_state"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'initiated':
+                        ev = 'Initiated'
+                    elif ev == 'connected':
+                        ev = 'Connected'
+                    elif ev == 'disconnected':
+                        ev = 'Disconnected'
+                    self.virtual_network_peering_parameters["peering_state"] = ev
                 elif key == "provisioning_state":
                     self.virtual_network_peering_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":

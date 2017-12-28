@@ -160,7 +160,12 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 elif key == "authorization_key":
                     self.authorization_parameters["authorization_key"] = kwargs[key]
                 elif key == "authorization_use_status":
-                    self.authorization_parameters["authorization_use_status"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'available':
+                        ev = 'Available'
+                    elif ev == 'in_use':
+                        ev = 'InUse'
+                    self.authorization_parameters["authorization_use_status"] = ev
                 elif key == "provisioning_state":
                     self.authorization_parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":

@@ -769,9 +769,21 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 if key == "id":
                     self.peering_parameters["id"] = kwargs[key]
                 elif key == "peering_type":
-                    self.peering_parameters["peering_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'azure_public_peering':
+                        ev = 'AzurePublicPeering'
+                    elif ev == 'azure_private_peering':
+                        ev = 'AzurePrivatePeering'
+                    elif ev == 'microsoft_peering':
+                        ev = 'MicrosoftPeering'
+                    self.peering_parameters["peering_type"] = ev
                 elif key == "state":
-                    self.peering_parameters["state"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'disabled':
+                        ev = 'Disabled'
+                    elif ev == 'enabled':
+                        ev = 'Enabled'
+                    self.peering_parameters["state"] = ev
                 elif key == "azure_asn":
                     self.peering_parameters["azure_asn"] = kwargs[key]
                 elif key == "peer_asn":

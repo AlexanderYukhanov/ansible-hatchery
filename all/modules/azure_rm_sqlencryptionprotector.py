@@ -150,7 +150,12 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                 elif key == "server_key_name":
                     self.parameters["server_key_name"] = kwargs[key]
                 elif key == "server_key_type":
-                    self.parameters["server_key_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'service_managed':
+                        ev = 'ServiceManaged'
+                    elif ev == 'azure_key_vault':
+                        ev = 'AzureKeyVault'
+                    self.parameters["server_key_type"] = ev
 
         old_response = None
         response = None

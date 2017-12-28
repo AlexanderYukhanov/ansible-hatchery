@@ -162,7 +162,12 @@ class AzureRMServerKeys(AzureRMModuleBase):
                 if key == "kind":
                     self.parameters["kind"] = kwargs[key]
                 elif key == "server_key_type":
-                    self.parameters["server_key_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'service_managed':
+                        ev = 'ServiceManaged'
+                    elif ev == 'azure_key_vault':
+                        ev = 'AzureKeyVault'
+                    self.parameters["server_key_type"] = ev
                 elif key == "uri":
                     self.parameters["uri"] = kwargs[key]
                 elif key == "thumbprint":

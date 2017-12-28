@@ -199,7 +199,12 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                 if key == "interval":
                     self.parameters["interval"] = kwargs[key]
                 elif key == "conflict_resolution_policy":
-                    self.parameters["conflict_resolution_policy"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'hub_win':
+                        ev = 'HubWin'
+                    elif ev == 'member_win':
+                        ev = 'MemberWin'
+                    self.parameters["conflict_resolution_policy"] = ev
                 elif key == "sync_database_id":
                     self.parameters["sync_database_id"] = kwargs[key]
                 elif key == "hub_database_user_name":

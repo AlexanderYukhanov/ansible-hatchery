@@ -216,9 +216,19 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                 elif key == "sku":
                     self.parameters["sku"] = kwargs[key]
                 elif key == "public_ip_allocation_method":
-                    self.parameters["public_ip_allocation_method"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'static':
+                        ev = 'Static'
+                    elif ev == 'dynamic':
+                        ev = 'Dynamic'
+                    self.parameters["public_ip_allocation_method"] = ev
                 elif key == "public_ip_address_version":
-                    self.parameters["public_ip_address_version"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'ipv4':
+                        ev = 'IPv4'
+                    elif ev == 'ipv6':
+                        ev = 'IPv6'
+                    self.parameters["public_ip_address_version"] = ev
                 elif key == "dns_settings":
                     self.parameters["dns_settings"] = kwargs[key]
                 elif key == "ip_address":

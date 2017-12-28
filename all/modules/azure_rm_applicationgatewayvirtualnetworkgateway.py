@@ -309,9 +309,19 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                 elif key == "ip_configurations":
                     self.parameters["ip_configurations"] = kwargs[key]
                 elif key == "gateway_type":
-                    self.parameters["gateway_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'vpn':
+                        ev = 'Vpn'
+                    elif ev == 'express_route':
+                        ev = 'ExpressRoute'
+                    self.parameters["gateway_type"] = ev
                 elif key == "vpn_type":
-                    self.parameters["vpn_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'policy_based':
+                        ev = 'PolicyBased'
+                    elif ev == 'route_based':
+                        ev = 'RouteBased'
+                    self.parameters["vpn_type"] = ev
                 elif key == "enable_bgp":
                     self.parameters["enable_bgp"] = kwargs[key]
                 elif key == "active_active":

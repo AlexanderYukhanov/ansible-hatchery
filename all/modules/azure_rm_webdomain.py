@@ -450,11 +450,21 @@ class AzureRMDomains(AzureRMModuleBase):
                 elif key == "consent":
                     self.domain["consent"] = kwargs[key]
                 elif key == "dns_type":
-                    self.domain["dns_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'azure_dns':
+                        ev = 'AzureDns'
+                    elif ev == 'default_domain_registrar_dns':
+                        ev = 'DefaultDomainRegistrarDns'
+                    self.domain["dns_type"] = ev
                 elif key == "dns_zone_id":
                     self.domain["dns_zone_id"] = kwargs[key]
                 elif key == "target_dns_type":
-                    self.domain["target_dns_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'azure_dns':
+                        ev = 'AzureDns'
+                    elif ev == 'default_domain_registrar_dns':
+                        ev = 'DefaultDomainRegistrarDns'
+                    self.domain["target_dns_type"] = ev
                 elif key == "auth_code":
                     self.domain["auth_code"] = kwargs[key]
 

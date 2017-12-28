@@ -197,7 +197,12 @@ class AzureRMSyncMembers(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "database_type":
-                    self.parameters["database_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'azure_sql_database':
+                        ev = 'AzureSqlDatabase'
+                    elif ev == 'sql_server_database':
+                        ev = 'SqlServerDatabase'
+                    self.parameters["database_type"] = ev
                 elif key == "sync_agent_id":
                     self.parameters["sync_agent_id"] = kwargs[key]
                 elif key == "sql_server_database_id":
@@ -211,7 +216,14 @@ class AzureRMSyncMembers(AzureRMModuleBase):
                 elif key == "password":
                     self.parameters["password"] = kwargs[key]
                 elif key == "sync_direction":
-                    self.parameters["sync_direction"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'bidirectional':
+                        ev = 'Bidirectional'
+                    elif ev == 'one_way_member_to_hub':
+                        ev = 'OneWayMemberToHub'
+                    elif ev == 'one_way_hub_to_member':
+                        ev = 'OneWayHubToMember'
+                    self.parameters["sync_direction"] = ev
 
         old_response = None
         response = None

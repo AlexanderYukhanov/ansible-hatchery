@@ -190,7 +190,12 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
                 elif key == "key_size":
                     self.certificate_distinguished_name["key_size"] = kwargs[key]
                 elif key == "product_type":
-                    self.certificate_distinguished_name["product_type"] = kwargs[key]
+                    ev = kwargs[key]
+                    if ev == 'standard_domain_validated_ssl':
+                        ev = 'StandardDomainValidatedSsl'
+                    elif ev == 'standard_domain_validated_wild_card_ssl':
+                        ev = 'StandardDomainValidatedWildCardSsl'
+                    self.certificate_distinguished_name["product_type"] = ev
                 elif key == "auto_renew":
                     self.certificate_distinguished_name["auto_renew"] = kwargs[key]
                 elif key == "csr":
