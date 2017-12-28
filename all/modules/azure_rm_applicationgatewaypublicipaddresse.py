@@ -42,15 +42,15 @@ options:
         suboptions:
             name:
                 description:
-                    - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
+                    - Name of a public IP address SKU.
                 choices: ['basic', 'standard']
     public_ip_allocation_method:
         description:
-            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic).
         choices: ['static', 'dynamic']
     public_ip_address_version:
         description:
-            - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+            - The public IP address version. Possible values are: C(IPv4) and C(IPv6).
         choices: ['ipv4', 'ipv6']
     dns_settings:
         description:

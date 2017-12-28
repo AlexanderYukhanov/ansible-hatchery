@@ -42,7 +42,7 @@ options:
             - A description for this rule. Restricted to 140 chars.
     protocol:
         description:
-            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
+            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
         required: True
         choices: ['tcp', 'udp', '*']
     source_port_range:
@@ -93,7 +93,7 @@ options:
             - The destination port ranges.
     access:
         description:
-            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
+            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
         required: True
         choices: ['allow', 'deny']
     priority:
@@ -103,7 +103,7 @@ options:
     direction:
         description:
             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(Inbound)
-                and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                and C(Outbound)."
         required: True
         choices: ['inbound', 'outbound']
     provisioning_state:

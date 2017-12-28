@@ -65,7 +65,7 @@ options:
                             - A description for this rule. Restricted to 140 chars.
                     protocol:
                         description:
-                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
+                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                         required: True
                         choices: ['tcp', 'udp', '*']
                     source_port_range:
@@ -117,7 +117,7 @@ options:
                             - The destination port ranges.
                     access:
                         description:
-                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
+                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                         required: True
                         choices: ['allow', 'deny']
                     priority:
@@ -127,7 +127,7 @@ options:
                     direction:
                         description:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                                are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                are: C(Inbound) and C(Outbound)."
                         required: True
                         choices: ['inbound', 'outbound']
                     provisioning_state:
@@ -151,7 +151,7 @@ options:
                             - A description for this rule. Restricted to 140 chars.
                     protocol:
                         description:
-                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
+                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                         required: True
                         choices: ['tcp', 'udp', '*']
                     source_port_range:
@@ -203,7 +203,7 @@ options:
                             - The destination port ranges.
                     access:
                         description:
-                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
+                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                         required: True
                         choices: ['allow', 'deny']
                     priority:
@@ -213,7 +213,7 @@ options:
                     direction:
                         description:
                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                                are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                are: C(Inbound) and C(Outbound)."
                         required: True
                         choices: ['inbound', 'outbound']
                     provisioning_state:
@@ -342,13 +342,12 @@ options:
                                     - Private IP address of the IP configuration.
                             private_ip_allocation_method:
                                 description:
-                                    - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values include:
-                                       C(Static), C(Dynamic)"
+                                    - Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic).
                                 choices: ['static', 'dynamic']
                             private_ip_address_version:
                                 description:
                                     - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Def
-                                       ault is taken as IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)"
+                                       ault is taken as IPv4.  Possible values are: C(IPv4) and C(IPv6)."
                                 choices: ['ipv4', 'ipv6']
                             subnet:
                                 description:
@@ -399,12 +398,11 @@ options:
                                             - The public IP address SKU.
                                     public_ip_allocation_method:
                                         description:
-                                            - "The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Sta
-                                               tic), C(Dynamic)"
+                                            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic).
                                         choices: ['static', 'dynamic']
                                     public_ip_address_version:
                                         description:
-                                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+                                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6).
                                         choices: ['ipv4', 'ipv6']
                                     dns_settings:
                                         description:
@@ -533,13 +531,12 @@ options:
                     - Private IP address of the IP configuration.
             private_ip_allocation_method:
                 description:
-                    - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dyn
-                       amic)"
+                    - Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic).
                 choices: ['static', 'dynamic']
             private_ip_address_version:
                 description:
                     - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as
-                        IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)"
+                        IPv4.  Possible values are: C(IPv4) and C(IPv6)."
                 choices: ['ipv4', 'ipv6']
             subnet:
                 description:
@@ -573,8 +570,7 @@ options:
                                             - A description for this rule. Restricted to 140 chars.
                                     protocol:
                                         description:
-                                            - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
-                                               C(Tcp), C(Udp), C(*)"
+                                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                         required: True
                                         choices: ['tcp', 'udp', '*']
                                     source_port_range:
@@ -613,8 +609,7 @@ options:
                                             - The destination port ranges.
                                     access:
                                         description:
-                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
-                                               C(Allow), C(Deny)"
+                                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                                         required: True
                                         choices: ['allow', 'deny']
                                     priority:
@@ -624,7 +619,7 @@ options:
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                                Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
                                         choices: ['inbound', 'outbound']
                                     provisioning_state:
@@ -648,8 +643,7 @@ options:
                                             - A description for this rule. Restricted to 140 chars.
                                     protocol:
                                         description:
-                                            - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
-                                               C(Tcp), C(Udp), C(*)"
+                                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                         required: True
                                         choices: ['tcp', 'udp', '*']
                                     source_port_range:
@@ -688,8 +682,7 @@ options:
                                             - The destination port ranges.
                                     access:
                                         description:
-                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
-                                               C(Allow), C(Deny)"
+                                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                                         required: True
                                         choices: ['allow', 'deny']
                                     priority:
@@ -699,7 +692,7 @@ options:
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                                Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
                                         choices: ['inbound', 'outbound']
                                     provisioning_state:
@@ -743,8 +736,7 @@ options:
                                     next_hop_type:
                                         description:
                                             - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal
-                                               ), C(Internet), C(VirtualAppliance), and C(None). Possible values include: C(VirtualNetworkGateway), C(VnetLoc
-                                               al), C(Internet), C(VirtualAppliance), C(None)"
+                                               ), C(Internet), C(VirtualAppliance), and C(None)."
                                         required: True
                                         choices: ['virtual_network_gateway', 'vnet_local', 'internet', 'virtual_appliance', 'none']
                                     next_hop_ip_address:
@@ -826,15 +818,15 @@ options:
                         suboptions:
                             name:
                                 description:
-                                    - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
+                                    - Name of a public IP address SKU.
                                 choices: ['basic', 'standard']
                     public_ip_allocation_method:
                         description:
-                            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic).
                         choices: ['static', 'dynamic']
                     public_ip_address_version:
                         description:
-                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6).
                         choices: ['ipv4', 'ipv6']
                     dns_settings:
                         description:

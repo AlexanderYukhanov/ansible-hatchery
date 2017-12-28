@@ -50,7 +50,7 @@ options:
             - Certificate key size.
     product_type:
         description:
-            - Certificate product type. Possible values include: C(StandardDomainValidatedSsl), C(StandardDomainValidatedWildCardSsl)
+            - Certificate product type.
         choices: ['standard_domain_validated_ssl', 'standard_domain_validated_wild_card_ssl']
     auto_renew:
         description:

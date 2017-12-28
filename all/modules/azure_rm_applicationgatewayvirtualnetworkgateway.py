@@ -45,7 +45,7 @@ options:
                     - Resource ID.
             private_ip_allocation_method:
                 description:
-                    - The private IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                    - The private IP allocation method. Possible values are: C(Static) and C(Dynamic).
                 choices: ['static', 'dynamic']
             subnet:
                 description:
@@ -69,12 +69,11 @@ options:
                     - A unique read-only string that changes whenever the resource is updated.
     gateway_type:
         description:
-            - The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute). Possible values include: C(Vpn), C(ExpressRoute)
+            - The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute).
         choices: ['vpn', 'express_route']
     vpn_type:
         description:
-            - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased). Possible values include: C(PolicyBased), C(Ro
-               uteBased)"
+            - The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased).
         choices: ['policy_based', 'route_based']
     enable_bgp:
         description:
@@ -96,11 +95,11 @@ options:
         suboptions:
             name:
                 description:
-                    - Gateway SKU name. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2), C(VpnGw3)
+                    - Gateway SKU name.
                 choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
             tier:
                 description:
-                    - Gateway SKU tier. Possible values include: C(Basic), C(HighPerformance), C(Standard), C(UltraPerformance), C(VpnGw1), C(VpnGw2), C(VpnGw3)
+                    - Gateway SKU tier.
                 choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
             capacity:
                 description:

@@ -42,7 +42,7 @@ options:
         suboptions:
             name:
                 description:
-                    - Name of a load balancer SKU. Possible values include: C(Basic), C(Standard)
+                    - Name of a load balancer SKU.
                 choices: ['basic', 'standard']
     frontend_ip_configurations:
         description:
@@ -56,7 +56,7 @@ options:
                     - The private IP address of the IP configuration.
             private_ip_allocation_method:
                 description:
-                    - The Private IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                    - The Private IP allocation method. Possible values are: C(Static) and C(Dynamic).
                 choices: ['static', 'dynamic']
             subnet:
                 description:
@@ -90,8 +90,7 @@ options:
                                             - A description for this rule. Restricted to 140 chars.
                                     protocol:
                                         description:
-                                            - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
-                                               C(Tcp), C(Udp), C(*)"
+                                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                         required: True
                                         choices: ['tcp', 'udp', '*']
                                     source_port_range:
@@ -130,8 +129,7 @@ options:
                                             - The destination port ranges.
                                     access:
                                         description:
-                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
-                                               C(Allow), C(Deny)"
+                                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                                         required: True
                                         choices: ['allow', 'deny']
                                     priority:
@@ -141,7 +139,7 @@ options:
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                                Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
                                         choices: ['inbound', 'outbound']
                                     provisioning_state:
@@ -165,8 +163,7 @@ options:
                                             - A description for this rule. Restricted to 140 chars.
                                     protocol:
                                         description:
-                                            - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include:
-                                               C(Tcp), C(Udp), C(*)"
+                                            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                         required: True
                                         choices: ['tcp', 'udp', '*']
                                     source_port_range:
@@ -205,8 +202,7 @@ options:
                                             - The destination port ranges.
                                     access:
                                         description:
-                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include:
-                                               C(Allow), C(Deny)"
+                                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                                         required: True
                                         choices: ['allow', 'deny']
                                     priority:
@@ -216,7 +212,7 @@ options:
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                                Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
                                         choices: ['inbound', 'outbound']
                                     provisioning_state:
@@ -260,8 +256,7 @@ options:
                                     next_hop_type:
                                         description:
                                             - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal
-                                               ), C(Internet), C(VirtualAppliance), and C(None). Possible values include: C(VirtualNetworkGateway), C(VnetLoc
-                                               al), C(Internet), C(VirtualAppliance), C(None)"
+                                               ), C(Internet), C(VirtualAppliance), and C(None)."
                                         required: True
                                         choices: ['virtual_network_gateway', 'vnet_local', 'internet', 'virtual_appliance', 'none']
                                     next_hop_ip_address:
@@ -340,15 +335,15 @@ options:
                         suboptions:
                             name:
                                 description:
-                                    - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
+                                    - Name of a public IP address SKU.
                                 choices: ['basic', 'standard']
                     public_ip_allocation_method:
                         description:
-                            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(Dynamic)
+                            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic).
                         choices: ['static', 'dynamic']
                     public_ip_address_version:
                         description:
-                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6).
                         choices: ['ipv4', 'ipv6']
                     dns_settings:
                         description:
@@ -449,8 +444,7 @@ options:
                 choices: ['udp', 'tcp', 'all']
             load_distribution:
                 description:
-                    - "The load distribution policy for this rule. Possible values are C(Default), C(SourceIP), and C(SourceIPProtocol). Possible values incl
-                       ude: C(Default), C(SourceIP), C(SourceIPProtocol)"
+                    - The load distribution policy for this rule. Possible values are C(Default), C(SourceIP), and C(SourceIPProtocol).
                 choices: ['default', 'source_ip', 'source_ip_protocol']
             frontend_port:
                 description:
@@ -492,8 +486,7 @@ options:
             protocol:
                 description:
                     - "The protocol of the end point. Possible values are: C(Http) or C(Tcp). If C(Tcp) is specified, a received ACK is required for the prob
-                       e to be successful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful. Poss
-                       ible values include: C(Http), C(Tcp)"
+                       e to be successful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful."
                 required: True
                 choices: ['http', 'tcp']
             port:

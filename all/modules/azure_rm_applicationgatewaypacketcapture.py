@@ -68,7 +68,7 @@ options:
         suboptions:
             protocol:
                 description:
-                    - Protocol to be filtered on. Possible values include: C(TCP), C(UDP), C(Any)
+                    - Protocol to be filtered on.
                 choices: ['tcp', 'udp', 'any']
             local_ip_address:
                 description:

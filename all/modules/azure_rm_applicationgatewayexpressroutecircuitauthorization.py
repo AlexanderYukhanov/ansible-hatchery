@@ -42,7 +42,7 @@ options:
             - The authorization key.
     authorization_use_status:
         description:
-            - AuthorizationUseStatus. Possible values are: C(Available) and C(InUse). Possible values include: C(Available), C(InUse)
+            - AuthorizationUseStatus. Possible values are: C(Available) and C(InUse).
         choices: ['available', 'in_use']
     provisioning_state:
         description:

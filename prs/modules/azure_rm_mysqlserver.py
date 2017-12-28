@@ -39,7 +39,7 @@ options:
                     - The name of the sku, typically, a letter + Number code, e.g. P3.
             tier:
                 description:
-                    - The tier of the particular SKU, e.g. Basic. Possible values include: C(Basic), C(Standard)
+                    - The tier of the particular SKU, e.g. Basic.
                 choices: ['basic', 'standard']
             capacity:
                 description:
@@ -58,7 +58,7 @@ options:
             - The maximum storage allowed for a server.
     version:
         description:
-            - Server version. Possible values include: C(5.6), C(5.7)
+            - Server version.
         choices: ['5.6', '5.7']
     enforce_ssl:
         description:

@@ -41,7 +41,7 @@ options:
             - Kind of encryption protector. This is metadata used for the Azure portal experience.
     server_key_type:
         description:
-            - The server key type like C(ServiceManaged), C(AzureKeyVault). Possible values include: C(ServiceManaged), C(AzureKeyVault)
+            - The server key type like C(ServiceManaged), C(AzureKeyVault).
         required: True
         choices: ['service_managed', 'azure_key_vault']
     uri:

@@ -40,7 +40,7 @@ options:
         required: True
     status:
         description:
-            - The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)
+            - The status of the database transparent data encryption.
         choices: ['enabled', 'disabled']
 
 extends_documentation_fragment:

@@ -42,12 +42,11 @@ options:
         suboptions:
             name:
                 description:
-                    - "Name of an application gateway SKU. Possible values include: C(Standard_Small), C(Standard_Medium), C(Standard_Large), C(WAF_Medium),
-                       C(WAF_Large)"
+                    - Name of an application gateway SKU.
                 choices: ['standard_small', 'standard_medium', 'standard_large', 'waf_medium', 'waf_large']
             tier:
                 description:
-                    - Tier of an application gateway. Possible values include: C(Standard), C(WAF)
+                    - Tier of an application gateway.
                 choices: ['standard', 'waf']
             capacity:
                 description:
@@ -61,18 +60,18 @@ options:
                     - Ssl protocols to be disabled on application gateway.
             policy_type:
                 description:
-                    - Type of Ssl Policy. Possible values include: C(Predefined), C(Custom)
+                    - Type of Ssl Policy.
                 choices: ['predefined', 'custom']
             policy_name:
                 description:
-                    - Name of Ssl predefined policy. Possible values include: C(AppGwSslPolicy20150501), C(AppGwSslPolicy20170401), C(AppGwSslPolicy20170401S)
+                    - Name of Ssl predefined policy.
                 choices: ['app_gw_ssl_policy20150501', 'app_gw_ssl_policy20170401', 'app_gw_ssl_policy20170401_s']
             cipher_suites:
                 description:
                     - Ssl cipher suites to be enabled in the specified order to application gateway.
             min_protocol_version:
                 description:
-                    - Minimum version of Ssl protocol to be supported on application gateway. Possible values include: C(TLSv1_0), C(TLSv1_1), C(TLSv1_2)
+                    - Minimum version of Ssl protocol to be supported on application gateway.
                 choices: ['tl_sv1_0', 'tl_sv1_1', 'tl_sv1_2']
     gateway_ip_configurations:
         description:
@@ -162,7 +161,7 @@ options:
                     - PrivateIPAddress of the network interface IP Configuration.
             private_ip_allocation_method:
                 description:
-                    - PrivateIP allocation method. Possible values include: C(Static), C(Dynamic)
+                    - PrivateIP allocation method.
                 choices: ['static', 'dynamic']
             subnet:
                 description:
@@ -221,7 +220,7 @@ options:
                     - Resource ID.
             protocol:
                 description:
-                    - Protocol. Possible values include: C(Http), C(Https)
+                    - Protocol.
                 choices: ['http', 'https']
             host:
                 description:
@@ -311,14 +310,12 @@ options:
                                             - Private IP address of the IP configuration.
                                     private_ip_allocation_method:
                                         description:
-                                            - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values i
-                                               nclude: C(Static), C(Dynamic)"
+                                            - Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic).
                                         choices: ['static', 'dynamic']
                                     private_ip_address_version:
                                         description:
                                             - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or I
-                                               Pv6. Default is taken as IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(
-                                               IPv6)"
+                                               Pv6. Default is taken as IPv4.  Possible values are: C(IPv4) and C(IPv6)."
                                         choices: ['ipv4', 'ipv6']
                                     subnet:
                                         description:
@@ -428,13 +425,12 @@ options:
                             - Private IP address of the IP configuration.
                     private_ip_allocation_method:
                         description:
-                            - "Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static
-                               ), C(Dynamic)"
+                            - Defines how a private IP address is assigned. Possible values are: C(Static) and C(Dynamic).
                         choices: ['static', 'dynamic']
                     private_ip_address_version:
                         description:
                             - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is
-                               taken as IPv4.  Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)"
+                               taken as IPv4.  Possible values are: C(IPv4) and C(IPv6)."
                         choices: ['ipv4', 'ipv6']
                     subnet:
                         description:
@@ -550,16 +546,15 @@ options:
                                 suboptions:
                                     name:
                                         description:
-                                            - Name of a public IP address SKU. Possible values include: C(Basic), C(Standard)
+                                            - Name of a public IP address SKU.
                                         choices: ['basic', 'standard']
                             public_ip_allocation_method:
                                 description:
-                                    - "The public IP allocation method. Possible values are: C(Static) and C(Dynamic). Possible values include: C(Static), C(
-                                       Dynamic)"
+                                    - The public IP allocation method. Possible values are: C(Static) and C(Dynamic).
                                 choices: ['static', 'dynamic']
                             public_ip_address_version:
                                 description:
-                                    - The public IP address version. Possible values are: C(IPv4) and C(IPv6). Possible values include: C(IPv4), C(IPv6)
+                                    - The public IP address version. Possible values are: C(IPv4) and C(IPv6).
                                 choices: ['ipv4', 'ipv6']
                             dns_settings:
                                 description:
@@ -650,11 +645,11 @@ options:
                     - Port
             protocol:
                 description:
-                    - Protocol. Possible values include: C(Http), C(Https)
+                    - Protocol.
                 choices: ['http', 'https']
             cookie_based_affinity:
                 description:
-                    - Cookie based affinity. Possible values include: C(Enabled), C(Disabled)
+                    - Cookie based affinity.
                 choices: ['enabled', 'disabled']
             request_timeout:
                 description:
@@ -736,7 +731,7 @@ options:
                             - Resource ID.
             protocol:
                 description:
-                    - Protocol. Possible values include: C(Http), C(Https)
+                    - Protocol.
                 choices: ['http', 'https']
             host_name:
                 description:
@@ -855,7 +850,7 @@ options:
                     - Resource ID.
             rule_type:
                 description:
-                    - Rule type. Possible values include: C(Basic), C(PathBasedRouting)
+                    - Rule type.
                 choices: ['basic', 'path_based_routing']
             backend_address_pool:
                 description:
@@ -913,8 +908,7 @@ options:
                     - Resource ID.
             redirect_type:
                 description:
-                    - "Supported http redirection types - Permanent, Temporary, Found, SeeOther. Possible values include: C(Permanent), C(Found), C(SeeOther)
-                       , C(Temporary)"
+                    - Supported http redirection types - Permanent, Temporary, Found, SeeOther.
                 choices: ['permanent', 'found', 'see_other', 'temporary']
             target_listener:
                 description:
@@ -972,7 +966,7 @@ options:
                 required: True
             firewall_mode:
                 description:
-                    - Web application firewall mode. Possible values include: C(Detection), C(Prevention)
+                    - Web application firewall mode.
                 required: True
                 choices: ['detection', 'prevention']
             rule_set_type:

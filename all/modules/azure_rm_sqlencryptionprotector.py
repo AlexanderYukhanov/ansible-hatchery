@@ -42,7 +42,7 @@ options:
             - The name of the server key.
     server_key_type:
         description:
-            - The encryption protector type like C(ServiceManaged), C(AzureKeyVault). Possible values include: C(ServiceManaged), C(AzureKeyVault)
+            - The encryption protector type like C(ServiceManaged), C(AzureKeyVault).
         required: True
         choices: ['service_managed', 'azure_key_vault']
 

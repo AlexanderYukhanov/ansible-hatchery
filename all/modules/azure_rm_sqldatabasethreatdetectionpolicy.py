@@ -43,8 +43,7 @@ options:
             - Resource location. If not set, location from the resource group will be used as default.
     state:
         description:
-            - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(N
-               ew), C(Enabled), C(Disabled)"
+            - Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required.
         required: True
         choices: ['new', 'enabled', 'disabled']
     disabled_alerts:
@@ -56,7 +55,7 @@ options:
             - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
     email_account_admins:
         description:
-            - Specifies that the alert is sent to the account administrators. Possible values include: C(Enabled), C(Disabled)
+            - Specifies that the alert is sent to the account administrators.
         choices: ['enabled', 'disabled']
     storage_endpoint:
         description:
@@ -70,7 +69,7 @@ options:
             - Specifies the number of days to keep in the Threat Detection audit logs.
     use_server_default:
         description:
-            - Specifies whether to use the default server policy. Possible values include: C(Enabled), C(Disabled)
+            - Specifies whether to use the default server policy.
         choices: ['enabled', 'disabled']
 
 extends_documentation_fragment:

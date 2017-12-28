@@ -82,8 +82,7 @@ options:
                                     - A description for this rule. Restricted to 140 chars.
                             protocol:
                                 description:
-                                    - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp),
-                                       C(Udp), C(*)"
+                                    - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                 required: True
                                 choices: ['tcp', 'udp', '*']
                             source_port_range:
@@ -135,8 +134,7 @@ options:
                                     - The destination port ranges.
                             access:
                                 description:
-                                    - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow)
-                                       , C(Deny)"
+                                    - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                                 required: True
                                 choices: ['allow', 'deny']
                             priority:
@@ -146,7 +144,7 @@ options:
                             direction:
                                 description:
                                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possibl
-                                       e values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                       e values are: C(Inbound) and C(Outbound)."
                                 required: True
                                 choices: ['inbound', 'outbound']
                             provisioning_state:
@@ -170,8 +168,7 @@ options:
                                     - A description for this rule. Restricted to 140 chars.
                             protocol:
                                 description:
-                                    - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp),
-                                       C(Udp), C(*)"
+                                    - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                 required: True
                                 choices: ['tcp', 'udp', '*']
                             source_port_range:
@@ -223,8 +220,7 @@ options:
                                     - The destination port ranges.
                             access:
                                 description:
-                                    - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow)
-                                       , C(Deny)"
+                                    - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
                                 required: True
                                 choices: ['allow', 'deny']
                             priority:
@@ -234,7 +230,7 @@ options:
                             direction:
                                 description:
                                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possibl
-                                       e values are: C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                                       e values are: C(Inbound) and C(Outbound)."
                                 required: True
                                 choices: ['inbound', 'outbound']
                             provisioning_state:
@@ -278,8 +274,7 @@ options:
                             next_hop_type:
                                 description:
                                     - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal), C(Int
-                                       ernet), C(VirtualAppliance), and C(None). Possible values include: C(VirtualNetworkGateway), C(VnetLocal), C(Internet)
-                                       , C(VirtualAppliance), C(None)"
+                                       ernet), C(VirtualAppliance), and C(None)."
                                 required: True
                                 choices: ['virtual_network_gateway', 'vnet_local', 'internet', 'virtual_appliance', 'none']
                             next_hop_ip_address:
@@ -380,8 +375,7 @@ options:
                             - A list of address blocks reserved for this virtual network in CIDR notation.
             peering_state:
                 description:
-                    - "The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected). Possible values includ
-                       e: C(Initiated), C(Connected), C(Disconnected)"
+                    - The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected).
                 choices: ['initiated', 'connected', 'disconnected']
             provisioning_state:
                 description:

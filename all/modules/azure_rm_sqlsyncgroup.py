@@ -43,7 +43,7 @@ options:
             - Sync interval of the sync group.
     conflict_resolution_policy:
         description:
-            - Conflict resolution policy of the sync group. Possible values include: C(HubWin), C(MemberWin)
+            - Conflict resolution policy of the sync group.
         choices: ['hub_win', 'member_win']
     sync_database_id:
         description:

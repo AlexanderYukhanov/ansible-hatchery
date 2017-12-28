@@ -39,7 +39,7 @@ options:
             - Resource ID.
     access:
         description:
-            - The access type of the rule. Valid values are: C(Allow), C(Deny). Possible values include: C(Allow), C(Deny)
+            - The access type of the rule. Valid values are: C(Allow), C(Deny).
         required: True
         choices: ['allow', 'deny']
     route_filter_rule_type:

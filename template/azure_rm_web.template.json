@@ -230,7 +230,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Certificate product type. Possible values include: 'StandardDomainValidatedSsl', 'StandardDomainValidatedWildCardSsl'",
+          "Documentation": "Certificate product type.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -2792,7 +2792,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Current DNS type. Possible values include: 'AzureDns', 'DefaultDomainRegistrarDns'",
+          "Documentation": "Current DNS type.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -2849,7 +2849,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Target DNS type (would be used for migration). Possible values include: 'AzureDns', 'DefaultDomainRegistrarDns'",
+          "Documentation": "Target DNS type (would be used for migration).",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -5482,7 +5482,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "SSL type. Possible values include: 'Disabled', 'SniEnabled', 'IpBasedEnabled'",
+              "Documentation": "SSL type.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -5591,7 +5591,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "Indicates whether the hostname is a standard or repository hostname. Possible values include: 'Standard', 'Repository'",
+              "Documentation": "Indicates whether the hostname is a standard or repository hostname.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -6195,7 +6195,7 @@
                   "IsList": false,
                   "Required": "False",
                   "VariableValue": "None",
-                  "Documentation": "Type of database. Possible values include: 'MySql', 'SQLServer', 'SQLAzure', 'Custom', 'NotificationHub', 'ServiceBus', 'EventHub', 'ApiHub', 'DocDb', 'RedisCache', 'PostgreSQL'",
+                  "Documentation": "Type of database.",
                   "DefaultValue": null,
                   "DefaultValueSample": {
                     "default": "",
@@ -6393,7 +6393,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "SCM type. Possible values include: 'None', 'Dropbox', 'Tfs', 'LocalGit', 'GitHub', 'CodePlexGit', 'CodePlexHg', 'BitbucketGit', 'BitbucketHg', 'ExternalGit', 'ExternalHg', 'OneDrive', 'VSO'",
+              "Documentation": "SCM type.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -6638,7 +6638,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "Managed pipeline mode. Possible values include: 'Integrated', 'Classic'",
+              "Documentation": "Managed pipeline mode.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -6841,7 +6841,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "Site load balancing. Possible values include: 'WeightedRoundRobin', 'LeastRequests', 'LeastResponseTime', 'WeightedTotalTraffic', 'RequestHash'",
+              "Documentation": "Site load balancing.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -7647,7 +7647,7 @@
                       "IsList": false,
                       "Required": "False",
                       "VariableValue": "None",
-                      "Documentation": "Predefined action to be taken. Possible values include: 'Recycle', 'LogEvent', 'CustomAction'",
+                      "Documentation": "Predefined action to be taken.",
                       "DefaultValue": null,
                       "DefaultValueSample": {
                         "default": "",
@@ -12756,7 +12756,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values include: 'None', 'Web', 'Publishing'",
+          "Documentation": "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -12882,7 +12882,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "Shared or dedicated app hosting. Possible values include: 'Shared', 'Dedicated', 'Dynamic'",
+              "Documentation": "Shared or dedicated app hosting.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -13040,7 +13040,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "Action object. Possible values include: 'Permit', 'Deny'",
+              "Documentation": "Action object.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",

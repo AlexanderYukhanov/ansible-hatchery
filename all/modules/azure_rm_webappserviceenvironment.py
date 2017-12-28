@@ -66,8 +66,7 @@ options:
                     - Subnet within the Virtual Network.
     internal_load_balancing_mode:
         description:
-            - "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values include: C(None), C(Web)
-               , C(Publishing)"
+            - Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
         choices: ['none', 'web', 'publishing']
     multi_size:
         description:
@@ -85,7 +84,7 @@ options:
                     - Worker size ID for referencing this worker pool.
             compute_mode:
                 description:
-                    - Shared or dedicated app hosting. Possible values include: C(Shared), C(Dedicated), C(Dynamic)
+                    - Shared or dedicated app hosting.
                 choices: ['shared', 'dedicated', 'dynamic']
             worker_size:
                 description:
@@ -105,7 +104,7 @@ options:
         suboptions:
             action:
                 description:
-                    - Action object. Possible values include: C(Permit), C(Deny)
+                    - Action object.
                 choices: ['permit', 'deny']
             description:
                 description:

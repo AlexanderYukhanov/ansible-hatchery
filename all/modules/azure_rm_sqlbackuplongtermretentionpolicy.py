@@ -40,7 +40,7 @@ options:
         required: True
     state:
         description:
-            - The status of the backup long term retention policy. Possible values include: C(Disabled), C(Enabled)
+            - The status of the backup long term retention policy.
         required: True
         choices: ['disabled', 'enabled']
     recovery_services_backup_policy_resource_id:

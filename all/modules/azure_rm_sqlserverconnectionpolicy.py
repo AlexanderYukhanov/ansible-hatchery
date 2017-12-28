@@ -36,7 +36,7 @@ options:
         required: True
     connection_type:
         description:
-            - The server connection type. Possible values include: C(Default), C(Proxy), C(Redirect)
+            - The server connection type.
         required: True
         choices: ['default', 'proxy', 'redirect']
 

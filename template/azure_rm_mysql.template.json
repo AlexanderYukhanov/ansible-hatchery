@@ -127,7 +127,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
+              "Documentation": "The tier of the particular SKU, e.g. Basic.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "Basic",
@@ -312,7 +312,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Server version. Possible values include: '5.6', '5.7'",
+          "Documentation": "Server version.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",

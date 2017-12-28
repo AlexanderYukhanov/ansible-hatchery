@@ -68,8 +68,7 @@ options:
                     - A list of address blocks reserved for this virtual network in CIDR notation.
     peering_state:
         description:
-            - "The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected). Possible values include: C(Ini
-               tiated), C(Connected), C(Disconnected)"
+            - The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected).
         choices: ['initiated', 'connected', 'disconnected']
     provisioning_state:
         description:

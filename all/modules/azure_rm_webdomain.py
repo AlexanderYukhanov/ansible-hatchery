@@ -294,14 +294,14 @@ options:
                     - Timestamp when the agreements were accepted.
     dns_type:
         description:
-            - Current DNS type. Possible values include: C(AzureDns), C(DefaultDomainRegistrarDns)
+            - Current DNS type.
         choices: ['azure_dns', 'default_domain_registrar_dns']
     dns_zone_id:
         description:
             - Azure DNS Zone to use
     target_dns_type:
         description:
-            - Target DNS type (would be used for migration). Possible values include: C(AzureDns), C(DefaultDomainRegistrarDns)
+            - Target DNS type (would be used for migration).
         choices: ['azure_dns', 'default_domain_registrar_dns']
     auth_code:
         description:

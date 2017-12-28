@@ -110,7 +110,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'",
+          "Documentation": "The status of the backup long term retention policy.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
@@ -1212,7 +1212,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "The server connection type. Possible values include: 'Default', 'Proxy', 'Redirect'",
+          "Documentation": "The server connection type.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
@@ -1607,7 +1607,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'New', 'Enabled', 'Disabled'",
+          "Documentation": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -1692,7 +1692,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'",
+          "Documentation": "Specifies that the alert is sent to the account administrators.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -1797,7 +1797,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'",
+          "Documentation": "Specifies whether to use the default server policy.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -2233,7 +2233,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'",
+          "Documentation": "The state of the data masking policy.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
@@ -2730,7 +2730,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless of the provided value of ruleState. Possible values include: 'Disabled', 'Enabled'",
+          "Documentation": "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless of the provided value of ruleState.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -2835,7 +2835,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "The masking function that is used for the data masking rule. Possible values include: 'Default', 'CCN', 'Email', 'Number', 'SSN', 'Text'",
+          "Documentation": "The masking function that is used for the data masking rule.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -3799,7 +3799,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'",
+          "Documentation": "The state of the geo backup policy.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
@@ -4242,7 +4242,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Specifies the mode of database creation.\n\nDefault: regular database creation.\n\nCopy: creates a database as a copy of an existing database. sourceDatabaseId must be specified as the resource ID of the source database.\n\nOnlineSecondary/NonReadableSecondary: creates a database as a (readable or nonreadable) secondary replica of an existing database. sourceDatabaseId must be specified as the resource ID of the existing primary database.\n\nPointInTimeRestore: Creates a database by restoring a point in time backup of an existing database. sourceDatabaseId must be specified as the resource ID of the existing database, and restorePointInTime must be specified.\n\nRecovery: Creates a database by restoring a geo-replicated backup. sourceDatabaseId must be specified as the recoverable database resource ID to restore.\n\nRestore: Creates a database by restoring a backup of a deleted database. sourceDatabaseId must be specified. If sourceDatabaseId is the database's original resource ID, then sourceDatabaseDeletionDate must be specified. Otherwise sourceDatabaseId must be the restorable dropped database resource ID and sourceDatabaseDeletionDate is ignored. restorePointInTime may also be specified to restore from an earlier point in time.\n\nRestoreLongTermRetentionBackup: Creates a database by restoring from a long term retention vault. recoveryServicesRecoveryPointResourceId must be specified as the recovery point resource ID.\n\nCopy, NonReadableSecondary, OnlineSecondary and RestoreLongTermRetentionBackup are not supported for DataWarehouse edition. Possible values include: 'Copy', 'Default', 'NonReadableSecondary', 'OnlineSecondary', 'PointInTimeRestore', 'Recovery', 'Restore', 'RestoreLongTermRetentionBackup'",
+          "Documentation": "Specifies the mode of database creation.\n\nDefault: regular database creation.\n\nCopy: creates a database as a copy of an existing database. sourceDatabaseId must be specified as the resource ID of the source database.\n\nOnlineSecondary/NonReadableSecondary: creates a database as a (readable or nonreadable) secondary replica of an existing database. sourceDatabaseId must be specified as the resource ID of the existing primary database.\n\nPointInTimeRestore: Creates a database by restoring a point in time backup of an existing database. sourceDatabaseId must be specified as the resource ID of the existing database, and restorePointInTime must be specified.\n\nRecovery: Creates a database by restoring a geo-replicated backup. sourceDatabaseId must be specified as the recoverable database resource ID to restore.\n\nRestore: Creates a database by restoring a backup of a deleted database. sourceDatabaseId must be specified. If sourceDatabaseId is the database's original resource ID, then sourceDatabaseDeletionDate must be specified. Otherwise sourceDatabaseId must be the restorable dropped database resource ID and sourceDatabaseDeletionDate is ignored. restorePointInTime may also be specified to restore from an earlier point in time.\n\nRestoreLongTermRetentionBackup: Creates a database by restoring from a long term retention vault. recoveryServicesRecoveryPointResourceId must be specified as the recovery point resource ID.\n\nCopy, NonReadableSecondary, OnlineSecondary and RestoreLongTermRetentionBackup are not supported for DataWarehouse edition.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -4395,7 +4395,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSecondary or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2'",
+          "Documentation": "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSecondary or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\".",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -4508,7 +4508,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The name of the configured service level objective of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of serviceLevelObjective property. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+          "Documentation": "The name of the configured service level objective of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of serviceLevelObjective property. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\".",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -4617,7 +4617,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for DataWarehouse edition. Possible values include: 'Enabled', 'Disabled'",
+          "Documentation": "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for DataWarehouse edition.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -4650,7 +4650,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not supported for DataWarehouse edition. Possible values include: 'AdventureWorksLT'",
+          "Documentation": "Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not supported for DataWarehouse edition.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -5947,7 +5947,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'",
+          "Documentation": "The edition of the elastic pool.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -7721,7 +7721,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource. Possible values include: 'SystemAssigned'",
+          "Documentation": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -8640,7 +8640,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'",
+          "Documentation": "The status of the database transparent data encryption.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
@@ -9351,7 +9351,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Enabled', 'Disabled'",
+          "Documentation": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -9961,7 +9961,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "The encryption protector type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
+          "Documentation": "The encryption protector type like 'ServiceManaged', 'AzureKeyVault'.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -10368,7 +10368,7 @@
               "IsList": false,
               "Required": "True",
               "VariableValue": "None",
-              "Documentation": "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required. Possible values include: 'Manual', 'Automatic'",
+              "Documentation": "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -10450,7 +10450,7 @@
               "IsList": false,
               "Required": "False",
               "VariableValue": "None",
-              "Documentation": "Failover policy of the read-only endpoint for the failover group. Possible values include: 'Disabled', 'Enabled'",
+              "Documentation": "Failover policy of the read-only endpoint for the failover group.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -11039,7 +11039,7 @@
           "IsList": false,
           "Required": "True",
           "VariableValue": "None",
-          "Documentation": "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
+          "Documentation": "The server key type like 'ServiceManaged', 'AzureKeyVault'.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -11944,7 +11944,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Conflict resolution policy of the sync group. Possible values include: 'HubWin', 'MemberWin'",
+          "Documentation": "Conflict resolution policy of the sync group.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -12954,7 +12954,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'",
+          "Documentation": "Database type of the sync member.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -13131,7 +13131,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'",
+          "Documentation": "Sync direction of the sync member.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",

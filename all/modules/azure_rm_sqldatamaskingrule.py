@@ -48,8 +48,8 @@ options:
     rule_state:
         description:
             - "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify
-                ruleState as disabled. However, if the rule doesnC(t already exist, the rule will be created with ruleState set to enabled, regardless of the
-                provided value of ruleState. Possible values include: )DisabledC(, )Enabled'"
+                ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless of the
+               provided value of ruleState."
         choices: ['disabled', 'enabled']
     schema_name:
         description:
@@ -65,7 +65,7 @@ options:
         required: True
     masking_function:
         description:
-            - The masking function that is used for the data masking rule. Possible values include: C(Default), C(CCN), C(Email), C(Number), C(SSN), C(Text)
+            - The masking function that is used for the data masking rule.
         required: True
         choices: ['default', 'ccn', 'email', 'number', 'ssn', 'text']
     number_from:
