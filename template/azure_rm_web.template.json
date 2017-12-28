@@ -240,8 +240,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "StandardDomainValidatedSsl",
-            "StandardDomainValidatedWildCardSsl"
+            {
+              "Key": "standard_domain_validated_ssl",
+              "Value": "StandardDomainValidatedSsl"
+            },
+            {
+              "Key": "standard_domain_validated_wild_card_ssl",
+              "Value": "StandardDomainValidatedWildCardSsl"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -2796,8 +2802,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "AzureDns",
-            "DefaultDomainRegistrarDns"
+            {
+              "Key": "azure_dns",
+              "Value": "AzureDns"
+            },
+            {
+              "Key": "default_domain_registrar_dns",
+              "Value": "DefaultDomainRegistrarDns"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -2847,8 +2859,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "AzureDns",
-            "DefaultDomainRegistrarDns"
+            {
+              "Key": "azure_dns",
+              "Value": "AzureDns"
+            },
+            {
+              "Key": "default_domain_registrar_dns",
+              "Value": "DefaultDomainRegistrarDns"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -5474,9 +5492,18 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Disabled",
-                "SniEnabled",
-                "IpBasedEnabled"
+                {
+                  "Key": "disabled",
+                  "Value": "Disabled"
+                },
+                {
+                  "Key": "sni_enabled",
+                  "Value": "SniEnabled"
+                },
+                {
+                  "Key": "ip_based_enabled",
+                  "Value": "IpBasedEnabled"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -5574,8 +5601,14 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Standard",
-                "Repository"
+                {
+                  "Key": "standard",
+                  "Value": "Standard"
+                },
+                {
+                  "Key": "repository",
+                  "Value": "Repository"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -6172,17 +6205,50 @@
                   "RequiredCount": 0,
                   "NoLog": false,
                   "EnumValues": [
-                    "MySql",
-                    "SQLServer",
-                    "SQLAzure",
-                    "Custom",
-                    "NotificationHub",
-                    "ServiceBus",
-                    "EventHub",
-                    "ApiHub",
-                    "DocDb",
-                    "RedisCache",
-                    "PostgreSQL"
+                    {
+                      "Key": "my_sql",
+                      "Value": "MySql"
+                    },
+                    {
+                      "Key": "sql_server",
+                      "Value": "SQLServer"
+                    },
+                    {
+                      "Key": "sql_azure",
+                      "Value": "SQLAzure"
+                    },
+                    {
+                      "Key": "custom",
+                      "Value": "Custom"
+                    },
+                    {
+                      "Key": "notification_hub",
+                      "Value": "NotificationHub"
+                    },
+                    {
+                      "Key": "service_bus",
+                      "Value": "ServiceBus"
+                    },
+                    {
+                      "Key": "event_hub",
+                      "Value": "EventHub"
+                    },
+                    {
+                      "Key": "api_hub",
+                      "Value": "ApiHub"
+                    },
+                    {
+                      "Key": "doc_db",
+                      "Value": "DocDb"
+                    },
+                    {
+                      "Key": "redis_cache",
+                      "Value": "RedisCache"
+                    },
+                    {
+                      "Key": "postgre_sql",
+                      "Value": "PostgreSQL"
+                    }
                   ],
                   "IncludeInDocumentation": true,
                   "IncludeInArgSpec": true,
@@ -6337,19 +6403,58 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "None",
-                "Dropbox",
-                "Tfs",
-                "LocalGit",
-                "GitHub",
-                "CodePlexGit",
-                "CodePlexHg",
-                "BitbucketGit",
-                "BitbucketHg",
-                "ExternalGit",
-                "ExternalHg",
-                "OneDrive",
-                "VSO"
+                {
+                  "Key": "none",
+                  "Value": "None"
+                },
+                {
+                  "Key": "dropbox",
+                  "Value": "Dropbox"
+                },
+                {
+                  "Key": "tfs",
+                  "Value": "Tfs"
+                },
+                {
+                  "Key": "local_git",
+                  "Value": "LocalGit"
+                },
+                {
+                  "Key": "git_hub",
+                  "Value": "GitHub"
+                },
+                {
+                  "Key": "code_plex_git",
+                  "Value": "CodePlexGit"
+                },
+                {
+                  "Key": "code_plex_hg",
+                  "Value": "CodePlexHg"
+                },
+                {
+                  "Key": "bitbucket_git",
+                  "Value": "BitbucketGit"
+                },
+                {
+                  "Key": "bitbucket_hg",
+                  "Value": "BitbucketHg"
+                },
+                {
+                  "Key": "external_git",
+                  "Value": "ExternalGit"
+                },
+                {
+                  "Key": "external_hg",
+                  "Value": "ExternalHg"
+                },
+                {
+                  "Key": "one_drive",
+                  "Value": "OneDrive"
+                },
+                {
+                  "Key": "vso",
+                  "Value": "VSO"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -6543,8 +6648,14 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Integrated",
-                "Classic"
+                {
+                  "Key": "integrated",
+                  "Value": "Integrated"
+                },
+                {
+                  "Key": "classic",
+                  "Value": "Classic"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -6740,11 +6851,26 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "WeightedRoundRobin",
-                "LeastRequests",
-                "LeastResponseTime",
-                "WeightedTotalTraffic",
-                "RequestHash"
+                {
+                  "Key": "weighted_round_robin",
+                  "Value": "WeightedRoundRobin"
+                },
+                {
+                  "Key": "least_requests",
+                  "Value": "LeastRequests"
+                },
+                {
+                  "Key": "least_response_time",
+                  "Value": "LeastResponseTime"
+                },
+                {
+                  "Key": "weighted_total_traffic",
+                  "Value": "WeightedTotalTraffic"
+                },
+                {
+                  "Key": "request_hash",
+                  "Value": "RequestHash"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -7531,9 +7657,18 @@
                       "RequiredCount": 0,
                       "NoLog": false,
                       "EnumValues": [
-                        "Recycle",
-                        "LogEvent",
-                        "CustomAction"
+                        {
+                          "Key": "recycle",
+                          "Value": "Recycle"
+                        },
+                        {
+                          "Key": "log_event",
+                          "Value": "LogEvent"
+                        },
+                        {
+                          "Key": "custom_action",
+                          "Value": "CustomAction"
+                        }
                       ],
                       "IncludeInDocumentation": true,
                       "IncludeInArgSpec": true,
@@ -12631,9 +12766,18 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "None",
-            "Web",
-            "Publishing"
+            {
+              "Key": "none",
+              "Value": "None"
+            },
+            {
+              "Key": "web",
+              "Value": "Web"
+            },
+            {
+              "Key": "publishing",
+              "Value": "Publishing"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -12748,9 +12892,18 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Shared",
-                "Dedicated",
-                "Dynamic"
+                {
+                  "Key": "shared",
+                  "Value": "Shared"
+                },
+                {
+                  "Key": "dedicated",
+                  "Value": "Dedicated"
+                },
+                {
+                  "Key": "dynamic",
+                  "Value": "Dynamic"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -12897,8 +13050,14 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Permit",
-                "Deny"
+                {
+                  "Key": "permit",
+                  "Value": "Permit"
+                },
+                {
+                  "Key": "deny",
+                  "Value": "Deny"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,

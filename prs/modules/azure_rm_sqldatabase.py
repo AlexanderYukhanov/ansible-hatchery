@@ -55,7 +55,7 @@ options:
                recovery point resource ID.\n\nCopy, NonReadableSecondary, OnlineSecondary and RestoreLongTermRetentionBackup are not supported for DataWareho
                use edition. Possible values include: )CopyC(, )DefaultC(, )NonReadableSecondaryC(, )OnlineSecondaryC(, )PointInTimeRestoreC(, )RecoveryC(, )R
                estoreC(, )RestoreLongTermRetentionBackup'"
-        choices: ['Copy', 'Default', 'NonReadableSecondary', 'OnlineSecondary', 'PointInTimeRestore', 'Recovery', 'Restore', 'RestoreLongTermRetentionBackup']
+        choices: ['copy', 'default', 'non_readable_secondary', 'online_secondary', 'point_in_time_restore', 'recovery', 'restore', 'restore_long_term_retention_backup']
     source_database_id:
         description:
             - "Conditional. If createMode is Copy, NonReadableSecondary, OnlineSecondary, PointInTimeRestore, Recovery, or Restore, then this value is requir
@@ -80,7 +80,7 @@ options:
                Secondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/
                locations/{locationID}/capabilities) referred to by operationId: 'Capabilities_ListByLocation.'. Possible values include: C(Web), C(Business),
                 C(Basic), C(Standard), C(Premium), C(Free), C(Stretch), C(DataWarehouse), C(System), C(System2)"
-        choices: ['Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2']
+        choices: ['web', 'business', 'basic', 'standard', 'premium', 'free', 'stretch', 'data_warehouse', 'system', 'system2']
     max_size_bytes:
         description:
             - "The max size of the database expressed in bytes. If createMode is not Default, this value is ignored. To see possible values, query the capabi
@@ -100,7 +100,7 @@ options:
                abilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: 'Capab
                ilities_ListByLocation.'. Possible values include: C(Basic), C(S0), C(S1), C(S2), C(S3), C(P1), C(P2), C(P3), C(P4), C(P6), C(P11), C(P15), C(
                System), C(System2), C(ElasticPool)"
-        choices: ['Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool']
+        choices: ['basic', 's0', 's1', 's2', 's3', 'p1', 'p2', 'p3', 'p4', 'p6', 'p11', 'p15', 'system', 'system2', 'elastic_pool']
     elastic_pool_name:
         description:
             - "The name of the elastic pool the database is in. If elasticPoolName and requestedServiceObjectiveName are both updated, the value of requested
@@ -109,12 +109,12 @@ options:
         description:
             - "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not su
                pported for DataWarehouse edition. Possible values include: C(Enabled), C(Disabled)"
-        choices: ['Enabled', 'Disabled']
+        choices: ['enabled', 'disabled']
     sample_name:
         description:
             - "Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not support
                ed for DataWarehouse edition. Possible values include: C(AdventureWorksLT)"
-        choices: ['AdventureWorksLT']
+        choices: ['adventure_works_lt']
     zone_redundant:
         description:
             - Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones.
@@ -200,7 +200,7 @@ class AzureRMDatabases(AzureRMModuleBase):
             ),
             create_mode=dict(
                 type='str',
-                choices=['Copy', 'Default', 'NonReadableSecondary', 'OnlineSecondary', 'PointInTimeRestore', 'Recovery', 'Restore', 'RestoreLongTermRetentionBackup']
+                choices=['copy', 'default', 'non_readable_secondary', 'online_secondary', 'point_in_time_restore', 'recovery', 'restore', 'restore_long_term_retention_backup']
             ),
             source_database_id=dict(
                 type='str'
@@ -216,7 +216,7 @@ class AzureRMDatabases(AzureRMModuleBase):
             ),
             edition=dict(
                 type='str',
-                choices=['Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2']
+                choices=['web', 'business', 'basic', 'standard', 'premium', 'free', 'stretch', 'data_warehouse', 'system', 'system2']
             ),
             max_size_bytes=dict(
                 type='str'
@@ -226,18 +226,18 @@ class AzureRMDatabases(AzureRMModuleBase):
             ),
             requested_service_objective_name=dict(
                 type='str',
-                choices=['Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool']
+                choices=['basic', 's0', 's1', 's2', 's3', 'p1', 'p2', 'p3', 'p4', 'p6', 'p11', 'p15', 'system', 'system2', 'elastic_pool']
             ),
             elastic_pool_name=dict(
                 type='str'
             ),
             read_scale=dict(
                 type='str',
-                choices=['Enabled', 'Disabled']
+                choices=['enabled', 'disabled']
             ),
             sample_name=dict(
                 type='str',
-                choices=['AdventureWorksLT']
+                choices=['adventure_works_lt']
             ),
             zone_redundant=dict(
                 type='str'

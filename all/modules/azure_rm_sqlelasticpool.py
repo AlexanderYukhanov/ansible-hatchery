@@ -40,7 +40,7 @@ options:
     edition:
         description:
             - The edition of the elastic pool. Possible values include: C(Basic), C(Standard), C(Premium)
-        choices: ['Basic', 'Standard', 'Premium']
+        choices: ['basic', 'standard', 'premium']
     dtu:
         description:
             - The total shared DTU for the database elastic pool.
@@ -130,7 +130,7 @@ class AzureRMElasticPools(AzureRMModuleBase):
             ),
             edition=dict(
                 type='str',
-                choices=['Basic', 'Standard', 'Premium']
+                choices=['basic', 'standard', 'premium']
             ),
             dtu=dict(
                 type='int'

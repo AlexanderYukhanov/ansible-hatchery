@@ -120,8 +120,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Disabled",
-            "Enabled"
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            },
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -1216,9 +1222,18 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Default",
-            "Proxy",
-            "Redirect"
+            {
+              "Key": "default",
+              "Value": "Default"
+            },
+            {
+              "Key": "proxy",
+              "Value": "Proxy"
+            },
+            {
+              "Key": "redirect",
+              "Value": "Redirect"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -1602,9 +1617,18 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "New",
-            "Enabled",
-            "Disabled"
+            {
+              "Key": "new",
+              "Value": "New"
+            },
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            },
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -1678,8 +1702,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Enabled",
-            "Disabled"
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            },
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -1777,8 +1807,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Enabled",
-            "Disabled"
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            },
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -2207,8 +2243,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Disabled",
-            "Enabled"
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            },
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -2698,8 +2740,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Disabled",
-            "Enabled"
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            },
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -2797,12 +2845,30 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Default",
-            "CCN",
-            "Email",
-            "Number",
-            "SSN",
-            "Text"
+            {
+              "Key": "default",
+              "Value": "Default"
+            },
+            {
+              "Key": "ccn",
+              "Value": "CCN"
+            },
+            {
+              "Key": "email",
+              "Value": "Email"
+            },
+            {
+              "Key": "number",
+              "Value": "Number"
+            },
+            {
+              "Key": "ssn",
+              "Value": "SSN"
+            },
+            {
+              "Key": "text",
+              "Value": "Text"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -3743,8 +3809,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Disabled",
-            "Enabled"
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            },
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -4180,14 +4252,38 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Copy",
-            "Default",
-            "NonReadableSecondary",
-            "OnlineSecondary",
-            "PointInTimeRestore",
-            "Recovery",
-            "Restore",
-            "RestoreLongTermRetentionBackup"
+            {
+              "Key": "copy",
+              "Value": "Copy"
+            },
+            {
+              "Key": "default",
+              "Value": "Default"
+            },
+            {
+              "Key": "non_readable_secondary",
+              "Value": "NonReadableSecondary"
+            },
+            {
+              "Key": "online_secondary",
+              "Value": "OnlineSecondary"
+            },
+            {
+              "Key": "point_in_time_restore",
+              "Value": "PointInTimeRestore"
+            },
+            {
+              "Key": "recovery",
+              "Value": "Recovery"
+            },
+            {
+              "Key": "restore",
+              "Value": "Restore"
+            },
+            {
+              "Key": "restore_long_term_retention_backup",
+              "Value": "RestoreLongTermRetentionBackup"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -4309,16 +4405,46 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Web",
-            "Business",
-            "Basic",
-            "Standard",
-            "Premium",
-            "Free",
-            "Stretch",
-            "DataWarehouse",
-            "System",
-            "System2"
+            {
+              "Key": "web",
+              "Value": "Web"
+            },
+            {
+              "Key": "business",
+              "Value": "Business"
+            },
+            {
+              "Key": "basic",
+              "Value": "Basic"
+            },
+            {
+              "Key": "standard",
+              "Value": "Standard"
+            },
+            {
+              "Key": "premium",
+              "Value": "Premium"
+            },
+            {
+              "Key": "free",
+              "Value": "Free"
+            },
+            {
+              "Key": "stretch",
+              "Value": "Stretch"
+            },
+            {
+              "Key": "data_warehouse",
+              "Value": "DataWarehouse"
+            },
+            {
+              "Key": "system",
+              "Value": "System"
+            },
+            {
+              "Key": "system2",
+              "Value": "System2"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -4392,21 +4518,66 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Basic",
-            "S0",
-            "S1",
-            "S2",
-            "S3",
-            "P1",
-            "P2",
-            "P3",
-            "P4",
-            "P6",
-            "P11",
-            "P15",
-            "System",
-            "System2",
-            "ElasticPool"
+            {
+              "Key": "basic",
+              "Value": "Basic"
+            },
+            {
+              "Key": "s0",
+              "Value": "S0"
+            },
+            {
+              "Key": "s1",
+              "Value": "S1"
+            },
+            {
+              "Key": "s2",
+              "Value": "S2"
+            },
+            {
+              "Key": "s3",
+              "Value": "S3"
+            },
+            {
+              "Key": "p1",
+              "Value": "P1"
+            },
+            {
+              "Key": "p2",
+              "Value": "P2"
+            },
+            {
+              "Key": "p3",
+              "Value": "P3"
+            },
+            {
+              "Key": "p4",
+              "Value": "P4"
+            },
+            {
+              "Key": "p6",
+              "Value": "P6"
+            },
+            {
+              "Key": "p11",
+              "Value": "P11"
+            },
+            {
+              "Key": "p15",
+              "Value": "P15"
+            },
+            {
+              "Key": "system",
+              "Value": "System"
+            },
+            {
+              "Key": "system2",
+              "Value": "System2"
+            },
+            {
+              "Key": "elastic_pool",
+              "Value": "ElasticPool"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -4456,8 +4627,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Enabled",
-            "Disabled"
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            },
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -4483,7 +4660,10 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "AdventureWorksLT"
+            {
+              "Key": "adventure_works_lt",
+              "Value": "AdventureWorksLT"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -5777,9 +5957,18 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Basic",
-            "Standard",
-            "Premium"
+            {
+              "Key": "basic",
+              "Value": "Basic"
+            },
+            {
+              "Key": "standard",
+              "Value": "Standard"
+            },
+            {
+              "Key": "premium",
+              "Value": "Premium"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -7542,7 +7731,10 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "SystemAssigned"
+            {
+              "Key": "system_assigned",
+              "Value": "SystemAssigned"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -8458,8 +8650,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Enabled",
-            "Disabled"
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            },
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -9163,8 +9361,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Enabled",
-            "Disabled"
+            {
+              "Key": "enabled",
+              "Value": "Enabled"
+            },
+            {
+              "Key": "disabled",
+              "Value": "Disabled"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -9767,8 +9971,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "ServiceManaged",
-            "AzureKeyVault"
+            {
+              "Key": "service_managed",
+              "Value": "ServiceManaged"
+            },
+            {
+              "Key": "azure_key_vault",
+              "Value": "AzureKeyVault"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -10168,8 +10378,14 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Manual",
-                "Automatic"
+                {
+                  "Key": "manual",
+                  "Value": "Manual"
+                },
+                {
+                  "Key": "automatic",
+                  "Value": "Automatic"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -10244,8 +10460,14 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Disabled",
-                "Enabled"
+                {
+                  "Key": "disabled",
+                  "Value": "Disabled"
+                },
+                {
+                  "Key": "enabled",
+                  "Value": "Enabled"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -10827,8 +11049,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "ServiceManaged",
-            "AzureKeyVault"
+            {
+              "Key": "service_managed",
+              "Value": "ServiceManaged"
+            },
+            {
+              "Key": "azure_key_vault",
+              "Value": "AzureKeyVault"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -11726,8 +11954,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "HubWin",
-            "MemberWin"
+            {
+              "Key": "hub_win",
+              "Value": "HubWin"
+            },
+            {
+              "Key": "member_win",
+              "Value": "MemberWin"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -12730,8 +12964,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "AzureSqlDatabase",
-            "SqlServerDatabase"
+            {
+              "Key": "azure_sql_database",
+              "Value": "AzureSqlDatabase"
+            },
+            {
+              "Key": "sql_server_database",
+              "Value": "SqlServerDatabase"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
@@ -12901,9 +13141,18 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "Bidirectional",
-            "OneWayMemberToHub",
-            "OneWayHubToMember"
+            {
+              "Key": "bidirectional",
+              "Value": "Bidirectional"
+            },
+            {
+              "Key": "one_way_member_to_hub",
+              "Value": "OneWayMemberToHub"
+            },
+            {
+              "Key": "one_way_hub_to_member",
+              "Value": "OneWayHubToMember"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,

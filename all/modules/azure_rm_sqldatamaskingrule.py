@@ -50,7 +50,7 @@ options:
             - "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify
                 ruleState as disabled. However, if the rule doesnC(t already exist, the rule will be created with ruleState set to enabled, regardless of the
                 provided value of ruleState. Possible values include: )DisabledC(, )Enabled'"
-        choices: ['Disabled', 'Enabled']
+        choices: ['disabled', 'enabled']
     schema_name:
         description:
             - The schema name on which the data masking rule is applied.
@@ -67,7 +67,7 @@ options:
         description:
             - The masking function that is used for the data masking rule. Possible values include: C(Default), C(CCN), C(Email), C(Number), C(SSN), C(Text)
         required: True
-        choices: ['Default', 'CCN', 'Email', 'Number', 'SSN', 'Text']
+        choices: ['default', 'ccn', 'email', 'number', 'ssn', 'text']
     number_from:
         description:
             - The numberFrom property of the masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.
@@ -160,7 +160,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
             ),
             rule_state=dict(
                 type='str',
-                choices=['Disabled', 'Enabled']
+                choices=['disabled', 'enabled']
             ),
             schema_name=dict(
                 type='str',
@@ -176,7 +176,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
             ),
             masking_function=dict(
                 type='str',
-                choices=['Default', 'CCN', 'Email', 'Number', 'SSN', 'Text'],
+                choices=['default', 'ccn', 'email', 'number', 'ssn', 'text'],
                 required=True
             ),
             number_from=dict(

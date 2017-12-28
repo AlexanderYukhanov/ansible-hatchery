@@ -51,7 +51,7 @@ options:
     product_type:
         description:
             - Certificate product type. Possible values include: C(StandardDomainValidatedSsl), C(StandardDomainValidatedWildCardSsl)
-        choices: ['StandardDomainValidatedSsl', 'StandardDomainValidatedWildCardSsl']
+        choices: ['standard_domain_validated_ssl', 'standard_domain_validated_wild_card_ssl']
     auto_renew:
         description:
             - <code>true</code> if the certificate should be automatically renewed when it expires; otherwise, <code>false</code>.
@@ -142,7 +142,7 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
             ),
             product_type=dict(
                 type='str',
-                choices=['StandardDomainValidatedSsl', 'StandardDomainValidatedWildCardSsl']
+                choices=['standard_domain_validated_ssl', 'standard_domain_validated_wild_card_ssl']
             ),
             auto_renew=dict(
                 type='str'

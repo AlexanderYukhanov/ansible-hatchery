@@ -137,8 +137,14 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [
-                "Basic",
-                "Standard"
+                {
+                  "Key": "basic",
+                  "Value": "Basic"
+                },
+                {
+                  "Key": "standard",
+                  "Value": "Standard"
+                }
               ],
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
@@ -316,8 +322,14 @@
           "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": [
-            "5.6",
-            "5.7"
+            {
+              "Key": "5.6",
+              "Value": "5.6"
+            },
+            {
+              "Key": "5.7",
+              "Value": "5.7"
+            }
           ],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,

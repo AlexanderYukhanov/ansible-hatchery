@@ -68,7 +68,7 @@ options:
         description:
             - "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values include: C(None), C(Web)
                , C(Publishing)"
-        choices: ['None', 'Web', 'Publishing']
+        choices: ['none', 'web', 'publishing']
     multi_size:
         description:
             - "Front-end VM size, e.g. 'Medium', 'Large'."
@@ -86,7 +86,7 @@ options:
             compute_mode:
                 description:
                     - Shared or dedicated app hosting. Possible values include: C(Shared), C(Dedicated), C(Dynamic)
-                choices: ['Shared', 'Dedicated', 'Dynamic']
+                choices: ['shared', 'dedicated', 'dynamic']
             worker_size:
                 description:
                     - VM size of the worker pool instances.
@@ -106,7 +106,7 @@ options:
             action:
                 description:
                     - Action object. Possible values include: C(Permit), C(Deny)
-                choices: ['Permit', 'Deny']
+                choices: ['permit', 'deny']
             description:
                 description:
                     - Description of network access control entry.
@@ -235,7 +235,7 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
             ),
             internal_load_balancing_mode=dict(
                 type='str',
-                choices=['None', 'Web', 'Publishing']
+                choices=['none', 'web', 'publishing']
             ),
             multi_size=dict(
                 type='str'

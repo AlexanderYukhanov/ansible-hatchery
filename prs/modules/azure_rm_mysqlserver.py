@@ -40,7 +40,7 @@ options:
             tier:
                 description:
                     - The tier of the particular SKU, e.g. Basic. Possible values include: C(Basic), C(Standard)
-                choices: ['Basic', 'Standard']
+                choices: ['basic', 'standard']
             capacity:
                 description:
                     - "The scale up/out capacity, representing server's compute units."
