@@ -131,7 +131,7 @@
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "Basic",
-                "test:default": ""
+                "test:default": "basic"
               },
               "SubOptions": [],
               "RequiredCount": 0,
