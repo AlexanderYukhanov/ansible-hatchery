@@ -572,7 +572,7 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                         elif ev['peering_type'] == 'microsoft_peering':
                             ev['peering_type'] = 'MicrosoftPeering'
                     if 'state' in ev:
-                        elif ev['state'] == 'disabled':
+                        if ev['state'] == 'disabled':
                             ev['state'] = 'Disabled'
                         elif ev['state'] == 'enabled':
                             ev['state'] = 'Enabled'

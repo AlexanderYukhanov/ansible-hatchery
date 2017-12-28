@@ -635,7 +635,7 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                         elif ev['tier'] == 'premium':
                             ev['tier'] = 'Premium'
                     if 'family' in ev:
-                        elif ev['family'] == 'unlimited_data':
+                        if ev['family'] == 'unlimited_data':
                             ev['family'] = 'UnlimitedData'
                         elif ev['family'] == 'metered_data':
                             ev['family'] = 'MeteredData'
@@ -673,7 +673,7 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                         elif ev['peering_type'] == 'microsoft_peering':
                             ev['peering_type'] = 'MicrosoftPeering'
                     if 'state' in ev:
-                        elif ev['state'] == 'disabled':
+                        if ev['state'] == 'disabled':
                             ev['state'] = 'Disabled'
                         elif ev['state'] == 'enabled':
                             ev['state'] = 'Enabled'

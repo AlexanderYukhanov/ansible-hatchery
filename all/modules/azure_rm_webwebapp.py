@@ -706,7 +706,7 @@ class AzureRMWebApps(AzureRMModuleBase):
                         elif ev['ssl_state'] == 'ip_based_enabled':
                             ev['ssl_state'] = 'IpBasedEnabled'
                     if 'host_type' in ev:
-                        elif ev['host_type'] == 'standard':
+                        if ev['host_type'] == 'standard':
                             ev['host_type'] = 'Standard'
                         elif ev['host_type'] == 'repository':
                             ev['host_type'] = 'Repository'
@@ -745,12 +745,12 @@ class AzureRMWebApps(AzureRMModuleBase):
                         elif ev['scm_type'] == 'vso':
                             ev['scm_type'] = 'VSO'
                     if 'managed_pipeline_mode' in ev:
-                        elif ev['managed_pipeline_mode'] == 'integrated':
+                        if ev['managed_pipeline_mode'] == 'integrated':
                             ev['managed_pipeline_mode'] = 'Integrated'
                         elif ev['managed_pipeline_mode'] == 'classic':
                             ev['managed_pipeline_mode'] = 'Classic'
                     if 'load_balancing' in ev:
-                        elif ev['load_balancing'] == 'weighted_round_robin':
+                        if ev['load_balancing'] == 'weighted_round_robin':
                             ev['load_balancing'] = 'WeightedRoundRobin'
                         elif ev['load_balancing'] == 'least_requests':
                             ev['load_balancing'] = 'LeastRequests'

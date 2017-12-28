@@ -597,7 +597,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                         elif ev['gateway_type'] == 'express_route':
                             ev['gateway_type'] = 'ExpressRoute'
                     if 'vpn_type' in ev:
-                        elif ev['vpn_type'] == 'policy_based':
+                        if ev['vpn_type'] == 'policy_based':
                             ev['vpn_type'] = 'PolicyBased'
                         elif ev['vpn_type'] == 'route_based':
                             ev['vpn_type'] = 'RouteBased'
@@ -610,7 +610,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                         elif ev['gateway_type'] == 'express_route':
                             ev['gateway_type'] = 'ExpressRoute'
                     if 'vpn_type' in ev:
-                        elif ev['vpn_type'] == 'policy_based':
+                        if ev['vpn_type'] == 'policy_based':
                             ev['vpn_type'] = 'PolicyBased'
                         elif ev['vpn_type'] == 'route_based':
                             ev['vpn_type'] = 'RouteBased'
@@ -660,7 +660,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                         elif ev['ipsec_encryption'] == 'gcmaes256':
                             ev['ipsec_encryption'] = 'GCMAES256'
                     if 'ipsec_integrity' in ev:
-                        elif ev['ipsec_integrity'] == 'md5':
+                        if ev['ipsec_integrity'] == 'md5':
                             ev['ipsec_integrity'] = 'MD5'
                         elif ev['ipsec_integrity'] == 'sha1':
                             ev['ipsec_integrity'] = 'SHA1'
@@ -673,7 +673,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                         elif ev['ipsec_integrity'] == 'gcmaes256':
                             ev['ipsec_integrity'] = 'GCMAES256'
                     if 'ike_encryption' in ev:
-                        elif ev['ike_encryption'] == 'des':
+                        if ev['ike_encryption'] == 'des':
                             ev['ike_encryption'] = 'DES'
                         elif ev['ike_encryption'] == 'des3':
                             ev['ike_encryption'] = 'DES3'
@@ -684,7 +684,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                         elif ev['ike_encryption'] == 'aes256':
                             ev['ike_encryption'] = 'AES256'
                     if 'ike_integrity' in ev:
-                        elif ev['ike_integrity'] == 'md5':
+                        if ev['ike_integrity'] == 'md5':
                             ev['ike_integrity'] = 'MD5'
                         elif ev['ike_integrity'] == 'sha1':
                             ev['ike_integrity'] = 'SHA1'
@@ -693,7 +693,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                         elif ev['ike_integrity'] == 'sha384':
                             ev['ike_integrity'] = 'SHA384'
                     if 'dh_group' in ev:
-                        elif ev['dh_group'] == 'none':
+                        if ev['dh_group'] == 'none':
                             ev['dh_group'] = 'None'
                         elif ev['dh_group'] == 'dh_group1':
                             ev['dh_group'] = 'DHGroup1'
@@ -710,7 +710,7 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                         elif ev['dh_group'] == 'dh_group24':
                             ev['dh_group'] = 'DHGroup24'
                     if 'pfs_group' in ev:
-                        elif ev['pfs_group'] == 'none':
+                        if ev['pfs_group'] == 'none':
                             ev['pfs_group'] = 'None'
                         elif ev['pfs_group'] == 'pfs1':
                             ev['pfs_group'] = 'PFS1'

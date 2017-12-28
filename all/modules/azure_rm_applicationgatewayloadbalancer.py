@@ -803,7 +803,7 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
                         elif ev['protocol'] == 'all':
                             ev['protocol'] = 'All'
                     if 'load_distribution' in ev:
-                        elif ev['load_distribution'] == 'default':
+                        if ev['load_distribution'] == 'default':
                             ev['load_distribution'] = 'Default'
                         elif ev['load_distribution'] == 'source_ip':
                             ev['load_distribution'] = 'SourceIP'

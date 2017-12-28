@@ -1065,7 +1065,7 @@ class AzureRMNetworkInterfaces(AzureRMModuleBase):
                         elif ev['private_ip_allocation_method'] == 'dynamic':
                             ev['private_ip_allocation_method'] = 'Dynamic'
                     if 'private_ip_address_version' in ev:
-                        elif ev['private_ip_address_version'] == 'ipv4':
+                        if ev['private_ip_address_version'] == 'ipv4':
                             ev['private_ip_address_version'] = 'IPv4'
                         elif ev['private_ip_address_version'] == 'ipv6':
                             ev['private_ip_address_version'] = 'IPv6'

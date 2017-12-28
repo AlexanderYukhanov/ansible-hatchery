@@ -351,7 +351,7 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                         elif ev['name'] == 'vpn_gw3':
                             ev['name'] = 'VpnGw3'
                     if 'tier' in ev:
-                        elif ev['tier'] == 'basic':
+                        if ev['tier'] == 'basic':
                             ev['tier'] = 'Basic'
                         elif ev['tier'] == 'high_performance':
                             ev['tier'] = 'HighPerformance'

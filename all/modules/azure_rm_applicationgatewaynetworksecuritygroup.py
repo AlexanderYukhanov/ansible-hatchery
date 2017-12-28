@@ -332,12 +332,12 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
                         elif ev['protocol'] == 'udp':
                             ev['protocol'] = 'Udp'
                     if 'access' in ev:
-                        elif ev['access'] == 'allow':
+                        if ev['access'] == 'allow':
                             ev['access'] = 'Allow'
                         elif ev['access'] == 'deny':
                             ev['access'] = 'Deny'
                     if 'direction' in ev:
-                        elif ev['direction'] == 'inbound':
+                        if ev['direction'] == 'inbound':
                             ev['direction'] = 'Inbound'
                         elif ev['direction'] == 'outbound':
                             ev['direction'] = 'Outbound'
@@ -350,12 +350,12 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
                         elif ev['protocol'] == 'udp':
                             ev['protocol'] = 'Udp'
                     if 'access' in ev:
-                        elif ev['access'] == 'allow':
+                        if ev['access'] == 'allow':
                             ev['access'] = 'Allow'
                         elif ev['access'] == 'deny':
                             ev['access'] = 'Deny'
                     if 'direction' in ev:
-                        elif ev['direction'] == 'inbound':
+                        if ev['direction'] == 'inbound':
                             ev['direction'] = 'Inbound'
                         elif ev['direction'] == 'outbound':
                             ev['direction'] = 'Outbound'
