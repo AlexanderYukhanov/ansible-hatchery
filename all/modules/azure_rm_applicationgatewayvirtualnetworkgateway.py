@@ -306,7 +306,13 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                 elif key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "ip_configurations":
-                    self.parameters["ip_configurations"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'private_ip_allocation_method' in ev:
+                        if ev['private_ip_allocation_method'] == 'static':
+                            ev['private_ip_allocation_method'] = 'Static'
+                        elif ev['private_ip_allocation_method'] == 'dynamic':
+                            ev['private_ip_allocation_method'] = 'Dynamic'
+                    self.parameters["ip_configurations"] = ev
                 elif key == "gateway_type":
                     ev = kwargs[key]
                     if ev == 'vpn':
@@ -328,7 +334,38 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                 elif key == "gateway_default_site":
                     self.parameters["gateway_default_site"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters["sku"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'name' in ev:
+                        if ev['name'] == 'basic':
+                            ev['name'] = 'Basic'
+                        elif ev['name'] == 'high_performance':
+                            ev['name'] = 'HighPerformance'
+                        elif ev['name'] == 'standard':
+                            ev['name'] = 'Standard'
+                        elif ev['name'] == 'ultra_performance':
+                            ev['name'] = 'UltraPerformance'
+                        elif ev['name'] == 'vpn_gw1':
+                            ev['name'] = 'VpnGw1'
+                        elif ev['name'] == 'vpn_gw2':
+                            ev['name'] = 'VpnGw2'
+                        elif ev['name'] == 'vpn_gw3':
+                            ev['name'] = 'VpnGw3'
+                    if 'tier' in ev:
+                        elif ev['tier'] == 'basic':
+                            ev['tier'] = 'Basic'
+                        elif ev['tier'] == 'high_performance':
+                            ev['tier'] = 'HighPerformance'
+                        elif ev['tier'] == 'standard':
+                            ev['tier'] = 'Standard'
+                        elif ev['tier'] == 'ultra_performance':
+                            ev['tier'] = 'UltraPerformance'
+                        elif ev['tier'] == 'vpn_gw1':
+                            ev['tier'] = 'VpnGw1'
+                        elif ev['tier'] == 'vpn_gw2':
+                            ev['tier'] = 'VpnGw2'
+                        elif ev['tier'] == 'vpn_gw3':
+                            ev['tier'] = 'VpnGw3'
+                    self.parameters["sku"] = ev
                 elif key == "vpn_client_configuration":
                     self.parameters["vpn_client_configuration"] = kwargs[key]
                 elif key == "bgp_settings":

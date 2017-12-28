@@ -214,7 +214,13 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                 elif key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters["sku"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'name' in ev:
+                        if ev['name'] == 'basic':
+                            ev['name'] = 'Basic'
+                        elif ev['name'] == 'standard':
+                            ev['name'] = 'Standard'
+                    self.parameters["sku"] = ev
                 elif key == "public_ip_allocation_method":
                     ev = kwargs[key]
                     if ev == 'static':

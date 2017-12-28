@@ -555,9 +555,28 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                 elif key == "location":
                     self.route_filter_parameters["location"] = kwargs[key]
                 elif key == "rules":
-                    self.route_filter_parameters["rules"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'access' in ev:
+                        if ev['access'] == 'allow':
+                            ev['access'] = 'Allow'
+                        elif ev['access'] == 'deny':
+                            ev['access'] = 'Deny'
+                    self.route_filter_parameters["rules"] = ev
                 elif key == "peerings":
-                    self.route_filter_parameters["peerings"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'peering_type' in ev:
+                        if ev['peering_type'] == 'azure_public_peering':
+                            ev['peering_type'] = 'AzurePublicPeering'
+                        elif ev['peering_type'] == 'azure_private_peering':
+                            ev['peering_type'] = 'AzurePrivatePeering'
+                        elif ev['peering_type'] == 'microsoft_peering':
+                            ev['peering_type'] = 'MicrosoftPeering'
+                    if 'state' in ev:
+                        elif ev['state'] == 'disabled':
+                            ev['state'] = 'Disabled'
+                        elif ev['state'] == 'enabled':
+                            ev['state'] = 'Enabled'
+                    self.route_filter_parameters["peerings"] = ev
 
         old_response = None
         response = None

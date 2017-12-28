@@ -173,9 +173,21 @@ class AzureRMFailoverGroups(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "read_write_endpoint":
-                    self.parameters["read_write_endpoint"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'failover_policy' in ev:
+                        if ev['failover_policy'] == 'manual':
+                            ev['failover_policy'] = 'Manual'
+                        elif ev['failover_policy'] == 'automatic':
+                            ev['failover_policy'] = 'Automatic'
+                    self.parameters["read_write_endpoint"] = ev
                 elif key == "read_only_endpoint":
-                    self.parameters["read_only_endpoint"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'failover_policy' in ev:
+                        if ev['failover_policy'] == 'disabled':
+                            ev['failover_policy'] = 'Disabled'
+                        elif ev['failover_policy'] == 'enabled':
+                            ev['failover_policy'] = 'Enabled'
+                    self.parameters["read_only_endpoint"] = ev
                 elif key == "partner_servers":
                     self.parameters["partner_servers"] = kwargs[key]
                 elif key == "databases":

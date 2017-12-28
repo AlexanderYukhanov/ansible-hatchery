@@ -776,19 +776,68 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
                 elif key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters["sku"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'name' in ev:
+                        if ev['name'] == 'basic':
+                            ev['name'] = 'Basic'
+                        elif ev['name'] == 'standard':
+                            ev['name'] = 'Standard'
+                    self.parameters["sku"] = ev
                 elif key == "frontend_ip_configurations":
-                    self.parameters["frontend_ip_configurations"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'private_ip_allocation_method' in ev:
+                        if ev['private_ip_allocation_method'] == 'static':
+                            ev['private_ip_allocation_method'] = 'Static'
+                        elif ev['private_ip_allocation_method'] == 'dynamic':
+                            ev['private_ip_allocation_method'] = 'Dynamic'
+                    self.parameters["frontend_ip_configurations"] = ev
                 elif key == "backend_address_pools":
                     self.parameters["backend_address_pools"] = kwargs[key]
                 elif key == "load_balancing_rules":
-                    self.parameters["load_balancing_rules"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'protocol' in ev:
+                        if ev['protocol'] == 'udp':
+                            ev['protocol'] = 'Udp'
+                        elif ev['protocol'] == 'tcp':
+                            ev['protocol'] = 'Tcp'
+                        elif ev['protocol'] == 'all':
+                            ev['protocol'] = 'All'
+                    if 'load_distribution' in ev:
+                        elif ev['load_distribution'] == 'default':
+                            ev['load_distribution'] = 'Default'
+                        elif ev['load_distribution'] == 'source_ip':
+                            ev['load_distribution'] = 'SourceIP'
+                        elif ev['load_distribution'] == 'source_ip_protocol':
+                            ev['load_distribution'] = 'SourceIPProtocol'
+                    self.parameters["load_balancing_rules"] = ev
                 elif key == "probes":
-                    self.parameters["probes"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'protocol' in ev:
+                        if ev['protocol'] == 'http':
+                            ev['protocol'] = 'Http'
+                        elif ev['protocol'] == 'tcp':
+                            ev['protocol'] = 'Tcp'
+                    self.parameters["probes"] = ev
                 elif key == "inbound_nat_rules":
-                    self.parameters["inbound_nat_rules"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'protocol' in ev:
+                        if ev['protocol'] == 'udp':
+                            ev['protocol'] = 'Udp'
+                        elif ev['protocol'] == 'tcp':
+                            ev['protocol'] = 'Tcp'
+                        elif ev['protocol'] == 'all':
+                            ev['protocol'] = 'All'
+                    self.parameters["inbound_nat_rules"] = ev
                 elif key == "inbound_nat_pools":
-                    self.parameters["inbound_nat_pools"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'protocol' in ev:
+                        if ev['protocol'] == 'udp':
+                            ev['protocol'] = 'Udp'
+                        elif ev['protocol'] == 'tcp':
+                            ev['protocol'] = 'Tcp'
+                        elif ev['protocol'] == 'all':
+                            ev['protocol'] = 'All'
+                    self.parameters["inbound_nat_pools"] = ev
                 elif key == "outbound_nat_rules":
                     self.parameters["outbound_nat_rules"] = kwargs[key]
                 elif key == "resource_guid":

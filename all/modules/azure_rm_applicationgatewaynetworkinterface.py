@@ -1058,7 +1058,18 @@ class AzureRMNetworkInterfaces(AzureRMModuleBase):
                 elif key == "network_security_group":
                     self.parameters["network_security_group"] = kwargs[key]
                 elif key == "ip_configurations":
-                    self.parameters["ip_configurations"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'private_ip_allocation_method' in ev:
+                        if ev['private_ip_allocation_method'] == 'static':
+                            ev['private_ip_allocation_method'] = 'Static'
+                        elif ev['private_ip_allocation_method'] == 'dynamic':
+                            ev['private_ip_allocation_method'] = 'Dynamic'
+                    if 'private_ip_address_version' in ev:
+                        elif ev['private_ip_address_version'] == 'ipv4':
+                            ev['private_ip_address_version'] = 'IPv4'
+                        elif ev['private_ip_address_version'] == 'ipv6':
+                            ev['private_ip_address_version'] = 'IPv6'
+                    self.parameters["ip_configurations"] = ev
                 elif key == "dns_settings":
                     self.parameters["dns_settings"] = kwargs[key]
                 elif key == "mac_address":

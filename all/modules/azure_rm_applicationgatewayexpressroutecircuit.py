@@ -628,7 +628,18 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                 elif key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "sku":
-                    self.parameters["sku"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'tier' in ev:
+                        if ev['tier'] == 'standard':
+                            ev['tier'] = 'Standard'
+                        elif ev['tier'] == 'premium':
+                            ev['tier'] = 'Premium'
+                    if 'family' in ev:
+                        elif ev['family'] == 'unlimited_data':
+                            ev['family'] = 'UnlimitedData'
+                        elif ev['family'] == 'metered_data':
+                            ev['family'] = 'MeteredData'
+                    self.parameters["sku"] = ev
                 elif key == "allow_classic_operations":
                     self.parameters["allow_classic_operations"] = kwargs[key]
                 elif key == "circuit_provisioning_state":
@@ -645,9 +656,28 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                         ev = 'Deprovisioning'
                     self.parameters["service_provider_provisioning_state"] = ev
                 elif key == "authorizations":
-                    self.parameters["authorizations"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'authorization_use_status' in ev:
+                        if ev['authorization_use_status'] == 'available':
+                            ev['authorization_use_status'] = 'Available'
+                        elif ev['authorization_use_status'] == 'in_use':
+                            ev['authorization_use_status'] = 'InUse'
+                    self.parameters["authorizations"] = ev
                 elif key == "peerings":
-                    self.parameters["peerings"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'peering_type' in ev:
+                        if ev['peering_type'] == 'azure_public_peering':
+                            ev['peering_type'] = 'AzurePublicPeering'
+                        elif ev['peering_type'] == 'azure_private_peering':
+                            ev['peering_type'] = 'AzurePrivatePeering'
+                        elif ev['peering_type'] == 'microsoft_peering':
+                            ev['peering_type'] = 'MicrosoftPeering'
+                    if 'state' in ev:
+                        elif ev['state'] == 'disabled':
+                            ev['state'] = 'Disabled'
+                        elif ev['state'] == 'enabled':
+                            ev['state'] = 'Enabled'
+                    self.parameters["peerings"] = ev
                 elif key == "service_key":
                     self.parameters["service_key"] = kwargs[key]
                 elif key == "service_provider_notes":

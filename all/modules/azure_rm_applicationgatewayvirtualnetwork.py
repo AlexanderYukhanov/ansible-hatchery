@@ -529,7 +529,15 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
                 elif key == "subnets":
                     self.parameters["subnets"] = kwargs[key]
                 elif key == "virtual_network_peerings":
-                    self.parameters["virtual_network_peerings"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'peering_state' in ev:
+                        if ev['peering_state'] == 'initiated':
+                            ev['peering_state'] = 'Initiated'
+                        elif ev['peering_state'] == 'connected':
+                            ev['peering_state'] = 'Connected'
+                        elif ev['peering_state'] == 'disconnected':
+                            ev['peering_state'] = 'Disconnected'
+                    self.parameters["virtual_network_peerings"] = ev
                 elif key == "resource_guid":
                     self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":

@@ -697,13 +697,70 @@ class AzureRMWebApps(AzureRMModuleBase):
                 elif key == "enabled":
                     self.site_envelope["enabled"] = kwargs[key]
                 elif key == "host_name_ssl_states":
-                    self.site_envelope["host_name_ssl_states"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'ssl_state' in ev:
+                        if ev['ssl_state'] == 'disabled':
+                            ev['ssl_state'] = 'Disabled'
+                        elif ev['ssl_state'] == 'sni_enabled':
+                            ev['ssl_state'] = 'SniEnabled'
+                        elif ev['ssl_state'] == 'ip_based_enabled':
+                            ev['ssl_state'] = 'IpBasedEnabled'
+                    if 'host_type' in ev:
+                        elif ev['host_type'] == 'standard':
+                            ev['host_type'] = 'Standard'
+                        elif ev['host_type'] == 'repository':
+                            ev['host_type'] = 'Repository'
+                    self.site_envelope["host_name_ssl_states"] = ev
                 elif key == "server_farm_id":
                     self.site_envelope["server_farm_id"] = kwargs[key]
                 elif key == "reserved":
                     self.site_envelope["reserved"] = kwargs[key]
                 elif key == "site_config":
-                    self.site_envelope["site_config"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'scm_type' in ev:
+                        if ev['scm_type'] == 'none':
+                            ev['scm_type'] = 'None'
+                        elif ev['scm_type'] == 'dropbox':
+                            ev['scm_type'] = 'Dropbox'
+                        elif ev['scm_type'] == 'tfs':
+                            ev['scm_type'] = 'Tfs'
+                        elif ev['scm_type'] == 'local_git':
+                            ev['scm_type'] = 'LocalGit'
+                        elif ev['scm_type'] == 'git_hub':
+                            ev['scm_type'] = 'GitHub'
+                        elif ev['scm_type'] == 'code_plex_git':
+                            ev['scm_type'] = 'CodePlexGit'
+                        elif ev['scm_type'] == 'code_plex_hg':
+                            ev['scm_type'] = 'CodePlexHg'
+                        elif ev['scm_type'] == 'bitbucket_git':
+                            ev['scm_type'] = 'BitbucketGit'
+                        elif ev['scm_type'] == 'bitbucket_hg':
+                            ev['scm_type'] = 'BitbucketHg'
+                        elif ev['scm_type'] == 'external_git':
+                            ev['scm_type'] = 'ExternalGit'
+                        elif ev['scm_type'] == 'external_hg':
+                            ev['scm_type'] = 'ExternalHg'
+                        elif ev['scm_type'] == 'one_drive':
+                            ev['scm_type'] = 'OneDrive'
+                        elif ev['scm_type'] == 'vso':
+                            ev['scm_type'] = 'VSO'
+                    if 'managed_pipeline_mode' in ev:
+                        elif ev['managed_pipeline_mode'] == 'integrated':
+                            ev['managed_pipeline_mode'] = 'Integrated'
+                        elif ev['managed_pipeline_mode'] == 'classic':
+                            ev['managed_pipeline_mode'] = 'Classic'
+                    if 'load_balancing' in ev:
+                        elif ev['load_balancing'] == 'weighted_round_robin':
+                            ev['load_balancing'] = 'WeightedRoundRobin'
+                        elif ev['load_balancing'] == 'least_requests':
+                            ev['load_balancing'] = 'LeastRequests'
+                        elif ev['load_balancing'] == 'least_response_time':
+                            ev['load_balancing'] = 'LeastResponseTime'
+                        elif ev['load_balancing'] == 'weighted_total_traffic':
+                            ev['load_balancing'] = 'WeightedTotalTraffic'
+                        elif ev['load_balancing'] == 'request_hash':
+                            ev['load_balancing'] = 'RequestHash'
+                    self.site_envelope["site_config"] = ev
                 elif key == "scm_site_also_stopped":
                     self.site_envelope["scm_site_also_stopped"] = kwargs[key]
                 elif key == "hosting_environment_profile":

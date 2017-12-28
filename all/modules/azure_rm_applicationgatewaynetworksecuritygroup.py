@@ -325,9 +325,41 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
                 elif key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "security_rules":
-                    self.parameters["security_rules"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'protocol' in ev:
+                        if ev['protocol'] == 'tcp':
+                            ev['protocol'] = 'Tcp'
+                        elif ev['protocol'] == 'udp':
+                            ev['protocol'] = 'Udp'
+                    if 'access' in ev:
+                        elif ev['access'] == 'allow':
+                            ev['access'] = 'Allow'
+                        elif ev['access'] == 'deny':
+                            ev['access'] = 'Deny'
+                    if 'direction' in ev:
+                        elif ev['direction'] == 'inbound':
+                            ev['direction'] = 'Inbound'
+                        elif ev['direction'] == 'outbound':
+                            ev['direction'] = 'Outbound'
+                    self.parameters["security_rules"] = ev
                 elif key == "default_security_rules":
-                    self.parameters["default_security_rules"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'protocol' in ev:
+                        if ev['protocol'] == 'tcp':
+                            ev['protocol'] = 'Tcp'
+                        elif ev['protocol'] == 'udp':
+                            ev['protocol'] = 'Udp'
+                    if 'access' in ev:
+                        elif ev['access'] == 'allow':
+                            ev['access'] = 'Allow'
+                        elif ev['access'] == 'deny':
+                            ev['access'] = 'Deny'
+                    if 'direction' in ev:
+                        elif ev['direction'] == 'inbound':
+                            ev['direction'] = 'Inbound'
+                        elif ev['direction'] == 'outbound':
+                            ev['direction'] = 'Outbound'
+                    self.parameters["default_security_rules"] = ev
                 elif key == "resource_guid":
                     self.parameters["resource_guid"] = kwargs[key]
                 elif key == "provisioning_state":

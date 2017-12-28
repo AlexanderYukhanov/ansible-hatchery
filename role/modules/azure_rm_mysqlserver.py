@@ -208,7 +208,13 @@ class AzureRMServers(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "sku":
-                    self.parameters["sku"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'tier' in ev:
+                        if ev['tier'] == 'basic':
+                            ev['tier'] = 'Basic'
+                        elif ev['tier'] == 'standard':
+                            ev['tier'] = 'Standard'
+                    self.parameters["sku"] = ev
                 elif key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "storage_mb":

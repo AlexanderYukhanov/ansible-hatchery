@@ -792,7 +792,17 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 elif key == "vlan_id":
                     self.peering_parameters["vlan_id"] = kwargs[key]
                 elif key == "microsoft_peering_config":
-                    self.peering_parameters["microsoft_peering_config"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'advertised_public_prefixes_state' in ev:
+                        if ev['advertised_public_prefixes_state'] == 'not_configured':
+                            ev['advertised_public_prefixes_state'] = 'NotConfigured'
+                        elif ev['advertised_public_prefixes_state'] == 'configuring':
+                            ev['advertised_public_prefixes_state'] = 'Configuring'
+                        elif ev['advertised_public_prefixes_state'] == 'configured':
+                            ev['advertised_public_prefixes_state'] = 'Configured'
+                        elif ev['advertised_public_prefixes_state'] == 'validation_needed':
+                            ev['advertised_public_prefixes_state'] = 'ValidationNeeded'
+                    self.peering_parameters["microsoft_peering_config"] = ev
                 elif key == "stats":
                     self.peering_parameters["stats"] = kwargs[key]
                 elif key == "provisioning_state":
@@ -804,7 +814,13 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 elif key == "route_filter":
                     self.peering_parameters["route_filter"] = kwargs[key]
                 elif key == "ipv6_peering_config":
-                    self.peering_parameters["ipv6_peering_config"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'state' in ev:
+                        if ev['state'] == 'disabled':
+                            ev['state'] = 'Disabled'
+                        elif ev['state'] == 'enabled':
+                            ev['state'] = 'Enabled'
+                    self.peering_parameters["ipv6_peering_config"] = ev
                 elif key == "name":
                     self.peering_parameters["name"] = kwargs[key]
 

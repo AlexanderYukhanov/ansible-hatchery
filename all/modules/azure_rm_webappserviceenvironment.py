@@ -330,13 +330,27 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 elif key == "multi_role_count":
                     self.hosting_environment_envelope["multi_role_count"] = kwargs[key]
                 elif key == "worker_pools":
-                    self.hosting_environment_envelope["worker_pools"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'compute_mode' in ev:
+                        if ev['compute_mode'] == 'shared':
+                            ev['compute_mode'] = 'Shared'
+                        elif ev['compute_mode'] == 'dedicated':
+                            ev['compute_mode'] = 'Dedicated'
+                        elif ev['compute_mode'] == 'dynamic':
+                            ev['compute_mode'] = 'Dynamic'
+                    self.hosting_environment_envelope["worker_pools"] = ev
                 elif key == "ipssl_address_count":
                     self.hosting_environment_envelope["ipssl_address_count"] = kwargs[key]
                 elif key == "dns_suffix":
                     self.hosting_environment_envelope["dns_suffix"] = kwargs[key]
                 elif key == "network_access_control_list":
-                    self.hosting_environment_envelope["network_access_control_list"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'action' in ev:
+                        if ev['action'] == 'permit':
+                            ev['action'] = 'Permit'
+                        elif ev['action'] == 'deny':
+                            ev['action'] = 'Deny'
+                    self.hosting_environment_envelope["network_access_control_list"] = ev
                 elif key == "front_end_scale_factor":
                     self.hosting_environment_envelope["front_end_scale_factor"] = kwargs[key]
                 elif key == "api_management_account_id":

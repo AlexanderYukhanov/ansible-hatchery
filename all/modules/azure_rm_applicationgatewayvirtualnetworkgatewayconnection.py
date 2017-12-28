@@ -590,9 +590,31 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                 elif key == "authorization_key":
                     self.parameters["authorization_key"] = kwargs[key]
                 elif key == "virtual_network_gateway1":
-                    self.parameters["virtual_network_gateway1"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'gateway_type' in ev:
+                        if ev['gateway_type'] == 'vpn':
+                            ev['gateway_type'] = 'Vpn'
+                        elif ev['gateway_type'] == 'express_route':
+                            ev['gateway_type'] = 'ExpressRoute'
+                    if 'vpn_type' in ev:
+                        elif ev['vpn_type'] == 'policy_based':
+                            ev['vpn_type'] = 'PolicyBased'
+                        elif ev['vpn_type'] == 'route_based':
+                            ev['vpn_type'] = 'RouteBased'
+                    self.parameters["virtual_network_gateway1"] = ev
                 elif key == "virtual_network_gateway2":
-                    self.parameters["virtual_network_gateway2"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'gateway_type' in ev:
+                        if ev['gateway_type'] == 'vpn':
+                            ev['gateway_type'] = 'Vpn'
+                        elif ev['gateway_type'] == 'express_route':
+                            ev['gateway_type'] = 'ExpressRoute'
+                    if 'vpn_type' in ev:
+                        elif ev['vpn_type'] == 'policy_based':
+                            ev['vpn_type'] = 'PolicyBased'
+                        elif ev['vpn_type'] == 'route_based':
+                            ev['vpn_type'] = 'RouteBased'
+                    self.parameters["virtual_network_gateway2"] = ev
                 elif key == "local_network_gateway2":
                     self.parameters["local_network_gateway2"] = kwargs[key]
                 elif key == "connection_type":
@@ -617,7 +639,92 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                 elif key == "use_policy_based_traffic_selectors":
                     self.parameters["use_policy_based_traffic_selectors"] = kwargs[key]
                 elif key == "ipsec_policies":
-                    self.parameters["ipsec_policies"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'ipsec_encryption' in ev:
+                        if ev['ipsec_encryption'] == 'none':
+                            ev['ipsec_encryption'] = 'None'
+                        elif ev['ipsec_encryption'] == 'des':
+                            ev['ipsec_encryption'] = 'DES'
+                        elif ev['ipsec_encryption'] == 'des3':
+                            ev['ipsec_encryption'] = 'DES3'
+                        elif ev['ipsec_encryption'] == 'aes128':
+                            ev['ipsec_encryption'] = 'AES128'
+                        elif ev['ipsec_encryption'] == 'aes192':
+                            ev['ipsec_encryption'] = 'AES192'
+                        elif ev['ipsec_encryption'] == 'aes256':
+                            ev['ipsec_encryption'] = 'AES256'
+                        elif ev['ipsec_encryption'] == 'gcmaes128':
+                            ev['ipsec_encryption'] = 'GCMAES128'
+                        elif ev['ipsec_encryption'] == 'gcmaes192':
+                            ev['ipsec_encryption'] = 'GCMAES192'
+                        elif ev['ipsec_encryption'] == 'gcmaes256':
+                            ev['ipsec_encryption'] = 'GCMAES256'
+                    if 'ipsec_integrity' in ev:
+                        elif ev['ipsec_integrity'] == 'md5':
+                            ev['ipsec_integrity'] = 'MD5'
+                        elif ev['ipsec_integrity'] == 'sha1':
+                            ev['ipsec_integrity'] = 'SHA1'
+                        elif ev['ipsec_integrity'] == 'sha256':
+                            ev['ipsec_integrity'] = 'SHA256'
+                        elif ev['ipsec_integrity'] == 'gcmaes128':
+                            ev['ipsec_integrity'] = 'GCMAES128'
+                        elif ev['ipsec_integrity'] == 'gcmaes192':
+                            ev['ipsec_integrity'] = 'GCMAES192'
+                        elif ev['ipsec_integrity'] == 'gcmaes256':
+                            ev['ipsec_integrity'] = 'GCMAES256'
+                    if 'ike_encryption' in ev:
+                        elif ev['ike_encryption'] == 'des':
+                            ev['ike_encryption'] = 'DES'
+                        elif ev['ike_encryption'] == 'des3':
+                            ev['ike_encryption'] = 'DES3'
+                        elif ev['ike_encryption'] == 'aes128':
+                            ev['ike_encryption'] = 'AES128'
+                        elif ev['ike_encryption'] == 'aes192':
+                            ev['ike_encryption'] = 'AES192'
+                        elif ev['ike_encryption'] == 'aes256':
+                            ev['ike_encryption'] = 'AES256'
+                    if 'ike_integrity' in ev:
+                        elif ev['ike_integrity'] == 'md5':
+                            ev['ike_integrity'] = 'MD5'
+                        elif ev['ike_integrity'] == 'sha1':
+                            ev['ike_integrity'] = 'SHA1'
+                        elif ev['ike_integrity'] == 'sha256':
+                            ev['ike_integrity'] = 'SHA256'
+                        elif ev['ike_integrity'] == 'sha384':
+                            ev['ike_integrity'] = 'SHA384'
+                    if 'dh_group' in ev:
+                        elif ev['dh_group'] == 'none':
+                            ev['dh_group'] = 'None'
+                        elif ev['dh_group'] == 'dh_group1':
+                            ev['dh_group'] = 'DHGroup1'
+                        elif ev['dh_group'] == 'dh_group2':
+                            ev['dh_group'] = 'DHGroup2'
+                        elif ev['dh_group'] == 'dh_group14':
+                            ev['dh_group'] = 'DHGroup14'
+                        elif ev['dh_group'] == 'dh_group2048':
+                            ev['dh_group'] = 'DHGroup2048'
+                        elif ev['dh_group'] == 'ecp256':
+                            ev['dh_group'] = 'ECP256'
+                        elif ev['dh_group'] == 'ecp384':
+                            ev['dh_group'] = 'ECP384'
+                        elif ev['dh_group'] == 'dh_group24':
+                            ev['dh_group'] = 'DHGroup24'
+                    if 'pfs_group' in ev:
+                        elif ev['pfs_group'] == 'none':
+                            ev['pfs_group'] = 'None'
+                        elif ev['pfs_group'] == 'pfs1':
+                            ev['pfs_group'] = 'PFS1'
+                        elif ev['pfs_group'] == 'pfs2':
+                            ev['pfs_group'] = 'PFS2'
+                        elif ev['pfs_group'] == 'pfs2048':
+                            ev['pfs_group'] = 'PFS2048'
+                        elif ev['pfs_group'] == 'ecp256':
+                            ev['pfs_group'] = 'ECP256'
+                        elif ev['pfs_group'] == 'ecp384':
+                            ev['pfs_group'] = 'ECP384'
+                        elif ev['pfs_group'] == 'pfs24':
+                            ev['pfs_group'] = 'PFS24'
+                    self.parameters["ipsec_policies"] = ev
                 elif key == "resource_guid":
                     self.parameters["resource_guid"] = kwargs[key]
                 elif key == "etag":

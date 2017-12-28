@@ -208,7 +208,15 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
                 elif key == "storage_location":
                     self.parameters["storage_location"] = kwargs[key]
                 elif key == "filters":
-                    self.parameters["filters"] = kwargs[key]
+                    ev = kwargs[key]
+                    if 'protocol' in ev:
+                        if ev['protocol'] == 'tcp':
+                            ev['protocol'] = 'TCP'
+                        elif ev['protocol'] == 'udp':
+                            ev['protocol'] = 'UDP'
+                        elif ev['protocol'] == 'any':
+                            ev['protocol'] = 'Any'
+                    self.parameters["filters"] = ev
 
         old_response = None
         response = None
