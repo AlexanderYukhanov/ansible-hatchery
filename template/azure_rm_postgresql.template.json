@@ -218,8 +218,8 @@
               "RequiredCount": 0,
               "NoLog": false,
               "EnumValues": [],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
+              "IncludeInDocumentation": false,
+              "IncludeInArgSpec": false,
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             }
           ],

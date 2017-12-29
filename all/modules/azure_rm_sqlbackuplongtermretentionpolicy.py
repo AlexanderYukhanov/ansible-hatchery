@@ -151,7 +151,7 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
 
         super(AzureRMBackupLongTermRetentionPolicies, self).__init__(derived_arg_spec=self.module_arg_spec,
                                                                      supports_check_mode=True,
-                                                                     supports_tags=True)
+                                                                     supports_tags=False)
 
     def exec_module(self, **kwargs):
         """Main module execution method"""
