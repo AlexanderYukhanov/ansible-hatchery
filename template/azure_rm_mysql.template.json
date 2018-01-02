@@ -1214,7 +1214,7 @@
         {
           "Name": "parameters",
           "NameAlt": "parameters",
-          "Disposition": "dictionary",
+          "Disposition": "none",
           "Type": "dict",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -1238,7 +1238,7 @@
         {
           "Name": "virtual_network_subnet_id",
           "NameAlt": "virtual_network_subnet_id",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -1249,7 +1249,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
-            "test:default": ""
+            "test:default": "subnet{{ rpfx }}"
           },
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1262,7 +1262,7 @@
         {
           "Name": "ignore_missing_vnet_service_endpoint",
           "NameAlt": "ignore_missing_vnet_service_endpoint",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -1310,7 +1310,8 @@
             "resource_group_name",
             "server_name",
             "virtual_network_rule_name",
-            "parameters"
+            "virtual_network_subnet_id",
+            "ignore_missing_vnet_service_endpoint"
           ]
         },
         {
@@ -1384,8 +1385,26 @@
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
+      "TestPrerequisites": [
+        "- name: Create a virtual network",
+        "  azure_rm_virtualnetwork:",
+        "    name: vnet{{ rpfx }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    address_prefixes_cidr:",
+        "        - 10.1.0.0/16",
+        "        - 172.100.0.0/16",
+        "    dns_servers:",
+        "        - 127.0.0.1",
+        "        - 127.0.0.2",
+        "",
+        "- name: Create a subnet",
+        "  azure_rm_subnet:",
+        "    name: subnet{{ rpfx }}",
+        "    virtual_network_name: vnet{{ rpfx }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    address_prefix_cidr: 10.1.0.0/24"
+      ],
+      "TestPostrequisites": [],
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "VirtualNetworkRules",

@@ -34,6 +34,9 @@ options:
         description:
             - The name of the virtual network rule.
         required: True
+    parameters:
+        description:
+            - The requested virtual Network Rule Resource state.
     virtual_network_subnet_id:
         description:
             - The ARM resource id of the virtual network subnet.
@@ -57,6 +60,7 @@ EXAMPLES = '''
       resource_group: TestGroup
       server_name: vnet-test-svr
       name: vnet-firewall-rule
+      parameters: parameters
 '''
 
 RETURN = '''
@@ -108,6 +112,9 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
+            parameters=dict(
+                type='dict'
+            ),
             virtual_network_subnet_id=dict(
                 type='str',
                 required=True
@@ -125,7 +132,8 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         self.resource_group = None
         self.server_name = None
         self.name = None
-        self.parameters = dict()
+        self.virtual_network_subnet_id = None
+        self.ignore_missing_vnet_service_endpoint = None
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -142,11 +150,6 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif kwargs[key] is not None:
-                if key == "virtual_network_subnet_id":
-                    self.parameters["virtual_network_subnet_id"] = kwargs[key]
-                elif key == "ignore_missing_vnet_service_endpoint":
-                    self.parameters["ignore_missing_vnet_service_endpoint"] = kwargs[key]
 
         old_response = None
         response = None
@@ -221,7 +224,8 @@ class AzureRMVirtualNetworkRules(AzureRMModuleBase):
             response = self.mgmt_client.virtual_network_rules.create_or_update(resource_group_name=self.resource_group,
                                                                                server_name=self.server_name,
                                                                                virtual_network_rule_name=self.name,
-                                                                               parameters=self.parameters)
+                                                                               virtual_network_subnet_id=self.virtual_network_subnet_id,
+                                                                               ignore_missing_vnet_service_endpoint=self.ignore_missing_vnet_service_endpoint)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
