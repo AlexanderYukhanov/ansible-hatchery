@@ -36,7 +36,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
     name: test-virtual-network-rule
-    virtual_network_subnet_id: subnet{{ rpfx }}
+    virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -49,7 +49,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
     name: test-virtual-network-rule
-    virtual_network_subnet_id: subnet{{ rpfx }}
+    virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -61,7 +61,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
     name: test-virtual-network-rule
-    virtual_network_subnet_id: subnet{{ rpfx }}
+    virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
   register: output
 - name: Assert the state has not changed
   assert:

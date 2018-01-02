@@ -1249,7 +1249,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
-            "test:default": "subnet{{ rpfx }}"
+            "test:default": "/subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}"
           },
           "SubOptions": [],
           "RequiredCount": 0,
