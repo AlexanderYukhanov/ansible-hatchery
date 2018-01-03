@@ -22,6 +22,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
     database_name: "test-database"
+    geo_backup_policy_name: "geo-policy-name"
     policy_state: "enabled"
   check_mode: yes
   register: output
@@ -35,6 +36,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
     database_name: "test-database"
+    geo_backup_policy_name: "geo-policy-name"
     policy_state: "enabled"
   register: output
 - name: Assert the resource instance is well created
@@ -47,6 +49,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
     database_name: "test-database"
+    geo_backup_policy_name: "geo-policy-name"
     policy_state: "enabled"
   register: output
 - name: Assert the state has not changed

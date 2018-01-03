@@ -3796,7 +3796,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "Default",
-            "test:default": ""
+            "test:default": "\"geo-policy-name\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3996,7 +3996,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": ""
+            "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -4020,7 +4020,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "database_name",
-            "test:default": ""
+            "test:default": "\"test-database\""
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -4044,7 +4044,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "geo_backup_policy_name",
-            "test:default": ""
+            "test:default": "\"geo-policy-name\""
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -4086,7 +4086,7 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_sqlgeobackuppolicy",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
