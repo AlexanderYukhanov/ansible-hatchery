@@ -3362,7 +3362,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "firewallrulecrudtest-6285",
-            "test:default": ""
+            "test:default": "\"mysqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3374,7 +3374,7 @@
         },
         {
           "Name": "firewall_rule_name",
-          "NameAlt": "firewall_rule_name",
+          "NameAlt": "name",
           "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
@@ -3386,7 +3386,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "firewallrulecrudtest-5370",
-            "test:default": ""
+            "test:default": "test-firewall-rule"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3404,13 +3404,13 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
-            "test:default": ""
+            "test:default": "172.28.10.136"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3428,13 +3428,13 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The end IP address of the firewall rule. Must be IPv4 format. Must be greater than or equal to startIpAddress. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
-            "test:default": ""
+            "test:default": "172.28.10.138"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3555,7 +3555,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_sqlserver",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
@@ -3563,10 +3563,27 @@
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
       "ObjectName": "FirewallRules",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
+      "UpdateComparisonRules": [
+        {
+          "Option": [
+            "start_ip_address"
+          ],
+          "ReturnField": [
+            "start_ip_address"
+          ]
+        },
+        {
+          "Option": [
+            "end_ip_address"
+          ],
+          "ReturnField": [
+            "end_ip_address"
+          ]
+        }
+      ],
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
     },
@@ -6289,7 +6306,7 @@
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
       "ObjectName": "ElasticPool",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
