@@ -2,7 +2,7 @@
   "Modules": [
     {
       "ModuleName": "azure_rm_containerinstancecontainergroup",
-      "ModuleNameAlt": "azure_rm_containerinstance",
+      "ModuleNameAlt": "azure_rm_containerinstancexx",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -2025,7 +2025,7 @@
       "ModuleOperationNameUpper": "ContainerGroups",
       "ModuleOperationName": "container_groups",
       "ObjectName": "ContainerGroups",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
