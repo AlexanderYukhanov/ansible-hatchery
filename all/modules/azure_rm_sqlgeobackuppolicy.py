@@ -38,7 +38,7 @@ options:
         description:
             - The name of the geo backup policy.
         required: True
-    state:
+    policy_state:
         description:
             - The state of the geo backup policy.
         required: True
@@ -60,7 +60,7 @@ EXAMPLES = '''
       server_name: sqlcrudtest-5961
       database_name: testdw
       geo_backup_policy_name: Default
-      state: NOT FOUND
+      policy_state: NOT FOUND
 '''
 
 RETURN = '''
@@ -116,7 +116,7 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            state=dict(
+            policy_state=dict(
                 type='str',
                 choices=['disabled', 'enabled'],
                 required=True
@@ -132,7 +132,7 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
         self.server_name = None
         self.database_name = None
         self.geo_backup_policy_name = None
-        self.state = None
+        self.policy_state = None
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -224,7 +224,7 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
                                                                              server_name=self.server_name,
                                                                              database_name=self.database_name,
                                                                              geo_backup_policy_name=self.geo_backup_policy_name,
-                                                                             state=self.state)
+                                                                             state=self.policy_state)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

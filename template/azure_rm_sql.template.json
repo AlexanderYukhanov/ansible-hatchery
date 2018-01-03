@@ -3748,7 +3748,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-5961",
-            "test:default": ""
+            "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3772,7 +3772,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testdw",
-            "test:default": ""
+            "test:default": "\"test-database\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3808,7 +3808,7 @@
         },
         {
           "Name": "state",
-          "NameAlt": "state",
+          "NameAlt": "policy_state",
           "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
@@ -3820,7 +3820,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
-            "test:default": ""
+            "test:default": "\"enabled\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3939,7 +3939,7 @@
           "SubFields": []
         }
       ],
-      "TestPrerequisitesModule": "",
+      "TestPrerequisitesModule": "azure_rm_sqldatabase",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
