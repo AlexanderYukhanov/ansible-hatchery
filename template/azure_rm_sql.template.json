@@ -3629,7 +3629,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": ""
+            "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -3691,15 +3691,15 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_sqlfirewallrule",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "FirewallRules",
       "ModuleOperationName": "firewall_rules",
-      "ObjectName": "FirewallRules",
-      "ReleaseStatus": "",
+      "ObjectName": "SQL Firewall Rule",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
@@ -6355,7 +6355,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": ""
+            "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 4,
@@ -6379,7 +6379,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "elastic_pool_name",
-            "test:default": ""
+            "test:default": "elasticpool{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 3,
@@ -6469,15 +6469,15 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_sqlelasticpool",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ElasticPools",
       "ModuleOperationName": "elastic_pools",
-      "ObjectName": "ElasticPools",
-      "ReleaseStatus": "",
+      "ObjectName": "SQL Elastic Pool",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
