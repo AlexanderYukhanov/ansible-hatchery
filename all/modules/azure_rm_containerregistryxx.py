@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_containerregistry
+module: azure_rm_containerregistryxx
 version_added: "2.5"
 short_description: Manage Registries instance.
 description:
@@ -66,7 +66,7 @@ author:
 
 EXAMPLES = '''
   - name: Create (or update) Registries
-    azure_rm_containerregistry:
+    azure_rm_containerregistryxx:
       resource_group: myResourceGroup
       registry_name: myRegistry
       location: eastus

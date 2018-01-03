@@ -4,7 +4,7 @@
   run_once: yes
 
 - name: Create instance of Registries -- check mode
-  azure_rm_containerregistry:
+  azure_rm_containerregistryxx:
     resource_group: "{{ resource_group }}"
   check_mode: yes
   register: output
@@ -14,7 +14,7 @@
       - output.changed
 
 - name: Create instance of Registries
-  azure_rm_containerregistry:
+  azure_rm_containerregistryxx:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the resource instance is well created
@@ -23,7 +23,7 @@
       - output.changed
 
 - name: Create again instance of Registries
-  azure_rm_containerregistry:
+  azure_rm_containerregistryxx:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the state has not changed
@@ -32,7 +32,7 @@
       - output.changed == false
 
 - name: Delete instance of Registries -- check mode
-  azure_rm_containerregistry:
+  azure_rm_containerregistryxx:
     resource_group: "{{ resource_group }}"
     state: absent
   check_mode: yes
@@ -43,7 +43,7 @@
       - output.changed
 
 - name: Delete instance of Registries
-  azure_rm_containerregistry:
+  azure_rm_containerregistryxx:
     resource_group: "{{ resource_group }}"
     state: absent
   register: output
@@ -53,7 +53,7 @@
       - output.changed
 
 - name: Delete unexisting instance of Registries
-  azure_rm_containerregistry:
+  azure_rm_containerregistryxx:
     resource_group: "{{ resource_group }}"
     state: absent
   register: output

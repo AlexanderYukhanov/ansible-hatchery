@@ -2,7 +2,7 @@
   "Modules": [
     {
       "ModuleName": "azure_rm_containerregistryregistrie",
-      "ModuleNameAlt": "azure_rm_containerregistry",
+      "ModuleNameAlt": "azure_rm_containerregistryxx",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -571,14 +571,32 @@
       ],
       "ResponseFields": null,
       "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
+      "TestPrerequisites": [
+        "- name: Create an container registry",
+        "  azure_rm_containerregistry:",
+        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    location: eastus2",
+        "    state: present",
+        "    admin_user_enabled: true",
+        "    sku: Premium",
+        "    tags:",
+        "        Release: beta1",
+        "        Environment: Production"
+      ],
+      "TestPostrequisites": [
+        "- name: Delete container registry",
+        "  azure_rm_containerregistry:",
+        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    state: absent"
+      ],
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Registries",
       "ModuleOperationName": "registries",
       "ObjectName": "Registries",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
