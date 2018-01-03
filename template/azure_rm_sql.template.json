@@ -5927,7 +5927,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "eastus",
-            "test:default": "westus"
+            "test:default": "eastus"
           },
           "SubOptions": [],
           "RequiredCount": 0,

@@ -27,7 +27,7 @@
 - name: Create instance of ElasticPool
   azure_rm_sqlelasticpool:
     resource_group: "{{ resource_group }}"
-    server_name: "sqlsrv1b6dd89398"
+    server_name: "sqlsrv{{ rpfx }}"
     name: "elasticpool{{ rpfx }}"
     location: eastus
   register: output
