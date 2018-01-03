@@ -41,7 +41,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
     name: "elasticpool{{ rpfx }}"
-    location: westus
+    location: eastus
   register: output
 - name: Assert the state has not changed
   assert:
