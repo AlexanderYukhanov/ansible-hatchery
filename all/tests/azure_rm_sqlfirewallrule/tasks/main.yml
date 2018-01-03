@@ -14,8 +14,8 @@
 - name: Create instance of FirewallRules -- check mode
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-    name: test-firewall-rule
+    server_name: "sqlsrv{{ rpfx }}"
+    name: firewallrule{{ rpfx }}
     start_ip_address: 172.28.10.136
     end_ip_address: 172.28.10.138
   check_mode: yes
@@ -28,8 +28,8 @@
 - name: Create instance of FirewallRules
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-    name: test-firewall-rule
+    server_name: "sqlsrv{{ rpfx }}"
+    name: firewallrule{{ rpfx }}
     start_ip_address: 172.28.10.136
     end_ip_address: 172.28.10.138
   register: output
@@ -41,8 +41,8 @@
 - name: Create again instance of FirewallRules
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-    name: test-firewall-rule
+    server_name: "sqlsrv{{ rpfx }}"
+    name: firewallrule{{ rpfx }}
     start_ip_address: 172.28.10.136
     end_ip_address: 172.28.10.138
   register: output
@@ -54,8 +54,8 @@
 - name: Delete instance of FirewallRules -- check mode
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-    name: test-firewall-rule
+    server_name: "sqlsrv{{ rpfx }}"
+    name: firewallrule{{ rpfx }}
     state: absent
   check_mode: yes
   register: output
@@ -67,8 +67,8 @@
 - name: Delete instance of FirewallRules
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-    name: test-firewall-rule
+    server_name: "sqlsrv{{ rpfx }}"
+    name: firewallrule{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -79,8 +79,8 @@
 - name: Delete unexisting instance of FirewallRules
   azure_rm_sqlfirewallrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-    name: test-firewall-rule
+    server_name: "sqlsrv{{ rpfx }}"
+    name: firewallrule{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed

@@ -3362,7 +3362,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "firewallrulecrudtest-6285",
-            "test:default": "\"mysqlsrv{{ rpfx }}\""
+            "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -3386,7 +3386,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "firewallrulecrudtest-5370",
-            "test:default": "test-firewall-rule"
+            "test:default": "firewallrule{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
