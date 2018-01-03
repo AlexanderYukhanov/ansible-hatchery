@@ -5855,7 +5855,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-8069",
-            "test:default": "zims-server"
+            "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -5879,7 +5879,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-8102",
-            "test:default": "test-elastic-pool"
+            "test:default": "\"elasticpool{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
