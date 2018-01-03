@@ -17,181 +17,79 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_containerinstance
 version_added: "2.5"
-short_description: Manage ContainerGroups instance.
+short_description: Manage an Azure Container Instance.
 description:
-    - Create, update and delete instance of ContainerGroups.
+    - Create, update and delete an Azure Container Instance.
 
 options:
     resource_group:
         description:
-            - The name of the resource group.
-        required: True
-    container_group_name:
+            - Name of resource group.
+        required: true
+    name:
         description:
             - The name of the container group.
-        required: True
-    location:
-        description:
-            - Resource location. If not set, location from the resource group will be used as default.
-    containers:
-        description:
-            - The containers within the container group.
-        suboptions:
-            name:
-                description:
-                    - The user-provided name of the container instance.
-                required: True
-            image:
-                description:
-                    - The name of the image used to create the container instance.
-                required: True
-            command:
-                description:
-                    - The commands to execute within the container instance in exec form.
-            ports:
-                description:
-                    - The exposed ports on the container instance.
-                suboptions:
-                    protocol:
-                        description:
-                            - The protocol associated with the port.
-                        choices: ['tcp', 'udp']
-                    port:
-                        description:
-                            - The port number exposed within the container group.
-                        required: True
-            environment_variables:
-                description:
-                    - The environment variables to set in the container instance.
-                suboptions:
-                    name:
-                        description:
-                            - The name of the environment variable.
-                        required: True
-                    value:
-                        description:
-                            - The value of the environment variable.
-                        required: True
-            resources:
-                description:
-                    - The resource requirements of the container instance.
-                required: True
-                suboptions:
-                    requests:
-                        description:
-                            - The resource requests of this container instance.
-                        required: True
-                        suboptions:
-                            memory_in_gb:
-                                description:
-                                    - The memory request in GB of this container instance.
-                                required: True
-                            cpu:
-                                description:
-                                    - The CPU request of this container instance.
-                                required: True
-                    limits:
-                        description:
-                            - The resource limits of this container instance.
-                        suboptions:
-                            memory_in_gb:
-                                description:
-                                    - The memory limit in GB of this container instance.
-                            cpu:
-                                description:
-                                    - The CPU limit of this container instance.
-            volume_mounts:
-                description:
-                    - The volume mounts available to the container instance.
-                suboptions:
-                    name:
-                        description:
-                            - The name of the volume mount.
-                        required: True
-                    mount_path:
-                        description:
-                            - The path within the container where the volume should be mounted. Must not contain colon (:).
-                        required: True
-                    read_only:
-                        description:
-                            - The flag indicating whether the volume mount is read-only.
-    image_registry_credentials:
-        description:
-            - The image registry credentials by which the container group is created from.
-        suboptions:
-            server:
-                description:
-                    - "The Docker image registry server without a protocol such as 'http' and 'https'."
-                required: True
-            username:
-                description:
-                    - The username for the private registry.
-                required: True
-            password:
-                description:
-                    - The password for the private registry.
-    restart_policy:
-        description:
-            - "Restart policy for all containers within the container group. \n- `Always` Always restart\n- `OnFailure` Restart on failure\n- `Never` Never r
-               estart\n."
-        choices: ['always', 'on_failure', 'never']
-    ip_address:
-        description:
-            - The IP address type of the container group.
-        suboptions:
-            ports:
-                description:
-                    - The list of ports exposed on the container group.
-                required: True
-                suboptions:
-                    protocol:
-                        description:
-                            - The protocol associated with the port.
-                        choices: ['tcp', 'udp']
-                    port:
-                        description:
-                            - The port number.
-                        required: True
-            type:
-                description:
-                    - Specifies if the IP is exposed to the public internet.
-                required: True
-            ip:
-                description:
-                    - The IP exposed to the public internet.
+        required: true
     os_type:
         description:
-            - The operating system type required by the containers in the container group.
-        choices: ['windows', 'linux']
-    volumes:
+            - The OS type of containers.
+        choices:
+            - linux
+            - windows
+        default: linux
+    state:
         description:
-            - The list of volumes that can be mounted by containers in this container group.
+            - Assert the state of the container instance. Use 'present' to create or update an container instance and 'absent' to delete it.
+        default: present
+        choices:
+            - absent
+            - present
+    ip_address:
+        description:
+            - The IP address type of the container group (default is 'none')
+        choices:
+            - public
+            - none
+        default: None
+    ports:
+        description:
+            - List of ports exposed within the container group.
+    location:
+        description:
+            - Valid azure location. Defaults to location of the resource group.
+        default: resource_group location
+    registry_login_server:
+        description:
+            - The container image registry login server.
+    registry_username:
+        description:
+            - The username to log in container image registry server.
+    registry_password:
+        description:
+            - The password to log in container image registry server.
+    containers:
+        description:
+            - List of containers.
         suboptions:
             name:
                 description:
-                    - The name of the volume.
-                required: True
-            azure_file:
+                    - The name of the container instance.
+                required: true
+            image:
                 description:
-                    - The name of the Azure File volume.
-                suboptions:
-                    share_name:
-                        description:
-                            - The name of the Azure File share to be mounted as a volume.
-                        required: True
-                    read_only:
-                        description:
-                            - The flag indicating whether the Azure File shared mounted as a volume is read-only.
-                    storage_account_name:
-                        description:
-                            - The name of the storage account that contains the Azure File share.
-                        required: True
-                    storage_account_key:
-                        description:
-                            - The storage account access key used to access the Azure File share.
-            empty_dir:
+                    - The container image name.
+                required: true
+            memory:
                 description:
-                    - The empty directory volume.
+                    - The required memory of the containers in GB.
+                default: 1.5
+            cpu:
+                description:
+                    - The required number of CPU cores of the containers.
+                default: 1
+            ports:
+                description:
+                    - List of ports exposed within the container group.
 
 extends_documentation_fragment:
     - azure
@@ -203,41 +101,123 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ContainerGroups
+  - name: Create sample container group
     azure_rm_containerinstance:
-      resource_group: demo
-      container_group_name: mycontainers
-      location: eastus
+    resource_group: testrg
+    name: mynewcontainergroup
+    os_type: linux
+    ip_address: public
+    ports:
+      - 80
+      - 81
+    containers:
+      - name: mycontainer1
+        image: httpd
+        memory: 1.5
+        ports:
+          - 80
+      - name: mycontainer2
+        image: httpd
+        memory: 1.5
+        ports:
+          - 81
 '''
-
 RETURN = '''
-id:
-    description:
-        - The resource id.
+state:
+    description: Current state of the azure instance
     returned: always
-    type: str
-    sample: id
+    type: dict
 '''
 
-import time
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:
     from msrestazure.azure_exceptions import CloudError
-    from msrestazure.azure_operation import AzureOperationPoller
+    from azure.mgmt.containerinstance.models import (ContainerGroup,
+                                                     Container,
+                                                     ResourceRequirements,
+                                                     ResourceRequests,
+                                                     ImageRegistryCredential,
+                                                     IpAddress,
+                                                     Port,
+                                                     ContainerPort)
     from azure.mgmt.containerinstance import ContainerInstanceManagementClient
-    from msrest.serialization import Model
 except ImportError:
     # This is handled in azure_rm_common
     pass
 
 
-class Actions:
-    NoAction, Create, Update, Delete = range(4)
+def create_container_dict_from_obj(container):
+    '''
+    Create a dict from an instance of a Container.
+
+    :param rule: Container
+    :return: dict
+    '''
+    results = dict(
+        name=container.name,
+        image=container.image,
+        memory=container.resources.requests.memory_in_gb,
+        cpu=container.resources.requests.cpu
+        # command (list of str)
+        # ports (list of ContainerPort)
+        # environment_variables (list of EnvironmentVariable)
+        # resources (ResourceRequirements)
+        # volume mounts (list of VolumeMount)
+    )
+
+    if container.instance_view is not None:
+        # instance_view (ContainerPropertiesInstanceView)
+        results["instance_restart_count"] = container.instance_view.restart_count
+        if container.instance_view.current_state:
+            results["instance_current_state"] = container.instance_view.current_state.state
+            results["instance_current_start_time"] = container.instance_view.current_state.start_time
+            results["instance_current_exit_code"] = container.instance_view.current_state.exit_code
+            results["instance_current_finish_time"] = container.instance_view.current_state.finish_time
+            results["instance_current_detail_status"] = container.instance_view.current_state.detail_status
+        if container.instance_view.previous_state:
+            results["instance_previous_state"] = container.instance_view.previous_state.state
+            results["instance_previous_start_time"] = container.instance_view.previous_state.start_time
+            results["instance_previous_exit_code"] = container.instance_view.previous_state.exit_code
+            results["instance_previous_finish_time"] = container.instance_view.previous_state.finish_time
+            results["instance_previous_detail_status"] = container.instance_view.previous_state.detail_status
+        # events (list of ContainerEvent)
+    return results
 
 
-class AzureRMContainerGroups(AzureRMModuleBase):
-    """Configuration class for an Azure RM ContainerGroups resource"""
+def create_containerinstance_dict(containerinstance):
+    '''
+    Helper method to deserialize a ContainerService to a dict
+    :param: containerinstance: Container
+    :return: dict with the state on Azure
+    '''
+    results = dict(
+        id=containerinstance.id,
+        name=containerinstance.name,
+        tags=containerinstance.tags,
+        location=containerinstance.location,
+        type=containerinstance.type,
+        restart_policy=containerinstance.restart_policy,
+        provisioning_state=containerinstance.provisioning_state,
+        volumes=containerinstance.volumes,
+        os_type=containerinstance.os_type
+    )
+
+    if containerinstance.ip_address:
+        results['ip_address'] = dict(type=containerinstance.ip_address.type,
+                                     ip=containerinstance.ip_address.ip,
+                                     ports=[])
+
+    results['containers'] = []
+    if containerinstance.containers:
+        for container in containerinstance.containers:
+            results['containers'].append(create_container_dict_from_obj(container))
+
+    return results
+
+
+class AzureRMContainerInstance(AzureRMModuleBase):
+    """Configuration class for an Azure RM container instance resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -245,211 +225,232 @@ class AzureRMContainerGroups(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            container_group_name=dict(
+            name=dict(
                 type='str',
                 required=True
             ),
-            location=dict(
-                type='str'
-            ),
-            containers=dict(
-                type='list'
-            ),
-            image_registry_credentials=dict(
-                type='list'
-            ),
-            restart_policy=dict(
-                type='str',
-                choices=['always', 'on_failure', 'never']
-            ),
-            ip_address=dict(
-                type='dict'
-            ),
             os_type=dict(
                 type='str',
-                choices=['windows', 'linux']
-            ),
-            volumes=dict(
-                type='list'
+                required=False,
+                default='linux',
+                choices=['linux', 'windows']
             ),
             state=dict(
                 type='str',
+                required=False,
                 default='present',
                 choices=['present', 'absent']
+            ),
+            location=dict(
+                type='str',
+                required=False
+            ),
+            ip_address=dict(
+                type='str',
+                default='none',
+                choices=['public', 'none']
+            ),
+            ports=dict(
+                type='list',
+                required=False,
+                default=[]
+            ),
+            registry_login_server=dict(
+                type='str',
+                required=False,
+                default=None
+            ),
+            registry_username=dict(
+                type='str',
+                required=False,
+                default=None
+            ),
+            registry_password=dict(
+                type='str',
+                required=False,
+                default=None
+            ),
+            containers=dict(
+                type='list',
+                required=True
             )
         )
 
         self.resource_group = None
-        self.container_group_name = None
-        self.container_group = dict()
-
-        self.results = dict(changed=False)
-        self.mgmt_client = None
+        self.name = None
+        self.location = None
+        self.tags = None
         self.state = None
-        self.to_do = Actions.NoAction
+        self.ip_address = None
 
-        super(AzureRMContainerGroups, self).__init__(derived_arg_spec=self.module_arg_spec,
-                                                     supports_check_mode=True,
-                                                     supports_tags=False)
+        self.containers = None
+
+        self.results = dict(changed=False, state=dict())
+        self.mgmt_client = None
+
+        super(AzureRMContainerInstance, self).__init__(derived_arg_spec=self.module_arg_spec,
+                                                       supports_check_mode=True,
+                                                       supports_tags=True)
 
     def exec_module(self, **kwargs):
         """Main module execution method"""
 
-        for key in list(self.module_arg_spec.keys()):
-            if hasattr(self, key):
-                setattr(self, key, kwargs[key])
-            elif kwargs[key] is not None:
-                if key == "location":
-                    self.container_group["location"] = kwargs[key]
-                elif key == "containers":
-                    self.container_group["containers"] = kwargs[key]
-                elif key == "image_registry_credentials":
-                    self.container_group["image_registry_credentials"] = kwargs[key]
-                elif key == "restart_policy":
-                    ev = kwargs[key]
-                    if ev == 'always':
-                        ev = 'Always'
-                    elif ev == 'on_failure':
-                        ev = 'OnFailure'
-                    elif ev == 'never':
-                        ev = 'Never'
-                    self.container_group["restart_policy"] = ev
-                elif key == "ip_address":
-                    self.container_group["ip_address"] = kwargs[key]
-                elif key == "os_type":
-                    ev = kwargs[key]
-                    if ev == 'windows':
-                        ev = 'Windows'
-                    elif ev == 'linux':
-                        ev = 'Linux'
-                    self.container_group["os_type"] = ev
-                elif key == "volumes":
-                    self.container_group["volumes"] = kwargs[key]
+        for key in list(self.module_arg_spec.keys()) + ['tags']:
+            setattr(self, key, kwargs[key])
 
-        old_response = None
+        resource_group = None
         response = None
+        results = dict()
+        to_be_updated = False
 
         self.mgmt_client = self.get_mgmt_svc_client(ContainerInstanceManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        resource_group = self.get_resource_group(self.resource_group)
+        try:
+            resource_group = self.get_resource_group(self.resource_group)
+        except CloudError:
+            self.fail('resource group {} not found'.format(self.resource_group))
+        if not self.location:
+            self.location = resource_group.location
 
-        if "location" not in self.parameters:
-            self.parameters["location"] = resource_group.location
+        response = self.get_containerinstance()
 
-        old_response = self.get_containergroups()
+        if not response:
+            self.log("Container Group doesn't exist")
 
-        if not old_response:
-            self.log("ContainerGroups instance doesn't exist")
             if self.state == 'absent':
-                self.log("Old instance didn't exist")
+                self.log("Nothing to delete")
             else:
-                self.to_do = Actions.Create
+                to_be_updated = True
         else:
-            self.log("ContainerGroups instance already exists")
+            self.log("Container instance already exists")
+
             if self.state == 'absent':
-                self.to_do = Actions.Delete
+                self.delete_containerinstance()
+                self.results['changed'] = True
+                self.log("Container instance deleted")
             elif self.state == 'present':
-                self.log("Need to check if ContainerGroups instance has to be deleted or may be updated")
-                self.to_do = Actions.Update
+                self.log("Need to check if container group has to be deleted or may be updated")
+                to_be_updated = True
+                if to_be_updated:
+                    self.log('Deleting container instance before update')
+                    if not self.check_mode:
+                        self.delete_containerinstance()
 
-        if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ContainerGroups instance")
+        if self.state == 'present':
+
+            self.log("Need to Create / Update the container instance")
 
             if self.check_mode:
-                self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_containergroups()
-
-            if not old_response:
+            if to_be_updated:
+                self.results['state'] = self.create_update_containerinstance()
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(response)
+                self.results['state'] = response
+
             self.log("Creation / Update done")
-        elif self.to_do == Actions.Delete:
-            self.log("ContainerGroups instance deleted")
-            self.results['changed'] = True
-
-            if self.check_mode:
-                return self.results
-
-            self.delete_containergroups()
-            # make sure instance is actually deleted, for some Azure resources, instance is hanging around
-            # for some time after deletion -- this should be really fixed in Azure
-            while self.get_containergroups():
-                time.sleep(20)
-        else:
-            self.log("ContainerGroups instance unchanged")
-            self.results['changed'] = False
-            response = old_response
-
-        if response:
-            self.results["id"] = response["id"]
 
         return self.results
 
-    def create_update_containergroups(self):
+    def create_update_containerinstance(self):
         '''
-        Creates or updates ContainerGroups with the specified configuration.
+        Creates or updates a container service with the specified configuration of orchestrator, masters, and agents.
 
-        :return: deserialized ContainerGroups instance state dictionary
+        :return: deserialized container instance state dictionary
         '''
-        self.log("Creating / Updating the ContainerGroups instance {0}".format(self.container_group_name))
+        self.log("Creating / Updating the container instance {0}".format(self.name))
+
+        registry_credentials = None
+
+        if self.registry_login_server is not None:
+            registry_credentials = [ImageRegistryCredential(server=self.registry_login_server,
+                                                            username=self.registry_username,
+                                                            password=self.registry_password)]
+
+        ip_address = None
+
+        if self.ip_address == 'public':
+            # get list of ports
+            if self.ports:
+                ports = []
+                for port in self.ports:
+                    ports.append(Port(port, "TCP"))
+                ip_address = IpAddress(ports, self.ip_address)
+
+        containers = []
+
+        for container_def in self.containers:
+            name = container_def.get("name")
+            image = container_def.get("image")
+            memory = container_def.get("memory", 1.5)
+            cpu = container_def.get("cpu", 1)
+            ports = []
+
+            port_list = container_def.get("ports")
+            if port_list:
+                for port in port_list:
+                    ports.append(ContainerPort(port))
+
+            containers.append(Container(name, image, ResourceRequirements(ResourceRequests(memory, cpu)), None, ports))
+
+        parameters = ContainerGroup(location=self.location,
+                                    tags=self.tags,
+                                    containers=containers,
+                                    image_registry_credentials=registry_credentials,
+                                    restart_policy=None,
+                                    ip_address=ip_address,
+                                    os_type=self.os_type,
+                                    volumes=None)
 
         try:
-            response = self.mgmt_client.container_groups.create_or_update(resource_group_name=self.resource_group,
-                                                                          container_group_name=self.container_group_name,
-                                                                          container_group=self.container_group)
-            if isinstance(response, AzureOperationPoller):
-                response = self.get_poller_result(response)
+            response = self.mgmt_client.container_groups.create_or_update(self.resource_group, self.name, parameters)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ContainerGroups instance.')
-            self.fail("Error creating the ContainerGroups instance: {0}".format(str(exc)))
-        return response.as_dict()
+            self.log('Error attempting to create the container instance.')
+            self.fail("Error creating the container instance: {0}".format(str(exc)))
+        return create_containerinstance_dict(response)
 
-    def delete_containergroups(self):
+    def delete_containerinstance(self):
         '''
-        Deletes specified ContainerGroups instance in the specified subscription and resource group.
+        Deletes the specified container group instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ContainerGroups instance {0}".format(self.container_group_name))
+        self.log("Deleting the container instance {0}".format(self.name))
         try:
-            response = self.mgmt_client.container_groups.delete(resource_group_name=self.resource_group,
-                                                                container_group_name=self.container_group_name)
+            response = self.mgmt_client.container_groups.delete(self.resource_group, self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the ContainerGroups instance.')
-            self.fail("Error deleting the ContainerGroups instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the container instance.')
+            self.fail("Error deleting the container instance: {0}".format(str(e)))
 
         return True
 
-    def get_containergroups(self):
+    def get_containerinstance(self):
         '''
-        Gets the properties of the specified ContainerGroups.
+        Gets the properties of the specified container service.
 
-        :return: deserialized ContainerGroups instance state dictionary
+        :return: deserialized container instance state dictionary
         '''
-        self.log("Checking if the ContainerGroups instance {0} is present".format(self.container_group_name))
+        self.log("Checking if the container instance {0} is present".format(self.name))
         found = False
         try:
-            response = self.mgmt_client.container_groups.get(resource_group_name=self.resource_group,
-                                                             container_group_name=self.container_group_name)
+            response = self.mgmt_client.container_groups.get(self.resource_group, self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ContainerGroups instance : {0} found".format(response.name))
+            self.log("Container instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ContainerGroups instance.')
+            self.log('Did not find the container instance.')
         if found is True:
-            return response.as_dict()
+            return create_containerinstance_dict(response)
 
         return False
 
 
 def main():
     """Main execution"""
-    AzureRMContainerGroups()
+    AzureRMContainerInstance()
 
 if __name__ == '__main__':
     main()
