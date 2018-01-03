@@ -16,7 +16,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
     name: "elasticpool{{ rpfx }}"
-    location: westus
+    location: eastus
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -29,7 +29,7 @@
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv1b6dd89398"
     name: "elasticpool{{ rpfx }}"
-    location: westus
+    location: eastus
   register: output
 - name: Assert the resource instance is well created
   assert:
