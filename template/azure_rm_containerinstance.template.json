@@ -1,0 +1,2022 @@
+{
+  "Modules": [
+    {
+      "ModuleName": "azure_rm_containerinstancecontainergroup",
+      "ModuleNameAlt": "azure_rm_containerinstance",
+      "Options": [
+        {
+          "Name": "resource_group_name",
+          "NameAlt": "resource_group",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "demo",
+            "test:default": "\"{{ resource_group }}\""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "container_group_name",
+          "NameAlt": "container_group_name",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the container group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "mycontainers",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "container_group",
+          "NameAlt": "container_group",
+          "Disposition": "dictionary",
+          "Type": "dict",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "dict()",
+          "Documentation": "The properties of the container group to be created or updated.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "container_group",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "location",
+          "NameAlt": "location",
+          "Disposition": "container_group",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Resource location. If not set, location from the resource group will be used as default.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "eastus",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "containers",
+          "NameAlt": "containers",
+          "Disposition": "container_group",
+          "Type": "dict",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": true,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The containers within the container group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [
+            {
+              "Name": "name",
+              "NameAlt": "name",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The user-provided name of the container instance.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "image",
+              "NameAlt": "image",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The name of the image used to create the container instance.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "command",
+              "NameAlt": "command",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": true,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The commands to execute within the container instance in exec form.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+            },
+            {
+              "Name": "ports",
+              "NameAlt": "ports",
+              "Disposition": "default",
+              "Type": "dict",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": true,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The exposed ports on the container instance.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [
+                {
+                  "Name": "protocol",
+                  "NameAlt": "protocol",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "The protocol associated with the port.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [
+                    {
+                      "Key": "tcp",
+                      "Value": "TCP"
+                    },
+                    {
+                      "Key": "udp",
+                      "Value": "UDP"
+                    }
+                  ],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- Enum"
+                },
+                {
+                  "Name": "port",
+                  "NameAlt": "port",
+                  "Disposition": "default",
+                  "Type": "int",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The port number exposed within the container group.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                }
+              ],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+            },
+            {
+              "Name": "environment_variables",
+              "NameAlt": "environment_variables",
+              "Disposition": "default",
+              "Type": "dict",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": true,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The environment variables to set in the container instance.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [
+                {
+                  "Name": "name",
+                  "NameAlt": "name",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The name of the environment variable.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                },
+                {
+                  "Name": "value",
+                  "NameAlt": "value",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The value of the environment variable.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                }
+              ],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+            },
+            {
+              "Name": "resources",
+              "NameAlt": "resources",
+              "Disposition": "default",
+              "Type": "dict",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The resource requirements of the container instance.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [
+                {
+                  "Name": "requests",
+                  "NameAlt": "requests",
+                  "Disposition": "default",
+                  "Type": "dict",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The resource requests of this container instance.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [
+                    {
+                      "Name": "memory_in_gb",
+                      "NameAlt": "memory_in_gb",
+                      "Disposition": "default",
+                      "Type": "float",
+                      "ValueIfFalse": null,
+                      "ValueIfTrue": null,
+                      "IsList": false,
+                      "Required": "True",
+                      "VariableValue": "None",
+                      "Documentation": "The memory request in GB of this container instance.",
+                      "DefaultValue": null,
+                      "DefaultValueSample": {
+                        "default": "",
+                        "test:default": ""
+                      },
+                      "SubOptions": [],
+                      "RequiredCount": 0,
+                      "NoLog": false,
+                      "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
+                      "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                    },
+                    {
+                      "Name": "cpu",
+                      "NameAlt": "cpu",
+                      "Disposition": "default",
+                      "Type": "float",
+                      "ValueIfFalse": null,
+                      "ValueIfTrue": null,
+                      "IsList": false,
+                      "Required": "True",
+                      "VariableValue": "None",
+                      "Documentation": "The CPU request of this container instance.",
+                      "DefaultValue": null,
+                      "DefaultValueSample": {
+                        "default": "",
+                        "test:default": ""
+                      },
+                      "SubOptions": [],
+                      "RequiredCount": 0,
+                      "NoLog": false,
+                      "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
+                      "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                    }
+                  ],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- Model"
+                },
+                {
+                  "Name": "limits",
+                  "NameAlt": "limits",
+                  "Disposition": "default",
+                  "Type": "dict",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "The resource limits of this container instance.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [
+                    {
+                      "Name": "memory_in_gb",
+                      "NameAlt": "memory_in_gb",
+                      "Disposition": "default",
+                      "Type": "float",
+                      "ValueIfFalse": null,
+                      "ValueIfTrue": null,
+                      "IsList": false,
+                      "Required": "False",
+                      "VariableValue": "None",
+                      "Documentation": "The memory limit in GB of this container instance.",
+                      "DefaultValue": null,
+                      "DefaultValueSample": {
+                        "default": "",
+                        "test:default": ""
+                      },
+                      "SubOptions": [],
+                      "RequiredCount": 0,
+                      "NoLog": false,
+                      "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
+                      "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                    },
+                    {
+                      "Name": "cpu",
+                      "NameAlt": "cpu",
+                      "Disposition": "default",
+                      "Type": "float",
+                      "ValueIfFalse": null,
+                      "ValueIfTrue": null,
+                      "IsList": false,
+                      "Required": "False",
+                      "VariableValue": "None",
+                      "Documentation": "The CPU limit of this container instance.",
+                      "DefaultValue": null,
+                      "DefaultValueSample": {
+                        "default": "",
+                        "test:default": ""
+                      },
+                      "SubOptions": [],
+                      "RequiredCount": 0,
+                      "NoLog": false,
+                      "EnumValues": [],
+                      "IncludeInDocumentation": true,
+                      "IncludeInArgSpec": true,
+                      "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                    }
+                  ],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- Model"
+                }
+              ],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Model"
+            },
+            {
+              "Name": "volume_mounts",
+              "NameAlt": "volume_mounts",
+              "Disposition": "default",
+              "Type": "dict",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": true,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The volume mounts available to the container instance.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [
+                {
+                  "Name": "name",
+                  "NameAlt": "name",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The name of the volume mount.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                },
+                {
+                  "Name": "mount_path",
+                  "NameAlt": "mount_path",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The path within the container where the volume should be mounted. Must not contain colon (:).",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                },
+                {
+                  "Name": "read_only",
+                  "NameAlt": "read_only",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "The flag indicating whether the volume mount is read-only.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                }
+              ],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+            }
+          ],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+        },
+        {
+          "Name": "image_registry_credentials",
+          "NameAlt": "image_registry_credentials",
+          "Disposition": "container_group",
+          "Type": "dict",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": true,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The image registry credentials by which the container group is created from.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [
+            {
+              "Name": "server",
+              "NameAlt": "server",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The Docker image registry server without a protocol such as \"http\" and \"https\".",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "username",
+              "NameAlt": "username",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The username for the private registry.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "password",
+              "NameAlt": "password",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The password for the private registry.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": true,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            }
+          ],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+        },
+        {
+          "Name": "restart_policy",
+          "NameAlt": "restart_policy",
+          "Disposition": "container_group",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Restart policy for all containers within the container group. \n- `Always` Always restart\n- `OnFailure` Restart on failure\n- `Never` Never restart\n.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [
+            {
+              "Key": "always",
+              "Value": "Always"
+            },
+            {
+              "Key": "on_failure",
+              "Value": "OnFailure"
+            },
+            {
+              "Key": "never",
+              "Value": "Never"
+            }
+          ],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
+        },
+        {
+          "Name": "ip_address",
+          "NameAlt": "ip_address",
+          "Disposition": "container_group",
+          "Type": "dict",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The IP address type of the container group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [
+            {
+              "Name": "ports",
+              "NameAlt": "ports",
+              "Disposition": "default",
+              "Type": "dict",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": true,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The list of ports exposed on the container group.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [
+                {
+                  "Name": "protocol",
+                  "NameAlt": "protocol",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "The protocol associated with the port.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [
+                    {
+                      "Key": "tcp",
+                      "Value": "TCP"
+                    },
+                    {
+                      "Key": "udp",
+                      "Value": "UDP"
+                    }
+                  ],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- Enum"
+                },
+                {
+                  "Name": "port",
+                  "NameAlt": "port",
+                  "Disposition": "default",
+                  "Type": "int",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The port number.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                }
+              ],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "type",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "Specifies if the IP is exposed to the public internet.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "ip",
+              "NameAlt": "ip",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The IP exposed to the public internet.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            }
+          ],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Model"
+        },
+        {
+          "Name": "os_type",
+          "NameAlt": "os_type",
+          "Disposition": "container_group",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The operating system type required by the containers in the container group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [
+            {
+              "Key": "windows",
+              "Value": "Windows"
+            },
+            {
+              "Key": "linux",
+              "Value": "Linux"
+            }
+          ],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
+        },
+        {
+          "Name": "volumes",
+          "NameAlt": "volumes",
+          "Disposition": "container_group",
+          "Type": "dict",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": true,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The list of volumes that can be mounted by containers in this container group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [
+            {
+              "Name": "name",
+              "NameAlt": "name",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The name of the volume.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "azure_file",
+              "NameAlt": "azure_file",
+              "Disposition": "default",
+              "Type": "dict",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The name of the Azure File volume.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [
+                {
+                  "Name": "share_name",
+                  "NameAlt": "share_name",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The name of the Azure File share to be mounted as a volume.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                },
+                {
+                  "Name": "read_only",
+                  "NameAlt": "read_only",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "The flag indicating whether the Azure File shared mounted as a volume is read-only.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                },
+                {
+                  "Name": "storage_account_name",
+                  "NameAlt": "storage_account_name",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "True",
+                  "VariableValue": "None",
+                  "Documentation": "The name of the storage account that contains the Azure File share.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                },
+                {
+                  "Name": "storage_account_key",
+                  "NameAlt": "storage_account_key",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": false,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "The storage account access key used to access the Azure File share.",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                }
+              ],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Model"
+            },
+            {
+              "Name": "empty_dir",
+              "NameAlt": "empty_dir",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": "The empty directory volume.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            }
+          ],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "resource_group_name",
+            "container_group_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "container_group_name"
+          ]
+        },
+        {
+          "Name": "create_or_update",
+          "Options": [
+            "resource_group_name",
+            "container_group_name",
+            "container_group"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "container_group_name",
+            "container_group"
+          ]
+        },
+        {
+          "Name": "delete",
+          "Options": [
+            "resource_group_name",
+            "container_group_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "container_group_name"
+          ]
+        }
+      ],
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The resource id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": []
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": []
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": []
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": []
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "The resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": []
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "The provisioning state of the container group. This only appears in the response.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": []
+        },
+        {
+          "Name": "containers",
+          "NameAlt": "x",
+          "Description": "The containers within the container group.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "containers",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "The user-provided name of the container instance.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": []
+            },
+            {
+              "Name": "image",
+              "NameAlt": "x",
+              "Description": "The name of the image used to create the container instance.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "image",
+              "SubFields": []
+            },
+            {
+              "Name": "command",
+              "NameAlt": "x",
+              "Description": "The commands to execute within the container instance in exec form.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "command",
+              "SubFields": []
+            },
+            {
+              "Name": "ports",
+              "NameAlt": "x",
+              "Description": "The exposed ports on the container instance.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "ports",
+              "SubFields": [
+                {
+                  "Name": "protocol",
+                  "NameAlt": "x",
+                  "Description": "The protocol associated with the port. Possible values include: 'TCP', 'UDP'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "protocol",
+                  "SubFields": []
+                },
+                {
+                  "Name": "port",
+                  "NameAlt": "x",
+                  "Description": "The port number exposed within the container group.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "port",
+                  "SubFields": []
+                }
+              ]
+            },
+            {
+              "Name": "environment_variables",
+              "NameAlt": "x",
+              "Description": "The environment variables to set in the container instance.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "environment_variables",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "The name of the environment variable.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": []
+                },
+                {
+                  "Name": "value",
+                  "NameAlt": "x",
+                  "Description": "The value of the environment variable.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "value",
+                  "SubFields": []
+                }
+              ]
+            },
+            {
+              "Name": "instance_view",
+              "NameAlt": "x",
+              "Description": "The instance view of the container instance. Only valid in response.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "instance_view",
+              "SubFields": [
+                {
+                  "Name": "restart_count",
+                  "NameAlt": "x",
+                  "Description": "The number of times that the container instance has been restarted.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "restart_count",
+                  "SubFields": []
+                },
+                {
+                  "Name": "current_state",
+                  "NameAlt": "x",
+                  "Description": "Current container instance state.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "current_state",
+                  "SubFields": [
+                    {
+                      "Name": "state",
+                      "NameAlt": "x",
+                      "Description": "The state of the container instance.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "state",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "start_time",
+                      "NameAlt": "x",
+                      "Description": "The date-time when the container instance state started.",
+                      "Type": "datetime",
+                      "Returned": "always",
+                      "SampleValue": "start_time",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "exit_code",
+                      "NameAlt": "x",
+                      "Description": "The container instance exit codes correspond to those from the `docker run` command.",
+                      "Type": "int",
+                      "Returned": "always",
+                      "SampleValue": "exit_code",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "finish_time",
+                      "NameAlt": "x",
+                      "Description": "The date-time when the container instance state finished.",
+                      "Type": "datetime",
+                      "Returned": "always",
+                      "SampleValue": "finish_time",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "detail_status",
+                      "NameAlt": "x",
+                      "Description": "The human-readable status of the container instance state.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "detail_status",
+                      "SubFields": []
+                    }
+                  ]
+                },
+                {
+                  "Name": "previous_state",
+                  "NameAlt": "x",
+                  "Description": "Previous container instance state.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "previous_state",
+                  "SubFields": [
+                    {
+                      "Name": "state",
+                      "NameAlt": "x",
+                      "Description": "The state of the container instance.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "state",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "start_time",
+                      "NameAlt": "x",
+                      "Description": "The date-time when the container instance state started.",
+                      "Type": "datetime",
+                      "Returned": "always",
+                      "SampleValue": "start_time",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "exit_code",
+                      "NameAlt": "x",
+                      "Description": "The container instance exit codes correspond to those from the `docker run` command.",
+                      "Type": "int",
+                      "Returned": "always",
+                      "SampleValue": "exit_code",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "finish_time",
+                      "NameAlt": "x",
+                      "Description": "The date-time when the container instance state finished.",
+                      "Type": "datetime",
+                      "Returned": "always",
+                      "SampleValue": "finish_time",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "detail_status",
+                      "NameAlt": "x",
+                      "Description": "The human-readable status of the container instance state.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "detail_status",
+                      "SubFields": []
+                    }
+                  ]
+                },
+                {
+                  "Name": "events",
+                  "NameAlt": "x",
+                  "Description": "The events of the container instance.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "events",
+                  "SubFields": [
+                    {
+                      "Name": "count",
+                      "NameAlt": "x",
+                      "Description": "The count of the event.",
+                      "Type": "int",
+                      "Returned": "always",
+                      "SampleValue": "count",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "first_timestamp",
+                      "NameAlt": "x",
+                      "Description": "The date-time of the earliest logged event.",
+                      "Type": "datetime",
+                      "Returned": "always",
+                      "SampleValue": "first_timestamp",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "last_timestamp",
+                      "NameAlt": "x",
+                      "Description": "The date-time of the latest logged event.",
+                      "Type": "datetime",
+                      "Returned": "always",
+                      "SampleValue": "last_timestamp",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "name",
+                      "NameAlt": "x",
+                      "Description": "The event name.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "name",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "message",
+                      "NameAlt": "x",
+                      "Description": "The event message.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "message",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "type",
+                      "NameAlt": "x",
+                      "Description": "The event type.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "type",
+                      "SubFields": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Name": "resources",
+              "NameAlt": "x",
+              "Description": "The resource requirements of the container instance.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "resources",
+              "SubFields": [
+                {
+                  "Name": "requests",
+                  "NameAlt": "x",
+                  "Description": "The resource requests of this container instance.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "requests",
+                  "SubFields": [
+                    {
+                      "Name": "memory_in_gb",
+                      "NameAlt": "x",
+                      "Description": "The memory request in GB of this container instance.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "memory_in_gb",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "cpu",
+                      "NameAlt": "x",
+                      "Description": "The CPU request of this container instance.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "cpu",
+                      "SubFields": []
+                    }
+                  ]
+                },
+                {
+                  "Name": "limits",
+                  "NameAlt": "x",
+                  "Description": "The resource limits of this container instance.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "limits",
+                  "SubFields": [
+                    {
+                      "Name": "memory_in_gb",
+                      "NameAlt": "x",
+                      "Description": "The memory limit in GB of this container instance.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "memory_in_gb",
+                      "SubFields": []
+                    },
+                    {
+                      "Name": "cpu",
+                      "NameAlt": "x",
+                      "Description": "The CPU limit of this container instance.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "cpu",
+                      "SubFields": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Name": "volume_mounts",
+              "NameAlt": "x",
+              "Description": "The volume mounts available to the container instance.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "volume_mounts",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "The name of the volume mount.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": []
+                },
+                {
+                  "Name": "mount_path",
+                  "NameAlt": "x",
+                  "Description": "The path within the container where the volume should be mounted. Must not contain colon (:).",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "mount_path",
+                  "SubFields": []
+                },
+                {
+                  "Name": "read_only",
+                  "NameAlt": "x",
+                  "Description": "The flag indicating whether the volume mount is read-only.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "read_only",
+                  "SubFields": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "image_registry_credentials",
+          "NameAlt": "x",
+          "Description": "The image registry credentials by which the container group is created from.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "image_registry_credentials",
+          "SubFields": [
+            {
+              "Name": "server",
+              "NameAlt": "x",
+              "Description": "The Docker image registry server without a protocol such as \"http\" and \"https\".",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "server",
+              "SubFields": []
+            },
+            {
+              "Name": "username",
+              "NameAlt": "x",
+              "Description": "The username for the private registry.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "username",
+              "SubFields": []
+            },
+            {
+              "Name": "password",
+              "NameAlt": "x",
+              "Description": "The password for the private registry.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "password",
+              "SubFields": []
+            }
+          ]
+        },
+        {
+          "Name": "restart_policy",
+          "NameAlt": "x",
+          "Description": "Restart policy for all containers within the container group. \n- `Always` Always restart\n- `OnFailure` Restart on failure\n- `Never` Never restart\n. Possible values include: 'Always', 'OnFailure', 'Never'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "restart_policy",
+          "SubFields": []
+        },
+        {
+          "Name": "ip_address",
+          "NameAlt": "x",
+          "Description": "The IP address type of the container group.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "ip_address",
+          "SubFields": [
+            {
+              "Name": "ports",
+              "NameAlt": "x",
+              "Description": "The list of ports exposed on the container group.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "ports",
+              "SubFields": [
+                {
+                  "Name": "protocol",
+                  "NameAlt": "x",
+                  "Description": "The protocol associated with the port. Possible values include: 'TCP', 'UDP'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "protocol",
+                  "SubFields": []
+                },
+                {
+                  "Name": "port",
+                  "NameAlt": "x",
+                  "Description": "The port number.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "port",
+                  "SubFields": []
+                }
+              ]
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Specifies if the IP is exposed to the public internet.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": []
+            },
+            {
+              "Name": "ip",
+              "NameAlt": "x",
+              "Description": "The IP exposed to the public internet.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "ip",
+              "SubFields": []
+            }
+          ]
+        },
+        {
+          "Name": "os_type",
+          "NameAlt": "x",
+          "Description": "The operating system type required by the containers in the container group. Possible values include: 'Windows', 'Linux'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "os_type",
+          "SubFields": []
+        },
+        {
+          "Name": "volumes",
+          "NameAlt": "x",
+          "Description": "The list of volumes that can be mounted by containers in this container group.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "volumes",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "The name of the volume.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": []
+            },
+            {
+              "Name": "azure_file",
+              "NameAlt": "x",
+              "Description": "The name of the Azure File volume.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "azure_file",
+              "SubFields": [
+                {
+                  "Name": "share_name",
+                  "NameAlt": "x",
+                  "Description": "The name of the Azure File share to be mounted as a volume.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "share_name",
+                  "SubFields": []
+                },
+                {
+                  "Name": "read_only",
+                  "NameAlt": "x",
+                  "Description": "The flag indicating whether the Azure File shared mounted as a volume is read-only.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "read_only",
+                  "SubFields": []
+                },
+                {
+                  "Name": "storage_account_name",
+                  "NameAlt": "x",
+                  "Description": "The name of the storage account that contains the Azure File share.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "storage_account_name",
+                  "SubFields": []
+                },
+                {
+                  "Name": "storage_account_key",
+                  "NameAlt": "x",
+                  "Description": "The storage account access key used to access the Azure File share.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "storage_account_key",
+                  "SubFields": []
+                }
+              ]
+            },
+            {
+              "Name": "empty_dir",
+              "NameAlt": "x",
+              "Description": "The empty directory volume.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "empty_dir",
+              "SubFields": []
+            }
+          ]
+        },
+        {
+          "Name": "instance_view",
+          "NameAlt": "x",
+          "Description": "The instance view of the container group. Only valid in response.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "instance_view",
+          "SubFields": [
+            {
+              "Name": "events",
+              "NameAlt": "x",
+              "Description": "The events of this container group.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "events",
+              "SubFields": [
+                {
+                  "Name": "count",
+                  "NameAlt": "x",
+                  "Description": "The count of the event.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "count",
+                  "SubFields": []
+                },
+                {
+                  "Name": "first_timestamp",
+                  "NameAlt": "x",
+                  "Description": "The date-time of the earliest logged event.",
+                  "Type": "datetime",
+                  "Returned": "always",
+                  "SampleValue": "first_timestamp",
+                  "SubFields": []
+                },
+                {
+                  "Name": "last_timestamp",
+                  "NameAlt": "x",
+                  "Description": "The date-time of the latest logged event.",
+                  "Type": "datetime",
+                  "Returned": "always",
+                  "SampleValue": "last_timestamp",
+                  "SubFields": []
+                },
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "The event name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": []
+                },
+                {
+                  "Name": "message",
+                  "NameAlt": "x",
+                  "Description": "The event message.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "message",
+                  "SubFields": []
+                },
+                {
+                  "Name": "type",
+                  "NameAlt": "x",
+                  "Description": "The event type.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "type",
+                  "SubFields": []
+                }
+              ]
+            },
+            {
+              "Name": "state",
+              "NameAlt": "x",
+              "Description": "The state of the container group. Only valid in response.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "state",
+              "SubFields": []
+            }
+          ]
+        }
+      ],
+      "TestPrerequisitesModule": "",
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "ContainerGroups",
+      "ModuleOperationName": "container_groups",
+      "ObjectName": "ContainerGroups",
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
+      "ModuleName": "azure_rm_containerinstancecontainergroup_facts",
+      "ModuleNameAlt": "azure_rm_containerinstance_facts",
+      "Options": [
+        {
+          "Name": "resource_group_name",
+          "NameAlt": "resource_group",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "resource_group_name",
+            "test:default": "\"{{ resource_group }}\""
+          },
+          "SubOptions": null,
+          "RequiredCount": 2,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "container_group_name",
+          "NameAlt": "container_group_name",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The name of the container group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "container_group_name",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get",
+          "Options": [
+            "resource_group_name",
+            "container_group_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "container_group_name"
+          ]
+        },
+        {
+          "Name": "list_by_resource_group",
+          "Options": [
+            "resource_group_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "ContainerGroups",
+      "ModuleOperationName": "container_groups",
+      "ObjectName": "ContainerGroups",
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    }
+  ],
+  "Namespace": "containerinstance",
+  "NamespaceUpper": "containerinstance",
+  "Name": "ContainerInstanceManagementClient",
+  "ApiVersion": "",
+  "Operations": [
+    "ContainerGroups[ list list_by_resource_group get create_or_update delete MAIN FACTS ]",
+    "Operations[ list ]",
+    "ContainerLogs[ list ]",
+    "EXAMPLE -- ContainerGroupsList",
+    "EXAMPLE OBJECT -- {\"ContainerGroupsList\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"api-version\":\"2017-10-01-preview\"},\"responses\":{\"200\":{\"body\":{\"value\":[{\"properties\":{\"provisioningState\":\"Succeeded\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"instanceView\":{\"restartCount\":\"0\",\"currentState\":{\"state\":\"Running\",\"startTime\":\"2017-10-17T17:27:21Z\",\"detailStatus\":\"\"},\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:14Z\",\"lastTimestamp\":\"2017-10-17T17:27:14Z\",\"name\":\"Pulling\",\"message\":\"pulling image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Pulled\",\"message\":\"Successfully pulled image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Created\",\"message\":\"Created container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:21Z\",\"lastTimestamp\":\"2017-10-17T17:27:21Z\",\"name\":\"Started\",\"message\":\"Started container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"}]},\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}}}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[],\"state\":\"Running\"}},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}]}}}}}",
+    "EXAMPLE -- ContainerGroupsListByResourceGroup",
+    "EXAMPLE OBJECT -- {\"ContainerGroupsListByResourceGroup\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"resourceGroupName\":\"demo\",\"api-version\":\"2017-10-01-preview\"},\"responses\":{\"200\":{\"body\":{\"value\":[{\"properties\":{\"provisioningState\":\"Succeeded\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"instanceView\":{\"restartCount\":\"0\",\"currentState\":{\"state\":\"Running\",\"startTime\":\"2017-10-17T17:27:21Z\",\"detailStatus\":\"\"},\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:14Z\",\"lastTimestamp\":\"2017-10-17T17:27:14Z\",\"name\":\"Pulling\",\"message\":\"pulling image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Pulled\",\"message\":\"Successfully pulled image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Created\",\"message\":\"Created container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:21Z\",\"lastTimestamp\":\"2017-10-17T17:27:21Z\",\"name\":\"Started\",\"message\":\"Started container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"}]},\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}}}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[],\"state\":\"Running\"}},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}]}}}}}",
+    "EXAMPLE -- ContainerGroupsGet_Succeeded",
+    "EXAMPLE OBJECT -- {\"ContainerGroupsGet_Succeeded\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"resourceGroupName\":\"demo\",\"containerGroupName\":\"mycontainers\",\"api-version\":\"2017-10-01-preview\"},\"responses\":{\"200\":{\"body\":{\"properties\":{\"provisioningState\":\"Succeeded\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"instanceView\":{\"restartCount\":\"0\",\"currentState\":{\"state\":\"Running\",\"startTime\":\"2017-10-17T17:27:21Z\",\"detailStatus\":\"\"},\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:14Z\",\"lastTimestamp\":\"2017-10-17T17:27:14Z\",\"name\":\"Pulling\",\"message\":\"pulling image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Pulled\",\"message\":\"Successfully pulled image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Created\",\"message\":\"Created container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:21Z\",\"lastTimestamp\":\"2017-10-17T17:27:21Z\",\"name\":\"Started\",\"message\":\"Started container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"}]},\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}}}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[],\"state\":\"Running\"}},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}}}},\"ContainerGroupsGet_Failed\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"resourceGroupName\":\"demo\",\"containerGroupName\":\"mycontainers\",\"api-version\":\"2017-10-01-preview\"},\"responses\":{\"200\":{\"body\":{\"properties\":{\"provisioningState\":\"Succeeded\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"instanceView\":{\"restartCount\":\"0\",\"currentState\":{\"state\":\"Running\",\"startTime\":\"2017-10-17T17:27:21Z\",\"detailStatus\":\"\"},\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:14Z\",\"lastTimestamp\":\"2017-10-17T17:27:14Z\",\"name\":\"Pulling\",\"message\":\"pulling image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Pulled\",\"message\":\"Successfully pulled image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Created\",\"message\":\"Created container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:21Z\",\"lastTimestamp\":\"2017-10-17T17:27:21Z\",\"name\":\"Started\",\"message\":\"Started container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"}]},\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}}}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:19:10Z\",\"lastTimestamp\":\"2017-10-17T17:19:10Z\",\"message\":\"Output: mount error(2): Permission denied\",\"name\":\"FailedMount\",\"type\":\"Normal\"}],\"state\":\"Pending\"}},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}}}}}",
+    "EXAMPLE -- ContainerGroupsGet_Failed",
+    "EXAMPLE OBJECT -- {\"ContainerGroupsGet_Succeeded\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"resourceGroupName\":\"demo\",\"containerGroupName\":\"mycontainers\",\"api-version\":\"2017-10-01-preview\"},\"responses\":{\"200\":{\"body\":{\"properties\":{\"provisioningState\":\"Succeeded\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"instanceView\":{\"restartCount\":\"0\",\"currentState\":{\"state\":\"Running\",\"startTime\":\"2017-10-17T17:27:21Z\",\"detailStatus\":\"\"},\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:14Z\",\"lastTimestamp\":\"2017-10-17T17:27:14Z\",\"name\":\"Pulling\",\"message\":\"pulling image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Pulled\",\"message\":\"Successfully pulled image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Created\",\"message\":\"Created container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:21Z\",\"lastTimestamp\":\"2017-10-17T17:27:21Z\",\"name\":\"Started\",\"message\":\"Started container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"}]},\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}}}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[],\"state\":\"Running\"}},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}}}},\"ContainerGroupsGet_Failed\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"resourceGroupName\":\"demo\",\"containerGroupName\":\"mycontainers\",\"api-version\":\"2017-10-01-preview\"},\"responses\":{\"200\":{\"body\":{\"properties\":{\"provisioningState\":\"Succeeded\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"instanceView\":{\"restartCount\":\"0\",\"currentState\":{\"state\":\"Running\",\"startTime\":\"2017-10-17T17:27:21Z\",\"detailStatus\":\"\"},\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:14Z\",\"lastTimestamp\":\"2017-10-17T17:27:14Z\",\"name\":\"Pulling\",\"message\":\"pulling image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Pulled\",\"message\":\"Successfully pulled image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Created\",\"message\":\"Created container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:21Z\",\"lastTimestamp\":\"2017-10-17T17:27:21Z\",\"name\":\"Started\",\"message\":\"Started container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"}]},\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}}}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:19:10Z\",\"lastTimestamp\":\"2017-10-17T17:19:10Z\",\"message\":\"Output: mount error(2): Permission denied\",\"name\":\"FailedMount\",\"type\":\"Normal\"}],\"state\":\"Pending\"}},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}}}}}",
+    "EXAMPLE -- ContainerGroupsCreateOrUpdate",
+    "EXAMPLE OBJECT -- {\"ContainerGroupsCreateOrUpdate\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"api-version\":\"2017-10-01-preview\",\"resourceGroupName\":\"demo\",\"containerGroupName\":\"mycontainers\",\"containerGroup\":{\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\",\"properties\":{\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"command\":[],\"environmentVariables\":[],\"image\":\"nginx\",\"instanceView\":{},\"ports\":[{\"port\":\"80\"}],\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}},\"volumeMounts\":[{\"name\":\"volume1\",\"mountPath\":\"/mnt/volume1\",\"readOnly\":false},{\"name\":\"volume2\",\"mountPath\":\"/mnt/volume2\",\"readOnly\":false}]}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"type\":\"Public\"},\"osType\":\"Linux\",\"volumes\":[{\"name\":\"volume1\",\"azureFile\":{\"shareName\":\"shareName\",\"storageAccountName\":\"accountName\",\"storageAccountKey\":\"\"}},{\"name\":\"volume2\",\"emptyDir\":{}}]}}},\"responses\":{\"200\":{\"body\":{\"properties\":{\"provisioningState\":\"Creating\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}},\"volumeMounts\":[{\"name\":\"volume1\",\"mountPath\":\"/mnt/volume1\",\"readOnly\":false},{\"name\":\"volume2\",\"mountPath\":\"/mnt/volume2\",\"readOnly\":false}]}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[],\"state\":\"Pending\"},\"volumes\":[{\"name\":\"volume1\",\"azureFile\":{\"shareName\":\"shareName\",\"storageAccountName\":\"accountName\",\"storageAccountKey\":\"\"}},{\"name\":\"volume2\",\"emptyDir\":{}}]},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}},\"201\":{\"body\":{\"properties\":{\"provisioningState\":\"Creating\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}},\"volumeMounts\":[{\"name\":\"volume1\",\"mountPath\":\"/mnt/volume1\",\"readOnly\":false},{\"name\":\"volume2\",\"mountPath\":\"/mnt/volume2\",\"readOnly\":false}]}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[],\"state\":\"Pending\"},\"volumes\":[{\"name\":\"volume1\",\"azureFile\":{\"shareName\":\"shareName\",\"storageAccountName\":\"accountName\",\"storageAccountKey\":\"\"}},{\"name\":\"volume2\",\"emptyDir\":{}}]},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}}}}}",
+    "EXAMPLE -- ContainerGroupsDelete",
+    "EXAMPLE OBJECT -- {\"ContainerGroupsDelete\":{\"parameters\":{\"subscriptionId\":\"ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78\",\"api-version\":\"2017-10-01-preview\",\"resourceGroupName\":\"demo\",\"containerGroupName\":\"mycontainers\"},\"responses\":{\"200\":{\"body\":{\"properties\":{\"provisioningState\":\"Succeeded\",\"containers\":[{\"name\":\"mycontainers\",\"properties\":{\"image\":\"nginx\",\"command\":[],\"ports\":[{\"port\":\"80\"}],\"environmentVariables\":[],\"instanceView\":{\"restartCount\":\"0\",\"currentState\":{\"state\":\"Running\",\"startTime\":\"2017-10-17T17:27:21Z\",\"detailStatus\":\"\"},\"events\":[{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:14Z\",\"lastTimestamp\":\"2017-10-17T17:27:14Z\",\"name\":\"Pulling\",\"message\":\"pulling image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Pulled\",\"message\":\"Successfully pulled image \\\"nginx\\\"\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:20Z\",\"lastTimestamp\":\"2017-10-17T17:27:20Z\",\"name\":\"Created\",\"message\":\"Created container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"},{\"count\":\"1\",\"firstTimestamp\":\"2017-10-17T17:27:21Z\",\"lastTimestamp\":\"2017-10-17T17:27:21Z\",\"name\":\"Started\",\"message\":\"Started container with id 59ac4a83384ce9184c315ecd3c7cff39a7c9a3257646d41309758f8730b9a527\",\"type\":\"Normal\"}]},\"resources\":{\"requests\":{\"memoryInGB\":\"1.5\",\"cpu\":\"1\"}}}}],\"imageRegistryCredentials\":[],\"ipAddress\":{\"ports\":[{\"protocol\":\"TCP\",\"port\":\"80\"}],\"ip\":\"13.64.70.13\",\"type\":\"Public\"},\"osType\":\"Linux\",\"instanceView\":{\"events\":[],\"state\":\"Running\"}},\"id\":\"/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers\",\"name\":\"mycontainers\",\"type\":\"Microsoft.ContainerInstance/containerGroups\",\"location\":\"westus\"}},\"204\":{}}}}",
+    "EXAMPLE -- OperationsList",
+    "EXAMPLE OBJECT -- {\"OperationsList\":{\"parameters\":{\"api-version\":\"2017-10-01-preview\"},\"responses\":{\"200\":{\"body\":{\"value\":[{\"name\":\"Microsoft.ContainerInstance/containerGroups/read\",\"display\":{\"provider\":\"Microsoft Container Instance\",\"resource\":\"Container Group\",\"operation\":\"Get Container Groups\",\"description\":\"Get all container goups.\"},\"origin\":\"User\"}]}}}}}",
+    "EXAMPLE -- ContainerLogsList",
+    "EXAMPLE OBJECT -- {\"ContainerLogsList\":{\"parameters\":{\"subscriptionId\":\"subid\",\"api-version\":\"2017-10-01-preview\",\"resourceGroupName\":\"demo\",\"containerGroupName\":\"demo1\",\"containerName\":\"container1\",\"tail\":\"10\"},\"responses\":{\"200\":{\"body\":{\"content\":\"log content\"}}}}}"
+  ]
+}
