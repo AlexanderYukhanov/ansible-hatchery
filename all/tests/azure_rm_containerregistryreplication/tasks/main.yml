@@ -32,6 +32,7 @@
     resource_group: "{{ resource_group }}"
     registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
     replication_name: replication{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    location: westus
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -43,6 +44,7 @@
     resource_group: "{{ resource_group }}"
     registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
     replication_name: replication{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    location: westus
   register: output
 - name: Assert the state has not changed
   assert:
