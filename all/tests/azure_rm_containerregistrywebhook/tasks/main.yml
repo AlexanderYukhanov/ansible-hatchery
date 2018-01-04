@@ -23,8 +23,7 @@
     location: eastus2
     service_uri: http://serviceuri.com
     actions:
-      - action1
-      - action2
+      - push
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -40,8 +39,7 @@
     webhook_name: webhook{{ rpfx }}
     service_uri: http://serviceuri.com
     actions:
-      - action1
-      - action2
+      - push
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -56,8 +54,7 @@
     location: eastus2
     service_uri: http://serviceuri.com
     actions:
-      - action1
-      - action2
+      - push
   register: output
 - name: Assert the state has not changed
   assert:
