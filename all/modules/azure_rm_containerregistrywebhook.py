@@ -128,8 +128,7 @@ class AzureRMWebhooks(AzureRMModuleBase):
                 type='str'
             ),
             service_uri=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             custom_headers=dict(
                 type='dict'
@@ -142,8 +141,7 @@ class AzureRMWebhooks(AzureRMModuleBase):
                 type='str'
             ),
             actions=dict(
-                type='list',
-                required=True
+                type='list'
             ),
             state=dict(
                 type='str',
