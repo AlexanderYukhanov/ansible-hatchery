@@ -682,7 +682,7 @@
         {
           "Name": "replication",
           "NameAlt": "replication",
-          "Disposition": "dictionary",
+          "Disposition": "none",
           "Type": "dict",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -706,7 +706,7 @@
         {
           "Name": "location",
           "NameAlt": "location",
-          "Disposition": "replication",
+          "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -754,7 +754,7 @@
             "resource_group_name",
             "registry_name",
             "replication_name",
-            "replication"
+            "location"
           ]
         },
         {

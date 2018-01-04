@@ -34,6 +34,9 @@ options:
         description:
             - The name of the replication.
         required: True
+    replication:
+        description:
+            - The parameters for creating a replication.
     location:
         description:
             - Resource location. If not set, location from the resource group will be used as default.
@@ -53,6 +56,7 @@ EXAMPLES = '''
       resource_group: myResourceGroup
       registry_name: myRegistry
       replication_name: myReplication
+      replication: replication
       location: eastus
 '''
 
@@ -106,6 +110,9 @@ class AzureRMReplications(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
+            replication=dict(
+                type='dict'
+            ),
             location=dict(
                 type='str'
             ),
@@ -119,7 +126,7 @@ class AzureRMReplications(AzureRMModuleBase):
         self.resource_group = None
         self.registry_name = None
         self.replication_name = None
-        self.replication = dict()
+        self.location = None
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -136,9 +143,6 @@ class AzureRMReplications(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif kwargs[key] is not None:
-                if key == "location":
-                    self.replication["location"] = kwargs[key]
 
         old_response = None
         response = None
@@ -148,8 +152,8 @@ class AzureRMReplications(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        #if "location" not in self.parameters:
-        #    self.parameters["location"] = resource_group.location
+        if "location" not in self.parameters:
+            self.parameters["location"] = resource_group.location
 
         old_response = self.get_replications()
 
@@ -217,12 +221,12 @@ class AzureRMReplications(AzureRMModuleBase):
                 response = self.mgmt_client.replications.create(resource_group_name=self.resource_group,
                                                                 registry_name=self.registry_name,
                                                                 replication_name=self.replication_name,
-                                                                location=self.replication.location)
+                                                                location=self.location)
             else:
                 response = self.mgmt_client.replications.update(resource_group_name=self.resource_group,
                                                                 registry_name=self.registry_name,
                                                                 replication_name=self.replication_name,
-                                                                location=self.replication.location)
+                                                                replication_update_parameters=self.replication_update_parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
