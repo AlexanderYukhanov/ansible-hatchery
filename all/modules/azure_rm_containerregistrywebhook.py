@@ -155,7 +155,7 @@ class AzureRMWebhooks(AzureRMModuleBase):
         self.resource_group = None
         self.registry_name = None
         self.webhook_name = None
-        self.webhook_create_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -174,17 +174,17 @@ class AzureRMWebhooks(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "location":
-                    self.webhook_create_parameters["location"] = kwargs[key]
+                    self.parameters["location"] = kwargs[key]
                 elif key == "service_uri":
-                    self.webhook_create_parameters["service_uri"] = kwargs[key]
+                    self.parameters["service_uri"] = kwargs[key]
                 elif key == "custom_headers":
-                    self.webhook_create_parameters["custom_headers"] = kwargs[key]
+                    self.parameters["custom_headers"] = kwargs[key]
                 elif key == "status":
-                    self.webhook_create_parameters["status"] = kwargs[key]
+                    self.parameters["status"] = kwargs[key]
                 elif key == "scope":
-                    self.webhook_create_parameters["scope"] = kwargs[key]
+                    self.parameters["scope"] = kwargs[key]
                 elif key == "actions":
-                    self.webhook_create_parameters["actions"] = kwargs[key]
+                    self.parameters["actions"] = kwargs[key]
 
         old_response = None
         response = None
@@ -194,8 +194,8 @@ class AzureRMWebhooks(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        #if "location" not in self.parameters:
-        #    self.parameters["location"] = resource_group.location
+        if "location" not in self.parameters:
+            self.parameters["location"] = resource_group.location
 
         old_response = self.get_webhooks()
 
@@ -263,12 +263,12 @@ class AzureRMWebhooks(AzureRMModuleBase):
                 response = self.mgmt_client.webhooks.create(resource_group_name=self.resource_group,
                                                             registry_name=self.registry_name,
                                                             webhook_name=self.webhook_name,
-                                                            webhook_create_parameters=self.webhook_create_parameters)
+                                                            webhook_create_parameters=self.parameters)
             else:
                 response = self.mgmt_client.webhooks.update(resource_group_name=self.resource_group,
                                                             registry_name=self.registry_name,
                                                             webhook_name=self.webhook_name,
-                                                            webhook_update_parameters=self.webhook_update_parameters)
+                                                            webhook_update_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
