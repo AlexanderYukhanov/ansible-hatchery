@@ -574,7 +574,7 @@
       "TestPrerequisites": [
         "- name: Create an container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    name: acr{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    location: eastus2",
         "    state: present",
@@ -587,7 +587,7 @@
       "TestPostrequisites": [
         "- name: Delete container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    name: acr{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    state: absent"
       ],
@@ -645,7 +645,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myRegistry",
-            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "acr{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -669,7 +669,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myReplication",
-            "test:default": "replication{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "replication{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -717,7 +717,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "eastus",
-            "test:default": ""
+            "test:default": "westus"
           },
           "SubOptions": [],
           "RequiredCount": 0,
@@ -883,7 +883,7 @@
       "TestPrerequisites": [
         "- name: Create an container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    name: acr{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    location: eastus2",
         "    state: present",
@@ -896,7 +896,7 @@
       "TestPostrequisites": [
         "- name: Delete container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    name: acr{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    state: absent"
       ],
@@ -954,7 +954,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "registry_name",
-            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "acr{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -978,7 +978,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "replication_name",
-            "test:default": "replication{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "replication{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -1062,7 +1062,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myRegistry",
-            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "acr{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1086,7 +1086,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myWebhook",
-            "test:default": "webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "webhook{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1134,7 +1134,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "eastus",
-            "test:default": ""
+            "test:default": "eastus2"
           },
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1158,7 +1158,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
-            "test:default": ""
+            "test:default": "http://serviceuri.com"
           },
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1263,7 +1263,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
-            "test:default": ""
+            "test:default": "push"
           },
           "SubOptions": [],
           "RequiredCount": 0,
@@ -1419,7 +1419,7 @@
       "TestPrerequisites": [
         "- name: Create an container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    name: acr{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    location: eastus2",
         "    state: present",
@@ -1432,7 +1432,7 @@
       "TestPostrequisites": [
         "- name: Delete container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    name: acr{{ rpfx }}",
         "    resource_group: \"{{ resource_group }}\"",
         "    state: absent"
       ],
@@ -1441,7 +1441,7 @@
       "ModuleOperationNameUpper": "Webhooks",
       "ModuleOperationName": "webhooks",
       "ObjectName": "Webhooks",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
@@ -1490,7 +1490,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "registry_name",
-            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "acr{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1514,7 +1514,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "webhook_name",
-            "test:default": "webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+            "test:default": "webhook{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1562,7 +1562,7 @@
       "ModuleOperationNameUpper": "Webhooks",
       "ModuleOperationName": "webhooks",
       "ObjectName": "Webhooks",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
