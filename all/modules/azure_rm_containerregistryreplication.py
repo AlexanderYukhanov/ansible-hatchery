@@ -226,7 +226,7 @@ class AzureRMReplications(AzureRMModuleBase):
                 response = self.mgmt_client.replications.update(resource_group_name=self.resource_group,
                                                                 registry_name=self.registry_name,
                                                                 replication_name=self.replication_name,
-                                                                replication_update_parameters=self.replication_update_parameters)
+                                                                location=self.location)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
