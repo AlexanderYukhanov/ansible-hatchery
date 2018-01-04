@@ -645,7 +645,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myRegistry",
-            "test:default": ""
+            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -669,7 +669,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myReplication",
-            "test:default": ""
+            "test:default": "replication{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -880,14 +880,32 @@
         }
       ],
       "TestPrerequisitesModule": "",
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
+      "TestPrerequisites": [
+        "- name: Create an container registry",
+        "  azure_rm_containerregistry:",
+        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    location: eastus2",
+        "    state: present",
+        "    admin_user_enabled: true",
+        "    sku: Premium",
+        "    tags:",
+        "        Release: beta1",
+        "        Environment: Production"
+      ],
+      "TestPostrequisites": [
+        "- name: Delete container registry",
+        "  azure_rm_containerregistry:",
+        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    state: absent"
+      ],
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Replications",
       "ModuleOperationName": "replications",
       "ObjectName": "Replications",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
@@ -936,7 +954,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "registry_name",
-            "test:default": ""
+            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -960,7 +978,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "replication_name",
-            "test:default": ""
+            "test:default": "replication{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -987,7 +1005,7 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_containerregistryreplication",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
@@ -995,7 +1013,7 @@
       "ModuleOperationNameUpper": "Replications",
       "ModuleOperationName": "replications",
       "ObjectName": "Replications",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
@@ -1044,7 +1062,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myRegistry",
-            "test:default": ""
+            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1068,7 +1086,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "myWebhook",
-            "test:default": ""
+            "test:default": "webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1398,8 +1416,26 @@
         }
       ],
       "TestPrerequisitesModule": "",
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
+      "TestPrerequisites": [
+        "- name: Create an container registry",
+        "  azure_rm_containerregistry:",
+        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    location: eastus2",
+        "    state: present",
+        "    admin_user_enabled: true",
+        "    sku: Premium",
+        "    tags:",
+        "        Release: beta1",
+        "        Environment: Production"
+      ],
+      "TestPostrequisites": [
+        "- name: Delete container registry",
+        "  azure_rm_containerregistry:",
+        "    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}",
+        "    resource_group: \"{{ resource_group }}\"",
+        "    state: absent"
+      ],
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Webhooks",
@@ -1454,7 +1490,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "registry_name",
-            "test:default": ""
+            "test:default": "acr{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1478,7 +1514,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "webhook_name",
-            "test:default": ""
+            "test:default": "webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1518,7 +1554,7 @@
         }
       ],
       "ResponseFields": null,
-      "TestPrerequisitesModule": null,
+      "TestPrerequisitesModule": "azure_rm_containerregistrywebhook",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
       "AssertStateVariable": "",
