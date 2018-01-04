@@ -5,7 +5,7 @@
 
 - name: Create an container registry
   azure_rm_containerregistry:
-    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    name: acr{{ rpfx }}
     resource_group: "{{ resource_group }}"
     location: eastus2
     state: present
@@ -18,8 +18,8 @@
 - name: Create instance of Webhooks -- check mode
   azure_rm_containerregistrywebhook:
     resource_group: "{{ resource_group }}"
-    registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
-    webhook_name: webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    registry_name: acr{{ rpfx }}
+    webhook_name: webhook{{ rpfx }}
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -30,8 +30,12 @@
 - name: Create instance of Webhooks
   azure_rm_containerregistrywebhook:
     resource_group: "{{ resource_group }}"
-    registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
-    webhook_name: webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    registry_name: acr{{ rpfx }}
+    webhook_name: webhook{{ rpfx }}
+    service_uri: http://serviceuri.com
+    actions:
+      - action1
+      - action2
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -41,8 +45,12 @@
 - name: Create again instance of Webhooks
   azure_rm_containerregistrywebhook:
     resource_group: "{{ resource_group }}"
-    registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
-    webhook_name: webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    registry_name: acr{{ rpfx }}
+    webhook_name: webhook{{ rpfx }}
+    service_uri: http://serviceuri.com
+    actions:
+      - action1
+      - action2
   register: output
 - name: Assert the state has not changed
   assert:
@@ -52,8 +60,8 @@
 - name: Delete instance of Webhooks -- check mode
   azure_rm_containerregistrywebhook:
     resource_group: "{{ resource_group }}"
-    registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
-    webhook_name: webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    registry_name: acr{{ rpfx }}
+    webhook_name: webhook{{ rpfx }}
     state: absent
   check_mode: yes
   register: output
@@ -65,8 +73,8 @@
 - name: Delete instance of Webhooks
   azure_rm_containerregistrywebhook:
     resource_group: "{{ resource_group }}"
-    registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
-    webhook_name: webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    registry_name: acr{{ rpfx }}
+    webhook_name: webhook{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -77,8 +85,8 @@
 - name: Delete unexisting instance of Webhooks
   azure_rm_containerregistrywebhook:
     resource_group: "{{ resource_group }}"
-    registry_name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
-    webhook_name: webhook{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    registry_name: acr{{ rpfx }}
+    webhook_name: webhook{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -88,6 +96,6 @@
 
 - name: Delete container registry
   azure_rm_containerregistry:
-    name: acr{{ resource_group | hash('md5') | truncate(7, True, '') }}
+    name: acr{{ rpfx }}
     resource_group: "{{ resource_group }}"
     state: absent
