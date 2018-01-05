@@ -106,8 +106,8 @@
               "Documentation": "The name of the sku, typically, a letter + Number code, e.g. P3.",
               "DefaultValue": null,
               "DefaultValueSample": {
-                "default": "SkuName",
-                "test:default": ""
+                "default": "PGSQLS100",
+                "test:default": "PGSQLS100"
               },
               "SubOptions": [],
               "RequiredCount": 0,
@@ -131,7 +131,7 @@
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "Basic",
-                "test:default": ""
+                "test:default": "basic"
               },
               "SubOptions": [],
               "RequiredCount": 0,
@@ -348,8 +348,8 @@
           "Documentation": "Enable SSL enforcement.",
           "DefaultValue": "False",
           "DefaultValueSample": {
-            "default": "Enabled",
-            "test:default": ""
+            "default": "True",
+            "test:default": "True"
           },
           "SubOptions": [],
           "RequiredCount": 0,
@@ -489,7 +489,7 @@
           "Description": "Resource ID",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/12345678-1234-1234-1234-123412341234/resourceGroups/samplerg/providers/Microsoft.DBforPostgreSQL/servers/mysqlsrv1b6dd89593",
           "SubFields": []
         },
         {
@@ -607,7 +607,7 @@
           "Description": "Server version. Possible values include: '9.5', '9.6'",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "version",
+          "SampleValue": "9.6",
           "SubFields": []
         },
         {
@@ -625,7 +625,7 @@
           "Description": "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "user_visible_state",
+          "SampleValue": "Ready",
           "SubFields": []
         },
         {
@@ -634,7 +634,7 @@
           "Description": "The fully qualified domain name of a server.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "fully_qualified_domain_name",
+          "SampleValue": "postgresqlsrv1b6dd89593.postgresql.database.azure.com",
           "SubFields": []
         }
       ],
