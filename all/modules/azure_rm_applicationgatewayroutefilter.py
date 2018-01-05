@@ -532,7 +532,7 @@ class AzureRMRouteFilters(AzureRMModuleBase):
 
         self.resource_group = None
         self.route_filter_name = None
-        self.route_filter_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -551,9 +551,9 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.route_filter_parameters["id"] = kwargs[key]
+                    self.parameters["id"] = kwargs[key]
                 elif key == "location":
-                    self.route_filter_parameters["location"] = kwargs[key]
+                    self.parameters["location"] = kwargs[key]
                 elif key == "rules":
                     ev = kwargs[key]
                     if 'access' in ev:
@@ -561,7 +561,7 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                             ev['access'] = 'Allow'
                         elif ev['access'] == 'deny':
                             ev['access'] = 'Deny'
-                    self.route_filter_parameters["rules"] = ev
+                    self.parameters["rules"] = ev
                 elif key == "peerings":
                     ev = kwargs[key]
                     if 'peering_type' in ev:
@@ -576,7 +576,7 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                             ev['state'] = 'Disabled'
                         elif ev['state'] == 'enabled':
                             ev['state'] = 'Enabled'
-                    self.route_filter_parameters["peerings"] = ev
+                    self.parameters["peerings"] = ev
 
         old_response = None
         response = None
@@ -652,7 +652,7 @@ class AzureRMRouteFilters(AzureRMModuleBase):
         try:
             response = self.mgmt_client.route_filters.create_or_update(resource_group_name=self.resource_group,
                                                                        route_filter_name=self.route_filter_name,
-                                                                       route_filter_parameters=self.route_filter_parameters)
+                                                                       route_filter_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

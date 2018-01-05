@@ -137,7 +137,7 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
         self.resource_group = None
         self.circuit_name = None
         self.authorization_name = None
-        self.authorization_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -156,20 +156,20 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.authorization_parameters["id"] = kwargs[key]
+                    self.parameters["id"] = kwargs[key]
                 elif key == "authorization_key":
-                    self.authorization_parameters["authorization_key"] = kwargs[key]
+                    self.parameters["authorization_key"] = kwargs[key]
                 elif key == "authorization_use_status":
                     ev = kwargs[key]
                     if ev == 'available':
                         ev = 'Available'
                     elif ev == 'in_use':
                         ev = 'InUse'
-                    self.authorization_parameters["authorization_use_status"] = ev
+                    self.parameters["authorization_use_status"] = ev
                 elif key == "provisioning_state":
-                    self.authorization_parameters["provisioning_state"] = kwargs[key]
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.authorization_parameters["name"] = kwargs[key]
+                    self.parameters["name"] = kwargs[key]
 
         old_response = None
         response = None
@@ -243,7 +243,7 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
             response = self.mgmt_client.express_route_circuit_authorizations.create_or_update(resource_group_name=self.resource_group,
                                                                                               circuit_name=self.circuit_name,
                                                                                               authorization_name=self.authorization_name,
-                                                                                              authorization_parameters=self.authorization_parameters)
+                                                                                              authorization_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

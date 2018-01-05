@@ -150,7 +150,7 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
         self.resource_group = None
         self.route_filter_name = None
         self.rule_name = None
-        self.route_filter_rule_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -169,22 +169,22 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.route_filter_rule_parameters["id"] = kwargs[key]
+                    self.parameters["id"] = kwargs[key]
                 elif key == "access":
                     ev = kwargs[key]
                     if ev == 'allow':
                         ev = 'Allow'
                     elif ev == 'deny':
                         ev = 'Deny'
-                    self.route_filter_rule_parameters["access"] = ev
+                    self.parameters["access"] = ev
                 elif key == "route_filter_rule_type":
-                    self.route_filter_rule_parameters["route_filter_rule_type"] = kwargs[key]
+                    self.parameters["route_filter_rule_type"] = kwargs[key]
                 elif key == "communities":
-                    self.route_filter_rule_parameters["communities"] = kwargs[key]
+                    self.parameters["communities"] = kwargs[key]
                 elif key == "name":
-                    self.route_filter_rule_parameters["name"] = kwargs[key]
+                    self.parameters["name"] = kwargs[key]
                 elif key == "location":
-                    self.route_filter_rule_parameters["location"] = kwargs[key]
+                    self.parameters["location"] = kwargs[key]
 
         old_response = None
         response = None
@@ -261,7 +261,7 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
             response = self.mgmt_client.route_filter_rules.create_or_update(resource_group_name=self.resource_group,
                                                                             route_filter_name=self.route_filter_name,
                                                                             rule_name=self.rule_name,
-                                                                            route_filter_rule_parameters=self.route_filter_rule_parameters)
+                                                                            route_filter_rule_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

@@ -22,8 +22,6 @@
     webhook_name: webhook{{ rpfx }}
     location: eastus2
     service_uri: http://serviceuri.com
-    actions:
-      - push
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -35,11 +33,9 @@
   azure_rm_containerregistrywebhook:
     resource_group: "{{ resource_group }}"
     registry_name: acr{{ rpfx }}
-    location: eastus2
     webhook_name: webhook{{ rpfx }}
+    location: eastus2
     service_uri: http://serviceuri.com
-    actions:
-      - push
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -53,8 +49,6 @@
     webhook_name: webhook{{ rpfx }}
     location: eastus2
     service_uri: http://serviceuri.com
-    actions:
-      - push
   register: output
 - name: Assert the state has not changed
   assert:

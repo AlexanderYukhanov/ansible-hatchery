@@ -184,7 +184,7 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
         self.resource_group = None
         self.virtual_network_name = None
         self.virtual_network_peering_name = None
-        self.virtual_network_peering_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -203,19 +203,19 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.virtual_network_peering_parameters["id"] = kwargs[key]
+                    self.parameters["id"] = kwargs[key]
                 elif key == "allow_virtual_network_access":
-                    self.virtual_network_peering_parameters["allow_virtual_network_access"] = kwargs[key]
+                    self.parameters["allow_virtual_network_access"] = kwargs[key]
                 elif key == "allow_forwarded_traffic":
-                    self.virtual_network_peering_parameters["allow_forwarded_traffic"] = kwargs[key]
+                    self.parameters["allow_forwarded_traffic"] = kwargs[key]
                 elif key == "allow_gateway_transit":
-                    self.virtual_network_peering_parameters["allow_gateway_transit"] = kwargs[key]
+                    self.parameters["allow_gateway_transit"] = kwargs[key]
                 elif key == "use_remote_gateways":
-                    self.virtual_network_peering_parameters["use_remote_gateways"] = kwargs[key]
+                    self.parameters["use_remote_gateways"] = kwargs[key]
                 elif key == "remote_virtual_network":
-                    self.virtual_network_peering_parameters["remote_virtual_network"] = kwargs[key]
+                    self.parameters["remote_virtual_network"] = kwargs[key]
                 elif key == "remote_address_space":
-                    self.virtual_network_peering_parameters["remote_address_space"] = kwargs[key]
+                    self.parameters["remote_address_space"] = kwargs[key]
                 elif key == "peering_state":
                     ev = kwargs[key]
                     if ev == 'initiated':
@@ -224,13 +224,13 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
                         ev = 'Connected'
                     elif ev == 'disconnected':
                         ev = 'Disconnected'
-                    self.virtual_network_peering_parameters["peering_state"] = ev
+                    self.parameters["peering_state"] = ev
                 elif key == "provisioning_state":
-                    self.virtual_network_peering_parameters["provisioning_state"] = kwargs[key]
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.virtual_network_peering_parameters["name"] = kwargs[key]
+                    self.parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.virtual_network_peering_parameters["etag"] = kwargs[key]
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None
@@ -304,7 +304,7 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
             response = self.mgmt_client.virtual_network_peerings.create_or_update(resource_group_name=self.resource_group,
                                                                                   virtual_network_name=self.virtual_network_name,
                                                                                   virtual_network_peering_name=self.virtual_network_peering_name,
-                                                                                  virtual_network_peering_parameters=self.virtual_network_peering_parameters)
+                                                                                  virtual_network_peering_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

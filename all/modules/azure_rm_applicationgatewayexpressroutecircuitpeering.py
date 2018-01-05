@@ -739,7 +739,7 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
         self.resource_group = None
         self.circuit_name = None
         self.peering_name = None
-        self.peering_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -758,7 +758,7 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.peering_parameters["id"] = kwargs[key]
+                    self.parameters["id"] = kwargs[key]
                 elif key == "peering_type":
                     ev = kwargs[key]
                     if ev == 'azure_public_peering':
@@ -767,30 +767,30 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                         ev = 'AzurePrivatePeering'
                     elif ev == 'microsoft_peering':
                         ev = 'MicrosoftPeering'
-                    self.peering_parameters["peering_type"] = ev
+                    self.parameters["peering_type"] = ev
                 elif key == "state":
                     ev = kwargs[key]
                     if ev == 'disabled':
                         ev = 'Disabled'
                     elif ev == 'enabled':
                         ev = 'Enabled'
-                    self.peering_parameters["state"] = ev
+                    self.parameters["state"] = ev
                 elif key == "azure_asn":
-                    self.peering_parameters["azure_asn"] = kwargs[key]
+                    self.parameters["azure_asn"] = kwargs[key]
                 elif key == "peer_asn":
-                    self.peering_parameters["peer_asn"] = kwargs[key]
+                    self.parameters["peer_asn"] = kwargs[key]
                 elif key == "primary_peer_address_prefix":
-                    self.peering_parameters["primary_peer_address_prefix"] = kwargs[key]
+                    self.parameters["primary_peer_address_prefix"] = kwargs[key]
                 elif key == "secondary_peer_address_prefix":
-                    self.peering_parameters["secondary_peer_address_prefix"] = kwargs[key]
+                    self.parameters["secondary_peer_address_prefix"] = kwargs[key]
                 elif key == "primary_azure_port":
-                    self.peering_parameters["primary_azure_port"] = kwargs[key]
+                    self.parameters["primary_azure_port"] = kwargs[key]
                 elif key == "secondary_azure_port":
-                    self.peering_parameters["secondary_azure_port"] = kwargs[key]
+                    self.parameters["secondary_azure_port"] = kwargs[key]
                 elif key == "shared_key":
-                    self.peering_parameters["shared_key"] = kwargs[key]
+                    self.parameters["shared_key"] = kwargs[key]
                 elif key == "vlan_id":
-                    self.peering_parameters["vlan_id"] = kwargs[key]
+                    self.parameters["vlan_id"] = kwargs[key]
                 elif key == "microsoft_peering_config":
                     ev = kwargs[key]
                     if 'advertised_public_prefixes_state' in ev:
@@ -802,17 +802,17 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                             ev['advertised_public_prefixes_state'] = 'Configured'
                         elif ev['advertised_public_prefixes_state'] == 'validation_needed':
                             ev['advertised_public_prefixes_state'] = 'ValidationNeeded'
-                    self.peering_parameters["microsoft_peering_config"] = ev
+                    self.parameters["microsoft_peering_config"] = ev
                 elif key == "stats":
-                    self.peering_parameters["stats"] = kwargs[key]
+                    self.parameters["stats"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.peering_parameters["provisioning_state"] = kwargs[key]
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "gateway_manager_etag":
-                    self.peering_parameters["gateway_manager_etag"] = kwargs[key]
+                    self.parameters["gateway_manager_etag"] = kwargs[key]
                 elif key == "last_modified_by":
-                    self.peering_parameters["last_modified_by"] = kwargs[key]
+                    self.parameters["last_modified_by"] = kwargs[key]
                 elif key == "route_filter":
-                    self.peering_parameters["route_filter"] = kwargs[key]
+                    self.parameters["route_filter"] = kwargs[key]
                 elif key == "ipv6_peering_config":
                     ev = kwargs[key]
                     if 'state' in ev:
@@ -820,9 +820,9 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                             ev['state'] = 'Disabled'
                         elif ev['state'] == 'enabled':
                             ev['state'] = 'Enabled'
-                    self.peering_parameters["ipv6_peering_config"] = ev
+                    self.parameters["ipv6_peering_config"] = ev
                 elif key == "name":
-                    self.peering_parameters["name"] = kwargs[key]
+                    self.parameters["name"] = kwargs[key]
 
         old_response = None
         response = None
@@ -897,7 +897,7 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
             response = self.mgmt_client.express_route_circuit_peerings.create_or_update(resource_group_name=self.resource_group,
                                                                                         circuit_name=self.circuit_name,
                                                                                         peering_name=self.peering_name,
-                                                                                        peering_parameters=self.peering_parameters)
+                                                                                        peering_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

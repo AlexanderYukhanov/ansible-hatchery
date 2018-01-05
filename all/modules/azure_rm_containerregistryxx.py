@@ -259,7 +259,7 @@ class AzureRMRegistries(AzureRMModuleBase):
             else:
                 response = self.mgmt_client.registries.update(resource_group_name=self.resource_group,
                                                               registry_name=self.registry_name,
-                                                              registry_update_parameters=self.registry_update_parameters)
+                                                              registry_update_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

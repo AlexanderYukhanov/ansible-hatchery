@@ -769,7 +769,8 @@
             "resource_group_name",
             "registry_name",
             "replication_name",
-            "replication_update_parameters"
+            "replication_update_parameters",
+            "location"
           ]
         },
         {
@@ -1098,7 +1099,7 @@
         },
         {
           "Name": "webhook_create_parameters",
-          "NameAlt": "webhook_create_parameters",
+          "NameAlt": "parameters",
           "Disposition": "dictionary",
           "Type": "dict",
           "ValueIfFalse": null,
@@ -1152,7 +1153,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The service URI for the webhook to post notifications.",
           "DefaultValue": null,
@@ -1257,7 +1258,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": true,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The list of actions that trigger the webhook to post notifications.",
           "DefaultValue": null,

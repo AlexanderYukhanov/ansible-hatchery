@@ -415,7 +415,7 @@ class AzureRMSubnets(AzureRMModuleBase):
         self.resource_group = None
         self.virtual_network_name = None
         self.subnet_name = None
-        self.subnet_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -434,23 +434,23 @@ class AzureRMSubnets(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.subnet_parameters["id"] = kwargs[key]
+                    self.parameters["id"] = kwargs[key]
                 elif key == "address_prefix":
-                    self.subnet_parameters["address_prefix"] = kwargs[key]
+                    self.parameters["address_prefix"] = kwargs[key]
                 elif key == "network_security_group":
-                    self.subnet_parameters["network_security_group"] = kwargs[key]
+                    self.parameters["network_security_group"] = kwargs[key]
                 elif key == "route_table":
-                    self.subnet_parameters["route_table"] = kwargs[key]
+                    self.parameters["route_table"] = kwargs[key]
                 elif key == "service_endpoints":
-                    self.subnet_parameters["service_endpoints"] = kwargs[key]
+                    self.parameters["service_endpoints"] = kwargs[key]
                 elif key == "resource_navigation_links":
-                    self.subnet_parameters["resource_navigation_links"] = kwargs[key]
+                    self.parameters["resource_navigation_links"] = kwargs[key]
                 elif key == "provisioning_state":
-                    self.subnet_parameters["provisioning_state"] = kwargs[key]
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.subnet_parameters["name"] = kwargs[key]
+                    self.parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.subnet_parameters["etag"] = kwargs[key]
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None
@@ -524,7 +524,7 @@ class AzureRMSubnets(AzureRMModuleBase):
             response = self.mgmt_client.subnets.create_or_update(resource_group_name=self.resource_group,
                                                                  virtual_network_name=self.virtual_network_name,
                                                                  subnet_name=self.subnet_name,
-                                                                 subnet_parameters=self.subnet_parameters)
+                                                                 subnet_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

@@ -249,7 +249,7 @@ class AzureRMSecurityRules(AzureRMModuleBase):
         self.resource_group = None
         self.network_security_group_name = None
         self.security_rule_name = None
-        self.security_rule_parameters = dict()
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -268,58 +268,58 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "id":
-                    self.security_rule_parameters["id"] = kwargs[key]
+                    self.parameters["id"] = kwargs[key]
                 elif key == "description":
-                    self.security_rule_parameters["description"] = kwargs[key]
+                    self.parameters["description"] = kwargs[key]
                 elif key == "protocol":
                     ev = kwargs[key]
                     if ev == 'tcp':
                         ev = 'Tcp'
                     elif ev == 'udp':
                         ev = 'Udp'
-                    self.security_rule_parameters["protocol"] = ev
+                    self.parameters["protocol"] = ev
                 elif key == "source_port_range":
-                    self.security_rule_parameters["source_port_range"] = kwargs[key]
+                    self.parameters["source_port_range"] = kwargs[key]
                 elif key == "destination_port_range":
-                    self.security_rule_parameters["destination_port_range"] = kwargs[key]
+                    self.parameters["destination_port_range"] = kwargs[key]
                 elif key == "source_address_prefix":
-                    self.security_rule_parameters["source_address_prefix"] = kwargs[key]
+                    self.parameters["source_address_prefix"] = kwargs[key]
                 elif key == "source_address_prefixes":
-                    self.security_rule_parameters["source_address_prefixes"] = kwargs[key]
+                    self.parameters["source_address_prefixes"] = kwargs[key]
                 elif key == "source_application_security_groups":
-                    self.security_rule_parameters["source_application_security_groups"] = kwargs[key]
+                    self.parameters["source_application_security_groups"] = kwargs[key]
                 elif key == "destination_address_prefix":
-                    self.security_rule_parameters["destination_address_prefix"] = kwargs[key]
+                    self.parameters["destination_address_prefix"] = kwargs[key]
                 elif key == "destination_address_prefixes":
-                    self.security_rule_parameters["destination_address_prefixes"] = kwargs[key]
+                    self.parameters["destination_address_prefixes"] = kwargs[key]
                 elif key == "destination_application_security_groups":
-                    self.security_rule_parameters["destination_application_security_groups"] = kwargs[key]
+                    self.parameters["destination_application_security_groups"] = kwargs[key]
                 elif key == "source_port_ranges":
-                    self.security_rule_parameters["source_port_ranges"] = kwargs[key]
+                    self.parameters["source_port_ranges"] = kwargs[key]
                 elif key == "destination_port_ranges":
-                    self.security_rule_parameters["destination_port_ranges"] = kwargs[key]
+                    self.parameters["destination_port_ranges"] = kwargs[key]
                 elif key == "access":
                     ev = kwargs[key]
                     if ev == 'allow':
                         ev = 'Allow'
                     elif ev == 'deny':
                         ev = 'Deny'
-                    self.security_rule_parameters["access"] = ev
+                    self.parameters["access"] = ev
                 elif key == "priority":
-                    self.security_rule_parameters["priority"] = kwargs[key]
+                    self.parameters["priority"] = kwargs[key]
                 elif key == "direction":
                     ev = kwargs[key]
                     if ev == 'inbound':
                         ev = 'Inbound'
                     elif ev == 'outbound':
                         ev = 'Outbound'
-                    self.security_rule_parameters["direction"] = ev
+                    self.parameters["direction"] = ev
                 elif key == "provisioning_state":
-                    self.security_rule_parameters["provisioning_state"] = kwargs[key]
+                    self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
-                    self.security_rule_parameters["name"] = kwargs[key]
+                    self.parameters["name"] = kwargs[key]
                 elif key == "etag":
-                    self.security_rule_parameters["etag"] = kwargs[key]
+                    self.parameters["etag"] = kwargs[key]
 
         old_response = None
         response = None
@@ -393,7 +393,7 @@ class AzureRMSecurityRules(AzureRMModuleBase):
             response = self.mgmt_client.security_rules.create_or_update(resource_group_name=self.resource_group,
                                                                         network_security_group_name=self.network_security_group_name,
                                                                         security_rule_name=self.security_rule_name,
-                                                                        security_rule_parameters=self.security_rule_parameters)
+                                                                        security_rule_parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
