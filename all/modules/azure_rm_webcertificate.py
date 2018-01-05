@@ -39,6 +39,7 @@ options:
     host_names:
         description:
             - Host names the certificate applies to.
+        type: list
     pfx_blob:
         description:
             - Pfx blob.
@@ -58,7 +59,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

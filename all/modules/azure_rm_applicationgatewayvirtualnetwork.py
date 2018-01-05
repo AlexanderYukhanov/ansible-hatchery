@@ -43,6 +43,7 @@ options:
             address_prefixes:
                 description:
                     - A list of address blocks reserved for this virtual network in CIDR notation.
+                type: list
     dhcp_options:
         description:
             - The dhcpOptions that contains an array of DNS servers available to VMs deployed in the virtual network.
@@ -50,9 +51,11 @@ options:
             dns_servers:
                 description:
                     - The list of DNS servers IP addresses.
+                type: list
     subnets:
         description:
             - A list of subnets in a Virtual Network.
+        type: list
         suboptions:
             id:
                 description:
@@ -73,6 +76,7 @@ options:
                     security_rules:
                         description:
                             - A collection of security rules of the network security group.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -99,9 +103,11 @@ options:
                             source_address_prefixes:
                                 description:
                                     - The CIDR or source IP ranges.
+                                type: list
                             source_application_security_groups:
                                 description:
                                     - The application security group specified as source.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -116,9 +122,11 @@ options:
                             destination_address_prefixes:
                                 description:
                                     - The destination address prefixes. CIDR or destination IP ranges.
+                                type: list
                             destination_application_security_groups:
                                 description:
                                     - The application security group specified as destination.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -129,9 +137,11 @@ options:
                             source_port_ranges:
                                 description:
                                     - The source port ranges.
+                                type: list
                             destination_port_ranges:
                                 description:
                                     - The destination port ranges.
+                                type: list
                             access:
                                 description:
                                     - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
@@ -159,6 +169,7 @@ options:
                     default_security_rules:
                         description:
                             - The default security rules of network security group.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -185,9 +196,11 @@ options:
                             source_address_prefixes:
                                 description:
                                     - The CIDR or source IP ranges.
+                                type: list
                             source_application_security_groups:
                                 description:
                                     - The application security group specified as source.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -202,9 +215,11 @@ options:
                             destination_address_prefixes:
                                 description:
                                     - The destination address prefixes. CIDR or destination IP ranges.
+                                type: list
                             destination_application_security_groups:
                                 description:
                                     - The application security group specified as destination.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -215,9 +230,11 @@ options:
                             source_port_ranges:
                                 description:
                                     - The source port ranges.
+                                type: list
                             destination_port_ranges:
                                 description:
                                     - The destination port ranges.
+                                type: list
                             access:
                                 description:
                                     - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
@@ -264,6 +281,7 @@ options:
                     routes:
                         description:
                             - Collection of routes contained within a route table.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -302,6 +320,7 @@ options:
             service_endpoints:
                 description:
                     - An array of service endpoints.
+                type: list
                 suboptions:
                     service:
                         description:
@@ -309,12 +328,14 @@ options:
                     locations:
                         description:
                             - A list of locations.
+                        type: list
                     provisioning_state:
                         description:
                             - The provisioning state of the resource.
             resource_navigation_links:
                 description:
                     - Gets an array of references to the external resources using subnet.
+                type: list
                 suboptions:
                     id:
                         description:
@@ -340,6 +361,7 @@ options:
     virtual_network_peerings:
         description:
             - A list of peerings in a Virtual Network.
+        type: list
         suboptions:
             id:
                 description:
@@ -373,6 +395,7 @@ options:
                     address_prefixes:
                         description:
                             - A list of address blocks reserved for this virtual network in CIDR notation.
+                        type: list
             peering_state:
                 description:
                     - The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected).
@@ -404,7 +427,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

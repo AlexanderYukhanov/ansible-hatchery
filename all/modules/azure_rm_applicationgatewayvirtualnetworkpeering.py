@@ -66,6 +66,7 @@ options:
             address_prefixes:
                 description:
                     - A list of address blocks reserved for this virtual network in CIDR notation.
+                type: list
     peering_state:
         description:
             - The status of the virtual network peering. Possible values are C(Initiated), C(Connected), and C(Disconnected).
@@ -82,7 +83,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

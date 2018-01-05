@@ -61,6 +61,7 @@ options:
         description:
             - List of partner server information for the failover group.
         required: True
+        type: list
         suboptions:
             id:
                 description:
@@ -69,10 +70,10 @@ options:
     databases:
         description:
             - List of databases in the failover group.
+        type: list
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

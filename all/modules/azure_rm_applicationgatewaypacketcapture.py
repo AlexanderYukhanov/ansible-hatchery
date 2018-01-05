@@ -65,6 +65,7 @@ options:
     filters:
         description:
             -
+        type: list
         suboptions:
             protocol:
                 description:
@@ -91,7 +92,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

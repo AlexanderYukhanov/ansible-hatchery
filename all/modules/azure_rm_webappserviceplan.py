@@ -109,9 +109,11 @@ options:
             locations:
                 description:
                     - Locations of the SKU.
+                type: list
             capabilities:
                 description:
                     - Capabilities of the SKU, e.g., is traffic manager enabled?
+                type: list
                 suboptions:
                     name:
                         description:
@@ -125,7 +127,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

@@ -58,9 +58,11 @@ options:
     source_address_prefixes:
         description:
             - The CIDR or source IP ranges.
+        type: list
     source_application_security_groups:
         description:
             - The application security group specified as source.
+        type: list
         suboptions:
             id:
                 description:
@@ -75,9 +77,11 @@ options:
     destination_address_prefixes:
         description:
             - The destination address prefixes. CIDR or destination IP ranges.
+        type: list
     destination_application_security_groups:
         description:
             - The application security group specified as destination.
+        type: list
         suboptions:
             id:
                 description:
@@ -88,9 +92,11 @@ options:
     source_port_ranges:
         description:
             - The source port ranges.
+        type: list
     destination_port_ranges:
         description:
             - The destination port ranges.
+        type: list
     access:
         description:
             - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
@@ -118,7 +124,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

@@ -43,6 +43,7 @@ options:
             address_prefixes:
                 description:
                     - A list of address blocks reserved for this virtual network in CIDR notation.
+                type: list
     gateway_ip_address:
         description:
             - IP address of local network gateway.
@@ -68,7 +69,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

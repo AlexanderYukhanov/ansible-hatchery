@@ -53,6 +53,7 @@ options:
             ip_configurations:
                 description:
                     - IP configurations for virtual network gateway.
+                type: list
                 suboptions:
                     id:
                         description:
@@ -129,9 +130,11 @@ options:
                             address_prefixes:
                                 description:
                                     - A list of address blocks reserved for this virtual network in CIDR notation.
+                                type: list
                     vpn_client_root_certificates:
                         description:
                             - VpnClientRootCertificate for virtual network gateway.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -149,6 +152,7 @@ options:
                     vpn_client_revoked_certificates:
                         description:
                             - VpnClientRevokedCertificate for Virtual network gateway.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -165,6 +169,7 @@ options:
                     vpn_client_protocols:
                         description:
                             - VpnClientProtocols for Virtual network gateway.
+                        type: list
                     radius_server_address:
                         description:
                             - The radius server address property of the VirtualNetworkGateway resource for vpn client connection.
@@ -203,6 +208,7 @@ options:
             ip_configurations:
                 description:
                     - IP configurations for virtual network gateway.
+                type: list
                 suboptions:
                     id:
                         description:
@@ -279,9 +285,11 @@ options:
                             address_prefixes:
                                 description:
                                     - A list of address blocks reserved for this virtual network in CIDR notation.
+                                type: list
                     vpn_client_root_certificates:
                         description:
                             - VpnClientRootCertificate for virtual network gateway.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -299,6 +307,7 @@ options:
                     vpn_client_revoked_certificates:
                         description:
                             - VpnClientRevokedCertificate for Virtual network gateway.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -315,6 +324,7 @@ options:
                     vpn_client_protocols:
                         description:
                             - VpnClientProtocols for Virtual network gateway.
+                        type: list
                     radius_server_address:
                         description:
                             - The radius server address property of the VirtualNetworkGateway resource for vpn client connection.
@@ -357,6 +367,7 @@ options:
                     address_prefixes:
                         description:
                             - A list of address blocks reserved for this virtual network in CIDR notation.
+                        type: list
             gateway_ip_address:
                 description:
                     - IP address of local network gateway.
@@ -406,6 +417,7 @@ options:
     ipsec_policies:
         description:
             - The IPSec Policies to be considered by this connection.
+        type: list
         suboptions:
             sa_life_time_seconds:
                 description:
@@ -454,7 +466,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

@@ -42,20 +42,23 @@ options:
     properties_permissions:
         description:
             - Role definition permissions.
+        type: list
         suboptions:
             actions:
                 description:
                     - Allowed actions.
+                type: list
             not_actions:
                 description:
                     - Denied actions.
+                type: list
     properties_assignable_scopes:
         description:
             - Role definition assignable scopes.
+        type: list
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

@@ -42,6 +42,7 @@ options:
     host_name_ssl_states:
         description:
             - "Hostname SSL states are used to manage the SSL bindings for app's hostnames."
+        type: list
         suboptions:
             name:
                 description:
@@ -80,6 +81,7 @@ options:
             default_documents:
                 description:
                     - Default documents.
+                type: list
             net_framework_version:
                 description:
                     - .NET Framework version.
@@ -122,6 +124,7 @@ options:
             app_settings:
                 description:
                     - Application settings.
+                type: list
                 suboptions:
                     name:
                         description:
@@ -132,6 +135,7 @@ options:
             connection_strings:
                 description:
                     - Connection strings.
+                type: list
                 suboptions:
                     name:
                         description:
@@ -146,6 +150,7 @@ options:
             handler_mappings:
                 description:
                     - Handler mappings.
+                type: list
                 suboptions:
                     extension:
                         description:
@@ -191,6 +196,7 @@ options:
             virtual_applications:
                 description:
                     - Virtual applications.
+                type: list
                 suboptions:
                     virtual_path:
                         description:
@@ -204,6 +210,7 @@ options:
                     virtual_directories:
                         description:
                             - Virtual directories for virtual application.
+                        type: list
                         suboptions:
                             virtual_path:
                                 description:
@@ -222,6 +229,7 @@ options:
                     ramp_up_rules:
                         description:
                             - List of ramp-up rules.
+                        type: list
                         suboptions:
                             action_host_name:
                                 description:
@@ -292,6 +300,7 @@ options:
                             status_codes:
                                 description:
                                     - A rule based on status codes.
+                                type: list
                                 suboptions:
                                     status:
                                         description:
@@ -356,6 +365,7 @@ options:
                         description:
                             - "Gets or sets the list of origins that should be allowed to make cross-origin\ncalls (for example: http://example.com:12345). U
                                se '*' to allow all."
+                        type: list
             push:
                 description:
                     - Push endpoint settings.
@@ -394,6 +404,7 @@ options:
             ip_security_restrictions:
                 description:
                     - IP security restrictions.
+                type: list
                 suboptions:
                     ip_address:
                         description:
@@ -529,7 +540,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

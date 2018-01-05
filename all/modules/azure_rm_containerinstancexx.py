@@ -36,6 +36,7 @@ options:
     containers:
         description:
             - The containers within the container group.
+        type: list
         suboptions:
             name:
                 description:
@@ -48,9 +49,11 @@ options:
             command:
                 description:
                     - The commands to execute within the container instance in exec form.
+                type: list
             ports:
                 description:
                     - The exposed ports on the container instance.
+                type: list
                 suboptions:
                     protocol:
                         description:
@@ -63,6 +66,7 @@ options:
             environment_variables:
                 description:
                     - The environment variables to set in the container instance.
+                type: list
                 suboptions:
                     name:
                         description:
@@ -103,6 +107,7 @@ options:
             volume_mounts:
                 description:
                     - The volume mounts available to the container instance.
+                type: list
                 suboptions:
                     name:
                         description:
@@ -118,6 +123,7 @@ options:
     image_registry_credentials:
         description:
             - The image registry credentials by which the container group is created from.
+        type: list
         suboptions:
             server:
                 description:
@@ -143,6 +149,7 @@ options:
                 description:
                     - The list of ports exposed on the container group.
                 required: True
+                type: list
                 suboptions:
                     protocol:
                         description:
@@ -166,6 +173,7 @@ options:
     volumes:
         description:
             - The list of volumes that can be mounted by containers in this container group.
+        type: list
         suboptions:
             name:
                 description:
@@ -195,7 +203,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

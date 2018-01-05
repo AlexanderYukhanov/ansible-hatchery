@@ -78,6 +78,7 @@ options:
         description:
             - Description of worker pools with worker size IDs, VM sizes, and number of workers in each pool.
         required: True
+        type: list
         suboptions:
             worker_size_id:
                 description:
@@ -101,6 +102,7 @@ options:
     network_access_control_list:
         description:
             - Access control list for controlling traffic to the App Service Environment.
+        type: list
         suboptions:
             action:
                 description:
@@ -132,6 +134,7 @@ options:
     cluster_settings:
         description:
             - Custom settings for changing the behavior of the App Service Environment.
+        type: list
         suboptions:
             name:
                 description:
@@ -142,10 +145,10 @@ options:
     user_whitelisted_ip_ranges:
         description:
             - User added ip ranges to whitelist on ASE db
+        type: list
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

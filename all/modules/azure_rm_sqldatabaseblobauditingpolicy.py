@@ -55,6 +55,7 @@ options:
     audit_actions_and_groups:
         description:
             - Specifies the Actions and Actions-Groups to audit.
+        type: list
     storage_account_subscription_id:
         description:
             - Specifies the blob storage subscription Id.
@@ -64,7 +65,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

@@ -286,6 +286,7 @@ options:
                 description:
                     - "List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code> re
                        source."
+                type: list
             agreed_by:
                 description:
                     - Client IP address.
@@ -309,7 +310,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

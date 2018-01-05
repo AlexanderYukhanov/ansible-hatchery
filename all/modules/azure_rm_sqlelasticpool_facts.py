@@ -39,7 +39,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"
@@ -126,10 +125,10 @@ class AzureRMElasticPoolsFacts(AzureRMModuleBase):
                 self.elastic_pool_name is not None and
                 self.filter is not None):
             self.results['ansible_facts']['list_metrics'] = self.list_metrics()
-        #elif (self.resource_group is not None and
-        #      self.server_name is not None and
-        #      self.elastic_pool_name is not None):
-        #    self.results['ansible_facts']['list_metric_definitions'] = self.list_metric_definitions()
+        elif (self.resource_group is not None and
+              self.server_name is not None and
+              self.elastic_pool_name is not None):
+            self.results['ansible_facts']['list_metric_definitions'] = self.list_metric_definitions()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.elastic_pool_name is not None):

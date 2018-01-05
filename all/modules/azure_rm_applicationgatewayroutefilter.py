@@ -39,6 +39,7 @@ options:
     rules:
         description:
             - Collection of RouteFilterRules contained within a route filter.
+        type: list
         suboptions:
             id:
                 description:
@@ -56,6 +57,7 @@ options:
                 description:
                     - The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]
                 required: True
+                type: list
             name:
                 description:
                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -65,6 +67,7 @@ options:
     peerings:
         description:
             - A collection of references to express route circuit peerings.
+        type: list
         suboptions:
             id:
                 description:
@@ -108,9 +111,11 @@ options:
                     advertised_public_prefixes:
                         description:
                             - The reference of AdvertisedPublicPrefixes.
+                        type: list
                     advertised_communities:
                         description:
                             - The communities of bgp peering. Spepcified for microsoft peering
+                        type: list
                     advertised_public_prefixes_state:
                         description:
                             - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configured), and
@@ -163,6 +168,7 @@ options:
                     rules:
                         description:
                             - Collection of RouteFilterRules contained within a route filter.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -180,6 +186,7 @@ options:
                                 description:
                                     - The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]
                                 required: True
+                                type: list
                             name:
                                 description:
                                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -189,6 +196,7 @@ options:
                     peerings:
                         description:
                             - A collection of references to express route circuit peerings.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -232,9 +240,11 @@ options:
                                     advertised_public_prefixes:
                                         description:
                                             - The reference of AdvertisedPublicPrefixes.
+                                        type: list
                                     advertised_communities:
                                         description:
                                             - The communities of bgp peering. Spepcified for microsoft peering
+                                        type: list
                                     advertised_public_prefixes_state:
                                         description:
                                             - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(C
@@ -287,9 +297,11 @@ options:
                                     rules:
                                         description:
                                             - Collection of RouteFilterRules contained within a route filter.
+                                        type: list
                                     peerings:
                                         description:
                                             - A collection of references to express route circuit peerings.
+                                        type: list
                             ipv6_peering_config:
                                 description:
                                     - The IPv6 peering configuration.
@@ -330,9 +342,11 @@ options:
                             advertised_public_prefixes:
                                 description:
                                     - The reference of AdvertisedPublicPrefixes.
+                                type: list
                             advertised_communities:
                                 description:
                                     - The communities of bgp peering. Spepcified for microsoft peering
+                                type: list
                             advertised_public_prefixes_state:
                                 description:
                                     - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configure
@@ -360,6 +374,7 @@ options:
                             rules:
                                 description:
                                     - Collection of RouteFilterRules contained within a route filter.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -377,6 +392,7 @@ options:
                                         description:
                                             - The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]
                                         required: True
+                                        type: list
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -386,6 +402,7 @@ options:
                             peerings:
                                 description:
                                     - A collection of references to express route circuit peerings.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -457,7 +474,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

@@ -47,6 +47,7 @@ options:
     frontend_ip_configurations:
         description:
             - Object representing the frontend IPs to be used for the load balancer
+        type: list
         suboptions:
             id:
                 description:
@@ -81,6 +82,7 @@ options:
                             security_rules:
                                 description:
                                     - A collection of security rules of the network security group.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -108,9 +110,11 @@ options:
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
+                                        type: list
                                     source_application_security_groups:
                                         description:
                                             - The application security group specified as source.
+                                        type: list
                                     destination_address_prefix:
                                         description:
                                             - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all sourc
@@ -118,15 +122,19 @@ options:
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
+                                        type: list
                                     destination_application_security_groups:
                                         description:
                                             - The application security group specified as destination.
+                                        type: list
                                     source_port_ranges:
                                         description:
                                             - The source port ranges.
+                                        type: list
                                     destination_port_ranges:
                                         description:
                                             - The destination port ranges.
+                                        type: list
                                     access:
                                         description:
                                             - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
@@ -154,6 +162,7 @@ options:
                             default_security_rules:
                                 description:
                                     - The default security rules of network security group.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -181,9 +190,11 @@ options:
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
+                                        type: list
                                     source_application_security_groups:
                                         description:
                                             - The application security group specified as source.
+                                        type: list
                                     destination_address_prefix:
                                         description:
                                             - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all sourc
@@ -191,15 +202,19 @@ options:
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
+                                        type: list
                                     destination_application_security_groups:
                                         description:
                                             - The application security group specified as destination.
+                                        type: list
                                     source_port_ranges:
                                         description:
                                             - The source port ranges.
+                                        type: list
                                     destination_port_ranges:
                                         description:
                                             - The destination port ranges.
+                                        type: list
                                     access:
                                         description:
                                             - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
@@ -246,6 +261,7 @@ options:
                             routes:
                                 description:
                                     - Collection of routes contained within a route table.
+                                type: list
                                 suboptions:
                                     id:
                                         description:
@@ -284,6 +300,7 @@ options:
                     service_endpoints:
                         description:
                             - An array of service endpoints.
+                        type: list
                         suboptions:
                             service:
                                 description:
@@ -291,12 +308,14 @@ options:
                             locations:
                                 description:
                                     - A list of locations.
+                                type: list
                             provisioning_state:
                                 description:
                                     - The provisioning state of the resource.
                     resource_navigation_links:
                         description:
                             - Gets an array of references to the external resources using subnet.
+                        type: list
                         suboptions:
                             id:
                                 description:
@@ -381,6 +400,7 @@ options:
                     zones:
                         description:
                             - A list of availability zones denoting the IP allocated for the resource needs to come from.
+                        type: list
             provisioning_state:
                 description:
                     - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
@@ -393,9 +413,11 @@ options:
             zones:
                 description:
                     - A list of availability zones denoting the IP allocated for the resource needs to come from.
+                type: list
     backend_address_pools:
         description:
             - Collection of backend address pools used by a load balancer
+        type: list
         suboptions:
             id:
                 description:
@@ -412,6 +434,7 @@ options:
     load_balancing_rules:
         description:
             - Object collection representing the load balancing rules Gets the provisioning
+        type: list
         suboptions:
             id:
                 description:
@@ -479,6 +502,7 @@ options:
     probes:
         description:
             - Collection of probe objects used in the load balancer
+        type: list
         suboptions:
             id:
                 description:
@@ -520,6 +544,7 @@ options:
             - "Collection of inbound NAT Rules used by a load balancer. Defining inbound NAT rules on your load balancer is mutually exclusive with defining
                an inbound NAT pool. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machin
                es cannot reference an Inbound NAT pool. They have to reference individual inbound NAT rules."
+        type: list
         suboptions:
             id:
                 description:
@@ -566,6 +591,7 @@ options:
                 automatically for each NIC associated with the Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Loa
                d Balancer is mutually exclusive with defining inbound Nat rules. Inbound NAT pools are referenced from virtual machine scale sets. NICs that
                are associated with individual virtual machines cannot reference an inbound NAT pool. They have to reference individual inbound NAT rules."
+        type: list
         suboptions:
             id:
                 description:
@@ -608,6 +634,7 @@ options:
     outbound_nat_rules:
         description:
             - The outbound NAT rules.
+        type: list
         suboptions:
             id:
                 description:
@@ -618,6 +645,7 @@ options:
             frontend_ip_configurations:
                 description:
                     - The Frontend IP addresses of the load balancer.
+                type: list
                 suboptions:
                     id:
                         description:
@@ -651,7 +679,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

@@ -87,10 +87,10 @@ options:
     zones:
         description:
             - A list of availability zones denoting the IP allocated for the resource needs to come from.
+        type: list
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

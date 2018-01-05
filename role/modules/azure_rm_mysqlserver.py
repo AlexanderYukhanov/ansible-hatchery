@@ -60,6 +60,8 @@ options:
     enforce_ssl:
         description:
             - Enable SSL enforcement.
+        type: bool
+        default: False
     admin_username:
         description:
             - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
@@ -69,7 +71,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

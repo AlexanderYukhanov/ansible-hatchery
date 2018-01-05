@@ -61,10 +61,12 @@ options:
             tables:
                 description:
                     - List of tables in sync group schema.
+                type: list
                 suboptions:
                     columns:
                         description:
                             - List of columns in sync group schema.
+                        type: list
                         suboptions:
                             quoted_name:
                                 description:
@@ -84,7 +86,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"

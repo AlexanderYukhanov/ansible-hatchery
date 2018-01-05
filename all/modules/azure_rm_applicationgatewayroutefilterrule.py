@@ -50,6 +50,7 @@ options:
         description:
             - The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]
         required: True
+        type: list
     name:
         description:
             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -59,7 +60,6 @@ options:
 
 extends_documentation_fragment:
     - azure
-    - azure_tags
 
 author:
     - "Zim Kalinowski (@zikalino)"
