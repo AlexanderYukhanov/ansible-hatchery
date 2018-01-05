@@ -107,7 +107,7 @@
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "SkuName",
-                "test:default": "SkuName"
+                "test:default": "MYSQLB50"
               },
               "SubOptions": [],
               "RequiredCount": 0,
