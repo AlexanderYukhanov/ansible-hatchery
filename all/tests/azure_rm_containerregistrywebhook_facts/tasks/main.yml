@@ -21,6 +21,8 @@
     webhook_name: webhook{{ rpfx }}
     location: eastus2
     service_uri: http://serviceuri.com
+    actions:
+      - push
 
 - name: Gather facts Webhooks
   azure_rm_containerregistrywebhook_facts:
