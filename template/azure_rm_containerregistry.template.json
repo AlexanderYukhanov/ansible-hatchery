@@ -769,7 +769,6 @@
             "resource_group_name",
             "registry_name",
             "replication_name",
-            "replication_update_parameters",
             "location"
           ]
         },
