@@ -5284,8 +5284,8 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_webwebapp",
-      "ModuleNameAlt": "azure_rm_webwebapp",
+      "ModuleName": "azure_rm_webapp",
+      "ModuleNameAlt": "azure_rm_webapp",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -10822,8 +10822,8 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_webwebapp_facts",
-      "ModuleNameAlt": "azure_rm_webwebapp_facts",
+      "ModuleName": "azure_rm_webapp_facts",
+      "ModuleNameAlt": "azure_rm_webapp_facts",
       "Options": [
         {
           "Name": "resource_group_name",
