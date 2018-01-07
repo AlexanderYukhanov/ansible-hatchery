@@ -297,7 +297,7 @@
           "Description": "The resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry",
           "SubFields": []
         },
         {
@@ -306,7 +306,7 @@
           "Description": "The name of the resource.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "myRegistry",
           "SubFields": []
         },
         {
@@ -315,7 +315,7 @@
           "Description": "The type of the resource.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.ContainerRegistry/registries",
           "SubFields": []
         },
         {
@@ -324,7 +324,7 @@
           "Description": "The location of the resource. This cannot be changed after the resource is created.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "westus",
           "SubFields": []
         },
         {
@@ -333,7 +333,7 @@
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
-          "SampleValue": "tags",
+          "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
           "SubFields": []
         },
         {
@@ -350,7 +350,7 @@
               "Description": "The SKU name of the container registry. Required for registry creation. Possible values include: 'Classic', 'Basic', 'Standard', 'Premium'",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "name",
+              "SampleValue": "Standard",
               "SubFields": []
             },
             {
@@ -359,7 +359,7 @@
               "Description": "The SKU tier based on the SKU name. Possible values include: 'Classic', 'Basic', 'Standard', 'Premium'",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "tier",
+              "SampleValue": "Standard",
               "SubFields": []
             }
           ]
@@ -793,7 +793,7 @@
           "Description": "The resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication",
           "SubFields": []
         },
         {
@@ -802,7 +802,7 @@
           "Description": "The name of the resource.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "myReplication",
           "SubFields": []
         },
         {
@@ -811,7 +811,7 @@
           "Description": "The type of the resource.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.ContainerRegistry/registries/replications",
           "SubFields": []
         },
         {
@@ -820,7 +820,7 @@
           "Description": "The location of the resource. This cannot be changed after the resource is created.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "eastus",
           "SubFields": []
         },
         {
@@ -829,7 +829,7 @@
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
-          "SampleValue": "tags",
+          "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
           "SubFields": []
         },
         {
@@ -1339,7 +1339,7 @@
           "Description": "The resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook",
           "SubFields": []
         },
         {
@@ -1348,7 +1348,7 @@
           "Description": "The name of the resource.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "myWebhook",
           "SubFields": []
         },
         {
@@ -1357,7 +1357,7 @@
           "Description": "The type of the resource.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.ContainerRegistry/registries/webhooks",
           "SubFields": []
         },
         {
@@ -1366,7 +1366,7 @@
           "Description": "The location of the resource. This cannot be changed after the resource is created.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "westus",
           "SubFields": []
         },
         {
@@ -1375,7 +1375,7 @@
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
-          "SampleValue": "tags",
+          "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
           "SubFields": []
         },
         {

@@ -86,7 +86,7 @@ id:
         - Resource ID.
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-4799/providers/Microsoft.Sql/servers/blobauditingtest-6440/databases/testdb
 state:
     description:
         - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(Enabl

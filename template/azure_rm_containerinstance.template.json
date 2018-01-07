@@ -1181,7 +1181,7 @@
           "Description": "The resource id.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers",
           "SubFields": []
         },
         {
@@ -1190,7 +1190,7 @@
           "Description": "The resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "mycontainers",
           "SubFields": []
         },
         {
@@ -1199,7 +1199,7 @@
           "Description": "The resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.ContainerInstance/containerGroups",
           "SubFields": []
         },
         {
@@ -1208,7 +1208,7 @@
           "Description": "The resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "westus",
           "SubFields": []
         },
         {

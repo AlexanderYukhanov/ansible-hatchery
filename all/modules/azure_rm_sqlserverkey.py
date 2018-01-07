@@ -76,7 +76,7 @@ id:
         - Resource ID.
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901
 '''
 
 import time

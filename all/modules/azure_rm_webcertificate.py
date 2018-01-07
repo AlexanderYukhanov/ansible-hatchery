@@ -79,7 +79,7 @@ id:
         - Resource Id.
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282
 '''
 
 import time

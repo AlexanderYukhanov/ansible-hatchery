@@ -109,7 +109,7 @@ id:
         - Resource ID.
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-6852/databases/sqlcrudtest-331/dataMaskingPolicies/Default/rules/
 '''
 
 import time

@@ -67,7 +67,7 @@ id:
         - Resource ID
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler
 '''
 
 import time

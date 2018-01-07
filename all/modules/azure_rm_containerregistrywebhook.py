@@ -79,7 +79,7 @@ id:
         - The resource ID.
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook
 status:
     description:
         - The status of the webhook at the time the operation was called. Possible values include: C(enabled), C(disabled)

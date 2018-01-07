@@ -62,7 +62,7 @@ id:
         - Resource ID.
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault
 '''
 
 import time

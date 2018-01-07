@@ -201,7 +201,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default",
           "SubFields": []
         },
         {
@@ -210,7 +210,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "Default",
           "SubFields": []
         },
         {
@@ -219,7 +219,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
           "SubFields": []
         },
         {
@@ -228,7 +228,7 @@
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Japan East",
           "SubFields": []
         },
         {
@@ -550,7 +550,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault",
           "SubFields": []
         },
         {
@@ -559,7 +559,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "RegisteredVault",
           "SubFields": []
         },
         {
@@ -568,7 +568,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
           "SubFields": []
         },
         {
@@ -577,7 +577,7 @@
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Japan East",
           "SubFields": []
         },
         {
@@ -1277,7 +1277,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default",
           "SubFields": []
         },
         {
@@ -1286,7 +1286,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "default",
           "SubFields": []
         },
         {
@@ -1295,7 +1295,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/connectionPolicies",
           "SubFields": []
         },
         {
@@ -1313,7 +1313,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "West US",
           "SubFields": []
         },
         {
@@ -1862,7 +1862,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-4799/providers/Microsoft.Sql/servers/securityalert-6440/databases/testdb",
           "SubFields": []
         },
         {
@@ -1871,7 +1871,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "default",
           "SubFields": []
         },
         {
@@ -1880,7 +1880,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/securityAlertPolicies",
           "SubFields": []
         },
         {
@@ -1898,7 +1898,7 @@
           "Description": "Resource kind.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "V12",
           "SubFields": []
         },
         {
@@ -2323,7 +2323,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default",
           "SubFields": []
         },
         {
@@ -2332,7 +2332,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "Default",
           "SubFields": []
         },
         {
@@ -2341,7 +2341,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/dataMaskingPolicies",
           "SubFields": []
         },
         {
@@ -2386,7 +2386,7 @@
           "Description": "The location of the data masking policy.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Central US",
           "SubFields": []
         },
         {
@@ -3023,7 +3023,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-6852/databases/sqlcrudtest-331/dataMaskingPolicies/Default/rules/",
           "SubFields": []
         },
         {
@@ -3041,7 +3041,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/dataMaskingPolicies/rules",
           "SubFields": []
         },
         {
@@ -3158,7 +3158,7 @@
           "Description": "The location of the data masking rule.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Central US",
           "SubFields": []
         },
         {
@@ -3497,7 +3497,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-5370",
           "SubFields": []
         },
         {
@@ -3506,7 +3506,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "firewallrulecrudtest-5370",
           "SubFields": []
         },
         {
@@ -3515,7 +3515,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/firewallRules",
           "SubFields": []
         },
         {
@@ -3524,7 +3524,7 @@
           "Description": "Kind of server that contains this firewall rule.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "v12.0",
           "SubFields": []
         },
         {
@@ -3533,7 +3533,7 @@
           "Description": "Location of the server that contains this firewall rule.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Japan East",
           "SubFields": []
         },
         {
@@ -3881,7 +3881,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default",
           "SubFields": []
         },
         {
@@ -3890,7 +3890,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "Default",
           "SubFields": []
         },
         {
@@ -3899,7 +3899,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/geoBackupPolicies",
           "SubFields": []
         },
         {
@@ -4777,7 +4777,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdb",
           "SubFields": []
         },
         {
@@ -4786,7 +4786,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "testdb",
           "SubFields": []
         },
         {
@@ -4795,7 +4795,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases",
           "SubFields": []
         },
         {
@@ -4813,7 +4813,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Japan East",
           "SubFields": []
         },
         {
@@ -4822,7 +4822,7 @@
           "Description": "Kind of database.  This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "v12.0,user",
           "SubFields": []
         },
         {
@@ -6177,7 +6177,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102",
           "SubFields": []
         },
         {
@@ -6186,7 +6186,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "sqlcrudtest-8102",
           "SubFields": []
         },
         {
@@ -6195,7 +6195,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/elasticPools",
           "SubFields": []
         },
         {
@@ -6213,7 +6213,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Japan East",
           "SubFields": []
         },
         {
@@ -6878,7 +6878,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory",
           "SubFields": []
         },
         {
@@ -6887,7 +6887,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "activeDirectory",
           "SubFields": []
         },
         {
@@ -7824,7 +7824,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "sqlcrudtest-4645",
           "SubFields": []
         },
         {
@@ -7833,7 +7833,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers",
           "SubFields": []
         },
         {
@@ -7842,7 +7842,7 @@
           "Description": "Resource tags.",
           "Type": "complex",
           "Returned": "always",
-          "SampleValue": "tags",
+          "SampleValue": "{\r\n  \"tagKey1\": \"TagValue1\"\r\n}",
           "SubFields": []
         },
         {
@@ -7851,7 +7851,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "japaneast",
           "SubFields": []
         },
         {
@@ -7897,7 +7897,7 @@
           "Description": "Kind of sql server. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "v12.0",
           "SubFields": []
         },
         {
@@ -8721,7 +8721,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current",
           "SubFields": []
         },
         {
@@ -8730,7 +8730,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "current",
           "SubFields": []
         },
         {
@@ -8739,7 +8739,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/transparentDataEncryption",
           "SubFields": []
         },
         {
@@ -8748,7 +8748,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "North Europe",
           "SubFields": []
         },
         {
@@ -9577,7 +9577,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-4799/providers/Microsoft.Sql/servers/blobauditingtest-6440/databases/testdb",
           "SubFields": []
         },
         {
@@ -9586,7 +9586,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "default",
           "SubFields": []
         },
         {
@@ -9595,7 +9595,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/auditingSettings",
           "SubFields": []
         },
         {
@@ -9604,7 +9604,7 @@
           "Description": "Resource kind.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "V12",
           "SubFields": []
         },
         {
@@ -10039,7 +10039,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current",
           "SubFields": []
         },
         {
@@ -10048,7 +10048,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "current",
           "SubFields": []
         },
         {
@@ -10057,7 +10057,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/encryptionProtector",
           "SubFields": []
         },
         {
@@ -10066,7 +10066,7 @@
           "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "azurekeyvault",
           "SubFields": []
         },
         {
@@ -10075,7 +10075,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "West US",
           "SubFields": []
         },
         {
@@ -10637,7 +10637,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test-3",
           "SubFields": []
         },
         {
@@ -10646,7 +10646,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "failover-group-test-3",
           "SubFields": []
         },
         {
@@ -10655,7 +10655,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/failoverGroups",
           "SubFields": []
         },
         {
@@ -10664,7 +10664,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Japan East",
           "SubFields": []
         },
         {
@@ -11202,7 +11202,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901",
           "SubFields": []
         },
         {
@@ -11211,7 +11211,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "sqlcrudtest-4645",
           "SubFields": []
         },
         {
@@ -11220,7 +11220,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/keys",
           "SubFields": []
         },
         {
@@ -11229,7 +11229,7 @@
           "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "azurekeyvault",
           "SubFields": []
         },
         {
@@ -11238,7 +11238,7 @@
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "Japan East",
           "SubFields": []
         },
         {
@@ -11571,7 +11571,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187",
           "SubFields": []
         },
         {
@@ -11580,7 +11580,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "syncagent",
           "SubFields": []
         },
         {
@@ -11589,7 +11589,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/syncAgents",
           "SubFields": []
         },
         {
@@ -12325,7 +12325,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187",
           "SubFields": []
         },
         {
@@ -12334,7 +12334,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "syncgroup",
           "SubFields": []
         },
         {
@@ -12343,7 +12343,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/syncGroups",
           "SubFields": []
         },
         {
@@ -13257,7 +13257,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879",
           "SubFields": []
         },
         {
@@ -13266,7 +13266,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "syncgroupcrud-4879",
           "SubFields": []
         },
         {
@@ -13275,7 +13275,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/databases/syncGroups/syncMembers",
           "SubFields": []
         },
         {
@@ -13834,7 +13834,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
           "SubFields": []
         },
         {
@@ -13843,7 +13843,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "vnet-firewall-rule",
           "SubFields": []
         },
         {
@@ -13852,7 +13852,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/virtualNetworkRules",
           "SubFields": []
         },
         {
@@ -14250,7 +14250,7 @@
           "Description": "Resource ID.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1",
           "SubFields": []
         },
         {
@@ -14259,7 +14259,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "dns-alias-name-1",
           "SubFields": []
         },
         {
@@ -14268,7 +14268,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Sql/servers/dnsAliases",
           "SubFields": []
         },
         {

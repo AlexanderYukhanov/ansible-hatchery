@@ -223,7 +223,7 @@ id:
         - The resource id.
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers
 '''
 
 import time

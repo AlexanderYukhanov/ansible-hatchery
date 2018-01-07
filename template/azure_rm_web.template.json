@@ -4456,7 +4456,7 @@
           "Description": "Resource Id.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282",
           "SubFields": []
         },
         {
@@ -4465,7 +4465,7 @@
           "Description": "Resource Name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "testc6282",
           "SubFields": []
         },
         {
@@ -4483,7 +4483,7 @@
           "Description": "Resource Location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "East US",
           "SubFields": []
         },
         {
@@ -4492,7 +4492,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Web/certificates",
           "SubFields": []
         },
         {
@@ -15454,7 +15454,7 @@
           "Description": "Resource Id.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141",
           "SubFields": []
         },
         {
@@ -15463,7 +15463,7 @@
           "Description": "Resource Name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "testsf6141",
           "SubFields": []
         },
         {
@@ -15472,7 +15472,7 @@
           "Description": "Kind of resource.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "kind",
+          "SampleValue": "app",
           "SubFields": []
         },
         {
@@ -15481,7 +15481,7 @@
           "Description": "Resource Location.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "East US",
           "SubFields": []
         },
         {
@@ -15490,7 +15490,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.Web/serverfarms",
           "SubFields": []
         },
         {
@@ -15697,7 +15697,7 @@
               "Description": "Name of the resource SKU.",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "name",
+              "SampleValue": "P1",
               "SubFields": []
             },
             {
@@ -15706,7 +15706,7 @@
               "Description": "Service tier of the resource SKU.",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "tier",
+              "SampleValue": "Premium",
               "SubFields": []
             },
             {
@@ -15715,7 +15715,7 @@
               "Description": "Size specifier of the resource SKU.",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "size",
+              "SampleValue": "P1",
               "SubFields": []
             },
             {
@@ -15724,7 +15724,7 @@
               "Description": "Family code of the resource SKU.",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "family",
+              "SampleValue": "P",
               "SubFields": []
             },
             {
@@ -15733,7 +15733,7 @@
               "Description": "Current number of instances assigned to the resource.",
               "Type": "int",
               "Returned": "always",
-              "SampleValue": "capacity",
+              "SampleValue": "1",
               "SubFields": []
             },
             {

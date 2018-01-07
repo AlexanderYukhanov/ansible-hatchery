@@ -67,7 +67,7 @@ id:
         - Resource ID
     returned: always
     type: str
-    sample: id
+    sample: /subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforPostgreSQL/servers/testserver/firewallRules/rule1
 '''
 
 import time

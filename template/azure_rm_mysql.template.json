@@ -498,7 +498,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "testserver",
           "SubFields": []
         },
         {
@@ -507,7 +507,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.DBforMySQL/servers",
           "SubFields": []
         },
         {
@@ -516,7 +516,7 @@
           "Description": "The location the resource resides in.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "location",
+          "SampleValue": "onebox",
           "SubFields": []
         },
         {
@@ -525,7 +525,7 @@
           "Description": "Application-specific metadata in the form of key-value pairs.",
           "Type": "complex",
           "Returned": "always",
-          "SampleValue": "tags",
+          "SampleValue": "{\r\n  \"elasticServer\": \"1\"\r\n}",
           "SubFields": []
         },
         {
@@ -542,7 +542,7 @@
               "Description": "The name of the sku, typically, a letter + Number code, e.g. P3.",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "name",
+              "SampleValue": "MYSQLS3M100",
               "SubFields": []
             },
             {
@@ -551,7 +551,7 @@
               "Description": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "tier",
+              "SampleValue": "Basic",
               "SubFields": []
             },
             {
@@ -560,7 +560,7 @@
               "Description": "The scale up/out capacity, representing server's compute units.",
               "Type": "int",
               "Returned": "always",
-              "SampleValue": "capacity",
+              "SampleValue": "100",
               "SubFields": []
             },
             {
@@ -944,7 +944,7 @@
           "Description": "Resource ID",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1",
           "SubFields": []
         },
         {
@@ -953,7 +953,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "rule1",
           "SubFields": []
         },
         {
@@ -962,7 +962,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.DBforMySQL/servers/firewallRules",
           "SubFields": []
         },
         {
@@ -1335,7 +1335,7 @@
           "Description": "Resource ID",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
           "SubFields": []
         },
         {
@@ -1344,7 +1344,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "vnet-firewall-rule",
           "SubFields": []
         },
         {
@@ -1353,7 +1353,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.DBforMySQL/servers/virtualNetworkRules",
           "SubFields": []
         },
         {
@@ -1735,7 +1735,7 @@
           "Description": "Resource ID",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/databases/db1",
           "SubFields": []
         },
         {
@@ -1744,7 +1744,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "db1",
           "SubFields": []
         },
         {
@@ -1753,7 +1753,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.DBforMySQL/servers/databases",
           "SubFields": []
         },
         {
@@ -2096,7 +2096,7 @@
           "Description": "Resource ID",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "id",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler",
           "SubFields": []
         },
         {
@@ -2105,7 +2105,7 @@
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "name",
+          "SampleValue": "event_scheduler",
           "SubFields": []
         },
         {
@@ -2114,7 +2114,7 @@
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "type",
+          "SampleValue": "Microsoft.DBforMySQL/servers/configurations",
           "SubFields": []
         },
         {
