@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_webwebapp
+module: azure_rm_webapp
 version_added: "2.5"
 short_description: Manage WebApps instance.
 description:
@@ -548,7 +548,7 @@ author:
 
 EXAMPLES = '''
   - name: Create (or update) WebApps
-    azure_rm_webwebapp:
+    azure_rm_webapp:
       resource_group: NOT FOUND
       name: NOT FOUND
       location: eastus

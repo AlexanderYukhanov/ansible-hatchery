@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_webwebapp_facts
+module: azure_rm_webapp_facts
 version_added: "2.5"
 short_description: Get WebApps facts.
 description:
@@ -92,7 +92,7 @@ author:
 
 EXAMPLES = '''
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       backup_id: backup_id
@@ -100,7 +100,7 @@ EXAMPLES = '''
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       namespace_name: namespace_name
@@ -108,7 +108,7 @@ EXAMPLES = '''
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
@@ -116,7 +116,7 @@ EXAMPLES = '''
       instance_id: instance_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
@@ -124,7 +124,7 @@ EXAMPLES = '''
       instance_id: instance_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
@@ -132,7 +132,7 @@ EXAMPLES = '''
       filter: filter
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
@@ -140,480 +140,480 @@ EXAMPLES = '''
       preserve_vnet: preserve_vnet
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       backup_id: backup_id
       request: request
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       namespace_name: namespace_name
       relay_name: relay_name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       instance_id: instance_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       instance_id: instance_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       details: details
       filter: filter
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       id: id
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       function_name: function_name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       instance_id: instance_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       view: view
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       filter: filter
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       format: format
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       web_job_name: web_job_name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       filter: filter
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       target_slot: target_slot
       preserve_vnet: preserve_vnet
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       id: id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       function_name: function_name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       instance_id: instance_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       view: view
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       filter: filter
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       format: format
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       web_job_name: web_job_name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       filter: filter
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       include_slots: include_slots
 
   - name: Get instance of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
   - name: List instances of WebApps
-    azure_rm_webwebapp_facts:
+    azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 '''
