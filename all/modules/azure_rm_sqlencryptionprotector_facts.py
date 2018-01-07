@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlencryptionprotector_facts
 version_added: "2.5"
-short_description: Get EncryptionProtectors facts.
+short_description: Get Encryption Protector facts.
 description:
-    - Get facts of EncryptionProtectors.
+    - Get facts of Encryption Protector.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of EncryptionProtectors
+  - name: Get instance of Encryption Protector
     azure_rm_sqlencryptionprotector_facts:
       resource_group: resource_group_name
       server_name: server_name
       encryption_protector_name: encryption_protector_name
 
-  - name: List instances of EncryptionProtectors
+  - name: List instances of Encryption Protector
     azure_rm_sqlencryptionprotector_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified EncryptionProtectors.
+        Gets facts of the specified Encryption Protector.
 
-        :return: deserialized EncryptionProtectorsinstance state dictionary
+        :return: deserialized Encryption Protectorinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified EncryptionProtectors.
+        Gets facts of the specified Encryption Protector.
 
-        :return: deserialized EncryptionProtectorsinstance state dictionary
+        :return: deserialized Encryption Protectorinstance state dictionary
         '''
         response = None
         results = False

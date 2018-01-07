@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappserviceplan_facts
 version_added: "2.5"
-short_description: Get AppServicePlans facts.
+short_description: Get App Service Plan facts.
 description:
-    - Get facts of AppServicePlans.
+    - Get facts of App Service Plan.
 
 options:
     resource_group:
@@ -61,7 +61,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
@@ -69,65 +69,65 @@ EXAMPLES = '''
       filter: filter
       top: top
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
       namespace_name: namespace_name
       relay_name: relay_name
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
       namespace_name: namespace_name
       relay_name: relay_name
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
       details: details
       filter: filter
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
       filter: filter
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
       vnet_name: vnet_name
 
-  - name: Get instance of AppServicePlans
+  - name: Get instance of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServicePlans
+  - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
 '''
@@ -244,9 +244,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_web_apps(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -266,9 +266,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_hybrid_connection_keys(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -290,9 +290,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_web_apps_by_hybrid_connection(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -314,9 +314,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_metrics(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -336,9 +336,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_usages(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -358,9 +358,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_routes_for_vnet(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -381,9 +381,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -401,9 +401,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_capabilities(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -423,9 +423,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_hybrid_connections(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -445,9 +445,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_metric_defintions(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -467,9 +467,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_vnets(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False
@@ -489,9 +489,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified AppServicePlans.
+        Gets facts of the specified App Service Plan.
 
-        :return: deserialized AppServicePlansinstance state dictionary
+        :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
         results = False

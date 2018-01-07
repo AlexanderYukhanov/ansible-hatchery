@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationroleassignment_facts
 version_added: "2.5"
-short_description: Get RoleAssignments facts.
+short_description: Get Role Assignment facts.
 description:
-    - Get facts of RoleAssignments.
+    - Get facts of Role Assignment.
 
 options:
     resource_group:
@@ -57,7 +57,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of RoleAssignments
+  - name: List instances of Role Assignment
     azure_rm_authorizationroleassignment_facts:
       resource_group: resource_group_name
       resource_provider_namespace: resource_provider_namespace
@@ -66,17 +66,17 @@ EXAMPLES = '''
       resource_name: resource_name
       filter: filter
 
-  - name: List instances of RoleAssignments
+  - name: List instances of Role Assignment
     azure_rm_authorizationroleassignment_facts:
       resource_group: resource_group_name
       filter: filter
 
-  - name: Get instance of RoleAssignments
+  - name: Get instance of Role Assignment
     azure_rm_authorizationroleassignment_facts:
       scope: scope
       role_assignment_name: role_assignment_name
 
-  - name: List instances of RoleAssignments
+  - name: List instances of Role Assignment
     azure_rm_authorizationroleassignment_facts:
       scope: scope
       filter: filter
@@ -162,9 +162,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
     def list_for_resource(self):
         '''
-        Gets facts of the specified RoleAssignments.
+        Gets facts of the specified Role Assignment.
 
-        :return: deserialized RoleAssignmentsinstance state dictionary
+        :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
         results = False
@@ -187,9 +187,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
     def list_for_resource_group(self):
         '''
-        Gets facts of the specified RoleAssignments.
+        Gets facts of the specified Role Assignment.
 
-        :return: deserialized RoleAssignmentsinstance state dictionary
+        :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
         results = False
@@ -208,9 +208,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified RoleAssignments.
+        Gets facts of the specified Role Assignment.
 
-        :return: deserialized RoleAssignmentsinstance state dictionary
+        :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
         results = False
@@ -228,9 +228,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
     def list_for_scope(self):
         '''
-        Gets facts of the specified RoleAssignments.
+        Gets facts of the specified Role Assignment.
 
-        :return: deserialized RoleAssignmentsinstance state dictionary
+        :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
         results = False

@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts RoleDefinitions
+- name: Gather facts Role Definition
   azure_rm_authorizationroledefinition_facts:
   register: output
 - name: Assert that facts are returned

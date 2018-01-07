@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationroledefinition_facts
 version_added: "2.5"
-short_description: Get RoleDefinitions facts.
+short_description: Get Role Definition facts.
 description:
-    - Get facts of RoleDefinitions.
+    - Get facts of Role Definition.
 
 options:
     scope:
@@ -40,7 +40,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of RoleDefinitions
+  - name: Get instance of Role Definition
     azure_rm_authorizationroledefinition_facts:
       scope: scope
       role_definition_id: role_definition_id
@@ -94,9 +94,9 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified RoleDefinitions.
+        Gets facts of the specified Role Definition.
 
-        :return: deserialized RoleDefinitionsinstance state dictionary
+        :return: deserialized Role Definitioninstance state dictionary
         '''
         response = None
         results = False

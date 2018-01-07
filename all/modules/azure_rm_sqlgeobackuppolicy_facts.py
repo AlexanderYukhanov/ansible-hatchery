@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlgeobackuppolicy_facts
 version_added: "2.5"
-short_description: Get GeoBackupPolicies facts.
+short_description: Get Geo Backup Policy facts.
 description:
-    - Get facts of GeoBackupPolicies.
+    - Get facts of Geo Backup Policy.
 
 options:
     resource_group:
@@ -47,14 +47,14 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of GeoBackupPolicies
+  - name: Get instance of Geo Backup Policy
     azure_rm_sqlgeobackuppolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       geo_backup_policy_name: geo_backup_policy_name
 
-  - name: List instances of GeoBackupPolicies
+  - name: List instances of Geo Backup Policy
     azure_rm_sqlgeobackuppolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -124,9 +124,9 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified GeoBackupPolicies.
+        Gets facts of the specified Geo Backup Policy.
 
-        :return: deserialized GeoBackupPoliciesinstance state dictionary
+        :return: deserialized Geo Backup Policyinstance state dictionary
         '''
         response = None
         results = False
@@ -146,9 +146,9 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified GeoBackupPolicies.
+        Gets facts of the specified Geo Backup Policy.
 
-        :return: deserialized GeoBackupPoliciesinstance state dictionary
+        :return: deserialized Geo Backup Policyinstance state dictionary
         '''
         response = None
         results = False

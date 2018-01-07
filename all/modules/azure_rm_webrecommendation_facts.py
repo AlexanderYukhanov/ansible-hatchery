@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webrecommendation_facts
 version_added: "2.5"
-short_description: Get Recommendations facts.
+short_description: Get Recommendation facts.
 description:
-    - Get facts of Recommendations.
+    - Get facts of Recommendation.
 
 options:
     resource_group:
@@ -47,14 +47,14 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Recommendations
+  - name: List instances of Recommendation
     azure_rm_webrecommendation_facts:
       resource_group: resource_group_name
       site_name: site_name
       featured: featured
       filter: filter
 
-  - name: List instances of Recommendations
+  - name: List instances of Recommendation
     azure_rm_webrecommendation_facts:
       resource_group: resource_group_name
       site_name: site_name
@@ -120,9 +120,9 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
 
     def list_recommended_rules_for_web_app(self):
         '''
-        Gets facts of the specified Recommendations.
+        Gets facts of the specified Recommendation.
 
-        :return: deserialized Recommendationsinstance state dictionary
+        :return: deserialized Recommendationinstance state dictionary
         '''
         response = None
         results = False
@@ -142,9 +142,9 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
 
     def list_history_for_web_app(self):
         '''
-        Gets facts of the specified Recommendations.
+        Gets facts of the specified Recommendation.
 
-        :return: deserialized Recommendationsinstance state dictionary
+        :return: deserialized Recommendationinstance state dictionary
         '''
         response = None
         results = False

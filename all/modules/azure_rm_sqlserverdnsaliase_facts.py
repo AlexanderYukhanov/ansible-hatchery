@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverdnsaliase_facts
 version_added: "2.5"
-short_description: Get ServerDnsAliases facts.
+short_description: Get Server Dns Aliase facts.
 description:
-    - Get facts of ServerDnsAliases.
+    - Get facts of Server Dns Aliase.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ServerDnsAliases
+  - name: Get instance of Server Dns Aliase
     azure_rm_sqlserverdnsaliase_facts:
       resource_group: resource_group_name
       server_name: server_name
       dns_alias_name: dns_alias_name
 
-  - name: List instances of ServerDnsAliases
+  - name: List instances of Server Dns Aliase
     azure_rm_sqlserverdnsaliase_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServerDnsAliases.
+        Gets facts of the specified Server Dns Aliase.
 
-        :return: deserialized ServerDnsAliasesinstance state dictionary
+        :return: deserialized Server Dns Aliaseinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServerDnsAliases.
+        Gets facts of the specified Server Dns Aliase.
 
-        :return: deserialized ServerDnsAliasesinstance state dictionary
+        :return: deserialized Server Dns Aliaseinstance state dictionary
         '''
         response = None
         results = False

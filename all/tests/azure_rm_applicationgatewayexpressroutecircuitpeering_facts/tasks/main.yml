@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts ExpressRouteCircuitPeerings
+- name: Gather facts Express Route Circuit Peering
   azure_rm_applicationgatewayexpressroutecircuitpeering_facts:
     resource_group: "{{ resource_group }}"
   register: output

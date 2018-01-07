@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webdiagnostic_facts
 version_added: "2.5"
-short_description: Get Diagnostics facts.
+short_description: Get Diagnostic facts.
 description:
-    - Get facts of Diagnostics.
+    - Get facts of Diagnostic.
 
 options:
     resource_group:
@@ -46,39 +46,39 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Diagnostics
+  - name: List instances of Diagnostic
     azure_rm_webdiagnostic_facts:
       resource_group: resource_group_name
       site_name: site_name
       diagnostic_category: diagnostic_category
       slot: slot
 
-  - name: List instances of Diagnostics
+  - name: List instances of Diagnostic
     azure_rm_webdiagnostic_facts:
       resource_group: resource_group_name
       site_name: site_name
       diagnostic_category: diagnostic_category
       slot: slot
 
-  - name: List instances of Diagnostics
+  - name: List instances of Diagnostic
     azure_rm_webdiagnostic_facts:
       resource_group: resource_group_name
       site_name: site_name
       diagnostic_category: diagnostic_category
 
-  - name: List instances of Diagnostics
+  - name: List instances of Diagnostic
     azure_rm_webdiagnostic_facts:
       resource_group: resource_group_name
       site_name: site_name
       diagnostic_category: diagnostic_category
 
-  - name: List instances of Diagnostics
+  - name: List instances of Diagnostic
     azure_rm_webdiagnostic_facts:
       resource_group: resource_group_name
       site_name: site_name
       slot: slot
 
-  - name: List instances of Diagnostics
+  - name: List instances of Diagnostic
     azure_rm_webdiagnostic_facts:
       resource_group: resource_group_name
       site_name: site_name
@@ -162,9 +162,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
     def list_site_analyses_slot(self):
         '''
-        Gets facts of the specified Diagnostics.
+        Gets facts of the specified Diagnostic.
 
-        :return: deserialized Diagnosticsinstance state dictionary
+        :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
         results = False
@@ -186,9 +186,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
     def list_site_detectors_slot(self):
         '''
-        Gets facts of the specified Diagnostics.
+        Gets facts of the specified Diagnostic.
 
-        :return: deserialized Diagnosticsinstance state dictionary
+        :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
         results = False
@@ -210,9 +210,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
     def list_site_analyses(self):
         '''
-        Gets facts of the specified Diagnostics.
+        Gets facts of the specified Diagnostic.
 
-        :return: deserialized Diagnosticsinstance state dictionary
+        :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
         results = False
@@ -233,9 +233,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
     def list_site_detectors(self):
         '''
-        Gets facts of the specified Diagnostics.
+        Gets facts of the specified Diagnostic.
 
-        :return: deserialized Diagnosticsinstance state dictionary
+        :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
         results = False
@@ -256,9 +256,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
     def list_site_diagnostic_categories_slot(self):
         '''
-        Gets facts of the specified Diagnostics.
+        Gets facts of the specified Diagnostic.
 
-        :return: deserialized Diagnosticsinstance state dictionary
+        :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
         results = False
@@ -279,9 +279,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
 
     def list_site_diagnostic_categories(self):
         '''
-        Gets facts of the specified Diagnostics.
+        Gets facts of the specified Diagnostic.
 
-        :return: deserialized Diagnosticsinstance state dictionary
+        :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
         results = False

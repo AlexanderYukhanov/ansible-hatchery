@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlrecoverabledatabase_facts
 version_added: "2.5"
-short_description: Get RecoverableDatabases facts.
+short_description: Get Recoverable Database facts.
 description:
-    - Get facts of RecoverableDatabases.
+    - Get facts of Recoverable Database.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of RecoverableDatabases
+  - name: Get instance of Recoverable Database
     azure_rm_sqlrecoverabledatabase_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
 
-  - name: List instances of RecoverableDatabases
+  - name: List instances of Recoverable Database
     azure_rm_sqlrecoverabledatabase_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified RecoverableDatabases.
+        Gets facts of the specified Recoverable Database.
 
-        :return: deserialized RecoverableDatabasesinstance state dictionary
+        :return: deserialized Recoverable Databaseinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified RecoverableDatabases.
+        Gets facts of the specified Recoverable Database.
 
-        :return: deserialized RecoverableDatabasesinstance state dictionary
+        :return: deserialized Recoverable Databaseinstance state dictionary
         '''
         response = None
         results = False

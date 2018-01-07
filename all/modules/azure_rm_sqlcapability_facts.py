@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlcapability_facts
 version_added: "2.5"
-short_description: Get Capabilities facts.
+short_description: Get Capability facts.
 description:
-    - Get facts of Capabilities.
+    - Get facts of Capability.
 
 options:
     location_id:
@@ -36,7 +36,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Capabilities
+  - name: List instances of Capability
     azure_rm_sqlcapability_facts:
       location_id: location_id
 '''
@@ -83,9 +83,9 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
 
     def list_by_location(self):
         '''
-        Gets facts of the specified Capabilities.
+        Gets facts of the specified Capability.
 
-        :return: deserialized Capabilitiesinstance state dictionary
+        :return: deserialized Capabilityinstance state dictionary
         '''
         response = None
         results = False

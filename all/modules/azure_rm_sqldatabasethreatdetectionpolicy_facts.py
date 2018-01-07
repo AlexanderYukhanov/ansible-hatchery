@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabasethreatdetectionpolicy_facts
 version_added: "2.5"
-short_description: Get DatabaseThreatDetectionPolicies facts.
+short_description: Get Database Threat Detection Policy facts.
 description:
-    - Get facts of DatabaseThreatDetectionPolicies.
+    - Get facts of Database Threat Detection Policy.
 
 options:
     resource_group:
@@ -48,7 +48,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of DatabaseThreatDetectionPolicies
+  - name: Get instance of Database Threat Detection Policy
     azure_rm_sqldatabasethreatdetectionpolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -116,9 +116,9 @@ class AzureRMDatabaseThreatDetectionPoliciesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified DatabaseThreatDetectionPolicies.
+        Gets facts of the specified Database Threat Detection Policy.
 
-        :return: deserialized DatabaseThreatDetectionPoliciesinstance state dictionary
+        :return: deserialized Database Threat Detection Policyinstance state dictionary
         '''
         response = None
         results = False

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlservicetieradvisor_facts
 version_added: "2.5"
-short_description: Get ServiceTierAdvisors facts.
+short_description: Get Service Tier Advisor facts.
 description:
-    - Get facts of ServiceTierAdvisors.
+    - Get facts of Service Tier Advisor.
 
 options:
     resource_group:
@@ -47,14 +47,14 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ServiceTierAdvisors
+  - name: Get instance of Service Tier Advisor
     azure_rm_sqlservicetieradvisor_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       service_tier_advisor_name: service_tier_advisor_name
 
-  - name: List instances of ServiceTierAdvisors
+  - name: List instances of Service Tier Advisor
     azure_rm_sqlservicetieradvisor_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -124,9 +124,9 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServiceTierAdvisors.
+        Gets facts of the specified Service Tier Advisor.
 
-        :return: deserialized ServiceTierAdvisorsinstance state dictionary
+        :return: deserialized Service Tier Advisorinstance state dictionary
         '''
         response = None
         results = False
@@ -146,9 +146,9 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified ServiceTierAdvisors.
+        Gets facts of the specified Service Tier Advisor.
 
-        :return: deserialized ServiceTierAdvisorsinstance state dictionary
+        :return: deserialized Service Tier Advisorinstance state dictionary
         '''
         response = None
         results = False

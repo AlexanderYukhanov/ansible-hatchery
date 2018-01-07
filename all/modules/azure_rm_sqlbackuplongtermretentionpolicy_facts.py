@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlbackuplongtermretentionpolicy_facts
 version_added: "2.5"
-short_description: Get BackupLongTermRetentionPolicies facts.
+short_description: Get Backup Long Term Retention Policy facts.
 description:
-    - Get facts of BackupLongTermRetentionPolicies.
+    - Get facts of Backup Long Term Retention Policy.
 
 options:
     resource_group:
@@ -47,14 +47,14 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of BackupLongTermRetentionPolicies
+  - name: Get instance of Backup Long Term Retention Policy
     azure_rm_sqlbackuplongtermretentionpolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       backup_long_term_retention_policy_name: backup_long_term_retention_policy_name
 
-  - name: List instances of BackupLongTermRetentionPolicies
+  - name: List instances of Backup Long Term Retention Policy
     azure_rm_sqlbackuplongtermretentionpolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -124,9 +124,9 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified BackupLongTermRetentionPolicies.
+        Gets facts of the specified Backup Long Term Retention Policy.
 
-        :return: deserialized BackupLongTermRetentionPoliciesinstance state dictionary
+        :return: deserialized Backup Long Term Retention Policyinstance state dictionary
         '''
         response = None
         results = False
@@ -146,9 +146,9 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified BackupLongTermRetentionPolicies.
+        Gets facts of the specified Backup Long Term Retention Policy.
 
-        :return: deserialized BackupLongTermRetentionPoliciesinstance state dictionary
+        :return: deserialized Backup Long Term Retention Policyinstance state dictionary
         '''
         response = None
         results = False

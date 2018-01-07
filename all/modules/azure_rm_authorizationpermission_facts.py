@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationpermission_facts
 version_added: "2.5"
-short_description: Get Permissions facts.
+short_description: Get Permission facts.
 description:
-    - Get facts of Permissions.
+    - Get facts of Permission.
 
 options:
     resource_group:
@@ -48,7 +48,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Permissions
+  - name: List instances of Permission
     azure_rm_authorizationpermission_facts:
       resource_group: resource_group_name
       resource_provider_namespace: resource_provider_namespace
@@ -56,7 +56,7 @@ EXAMPLES = '''
       resource_type: resource_type
       resource_name: resource_name
 
-  - name: List instances of Permissions
+  - name: List instances of Permission
     azure_rm_authorizationpermission_facts:
       resource_group: resource_group_name
 '''
@@ -125,9 +125,9 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
 
     def list_for_resource(self):
         '''
-        Gets facts of the specified Permissions.
+        Gets facts of the specified Permission.
 
-        :return: deserialized Permissionsinstance state dictionary
+        :return: deserialized Permissioninstance state dictionary
         '''
         response = None
         results = False
@@ -150,9 +150,9 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
 
     def list_for_resource_group(self):
         '''
-        Gets facts of the specified Permissions.
+        Gets facts of the specified Permission.
 
-        :return: deserialized Permissionsinstance state dictionary
+        :return: deserialized Permissioninstance state dictionary
         '''
         response = None
         results = False

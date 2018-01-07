@@ -8,7 +8,7 @@
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}
 
-- name: Gather facts ApplicationSecurityGroups
+- name: Gather facts Application Security Group
   azure_rm_applicationgatewayapplicationsecuritygroup_facts:
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}
@@ -18,7 +18,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts ApplicationSecurityGroups
+- name: Gather facts Application Security Group
   azure_rm_applicationgatewayapplicationsecuritygroup_facts:
   register: output
 - name: Assert that facts are returned

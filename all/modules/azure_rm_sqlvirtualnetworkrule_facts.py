@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlvirtualnetworkrule_facts
 version_added: "2.5"
-short_description: Get VirtualNetworkRules facts.
+short_description: Get Virtual Network Rule facts.
 description:
-    - Get facts of VirtualNetworkRules.
+    - Get facts of Virtual Network Rule.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of VirtualNetworkRules
+  - name: Get instance of Virtual Network Rule
     azure_rm_sqlvirtualnetworkrule_facts:
       resource_group: resource_group_name
       server_name: server_name
       virtual_network_rule_name: virtual_network_rule_name
 
-  - name: List instances of VirtualNetworkRules
+  - name: List instances of Virtual Network Rule
     azure_rm_sqlvirtualnetworkrule_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified VirtualNetworkRules.
+        Gets facts of the specified Virtual Network Rule.
 
-        :return: deserialized VirtualNetworkRulesinstance state dictionary
+        :return: deserialized Virtual Network Ruleinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified VirtualNetworkRules.
+        Gets facts of the specified Virtual Network Rule.
 
-        :return: deserialized VirtualNetworkRulesinstance state dictionary
+        :return: deserialized Virtual Network Ruleinstance state dictionary
         '''
         response = None
         results = False

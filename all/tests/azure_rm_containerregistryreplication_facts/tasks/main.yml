@@ -21,7 +21,7 @@
     replication_name: replication{{ rpfx }}
     location: westus
 
-- name: Gather facts Replications
+- name: Gather facts Replication
   azure_rm_containerregistryreplication_facts:
     resource_group: "{{ resource_group }}"
     registry_name: acr{{ rpfx }}

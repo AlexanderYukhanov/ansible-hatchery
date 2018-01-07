@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts SyncAgents
+- name: Gather facts Sync Agent
   azure_rm_sqlsyncagent_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -12,7 +12,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts SyncAgents
+- name: Gather facts Sync Agent
   azure_rm_sqlsyncagent_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -21,7 +21,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts SyncAgents
+- name: Gather facts Sync Agent
   azure_rm_sqlsyncagent_facts:
     resource_group: "{{ resource_group }}"
   register: output

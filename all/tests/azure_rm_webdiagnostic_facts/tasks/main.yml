@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts Diagnostics
+- name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -12,7 +12,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Diagnostics
+- name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -21,7 +21,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Diagnostics
+- name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -30,7 +30,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Diagnostics
+- name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -39,7 +39,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Diagnostics
+- name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -48,7 +48,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Diagnostics
+- name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
     resource_group: "{{ resource_group }}"
   register: output

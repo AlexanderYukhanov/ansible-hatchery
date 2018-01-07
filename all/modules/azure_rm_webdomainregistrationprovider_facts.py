@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webdomainregistrationprovider_facts
 version_added: "2.5"
-short_description: Get DomainRegistrationProvider facts.
+short_description: Get Domain Registration Provider facts.
 description:
-    - Get facts of DomainRegistrationProvider.
+    - Get facts of Domain Registration Provider.
 
 options:
 
@@ -32,7 +32,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of DomainRegistrationProvider
+  - name: List instances of Domain Registration Provider
     azure_rm_webdomainregistrationprovider_facts:
 '''
 
@@ -72,9 +72,9 @@ class AzureRMDomainRegistrationProviderFacts(AzureRMModuleBase):
 
     def list_operations(self):
         '''
-        Gets facts of the specified DomainRegistrationProvider.
+        Gets facts of the specified Domain Registration Provider.
 
-        :return: deserialized DomainRegistrationProviderinstance state dictionary
+        :return: deserialized Domain Registration Providerinstance state dictionary
         '''
         response = None
         results = False

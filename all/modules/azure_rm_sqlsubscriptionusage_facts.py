@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsubscriptionusage_facts
 version_added: "2.5"
-short_description: Get SubscriptionUsages facts.
+short_description: Get Subscription Usage facts.
 description:
-    - Get facts of SubscriptionUsages.
+    - Get facts of Subscription Usage.
 
 options:
     location_name:
@@ -39,12 +39,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of SubscriptionUsages
+  - name: Get instance of Subscription Usage
     azure_rm_sqlsubscriptionusage_facts:
       location_name: location_name
       usage_name: usage_name
 
-  - name: List instances of SubscriptionUsages
+  - name: List instances of Subscription Usage
     azure_rm_sqlsubscriptionusage_facts:
       location_name: location_name
 '''
@@ -98,9 +98,9 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified SubscriptionUsages.
+        Gets facts of the specified Subscription Usage.
 
-        :return: deserialized SubscriptionUsagesinstance state dictionary
+        :return: deserialized Subscription Usageinstance state dictionary
         '''
         response = None
         results = False
@@ -118,9 +118,9 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
 
     def list_by_location(self):
         '''
-        Gets facts of the specified SubscriptionUsages.
+        Gets facts of the specified Subscription Usage.
 
-        :return: deserialized SubscriptionUsagesinstance state dictionary
+        :return: deserialized Subscription Usageinstance state dictionary
         '''
         response = None
         results = False

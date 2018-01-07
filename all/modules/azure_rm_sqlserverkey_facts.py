@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverkey_facts
 version_added: "2.5"
-short_description: Get ServerKeys facts.
+short_description: Get Server Key facts.
 description:
-    - Get facts of ServerKeys.
+    - Get facts of Server Key.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ServerKeys
+  - name: Get instance of Server Key
     azure_rm_sqlserverkey_facts:
       resource_group: resource_group_name
       server_name: server_name
       key_name: key_name
 
-  - name: List instances of ServerKeys
+  - name: List instances of Server Key
     azure_rm_sqlserverkey_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServerKeys.
+        Gets facts of the specified Server Key.
 
-        :return: deserialized ServerKeysinstance state dictionary
+        :return: deserialized Server Keyinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMServerKeysFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServerKeys.
+        Gets facts of the specified Server Key.
 
-        :return: deserialized ServerKeysinstance state dictionary
+        :return: deserialized Server Keyinstance state dictionary
         '''
         response = None
         results = False

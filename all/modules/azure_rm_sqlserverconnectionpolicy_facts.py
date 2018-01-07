@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverconnectionpolicy_facts
 version_added: "2.5"
-short_description: Get ServerConnectionPolicies facts.
+short_description: Get Server Connection Policy facts.
 description:
-    - Get facts of ServerConnectionPolicies.
+    - Get facts of Server Connection Policy.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ServerConnectionPolicies
+  - name: Get instance of Server Connection Policy
     azure_rm_sqlserverconnectionpolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -105,9 +105,9 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServerConnectionPolicies.
+        Gets facts of the specified Server Connection Policy.
 
-        :return: deserialized ServerConnectionPoliciesinstance state dictionary
+        :return: deserialized Server Connection Policyinstance state dictionary
         '''
         response = None
         results = False

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webtopleveldomain_facts
 version_added: "2.5"
-short_description: Get TopLevelDomains facts.
+short_description: Get Top Level Domain facts.
 description:
-    - Get facts of TopLevelDomains.
+    - Get facts of Top Level Domain.
 
 options:
     name:
@@ -42,13 +42,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of TopLevelDomains
+  - name: List instances of Top Level Domain
     azure_rm_webtopleveldomain_facts:
       name: name
       include_privacy: include_privacy
       for_transfer: for_transfer
 
-  - name: Get instance of TopLevelDomains
+  - name: Get instance of Top Level Domain
     azure_rm_webtopleveldomain_facts:
       name: name
 '''
@@ -105,9 +105,9 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
     def list_agreements(self):
         '''
-        Gets facts of the specified TopLevelDomains.
+        Gets facts of the specified Top Level Domain.
 
-        :return: deserialized TopLevelDomainsinstance state dictionary
+        :return: deserialized Top Level Domaininstance state dictionary
         '''
         response = None
         results = False
@@ -126,9 +126,9 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified TopLevelDomains.
+        Gets facts of the specified Top Level Domain.
 
-        :return: deserialized TopLevelDomainsinstance state dictionary
+        :return: deserialized Top Level Domaininstance state dictionary
         '''
         response = None
         results = False

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappserviceenvironment_facts
 version_added: "2.5"
-short_description: Get AppServiceEnvironments facts.
+short_description: Get App Service Environment facts.
 description:
-    - Get facts of AppServiceEnvironments.
+    - Get facts of App Service Environment.
 
 options:
     resource_group:
@@ -64,7 +64,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
@@ -74,7 +74,7 @@ EXAMPLES = '''
       details: details
       filter: filter
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
@@ -83,7 +83,7 @@ EXAMPLES = '''
       details: details
       filter: filter
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
@@ -91,124 +91,124 @@ EXAMPLES = '''
       details: details
       filter: filter
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       details: details
       filter: filter
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       instance: instance
       details: details
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       worker_pool_name: worker_pool_name
       instance: instance
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       instance: instance
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       properties_to_include: properties_to_include
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       filter: filter
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       worker_pool_name: worker_pool_name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       worker_pool_name: worker_pool_name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
       worker_pool_name: worker_pool_name
 
-  - name: Get instance of AppServiceEnvironments
+  - name: Get instance of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of AppServiceEnvironments
+  - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
 '''
@@ -373,9 +373,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_multi_role_metrics(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -395,9 +395,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_worker_pool_instance_metrics(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -419,9 +419,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_web_worker_metrics(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -442,9 +442,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_metrics(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -464,9 +464,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_multi_role_pool_instance_metrics(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -487,9 +487,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_worker_pool_instance_metric_definitions(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -511,9 +511,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_multi_role_pool_instance_metric_definitions(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -534,9 +534,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_web_apps(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -556,9 +556,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_usages(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -578,9 +578,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_web_worker_metric_definitions(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -601,9 +601,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_worker_pool_skus(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -624,9 +624,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_web_worker_usages(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -647,9 +647,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -667,9 +667,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_capacities(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -689,9 +689,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_vips(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -711,9 +711,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_diagnostics(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -733,9 +733,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_metric_definitions(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -755,9 +755,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_multi_role_pools(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -777,9 +777,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_multi_role_metric_definitions(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -799,9 +799,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_multi_role_pool_skus(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -821,9 +821,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_multi_role_usages(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -843,9 +843,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_operations(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -865,9 +865,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_app_service_plans(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -887,9 +887,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_worker_pools(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False
@@ -909,9 +909,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified AppServiceEnvironments.
+        Gets facts of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironmentsinstance state dictionary
+        :return: deserialized App Service Environmentinstance state dictionary
         '''
         response = None
         results = False

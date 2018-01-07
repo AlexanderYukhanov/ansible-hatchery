@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts InboundNatRules
+- name: Gather facts Inbound Nat Rule
   azure_rm_applicationgatewayinboundnatrule_facts:
     resource_group: "{{ resource_group }}"
   register: output

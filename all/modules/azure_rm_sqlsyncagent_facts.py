@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncagent_facts
 version_added: "2.5"
-short_description: Get SyncAgents facts.
+short_description: Get Sync Agent facts.
 description:
-    - Get facts of SyncAgents.
+    - Get facts of Sync Agent.
 
 options:
     resource_group:
@@ -43,19 +43,19 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of SyncAgents
+  - name: Get instance of Sync Agent
     azure_rm_sqlsyncagent_facts:
       resource_group: resource_group_name
       server_name: server_name
       sync_agent_name: sync_agent_name
 
-  - name: List instances of SyncAgents
+  - name: List instances of Sync Agent
     azure_rm_sqlsyncagent_facts:
       resource_group: resource_group_name
       server_name: server_name
       sync_agent_name: sync_agent_name
 
-  - name: List instances of SyncAgents
+  - name: List instances of Sync Agent
     azure_rm_sqlsyncagent_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -121,9 +121,9 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified SyncAgents.
+        Gets facts of the specified Sync Agent.
 
-        :return: deserialized SyncAgentsinstance state dictionary
+        :return: deserialized Sync Agentinstance state dictionary
         '''
         response = None
         results = False
@@ -142,9 +142,9 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
     def list_linked_databases(self):
         '''
-        Gets facts of the specified SyncAgents.
+        Gets facts of the specified Sync Agent.
 
-        :return: deserialized SyncAgentsinstance state dictionary
+        :return: deserialized Sync Agentinstance state dictionary
         '''
         response = None
         results = False
@@ -165,9 +165,9 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified SyncAgents.
+        Gets facts of the specified Sync Agent.
 
-        :return: deserialized SyncAgentsinstance state dictionary
+        :return: deserialized Sync Agentinstance state dictionary
         '''
         response = None
         results = False

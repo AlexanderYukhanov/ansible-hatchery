@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlreplicationlink_facts
 version_added: "2.5"
-short_description: Get ReplicationLinks facts.
+short_description: Get Replication Link facts.
 description:
-    - Get facts of ReplicationLinks.
+    - Get facts of Replication Link.
 
 options:
     resource_group:
@@ -47,14 +47,14 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ReplicationLinks
+  - name: Get instance of Replication Link
     azure_rm_sqlreplicationlink_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       link_id: link_id
 
-  - name: List instances of ReplicationLinks
+  - name: List instances of Replication Link
     azure_rm_sqlreplicationlink_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -124,9 +124,9 @@ class AzureRMReplicationLinksFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ReplicationLinks.
+        Gets facts of the specified Replication Link.
 
-        :return: deserialized ReplicationLinksinstance state dictionary
+        :return: deserialized Replication Linkinstance state dictionary
         '''
         response = None
         results = False
@@ -146,9 +146,9 @@ class AzureRMReplicationLinksFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified ReplicationLinks.
+        Gets facts of the specified Replication Link.
 
-        :return: deserialized ReplicationLinksinstance state dictionary
+        :return: deserialized Replication Linkinstance state dictionary
         '''
         response = None
         results = False

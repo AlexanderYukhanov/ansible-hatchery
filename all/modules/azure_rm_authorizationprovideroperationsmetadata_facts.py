@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationprovideroperationsmetadata_facts
 version_added: "2.5"
-short_description: Get ProviderOperationsMetadata facts.
+short_description: Get Provider Operations Metadata facts.
 description:
-    - Get facts of ProviderOperationsMetadata.
+    - Get facts of Provider Operations Metadata.
 
 options:
     resource_provider_namespace:
@@ -39,7 +39,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ProviderOperationsMetadata
+  - name: Get instance of Provider Operations Metadata
     azure_rm_authorizationprovideroperationsmetadata_facts:
       resource_provider_namespace: resource_provider_namespace
       expand: expand
@@ -91,9 +91,9 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ProviderOperationsMetadata.
+        Gets facts of the specified Provider Operations Metadata.
 
-        :return: deserialized ProviderOperationsMetadatainstance state dictionary
+        :return: deserialized Provider Operations Metadatainstance state dictionary
         '''
         response = None
         results = False

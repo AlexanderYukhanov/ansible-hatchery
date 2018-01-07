@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverusage_facts
 version_added: "2.5"
-short_description: Get ServerUsages facts.
+short_description: Get Server Usage facts.
 description:
-    - Get facts of ServerUsages.
+    - Get facts of Server Usage.
 
 options:
     resource_group:
@@ -40,7 +40,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of ServerUsages
+  - name: List instances of Server Usage
     azure_rm_sqlserverusage_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -94,9 +94,9 @@ class AzureRMServerUsagesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServerUsages.
+        Gets facts of the specified Server Usage.
 
-        :return: deserialized ServerUsagesinstance state dictionary
+        :return: deserialized Server Usageinstance state dictionary
         '''
         response = None
         results = False

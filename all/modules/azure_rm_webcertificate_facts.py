@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webcertificate_facts
 version_added: "2.5"
-short_description: Get Certificates facts.
+short_description: Get Certificate facts.
 description:
-    - Get facts of Certificates.
+    - Get facts of Certificate.
 
 options:
     resource_group:
@@ -39,12 +39,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of Certificates
+  - name: Get instance of Certificate
     azure_rm_webcertificate_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of Certificates
+  - name: List instances of Certificate
     azure_rm_webcertificate_facts:
       resource_group: resource_group_name
 '''
@@ -98,9 +98,9 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified Certificates.
+        Gets facts of the specified Certificate.
 
-        :return: deserialized Certificatesinstance state dictionary
+        :return: deserialized Certificateinstance state dictionary
         '''
         response = None
         results = False
@@ -118,9 +118,9 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified Certificates.
+        Gets facts of the specified Certificate.
 
-        :return: deserialized Certificatesinstance state dictionary
+        :return: deserialized Certificateinstance state dictionary
         '''
         response = None
         results = False

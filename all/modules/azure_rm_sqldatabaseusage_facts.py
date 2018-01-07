@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabaseusage_facts
 version_added: "2.5"
-short_description: Get DatabaseUsages facts.
+short_description: Get Database Usage facts.
 description:
-    - Get facts of DatabaseUsages.
+    - Get facts of Database Usage.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of DatabaseUsages
+  - name: List instances of Database Usage
     azure_rm_sqldatabaseusage_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -105,9 +105,9 @@ class AzureRMDatabaseUsagesFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified DatabaseUsages.
+        Gets facts of the specified Database Usage.
 
-        :return: deserialized DatabaseUsagesinstance state dictionary
+        :return: deserialized Database Usageinstance state dictionary
         '''
         response = None
         results = False

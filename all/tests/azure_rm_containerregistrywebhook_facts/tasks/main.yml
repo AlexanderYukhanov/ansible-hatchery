@@ -24,7 +24,7 @@
     actions:
       - push
 
-- name: Gather facts Webhooks
+- name: Gather facts Webhook
   azure_rm_containerregistrywebhook_facts:
     resource_group: "{{ resource_group }}"
     registry_name: acr{{ rpfx }}
@@ -35,7 +35,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Webhooks
+- name: Gather facts Webhook
   azure_rm_containerregistrywebhook_facts:
     resource_group: "{{ resource_group }}"
     registry_name: acr{{ rpfx }}

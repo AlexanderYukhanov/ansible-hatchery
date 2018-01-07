@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabaseoperation_facts
 version_added: "2.5"
-short_description: Get DatabaseOperations facts.
+short_description: Get Database Operation facts.
 description:
-    - Get facts of DatabaseOperations.
+    - Get facts of Database Operation.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of DatabaseOperations
+  - name: List instances of Database Operation
     azure_rm_sqldatabaseoperation_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -105,9 +105,9 @@ class AzureRMDatabaseOperationsFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified DatabaseOperations.
+        Gets facts of the specified Database Operation.
 
-        :return: deserialized DatabaseOperationsinstance state dictionary
+        :return: deserialized Database Operationinstance state dictionary
         '''
         response = None
         results = False

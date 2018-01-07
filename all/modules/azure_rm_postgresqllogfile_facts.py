@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_postgresqllogfile_facts
 version_added: "2.5"
-short_description: Get LogFiles facts.
+short_description: Get Log File facts.
 description:
-    - Get facts of LogFiles.
+    - Get facts of Log File.
 
 options:
     resource_group:
@@ -40,7 +40,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of LogFiles
+  - name: List instances of Log File
     azure_rm_postgresqllogfile_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -94,9 +94,9 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified LogFiles.
+        Gets facts of the specified Log File.
 
-        :return: deserialized LogFilesinstance state dictionary
+        :return: deserialized Log Fileinstance state dictionary
         '''
         response = None
         results = False

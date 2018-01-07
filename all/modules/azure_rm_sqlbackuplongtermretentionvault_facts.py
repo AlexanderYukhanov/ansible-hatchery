@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlbackuplongtermretentionvault_facts
 version_added: "2.5"
-short_description: Get BackupLongTermRetentionVaults facts.
+short_description: Get Backup Long Term Retention Vault facts.
 description:
-    - Get facts of BackupLongTermRetentionVaults.
+    - Get facts of Backup Long Term Retention Vault.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of BackupLongTermRetentionVaults
+  - name: Get instance of Backup Long Term Retention Vault
     azure_rm_sqlbackuplongtermretentionvault_facts:
       resource_group: resource_group_name
       server_name: server_name
       backup_long_term_retention_vault_name: backup_long_term_retention_vault_name
 
-  - name: List instances of BackupLongTermRetentionVaults
+  - name: List instances of Backup Long Term Retention Vault
     azure_rm_sqlbackuplongtermretentionvault_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified BackupLongTermRetentionVaults.
+        Gets facts of the specified Backup Long Term Retention Vault.
 
-        :return: deserialized BackupLongTermRetentionVaultsinstance state dictionary
+        :return: deserialized Backup Long Term Retention Vaultinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified BackupLongTermRetentionVaults.
+        Gets facts of the specified Backup Long Term Retention Vault.
 
-        :return: deserialized BackupLongTermRetentionVaultsinstance state dictionary
+        :return: deserialized Backup Long Term Retention Vaultinstance state dictionary
         '''
         response = None
         results = False

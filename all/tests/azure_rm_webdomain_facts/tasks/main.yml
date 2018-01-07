@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts Domains
+- name: Gather facts Domain
   azure_rm_webdomain_facts:
   register: output
 - name: Assert that facts are returned
@@ -11,16 +11,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Domains
-  azure_rm_webdomain_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-
-- name: Gather facts Domains
+- name: Gather facts Domain
   azure_rm_webdomain_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -29,7 +20,16 @@
     that:
       - output.changed == False
 
-- name: Gather facts Domains
+- name: Gather facts Domain
+  azure_rm_webdomain_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+
+- name: Gather facts Domain
   azure_rm_webdomain_facts:
     resource_group: "{{ resource_group }}"
   register: output

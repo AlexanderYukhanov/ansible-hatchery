@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlrecommendedelasticpool_facts
 version_added: "2.5"
-short_description: Get RecommendedElasticPools facts.
+short_description: Get Recommended Elastic Pool facts.
 description:
-    - Get facts of RecommendedElasticPools.
+    - Get facts of Recommended Elastic Pool.
 
 options:
     resource_group:
@@ -43,19 +43,19 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of RecommendedElasticPools
+  - name: Get instance of Recommended Elastic Pool
     azure_rm_sqlrecommendedelasticpool_facts:
       resource_group: resource_group_name
       server_name: server_name
       recommended_elastic_pool_name: recommended_elastic_pool_name
 
-  - name: List instances of RecommendedElasticPools
+  - name: List instances of Recommended Elastic Pool
     azure_rm_sqlrecommendedelasticpool_facts:
       resource_group: resource_group_name
       server_name: server_name
       recommended_elastic_pool_name: recommended_elastic_pool_name
 
-  - name: List instances of RecommendedElasticPools
+  - name: List instances of Recommended Elastic Pool
     azure_rm_sqlrecommendedelasticpool_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -121,9 +121,9 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified RecommendedElasticPools.
+        Gets facts of the specified Recommended Elastic Pool.
 
-        :return: deserialized RecommendedElasticPoolsinstance state dictionary
+        :return: deserialized Recommended Elastic Poolinstance state dictionary
         '''
         response = None
         results = False
@@ -142,9 +142,9 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
 
     def list_metrics(self):
         '''
-        Gets facts of the specified RecommendedElasticPools.
+        Gets facts of the specified Recommended Elastic Pool.
 
-        :return: deserialized RecommendedElasticPoolsinstance state dictionary
+        :return: deserialized Recommended Elastic Poolinstance state dictionary
         '''
         response = None
         results = False
@@ -165,9 +165,9 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified RecommendedElasticPools.
+        Gets facts of the specified Recommended Elastic Pool.
 
-        :return: deserialized RecommendedElasticPoolsinstance state dictionary
+        :return: deserialized Recommended Elastic Poolinstance state dictionary
         '''
         response = None
         results = False

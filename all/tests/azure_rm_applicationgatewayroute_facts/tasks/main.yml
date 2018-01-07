@@ -15,7 +15,7 @@
     address_prefix: 208.128.0.0/11
     next_hop_type: virtual_network_gateway
 
-- name: Gather facts Routes
+- name: Gather facts Route
   azure_rm_applicationgatewayroute_facts:
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}

@@ -2361,7 +2361,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "LogFiles",
       "ModuleOperationName": "log_files",
-      "ObjectName": "LogFiles",
+      "ObjectName": "Log File",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,

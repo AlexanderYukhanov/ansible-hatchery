@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts Permissions
+- name: Gather facts Permission
   azure_rm_authorizationpermission_facts:
     resource_group: "{{ resource_group }}"
   register: output
@@ -12,7 +12,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts Permissions
+- name: Gather facts Permission
   azure_rm_authorizationpermission_facts:
     resource_group: "{{ resource_group }}"
   register: output

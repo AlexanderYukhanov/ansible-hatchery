@@ -999,7 +999,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Vaults",
       "ModuleOperationName": "vaults",
-      "ObjectName": "Vaults",
+      "ObjectName": "Vault",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,

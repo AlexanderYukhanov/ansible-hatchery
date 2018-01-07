@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlrestorepoint_facts
 version_added: "2.5"
-short_description: Get RestorePoints facts.
+short_description: Get Restore Point facts.
 description:
-    - Get facts of RestorePoints.
+    - Get facts of Restore Point.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of RestorePoints
+  - name: List instances of Restore Point
     azure_rm_sqlrestorepoint_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -105,9 +105,9 @@ class AzureRMRestorePointsFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified RestorePoints.
+        Gets facts of the specified Restore Point.
 
-        :return: deserialized RestorePointsinstance state dictionary
+        :return: deserialized Restore Pointinstance state dictionary
         '''
         response = None
         results = False

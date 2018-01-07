@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncmember_facts
 version_added: "2.5"
-short_description: Get SyncMembers facts.
+short_description: Get Sync Member facts.
 description:
-    - Get facts of SyncMembers.
+    - Get facts of Sync Member.
 
 options:
     resource_group:
@@ -51,7 +51,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of SyncMembers
+  - name: Get instance of Sync Member
     azure_rm_sqlsyncmember_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -59,7 +59,7 @@ EXAMPLES = '''
       sync_group_name: sync_group_name
       sync_member_name: sync_member_name
 
-  - name: List instances of SyncMembers
+  - name: List instances of Sync Member
     azure_rm_sqlsyncmember_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -67,7 +67,7 @@ EXAMPLES = '''
       sync_group_name: sync_group_name
       sync_member_name: sync_member_name
 
-  - name: List instances of SyncMembers
+  - name: List instances of Sync Member
     azure_rm_sqlsyncmember_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -151,9 +151,9 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified SyncMembers.
+        Gets facts of the specified Sync Member.
 
-        :return: deserialized SyncMembersinstance state dictionary
+        :return: deserialized Sync Memberinstance state dictionary
         '''
         response = None
         results = False
@@ -174,9 +174,9 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
 
     def list_member_schemas(self):
         '''
-        Gets facts of the specified SyncMembers.
+        Gets facts of the specified Sync Member.
 
-        :return: deserialized SyncMembersinstance state dictionary
+        :return: deserialized Sync Memberinstance state dictionary
         '''
         response = None
         results = False
@@ -199,9 +199,9 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
 
     def list_by_sync_group(self):
         '''
-        Gets facts of the specified SyncMembers.
+        Gets facts of the specified Sync Member.
 
-        :return: deserialized SyncMembersinstance state dictionary
+        :return: deserialized Sync Memberinstance state dictionary
         '''
         response = None
         results = False

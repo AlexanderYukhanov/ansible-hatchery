@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappservicecertificateorder_facts
 version_added: "2.5"
-short_description: Get AppServiceCertificateOrders facts.
+short_description: Get App Service Certificate Order facts.
 description:
-    - Get facts of AppServiceCertificateOrders.
+    - Get facts of App Service Certificate Order.
 
 options:
     resource_group:
@@ -39,17 +39,17 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of AppServiceCertificateOrders
+  - name: Get instance of App Service Certificate Order
     azure_rm_webappservicecertificateorder_facts:
       resource_group: resource_group_name
       certificate_order_name: certificate_order_name
 
-  - name: List instances of AppServiceCertificateOrders
+  - name: List instances of App Service Certificate Order
     azure_rm_webappservicecertificateorder_facts:
       resource_group: resource_group_name
       certificate_order_name: certificate_order_name
 
-  - name: List instances of AppServiceCertificateOrders
+  - name: List instances of App Service Certificate Order
     azure_rm_webappservicecertificateorder_facts:
       resource_group: resource_group_name
 '''
@@ -106,9 +106,9 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified AppServiceCertificateOrders.
+        Gets facts of the specified App Service Certificate Order.
 
-        :return: deserialized AppServiceCertificateOrdersinstance state dictionary
+        :return: deserialized App Service Certificate Orderinstance state dictionary
         '''
         response = None
         results = False
@@ -126,9 +126,9 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
     def list_certificates(self):
         '''
-        Gets facts of the specified AppServiceCertificateOrders.
+        Gets facts of the specified App Service Certificate Order.
 
-        :return: deserialized AppServiceCertificateOrdersinstance state dictionary
+        :return: deserialized App Service Certificate Orderinstance state dictionary
         '''
         response = None
         results = False
@@ -148,9 +148,9 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified AppServiceCertificateOrders.
+        Gets facts of the specified App Service Certificate Order.
 
-        :return: deserialized AppServiceCertificateOrdersinstance state dictionary
+        :return: deserialized App Service Certificate Orderinstance state dictionary
         '''
         response = None
         results = False

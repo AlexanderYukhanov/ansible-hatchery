@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabaseblobauditingpolicy_facts
 version_added: "2.5"
-short_description: Get DatabaseBlobAuditingPolicies facts.
+short_description: Get Database Blob Auditing Policy facts.
 description:
-    - Get facts of DatabaseBlobAuditingPolicies.
+    - Get facts of Database Blob Auditing Policy.
 
 options:
     resource_group:
@@ -48,7 +48,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of DatabaseBlobAuditingPolicies
+  - name: Get instance of Database Blob Auditing Policy
     azure_rm_sqldatabaseblobauditingpolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -116,9 +116,9 @@ class AzureRMDatabaseBlobAuditingPoliciesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified DatabaseBlobAuditingPolicies.
+        Gets facts of the specified Database Blob Auditing Policy.
 
-        :return: deserialized DatabaseBlobAuditingPoliciesinstance state dictionary
+        :return: deserialized Database Blob Auditing Policyinstance state dictionary
         '''
         response = None
         results = False

@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts DatabaseUsages
+- name: Gather facts Database Usage
   azure_rm_sqldatabaseusage_facts:
     resource_group: "{{ resource_group }}"
   register: output

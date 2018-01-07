@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts ServerConnectionPolicies
+- name: Gather facts Server Connection Policy
   azure_rm_sqlserverconnectionpolicy_facts:
     resource_group: "{{ resource_group }}"
   register: output

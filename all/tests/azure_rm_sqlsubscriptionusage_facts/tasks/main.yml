@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts SubscriptionUsages
+- name: Gather facts Subscription Usage
   azure_rm_sqlsubscriptionusage_facts:
   register: output
 - name: Assert that facts are returned
@@ -11,7 +11,7 @@
     that:
       - output.changed == False
 
-- name: Gather facts SubscriptionUsages
+- name: Gather facts Subscription Usage
   azure_rm_sqlsubscriptionusage_facts:
   register: output
 - name: Assert that facts are returned

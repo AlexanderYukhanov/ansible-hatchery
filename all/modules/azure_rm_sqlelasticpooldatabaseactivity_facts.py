@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlelasticpooldatabaseactivity_facts
 version_added: "2.5"
-short_description: Get ElasticPoolDatabaseActivities facts.
+short_description: Get Elastic Pool Database Activity facts.
 description:
-    - Get facts of ElasticPoolDatabaseActivities.
+    - Get facts of Elastic Pool Database Activity.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of ElasticPoolDatabaseActivities
+  - name: List instances of Elastic Pool Database Activity
     azure_rm_sqlelasticpooldatabaseactivity_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -105,9 +105,9 @@ class AzureRMElasticPoolDatabaseActivitiesFacts(AzureRMModuleBase):
 
     def list_by_elastic_pool(self):
         '''
-        Gets facts of the specified ElasticPoolDatabaseActivities.
+        Gets facts of the specified Elastic Pool Database Activity.
 
-        :return: deserialized ElasticPoolDatabaseActivitiesinstance state dictionary
+        :return: deserialized Elastic Pool Database Activityinstance state dictionary
         '''
         response = None
         results = False

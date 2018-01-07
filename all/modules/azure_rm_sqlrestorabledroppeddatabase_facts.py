@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlrestorabledroppeddatabase_facts
 version_added: "2.5"
-short_description: Get RestorableDroppedDatabases facts.
+short_description: Get Restorable Dropped Database facts.
 description:
-    - Get facts of RestorableDroppedDatabases.
+    - Get facts of Restorable Dropped Database.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of RestorableDroppedDatabases
+  - name: Get instance of Restorable Dropped Database
     azure_rm_sqlrestorabledroppeddatabase_facts:
       resource_group: resource_group_name
       server_name: server_name
       restorable_droppeded_database_id: restorable_droppeded_database_id
 
-  - name: List instances of RestorableDroppedDatabases
+  - name: List instances of Restorable Dropped Database
     azure_rm_sqlrestorabledroppeddatabase_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified RestorableDroppedDatabases.
+        Gets facts of the specified Restorable Dropped Database.
 
-        :return: deserialized RestorableDroppedDatabasesinstance state dictionary
+        :return: deserialized Restorable Dropped Databaseinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified RestorableDroppedDatabases.
+        Gets facts of the specified Restorable Dropped Database.
 
-        :return: deserialized RestorableDroppedDatabasesinstance state dictionary
+        :return: deserialized Restorable Dropped Databaseinstance state dictionary
         '''
         response = None
         results = False

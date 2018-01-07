@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webapp_facts
 version_added: "2.5"
-short_description: Get WebApps facts.
+short_description: Get Web App facts.
 description:
-    - Get facts of WebApps.
+    - Get facts of Web App.
 
 options:
     resource_group:
@@ -91,7 +91,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
@@ -99,7 +99,7 @@ EXAMPLES = '''
       request: request
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
@@ -107,7 +107,7 @@ EXAMPLES = '''
       relay_name: relay_name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
@@ -115,7 +115,7 @@ EXAMPLES = '''
       slot: slot
       instance_id: instance_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
@@ -123,7 +123,7 @@ EXAMPLES = '''
       slot: slot
       instance_id: instance_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
@@ -131,7 +131,7 @@ EXAMPLES = '''
       details: details
       filter: filter
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
@@ -139,480 +139,480 @@ EXAMPLES = '''
       target_slot: target_slot
       preserve_vnet: preserve_vnet
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       backup_id: backup_id
       request: request
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       namespace_name: namespace_name
       relay_name: relay_name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       instance_id: instance_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       instance_id: instance_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       details: details
       filter: filter
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       id: id
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       function_name: function_name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       instance_id: instance_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       view: view
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       filter: filter
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       format: format
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       web_job_name: web_job_name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
       filter: filter
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       target_slot: target_slot
       preserve_vnet: preserve_vnet
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       id: id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       function_name: function_name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       instance_id: instance_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       view: view
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       filter: filter
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       process_id: process_id
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       format: format
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       slot: slot
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       web_job_name: web_job_name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
       filter: filter
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       include_slots: include_slots
 
-  - name: Get instance of WebApps
+  - name: Get instance of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
 
-  - name: List instances of WebApps
+  - name: List instances of Web App
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
@@ -1069,9 +1069,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_backup_status_secrets_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1094,9 +1094,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_hybrid_connection_keys_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1119,9 +1119,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_process_modules_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1144,9 +1144,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_process_threads_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1169,9 +1169,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_metrics_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1192,9 +1192,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_slot_differences_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1217,9 +1217,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_backup_status_secrets(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1241,9 +1241,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_hybrid_connection_keys(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1265,9 +1265,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_process_modules(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1289,9 +1289,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_process_threads(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1313,9 +1313,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_metrics(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1335,9 +1335,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_deployment_log_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1359,9 +1359,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_function_secrets_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1383,9 +1383,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_processes_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1407,9 +1407,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_network_features_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1431,9 +1431,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_perf_mon_counters_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1454,9 +1454,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_process_modules_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1478,9 +1478,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_process_threads_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1502,9 +1502,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_publishing_profile_xml_with_secrets_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1525,9 +1525,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_triggered_web_job_history_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1549,9 +1549,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_usages_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1572,9 +1572,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_slot_differences_from_production(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1596,9 +1596,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_deployment_log(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1619,9 +1619,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_function_secrets(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1642,9 +1642,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_processes(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1665,9 +1665,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_network_features(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1688,9 +1688,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_perf_mon_counters(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1710,9 +1710,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_process_modules(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1733,9 +1733,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_process_threads(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1756,9 +1756,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_publishing_profile_xml_with_secrets(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1778,9 +1778,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_backups_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1801,9 +1801,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_configurations_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1824,9 +1824,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_application_settings_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1847,9 +1847,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_connection_strings_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1870,9 +1870,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_metadata_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1893,9 +1893,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_publishing_credentials_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1916,9 +1916,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_site_push_settings_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1939,9 +1939,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_configuration_snapshot_info_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1962,9 +1962,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_continuous_web_jobs_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -1985,9 +1985,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_deployments_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2008,9 +2008,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_domain_ownership_identifiers_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2031,9 +2031,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_functions_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2054,9 +2054,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_host_name_bindings_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2077,9 +2077,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_hybrid_connections_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2100,9 +2100,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_relay_service_connections_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2123,9 +2123,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_identifiers_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2146,9 +2146,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_sync_function_triggers_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2169,9 +2169,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_metric_definitions_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2192,9 +2192,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_premier_add_ons_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2215,9 +2215,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_processes_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2238,9 +2238,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_public_certificates_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2261,9 +2261,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_site_extensions_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2284,9 +2284,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_snapshots_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2307,9 +2307,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_triggered_web_jobs_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2330,9 +2330,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_vnet_connections_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2353,9 +2353,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_web_jobs_slot(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2376,9 +2376,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_triggered_web_job_history(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2399,9 +2399,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_usages(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2421,9 +2421,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2442,9 +2442,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2462,9 +2462,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_backups(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2484,9 +2484,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_configurations(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2506,9 +2506,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_application_settings(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2528,9 +2528,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_connection_strings(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2550,9 +2550,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_metadata(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2572,9 +2572,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_publishing_credentials(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2594,9 +2594,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_site_push_settings(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2616,9 +2616,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_slot_configuration_names(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2638,9 +2638,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_configuration_snapshot_info(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2660,9 +2660,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_continuous_web_jobs(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2682,9 +2682,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_deployments(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2704,9 +2704,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_domain_ownership_identifiers(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2726,9 +2726,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_functions(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2748,9 +2748,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_host_name_bindings(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2770,9 +2770,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_hybrid_connections(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2792,9 +2792,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_relay_service_connections(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2814,9 +2814,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_instance_identifiers(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2836,9 +2836,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_sync_function_triggers(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2858,9 +2858,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_metric_definitions(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2880,9 +2880,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_premier_add_ons(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2902,9 +2902,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_processes(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2924,9 +2924,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_public_certificates(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2946,9 +2946,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_site_extensions(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2968,9 +2968,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_slots(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -2990,9 +2990,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_snapshots(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -3012,9 +3012,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_triggered_web_jobs(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -3034,9 +3034,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_vnet_connections(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False
@@ -3056,9 +3056,9 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
     def list_web_jobs(self):
         '''
-        Gets facts of the specified WebApps.
+        Gets facts of the specified Web App.
 
-        :return: deserialized WebAppsinstance state dictionary
+        :return: deserialized Web Appinstance state dictionary
         '''
         response = None
         results = False

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqltransparentdataencryptionactivity_facts
 version_added: "2.5"
-short_description: Get TransparentDataEncryptionActivities facts.
+short_description: Get Transparent Data Encryption Activity facts.
 description:
-    - Get facts of TransparentDataEncryptionActivities.
+    - Get facts of Transparent Data Encryption Activity.
 
 options:
     resource_group:
@@ -48,7 +48,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of TransparentDataEncryptionActivities
+  - name: List instances of Transparent Data Encryption Activity
     azure_rm_sqltransparentdataencryptionactivity_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -116,9 +116,9 @@ class AzureRMTransparentDataEncryptionActivitiesFacts(AzureRMModuleBase):
 
     def list_by_configuration(self):
         '''
-        Gets facts of the specified TransparentDataEncryptionActivities.
+        Gets facts of the specified Transparent Data Encryption Activity.
 
-        :return: deserialized TransparentDataEncryptionActivitiesinstance state dictionary
+        :return: deserialized Transparent Data Encryption Activityinstance state dictionary
         '''
         response = None
         results = False

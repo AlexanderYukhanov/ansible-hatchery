@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserviceobjective_facts
 version_added: "2.5"
-short_description: Get ServiceObjectives facts.
+short_description: Get Service Objective facts.
 description:
-    - Get facts of ServiceObjectives.
+    - Get facts of Service Objective.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ServiceObjectives
+  - name: Get instance of Service Objective
     azure_rm_sqlserviceobjective_facts:
       resource_group: resource_group_name
       server_name: server_name
       service_objective_name: service_objective_name
 
-  - name: List instances of ServiceObjectives
+  - name: List instances of Service Objective
     azure_rm_sqlserviceobjective_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServiceObjectives.
+        Gets facts of the specified Service Objective.
 
-        :return: deserialized ServiceObjectivesinstance state dictionary
+        :return: deserialized Service Objectiveinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServiceObjectives.
+        Gets facts of the specified Service Objective.
 
-        :return: deserialized ServiceObjectivesinstance state dictionary
+        :return: deserialized Service Objectiveinstance state dictionary
         '''
         response = None
         results = False

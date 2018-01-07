@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_vault_facts
 version_added: "2.5"
-short_description: Get Vaults facts.
+short_description: Get Vault facts.
 description:
-    - Get facts of Vaults.
+    - Get facts of Vault.
 
 options:
     resource_group:
@@ -41,17 +41,17 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of Vaults
+  - name: Get instance of Vault
     azure_rm_vault_facts:
       resource_group: resource_group_name
       vault_name: vault_name
 
-  - name: List instances of Vaults
+  - name: List instances of Vault
     azure_rm_vault_facts:
       resource_group: resource_group_name
       top: top
 
-  - name: List instances of Vaults
+  - name: List instances of Vault
     azure_rm_vault_facts:
 '''
 
@@ -108,9 +108,9 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified Vaults.
+        Gets facts of the specified Vault.
 
-        :return: deserialized Vaultsinstance state dictionary
+        :return: deserialized Vaultinstance state dictionary
         '''
         response = None
         results = False
@@ -128,9 +128,9 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified Vaults.
+        Gets facts of the specified Vault.
 
-        :return: deserialized Vaultsinstance state dictionary
+        :return: deserialized Vaultinstance state dictionary
         '''
         response = None
         results = False
@@ -149,9 +149,9 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
 
     def list_deleted(self):
         '''
-        Gets facts of the specified Vaults.
+        Gets facts of the specified Vault.
 
-        :return: deserialized Vaultsinstance state dictionary
+        :return: deserialized Vaultinstance state dictionary
         '''
         response = None
         results = False

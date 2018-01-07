@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverazureadadministrator_facts
 version_added: "2.5"
-short_description: Get ServerAzureADAdministrators facts.
+short_description: Get Server Azure A D Administrator facts.
 description:
-    - Get facts of ServerAzureADAdministrators.
+    - Get facts of Server Azure A D Administrator.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ServerAzureADAdministrators
+  - name: Get instance of Server Azure A D Administrator
     azure_rm_sqlserverazureadadministrator_facts:
       resource_group: resource_group_name
       server_name: server_name
       administrator_name: administrator_name
 
-  - name: List instances of ServerAzureADAdministrators
+  - name: List instances of Server Azure A D Administrator
     azure_rm_sqlserverazureadadministrator_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServerAzureADAdministrators.
+        Gets facts of the specified Server Azure A D Administrator.
 
-        :return: deserialized ServerAzureADAdministratorsinstance state dictionary
+        :return: deserialized Server Azure A D Administratorinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServerAzureADAdministrators.
+        Gets facts of the specified Server Azure A D Administrator.
 
-        :return: deserialized ServerAzureADAdministratorsinstance state dictionary
+        :return: deserialized Server Azure A D Administratorinstance state dictionary
         '''
         response = None
         results = False

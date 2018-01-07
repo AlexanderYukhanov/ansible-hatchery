@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webdomain_facts
 version_added: "2.5"
-short_description: Get Domains facts.
+short_description: Get Domain facts.
 description:
-    - Get facts of Domains.
+    - Get facts of Domain.
 
 options:
     keywords:
@@ -44,22 +44,22 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Domains
+  - name: List instances of Domain
     azure_rm_webdomain_facts:
       keywords: keywords
       max_domain_recommendations: max_domain_recommendations
 
-  - name: Get instance of Domains
+  - name: Get instance of Domain
     azure_rm_webdomain_facts:
       resource_group: resource_group_name
       domain_name: domain_name
 
-  - name: List instances of Domains
+  - name: List instances of Domain
     azure_rm_webdomain_facts:
       resource_group: resource_group_name
       domain_name: domain_name
 
-  - name: List instances of Domains
+  - name: List instances of Domain
     azure_rm_webdomain_facts:
       resource_group: resource_group_name
 '''
@@ -124,9 +124,9 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
     def list_recommendations(self):
         '''
-        Gets facts of the specified Domains.
+        Gets facts of the specified Domain.
 
-        :return: deserialized Domainsinstance state dictionary
+        :return: deserialized Domaininstance state dictionary
         '''
         response = None
         results = False
@@ -145,9 +145,9 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified Domains.
+        Gets facts of the specified Domain.
 
-        :return: deserialized Domainsinstance state dictionary
+        :return: deserialized Domaininstance state dictionary
         '''
         response = None
         results = False
@@ -165,9 +165,9 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
     def list_ownership_identifiers(self):
         '''
-        Gets facts of the specified Domains.
+        Gets facts of the specified Domain.
 
-        :return: deserialized Domainsinstance state dictionary
+        :return: deserialized Domaininstance state dictionary
         '''
         response = None
         results = False
@@ -187,9 +187,9 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
     def list_by_resource_group(self):
         '''
-        Gets facts of the specified Domains.
+        Gets facts of the specified Domain.
 
-        :return: deserialized Domainsinstance state dictionary
+        :return: deserialized Domaininstance state dictionary
         '''
         response = None
         results = False

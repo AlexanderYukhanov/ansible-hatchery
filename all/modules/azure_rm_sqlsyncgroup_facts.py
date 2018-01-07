@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncgroup_facts
 version_added: "2.5"
-short_description: Get SyncGroups facts.
+short_description: Get Sync Group facts.
 description:
-    - Get facts of SyncGroups.
+    - Get facts of Sync Group.
 
 options:
     resource_group:
@@ -59,7 +59,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of SyncGroups
+  - name: List instances of Sync Group
     azure_rm_sqlsyncgroup_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -70,27 +70,27 @@ EXAMPLES = '''
       type: type
       continuation_token: continuation_token
 
-  - name: List instances of SyncGroups
+  - name: List instances of Sync Group
     azure_rm_sqlsyncgroup_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       sync_group_name: sync_group_name
 
-  - name: Get instance of SyncGroups
+  - name: Get instance of Sync Group
     azure_rm_sqlsyncgroup_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
       sync_group_name: sync_group_name
 
-  - name: List instances of SyncGroups
+  - name: List instances of Sync Group
     azure_rm_sqlsyncgroup_facts:
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
 
-  - name: List instances of SyncGroups
+  - name: List instances of Sync Group
     azure_rm_sqlsyncgroup_facts:
       location_name: location_name
 '''
@@ -190,9 +190,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
     def list_logs(self):
         '''
-        Gets facts of the specified SyncGroups.
+        Gets facts of the specified Sync Group.
 
-        :return: deserialized SyncGroupsinstance state dictionary
+        :return: deserialized Sync Groupinstance state dictionary
         '''
         response = None
         results = False
@@ -217,9 +217,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
     def list_hub_schemas(self):
         '''
-        Gets facts of the specified SyncGroups.
+        Gets facts of the specified Sync Group.
 
-        :return: deserialized SyncGroupsinstance state dictionary
+        :return: deserialized Sync Groupinstance state dictionary
         '''
         response = None
         results = False
@@ -241,9 +241,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified SyncGroups.
+        Gets facts of the specified Sync Group.
 
-        :return: deserialized SyncGroupsinstance state dictionary
+        :return: deserialized Sync Groupinstance state dictionary
         '''
         response = None
         results = False
@@ -263,9 +263,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
     def list_by_database(self):
         '''
-        Gets facts of the specified SyncGroups.
+        Gets facts of the specified Sync Group.
 
-        :return: deserialized SyncGroupsinstance state dictionary
+        :return: deserialized Sync Groupinstance state dictionary
         '''
         response = None
         results = False
@@ -286,9 +286,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
 
     def list_sync_database_ids(self):
         '''
-        Gets facts of the specified SyncGroups.
+        Gets facts of the specified Sync Group.
 
-        :return: deserialized SyncGroupsinstance state dictionary
+        :return: deserialized Sync Groupinstance state dictionary
         '''
         response = None
         results = False

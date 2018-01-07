@@ -3,7 +3,7 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts Subnets
+- name: Gather facts Subnet
   azure_rm_applicationgatewaysubnet_facts:
     resource_group: "{{ resource_group }}"
   register: output

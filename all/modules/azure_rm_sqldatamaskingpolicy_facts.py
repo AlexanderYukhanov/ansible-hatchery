@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatamaskingpolicy_facts
 version_added: "2.5"
-short_description: Get DataMaskingPolicies facts.
+short_description: Get Data Masking Policy facts.
 description:
-    - Get facts of DataMaskingPolicies.
+    - Get facts of Data Masking Policy.
 
 options:
     resource_group:
@@ -48,7 +48,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of DataMaskingPolicies
+  - name: Get instance of Data Masking Policy
     azure_rm_sqldatamaskingpolicy_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -116,9 +116,9 @@ class AzureRMDataMaskingPoliciesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified DataMaskingPolicies.
+        Gets facts of the specified Data Masking Policy.
 
-        :return: deserialized DataMaskingPoliciesinstance state dictionary
+        :return: deserialized Data Masking Policyinstance state dictionary
         '''
         response = None
         results = False

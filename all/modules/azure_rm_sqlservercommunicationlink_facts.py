@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlservercommunicationlink_facts
 version_added: "2.5"
-short_description: Get ServerCommunicationLinks facts.
+short_description: Get Server Communication Link facts.
 description:
-    - Get facts of ServerCommunicationLinks.
+    - Get facts of Server Communication Link.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ServerCommunicationLinks
+  - name: Get instance of Server Communication Link
     azure_rm_sqlservercommunicationlink_facts:
       resource_group: resource_group_name
       server_name: server_name
       communication_link_name: communication_link_name
 
-  - name: List instances of ServerCommunicationLinks
+  - name: List instances of Server Communication Link
     azure_rm_sqlservercommunicationlink_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ServerCommunicationLinks.
+        Gets facts of the specified Server Communication Link.
 
-        :return: deserialized ServerCommunicationLinksinstance state dictionary
+        :return: deserialized Server Communication Linkinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified ServerCommunicationLinks.
+        Gets facts of the specified Server Communication Link.
 
-        :return: deserialized ServerCommunicationLinksinstance state dictionary
+        :return: deserialized Server Communication Linkinstance state dictionary
         '''
         response = None
         results = False

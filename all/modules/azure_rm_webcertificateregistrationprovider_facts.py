@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webcertificateregistrationprovider_facts
 version_added: "2.5"
-short_description: Get CertificateRegistrationProvider facts.
+short_description: Get Certificate Registration Provider facts.
 description:
-    - Get facts of CertificateRegistrationProvider.
+    - Get facts of Certificate Registration Provider.
 
 options:
 
@@ -32,7 +32,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of CertificateRegistrationProvider
+  - name: List instances of Certificate Registration Provider
     azure_rm_webcertificateregistrationprovider_facts:
 '''
 
@@ -72,9 +72,9 @@ class AzureRMCertificateRegistrationProviderFacts(AzureRMModuleBase):
 
     def list_operations(self):
         '''
-        Gets facts of the specified CertificateRegistrationProvider.
+        Gets facts of the specified Certificate Registration Provider.
 
-        :return: deserialized CertificateRegistrationProviderinstance state dictionary
+        :return: deserialized Certificate Registration Providerinstance state dictionary
         '''
         response = None
         results = False

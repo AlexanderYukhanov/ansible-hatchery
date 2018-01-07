@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlfailovergroup_facts
 version_added: "2.5"
-short_description: Get FailoverGroups facts.
+short_description: Get Failover Group facts.
 description:
-    - Get facts of FailoverGroups.
+    - Get facts of Failover Group.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of FailoverGroups
+  - name: Get instance of Failover Group
     azure_rm_sqlfailovergroup_facts:
       resource_group: resource_group_name
       server_name: server_name
       failover_group_name: failover_group_name
 
-  - name: List instances of FailoverGroups
+  - name: List instances of Failover Group
     azure_rm_sqlfailovergroup_facts:
       resource_group: resource_group_name
       server_name: server_name
@@ -111,9 +111,9 @@ class AzureRMFailoverGroupsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified FailoverGroups.
+        Gets facts of the specified Failover Group.
 
-        :return: deserialized FailoverGroupsinstance state dictionary
+        :return: deserialized Failover Groupinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMFailoverGroupsFacts(AzureRMModuleBase):
 
     def list_by_server(self):
         '''
-        Gets facts of the specified FailoverGroups.
+        Gets facts of the specified Failover Group.
 
-        :return: deserialized FailoverGroupsinstance state dictionary
+        :return: deserialized Failover Groupinstance state dictionary
         '''
         response = None
         results = False
