@@ -32,7 +32,7 @@
     resource_group: "{{ resource_group }}"
     address_prefix_cidr: 10.1.0.0/24
 
-- name: Create instance of VirtualNetworkRules -- check mode
+- name: Create instance of Virtual Network Rule -- check mode
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
@@ -45,7 +45,7 @@
     that:
       - output.changed
 
-- name: Create instance of VirtualNetworkRules
+- name: Create instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
@@ -57,7 +57,7 @@
     that:
       - output.changed
 
-- name: Create again instance of VirtualNetworkRules
+- name: Create again instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
@@ -69,7 +69,7 @@
     that:
       - output.changed == false
 
-- name: Delete instance of VirtualNetworkRules -- check mode
+- name: Delete instance of Virtual Network Rule -- check mode
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
@@ -82,7 +82,7 @@
     that:
       - output.changed
 
-- name: Delete instance of VirtualNetworkRules
+- name: Delete instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
@@ -94,7 +94,7 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of VirtualNetworkRules
+- name: Delete unexisting instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"

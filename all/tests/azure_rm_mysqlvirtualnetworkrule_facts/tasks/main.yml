@@ -31,7 +31,7 @@
     virtual_network_name: vnet{{ rpfx }}
     resource_group: "{{ resource_group }}"
     address_prefix_cidr: 10.1.0.0/24
-- name: Create VirtualNetworkRules
+- name: Create Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"
@@ -58,7 +58,7 @@
     that:
       - output.changed == False
 
-- name: Delete instance of VirtualNetworkRules
+- name: Delete instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "mysqlsrv{{ rpfx }}"

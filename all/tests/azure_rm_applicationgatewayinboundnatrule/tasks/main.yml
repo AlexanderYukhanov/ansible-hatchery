@@ -13,7 +13,7 @@
     name: lb{{ rpfx }}
     public_ip: ansiblepip{{ rpfx }}
 
-- name: Create instance of InboundNatRules -- check mode
+- name: Create instance of Inbound Nat Rule -- check mode
   azure_rm_applicationgatewayinboundnatrule:
     resource_group: "{{ resource_group }}"
     load_balancer_name: lb{{ rpfx }}
@@ -25,7 +25,7 @@
     that:
       - output.changed
 
-- name: Create instance of InboundNatRules
+- name: Create instance of Inbound Nat Rule
   azure_rm_applicationgatewayinboundnatrule:
     resource_group: "{{ resource_group }}"
     load_balancer_name: lb{{ rpfx }}
@@ -36,7 +36,7 @@
     that:
       - output.changed
 
-- name: Create again instance of InboundNatRules
+- name: Create again instance of Inbound Nat Rule
   azure_rm_applicationgatewayinboundnatrule:
     resource_group: "{{ resource_group }}"
     load_balancer_name: lb{{ rpfx }}
@@ -47,7 +47,7 @@
     that:
       - output.changed == false
 
-- name: Delete instance of InboundNatRules -- check mode
+- name: Delete instance of Inbound Nat Rule -- check mode
   azure_rm_applicationgatewayinboundnatrule:
     resource_group: "{{ resource_group }}"
     load_balancer_name: lb{{ rpfx }}
@@ -60,7 +60,7 @@
     that:
       - output.changed
 
-- name: Delete instance of InboundNatRules
+- name: Delete instance of Inbound Nat Rule
   azure_rm_applicationgatewayinboundnatrule:
     resource_group: "{{ resource_group }}"
     load_balancer_name: lb{{ rpfx }}
@@ -72,7 +72,7 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of InboundNatRules
+- name: Delete unexisting instance of Inbound Nat Rule
   azure_rm_applicationgatewayinboundnatrule:
     resource_group: "{{ resource_group }}"
     load_balancer_name: lb{{ rpfx }}

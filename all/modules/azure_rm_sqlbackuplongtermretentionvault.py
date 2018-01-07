@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlbackuplongtermretentionvault
 version_added: "2.5"
-short_description: Manage BackupLongTermRetentionVaults instance.
+short_description: Manage Backup Long Term Retention Vault instance.
 description:
-    - Create, update and delete instance of BackupLongTermRetentionVaults.
+    - Create, update and delete instance of Backup Long Term Retention Vault.
 
 options:
     resource_group:
@@ -48,7 +48,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) BackupLongTermRetentionVaults
+  - name: Create (or update) Backup Long Term Retention Vault
     azure_rm_sqlbackuplongtermretentionvault:
       resource_group: longtermretentiontest-1234
       server_name: longtermretentiontest-5678
@@ -83,7 +83,7 @@ class Actions:
 
 
 class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
-    """Configuration class for an Azure RM BackupLongTermRetentionVaults resource"""
+    """Configuration class for an Azure RM Backup Long Term Retention Vault resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -139,30 +139,30 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_backuplongtermretentionvaults()
+        old_response = self.get_backuplongtermretentionvault()
 
         if not old_response:
-            self.log("BackupLongTermRetentionVaults instance doesn't exist")
+            self.log("Backup Long Term Retention Vault instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("BackupLongTermRetentionVaults instance already exists")
+            self.log("Backup Long Term Retention Vault instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if BackupLongTermRetentionVaults instance has to be deleted or may be updated")
+                self.log("Need to check if Backup Long Term Retention Vault instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the BackupLongTermRetentionVaults instance")
+            self.log("Need to Create / Update the Backup Long Term Retention Vault instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_backuplongtermretentionvaults()
+            response = self.create_update_backuplongtermretentionvault()
 
             if not old_response:
                 self.results['changed'] = True
@@ -170,19 +170,19 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("BackupLongTermRetentionVaults instance deleted")
+            self.log("Backup Long Term Retention Vault instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_backuplongtermretentionvaults()
+            self.delete_backuplongtermretentionvault()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_backuplongtermretentionvaults():
+            while self.get_backuplongtermretentionvault():
                 time.sleep(20)
         else:
-            self.log("BackupLongTermRetentionVaults instance unchanged")
+            self.log("Backup Long Term Retention Vault instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -191,13 +191,13 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_backuplongtermretentionvaults(self):
+    def create_update_backuplongtermretentionvault(self):
         '''
-        Creates or updates BackupLongTermRetentionVaults with the specified configuration.
+        Creates or updates Backup Long Term Retention Vault with the specified configuration.
 
-        :return: deserialized BackupLongTermRetentionVaults instance state dictionary
+        :return: deserialized Backup Long Term Retention Vault instance state dictionary
         '''
-        self.log("Creating / Updating the BackupLongTermRetentionVaults instance {0}".format(self.backup_long_term_retention_vault_name))
+        self.log("Creating / Updating the Backup Long Term Retention Vault instance {0}".format(self.backup_long_term_retention_vault_name))
 
         try:
             response = self.mgmt_client.backup_long_term_retention_vaults.create_or_update(resource_group_name=self.resource_group,
@@ -208,32 +208,32 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the BackupLongTermRetentionVaults instance.')
-            self.fail("Error creating the BackupLongTermRetentionVaults instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Backup Long Term Retention Vault instance.')
+            self.fail("Error creating the Backup Long Term Retention Vault instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_backuplongtermretentionvaults(self):
+    def delete_backuplongtermretentionvault(self):
         '''
-        Deletes specified BackupLongTermRetentionVaults instance in the specified subscription and resource group.
+        Deletes specified Backup Long Term Retention Vault instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the BackupLongTermRetentionVaults instance {0}".format(self.backup_long_term_retention_vault_name))
+        self.log("Deleting the Backup Long Term Retention Vault instance {0}".format(self.backup_long_term_retention_vault_name))
         try:
             response = self.mgmt_client.backup_long_term_retention_vaults.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the BackupLongTermRetentionVaults instance.')
-            self.fail("Error deleting the BackupLongTermRetentionVaults instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Backup Long Term Retention Vault instance.')
+            self.fail("Error deleting the Backup Long Term Retention Vault instance: {0}".format(str(e)))
 
         return True
 
-    def get_backuplongtermretentionvaults(self):
+    def get_backuplongtermretentionvault(self):
         '''
-        Gets the properties of the specified BackupLongTermRetentionVaults.
+        Gets the properties of the specified Backup Long Term Retention Vault.
 
-        :return: deserialized BackupLongTermRetentionVaults instance state dictionary
+        :return: deserialized Backup Long Term Retention Vault instance state dictionary
         '''
-        self.log("Checking if the BackupLongTermRetentionVaults instance {0} is present".format(self.backup_long_term_retention_vault_name))
+        self.log("Checking if the Backup Long Term Retention Vault instance {0} is present".format(self.backup_long_term_retention_vault_name))
         found = False
         try:
             response = self.mgmt_client.backup_long_term_retention_vaults.get(resource_group_name=self.resource_group,
@@ -241,9 +241,9 @@ class AzureRMBackupLongTermRetentionVaults(AzureRMModuleBase):
                                                                               backup_long_term_retention_vault_name=self.backup_long_term_retention_vault_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("BackupLongTermRetentionVaults instance : {0} found".format(response.name))
+            self.log("Backup Long Term Retention Vault instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the BackupLongTermRetentionVaults instance.')
+            self.log('Did not find the Backup Long Term Retention Vault instance.')
         if found is True:
             return response.as_dict()
 

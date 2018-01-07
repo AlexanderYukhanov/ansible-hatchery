@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaypublicipaddresse
 version_added: "2.5"
-short_description: Manage PublicIPAddresses instance.
+short_description: Manage Public I P Addresse instance.
 description:
-    - Create, update and delete instance of PublicIPAddresses.
+    - Create, update and delete instance of Public I P Addresse.
 
 options:
     resource_group:
@@ -98,7 +98,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) PublicIPAddresses
+  - name: Create (or update) Public I P Addresse
     azure_rm_applicationgatewaypublicipaddresse:
       resource_group: rg1
       public_ip_address_name: test-ip
@@ -132,7 +132,7 @@ class Actions:
 
 
 class AzureRMPublicIPAddresses(AzureRMModuleBase):
-    """Configuration class for an Azure RM PublicIPAddresses resource"""
+    """Configuration class for an Azure RM Public I P Addresse resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -261,30 +261,30 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_publicipaddresses()
+        old_response = self.get_publicipaddresse()
 
         if not old_response:
-            self.log("PublicIPAddresses instance doesn't exist")
+            self.log("Public I P Addresse instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("PublicIPAddresses instance already exists")
+            self.log("Public I P Addresse instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if PublicIPAddresses instance has to be deleted or may be updated")
+                self.log("Need to check if Public I P Addresse instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the PublicIPAddresses instance")
+            self.log("Need to Create / Update the Public I P Addresse instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_publicipaddresses()
+            response = self.create_update_publicipaddresse()
 
             if not old_response:
                 self.results['changed'] = True
@@ -292,19 +292,19 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("PublicIPAddresses instance deleted")
+            self.log("Public I P Addresse instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_publicipaddresses()
+            self.delete_publicipaddresse()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_publicipaddresses():
+            while self.get_publicipaddresse():
                 time.sleep(20)
         else:
-            self.log("PublicIPAddresses instance unchanged")
+            self.log("Public I P Addresse instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -313,13 +313,13 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_publicipaddresses(self):
+    def create_update_publicipaddresse(self):
         '''
-        Creates or updates PublicIPAddresses with the specified configuration.
+        Creates or updates Public I P Addresse with the specified configuration.
 
-        :return: deserialized PublicIPAddresses instance state dictionary
+        :return: deserialized Public I P Addresse instance state dictionary
         '''
-        self.log("Creating / Updating the PublicIPAddresses instance {0}".format(self.public_ip_address_name))
+        self.log("Creating / Updating the Public I P Addresse instance {0}".format(self.public_ip_address_name))
 
         try:
             response = self.mgmt_client.public_ip_addresses.create_or_update(resource_group_name=self.resource_group,
@@ -329,42 +329,42 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the PublicIPAddresses instance.')
-            self.fail("Error creating the PublicIPAddresses instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Public I P Addresse instance.')
+            self.fail("Error creating the Public I P Addresse instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_publicipaddresses(self):
+    def delete_publicipaddresse(self):
         '''
-        Deletes specified PublicIPAddresses instance in the specified subscription and resource group.
+        Deletes specified Public I P Addresse instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the PublicIPAddresses instance {0}".format(self.public_ip_address_name))
+        self.log("Deleting the Public I P Addresse instance {0}".format(self.public_ip_address_name))
         try:
             response = self.mgmt_client.public_ip_addresses.delete(resource_group_name=self.resource_group,
                                                                    public_ip_address_name=self.public_ip_address_name)
         except CloudError as e:
-            self.log('Error attempting to delete the PublicIPAddresses instance.')
-            self.fail("Error deleting the PublicIPAddresses instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Public I P Addresse instance.')
+            self.fail("Error deleting the Public I P Addresse instance: {0}".format(str(e)))
 
         return True
 
-    def get_publicipaddresses(self):
+    def get_publicipaddresse(self):
         '''
-        Gets the properties of the specified PublicIPAddresses.
+        Gets the properties of the specified Public I P Addresse.
 
-        :return: deserialized PublicIPAddresses instance state dictionary
+        :return: deserialized Public I P Addresse instance state dictionary
         '''
-        self.log("Checking if the PublicIPAddresses instance {0} is present".format(self.public_ip_address_name))
+        self.log("Checking if the Public I P Addresse instance {0} is present".format(self.public_ip_address_name))
         found = False
         try:
             response = self.mgmt_client.public_ip_addresses.get(resource_group_name=self.resource_group,
                                                                 public_ip_address_name=self.public_ip_address_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("PublicIPAddresses instance : {0} found".format(response.name))
+            self.log("Public I P Addresse instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the PublicIPAddresses instance.')
+            self.log('Did not find the Public I P Addresse instance.')
         if found is True:
             return response.as_dict()
 

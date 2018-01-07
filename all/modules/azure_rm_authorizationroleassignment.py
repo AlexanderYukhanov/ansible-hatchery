@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationroleassignment
 version_added: "2.5"
-short_description: Manage RoleAssignments instance.
+short_description: Manage Role Assignment instance.
 description:
-    - Create, update and delete instance of RoleAssignments.
+    - Create, update and delete instance of Role Assignment.
 
 options:
     scope:
@@ -56,7 +56,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) RoleAssignments
+  - name: Create (or update) Role Assignment
     azure_rm_authorizationroleassignment:
       scope: scope
       role_assignment_name: roleAssignmentName
@@ -93,7 +93,7 @@ class Actions:
 
 
 class AzureRMRoleAssignments(AzureRMModuleBase):
-    """Configuration class for an Azure RM RoleAssignments resource"""
+    """Configuration class for an Azure RM Role Assignment resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -144,30 +144,30 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        old_response = self.get_roleassignments()
+        old_response = self.get_roleassignment()
 
         if not old_response:
-            self.log("RoleAssignments instance doesn't exist")
+            self.log("Role Assignment instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("RoleAssignments instance already exists")
+            self.log("Role Assignment instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if RoleAssignments instance has to be deleted or may be updated")
+                self.log("Need to check if Role Assignment instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the RoleAssignments instance")
+            self.log("Need to Create / Update the Role Assignment instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_roleassignments()
+            response = self.create_update_roleassignment()
 
             if not old_response:
                 self.results['changed'] = True
@@ -175,19 +175,19 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("RoleAssignments instance deleted")
+            self.log("Role Assignment instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_roleassignments()
+            self.delete_roleassignment()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_roleassignments():
+            while self.get_roleassignment():
                 time.sleep(20)
         else:
-            self.log("RoleAssignments instance unchanged")
+            self.log("Role Assignment instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -196,13 +196,13 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_roleassignments(self):
+    def create_update_roleassignment(self):
         '''
-        Creates or updates RoleAssignments with the specified configuration.
+        Creates or updates Role Assignment with the specified configuration.
 
-        :return: deserialized RoleAssignments instance state dictionary
+        :return: deserialized Role Assignment instance state dictionary
         '''
-        self.log("Creating / Updating the RoleAssignments instance {0}".format(self.role_assignment_name))
+        self.log("Creating / Updating the Role Assignment instance {0}".format(self.role_assignment_name))
 
         try:
             if self.to_do == Actions.Create:
@@ -215,42 +215,42 @@ class AzureRMRoleAssignments(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the RoleAssignments instance.')
-            self.fail("Error creating the RoleAssignments instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Role Assignment instance.')
+            self.fail("Error creating the Role Assignment instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_roleassignments(self):
+    def delete_roleassignment(self):
         '''
-        Deletes specified RoleAssignments instance in the specified subscription and resource group.
+        Deletes specified Role Assignment instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the RoleAssignments instance {0}".format(self.role_assignment_name))
+        self.log("Deleting the Role Assignment instance {0}".format(self.role_assignment_name))
         try:
             response = self.mgmt_client.role_assignments.delete(scope=self.scope,
                                                                 role_assignment_name=self.role_assignment_name)
         except CloudError as e:
-            self.log('Error attempting to delete the RoleAssignments instance.')
-            self.fail("Error deleting the RoleAssignments instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Role Assignment instance.')
+            self.fail("Error deleting the Role Assignment instance: {0}".format(str(e)))
 
         return True
 
-    def get_roleassignments(self):
+    def get_roleassignment(self):
         '''
-        Gets the properties of the specified RoleAssignments.
+        Gets the properties of the specified Role Assignment.
 
-        :return: deserialized RoleAssignments instance state dictionary
+        :return: deserialized Role Assignment instance state dictionary
         '''
-        self.log("Checking if the RoleAssignments instance {0} is present".format(self.role_assignment_name))
+        self.log("Checking if the Role Assignment instance {0} is present".format(self.role_assignment_name))
         found = False
         try:
             response = self.mgmt_client.role_assignments.get(scope=self.scope,
                                                              role_assignment_name=self.role_assignment_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("RoleAssignments instance : {0} found".format(response.name))
+            self.log("Role Assignment instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the RoleAssignments instance.')
+            self.log('Did not find the Role Assignment instance.')
         if found is True:
             return response.as_dict()
 

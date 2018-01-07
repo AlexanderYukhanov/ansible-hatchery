@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaypacketcapture
 version_added: "2.5"
-short_description: Manage PacketCaptures instance.
+short_description: Manage Packet Capture instance.
 description:
-    - Create, update and delete instance of PacketCaptures.
+    - Create, update and delete instance of Packet Capture.
 
 options:
     resource_group:
@@ -99,7 +99,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) PacketCaptures
+  - name: Create (or update) Packet Capture
     azure_rm_applicationgatewaypacketcapture:
       resource_group: NOT FOUND
       network_watcher_name: NOT FOUND
@@ -133,7 +133,7 @@ class Actions:
 
 
 class AzureRMPacketCaptures(AzureRMModuleBase):
-    """Configuration class for an Azure RM PacketCaptures resource"""
+    """Configuration class for an Azure RM Packet Capture resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -226,30 +226,30 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_packetcaptures()
+        old_response = self.get_packetcapture()
 
         if not old_response:
-            self.log("PacketCaptures instance doesn't exist")
+            self.log("Packet Capture instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("PacketCaptures instance already exists")
+            self.log("Packet Capture instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if PacketCaptures instance has to be deleted or may be updated")
+                self.log("Need to check if Packet Capture instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the PacketCaptures instance")
+            self.log("Need to Create / Update the Packet Capture instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_packetcaptures()
+            response = self.create_update_packetcapture()
 
             if not old_response:
                 self.results['changed'] = True
@@ -257,19 +257,19 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("PacketCaptures instance deleted")
+            self.log("Packet Capture instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_packetcaptures()
+            self.delete_packetcapture()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_packetcaptures():
+            while self.get_packetcapture():
                 time.sleep(20)
         else:
-            self.log("PacketCaptures instance unchanged")
+            self.log("Packet Capture instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -278,13 +278,13 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_packetcaptures(self):
+    def create_update_packetcapture(self):
         '''
-        Creates or updates PacketCaptures with the specified configuration.
+        Creates or updates Packet Capture with the specified configuration.
 
-        :return: deserialized PacketCaptures instance state dictionary
+        :return: deserialized Packet Capture instance state dictionary
         '''
-        self.log("Creating / Updating the PacketCaptures instance {0}".format(self.packet_capture_name))
+        self.log("Creating / Updating the Packet Capture instance {0}".format(self.packet_capture_name))
 
         try:
             if self.to_do == Actions.Create:
@@ -298,34 +298,34 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the PacketCaptures instance.')
-            self.fail("Error creating the PacketCaptures instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Packet Capture instance.')
+            self.fail("Error creating the Packet Capture instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_packetcaptures(self):
+    def delete_packetcapture(self):
         '''
-        Deletes specified PacketCaptures instance in the specified subscription and resource group.
+        Deletes specified Packet Capture instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the PacketCaptures instance {0}".format(self.packet_capture_name))
+        self.log("Deleting the Packet Capture instance {0}".format(self.packet_capture_name))
         try:
             response = self.mgmt_client.packet_captures.delete(resource_group_name=self.resource_group,
                                                                network_watcher_name=self.network_watcher_name,
                                                                packet_capture_name=self.packet_capture_name)
         except CloudError as e:
-            self.log('Error attempting to delete the PacketCaptures instance.')
-            self.fail("Error deleting the PacketCaptures instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Packet Capture instance.')
+            self.fail("Error deleting the Packet Capture instance: {0}".format(str(e)))
 
         return True
 
-    def get_packetcaptures(self):
+    def get_packetcapture(self):
         '''
-        Gets the properties of the specified PacketCaptures.
+        Gets the properties of the specified Packet Capture.
 
-        :return: deserialized PacketCaptures instance state dictionary
+        :return: deserialized Packet Capture instance state dictionary
         '''
-        self.log("Checking if the PacketCaptures instance {0} is present".format(self.packet_capture_name))
+        self.log("Checking if the Packet Capture instance {0} is present".format(self.packet_capture_name))
         found = False
         try:
             response = self.mgmt_client.packet_captures.get(resource_group_name=self.resource_group,
@@ -333,9 +333,9 @@ class AzureRMPacketCaptures(AzureRMModuleBase):
                                                             packet_capture_name=self.packet_capture_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("PacketCaptures instance : {0} found".format(response.name))
+            self.log("Packet Capture instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the PacketCaptures instance.')
+            self.log('Did not find the Packet Capture instance.')
         if found is True:
             return response.as_dict()
 

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworkwatcher
 version_added: "2.5"
-short_description: Manage NetworkWatchers instance.
+short_description: Manage Network Watcher instance.
 description:
-    - Create, update and delete instance of NetworkWatchers.
+    - Create, update and delete instance of Network Watcher.
 
 options:
     resource_group:
@@ -49,7 +49,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) NetworkWatchers
+  - name: Create (or update) Network Watcher
     azure_rm_applicationgatewaynetworkwatcher:
       resource_group: NOT FOUND
       network_watcher_name: NOT FOUND
@@ -83,7 +83,7 @@ class Actions:
 
 
 class AzureRMNetworkWatchers(AzureRMModuleBase):
-    """Configuration class for an Azure RM NetworkWatchers resource"""
+    """Configuration class for an Azure RM Network Watcher resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -149,30 +149,30 @@ class AzureRMNetworkWatchers(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_networkwatchers()
+        old_response = self.get_networkwatcher()
 
         if not old_response:
-            self.log("NetworkWatchers instance doesn't exist")
+            self.log("Network Watcher instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("NetworkWatchers instance already exists")
+            self.log("Network Watcher instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if NetworkWatchers instance has to be deleted or may be updated")
+                self.log("Need to check if Network Watcher instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the NetworkWatchers instance")
+            self.log("Need to Create / Update the Network Watcher instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_networkwatchers()
+            response = self.create_update_networkwatcher()
 
             if not old_response:
                 self.results['changed'] = True
@@ -180,19 +180,19 @@ class AzureRMNetworkWatchers(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("NetworkWatchers instance deleted")
+            self.log("Network Watcher instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_networkwatchers()
+            self.delete_networkwatcher()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_networkwatchers():
+            while self.get_networkwatcher():
                 time.sleep(20)
         else:
-            self.log("NetworkWatchers instance unchanged")
+            self.log("Network Watcher instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -201,13 +201,13 @@ class AzureRMNetworkWatchers(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_networkwatchers(self):
+    def create_update_networkwatcher(self):
         '''
-        Creates or updates NetworkWatchers with the specified configuration.
+        Creates or updates Network Watcher with the specified configuration.
 
-        :return: deserialized NetworkWatchers instance state dictionary
+        :return: deserialized Network Watcher instance state dictionary
         '''
-        self.log("Creating / Updating the NetworkWatchers instance {0}".format(self.network_watcher_name))
+        self.log("Creating / Updating the Network Watcher instance {0}".format(self.network_watcher_name))
 
         try:
             response = self.mgmt_client.network_watchers.create_or_update(resource_group_name=self.resource_group,
@@ -217,42 +217,42 @@ class AzureRMNetworkWatchers(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the NetworkWatchers instance.')
-            self.fail("Error creating the NetworkWatchers instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Network Watcher instance.')
+            self.fail("Error creating the Network Watcher instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_networkwatchers(self):
+    def delete_networkwatcher(self):
         '''
-        Deletes specified NetworkWatchers instance in the specified subscription and resource group.
+        Deletes specified Network Watcher instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the NetworkWatchers instance {0}".format(self.network_watcher_name))
+        self.log("Deleting the Network Watcher instance {0}".format(self.network_watcher_name))
         try:
             response = self.mgmt_client.network_watchers.delete(resource_group_name=self.resource_group,
                                                                 network_watcher_name=self.network_watcher_name)
         except CloudError as e:
-            self.log('Error attempting to delete the NetworkWatchers instance.')
-            self.fail("Error deleting the NetworkWatchers instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Network Watcher instance.')
+            self.fail("Error deleting the Network Watcher instance: {0}".format(str(e)))
 
         return True
 
-    def get_networkwatchers(self):
+    def get_networkwatcher(self):
         '''
-        Gets the properties of the specified NetworkWatchers.
+        Gets the properties of the specified Network Watcher.
 
-        :return: deserialized NetworkWatchers instance state dictionary
+        :return: deserialized Network Watcher instance state dictionary
         '''
-        self.log("Checking if the NetworkWatchers instance {0} is present".format(self.network_watcher_name))
+        self.log("Checking if the Network Watcher instance {0} is present".format(self.network_watcher_name))
         found = False
         try:
             response = self.mgmt_client.network_watchers.get(resource_group_name=self.resource_group,
                                                              network_watcher_name=self.network_watcher_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkWatchers instance : {0} found".format(response.name))
+            self.log("Network Watcher instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkWatchers instance.')
+            self.log('Did not find the Network Watcher instance.')
         if found is True:
             return response.as_dict()
 

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqltransparentdataencryption
 version_added: "2.5"
-short_description: Manage TransparentDataEncryptions instance.
+short_description: Manage Transparent Data Encryption instance.
 description:
-    - Create, update and delete instance of TransparentDataEncryptions.
+    - Create, update and delete instance of Transparent Data Encryption.
 
 options:
     resource_group:
@@ -52,7 +52,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) TransparentDataEncryptions
+  - name: Create (or update) Transparent Data Encryption
     azure_rm_sqltransparentdataencryption:
       resource_group: sqlcrudtest-6852
       server_name: sqlcrudtest-2080
@@ -94,7 +94,7 @@ class Actions:
 
 
 class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
-    """Configuration class for an Azure RM TransparentDataEncryptions resource"""
+    """Configuration class for an Azure RM Transparent Data Encryption resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -155,30 +155,30 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_transparentdataencryptions()
+        old_response = self.get_transparentdataencryption()
 
         if not old_response:
-            self.log("TransparentDataEncryptions instance doesn't exist")
+            self.log("Transparent Data Encryption instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("TransparentDataEncryptions instance already exists")
+            self.log("Transparent Data Encryption instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if TransparentDataEncryptions instance has to be deleted or may be updated")
+                self.log("Need to check if Transparent Data Encryption instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the TransparentDataEncryptions instance")
+            self.log("Need to Create / Update the Transparent Data Encryption instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_transparentdataencryptions()
+            response = self.create_update_transparentdataencryption()
 
             if not old_response:
                 self.results['changed'] = True
@@ -186,19 +186,19 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("TransparentDataEncryptions instance deleted")
+            self.log("Transparent Data Encryption instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_transparentdataencryptions()
+            self.delete_transparentdataencryption()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_transparentdataencryptions():
+            while self.get_transparentdataencryption():
                 time.sleep(20)
         else:
-            self.log("TransparentDataEncryptions instance unchanged")
+            self.log("Transparent Data Encryption instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -208,13 +208,13 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_transparentdataencryptions(self):
+    def create_update_transparentdataencryption(self):
         '''
-        Creates or updates TransparentDataEncryptions with the specified configuration.
+        Creates or updates Transparent Data Encryption with the specified configuration.
 
-        :return: deserialized TransparentDataEncryptions instance state dictionary
+        :return: deserialized Transparent Data Encryption instance state dictionary
         '''
-        self.log("Creating / Updating the TransparentDataEncryptions instance {0}".format(self.transparent_data_encryption_name))
+        self.log("Creating / Updating the Transparent Data Encryption instance {0}".format(self.transparent_data_encryption_name))
 
         try:
             response = self.mgmt_client.transparent_data_encryptions.create_or_update(resource_group_name=self.resource_group,
@@ -225,32 +225,32 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the TransparentDataEncryptions instance.')
-            self.fail("Error creating the TransparentDataEncryptions instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Transparent Data Encryption instance.')
+            self.fail("Error creating the Transparent Data Encryption instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_transparentdataencryptions(self):
+    def delete_transparentdataencryption(self):
         '''
-        Deletes specified TransparentDataEncryptions instance in the specified subscription and resource group.
+        Deletes specified Transparent Data Encryption instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the TransparentDataEncryptions instance {0}".format(self.transparent_data_encryption_name))
+        self.log("Deleting the Transparent Data Encryption instance {0}".format(self.transparent_data_encryption_name))
         try:
             response = self.mgmt_client.transparent_data_encryptions.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the TransparentDataEncryptions instance.')
-            self.fail("Error deleting the TransparentDataEncryptions instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Transparent Data Encryption instance.')
+            self.fail("Error deleting the Transparent Data Encryption instance: {0}".format(str(e)))
 
         return True
 
-    def get_transparentdataencryptions(self):
+    def get_transparentdataencryption(self):
         '''
-        Gets the properties of the specified TransparentDataEncryptions.
+        Gets the properties of the specified Transparent Data Encryption.
 
-        :return: deserialized TransparentDataEncryptions instance state dictionary
+        :return: deserialized Transparent Data Encryption instance state dictionary
         '''
-        self.log("Checking if the TransparentDataEncryptions instance {0} is present".format(self.transparent_data_encryption_name))
+        self.log("Checking if the Transparent Data Encryption instance {0} is present".format(self.transparent_data_encryption_name))
         found = False
         try:
             response = self.mgmt_client.transparent_data_encryptions.get(resource_group_name=self.resource_group,
@@ -259,9 +259,9 @@ class AzureRMTransparentDataEncryptions(AzureRMModuleBase):
                                                                          transparent_data_encryption_name=self.transparent_data_encryption_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("TransparentDataEncryptions instance : {0} found".format(response.name))
+            self.log("Transparent Data Encryption instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the TransparentDataEncryptions instance.')
+            self.log('Did not find the Transparent Data Encryption instance.')
         if found is True:
             return response.as_dict()
 

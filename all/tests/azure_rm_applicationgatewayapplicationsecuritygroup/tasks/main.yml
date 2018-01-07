@@ -3,7 +3,7 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of ApplicationSecurityGroups -- check mode
+- name: Create instance of Application Security Group -- check mode
   azure_rm_applicationgatewayapplicationsecuritygroup:
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}
@@ -14,7 +14,7 @@
     that:
       - output.changed
 
-- name: Create instance of ApplicationSecurityGroups
+- name: Create instance of Application Security Group
   azure_rm_applicationgatewayapplicationsecuritygroup:
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}
@@ -24,7 +24,7 @@
     that:
       - output.changed
 
-- name: Create again instance of ApplicationSecurityGroups
+- name: Create again instance of Application Security Group
   azure_rm_applicationgatewayapplicationsecuritygroup:
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}
@@ -34,7 +34,7 @@
     that:
       - output.changed == false
 
-- name: Delete instance of ApplicationSecurityGroups -- check mode
+- name: Delete instance of Application Security Group -- check mode
   azure_rm_applicationgatewayapplicationsecuritygroup:
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}
@@ -46,7 +46,7 @@
     that:
       - output.changed
 
-- name: Delete instance of ApplicationSecurityGroups
+- name: Delete instance of Application Security Group
   azure_rm_applicationgatewayapplicationsecuritygroup:
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}
@@ -57,7 +57,7 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of ApplicationSecurityGroups
+- name: Delete unexisting instance of Application Security Group
   azure_rm_applicationgatewayapplicationsecuritygroup:
     resource_group: "{{ resource_group }}"
     application_security_group_name: appgwsg{{ rpfx }}

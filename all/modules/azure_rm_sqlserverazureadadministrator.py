@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlserverazureadadministrator
 version_added: "2.5"
-short_description: Manage ServerAzureADAdministrators instance.
+short_description: Manage Server Azure A D Administrator instance.
 description:
-    - Create, update and delete instance of ServerAzureADAdministrators.
+    - Create, update and delete instance of Server Azure A D Administrator.
 
 options:
     resource_group:
@@ -60,7 +60,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ServerAzureADAdministrators
+  - name: Create (or update) Server Azure A D Administrator
     azure_rm_sqlserverazureadadministrator:
       resource_group: sqlcrudtest-4799
       server_name: sqlcrudtest-6440
@@ -94,7 +94,7 @@ class Actions:
 
 
 class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
-    """Configuration class for an Azure RM ServerAzureADAdministrators resource"""
+    """Configuration class for an Azure RM Server Azure A D Administrator resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -171,30 +171,30 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_serverazureadadministrators()
+        old_response = self.get_serverazureadadministrator()
 
         if not old_response:
-            self.log("ServerAzureADAdministrators instance doesn't exist")
+            self.log("Server Azure A D Administrator instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("ServerAzureADAdministrators instance already exists")
+            self.log("Server Azure A D Administrator instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if ServerAzureADAdministrators instance has to be deleted or may be updated")
+                self.log("Need to check if Server Azure A D Administrator instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ServerAzureADAdministrators instance")
+            self.log("Need to Create / Update the Server Azure A D Administrator instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_serverazureadadministrators()
+            response = self.create_update_serverazureadadministrator()
 
             if not old_response:
                 self.results['changed'] = True
@@ -202,19 +202,19 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("ServerAzureADAdministrators instance deleted")
+            self.log("Server Azure A D Administrator instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_serverazureadadministrators()
+            self.delete_serverazureadadministrator()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_serverazureadadministrators():
+            while self.get_serverazureadadministrator():
                 time.sleep(20)
         else:
-            self.log("ServerAzureADAdministrators instance unchanged")
+            self.log("Server Azure A D Administrator instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -223,13 +223,13 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_serverazureadadministrators(self):
+    def create_update_serverazureadadministrator(self):
         '''
-        Creates or updates ServerAzureADAdministrators with the specified configuration.
+        Creates or updates Server Azure A D Administrator with the specified configuration.
 
-        :return: deserialized ServerAzureADAdministrators instance state dictionary
+        :return: deserialized Server Azure A D Administrator instance state dictionary
         '''
-        self.log("Creating / Updating the ServerAzureADAdministrators instance {0}".format(self.administrator_name))
+        self.log("Creating / Updating the Server Azure A D Administrator instance {0}".format(self.administrator_name))
 
         try:
             response = self.mgmt_client.server_azure_ad_administrators.create_or_update(resource_group_name=self.resource_group,
@@ -240,34 +240,34 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ServerAzureADAdministrators instance.')
-            self.fail("Error creating the ServerAzureADAdministrators instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Server Azure A D Administrator instance.')
+            self.fail("Error creating the Server Azure A D Administrator instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_serverazureadadministrators(self):
+    def delete_serverazureadadministrator(self):
         '''
-        Deletes specified ServerAzureADAdministrators instance in the specified subscription and resource group.
+        Deletes specified Server Azure A D Administrator instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ServerAzureADAdministrators instance {0}".format(self.administrator_name))
+        self.log("Deleting the Server Azure A D Administrator instance {0}".format(self.administrator_name))
         try:
             response = self.mgmt_client.server_azure_ad_administrators.delete(resource_group_name=self.resource_group,
                                                                               server_name=self.server_name,
                                                                               administrator_name=self.administrator_name)
         except CloudError as e:
-            self.log('Error attempting to delete the ServerAzureADAdministrators instance.')
-            self.fail("Error deleting the ServerAzureADAdministrators instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Server Azure A D Administrator instance.')
+            self.fail("Error deleting the Server Azure A D Administrator instance: {0}".format(str(e)))
 
         return True
 
-    def get_serverazureadadministrators(self):
+    def get_serverazureadadministrator(self):
         '''
-        Gets the properties of the specified ServerAzureADAdministrators.
+        Gets the properties of the specified Server Azure A D Administrator.
 
-        :return: deserialized ServerAzureADAdministrators instance state dictionary
+        :return: deserialized Server Azure A D Administrator instance state dictionary
         '''
-        self.log("Checking if the ServerAzureADAdministrators instance {0} is present".format(self.administrator_name))
+        self.log("Checking if the Server Azure A D Administrator instance {0} is present".format(self.administrator_name))
         found = False
         try:
             response = self.mgmt_client.server_azure_ad_administrators.get(resource_group_name=self.resource_group,
@@ -275,9 +275,9 @@ class AzureRMServerAzureADAdministrators(AzureRMModuleBase):
                                                                            administrator_name=self.administrator_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerAzureADAdministrators instance : {0} found".format(response.name))
+            self.log("Server Azure A D Administrator instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerAzureADAdministrators instance.')
+            self.log('Did not find the Server Azure A D Administrator instance.')
         if found is True:
             return response.as_dict()
 

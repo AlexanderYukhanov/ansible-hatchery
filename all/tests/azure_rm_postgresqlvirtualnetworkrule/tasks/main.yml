@@ -15,7 +15,7 @@
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
 
-- name: Create instance of VirtualNetworkRules -- check mode
+- name: Create instance of Virtual Network Rule -- check mode
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
@@ -27,7 +27,7 @@
     that:
       - output.changed
 
-- name: Create instance of VirtualNetworkRules
+- name: Create instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
@@ -38,7 +38,7 @@
     that:
       - output.changed
 
-- name: Create again instance of VirtualNetworkRules
+- name: Create again instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
@@ -49,7 +49,7 @@
     that:
       - output.changed == false
 
-- name: Delete instance of VirtualNetworkRules -- check mode
+- name: Delete instance of Virtual Network Rule -- check mode
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
@@ -62,7 +62,7 @@
     that:
       - output.changed
 
-- name: Delete instance of VirtualNetworkRules
+- name: Delete instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
@@ -74,7 +74,7 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of VirtualNetworkRules
+- name: Delete unexisting instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"

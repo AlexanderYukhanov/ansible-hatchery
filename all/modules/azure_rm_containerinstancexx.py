@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_containerinstancexx
 version_added: "2.5"
-short_description: Manage ContainerGroups instance.
+short_description: Manage Container Group instance.
 description:
-    - Create, update and delete instance of ContainerGroups.
+    - Create, update and delete instance of Container Group.
 
 options:
     resource_group:
@@ -210,7 +210,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ContainerGroups
+  - name: Create (or update) Container Group
     azure_rm_containerinstancexx:
       resource_group: demo
       container_group_name: mycontainers
@@ -244,7 +244,7 @@ class Actions:
 
 
 class AzureRMContainerGroups(AzureRMModuleBase):
-    """Configuration class for an Azure RM ContainerGroups resource"""
+    """Configuration class for an Azure RM Container Group resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -344,30 +344,30 @@ class AzureRMContainerGroups(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_containergroups()
+        old_response = self.get_containergroup()
 
         if not old_response:
-            self.log("ContainerGroups instance doesn't exist")
+            self.log("Container Group instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("ContainerGroups instance already exists")
+            self.log("Container Group instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if ContainerGroups instance has to be deleted or may be updated")
+                self.log("Need to check if Container Group instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ContainerGroups instance")
+            self.log("Need to Create / Update the Container Group instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_containergroups()
+            response = self.create_update_containergroup()
 
             if not old_response:
                 self.results['changed'] = True
@@ -375,19 +375,19 @@ class AzureRMContainerGroups(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("ContainerGroups instance deleted")
+            self.log("Container Group instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_containergroups()
+            self.delete_containergroup()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_containergroups():
+            while self.get_containergroup():
                 time.sleep(20)
         else:
-            self.log("ContainerGroups instance unchanged")
+            self.log("Container Group instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -396,13 +396,13 @@ class AzureRMContainerGroups(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_containergroups(self):
+    def create_update_containergroup(self):
         '''
-        Creates or updates ContainerGroups with the specified configuration.
+        Creates or updates Container Group with the specified configuration.
 
-        :return: deserialized ContainerGroups instance state dictionary
+        :return: deserialized Container Group instance state dictionary
         '''
-        self.log("Creating / Updating the ContainerGroups instance {0}".format(self.container_group_name))
+        self.log("Creating / Updating the Container Group instance {0}".format(self.container_group_name))
 
         try:
             response = self.mgmt_client.container_groups.create_or_update(resource_group_name=self.resource_group,
@@ -412,42 +412,42 @@ class AzureRMContainerGroups(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ContainerGroups instance.')
-            self.fail("Error creating the ContainerGroups instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Container Group instance.')
+            self.fail("Error creating the Container Group instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_containergroups(self):
+    def delete_containergroup(self):
         '''
-        Deletes specified ContainerGroups instance in the specified subscription and resource group.
+        Deletes specified Container Group instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ContainerGroups instance {0}".format(self.container_group_name))
+        self.log("Deleting the Container Group instance {0}".format(self.container_group_name))
         try:
             response = self.mgmt_client.container_groups.delete(resource_group_name=self.resource_group,
                                                                 container_group_name=self.container_group_name)
         except CloudError as e:
-            self.log('Error attempting to delete the ContainerGroups instance.')
-            self.fail("Error deleting the ContainerGroups instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Container Group instance.')
+            self.fail("Error deleting the Container Group instance: {0}".format(str(e)))
 
         return True
 
-    def get_containergroups(self):
+    def get_containergroup(self):
         '''
-        Gets the properties of the specified ContainerGroups.
+        Gets the properties of the specified Container Group.
 
-        :return: deserialized ContainerGroups instance state dictionary
+        :return: deserialized Container Group instance state dictionary
         '''
-        self.log("Checking if the ContainerGroups instance {0} is present".format(self.container_group_name))
+        self.log("Checking if the Container Group instance {0} is present".format(self.container_group_name))
         found = False
         try:
             response = self.mgmt_client.container_groups.get(resource_group_name=self.resource_group,
                                                              container_group_name=self.container_group_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ContainerGroups instance : {0} found".format(response.name))
+            self.log("Container Group instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ContainerGroups instance.')
+            self.log('Did not find the Container Group instance.')
         if found is True:
             return response.as_dict()
 

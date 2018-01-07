@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuitpeering
 version_added: "2.5"
-short_description: Manage ExpressRouteCircuitPeerings instance.
+short_description: Manage Express Route Circuit Peering instance.
 description:
-    - Create, update and delete instance of ExpressRouteCircuitPeerings.
+    - Create, update and delete instance of Express Route Circuit Peering.
 
 options:
     resource_group:
@@ -636,7 +636,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ExpressRouteCircuitPeerings
+  - name: Create (or update) Express Route Circuit Peering
     azure_rm_applicationgatewayexpressroutecircuitpeering:
       resource_group: NOT FOUND
       circuit_name: NOT FOUND
@@ -676,7 +676,7 @@ class Actions:
 
 
 class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
-    """Configuration class for an Azure RM ExpressRouteCircuitPeerings resource"""
+    """Configuration class for an Azure RM Express Route Circuit Peering resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -854,30 +854,30 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_expressroutecircuitpeerings()
+        old_response = self.get_expressroutecircuitpeering()
 
         if not old_response:
-            self.log("ExpressRouteCircuitPeerings instance doesn't exist")
+            self.log("Express Route Circuit Peering instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("ExpressRouteCircuitPeerings instance already exists")
+            self.log("Express Route Circuit Peering instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if ExpressRouteCircuitPeerings instance has to be deleted or may be updated")
+                self.log("Need to check if Express Route Circuit Peering instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ExpressRouteCircuitPeerings instance")
+            self.log("Need to Create / Update the Express Route Circuit Peering instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_expressroutecircuitpeerings()
+            response = self.create_update_expressroutecircuitpeering()
 
             if not old_response:
                 self.results['changed'] = True
@@ -885,19 +885,19 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("ExpressRouteCircuitPeerings instance deleted")
+            self.log("Express Route Circuit Peering instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_expressroutecircuitpeerings()
+            self.delete_expressroutecircuitpeering()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_expressroutecircuitpeerings():
+            while self.get_expressroutecircuitpeering():
                 time.sleep(20)
         else:
-            self.log("ExpressRouteCircuitPeerings instance unchanged")
+            self.log("Express Route Circuit Peering instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -907,13 +907,13 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_expressroutecircuitpeerings(self):
+    def create_update_expressroutecircuitpeering(self):
         '''
-        Creates or updates ExpressRouteCircuitPeerings with the specified configuration.
+        Creates or updates Express Route Circuit Peering with the specified configuration.
 
-        :return: deserialized ExpressRouteCircuitPeerings instance state dictionary
+        :return: deserialized Express Route Circuit Peering instance state dictionary
         '''
-        self.log("Creating / Updating the ExpressRouteCircuitPeerings instance {0}".format(self.peering_name))
+        self.log("Creating / Updating the Express Route Circuit Peering instance {0}".format(self.peering_name))
 
         try:
             response = self.mgmt_client.express_route_circuit_peerings.create_or_update(resource_group_name=self.resource_group,
@@ -924,34 +924,34 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ExpressRouteCircuitPeerings instance.')
-            self.fail("Error creating the ExpressRouteCircuitPeerings instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Express Route Circuit Peering instance.')
+            self.fail("Error creating the Express Route Circuit Peering instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_expressroutecircuitpeerings(self):
+    def delete_expressroutecircuitpeering(self):
         '''
-        Deletes specified ExpressRouteCircuitPeerings instance in the specified subscription and resource group.
+        Deletes specified Express Route Circuit Peering instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ExpressRouteCircuitPeerings instance {0}".format(self.peering_name))
+        self.log("Deleting the Express Route Circuit Peering instance {0}".format(self.peering_name))
         try:
             response = self.mgmt_client.express_route_circuit_peerings.delete(resource_group_name=self.resource_group,
                                                                               circuit_name=self.circuit_name,
                                                                               peering_name=self.peering_name)
         except CloudError as e:
-            self.log('Error attempting to delete the ExpressRouteCircuitPeerings instance.')
-            self.fail("Error deleting the ExpressRouteCircuitPeerings instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Express Route Circuit Peering instance.')
+            self.fail("Error deleting the Express Route Circuit Peering instance: {0}".format(str(e)))
 
         return True
 
-    def get_expressroutecircuitpeerings(self):
+    def get_expressroutecircuitpeering(self):
         '''
-        Gets the properties of the specified ExpressRouteCircuitPeerings.
+        Gets the properties of the specified Express Route Circuit Peering.
 
-        :return: deserialized ExpressRouteCircuitPeerings instance state dictionary
+        :return: deserialized Express Route Circuit Peering instance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuitPeerings instance {0} is present".format(self.peering_name))
+        self.log("Checking if the Express Route Circuit Peering instance {0} is present".format(self.peering_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuit_peerings.get(resource_group_name=self.resource_group,
@@ -959,9 +959,9 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                                                                            peering_name=self.peering_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuitPeerings instance : {0} found".format(response.name))
+            self.log("Express Route Circuit Peering instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuitPeerings instance.')
+            self.log('Did not find the Express Route Circuit Peering instance.')
         if found is True:
             return response.as_dict()
 

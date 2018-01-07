@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncagent
 version_added: "2.5"
-short_description: Manage SyncAgents instance.
+short_description: Manage Sync Agent instance.
 description:
-    - Create, update and delete instance of SyncAgents.
+    - Create, update and delete instance of Sync Agent.
 
 options:
     resource_group:
@@ -47,7 +47,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) SyncAgents
+  - name: Create (or update) Sync Agent
     azure_rm_sqlsyncagent:
       resource_group: syncagentcrud-65440
       server_name: syncagentcrud-8475
@@ -94,7 +94,7 @@ class Actions:
 
 
 class AzureRMSyncAgents(AzureRMModuleBase):
-    """Configuration class for an Azure RM SyncAgents resource"""
+    """Configuration class for an Azure RM Sync Agent resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -149,30 +149,30 @@ class AzureRMSyncAgents(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_syncagents()
+        old_response = self.get_syncagent()
 
         if not old_response:
-            self.log("SyncAgents instance doesn't exist")
+            self.log("Sync Agent instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("SyncAgents instance already exists")
+            self.log("Sync Agent instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if SyncAgents instance has to be deleted or may be updated")
+                self.log("Need to check if Sync Agent instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the SyncAgents instance")
+            self.log("Need to Create / Update the Sync Agent instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_syncagents()
+            response = self.create_update_syncagent()
 
             if not old_response:
                 self.results['changed'] = True
@@ -180,19 +180,19 @@ class AzureRMSyncAgents(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("SyncAgents instance deleted")
+            self.log("Sync Agent instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_syncagents()
+            self.delete_syncagent()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_syncagents():
+            while self.get_syncagent():
                 time.sleep(20)
         else:
-            self.log("SyncAgents instance unchanged")
+            self.log("Sync Agent instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -203,13 +203,13 @@ class AzureRMSyncAgents(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_syncagents(self):
+    def create_update_syncagent(self):
         '''
-        Creates or updates SyncAgents with the specified configuration.
+        Creates or updates Sync Agent with the specified configuration.
 
-        :return: deserialized SyncAgents instance state dictionary
+        :return: deserialized Sync Agent instance state dictionary
         '''
-        self.log("Creating / Updating the SyncAgents instance {0}".format(self.sync_agent_name))
+        self.log("Creating / Updating the Sync Agent instance {0}".format(self.sync_agent_name))
 
         try:
             response = self.mgmt_client.sync_agents.create_or_update(resource_group_name=self.resource_group,
@@ -219,34 +219,34 @@ class AzureRMSyncAgents(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the SyncAgents instance.')
-            self.fail("Error creating the SyncAgents instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Sync Agent instance.')
+            self.fail("Error creating the Sync Agent instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_syncagents(self):
+    def delete_syncagent(self):
         '''
-        Deletes specified SyncAgents instance in the specified subscription and resource group.
+        Deletes specified Sync Agent instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the SyncAgents instance {0}".format(self.sync_agent_name))
+        self.log("Deleting the Sync Agent instance {0}".format(self.sync_agent_name))
         try:
             response = self.mgmt_client.sync_agents.delete(resource_group_name=self.resource_group,
                                                            server_name=self.server_name,
                                                            sync_agent_name=self.sync_agent_name)
         except CloudError as e:
-            self.log('Error attempting to delete the SyncAgents instance.')
-            self.fail("Error deleting the SyncAgents instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Sync Agent instance.')
+            self.fail("Error deleting the Sync Agent instance: {0}".format(str(e)))
 
         return True
 
-    def get_syncagents(self):
+    def get_syncagent(self):
         '''
-        Gets the properties of the specified SyncAgents.
+        Gets the properties of the specified Sync Agent.
 
-        :return: deserialized SyncAgents instance state dictionary
+        :return: deserialized Sync Agent instance state dictionary
         '''
-        self.log("Checking if the SyncAgents instance {0} is present".format(self.sync_agent_name))
+        self.log("Checking if the Sync Agent instance {0} is present".format(self.sync_agent_name))
         found = False
         try:
             response = self.mgmt_client.sync_agents.get(resource_group_name=self.resource_group,
@@ -254,9 +254,9 @@ class AzureRMSyncAgents(AzureRMModuleBase):
                                                         sync_agent_name=self.sync_agent_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SyncAgents instance : {0} found".format(response.name))
+            self.log("Sync Agent instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SyncAgents instance.')
+            self.log('Did not find the Sync Agent instance.')
         if found is True:
             return response.as_dict()
 

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworksecuritygroup
 version_added: "2.5"
-short_description: Manage NetworkSecurityGroups instance.
+short_description: Manage Network Security Group instance.
 description:
-    - Create, update and delete instance of NetworkSecurityGroups.
+    - Create, update and delete instance of Network Security Group.
 
 options:
     resource_group:
@@ -239,7 +239,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) NetworkSecurityGroups
+  - name: Create (or update) Network Security Group
     azure_rm_applicationgatewaynetworksecuritygroup:
       resource_group: rg1
       network_security_group_name: testnsg
@@ -273,7 +273,7 @@ class Actions:
 
 
 class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
-    """Configuration class for an Azure RM NetworkSecurityGroups resource"""
+    """Configuration class for an Azure RM Network Security Group resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -391,30 +391,30 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_networksecuritygroups()
+        old_response = self.get_networksecuritygroup()
 
         if not old_response:
-            self.log("NetworkSecurityGroups instance doesn't exist")
+            self.log("Network Security Group instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("NetworkSecurityGroups instance already exists")
+            self.log("Network Security Group instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if NetworkSecurityGroups instance has to be deleted or may be updated")
+                self.log("Need to check if Network Security Group instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the NetworkSecurityGroups instance")
+            self.log("Need to Create / Update the Network Security Group instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_networksecuritygroups()
+            response = self.create_update_networksecuritygroup()
 
             if not old_response:
                 self.results['changed'] = True
@@ -422,19 +422,19 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("NetworkSecurityGroups instance deleted")
+            self.log("Network Security Group instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_networksecuritygroups()
+            self.delete_networksecuritygroup()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_networksecuritygroups():
+            while self.get_networksecuritygroup():
                 time.sleep(20)
         else:
-            self.log("NetworkSecurityGroups instance unchanged")
+            self.log("Network Security Group instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -443,13 +443,13 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_networksecuritygroups(self):
+    def create_update_networksecuritygroup(self):
         '''
-        Creates or updates NetworkSecurityGroups with the specified configuration.
+        Creates or updates Network Security Group with the specified configuration.
 
-        :return: deserialized NetworkSecurityGroups instance state dictionary
+        :return: deserialized Network Security Group instance state dictionary
         '''
-        self.log("Creating / Updating the NetworkSecurityGroups instance {0}".format(self.network_security_group_name))
+        self.log("Creating / Updating the Network Security Group instance {0}".format(self.network_security_group_name))
 
         try:
             response = self.mgmt_client.network_security_groups.create_or_update(resource_group_name=self.resource_group,
@@ -459,42 +459,42 @@ class AzureRMNetworkSecurityGroups(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the NetworkSecurityGroups instance.')
-            self.fail("Error creating the NetworkSecurityGroups instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Network Security Group instance.')
+            self.fail("Error creating the Network Security Group instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_networksecuritygroups(self):
+    def delete_networksecuritygroup(self):
         '''
-        Deletes specified NetworkSecurityGroups instance in the specified subscription and resource group.
+        Deletes specified Network Security Group instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the NetworkSecurityGroups instance {0}".format(self.network_security_group_name))
+        self.log("Deleting the Network Security Group instance {0}".format(self.network_security_group_name))
         try:
             response = self.mgmt_client.network_security_groups.delete(resource_group_name=self.resource_group,
                                                                        network_security_group_name=self.network_security_group_name)
         except CloudError as e:
-            self.log('Error attempting to delete the NetworkSecurityGroups instance.')
-            self.fail("Error deleting the NetworkSecurityGroups instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Network Security Group instance.')
+            self.fail("Error deleting the Network Security Group instance: {0}".format(str(e)))
 
         return True
 
-    def get_networksecuritygroups(self):
+    def get_networksecuritygroup(self):
         '''
-        Gets the properties of the specified NetworkSecurityGroups.
+        Gets the properties of the specified Network Security Group.
 
-        :return: deserialized NetworkSecurityGroups instance state dictionary
+        :return: deserialized Network Security Group instance state dictionary
         '''
-        self.log("Checking if the NetworkSecurityGroups instance {0} is present".format(self.network_security_group_name))
+        self.log("Checking if the Network Security Group instance {0} is present".format(self.network_security_group_name))
         found = False
         try:
             response = self.mgmt_client.network_security_groups.get(resource_group_name=self.resource_group,
                                                                     network_security_group_name=self.network_security_group_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("NetworkSecurityGroups instance : {0} found".format(response.name))
+            self.log("Network Security Group instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the NetworkSecurityGroups instance.')
+            self.log('Did not find the Network Security Group instance.')
         if found is True:
             return response.as_dict()
 

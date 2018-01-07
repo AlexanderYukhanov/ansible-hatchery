@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayloadbalancer
 version_added: "2.5"
-short_description: Manage LoadBalancers instance.
+short_description: Manage Load Balancer instance.
 description:
-    - Create, update and delete instance of LoadBalancers.
+    - Create, update and delete instance of Load Balancer.
 
 options:
     resource_group:
@@ -686,7 +686,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) LoadBalancers
+  - name: Create (or update) Load Balancer
     azure_rm_applicationgatewayloadbalancer:
       resource_group: rg1
       load_balancer_name: lb
@@ -720,7 +720,7 @@ class Actions:
 
 
 class AzureRMLoadBalancers(AzureRMModuleBase):
-    """Configuration class for an Azure RM LoadBalancers resource"""
+    """Configuration class for an Azure RM Load Balancer resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -885,30 +885,30 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_loadbalancers()
+        old_response = self.get_loadbalancer()
 
         if not old_response:
-            self.log("LoadBalancers instance doesn't exist")
+            self.log("Load Balancer instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("LoadBalancers instance already exists")
+            self.log("Load Balancer instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if LoadBalancers instance has to be deleted or may be updated")
+                self.log("Need to check if Load Balancer instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the LoadBalancers instance")
+            self.log("Need to Create / Update the Load Balancer instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_loadbalancers()
+            response = self.create_update_loadbalancer()
 
             if not old_response:
                 self.results['changed'] = True
@@ -916,19 +916,19 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("LoadBalancers instance deleted")
+            self.log("Load Balancer instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_loadbalancers()
+            self.delete_loadbalancer()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_loadbalancers():
+            while self.get_loadbalancer():
                 time.sleep(20)
         else:
-            self.log("LoadBalancers instance unchanged")
+            self.log("Load Balancer instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -937,13 +937,13 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_loadbalancers(self):
+    def create_update_loadbalancer(self):
         '''
-        Creates or updates LoadBalancers with the specified configuration.
+        Creates or updates Load Balancer with the specified configuration.
 
-        :return: deserialized LoadBalancers instance state dictionary
+        :return: deserialized Load Balancer instance state dictionary
         '''
-        self.log("Creating / Updating the LoadBalancers instance {0}".format(self.load_balancer_name))
+        self.log("Creating / Updating the Load Balancer instance {0}".format(self.load_balancer_name))
 
         try:
             response = self.mgmt_client.load_balancers.create_or_update(resource_group_name=self.resource_group,
@@ -953,42 +953,42 @@ class AzureRMLoadBalancers(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the LoadBalancers instance.')
-            self.fail("Error creating the LoadBalancers instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Load Balancer instance.')
+            self.fail("Error creating the Load Balancer instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_loadbalancers(self):
+    def delete_loadbalancer(self):
         '''
-        Deletes specified LoadBalancers instance in the specified subscription and resource group.
+        Deletes specified Load Balancer instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the LoadBalancers instance {0}".format(self.load_balancer_name))
+        self.log("Deleting the Load Balancer instance {0}".format(self.load_balancer_name))
         try:
             response = self.mgmt_client.load_balancers.delete(resource_group_name=self.resource_group,
                                                               load_balancer_name=self.load_balancer_name)
         except CloudError as e:
-            self.log('Error attempting to delete the LoadBalancers instance.')
-            self.fail("Error deleting the LoadBalancers instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Load Balancer instance.')
+            self.fail("Error deleting the Load Balancer instance: {0}".format(str(e)))
 
         return True
 
-    def get_loadbalancers(self):
+    def get_loadbalancer(self):
         '''
-        Gets the properties of the specified LoadBalancers.
+        Gets the properties of the specified Load Balancer.
 
-        :return: deserialized LoadBalancers instance state dictionary
+        :return: deserialized Load Balancer instance state dictionary
         '''
-        self.log("Checking if the LoadBalancers instance {0} is present".format(self.load_balancer_name))
+        self.log("Checking if the Load Balancer instance {0} is present".format(self.load_balancer_name))
         found = False
         try:
             response = self.mgmt_client.load_balancers.get(resource_group_name=self.resource_group,
                                                            load_balancer_name=self.load_balancer_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("LoadBalancers instance : {0} found".format(response.name))
+            self.log("Load Balancer instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the LoadBalancers instance.')
+            self.log('Did not find the Load Balancer instance.')
         if found is True:
             return response.as_dict()
 

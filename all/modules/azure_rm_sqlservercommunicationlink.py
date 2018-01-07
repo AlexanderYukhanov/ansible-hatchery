@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlservercommunicationlink
 version_added: "2.5"
-short_description: Manage ServerCommunicationLinks instance.
+short_description: Manage Server Communication Link instance.
 description:
-    - Create, update and delete instance of ServerCommunicationLinks.
+    - Create, update and delete instance of Server Communication Link.
 
 options:
     resource_group:
@@ -48,7 +48,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ServerCommunicationLinks
+  - name: Create (or update) Server Communication Link
     azure_rm_sqlservercommunicationlink:
       resource_group: sqlcrudtest-7398
       server_name: sqlcrudtest-4645
@@ -89,7 +89,7 @@ class Actions:
 
 
 class AzureRMServerCommunicationLinks(AzureRMModuleBase):
-    """Configuration class for an Azure RM ServerCommunicationLinks resource"""
+    """Configuration class for an Azure RM Server Communication Link resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -145,30 +145,30 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_servercommunicationlinks()
+        old_response = self.get_servercommunicationlink()
 
         if not old_response:
-            self.log("ServerCommunicationLinks instance doesn't exist")
+            self.log("Server Communication Link instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("ServerCommunicationLinks instance already exists")
+            self.log("Server Communication Link instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if ServerCommunicationLinks instance has to be deleted or may be updated")
+                self.log("Need to check if Server Communication Link instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ServerCommunicationLinks instance")
+            self.log("Need to Create / Update the Server Communication Link instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_servercommunicationlinks()
+            response = self.create_update_servercommunicationlink()
 
             if not old_response:
                 self.results['changed'] = True
@@ -176,19 +176,19 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("ServerCommunicationLinks instance deleted")
+            self.log("Server Communication Link instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_servercommunicationlinks()
+            self.delete_servercommunicationlink()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_servercommunicationlinks():
+            while self.get_servercommunicationlink():
                 time.sleep(20)
         else:
-            self.log("ServerCommunicationLinks instance unchanged")
+            self.log("Server Communication Link instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -198,13 +198,13 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_servercommunicationlinks(self):
+    def create_update_servercommunicationlink(self):
         '''
-        Creates or updates ServerCommunicationLinks with the specified configuration.
+        Creates or updates Server Communication Link with the specified configuration.
 
-        :return: deserialized ServerCommunicationLinks instance state dictionary
+        :return: deserialized Server Communication Link instance state dictionary
         '''
-        self.log("Creating / Updating the ServerCommunicationLinks instance {0}".format(self.communication_link_name))
+        self.log("Creating / Updating the Server Communication Link instance {0}".format(self.communication_link_name))
 
         try:
             response = self.mgmt_client.server_communication_links.create_or_update(resource_group_name=self.resource_group,
@@ -215,34 +215,34 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ServerCommunicationLinks instance.')
-            self.fail("Error creating the ServerCommunicationLinks instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Server Communication Link instance.')
+            self.fail("Error creating the Server Communication Link instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_servercommunicationlinks(self):
+    def delete_servercommunicationlink(self):
         '''
-        Deletes specified ServerCommunicationLinks instance in the specified subscription and resource group.
+        Deletes specified Server Communication Link instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ServerCommunicationLinks instance {0}".format(self.communication_link_name))
+        self.log("Deleting the Server Communication Link instance {0}".format(self.communication_link_name))
         try:
             response = self.mgmt_client.server_communication_links.delete(resource_group_name=self.resource_group,
                                                                           server_name=self.server_name,
                                                                           communication_link_name=self.communication_link_name)
         except CloudError as e:
-            self.log('Error attempting to delete the ServerCommunicationLinks instance.')
-            self.fail("Error deleting the ServerCommunicationLinks instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Server Communication Link instance.')
+            self.fail("Error deleting the Server Communication Link instance: {0}".format(str(e)))
 
         return True
 
-    def get_servercommunicationlinks(self):
+    def get_servercommunicationlink(self):
         '''
-        Gets the properties of the specified ServerCommunicationLinks.
+        Gets the properties of the specified Server Communication Link.
 
-        :return: deserialized ServerCommunicationLinks instance state dictionary
+        :return: deserialized Server Communication Link instance state dictionary
         '''
-        self.log("Checking if the ServerCommunicationLinks instance {0} is present".format(self.communication_link_name))
+        self.log("Checking if the Server Communication Link instance {0} is present".format(self.communication_link_name))
         found = False
         try:
             response = self.mgmt_client.server_communication_links.get(resource_group_name=self.resource_group,
@@ -250,9 +250,9 @@ class AzureRMServerCommunicationLinks(AzureRMModuleBase):
                                                                        communication_link_name=self.communication_link_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ServerCommunicationLinks instance : {0} found".format(response.name))
+            self.log("Server Communication Link instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ServerCommunicationLinks instance.')
+            self.log('Did not find the Server Communication Link instance.')
         if found is True:
             return response.as_dict()
 

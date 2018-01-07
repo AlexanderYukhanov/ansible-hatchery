@@ -14,7 +14,7 @@
     enforce_ssl: True
     admin_username: zimxyz
     admin_password: Testpasswordxyz12!
-- name: Create VirtualNetworkRules
+- name: Create Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
@@ -40,7 +40,7 @@
     that:
       - output.changed == False
 
-- name: Delete instance of VirtualNetworkRules
+- name: Delete instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"

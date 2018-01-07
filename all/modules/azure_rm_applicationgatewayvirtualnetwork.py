@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetwork
 version_added: "2.5"
-short_description: Manage VirtualNetworks instance.
+short_description: Manage Virtual Network instance.
 description:
-    - Create, update and delete instance of VirtualNetworks.
+    - Create, update and delete instance of Virtual Network.
 
 options:
     resource_group:
@@ -434,7 +434,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) VirtualNetworks
+  - name: Create (or update) Virtual Network
     azure_rm_applicationgatewayvirtualnetwork:
       resource_group: rg1
       virtual_network_name: test-vnet
@@ -468,7 +468,7 @@ class Actions:
 
 
 class AzureRMVirtualNetworks(AzureRMModuleBase):
-    """Configuration class for an Azure RM VirtualNetworks resource"""
+    """Configuration class for an Azure RM Virtual Network resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -582,30 +582,30 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_virtualnetworks()
+        old_response = self.get_virtualnetwork()
 
         if not old_response:
-            self.log("VirtualNetworks instance doesn't exist")
+            self.log("Virtual Network instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("VirtualNetworks instance already exists")
+            self.log("Virtual Network instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if VirtualNetworks instance has to be deleted or may be updated")
+                self.log("Need to check if Virtual Network instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the VirtualNetworks instance")
+            self.log("Need to Create / Update the Virtual Network instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_virtualnetworks()
+            response = self.create_update_virtualnetwork()
 
             if not old_response:
                 self.results['changed'] = True
@@ -613,19 +613,19 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("VirtualNetworks instance deleted")
+            self.log("Virtual Network instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_virtualnetworks()
+            self.delete_virtualnetwork()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_virtualnetworks():
+            while self.get_virtualnetwork():
                 time.sleep(20)
         else:
-            self.log("VirtualNetworks instance unchanged")
+            self.log("Virtual Network instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -634,13 +634,13 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_virtualnetworks(self):
+    def create_update_virtualnetwork(self):
         '''
-        Creates or updates VirtualNetworks with the specified configuration.
+        Creates or updates Virtual Network with the specified configuration.
 
-        :return: deserialized VirtualNetworks instance state dictionary
+        :return: deserialized Virtual Network instance state dictionary
         '''
-        self.log("Creating / Updating the VirtualNetworks instance {0}".format(self.virtual_network_name))
+        self.log("Creating / Updating the Virtual Network instance {0}".format(self.virtual_network_name))
 
         try:
             response = self.mgmt_client.virtual_networks.create_or_update(resource_group_name=self.resource_group,
@@ -650,42 +650,42 @@ class AzureRMVirtualNetworks(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the VirtualNetworks instance.')
-            self.fail("Error creating the VirtualNetworks instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Virtual Network instance.')
+            self.fail("Error creating the Virtual Network instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_virtualnetworks(self):
+    def delete_virtualnetwork(self):
         '''
-        Deletes specified VirtualNetworks instance in the specified subscription and resource group.
+        Deletes specified Virtual Network instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the VirtualNetworks instance {0}".format(self.virtual_network_name))
+        self.log("Deleting the Virtual Network instance {0}".format(self.virtual_network_name))
         try:
             response = self.mgmt_client.virtual_networks.delete(resource_group_name=self.resource_group,
                                                                 virtual_network_name=self.virtual_network_name)
         except CloudError as e:
-            self.log('Error attempting to delete the VirtualNetworks instance.')
-            self.fail("Error deleting the VirtualNetworks instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Virtual Network instance.')
+            self.fail("Error deleting the Virtual Network instance: {0}".format(str(e)))
 
         return True
 
-    def get_virtualnetworks(self):
+    def get_virtualnetwork(self):
         '''
-        Gets the properties of the specified VirtualNetworks.
+        Gets the properties of the specified Virtual Network.
 
-        :return: deserialized VirtualNetworks instance state dictionary
+        :return: deserialized Virtual Network instance state dictionary
         '''
-        self.log("Checking if the VirtualNetworks instance {0} is present".format(self.virtual_network_name))
+        self.log("Checking if the Virtual Network instance {0} is present".format(self.virtual_network_name))
         found = False
         try:
             response = self.mgmt_client.virtual_networks.get(resource_group_name=self.resource_group,
                                                              virtual_network_name=self.virtual_network_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("VirtualNetworks instance : {0} found".format(response.name))
+            self.log("Virtual Network instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the VirtualNetworks instance.')
+            self.log('Did not find the Virtual Network instance.')
         if found is True:
             return response.as_dict()
 

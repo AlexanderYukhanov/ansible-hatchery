@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaysubnet
 version_added: "2.5"
-short_description: Manage Subnets instance.
+short_description: Manage Subnet instance.
 description:
-    - Create, update and delete instance of Subnets.
+    - Create, update and delete instance of Subnet.
 
 options:
     resource_group:
@@ -345,7 +345,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Subnets
+  - name: Create (or update) Subnet
     azure_rm_applicationgatewaysubnet:
       resource_group: subnet-test
       virtual_network_name: vnetname
@@ -379,7 +379,7 @@ class Actions:
 
 
 class AzureRMSubnets(AzureRMModuleBase):
-    """Configuration class for an Azure RM Subnets resource"""
+    """Configuration class for an Azure RM Subnet resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -477,30 +477,30 @@ class AzureRMSubnets(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_subnets()
+        old_response = self.get_subnet()
 
         if not old_response:
-            self.log("Subnets instance doesn't exist")
+            self.log("Subnet instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("Subnets instance already exists")
+            self.log("Subnet instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if Subnets instance has to be deleted or may be updated")
+                self.log("Need to check if Subnet instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the Subnets instance")
+            self.log("Need to Create / Update the Subnet instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_subnets()
+            response = self.create_update_subnet()
 
             if not old_response:
                 self.results['changed'] = True
@@ -508,19 +508,19 @@ class AzureRMSubnets(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("Subnets instance deleted")
+            self.log("Subnet instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_subnets()
+            self.delete_subnet()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_subnets():
+            while self.get_subnet():
                 time.sleep(20)
         else:
-            self.log("Subnets instance unchanged")
+            self.log("Subnet instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -529,13 +529,13 @@ class AzureRMSubnets(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_subnets(self):
+    def create_update_subnet(self):
         '''
-        Creates or updates Subnets with the specified configuration.
+        Creates or updates Subnet with the specified configuration.
 
-        :return: deserialized Subnets instance state dictionary
+        :return: deserialized Subnet instance state dictionary
         '''
-        self.log("Creating / Updating the Subnets instance {0}".format(self.subnet_name))
+        self.log("Creating / Updating the Subnet instance {0}".format(self.subnet_name))
 
         try:
             response = self.mgmt_client.subnets.create_or_update(resource_group_name=self.resource_group,
@@ -546,34 +546,34 @@ class AzureRMSubnets(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Subnets instance.')
-            self.fail("Error creating the Subnets instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Subnet instance.')
+            self.fail("Error creating the Subnet instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_subnets(self):
+    def delete_subnet(self):
         '''
-        Deletes specified Subnets instance in the specified subscription and resource group.
+        Deletes specified Subnet instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Subnets instance {0}".format(self.subnet_name))
+        self.log("Deleting the Subnet instance {0}".format(self.subnet_name))
         try:
             response = self.mgmt_client.subnets.delete(resource_group_name=self.resource_group,
                                                        virtual_network_name=self.virtual_network_name,
                                                        subnet_name=self.subnet_name)
         except CloudError as e:
-            self.log('Error attempting to delete the Subnets instance.')
-            self.fail("Error deleting the Subnets instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Subnet instance.')
+            self.fail("Error deleting the Subnet instance: {0}".format(str(e)))
 
         return True
 
-    def get_subnets(self):
+    def get_subnet(self):
         '''
-        Gets the properties of the specified Subnets.
+        Gets the properties of the specified Subnet.
 
-        :return: deserialized Subnets instance state dictionary
+        :return: deserialized Subnet instance state dictionary
         '''
-        self.log("Checking if the Subnets instance {0} is present".format(self.subnet_name))
+        self.log("Checking if the Subnet instance {0} is present".format(self.subnet_name))
         found = False
         try:
             response = self.mgmt_client.subnets.get(resource_group_name=self.resource_group,
@@ -581,9 +581,9 @@ class AzureRMSubnets(AzureRMModuleBase):
                                                     subnet_name=self.subnet_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Subnets instance : {0} found".format(response.name))
+            self.log("Subnet instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Subnets instance.')
+            self.log('Did not find the Subnet instance.')
         if found is True:
             return response.as_dict()
 

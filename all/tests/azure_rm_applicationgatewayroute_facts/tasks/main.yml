@@ -3,11 +3,11 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Create RouteTables
+- name: Create Route Table
   azure_rm_applicationgatewayroutetable:
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}
-- name: Create Routes
+- name: Create Route
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}
@@ -26,13 +26,13 @@
     that:
       - output.changed == False
 
-- name: Delete instance of Routes
+- name: Delete instance of Route
   azure_rm_applicationgatewayroute:
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}
     route_name: testroute{{ rpfx }}
     state: absent
-- name: Delete instance of RouteTables
+- name: Delete instance of Route Table
   azure_rm_applicationgatewayroutetable:
     resource_group: "{{ resource_group }}"
     route_table_name: routetablename{{ rpfx }}

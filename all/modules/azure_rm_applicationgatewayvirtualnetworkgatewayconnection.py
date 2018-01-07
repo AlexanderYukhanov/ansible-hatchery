@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetworkgatewayconnection
 version_added: "2.5"
-short_description: Manage VirtualNetworkGatewayConnections instance.
+short_description: Manage Virtual Network Gateway Connection instance.
 description:
-    - Create, update and delete instance of VirtualNetworkGatewayConnections.
+    - Create, update and delete instance of Virtual Network Gateway Connection.
 
 options:
     resource_group:
@@ -473,7 +473,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) VirtualNetworkGatewayConnections
+  - name: Create (or update) Virtual Network Gateway Connection
     azure_rm_applicationgatewayvirtualnetworkgatewayconnection:
       resource_group: NOT FOUND
       virtual_network_gateway_connection_name: NOT FOUND
@@ -507,7 +507,7 @@ class Actions:
 
 
 class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
-    """Configuration class for an Azure RM VirtualNetworkGatewayConnections resource"""
+    """Configuration class for an Azure RM Virtual Network Gateway Connection resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -752,30 +752,30 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_virtualnetworkgatewayconnections()
+        old_response = self.get_virtualnetworkgatewayconnection()
 
         if not old_response:
-            self.log("VirtualNetworkGatewayConnections instance doesn't exist")
+            self.log("Virtual Network Gateway Connection instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("VirtualNetworkGatewayConnections instance already exists")
+            self.log("Virtual Network Gateway Connection instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if VirtualNetworkGatewayConnections instance has to be deleted or may be updated")
+                self.log("Need to check if Virtual Network Gateway Connection instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the VirtualNetworkGatewayConnections instance")
+            self.log("Need to Create / Update the Virtual Network Gateway Connection instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_virtualnetworkgatewayconnections()
+            response = self.create_update_virtualnetworkgatewayconnection()
 
             if not old_response:
                 self.results['changed'] = True
@@ -783,19 +783,19 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("VirtualNetworkGatewayConnections instance deleted")
+            self.log("Virtual Network Gateway Connection instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_virtualnetworkgatewayconnections()
+            self.delete_virtualnetworkgatewayconnection()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_virtualnetworkgatewayconnections():
+            while self.get_virtualnetworkgatewayconnection():
                 time.sleep(20)
         else:
-            self.log("VirtualNetworkGatewayConnections instance unchanged")
+            self.log("Virtual Network Gateway Connection instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -804,13 +804,13 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_virtualnetworkgatewayconnections(self):
+    def create_update_virtualnetworkgatewayconnection(self):
         '''
-        Creates or updates VirtualNetworkGatewayConnections with the specified configuration.
+        Creates or updates Virtual Network Gateway Connection with the specified configuration.
 
-        :return: deserialized VirtualNetworkGatewayConnections instance state dictionary
+        :return: deserialized Virtual Network Gateway Connection instance state dictionary
         '''
-        self.log("Creating / Updating the VirtualNetworkGatewayConnections instance {0}".format(self.virtual_network_gateway_connection_name))
+        self.log("Creating / Updating the Virtual Network Gateway Connection instance {0}".format(self.virtual_network_gateway_connection_name))
 
         try:
             response = self.mgmt_client.virtual_network_gateway_connections.create_or_update(resource_group_name=self.resource_group,
@@ -820,42 +820,42 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the VirtualNetworkGatewayConnections instance.')
-            self.fail("Error creating the VirtualNetworkGatewayConnections instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Virtual Network Gateway Connection instance.')
+            self.fail("Error creating the Virtual Network Gateway Connection instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_virtualnetworkgatewayconnections(self):
+    def delete_virtualnetworkgatewayconnection(self):
         '''
-        Deletes specified VirtualNetworkGatewayConnections instance in the specified subscription and resource group.
+        Deletes specified Virtual Network Gateway Connection instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the VirtualNetworkGatewayConnections instance {0}".format(self.virtual_network_gateway_connection_name))
+        self.log("Deleting the Virtual Network Gateway Connection instance {0}".format(self.virtual_network_gateway_connection_name))
         try:
             response = self.mgmt_client.virtual_network_gateway_connections.delete(resource_group_name=self.resource_group,
                                                                                    virtual_network_gateway_connection_name=self.virtual_network_gateway_connection_name)
         except CloudError as e:
-            self.log('Error attempting to delete the VirtualNetworkGatewayConnections instance.')
-            self.fail("Error deleting the VirtualNetworkGatewayConnections instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Virtual Network Gateway Connection instance.')
+            self.fail("Error deleting the Virtual Network Gateway Connection instance: {0}".format(str(e)))
 
         return True
 
-    def get_virtualnetworkgatewayconnections(self):
+    def get_virtualnetworkgatewayconnection(self):
         '''
-        Gets the properties of the specified VirtualNetworkGatewayConnections.
+        Gets the properties of the specified Virtual Network Gateway Connection.
 
-        :return: deserialized VirtualNetworkGatewayConnections instance state dictionary
+        :return: deserialized Virtual Network Gateway Connection instance state dictionary
         '''
-        self.log("Checking if the VirtualNetworkGatewayConnections instance {0} is present".format(self.virtual_network_gateway_connection_name))
+        self.log("Checking if the Virtual Network Gateway Connection instance {0} is present".format(self.virtual_network_gateway_connection_name))
         found = False
         try:
             response = self.mgmt_client.virtual_network_gateway_connections.get(resource_group_name=self.resource_group,
                                                                                 virtual_network_gateway_connection_name=self.virtual_network_gateway_connection_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("VirtualNetworkGatewayConnections instance : {0} found".format(response.name))
+            self.log("Virtual Network Gateway Connection instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the VirtualNetworkGatewayConnections instance.')
+            self.log('Did not find the Virtual Network Gateway Connection instance.')
         if found is True:
             return response.as_dict()
 

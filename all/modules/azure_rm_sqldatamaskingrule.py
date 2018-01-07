@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatamaskingrule
 version_added: "2.5"
-short_description: Manage DataMaskingRules instance.
+short_description: Manage Data Masking Rule instance.
 description:
-    - Create, update and delete instance of DataMaskingRules.
+    - Create, update and delete instance of Data Masking Rule.
 
 options:
     resource_group:
@@ -94,7 +94,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) DataMaskingRules
+  - name: Create (or update) Data Masking Rule
     azure_rm_sqldatamaskingrule:
       resource_group: sqlcrudtest-6852
       server_name: sqlcrudtest-2080
@@ -130,7 +130,7 @@ class Actions:
 
 
 class AzureRMDataMaskingRules(AzureRMModuleBase):
-    """Configuration class for an Azure RM DataMaskingRules resource"""
+    """Configuration class for an Azure RM Data Masking Rule resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -272,30 +272,30 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_datamaskingrules()
+        old_response = self.get_datamaskingrule()
 
         if not old_response:
-            self.log("DataMaskingRules instance doesn't exist")
+            self.log("Data Masking Rule instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("DataMaskingRules instance already exists")
+            self.log("Data Masking Rule instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if DataMaskingRules instance has to be deleted or may be updated")
+                self.log("Need to check if Data Masking Rule instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the DataMaskingRules instance")
+            self.log("Need to Create / Update the Data Masking Rule instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_datamaskingrules()
+            response = self.create_update_datamaskingrule()
 
             if not old_response:
                 self.results['changed'] = True
@@ -303,19 +303,19 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("DataMaskingRules instance deleted")
+            self.log("Data Masking Rule instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_datamaskingrules()
+            self.delete_datamaskingrule()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_datamaskingrules():
+            while self.get_datamaskingrule():
                 time.sleep(20)
         else:
-            self.log("DataMaskingRules instance unchanged")
+            self.log("Data Masking Rule instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -324,13 +324,13 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_datamaskingrules(self):
+    def create_update_datamaskingrule(self):
         '''
-        Creates or updates DataMaskingRules with the specified configuration.
+        Creates or updates Data Masking Rule with the specified configuration.
 
-        :return: deserialized DataMaskingRules instance state dictionary
+        :return: deserialized Data Masking Rule instance state dictionary
         '''
-        self.log("Creating / Updating the DataMaskingRules instance {0}".format(self.))
+        self.log("Creating / Updating the Data Masking Rule instance {0}".format(self.))
 
         try:
             response = self.mgmt_client.data_masking_rules.create_or_update(resource_group_name=self.resource_group,
@@ -343,40 +343,40 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the DataMaskingRules instance.')
-            self.fail("Error creating the DataMaskingRules instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Data Masking Rule instance.')
+            self.fail("Error creating the Data Masking Rule instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_datamaskingrules(self):
+    def delete_datamaskingrule(self):
         '''
-        Deletes specified DataMaskingRules instance in the specified subscription and resource group.
+        Deletes specified Data Masking Rule instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the DataMaskingRules instance {0}".format(self.))
+        self.log("Deleting the Data Masking Rule instance {0}".format(self.))
         try:
             response = self.mgmt_client.data_masking_rules.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the DataMaskingRules instance.')
-            self.fail("Error deleting the DataMaskingRules instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Data Masking Rule instance.')
+            self.fail("Error deleting the Data Masking Rule instance: {0}".format(str(e)))
 
         return True
 
-    def get_datamaskingrules(self):
+    def get_datamaskingrule(self):
         '''
-        Gets the properties of the specified DataMaskingRules.
+        Gets the properties of the specified Data Masking Rule.
 
-        :return: deserialized DataMaskingRules instance state dictionary
+        :return: deserialized Data Masking Rule instance state dictionary
         '''
-        self.log("Checking if the DataMaskingRules instance {0} is present".format(self.))
+        self.log("Checking if the Data Masking Rule instance {0} is present".format(self.))
         found = False
         try:
             response = self.mgmt_client.data_masking_rules.get()
             found = True
             self.log("Response : {0}".format(response))
-            self.log("DataMaskingRules instance : {0} found".format(response.name))
+            self.log("Data Masking Rule instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the DataMaskingRules instance.')
+            self.log('Did not find the Data Masking Rule instance.')
         if found is True:
             return response.as_dict()
 

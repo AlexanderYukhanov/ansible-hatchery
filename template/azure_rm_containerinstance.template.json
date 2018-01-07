@@ -1894,7 +1894,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "ContainerGroups",
       "ModuleOperationName": "container_groups",
-      "ObjectName": "ContainerGroups",
+      "ObjectName": "Container Group",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,

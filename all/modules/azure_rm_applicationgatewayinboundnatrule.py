@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayinboundnatrule
 version_added: "2.5"
-short_description: Manage InboundNatRules instance.
+short_description: Manage Inbound Nat Rule instance.
 description:
-    - Create, update and delete instance of InboundNatRules.
+    - Create, update and delete instance of Inbound Nat Rule.
 
 options:
     resource_group:
@@ -81,7 +81,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) InboundNatRules
+  - name: Create (or update) Inbound Nat Rule
     azure_rm_applicationgatewayinboundnatrule:
       resource_group: testrg
       load_balancer_name: lb1
@@ -115,7 +115,7 @@ class Actions:
 
 
 class AzureRMInboundNatRules(AzureRMModuleBase):
-    """Configuration class for an Azure RM InboundNatRules resource"""
+    """Configuration class for an Azure RM Inbound Nat Rule resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -226,30 +226,30 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_inboundnatrules()
+        old_response = self.get_inboundnatrule()
 
         if not old_response:
-            self.log("InboundNatRules instance doesn't exist")
+            self.log("Inbound Nat Rule instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("InboundNatRules instance already exists")
+            self.log("Inbound Nat Rule instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if InboundNatRules instance has to be deleted or may be updated")
+                self.log("Need to check if Inbound Nat Rule instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the InboundNatRules instance")
+            self.log("Need to Create / Update the Inbound Nat Rule instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_inboundnatrules()
+            response = self.create_update_inboundnatrule()
 
             if not old_response:
                 self.results['changed'] = True
@@ -257,19 +257,19 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("InboundNatRules instance deleted")
+            self.log("Inbound Nat Rule instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_inboundnatrules()
+            self.delete_inboundnatrule()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_inboundnatrules():
+            while self.get_inboundnatrule():
                 time.sleep(20)
         else:
-            self.log("InboundNatRules instance unchanged")
+            self.log("Inbound Nat Rule instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -278,13 +278,13 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_inboundnatrules(self):
+    def create_update_inboundnatrule(self):
         '''
-        Creates or updates InboundNatRules with the specified configuration.
+        Creates or updates Inbound Nat Rule with the specified configuration.
 
-        :return: deserialized InboundNatRules instance state dictionary
+        :return: deserialized Inbound Nat Rule instance state dictionary
         '''
-        self.log("Creating / Updating the InboundNatRules instance {0}".format(self.inbound_nat_rule_name))
+        self.log("Creating / Updating the Inbound Nat Rule instance {0}".format(self.inbound_nat_rule_name))
 
         try:
             response = self.mgmt_client.inbound_nat_rules.create_or_update(resource_group_name=self.resource_group,
@@ -295,34 +295,34 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the InboundNatRules instance.')
-            self.fail("Error creating the InboundNatRules instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Inbound Nat Rule instance.')
+            self.fail("Error creating the Inbound Nat Rule instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_inboundnatrules(self):
+    def delete_inboundnatrule(self):
         '''
-        Deletes specified InboundNatRules instance in the specified subscription and resource group.
+        Deletes specified Inbound Nat Rule instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the InboundNatRules instance {0}".format(self.inbound_nat_rule_name))
+        self.log("Deleting the Inbound Nat Rule instance {0}".format(self.inbound_nat_rule_name))
         try:
             response = self.mgmt_client.inbound_nat_rules.delete(resource_group_name=self.resource_group,
                                                                  load_balancer_name=self.load_balancer_name,
                                                                  inbound_nat_rule_name=self.inbound_nat_rule_name)
         except CloudError as e:
-            self.log('Error attempting to delete the InboundNatRules instance.')
-            self.fail("Error deleting the InboundNatRules instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Inbound Nat Rule instance.')
+            self.fail("Error deleting the Inbound Nat Rule instance: {0}".format(str(e)))
 
         return True
 
-    def get_inboundnatrules(self):
+    def get_inboundnatrule(self):
         '''
-        Gets the properties of the specified InboundNatRules.
+        Gets the properties of the specified Inbound Nat Rule.
 
-        :return: deserialized InboundNatRules instance state dictionary
+        :return: deserialized Inbound Nat Rule instance state dictionary
         '''
-        self.log("Checking if the InboundNatRules instance {0} is present".format(self.inbound_nat_rule_name))
+        self.log("Checking if the Inbound Nat Rule instance {0} is present".format(self.inbound_nat_rule_name))
         found = False
         try:
             response = self.mgmt_client.inbound_nat_rules.get(resource_group_name=self.resource_group,
@@ -330,9 +330,9 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
                                                               inbound_nat_rule_name=self.inbound_nat_rule_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("InboundNatRules instance : {0} found".format(response.name))
+            self.log("Inbound Nat Rule instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the InboundNatRules instance.')
+            self.log('Did not find the Inbound Nat Rule instance.')
         if found is True:
             return response.as_dict()
 

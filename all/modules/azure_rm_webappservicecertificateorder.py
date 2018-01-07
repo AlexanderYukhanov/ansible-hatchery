@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappservicecertificateorder
 version_added: "2.5"
-short_description: Manage AppServiceCertificateOrders instance.
+short_description: Manage App Service Certificate Order instance.
 description:
-    - Create, update and delete instance of AppServiceCertificateOrders.
+    - Create, update and delete instance of App Service Certificate Order.
 
 options:
     resource_group:
@@ -68,7 +68,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) AppServiceCertificateOrders
+  - name: Create (or update) App Service Certificate Order
     azure_rm_webappservicecertificateorder:
       resource_group: NOT FOUND
       certificate_order_name: NOT FOUND
@@ -109,7 +109,7 @@ class Actions:
 
 
 class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
-    """Configuration class for an Azure RM AppServiceCertificateOrders resource"""
+    """Configuration class for an Azure RM App Service Certificate Order resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -211,30 +211,30 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_appservicecertificateorders()
+        old_response = self.get_appservicecertificateorder()
 
         if not old_response:
-            self.log("AppServiceCertificateOrders instance doesn't exist")
+            self.log("App Service Certificate Order instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("AppServiceCertificateOrders instance already exists")
+            self.log("App Service Certificate Order instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if AppServiceCertificateOrders instance has to be deleted or may be updated")
+                self.log("Need to check if App Service Certificate Order instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the AppServiceCertificateOrders instance")
+            self.log("Need to Create / Update the App Service Certificate Order instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_appservicecertificateorders()
+            response = self.create_update_appservicecertificateorder()
 
             if not old_response:
                 self.results['changed'] = True
@@ -242,19 +242,19 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("AppServiceCertificateOrders instance deleted")
+            self.log("App Service Certificate Order instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_appservicecertificateorders()
+            self.delete_appservicecertificateorder()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_appservicecertificateorders():
+            while self.get_appservicecertificateorder():
                 time.sleep(20)
         else:
-            self.log("AppServiceCertificateOrders instance unchanged")
+            self.log("App Service Certificate Order instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -264,13 +264,13 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_appservicecertificateorders(self):
+    def create_update_appservicecertificateorder(self):
         '''
-        Creates or updates AppServiceCertificateOrders with the specified configuration.
+        Creates or updates App Service Certificate Order with the specified configuration.
 
-        :return: deserialized AppServiceCertificateOrders instance state dictionary
+        :return: deserialized App Service Certificate Order instance state dictionary
         '''
-        self.log("Creating / Updating the AppServiceCertificateOrders instance {0}".format(self.certificate_order_name))
+        self.log("Creating / Updating the App Service Certificate Order instance {0}".format(self.certificate_order_name))
 
         try:
             response = self.mgmt_client.app_service_certificate_orders.create_or_update(resource_group_name=self.resource_group,
@@ -280,42 +280,42 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the AppServiceCertificateOrders instance.')
-            self.fail("Error creating the AppServiceCertificateOrders instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the App Service Certificate Order instance.')
+            self.fail("Error creating the App Service Certificate Order instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_appservicecertificateorders(self):
+    def delete_appservicecertificateorder(self):
         '''
-        Deletes specified AppServiceCertificateOrders instance in the specified subscription and resource group.
+        Deletes specified App Service Certificate Order instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the AppServiceCertificateOrders instance {0}".format(self.certificate_order_name))
+        self.log("Deleting the App Service Certificate Order instance {0}".format(self.certificate_order_name))
         try:
             response = self.mgmt_client.app_service_certificate_orders.delete(resource_group_name=self.resource_group,
                                                                               certificate_order_name=self.certificate_order_name)
         except CloudError as e:
-            self.log('Error attempting to delete the AppServiceCertificateOrders instance.')
-            self.fail("Error deleting the AppServiceCertificateOrders instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the App Service Certificate Order instance.')
+            self.fail("Error deleting the App Service Certificate Order instance: {0}".format(str(e)))
 
         return True
 
-    def get_appservicecertificateorders(self):
+    def get_appservicecertificateorder(self):
         '''
-        Gets the properties of the specified AppServiceCertificateOrders.
+        Gets the properties of the specified App Service Certificate Order.
 
-        :return: deserialized AppServiceCertificateOrders instance state dictionary
+        :return: deserialized App Service Certificate Order instance state dictionary
         '''
-        self.log("Checking if the AppServiceCertificateOrders instance {0} is present".format(self.certificate_order_name))
+        self.log("Checking if the App Service Certificate Order instance {0} is present".format(self.certificate_order_name))
         found = False
         try:
             response = self.mgmt_client.app_service_certificate_orders.get(resource_group_name=self.resource_group,
                                                                            certificate_order_name=self.certificate_order_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceCertificateOrders instance : {0} found".format(response.name))
+            self.log("App Service Certificate Order instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceCertificateOrders instance.')
+            self.log('Did not find the App Service Certificate Order instance.')
         if found is True:
             return response.as_dict()
 

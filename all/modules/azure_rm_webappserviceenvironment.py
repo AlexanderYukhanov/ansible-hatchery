@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappserviceenvironment
 version_added: "2.5"
-short_description: Manage AppServiceEnvironments instance.
+short_description: Manage App Service Environment instance.
 description:
-    - Create, update and delete instance of AppServiceEnvironments.
+    - Create, update and delete instance of App Service Environment.
 
 options:
     resource_group:
@@ -156,7 +156,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) AppServiceEnvironments
+  - name: Create (or update) App Service Environment
     azure_rm_webappserviceenvironment:
       resource_group: NOT FOUND
       name: NOT FOUND
@@ -196,7 +196,7 @@ class Actions:
 
 
 class AzureRMAppServiceEnvironments(AzureRMModuleBase):
-    """Configuration class for an Azure RM AppServiceEnvironments resource"""
+    """Configuration class for an Azure RM App Service Environment resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -378,30 +378,30 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_appserviceenvironments()
+        old_response = self.get_appserviceenvironment()
 
         if not old_response:
-            self.log("AppServiceEnvironments instance doesn't exist")
+            self.log("App Service Environment instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("AppServiceEnvironments instance already exists")
+            self.log("App Service Environment instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if AppServiceEnvironments instance has to be deleted or may be updated")
+                self.log("Need to check if App Service Environment instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the AppServiceEnvironments instance")
+            self.log("Need to Create / Update the App Service Environment instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_appserviceenvironments()
+            response = self.create_update_appserviceenvironment()
 
             if not old_response:
                 self.results['changed'] = True
@@ -409,19 +409,19 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("AppServiceEnvironments instance deleted")
+            self.log("App Service Environment instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_appserviceenvironments()
+            self.delete_appserviceenvironment()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_appserviceenvironments():
+            while self.get_appserviceenvironment():
                 time.sleep(20)
         else:
-            self.log("AppServiceEnvironments instance unchanged")
+            self.log("App Service Environment instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -431,13 +431,13 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_appserviceenvironments(self):
+    def create_update_appserviceenvironment(self):
         '''
-        Creates or updates AppServiceEnvironments with the specified configuration.
+        Creates or updates App Service Environment with the specified configuration.
 
-        :return: deserialized AppServiceEnvironments instance state dictionary
+        :return: deserialized App Service Environment instance state dictionary
         '''
-        self.log("Creating / Updating the AppServiceEnvironments instance {0}".format(self.name))
+        self.log("Creating / Updating the App Service Environment instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.app_service_environments.create_or_update(resource_group_name=self.resource_group,
@@ -447,42 +447,42 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the AppServiceEnvironments instance.')
-            self.fail("Error creating the AppServiceEnvironments instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the App Service Environment instance.')
+            self.fail("Error creating the App Service Environment instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_appserviceenvironments(self):
+    def delete_appserviceenvironment(self):
         '''
-        Deletes specified AppServiceEnvironments instance in the specified subscription and resource group.
+        Deletes specified App Service Environment instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the AppServiceEnvironments instance {0}".format(self.name))
+        self.log("Deleting the App Service Environment instance {0}".format(self.name))
         try:
             response = self.mgmt_client.app_service_environments.delete(resource_group_name=self.resource_group,
                                                                         name=self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the AppServiceEnvironments instance.')
-            self.fail("Error deleting the AppServiceEnvironments instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the App Service Environment instance.')
+            self.fail("Error deleting the App Service Environment instance: {0}".format(str(e)))
 
         return True
 
-    def get_appserviceenvironments(self):
+    def get_appserviceenvironment(self):
         '''
-        Gets the properties of the specified AppServiceEnvironments.
+        Gets the properties of the specified App Service Environment.
 
-        :return: deserialized AppServiceEnvironments instance state dictionary
+        :return: deserialized App Service Environment instance state dictionary
         '''
-        self.log("Checking if the AppServiceEnvironments instance {0} is present".format(self.name))
+        self.log("Checking if the App Service Environment instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_environments.get(resource_group_name=self.resource_group,
                                                                      name=self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServiceEnvironments instance : {0} found".format(response.name))
+            self.log("App Service Environment instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServiceEnvironments instance.')
+            self.log('Did not find the App Service Environment instance.')
         if found is True:
             return response.as_dict()
 

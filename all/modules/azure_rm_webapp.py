@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webapp
 version_added: "2.5"
-short_description: Manage WebApps instance.
+short_description: Manage Web App instance.
 description:
-    - Create, update and delete instance of WebApps.
+    - Create, update and delete instance of Web App.
 
 options:
     resource_group:
@@ -547,7 +547,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) WebApps
+  - name: Create (or update) Web App
     azure_rm_webapp:
       resource_group: NOT FOUND
       name: NOT FOUND
@@ -591,7 +591,7 @@ class Actions:
 
 
 class AzureRMWebApps(AzureRMModuleBase):
-    """Configuration class for an Azure RM WebApps resource"""
+    """Configuration class for an Azure RM Web App resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -805,30 +805,30 @@ class AzureRMWebApps(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_webapps()
+        old_response = self.get_webapp()
 
         if not old_response:
-            self.log("WebApps instance doesn't exist")
+            self.log("Web App instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("WebApps instance already exists")
+            self.log("Web App instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if WebApps instance has to be deleted or may be updated")
+                self.log("Need to check if Web App instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the WebApps instance")
+            self.log("Need to Create / Update the Web App instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_webapps()
+            response = self.create_update_webapp()
 
             if not old_response:
                 self.results['changed'] = True
@@ -836,19 +836,19 @@ class AzureRMWebApps(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("WebApps instance deleted")
+            self.log("Web App instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_webapps()
+            self.delete_webapp()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_webapps():
+            while self.get_webapp():
                 time.sleep(20)
         else:
-            self.log("WebApps instance unchanged")
+            self.log("Web App instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -858,13 +858,13 @@ class AzureRMWebApps(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_webapps(self):
+    def create_update_webapp(self):
         '''
-        Creates or updates WebApps with the specified configuration.
+        Creates or updates Web App with the specified configuration.
 
-        :return: deserialized WebApps instance state dictionary
+        :return: deserialized Web App instance state dictionary
         '''
-        self.log("Creating / Updating the WebApps instance {0}".format(self.name))
+        self.log("Creating / Updating the Web App instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.web_apps.create_or_update(resource_group_name=self.resource_group,
@@ -874,42 +874,42 @@ class AzureRMWebApps(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the WebApps instance.')
-            self.fail("Error creating the WebApps instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Web App instance.')
+            self.fail("Error creating the Web App instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_webapps(self):
+    def delete_webapp(self):
         '''
-        Deletes specified WebApps instance in the specified subscription and resource group.
+        Deletes specified Web App instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the WebApps instance {0}".format(self.name))
+        self.log("Deleting the Web App instance {0}".format(self.name))
         try:
             response = self.mgmt_client.web_apps.delete(resource_group_name=self.resource_group,
                                                         name=self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the WebApps instance.')
-            self.fail("Error deleting the WebApps instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Web App instance.')
+            self.fail("Error deleting the Web App instance: {0}".format(str(e)))
 
         return True
 
-    def get_webapps(self):
+    def get_webapp(self):
         '''
-        Gets the properties of the specified WebApps.
+        Gets the properties of the specified Web App.
 
-        :return: deserialized WebApps instance state dictionary
+        :return: deserialized Web App instance state dictionary
         '''
-        self.log("Checking if the WebApps instance {0} is present".format(self.name))
+        self.log("Checking if the Web App instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.web_apps.get(resource_group_name=self.resource_group,
                                                      name=self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("WebApps instance : {0} found".format(response.name))
+            self.log("Web App instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the WebApps instance.')
+            self.log('Did not find the Web App instance.')
         if found is True:
             return response.as_dict()
 

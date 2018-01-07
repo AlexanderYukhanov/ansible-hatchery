@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayroutefilter
 version_added: "2.5"
-short_description: Manage RouteFilters instance.
+short_description: Manage Route Filter instance.
 description:
-    - Create, update and delete instance of RouteFilters.
+    - Create, update and delete instance of Route Filter.
 
 options:
     resource_group:
@@ -481,7 +481,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) RouteFilters
+  - name: Create (or update) Route Filter
     azure_rm_applicationgatewayroutefilter:
       resource_group: rg1
       route_filter_name: filterName
@@ -515,7 +515,7 @@ class Actions:
 
 
 class AzureRMRouteFilters(AzureRMModuleBase):
-    """Configuration class for an Azure RM RouteFilters resource"""
+    """Configuration class for an Azure RM Route Filter resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -605,30 +605,30 @@ class AzureRMRouteFilters(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_routefilters()
+        old_response = self.get_routefilter()
 
         if not old_response:
-            self.log("RouteFilters instance doesn't exist")
+            self.log("Route Filter instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("RouteFilters instance already exists")
+            self.log("Route Filter instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if RouteFilters instance has to be deleted or may be updated")
+                self.log("Need to check if Route Filter instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the RouteFilters instance")
+            self.log("Need to Create / Update the Route Filter instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_routefilters()
+            response = self.create_update_routefilter()
 
             if not old_response:
                 self.results['changed'] = True
@@ -636,19 +636,19 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("RouteFilters instance deleted")
+            self.log("Route Filter instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_routefilters()
+            self.delete_routefilter()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_routefilters():
+            while self.get_routefilter():
                 time.sleep(20)
         else:
-            self.log("RouteFilters instance unchanged")
+            self.log("Route Filter instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -657,13 +657,13 @@ class AzureRMRouteFilters(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_routefilters(self):
+    def create_update_routefilter(self):
         '''
-        Creates or updates RouteFilters with the specified configuration.
+        Creates or updates Route Filter with the specified configuration.
 
-        :return: deserialized RouteFilters instance state dictionary
+        :return: deserialized Route Filter instance state dictionary
         '''
-        self.log("Creating / Updating the RouteFilters instance {0}".format(self.route_filter_name))
+        self.log("Creating / Updating the Route Filter instance {0}".format(self.route_filter_name))
 
         try:
             response = self.mgmt_client.route_filters.create_or_update(resource_group_name=self.resource_group,
@@ -673,42 +673,42 @@ class AzureRMRouteFilters(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the RouteFilters instance.')
-            self.fail("Error creating the RouteFilters instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Route Filter instance.')
+            self.fail("Error creating the Route Filter instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_routefilters(self):
+    def delete_routefilter(self):
         '''
-        Deletes specified RouteFilters instance in the specified subscription and resource group.
+        Deletes specified Route Filter instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the RouteFilters instance {0}".format(self.route_filter_name))
+        self.log("Deleting the Route Filter instance {0}".format(self.route_filter_name))
         try:
             response = self.mgmt_client.route_filters.delete(resource_group_name=self.resource_group,
                                                              route_filter_name=self.route_filter_name)
         except CloudError as e:
-            self.log('Error attempting to delete the RouteFilters instance.')
-            self.fail("Error deleting the RouteFilters instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Route Filter instance.')
+            self.fail("Error deleting the Route Filter instance: {0}".format(str(e)))
 
         return True
 
-    def get_routefilters(self):
+    def get_routefilter(self):
         '''
-        Gets the properties of the specified RouteFilters.
+        Gets the properties of the specified Route Filter.
 
-        :return: deserialized RouteFilters instance state dictionary
+        :return: deserialized Route Filter instance state dictionary
         '''
-        self.log("Checking if the RouteFilters instance {0} is present".format(self.route_filter_name))
+        self.log("Checking if the Route Filter instance {0} is present".format(self.route_filter_name))
         found = False
         try:
             response = self.mgmt_client.route_filters.get(resource_group_name=self.resource_group,
                                                           route_filter_name=self.route_filter_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("RouteFilters instance : {0} found".format(response.name))
+            self.log("Route Filter instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the RouteFilters instance.')
+            self.log('Did not find the Route Filter instance.')
         if found is True:
             return response.as_dict()
 

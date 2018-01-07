@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuitauthorization
 version_added: "2.5"
-short_description: Manage ExpressRouteCircuitAuthorizations instance.
+short_description: Manage Express Route Circuit Authorization instance.
 description:
-    - Create, update and delete instance of ExpressRouteCircuitAuthorizations.
+    - Create, update and delete instance of Express Route Circuit Authorization.
 
 options:
     resource_group:
@@ -60,7 +60,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ExpressRouteCircuitAuthorizations
+  - name: Create (or update) Express Route Circuit Authorization
     azure_rm_applicationgatewayexpressroutecircuitauthorization:
       resource_group: NOT FOUND
       circuit_name: NOT FOUND
@@ -94,7 +94,7 @@ class Actions:
 
 
 class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
-    """Configuration class for an Azure RM ExpressRouteCircuitAuthorizations resource"""
+    """Configuration class for an Azure RM Express Route Circuit Authorization resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -178,30 +178,30 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_expressroutecircuitauthorizations()
+        old_response = self.get_expressroutecircuitauthorization()
 
         if not old_response:
-            self.log("ExpressRouteCircuitAuthorizations instance doesn't exist")
+            self.log("Express Route Circuit Authorization instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("ExpressRouteCircuitAuthorizations instance already exists")
+            self.log("Express Route Circuit Authorization instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if ExpressRouteCircuitAuthorizations instance has to be deleted or may be updated")
+                self.log("Need to check if Express Route Circuit Authorization instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ExpressRouteCircuitAuthorizations instance")
+            self.log("Need to Create / Update the Express Route Circuit Authorization instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_expressroutecircuitauthorizations()
+            response = self.create_update_expressroutecircuitauthorization()
 
             if not old_response:
                 self.results['changed'] = True
@@ -209,19 +209,19 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("ExpressRouteCircuitAuthorizations instance deleted")
+            self.log("Express Route Circuit Authorization instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_expressroutecircuitauthorizations()
+            self.delete_expressroutecircuitauthorization()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_expressroutecircuitauthorizations():
+            while self.get_expressroutecircuitauthorization():
                 time.sleep(20)
         else:
-            self.log("ExpressRouteCircuitAuthorizations instance unchanged")
+            self.log("Express Route Circuit Authorization instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -230,13 +230,13 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_expressroutecircuitauthorizations(self):
+    def create_update_expressroutecircuitauthorization(self):
         '''
-        Creates or updates ExpressRouteCircuitAuthorizations with the specified configuration.
+        Creates or updates Express Route Circuit Authorization with the specified configuration.
 
-        :return: deserialized ExpressRouteCircuitAuthorizations instance state dictionary
+        :return: deserialized Express Route Circuit Authorization instance state dictionary
         '''
-        self.log("Creating / Updating the ExpressRouteCircuitAuthorizations instance {0}".format(self.authorization_name))
+        self.log("Creating / Updating the Express Route Circuit Authorization instance {0}".format(self.authorization_name))
 
         try:
             response = self.mgmt_client.express_route_circuit_authorizations.create_or_update(resource_group_name=self.resource_group,
@@ -247,34 +247,34 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ExpressRouteCircuitAuthorizations instance.')
-            self.fail("Error creating the ExpressRouteCircuitAuthorizations instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Express Route Circuit Authorization instance.')
+            self.fail("Error creating the Express Route Circuit Authorization instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_expressroutecircuitauthorizations(self):
+    def delete_expressroutecircuitauthorization(self):
         '''
-        Deletes specified ExpressRouteCircuitAuthorizations instance in the specified subscription and resource group.
+        Deletes specified Express Route Circuit Authorization instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ExpressRouteCircuitAuthorizations instance {0}".format(self.authorization_name))
+        self.log("Deleting the Express Route Circuit Authorization instance {0}".format(self.authorization_name))
         try:
             response = self.mgmt_client.express_route_circuit_authorizations.delete(resource_group_name=self.resource_group,
                                                                                     circuit_name=self.circuit_name,
                                                                                     authorization_name=self.authorization_name)
         except CloudError as e:
-            self.log('Error attempting to delete the ExpressRouteCircuitAuthorizations instance.')
-            self.fail("Error deleting the ExpressRouteCircuitAuthorizations instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Express Route Circuit Authorization instance.')
+            self.fail("Error deleting the Express Route Circuit Authorization instance: {0}".format(str(e)))
 
         return True
 
-    def get_expressroutecircuitauthorizations(self):
+    def get_expressroutecircuitauthorization(self):
         '''
-        Gets the properties of the specified ExpressRouteCircuitAuthorizations.
+        Gets the properties of the specified Express Route Circuit Authorization.
 
-        :return: deserialized ExpressRouteCircuitAuthorizations instance state dictionary
+        :return: deserialized Express Route Circuit Authorization instance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuitAuthorizations instance {0} is present".format(self.authorization_name))
+        self.log("Checking if the Express Route Circuit Authorization instance {0} is present".format(self.authorization_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuit_authorizations.get(resource_group_name=self.resource_group,
@@ -282,9 +282,9 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                                                                                  authorization_name=self.authorization_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuitAuthorizations instance : {0} found".format(response.name))
+            self.log("Express Route Circuit Authorization instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuitAuthorizations instance.')
+            self.log('Did not find the Express Route Circuit Authorization instance.')
         if found is True:
             return response.as_dict()
 

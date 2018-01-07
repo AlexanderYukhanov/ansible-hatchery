@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlbackuplongtermretentionpolicy
 version_added: "2.5"
-short_description: Manage BackupLongTermRetentionPolicies instance.
+short_description: Manage Backup Long Term Retention Policy instance.
 description:
-    - Create, update and delete instance of BackupLongTermRetentionPolicies.
+    - Create, update and delete instance of Backup Long Term Retention Policy.
 
 options:
     resource_group:
@@ -57,7 +57,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) BackupLongTermRetentionPolicies
+  - name: Create (or update) Backup Long Term Retention Policy
     azure_rm_sqlbackuplongtermretentionpolicy:
       resource_group: longtermretentiontest-1234
       server_name: longtermretentiontest-5678
@@ -100,7 +100,7 @@ class Actions:
 
 
 class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
-    """Configuration class for an Azure RM BackupLongTermRetentionPolicies resource"""
+    """Configuration class for an Azure RM Backup Long Term Retention Policy resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -167,30 +167,30 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_backuplongtermretentionpolicies()
+        old_response = self.get_backuplongtermretentionpolicy()
 
         if not old_response:
-            self.log("BackupLongTermRetentionPolicies instance doesn't exist")
+            self.log("Backup Long Term Retention Policy instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("BackupLongTermRetentionPolicies instance already exists")
+            self.log("Backup Long Term Retention Policy instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if BackupLongTermRetentionPolicies instance has to be deleted or may be updated")
+                self.log("Need to check if Backup Long Term Retention Policy instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the BackupLongTermRetentionPolicies instance")
+            self.log("Need to Create / Update the Backup Long Term Retention Policy instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_backuplongtermretentionpolicies()
+            response = self.create_update_backuplongtermretentionpolicy()
 
             if not old_response:
                 self.results['changed'] = True
@@ -198,19 +198,19 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("BackupLongTermRetentionPolicies instance deleted")
+            self.log("Backup Long Term Retention Policy instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_backuplongtermretentionpolicies()
+            self.delete_backuplongtermretentionpolicy()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_backuplongtermretentionpolicies():
+            while self.get_backuplongtermretentionpolicy():
                 time.sleep(20)
         else:
-            self.log("BackupLongTermRetentionPolicies instance unchanged")
+            self.log("Backup Long Term Retention Policy instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -220,13 +220,13 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_backuplongtermretentionpolicies(self):
+    def create_update_backuplongtermretentionpolicy(self):
         '''
-        Creates or updates BackupLongTermRetentionPolicies with the specified configuration.
+        Creates or updates Backup Long Term Retention Policy with the specified configuration.
 
-        :return: deserialized BackupLongTermRetentionPolicies instance state dictionary
+        :return: deserialized Backup Long Term Retention Policy instance state dictionary
         '''
-        self.log("Creating / Updating the BackupLongTermRetentionPolicies instance {0}".format(self.backup_long_term_retention_policy_name))
+        self.log("Creating / Updating the Backup Long Term Retention Policy instance {0}".format(self.backup_long_term_retention_policy_name))
 
         try:
             response = self.mgmt_client.backup_long_term_retention_policies.create_or_update(resource_group_name=self.resource_group,
@@ -239,32 +239,32 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the BackupLongTermRetentionPolicies instance.')
-            self.fail("Error creating the BackupLongTermRetentionPolicies instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Backup Long Term Retention Policy instance.')
+            self.fail("Error creating the Backup Long Term Retention Policy instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_backuplongtermretentionpolicies(self):
+    def delete_backuplongtermretentionpolicy(self):
         '''
-        Deletes specified BackupLongTermRetentionPolicies instance in the specified subscription and resource group.
+        Deletes specified Backup Long Term Retention Policy instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the BackupLongTermRetentionPolicies instance {0}".format(self.backup_long_term_retention_policy_name))
+        self.log("Deleting the Backup Long Term Retention Policy instance {0}".format(self.backup_long_term_retention_policy_name))
         try:
             response = self.mgmt_client.backup_long_term_retention_policies.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the BackupLongTermRetentionPolicies instance.')
-            self.fail("Error deleting the BackupLongTermRetentionPolicies instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Backup Long Term Retention Policy instance.')
+            self.fail("Error deleting the Backup Long Term Retention Policy instance: {0}".format(str(e)))
 
         return True
 
-    def get_backuplongtermretentionpolicies(self):
+    def get_backuplongtermretentionpolicy(self):
         '''
-        Gets the properties of the specified BackupLongTermRetentionPolicies.
+        Gets the properties of the specified Backup Long Term Retention Policy.
 
-        :return: deserialized BackupLongTermRetentionPolicies instance state dictionary
+        :return: deserialized Backup Long Term Retention Policy instance state dictionary
         '''
-        self.log("Checking if the BackupLongTermRetentionPolicies instance {0} is present".format(self.backup_long_term_retention_policy_name))
+        self.log("Checking if the Backup Long Term Retention Policy instance {0} is present".format(self.backup_long_term_retention_policy_name))
         found = False
         try:
             response = self.mgmt_client.backup_long_term_retention_policies.get(resource_group_name=self.resource_group,
@@ -273,9 +273,9 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
                                                                                 backup_long_term_retention_policy_name=self.backup_long_term_retention_policy_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("BackupLongTermRetentionPolicies instance : {0} found".format(response.name))
+            self.log("Backup Long Term Retention Policy instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the BackupLongTermRetentionPolicies instance.')
+            self.log('Did not find the Backup Long Term Retention Policy instance.')
         if found is True:
             return response.as_dict()
 

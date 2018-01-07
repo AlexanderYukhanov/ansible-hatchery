@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webappserviceplan
 version_added: "2.5"
-short_description: Manage AppServicePlans instance.
+short_description: Manage App Service Plan instance.
 description:
-    - Create, update and delete instance of AppServicePlans.
+    - Create, update and delete instance of App Service Plan.
 
 options:
     resource_group:
@@ -134,7 +134,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) AppServicePlans
+  - name: Create (or update) App Service Plan
     azure_rm_webappserviceplan:
       resource_group: testrg123
       name: testsf6141
@@ -182,7 +182,7 @@ class Actions:
 
 
 class AzureRMAppServicePlans(AzureRMModuleBase):
-    """Configuration class for an Azure RM AppServicePlans resource"""
+    """Configuration class for an Azure RM App Service Plan resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -298,30 +298,30 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_appserviceplans()
+        old_response = self.get_appserviceplan()
 
         if not old_response:
-            self.log("AppServicePlans instance doesn't exist")
+            self.log("App Service Plan instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("AppServicePlans instance already exists")
+            self.log("App Service Plan instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if AppServicePlans instance has to be deleted or may be updated")
+                self.log("Need to check if App Service Plan instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the AppServicePlans instance")
+            self.log("Need to Create / Update the App Service Plan instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_appserviceplans()
+            response = self.create_update_appserviceplan()
 
             if not old_response:
                 self.results['changed'] = True
@@ -329,19 +329,19 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("AppServicePlans instance deleted")
+            self.log("App Service Plan instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_appserviceplans()
+            self.delete_appserviceplan()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_appserviceplans():
+            while self.get_appserviceplan():
                 time.sleep(20)
         else:
-            self.log("AppServicePlans instance unchanged")
+            self.log("App Service Plan instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -351,13 +351,13 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_appserviceplans(self):
+    def create_update_appserviceplan(self):
         '''
-        Creates or updates AppServicePlans with the specified configuration.
+        Creates or updates App Service Plan with the specified configuration.
 
-        :return: deserialized AppServicePlans instance state dictionary
+        :return: deserialized App Service Plan instance state dictionary
         '''
-        self.log("Creating / Updating the AppServicePlans instance {0}".format(self.name))
+        self.log("Creating / Updating the App Service Plan instance {0}".format(self.name))
 
         try:
             response = self.mgmt_client.app_service_plans.create_or_update(resource_group_name=self.resource_group,
@@ -367,42 +367,42 @@ class AzureRMAppServicePlans(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the AppServicePlans instance.')
-            self.fail("Error creating the AppServicePlans instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the App Service Plan instance.')
+            self.fail("Error creating the App Service Plan instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_appserviceplans(self):
+    def delete_appserviceplan(self):
         '''
-        Deletes specified AppServicePlans instance in the specified subscription and resource group.
+        Deletes specified App Service Plan instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the AppServicePlans instance {0}".format(self.name))
+        self.log("Deleting the App Service Plan instance {0}".format(self.name))
         try:
             response = self.mgmt_client.app_service_plans.delete(resource_group_name=self.resource_group,
                                                                  name=self.name)
         except CloudError as e:
-            self.log('Error attempting to delete the AppServicePlans instance.')
-            self.fail("Error deleting the AppServicePlans instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the App Service Plan instance.')
+            self.fail("Error deleting the App Service Plan instance: {0}".format(str(e)))
 
         return True
 
-    def get_appserviceplans(self):
+    def get_appserviceplan(self):
         '''
-        Gets the properties of the specified AppServicePlans.
+        Gets the properties of the specified App Service Plan.
 
-        :return: deserialized AppServicePlans instance state dictionary
+        :return: deserialized App Service Plan instance state dictionary
         '''
-        self.log("Checking if the AppServicePlans instance {0} is present".format(self.name))
+        self.log("Checking if the App Service Plan instance {0} is present".format(self.name))
         found = False
         try:
             response = self.mgmt_client.app_service_plans.get(resource_group_name=self.resource_group,
                                                               name=self.name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("AppServicePlans instance : {0} found".format(response.name))
+            self.log("App Service Plan instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the AppServicePlans instance.')
+            self.log('Did not find the App Service Plan instance.')
         if found is True:
             return response.as_dict()
 

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqldatabasethreatdetectionpolicy
 version_added: "2.5"
-short_description: Manage DatabaseThreatDetectionPolicies instance.
+short_description: Manage Database Threat Detection Policy instance.
 description:
-    - Create, update and delete instance of DatabaseThreatDetectionPolicies.
+    - Create, update and delete instance of Database Threat Detection Policy.
 
 options:
     resource_group:
@@ -81,7 +81,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) DatabaseThreatDetectionPolicies
+  - name: Create (or update) Database Threat Detection Policy
     azure_rm_sqldatabasethreatdetectionpolicy:
       resource_group: securityalert-4799
       server_name: securityalert-6440
@@ -124,7 +124,7 @@ class Actions:
 
 
 class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
-    """Configuration class for an Azure RM DatabaseThreatDetectionPolicies resource"""
+    """Configuration class for an Azure RM Database Threat Detection Policy resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -251,30 +251,30 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_databasethreatdetectionpolicies()
+        old_response = self.get_databasethreatdetectionpolicy()
 
         if not old_response:
-            self.log("DatabaseThreatDetectionPolicies instance doesn't exist")
+            self.log("Database Threat Detection Policy instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("DatabaseThreatDetectionPolicies instance already exists")
+            self.log("Database Threat Detection Policy instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if DatabaseThreatDetectionPolicies instance has to be deleted or may be updated")
+                self.log("Need to check if Database Threat Detection Policy instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the DatabaseThreatDetectionPolicies instance")
+            self.log("Need to Create / Update the Database Threat Detection Policy instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_databasethreatdetectionpolicies()
+            response = self.create_update_databasethreatdetectionpolicy()
 
             if not old_response:
                 self.results['changed'] = True
@@ -282,19 +282,19 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("DatabaseThreatDetectionPolicies instance deleted")
+            self.log("Database Threat Detection Policy instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_databasethreatdetectionpolicies()
+            self.delete_databasethreatdetectionpolicy()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_databasethreatdetectionpolicies():
+            while self.get_databasethreatdetectionpolicy():
                 time.sleep(20)
         else:
-            self.log("DatabaseThreatDetectionPolicies instance unchanged")
+            self.log("Database Threat Detection Policy instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -304,13 +304,13 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_databasethreatdetectionpolicies(self):
+    def create_update_databasethreatdetectionpolicy(self):
         '''
-        Creates or updates DatabaseThreatDetectionPolicies with the specified configuration.
+        Creates or updates Database Threat Detection Policy with the specified configuration.
 
-        :return: deserialized DatabaseThreatDetectionPolicies instance state dictionary
+        :return: deserialized Database Threat Detection Policy instance state dictionary
         '''
-        self.log("Creating / Updating the DatabaseThreatDetectionPolicies instance {0}".format(self.security_alert_policy_name))
+        self.log("Creating / Updating the Database Threat Detection Policy instance {0}".format(self.security_alert_policy_name))
 
         try:
             response = self.mgmt_client.database_threat_detection_policies.create_or_update(resource_group_name=self.resource_group,
@@ -322,32 +322,32 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the DatabaseThreatDetectionPolicies instance.')
-            self.fail("Error creating the DatabaseThreatDetectionPolicies instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Database Threat Detection Policy instance.')
+            self.fail("Error creating the Database Threat Detection Policy instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_databasethreatdetectionpolicies(self):
+    def delete_databasethreatdetectionpolicy(self):
         '''
-        Deletes specified DatabaseThreatDetectionPolicies instance in the specified subscription and resource group.
+        Deletes specified Database Threat Detection Policy instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the DatabaseThreatDetectionPolicies instance {0}".format(self.security_alert_policy_name))
+        self.log("Deleting the Database Threat Detection Policy instance {0}".format(self.security_alert_policy_name))
         try:
             response = self.mgmt_client.database_threat_detection_policies.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the DatabaseThreatDetectionPolicies instance.')
-            self.fail("Error deleting the DatabaseThreatDetectionPolicies instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Database Threat Detection Policy instance.')
+            self.fail("Error deleting the Database Threat Detection Policy instance: {0}".format(str(e)))
 
         return True
 
-    def get_databasethreatdetectionpolicies(self):
+    def get_databasethreatdetectionpolicy(self):
         '''
-        Gets the properties of the specified DatabaseThreatDetectionPolicies.
+        Gets the properties of the specified Database Threat Detection Policy.
 
-        :return: deserialized DatabaseThreatDetectionPolicies instance state dictionary
+        :return: deserialized Database Threat Detection Policy instance state dictionary
         '''
-        self.log("Checking if the DatabaseThreatDetectionPolicies instance {0} is present".format(self.security_alert_policy_name))
+        self.log("Checking if the Database Threat Detection Policy instance {0} is present".format(self.security_alert_policy_name))
         found = False
         try:
             response = self.mgmt_client.database_threat_detection_policies.get(resource_group_name=self.resource_group,
@@ -356,9 +356,9 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                                                                                security_alert_policy_name=self.security_alert_policy_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("DatabaseThreatDetectionPolicies instance : {0} found".format(response.name))
+            self.log("Database Threat Detection Policy instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the DatabaseThreatDetectionPolicies instance.')
+            self.log('Did not find the Database Threat Detection Policy instance.')
         if found is True:
             return response.as_dict()
 

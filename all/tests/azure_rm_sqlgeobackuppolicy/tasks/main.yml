@@ -17,7 +17,7 @@
     name: test-database
     location: eastus
 
-- name: Create instance of GeoBackupPolicies -- check mode
+- name: Create instance of Geo Backup Policy -- check mode
   azure_rm_sqlgeobackuppolicy:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
@@ -31,7 +31,7 @@
     that:
       - output.changed
 
-- name: Create instance of GeoBackupPolicies
+- name: Create instance of Geo Backup Policy
   azure_rm_sqlgeobackuppolicy:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
@@ -44,7 +44,7 @@
     that:
       - output.changed
 
-- name: Create again instance of GeoBackupPolicies
+- name: Create again instance of Geo Backup Policy
   azure_rm_sqlgeobackuppolicy:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"

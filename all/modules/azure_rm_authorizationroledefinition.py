@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_authorizationroledefinition
 version_added: "2.5"
-short_description: Manage RoleDefinitions instance.
+short_description: Manage Role Definition instance.
 description:
-    - Create, update and delete instance of RoleDefinitions.
+    - Create, update and delete instance of Role Definition.
 
 options:
     scope:
@@ -66,7 +66,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) RoleDefinitions
+  - name: Create (or update) Role Definition
     azure_rm_authorizationroledefinition:
       scope: scope
       role_definition_id: roleDefinitionId
@@ -99,7 +99,7 @@ class Actions:
 
 
 class AzureRMRoleDefinitions(AzureRMModuleBase):
-    """Configuration class for an Azure RM RoleDefinitions resource"""
+    """Configuration class for an Azure RM Role Definition resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -170,30 +170,30 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        old_response = self.get_roledefinitions()
+        old_response = self.get_roledefinition()
 
         if not old_response:
-            self.log("RoleDefinitions instance doesn't exist")
+            self.log("Role Definition instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("RoleDefinitions instance already exists")
+            self.log("Role Definition instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if RoleDefinitions instance has to be deleted or may be updated")
+                self.log("Need to check if Role Definition instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the RoleDefinitions instance")
+            self.log("Need to Create / Update the Role Definition instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_roledefinitions()
+            response = self.create_update_roledefinition()
 
             if not old_response:
                 self.results['changed'] = True
@@ -201,19 +201,19 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("RoleDefinitions instance deleted")
+            self.log("Role Definition instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_roledefinitions()
+            self.delete_roledefinition()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_roledefinitions():
+            while self.get_roledefinition():
                 time.sleep(20)
         else:
-            self.log("RoleDefinitions instance unchanged")
+            self.log("Role Definition instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -222,13 +222,13 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_roledefinitions(self):
+    def create_update_roledefinition(self):
         '''
-        Creates or updates RoleDefinitions with the specified configuration.
+        Creates or updates Role Definition with the specified configuration.
 
-        :return: deserialized RoleDefinitions instance state dictionary
+        :return: deserialized Role Definition instance state dictionary
         '''
-        self.log("Creating / Updating the RoleDefinitions instance {0}".format(self.role_definition_id))
+        self.log("Creating / Updating the Role Definition instance {0}".format(self.role_definition_id))
 
         try:
             response = self.mgmt_client.role_definitions.create_or_update(scope=self.scope,
@@ -238,42 +238,42 @@ class AzureRMRoleDefinitions(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the RoleDefinitions instance.')
-            self.fail("Error creating the RoleDefinitions instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Role Definition instance.')
+            self.fail("Error creating the Role Definition instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_roledefinitions(self):
+    def delete_roledefinition(self):
         '''
-        Deletes specified RoleDefinitions instance in the specified subscription and resource group.
+        Deletes specified Role Definition instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the RoleDefinitions instance {0}".format(self.role_definition_id))
+        self.log("Deleting the Role Definition instance {0}".format(self.role_definition_id))
         try:
             response = self.mgmt_client.role_definitions.delete(scope=self.scope,
                                                                 role_definition_id=self.role_definition_id)
         except CloudError as e:
-            self.log('Error attempting to delete the RoleDefinitions instance.')
-            self.fail("Error deleting the RoleDefinitions instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Role Definition instance.')
+            self.fail("Error deleting the Role Definition instance: {0}".format(str(e)))
 
         return True
 
-    def get_roledefinitions(self):
+    def get_roledefinition(self):
         '''
-        Gets the properties of the specified RoleDefinitions.
+        Gets the properties of the specified Role Definition.
 
-        :return: deserialized RoleDefinitions instance state dictionary
+        :return: deserialized Role Definition instance state dictionary
         '''
-        self.log("Checking if the RoleDefinitions instance {0} is present".format(self.role_definition_id))
+        self.log("Checking if the Role Definition instance {0} is present".format(self.role_definition_id))
         found = False
         try:
             response = self.mgmt_client.role_definitions.get(scope=self.scope,
                                                              role_definition_id=self.role_definition_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("RoleDefinitions instance : {0} found".format(response.name))
+            self.log("Role Definition instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the RoleDefinitions instance.')
+            self.log('Did not find the Role Definition instance.')
         if found is True:
             return response.as_dict()
 

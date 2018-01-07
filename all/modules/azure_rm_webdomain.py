@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_webdomain
 version_added: "2.5"
-short_description: Manage Domains instance.
+short_description: Manage Domain instance.
 description:
-    - Create, update and delete instance of Domains.
+    - Create, update and delete instance of Domain.
 
 options:
     resource_group:
@@ -317,7 +317,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Domains
+  - name: Create (or update) Domain
     azure_rm_webdomain:
       resource_group: NOT FOUND
       domain_name: NOT FOUND
@@ -351,7 +351,7 @@ class Actions:
 
 
 class AzureRMDomains(AzureRMModuleBase):
-    """Configuration class for an Azure RM Domains resource"""
+    """Configuration class for an Azure RM Domain resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -479,30 +479,30 @@ class AzureRMDomains(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_domains()
+        old_response = self.get_domain()
 
         if not old_response:
-            self.log("Domains instance doesn't exist")
+            self.log("Domain instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("Domains instance already exists")
+            self.log("Domain instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if Domains instance has to be deleted or may be updated")
+                self.log("Need to check if Domain instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the Domains instance")
+            self.log("Need to Create / Update the Domain instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_domains()
+            response = self.create_update_domain()
 
             if not old_response:
                 self.results['changed'] = True
@@ -510,19 +510,19 @@ class AzureRMDomains(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("Domains instance deleted")
+            self.log("Domain instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_domains()
+            self.delete_domain()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_domains():
+            while self.get_domain():
                 time.sleep(20)
         else:
-            self.log("Domains instance unchanged")
+            self.log("Domain instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -531,13 +531,13 @@ class AzureRMDomains(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_domains(self):
+    def create_update_domain(self):
         '''
-        Creates or updates Domains with the specified configuration.
+        Creates or updates Domain with the specified configuration.
 
-        :return: deserialized Domains instance state dictionary
+        :return: deserialized Domain instance state dictionary
         '''
-        self.log("Creating / Updating the Domains instance {0}".format(self.domain_name))
+        self.log("Creating / Updating the Domain instance {0}".format(self.domain_name))
 
         try:
             response = self.mgmt_client.domains.create_or_update(resource_group_name=self.resource_group,
@@ -547,42 +547,42 @@ class AzureRMDomains(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Domains instance.')
-            self.fail("Error creating the Domains instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Domain instance.')
+            self.fail("Error creating the Domain instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_domains(self):
+    def delete_domain(self):
         '''
-        Deletes specified Domains instance in the specified subscription and resource group.
+        Deletes specified Domain instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Domains instance {0}".format(self.domain_name))
+        self.log("Deleting the Domain instance {0}".format(self.domain_name))
         try:
             response = self.mgmt_client.domains.delete(resource_group_name=self.resource_group,
                                                        domain_name=self.domain_name)
         except CloudError as e:
-            self.log('Error attempting to delete the Domains instance.')
-            self.fail("Error deleting the Domains instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Domain instance.')
+            self.fail("Error deleting the Domain instance: {0}".format(str(e)))
 
         return True
 
-    def get_domains(self):
+    def get_domain(self):
         '''
-        Gets the properties of the specified Domains.
+        Gets the properties of the specified Domain.
 
-        :return: deserialized Domains instance state dictionary
+        :return: deserialized Domain instance state dictionary
         '''
-        self.log("Checking if the Domains instance {0} is present".format(self.domain_name))
+        self.log("Checking if the Domain instance {0} is present".format(self.domain_name))
         found = False
         try:
             response = self.mgmt_client.domains.get(resource_group_name=self.resource_group,
                                                     domain_name=self.domain_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Domains instance : {0} found".format(response.name))
+            self.log("Domain instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Domains instance.')
+            self.log('Did not find the Domain instance.')
         if found is True:
             return response.as_dict()
 

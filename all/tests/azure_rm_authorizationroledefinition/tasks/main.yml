@@ -3,7 +3,7 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of RoleDefinitions -- check mode
+- name: Create instance of Role Definition -- check mode
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
@@ -14,7 +14,7 @@
     that:
       - output.changed
 
-- name: Create instance of RoleDefinitions
+- name: Create instance of Role Definition
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
@@ -24,7 +24,7 @@
     that:
       - output.changed
 
-- name: Create again instance of RoleDefinitions
+- name: Create again instance of Role Definition
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
@@ -34,7 +34,7 @@
     that:
       - output.changed == false
 
-- name: Delete instance of RoleDefinitions -- check mode
+- name: Delete instance of Role Definition -- check mode
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
@@ -46,7 +46,7 @@
     that:
       - output.changed
 
-- name: Delete instance of RoleDefinitions
+- name: Delete instance of Role Definition
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz
@@ -57,7 +57,7 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of RoleDefinitions
+- name: Delete unexisting instance of Role Definition
   azure_rm_authorizationroledefinition:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_definition_id: rolexyz

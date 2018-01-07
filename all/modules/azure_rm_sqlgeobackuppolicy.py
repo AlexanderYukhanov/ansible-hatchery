@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlgeobackuppolicy
 version_added: "2.5"
-short_description: Manage GeoBackupPolicies instance.
+short_description: Manage Geo Backup Policy instance.
 description:
-    - Create, update and delete instance of GeoBackupPolicies.
+    - Create, update and delete instance of Geo Backup Policy.
 
 options:
     resource_group:
@@ -53,7 +53,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) GeoBackupPolicies
+  - name: Create (or update) Geo Backup Policy
     azure_rm_sqlgeobackuppolicy:
       resource_group: sqlcrudtest-4799
       server_name: sqlcrudtest-5961
@@ -95,7 +95,7 @@ class Actions:
 
 
 class AzureRMGeoBackupPolicies(AzureRMModuleBase):
-    """Configuration class for an Azure RM GeoBackupPolicies resource"""
+    """Configuration class for an Azure RM Geo Backup Policy resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -157,30 +157,30 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_geobackuppolicies()
+        old_response = self.get_geobackuppolicy()
 
         if not old_response:
-            self.log("GeoBackupPolicies instance doesn't exist")
+            self.log("Geo Backup Policy instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("GeoBackupPolicies instance already exists")
+            self.log("Geo Backup Policy instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if GeoBackupPolicies instance has to be deleted or may be updated")
+                self.log("Need to check if Geo Backup Policy instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the GeoBackupPolicies instance")
+            self.log("Need to Create / Update the Geo Backup Policy instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_geobackuppolicies()
+            response = self.create_update_geobackuppolicy()
 
             if not old_response:
                 self.results['changed'] = True
@@ -188,19 +188,19 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("GeoBackupPolicies instance deleted")
+            self.log("Geo Backup Policy instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_geobackuppolicies()
+            self.delete_geobackuppolicy()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_geobackuppolicies():
+            while self.get_geobackuppolicy():
                 time.sleep(20)
         else:
-            self.log("GeoBackupPolicies instance unchanged")
+            self.log("Geo Backup Policy instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -210,13 +210,13 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_geobackuppolicies(self):
+    def create_update_geobackuppolicy(self):
         '''
-        Creates or updates GeoBackupPolicies with the specified configuration.
+        Creates or updates Geo Backup Policy with the specified configuration.
 
-        :return: deserialized GeoBackupPolicies instance state dictionary
+        :return: deserialized Geo Backup Policy instance state dictionary
         '''
-        self.log("Creating / Updating the GeoBackupPolicies instance {0}".format(self.geo_backup_policy_name))
+        self.log("Creating / Updating the Geo Backup Policy instance {0}".format(self.geo_backup_policy_name))
 
         try:
             response = self.mgmt_client.geo_backup_policies.create_or_update(resource_group_name=self.resource_group,
@@ -228,32 +228,32 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the GeoBackupPolicies instance.')
-            self.fail("Error creating the GeoBackupPolicies instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Geo Backup Policy instance.')
+            self.fail("Error creating the Geo Backup Policy instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_geobackuppolicies(self):
+    def delete_geobackuppolicy(self):
         '''
-        Deletes specified GeoBackupPolicies instance in the specified subscription and resource group.
+        Deletes specified Geo Backup Policy instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the GeoBackupPolicies instance {0}".format(self.geo_backup_policy_name))
+        self.log("Deleting the Geo Backup Policy instance {0}".format(self.geo_backup_policy_name))
         try:
             response = self.mgmt_client.geo_backup_policies.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the GeoBackupPolicies instance.')
-            self.fail("Error deleting the GeoBackupPolicies instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Geo Backup Policy instance.')
+            self.fail("Error deleting the Geo Backup Policy instance: {0}".format(str(e)))
 
         return True
 
-    def get_geobackuppolicies(self):
+    def get_geobackuppolicy(self):
         '''
-        Gets the properties of the specified GeoBackupPolicies.
+        Gets the properties of the specified Geo Backup Policy.
 
-        :return: deserialized GeoBackupPolicies instance state dictionary
+        :return: deserialized Geo Backup Policy instance state dictionary
         '''
-        self.log("Checking if the GeoBackupPolicies instance {0} is present".format(self.geo_backup_policy_name))
+        self.log("Checking if the Geo Backup Policy instance {0} is present".format(self.geo_backup_policy_name))
         found = False
         try:
             response = self.mgmt_client.geo_backup_policies.get(resource_group_name=self.resource_group,
@@ -262,9 +262,9 @@ class AzureRMGeoBackupPolicies(AzureRMModuleBase):
                                                                 geo_backup_policy_name=self.geo_backup_policy_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("GeoBackupPolicies instance : {0} found".format(response.name))
+            self.log("Geo Backup Policy instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the GeoBackupPolicies instance.')
+            self.log('Did not find the Geo Backup Policy instance.')
         if found is True:
             return response.as_dict()
 

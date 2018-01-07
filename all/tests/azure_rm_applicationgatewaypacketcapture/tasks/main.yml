@@ -3,7 +3,7 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of PacketCaptures -- check mode
+- name: Create instance of Packet Capture -- check mode
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
   check_mode: yes
@@ -13,7 +13,7 @@
     that:
       - output.changed
 
-- name: Create instance of PacketCaptures
+- name: Create instance of Packet Capture
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
   register: output
@@ -22,7 +22,7 @@
     that:
       - output.changed
 
-- name: Create again instance of PacketCaptures
+- name: Create again instance of Packet Capture
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
   register: output
@@ -31,7 +31,7 @@
     that:
       - output.changed == false
 
-- name: Delete instance of PacketCaptures -- check mode
+- name: Delete instance of Packet Capture -- check mode
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -42,7 +42,7 @@
     that:
       - output.changed
 
-- name: Delete instance of PacketCaptures
+- name: Delete instance of Packet Capture
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
     state: absent
@@ -52,7 +52,7 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of PacketCaptures
+- name: Delete unexisting instance of Packet Capture
   azure_rm_applicationgatewaypacketcapture:
     resource_group: "{{ resource_group }}"
     state: absent

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaylocalnetworkgateway
 version_added: "2.5"
-short_description: Manage LocalNetworkGateways instance.
+short_description: Manage Local Network Gateway instance.
 description:
-    - Create, update and delete instance of LocalNetworkGateways.
+    - Create, update and delete instance of Local Network Gateway.
 
 options:
     resource_group:
@@ -76,7 +76,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) LocalNetworkGateways
+  - name: Create (or update) Local Network Gateway
     azure_rm_applicationgatewaylocalnetworkgateway:
       resource_group: NOT FOUND
       local_network_gateway_name: NOT FOUND
@@ -110,7 +110,7 @@ class Actions:
 
 
 class AzureRMLocalNetworkGateways(AzureRMModuleBase):
-    """Configuration class for an Azure RM LocalNetworkGateways resource"""
+    """Configuration class for an Azure RM Local Network Gateway resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -196,30 +196,30 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_localnetworkgateways()
+        old_response = self.get_localnetworkgateway()
 
         if not old_response:
-            self.log("LocalNetworkGateways instance doesn't exist")
+            self.log("Local Network Gateway instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("LocalNetworkGateways instance already exists")
+            self.log("Local Network Gateway instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if LocalNetworkGateways instance has to be deleted or may be updated")
+                self.log("Need to check if Local Network Gateway instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the LocalNetworkGateways instance")
+            self.log("Need to Create / Update the Local Network Gateway instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_localnetworkgateways()
+            response = self.create_update_localnetworkgateway()
 
             if not old_response:
                 self.results['changed'] = True
@@ -227,19 +227,19 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("LocalNetworkGateways instance deleted")
+            self.log("Local Network Gateway instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_localnetworkgateways()
+            self.delete_localnetworkgateway()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_localnetworkgateways():
+            while self.get_localnetworkgateway():
                 time.sleep(20)
         else:
-            self.log("LocalNetworkGateways instance unchanged")
+            self.log("Local Network Gateway instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -248,13 +248,13 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_localnetworkgateways(self):
+    def create_update_localnetworkgateway(self):
         '''
-        Creates or updates LocalNetworkGateways with the specified configuration.
+        Creates or updates Local Network Gateway with the specified configuration.
 
-        :return: deserialized LocalNetworkGateways instance state dictionary
+        :return: deserialized Local Network Gateway instance state dictionary
         '''
-        self.log("Creating / Updating the LocalNetworkGateways instance {0}".format(self.local_network_gateway_name))
+        self.log("Creating / Updating the Local Network Gateway instance {0}".format(self.local_network_gateway_name))
 
         try:
             response = self.mgmt_client.local_network_gateways.create_or_update(resource_group_name=self.resource_group,
@@ -264,42 +264,42 @@ class AzureRMLocalNetworkGateways(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the LocalNetworkGateways instance.')
-            self.fail("Error creating the LocalNetworkGateways instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Local Network Gateway instance.')
+            self.fail("Error creating the Local Network Gateway instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_localnetworkgateways(self):
+    def delete_localnetworkgateway(self):
         '''
-        Deletes specified LocalNetworkGateways instance in the specified subscription and resource group.
+        Deletes specified Local Network Gateway instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the LocalNetworkGateways instance {0}".format(self.local_network_gateway_name))
+        self.log("Deleting the Local Network Gateway instance {0}".format(self.local_network_gateway_name))
         try:
             response = self.mgmt_client.local_network_gateways.delete(resource_group_name=self.resource_group,
                                                                       local_network_gateway_name=self.local_network_gateway_name)
         except CloudError as e:
-            self.log('Error attempting to delete the LocalNetworkGateways instance.')
-            self.fail("Error deleting the LocalNetworkGateways instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Local Network Gateway instance.')
+            self.fail("Error deleting the Local Network Gateway instance: {0}".format(str(e)))
 
         return True
 
-    def get_localnetworkgateways(self):
+    def get_localnetworkgateway(self):
         '''
-        Gets the properties of the specified LocalNetworkGateways.
+        Gets the properties of the specified Local Network Gateway.
 
-        :return: deserialized LocalNetworkGateways instance state dictionary
+        :return: deserialized Local Network Gateway instance state dictionary
         '''
-        self.log("Checking if the LocalNetworkGateways instance {0} is present".format(self.local_network_gateway_name))
+        self.log("Checking if the Local Network Gateway instance {0} is present".format(self.local_network_gateway_name))
         found = False
         try:
             response = self.mgmt_client.local_network_gateways.get(resource_group_name=self.resource_group,
                                                                    local_network_gateway_name=self.local_network_gateway_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("LocalNetworkGateways instance : {0} found".format(response.name))
+            self.log("Local Network Gateway instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the LocalNetworkGateways instance.')
+            self.log('Did not find the Local Network Gateway instance.')
         if found is True:
             return response.as_dict()
 

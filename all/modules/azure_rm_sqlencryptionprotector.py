@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlencryptionprotector
 version_added: "2.5"
-short_description: Manage EncryptionProtectors instance.
+short_description: Manage Encryption Protector instance.
 description:
-    - Create, update and delete instance of EncryptionProtectors.
+    - Create, update and delete instance of Encryption Protector.
 
 options:
     resource_group:
@@ -55,7 +55,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) EncryptionProtectors
+  - name: Create (or update) Encryption Protector
     azure_rm_sqlencryptionprotector:
       resource_group: sqlcrudtest-7398
       server_name: sqlcrudtest-4645
@@ -89,7 +89,7 @@ class Actions:
 
 
 class AzureRMEncryptionProtectors(AzureRMModuleBase):
-    """Configuration class for an Azure RM EncryptionProtectors resource"""
+    """Configuration class for an Azure RM Encryption Protector resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -164,30 +164,30 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_encryptionprotectors()
+        old_response = self.get_encryptionprotector()
 
         if not old_response:
-            self.log("EncryptionProtectors instance doesn't exist")
+            self.log("Encryption Protector instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("EncryptionProtectors instance already exists")
+            self.log("Encryption Protector instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if EncryptionProtectors instance has to be deleted or may be updated")
+                self.log("Need to check if Encryption Protector instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the EncryptionProtectors instance")
+            self.log("Need to Create / Update the Encryption Protector instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_encryptionprotectors()
+            response = self.create_update_encryptionprotector()
 
             if not old_response:
                 self.results['changed'] = True
@@ -195,19 +195,19 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("EncryptionProtectors instance deleted")
+            self.log("Encryption Protector instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_encryptionprotectors()
+            self.delete_encryptionprotector()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_encryptionprotectors():
+            while self.get_encryptionprotector():
                 time.sleep(20)
         else:
-            self.log("EncryptionProtectors instance unchanged")
+            self.log("Encryption Protector instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -216,13 +216,13 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_encryptionprotectors(self):
+    def create_update_encryptionprotector(self):
         '''
-        Creates or updates EncryptionProtectors with the specified configuration.
+        Creates or updates Encryption Protector with the specified configuration.
 
-        :return: deserialized EncryptionProtectors instance state dictionary
+        :return: deserialized Encryption Protector instance state dictionary
         '''
-        self.log("Creating / Updating the EncryptionProtectors instance {0}".format(self.encryption_protector_name))
+        self.log("Creating / Updating the Encryption Protector instance {0}".format(self.encryption_protector_name))
 
         try:
             response = self.mgmt_client.encryption_protectors.create_or_update(resource_group_name=self.resource_group,
@@ -233,32 +233,32 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the EncryptionProtectors instance.')
-            self.fail("Error creating the EncryptionProtectors instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Encryption Protector instance.')
+            self.fail("Error creating the Encryption Protector instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_encryptionprotectors(self):
+    def delete_encryptionprotector(self):
         '''
-        Deletes specified EncryptionProtectors instance in the specified subscription and resource group.
+        Deletes specified Encryption Protector instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the EncryptionProtectors instance {0}".format(self.encryption_protector_name))
+        self.log("Deleting the Encryption Protector instance {0}".format(self.encryption_protector_name))
         try:
             response = self.mgmt_client.encryption_protectors.delete()
         except CloudError as e:
-            self.log('Error attempting to delete the EncryptionProtectors instance.')
-            self.fail("Error deleting the EncryptionProtectors instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Encryption Protector instance.')
+            self.fail("Error deleting the Encryption Protector instance: {0}".format(str(e)))
 
         return True
 
-    def get_encryptionprotectors(self):
+    def get_encryptionprotector(self):
         '''
-        Gets the properties of the specified EncryptionProtectors.
+        Gets the properties of the specified Encryption Protector.
 
-        :return: deserialized EncryptionProtectors instance state dictionary
+        :return: deserialized Encryption Protector instance state dictionary
         '''
-        self.log("Checking if the EncryptionProtectors instance {0} is present".format(self.encryption_protector_name))
+        self.log("Checking if the Encryption Protector instance {0} is present".format(self.encryption_protector_name))
         found = False
         try:
             response = self.mgmt_client.encryption_protectors.get(resource_group_name=self.resource_group,
@@ -266,9 +266,9 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                                                                   encryption_protector_name=self.encryption_protector_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("EncryptionProtectors instance : {0} found".format(response.name))
+            self.log("Encryption Protector instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the EncryptionProtectors instance.')
+            self.log('Did not find the Encryption Protector instance.')
         if found is True:
             return response.as_dict()
 

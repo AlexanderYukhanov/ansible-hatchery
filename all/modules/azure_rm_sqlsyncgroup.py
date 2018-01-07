@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_sqlsyncgroup
 version_added: "2.5"
-short_description: Manage SyncGroups instance.
+short_description: Manage Sync Group instance.
 description:
-    - Create, update and delete instance of SyncGroups.
+    - Create, update and delete instance of Sync Group.
 
 options:
     resource_group:
@@ -93,7 +93,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) SyncGroups
+  - name: Create (or update) Sync Group
     azure_rm_sqlsyncgroup:
       resource_group: syncgroupcrud-65440
       server_name: syncgroupcrud-8475
@@ -128,7 +128,7 @@ class Actions:
 
 
 class AzureRMSyncGroups(AzureRMModuleBase):
-    """Configuration class for an Azure RM SyncGroups resource"""
+    """Configuration class for an Azure RM Sync Group resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -223,30 +223,30 @@ class AzureRMSyncGroups(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_syncgroups()
+        old_response = self.get_syncgroup()
 
         if not old_response:
-            self.log("SyncGroups instance doesn't exist")
+            self.log("Sync Group instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("SyncGroups instance already exists")
+            self.log("Sync Group instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if SyncGroups instance has to be deleted or may be updated")
+                self.log("Need to check if Sync Group instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the SyncGroups instance")
+            self.log("Need to Create / Update the Sync Group instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_syncgroups()
+            response = self.create_update_syncgroup()
 
             if not old_response:
                 self.results['changed'] = True
@@ -254,19 +254,19 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("SyncGroups instance deleted")
+            self.log("Sync Group instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_syncgroups()
+            self.delete_syncgroup()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_syncgroups():
+            while self.get_syncgroup():
                 time.sleep(20)
         else:
-            self.log("SyncGroups instance unchanged")
+            self.log("Sync Group instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -275,13 +275,13 @@ class AzureRMSyncGroups(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_syncgroups(self):
+    def create_update_syncgroup(self):
         '''
-        Creates or updates SyncGroups with the specified configuration.
+        Creates or updates Sync Group with the specified configuration.
 
-        :return: deserialized SyncGroups instance state dictionary
+        :return: deserialized Sync Group instance state dictionary
         '''
-        self.log("Creating / Updating the SyncGroups instance {0}".format(self.sync_group_name))
+        self.log("Creating / Updating the Sync Group instance {0}".format(self.sync_group_name))
 
         try:
             response = self.mgmt_client.sync_groups.create_or_update(resource_group_name=self.resource_group,
@@ -293,35 +293,35 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the SyncGroups instance.')
-            self.fail("Error creating the SyncGroups instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Sync Group instance.')
+            self.fail("Error creating the Sync Group instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_syncgroups(self):
+    def delete_syncgroup(self):
         '''
-        Deletes specified SyncGroups instance in the specified subscription and resource group.
+        Deletes specified Sync Group instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the SyncGroups instance {0}".format(self.sync_group_name))
+        self.log("Deleting the Sync Group instance {0}".format(self.sync_group_name))
         try:
             response = self.mgmt_client.sync_groups.delete(resource_group_name=self.resource_group,
                                                            server_name=self.server_name,
                                                            database_name=self.database_name,
                                                            sync_group_name=self.sync_group_name)
         except CloudError as e:
-            self.log('Error attempting to delete the SyncGroups instance.')
-            self.fail("Error deleting the SyncGroups instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Sync Group instance.')
+            self.fail("Error deleting the Sync Group instance: {0}".format(str(e)))
 
         return True
 
-    def get_syncgroups(self):
+    def get_syncgroup(self):
         '''
-        Gets the properties of the specified SyncGroups.
+        Gets the properties of the specified Sync Group.
 
-        :return: deserialized SyncGroups instance state dictionary
+        :return: deserialized Sync Group instance state dictionary
         '''
-        self.log("Checking if the SyncGroups instance {0} is present".format(self.sync_group_name))
+        self.log("Checking if the Sync Group instance {0} is present".format(self.sync_group_name))
         found = False
         try:
             response = self.mgmt_client.sync_groups.get(resource_group_name=self.resource_group,
@@ -330,9 +330,9 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                                                         sync_group_name=self.sync_group_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SyncGroups instance : {0} found".format(response.name))
+            self.log("Sync Group instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SyncGroups instance.')
+            self.log('Did not find the Sync Group instance.')
         if found is True:
             return response.as_dict()
 

@@ -3,7 +3,7 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of RoleAssignments -- check mode
+- name: Create instance of Role Assignment -- check mode
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
@@ -17,7 +17,7 @@
     that:
       - output.changed
 
-- name: Create instance of RoleAssignments
+- name: Create instance of Role Assignment
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
@@ -30,7 +30,7 @@
     that:
       - output.changed
 
-- name: Create again instance of RoleAssignments
+- name: Create again instance of Role Assignment
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
@@ -43,7 +43,7 @@
     that:
       - output.changed == false
 
-- name: Delete instance of RoleAssignments -- check mode
+- name: Delete instance of Role Assignment -- check mode
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
@@ -55,7 +55,7 @@
     that:
       - output.changed
 
-- name: Delete instance of RoleAssignments
+- name: Delete instance of Role Assignment
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"
@@ -66,7 +66,7 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of RoleAssignments
+- name: Delete unexisting instance of Role Assignment
   azure_rm_authorizationroleassignment:
     scope: "/subscriptions/{{ azure_subscription_id }}"
     role_assignment_name: "d3881f73-7777-8888-8283-e981cbba0404"

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaysecurityrule
 version_added: "2.5"
-short_description: Manage SecurityRules instance.
+short_description: Manage Security Rule instance.
 description:
-    - Create, update and delete instance of SecurityRules.
+    - Create, update and delete instance of Security Rule.
 
 options:
     resource_group:
@@ -131,7 +131,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) SecurityRules
+  - name: Create (or update) Security Rule
     azure_rm_applicationgatewaysecurityrule:
       resource_group: rg1
       network_security_group_name: testnsg
@@ -165,7 +165,7 @@ class Actions:
 
 
 class AzureRMSecurityRules(AzureRMModuleBase):
-    """Configuration class for an Azure RM SecurityRules resource"""
+    """Configuration class for an Azure RM Security Rule resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -334,30 +334,30 @@ class AzureRMSecurityRules(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        old_response = self.get_securityrules()
+        old_response = self.get_securityrule()
 
         if not old_response:
-            self.log("SecurityRules instance doesn't exist")
+            self.log("Security Rule instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("SecurityRules instance already exists")
+            self.log("Security Rule instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if SecurityRules instance has to be deleted or may be updated")
+                self.log("Need to check if Security Rule instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the SecurityRules instance")
+            self.log("Need to Create / Update the Security Rule instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_securityrules()
+            response = self.create_update_securityrule()
 
             if not old_response:
                 self.results['changed'] = True
@@ -365,19 +365,19 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("SecurityRules instance deleted")
+            self.log("Security Rule instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_securityrules()
+            self.delete_securityrule()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_securityrules():
+            while self.get_securityrule():
                 time.sleep(20)
         else:
-            self.log("SecurityRules instance unchanged")
+            self.log("Security Rule instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -386,13 +386,13 @@ class AzureRMSecurityRules(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_securityrules(self):
+    def create_update_securityrule(self):
         '''
-        Creates or updates SecurityRules with the specified configuration.
+        Creates or updates Security Rule with the specified configuration.
 
-        :return: deserialized SecurityRules instance state dictionary
+        :return: deserialized Security Rule instance state dictionary
         '''
-        self.log("Creating / Updating the SecurityRules instance {0}".format(self.security_rule_name))
+        self.log("Creating / Updating the Security Rule instance {0}".format(self.security_rule_name))
 
         try:
             response = self.mgmt_client.security_rules.create_or_update(resource_group_name=self.resource_group,
@@ -403,34 +403,34 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the SecurityRules instance.')
-            self.fail("Error creating the SecurityRules instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Security Rule instance.')
+            self.fail("Error creating the Security Rule instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_securityrules(self):
+    def delete_securityrule(self):
         '''
-        Deletes specified SecurityRules instance in the specified subscription and resource group.
+        Deletes specified Security Rule instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the SecurityRules instance {0}".format(self.security_rule_name))
+        self.log("Deleting the Security Rule instance {0}".format(self.security_rule_name))
         try:
             response = self.mgmt_client.security_rules.delete(resource_group_name=self.resource_group,
                                                               network_security_group_name=self.network_security_group_name,
                                                               security_rule_name=self.security_rule_name)
         except CloudError as e:
-            self.log('Error attempting to delete the SecurityRules instance.')
-            self.fail("Error deleting the SecurityRules instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Security Rule instance.')
+            self.fail("Error deleting the Security Rule instance: {0}".format(str(e)))
 
         return True
 
-    def get_securityrules(self):
+    def get_securityrule(self):
         '''
-        Gets the properties of the specified SecurityRules.
+        Gets the properties of the specified Security Rule.
 
-        :return: deserialized SecurityRules instance state dictionary
+        :return: deserialized Security Rule instance state dictionary
         '''
-        self.log("Checking if the SecurityRules instance {0} is present".format(self.security_rule_name))
+        self.log("Checking if the Security Rule instance {0} is present".format(self.security_rule_name))
         found = False
         try:
             response = self.mgmt_client.security_rules.get(resource_group_name=self.resource_group,
@@ -438,9 +438,9 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                                                            security_rule_name=self.security_rule_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("SecurityRules instance : {0} found".format(response.name))
+            self.log("Security Rule instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the SecurityRules instance.')
+            self.log('Did not find the Security Rule instance.')
         if found is True:
             return response.as_dict()
 

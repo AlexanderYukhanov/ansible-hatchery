@@ -3,7 +3,7 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of DataMaskingPolicies -- check mode
+- name: Create instance of Data Masking Policy -- check mode
   azure_rm_sqldatamaskingpolicy:
     resource_group: "{{ resource_group }}"
   check_mode: yes
@@ -13,7 +13,7 @@
     that:
       - output.changed
 
-- name: Create instance of DataMaskingPolicies
+- name: Create instance of Data Masking Policy
   azure_rm_sqldatamaskingpolicy:
     resource_group: "{{ resource_group }}"
   register: output
@@ -22,7 +22,7 @@
     that:
       - output.changed
 
-- name: Create again instance of DataMaskingPolicies
+- name: Create again instance of Data Masking Policy
   azure_rm_sqldatamaskingpolicy:
     resource_group: "{{ resource_group }}"
   register: output

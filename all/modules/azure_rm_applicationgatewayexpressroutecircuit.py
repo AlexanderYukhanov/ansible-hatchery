@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuit
 version_added: "2.5"
-short_description: Manage ExpressRouteCircuits instance.
+short_description: Manage Express Route Circuit instance.
 description:
-    - Create, update and delete instance of ExpressRouteCircuits.
+    - Create, update and delete instance of Express Route Circuit.
 
 options:
     resource_group:
@@ -525,7 +525,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) ExpressRouteCircuits
+  - name: Create (or update) Express Route Circuit
     azure_rm_applicationgatewayexpressroutecircuit:
       resource_group: NOT FOUND
       circuit_name: NOT FOUND
@@ -559,7 +559,7 @@ class Actions:
 
 
 class AzureRMExpressRouteCircuits(AzureRMModuleBase):
-    """Configuration class for an Azure RM ExpressRouteCircuits resource"""
+    """Configuration class for an Azure RM Express Route Circuit resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -715,30 +715,30 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_expressroutecircuits()
+        old_response = self.get_expressroutecircuit()
 
         if not old_response:
-            self.log("ExpressRouteCircuits instance doesn't exist")
+            self.log("Express Route Circuit instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("ExpressRouteCircuits instance already exists")
+            self.log("Express Route Circuit instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if ExpressRouteCircuits instance has to be deleted or may be updated")
+                self.log("Need to check if Express Route Circuit instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the ExpressRouteCircuits instance")
+            self.log("Need to Create / Update the Express Route Circuit instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_expressroutecircuits()
+            response = self.create_update_expressroutecircuit()
 
             if not old_response:
                 self.results['changed'] = True
@@ -746,19 +746,19 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("ExpressRouteCircuits instance deleted")
+            self.log("Express Route Circuit instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_expressroutecircuits()
+            self.delete_expressroutecircuit()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_expressroutecircuits():
+            while self.get_expressroutecircuit():
                 time.sleep(20)
         else:
-            self.log("ExpressRouteCircuits instance unchanged")
+            self.log("Express Route Circuit instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -767,13 +767,13 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_expressroutecircuits(self):
+    def create_update_expressroutecircuit(self):
         '''
-        Creates or updates ExpressRouteCircuits with the specified configuration.
+        Creates or updates Express Route Circuit with the specified configuration.
 
-        :return: deserialized ExpressRouteCircuits instance state dictionary
+        :return: deserialized Express Route Circuit instance state dictionary
         '''
-        self.log("Creating / Updating the ExpressRouteCircuits instance {0}".format(self.circuit_name))
+        self.log("Creating / Updating the Express Route Circuit instance {0}".format(self.circuit_name))
 
         try:
             response = self.mgmt_client.express_route_circuits.create_or_update(resource_group_name=self.resource_group,
@@ -783,42 +783,42 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the ExpressRouteCircuits instance.')
-            self.fail("Error creating the ExpressRouteCircuits instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Express Route Circuit instance.')
+            self.fail("Error creating the Express Route Circuit instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_expressroutecircuits(self):
+    def delete_expressroutecircuit(self):
         '''
-        Deletes specified ExpressRouteCircuits instance in the specified subscription and resource group.
+        Deletes specified Express Route Circuit instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the ExpressRouteCircuits instance {0}".format(self.circuit_name))
+        self.log("Deleting the Express Route Circuit instance {0}".format(self.circuit_name))
         try:
             response = self.mgmt_client.express_route_circuits.delete(resource_group_name=self.resource_group,
                                                                       circuit_name=self.circuit_name)
         except CloudError as e:
-            self.log('Error attempting to delete the ExpressRouteCircuits instance.')
-            self.fail("Error deleting the ExpressRouteCircuits instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Express Route Circuit instance.')
+            self.fail("Error deleting the Express Route Circuit instance: {0}".format(str(e)))
 
         return True
 
-    def get_expressroutecircuits(self):
+    def get_expressroutecircuit(self):
         '''
-        Gets the properties of the specified ExpressRouteCircuits.
+        Gets the properties of the specified Express Route Circuit.
 
-        :return: deserialized ExpressRouteCircuits instance state dictionary
+        :return: deserialized Express Route Circuit instance state dictionary
         '''
-        self.log("Checking if the ExpressRouteCircuits instance {0} is present".format(self.circuit_name))
+        self.log("Checking if the Express Route Circuit instance {0} is present".format(self.circuit_name))
         found = False
         try:
             response = self.mgmt_client.express_route_circuits.get(resource_group_name=self.resource_group,
                                                                    circuit_name=self.circuit_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("ExpressRouteCircuits instance : {0} found".format(response.name))
+            self.log("Express Route Circuit instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the ExpressRouteCircuits instance.')
+            self.log('Did not find the Express Route Circuit instance.')
         if found is True:
             return response.as_dict()
 
