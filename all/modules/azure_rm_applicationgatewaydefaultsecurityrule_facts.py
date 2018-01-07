@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaydefaultsecurityrule_facts
 version_added: "2.5"
-short_description: Get DefaultSecurityRules facts.
+short_description: Get Default Security Rule facts.
 description:
-    - Get facts of DefaultSecurityRules.
+    - Get facts of Default Security Rule.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of DefaultSecurityRules
+  - name: Get instance of Default Security Rule
     azure_rm_applicationgatewaydefaultsecurityrule_facts:
       resource_group: resource_group_name
       network_security_group_name: network_security_group_name
@@ -105,9 +105,9 @@ class AzureRMDefaultSecurityRulesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified DefaultSecurityRules.
+        Gets facts of the specified Default Security Rule.
 
-        :return: deserialized DefaultSecurityRulesinstance state dictionary
+        :return: deserialized Default Security Ruleinstance state dictionary
         '''
         response = None
         results = False

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaypublicipaddresse_facts
 version_added: "2.5"
-short_description: Get PublicIPAddresses facts.
+short_description: Get Public I P Addresse facts.
 description:
-    - Get facts of PublicIPAddresses.
+    - Get facts of Public I P Addresse.
 
 options:
     resource_group:
@@ -53,7 +53,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of PublicIPAddresses
+  - name: List instances of Public I P Addresse
     azure_rm_applicationgatewaypublicipaddresse_facts:
       resource_group: resource_group_name
       virtual_machine_scale_set_name: virtual_machine_scale_set_name
@@ -61,18 +61,18 @@ EXAMPLES = '''
       network_interface_name: network_interface_name
       ip_configuration_name: ip_configuration_name
 
-  - name: Get instance of PublicIPAddresses
+  - name: Get instance of Public I P Addresse
     azure_rm_applicationgatewaypublicipaddresse_facts:
       resource_group: resource_group_name
       public_ip_address_name: public_ip_address_name
       expand: expand
 
-  - name: List instances of PublicIPAddresses
+  - name: List instances of Public I P Addresse
     azure_rm_applicationgatewaypublicipaddresse_facts:
       resource_group: resource_group_name
       virtual_machine_scale_set_name: virtual_machine_scale_set_name
 
-  - name: List instances of PublicIPAddresses
+  - name: List instances of Public I P Addresse
     azure_rm_applicationgatewaypublicipaddresse_facts:
 '''
 
@@ -152,9 +152,9 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
     def list_virtual_machine_scale_set_vm_public_ip_addresses(self):
         '''
-        Gets facts of the specified PublicIPAddresses.
+        Gets facts of the specified Public I P Addresse.
 
-        :return: deserialized PublicIPAddressesinstance state dictionary
+        :return: deserialized Public I P Addresseinstance state dictionary
         '''
         response = None
         results = False
@@ -177,9 +177,9 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified PublicIPAddresses.
+        Gets facts of the specified Public I P Addresse.
 
-        :return: deserialized PublicIPAddressesinstance state dictionary
+        :return: deserialized Public I P Addresseinstance state dictionary
         '''
         response = None
         results = False
@@ -197,9 +197,9 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
     def list_virtual_machine_scale_set_public_ip_addresses(self):
         '''
-        Gets facts of the specified PublicIPAddresses.
+        Gets facts of the specified Public I P Addresse.
 
-        :return: deserialized PublicIPAddressesinstance state dictionary
+        :return: deserialized Public I P Addresseinstance state dictionary
         '''
         response = None
         results = False
@@ -219,9 +219,9 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified PublicIPAddresses.
+        Gets facts of the specified Public I P Addresse.
 
-        :return: deserialized PublicIPAddressesinstance state dictionary
+        :return: deserialized Public I P Addresseinstance state dictionary
         '''
         response = None
         results = False

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayinboundnatrule_facts
 version_added: "2.5"
-short_description: Get InboundNatRules facts.
+short_description: Get Inbound Nat Rule facts.
 description:
-    - Get facts of InboundNatRules.
+    - Get facts of Inbound Nat Rule.
 
 options:
     resource_group:
@@ -47,7 +47,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of InboundNatRules
+  - name: Get instance of Inbound Nat Rule
     azure_rm_applicationgatewayinboundnatrule_facts:
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
@@ -113,9 +113,9 @@ class AzureRMInboundNatRulesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified InboundNatRules.
+        Gets facts of the specified Inbound Nat Rule.
 
-        :return: deserialized InboundNatRulesinstance state dictionary
+        :return: deserialized Inbound Nat Ruleinstance state dictionary
         '''
         response = None
         results = False

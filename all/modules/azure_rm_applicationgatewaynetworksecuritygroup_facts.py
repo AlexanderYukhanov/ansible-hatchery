@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworksecuritygroup_facts
 version_added: "2.5"
-short_description: Get NetworkSecurityGroups facts.
+short_description: Get Network Security Group facts.
 description:
-    - Get facts of NetworkSecurityGroups.
+    - Get facts of Network Security Group.
 
 options:
     resource_group:
@@ -41,13 +41,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of NetworkSecurityGroups
+  - name: Get instance of Network Security Group
     azure_rm_applicationgatewaynetworksecuritygroup_facts:
       resource_group: resource_group_name
       network_security_group_name: network_security_group_name
       expand: expand
 
-  - name: List instances of NetworkSecurityGroups
+  - name: List instances of Network Security Group
     azure_rm_applicationgatewaynetworksecuritygroup_facts:
 '''
 
@@ -102,9 +102,9 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified NetworkSecurityGroups.
+        Gets facts of the specified Network Security Group.
 
-        :return: deserialized NetworkSecurityGroupsinstance state dictionary
+        :return: deserialized Network Security Groupinstance state dictionary
         '''
         response = None
         results = False
@@ -122,9 +122,9 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified NetworkSecurityGroups.
+        Gets facts of the specified Network Security Group.
 
-        :return: deserialized NetworkSecurityGroupsinstance state dictionary
+        :return: deserialized Network Security Groupinstance state dictionary
         '''
         response = None
         results = False

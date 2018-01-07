@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayloadbalancerprobe_facts
 version_added: "2.5"
-short_description: Get LoadBalancerProbes facts.
+short_description: Get Load Balancer Probe facts.
 description:
-    - Get facts of LoadBalancerProbes.
+    - Get facts of Load Balancer Probe.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of LoadBalancerProbes
+  - name: Get instance of Load Balancer Probe
     azure_rm_applicationgatewayloadbalancerprobe_facts:
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
@@ -105,9 +105,9 @@ class AzureRMLoadBalancerProbesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified LoadBalancerProbes.
+        Gets facts of the specified Load Balancer Probe.
 
-        :return: deserialized LoadBalancerProbesinstance state dictionary
+        :return: deserialized Load Balancer Probeinstance state dictionary
         '''
         response = None
         results = False

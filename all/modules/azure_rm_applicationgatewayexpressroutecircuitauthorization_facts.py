@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuitauthorization_facts
 version_added: "2.5"
-short_description: Get ExpressRouteCircuitAuthorizations facts.
+short_description: Get Express Route Circuit Authorization facts.
 description:
-    - Get facts of ExpressRouteCircuitAuthorizations.
+    - Get facts of Express Route Circuit Authorization.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ExpressRouteCircuitAuthorizations
+  - name: Get instance of Express Route Circuit Authorization
     azure_rm_applicationgatewayexpressroutecircuitauthorization_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
@@ -105,9 +105,9 @@ class AzureRMExpressRouteCircuitAuthorizationsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ExpressRouteCircuitAuthorizations.
+        Gets facts of the specified Express Route Circuit Authorization.
 
-        :return: deserialized ExpressRouteCircuitAuthorizationsinstance state dictionary
+        :return: deserialized Express Route Circuit Authorizationinstance state dictionary
         '''
         response = None
         results = False

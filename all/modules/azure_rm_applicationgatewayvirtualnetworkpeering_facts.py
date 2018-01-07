@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetworkpeering_facts
 version_added: "2.5"
-short_description: Get VirtualNetworkPeerings facts.
+short_description: Get Virtual Network Peering facts.
 description:
-    - Get facts of VirtualNetworkPeerings.
+    - Get facts of Virtual Network Peering.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of VirtualNetworkPeerings
+  - name: Get instance of Virtual Network Peering
     azure_rm_applicationgatewayvirtualnetworkpeering_facts:
       resource_group: resource_group_name
       virtual_network_name: virtual_network_name
@@ -105,9 +105,9 @@ class AzureRMVirtualNetworkPeeringsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified VirtualNetworkPeerings.
+        Gets facts of the specified Virtual Network Peering.
 
-        :return: deserialized VirtualNetworkPeeringsinstance state dictionary
+        :return: deserialized Virtual Network Peeringinstance state dictionary
         '''
         response = None
         results = False

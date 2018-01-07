@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayloadbalancerfrontendipconfiguration_facts
 version_added: "2.5"
-short_description: Get LoadBalancerFrontendIPConfigurations facts.
+short_description: Get Load Balancer Frontend I P Configuration facts.
 description:
-    - Get facts of LoadBalancerFrontendIPConfigurations.
+    - Get facts of Load Balancer Frontend I P Configuration.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of LoadBalancerFrontendIPConfigurations
+  - name: Get instance of Load Balancer Frontend I P Configuration
     azure_rm_applicationgatewayloadbalancerfrontendipconfiguration_facts:
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
@@ -105,9 +105,9 @@ class AzureRMLoadBalancerFrontendIPConfigurationsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified LoadBalancerFrontendIPConfigurations.
+        Gets facts of the specified Load Balancer Frontend I P Configuration.
 
-        :return: deserialized LoadBalancerFrontendIPConfigurationsinstance state dictionary
+        :return: deserialized Load Balancer Frontend I P Configurationinstance state dictionary
         '''
         response = None
         results = False

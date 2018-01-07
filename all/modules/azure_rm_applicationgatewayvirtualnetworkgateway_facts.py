@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetworkgateway_facts
 version_added: "2.5"
-short_description: Get VirtualNetworkGateways facts.
+short_description: Get Virtual Network Gateway facts.
 description:
-    - Get facts of VirtualNetworkGateways.
+    - Get facts of Virtual Network Gateway.
 
 options:
     resource_group:
@@ -40,12 +40,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of VirtualNetworkGateways
+  - name: Get instance of Virtual Network Gateway
     azure_rm_applicationgatewayvirtualnetworkgateway_facts:
       resource_group: resource_group_name
       virtual_network_gateway_name: virtual_network_gateway_name
 
-  - name: List instances of VirtualNetworkGateways
+  - name: List instances of Virtual Network Gateway
     azure_rm_applicationgatewayvirtualnetworkgateway_facts:
       resource_group: resource_group_name
       virtual_network_gateway_name: virtual_network_gateway_name
@@ -102,9 +102,9 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified VirtualNetworkGateways.
+        Gets facts of the specified Virtual Network Gateway.
 
-        :return: deserialized VirtualNetworkGatewaysinstance state dictionary
+        :return: deserialized Virtual Network Gatewayinstance state dictionary
         '''
         response = None
         results = False
@@ -122,9 +122,9 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
 
     def list_connections(self):
         '''
-        Gets facts of the specified VirtualNetworkGateways.
+        Gets facts of the specified Virtual Network Gateway.
 
-        :return: deserialized VirtualNetworkGatewaysinstance state dictionary
+        :return: deserialized Virtual Network Gatewayinstance state dictionary
         '''
         response = None
         results = False

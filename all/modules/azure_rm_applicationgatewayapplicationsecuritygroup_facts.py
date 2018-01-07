@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayapplicationsecuritygroup_facts
 version_added: "2.5"
-short_description: Get ApplicationSecurityGroups facts.
+short_description: Get Application Security Group facts.
 description:
-    - Get facts of ApplicationSecurityGroups.
+    - Get facts of Application Security Group.
 
 options:
     resource_group:
@@ -38,12 +38,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ApplicationSecurityGroups
+  - name: Get instance of Application Security Group
     azure_rm_applicationgatewayapplicationsecuritygroup_facts:
       resource_group: resource_group_name
       application_security_group_name: application_security_group_name
 
-  - name: List instances of ApplicationSecurityGroups
+  - name: List instances of Application Security Group
     azure_rm_applicationgatewayapplicationsecuritygroup_facts:
 '''
 
@@ -94,9 +94,9 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ApplicationSecurityGroups.
+        Gets facts of the specified Application Security Group.
 
-        :return: deserialized ApplicationSecurityGroupsinstance state dictionary
+        :return: deserialized Application Security Groupinstance state dictionary
         '''
         response = None
         results = False
@@ -114,9 +114,9 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified ApplicationSecurityGroups.
+        Gets facts of the specified Application Security Group.
 
-        :return: deserialized ApplicationSecurityGroupsinstance state dictionary
+        :return: deserialized Application Security Groupinstance state dictionary
         '''
         response = None
         results = False

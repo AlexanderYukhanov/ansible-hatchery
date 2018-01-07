@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayvirtualnetwork_facts
 version_added: "2.5"
-short_description: Get VirtualNetworks facts.
+short_description: Get Virtual Network facts.
 description:
-    - Get facts of VirtualNetworks.
+    - Get facts of Virtual Network.
 
 options:
     resource_group:
@@ -41,18 +41,18 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of VirtualNetworks
+  - name: Get instance of Virtual Network
     azure_rm_applicationgatewayvirtualnetwork_facts:
       resource_group: resource_group_name
       virtual_network_name: virtual_network_name
       expand: expand
 
-  - name: List instances of VirtualNetworks
+  - name: List instances of Virtual Network
     azure_rm_applicationgatewayvirtualnetwork_facts:
       resource_group: resource_group_name
       virtual_network_name: virtual_network_name
 
-  - name: List instances of VirtualNetworks
+  - name: List instances of Virtual Network
     azure_rm_applicationgatewayvirtualnetwork_facts:
 '''
 
@@ -110,9 +110,9 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified VirtualNetworks.
+        Gets facts of the specified Virtual Network.
 
-        :return: deserialized VirtualNetworksinstance state dictionary
+        :return: deserialized Virtual Networkinstance state dictionary
         '''
         response = None
         results = False
@@ -130,9 +130,9 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
     def list_usage(self):
         '''
-        Gets facts of the specified VirtualNetworks.
+        Gets facts of the specified Virtual Network.
 
-        :return: deserialized VirtualNetworksinstance state dictionary
+        :return: deserialized Virtual Networkinstance state dictionary
         '''
         response = None
         results = False
@@ -152,9 +152,9 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified VirtualNetworks.
+        Gets facts of the specified Virtual Network.
 
-        :return: deserialized VirtualNetworksinstance state dictionary
+        :return: deserialized Virtual Networkinstance state dictionary
         '''
         response = None
         results = False

@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuitpeering_facts
 version_added: "2.5"
-short_description: Get ExpressRouteCircuitPeerings facts.
+short_description: Get Express Route Circuit Peering facts.
 description:
-    - Get facts of ExpressRouteCircuitPeerings.
+    - Get facts of Express Route Circuit Peering.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of ExpressRouteCircuitPeerings
+  - name: Get instance of Express Route Circuit Peering
     azure_rm_applicationgatewayexpressroutecircuitpeering_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
@@ -105,9 +105,9 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ExpressRouteCircuitPeerings.
+        Gets facts of the specified Express Route Circuit Peering.
 
-        :return: deserialized ExpressRouteCircuitPeeringsinstance state dictionary
+        :return: deserialized Express Route Circuit Peeringinstance state dictionary
         '''
         response = None
         results = False

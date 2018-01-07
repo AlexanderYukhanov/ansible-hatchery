@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworkwatcher_facts
 version_added: "2.5"
-short_description: Get NetworkWatchers facts.
+short_description: Get Network Watcher facts.
 description:
-    - Get facts of NetworkWatchers.
+    - Get facts of Network Watcher.
 
 options:
     resource_group:
@@ -41,18 +41,18 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of NetworkWatchers
+  - name: List instances of Network Watcher
     azure_rm_applicationgatewaynetworkwatcher_facts:
       resource_group: resource_group_name
       network_watcher_name: network_watcher_name
       parameters: parameters
 
-  - name: Get instance of NetworkWatchers
+  - name: Get instance of Network Watcher
     azure_rm_applicationgatewaynetworkwatcher_facts:
       resource_group: resource_group_name
       network_watcher_name: network_watcher_name
 
-  - name: List instances of NetworkWatchers
+  - name: List instances of Network Watcher
     azure_rm_applicationgatewaynetworkwatcher_facts:
 '''
 
@@ -111,9 +111,9 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
     def list_available_providers(self):
         '''
-        Gets facts of the specified NetworkWatchers.
+        Gets facts of the specified Network Watcher.
 
-        :return: deserialized NetworkWatchersinstance state dictionary
+        :return: deserialized Network Watcherinstance state dictionary
         '''
         response = None
         results = False
@@ -134,9 +134,9 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified NetworkWatchers.
+        Gets facts of the specified Network Watcher.
 
-        :return: deserialized NetworkWatchersinstance state dictionary
+        :return: deserialized Network Watcherinstance state dictionary
         '''
         response = None
         results = False
@@ -154,9 +154,9 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified NetworkWatchers.
+        Gets facts of the specified Network Watcher.
 
-        :return: deserialized NetworkWatchersinstance state dictionary
+        :return: deserialized Network Watcherinstance state dictionary
         '''
         response = None
         results = False

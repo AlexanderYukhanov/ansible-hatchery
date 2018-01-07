@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayroutefilterrule_facts
 version_added: "2.5"
-short_description: Get RouteFilterRules facts.
+short_description: Get Route Filter Rule facts.
 description:
-    - Get facts of RouteFilterRules.
+    - Get facts of Route Filter Rule.
 
 options:
     resource_group:
@@ -43,13 +43,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of RouteFilterRules
+  - name: Get instance of Route Filter Rule
     azure_rm_applicationgatewayroutefilterrule_facts:
       resource_group: resource_group_name
       route_filter_name: route_filter_name
       rule_name: rule_name
 
-  - name: List instances of RouteFilterRules
+  - name: List instances of Route Filter Rule
     azure_rm_applicationgatewayroutefilterrule_facts:
       resource_group: resource_group_name
       route_filter_name: route_filter_name
@@ -111,9 +111,9 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified RouteFilterRules.
+        Gets facts of the specified Route Filter Rule.
 
-        :return: deserialized RouteFilterRulesinstance state dictionary
+        :return: deserialized Route Filter Ruleinstance state dictionary
         '''
         response = None
         results = False
@@ -132,9 +132,9 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
 
     def list_by_route_filter(self):
         '''
-        Gets facts of the specified RouteFilterRules.
+        Gets facts of the specified Route Filter Rule.
 
-        :return: deserialized RouteFilterRulesinstance state dictionary
+        :return: deserialized Route Filter Ruleinstance state dictionary
         '''
         response = None
         results = False

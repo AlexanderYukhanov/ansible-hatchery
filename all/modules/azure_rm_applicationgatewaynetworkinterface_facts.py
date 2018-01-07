@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworkinterface_facts
 version_added: "2.5"
-short_description: Get NetworkInterfaces facts.
+short_description: Get Network Interface facts.
 description:
-    - Get facts of NetworkInterfaces.
+    - Get facts of Network Interface.
 
 options:
     resource_group:
@@ -47,7 +47,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of NetworkInterfaces
+  - name: List instances of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
       resource_group: resource_group_name
       virtual_machine_scale_set_name: virtual_machine_scale_set_name
@@ -55,29 +55,29 @@ EXAMPLES = '''
       network_interface_name: network_interface_name
       expand: expand
 
-  - name: Get instance of NetworkInterfaces
+  - name: Get instance of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
       resource_group: resource_group_name
       network_interface_name: network_interface_name
       expand: expand
 
-  - name: List instances of NetworkInterfaces
+  - name: List instances of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
       resource_group: resource_group_name
       virtual_machine_scale_set_name: virtual_machine_scale_set_name
       virtualmachine_index: virtualmachine_index
 
-  - name: List instances of NetworkInterfaces
+  - name: List instances of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
       resource_group: resource_group_name
       network_interface_name: network_interface_name
 
-  - name: List instances of NetworkInterfaces
+  - name: List instances of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
       resource_group: resource_group_name
       virtual_machine_scale_set_name: virtual_machine_scale_set_name
 
-  - name: List instances of NetworkInterfaces
+  - name: List instances of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
 '''
 
@@ -155,9 +155,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
     def list_virtual_machine_scale_set_ip_configurations(self):
         '''
-        Gets facts of the specified NetworkInterfaces.
+        Gets facts of the specified Network Interface.
 
-        :return: deserialized NetworkInterfacesinstance state dictionary
+        :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
         results = False
@@ -179,9 +179,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified NetworkInterfaces.
+        Gets facts of the specified Network Interface.
 
-        :return: deserialized NetworkInterfacesinstance state dictionary
+        :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
         results = False
@@ -199,9 +199,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
     def list_virtual_machine_scale_set_vm_network_interfaces(self):
         '''
-        Gets facts of the specified NetworkInterfaces.
+        Gets facts of the specified Network Interface.
 
-        :return: deserialized NetworkInterfacesinstance state dictionary
+        :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
         results = False
@@ -222,9 +222,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
     def list_effective_network_security_groups(self):
         '''
-        Gets facts of the specified NetworkInterfaces.
+        Gets facts of the specified Network Interface.
 
-        :return: deserialized NetworkInterfacesinstance state dictionary
+        :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
         results = False
@@ -244,9 +244,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
     def list_virtual_machine_scale_set_network_interfaces(self):
         '''
-        Gets facts of the specified NetworkInterfaces.
+        Gets facts of the specified Network Interface.
 
-        :return: deserialized NetworkInterfacesinstance state dictionary
+        :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
         results = False
@@ -266,9 +266,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified NetworkInterfaces.
+        Gets facts of the specified Network Interface.
 
-        :return: deserialized NetworkInterfacesinstance state dictionary
+        :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
         results = False

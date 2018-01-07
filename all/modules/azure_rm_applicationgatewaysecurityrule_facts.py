@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaysecurityrule_facts
 version_added: "2.5"
-short_description: Get SecurityRules facts.
+short_description: Get Security Rule facts.
 description:
-    - Get facts of SecurityRules.
+    - Get facts of Security Rule.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of SecurityRules
+  - name: Get instance of Security Rule
     azure_rm_applicationgatewaysecurityrule_facts:
       resource_group: resource_group_name
       network_security_group_name: network_security_group_name
@@ -105,9 +105,9 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified SecurityRules.
+        Gets facts of the specified Security Rule.
 
-        :return: deserialized SecurityRulesinstance state dictionary
+        :return: deserialized Security Ruleinstance state dictionary
         '''
         response = None
         results = False

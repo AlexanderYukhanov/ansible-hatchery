@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaylocalnetworkgateway_facts
 version_added: "2.5"
-short_description: Get LocalNetworkGateways facts.
+short_description: Get Local Network Gateway facts.
 description:
-    - Get facts of LocalNetworkGateways.
+    - Get facts of Local Network Gateway.
 
 options:
     resource_group:
@@ -40,7 +40,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of LocalNetworkGateways
+  - name: Get instance of Local Network Gateway
     azure_rm_applicationgatewaylocalnetworkgateway_facts:
       resource_group: resource_group_name
       local_network_gateway_name: local_network_gateway_name
@@ -94,9 +94,9 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified LocalNetworkGateways.
+        Gets facts of the specified Local Network Gateway.
 
-        :return: deserialized LocalNetworkGatewaysinstance state dictionary
+        :return: deserialized Local Network Gatewayinstance state dictionary
         '''
         response = None
         results = False

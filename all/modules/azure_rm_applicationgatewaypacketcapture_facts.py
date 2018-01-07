@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaypacketcapture_facts
 version_added: "2.5"
-short_description: Get PacketCaptures facts.
+short_description: Get Packet Capture facts.
 description:
-    - Get facts of PacketCaptures.
+    - Get facts of Packet Capture.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of PacketCaptures
+  - name: Get instance of Packet Capture
     azure_rm_applicationgatewaypacketcapture_facts:
       resource_group: resource_group_name
       network_watcher_name: network_watcher_name
@@ -105,9 +105,9 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified PacketCaptures.
+        Gets facts of the specified Packet Capture.
 
-        :return: deserialized PacketCapturesinstance state dictionary
+        :return: deserialized Packet Captureinstance state dictionary
         '''
         response = None
         results = False

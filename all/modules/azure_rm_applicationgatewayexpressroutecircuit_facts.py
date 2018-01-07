@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayexpressroutecircuit_facts
 version_added: "2.5"
-short_description: Get ExpressRouteCircuits facts.
+short_description: Get Express Route Circuit facts.
 description:
-    - Get facts of ExpressRouteCircuits.
+    - Get facts of Express Route Circuit.
 
 options:
     resource_group:
@@ -44,33 +44,33 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of ExpressRouteCircuits
+  - name: List instances of Express Route Circuit
     azure_rm_applicationgatewayexpressroutecircuit_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
       peering_name: peering_name
       device_path: device_path
 
-  - name: List instances of ExpressRouteCircuits
+  - name: List instances of Express Route Circuit
     azure_rm_applicationgatewayexpressroutecircuit_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
       peering_name: peering_name
       device_path: device_path
 
-  - name: List instances of ExpressRouteCircuits
+  - name: List instances of Express Route Circuit
     azure_rm_applicationgatewayexpressroutecircuit_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
       peering_name: peering_name
       device_path: device_path
 
-  - name: Get instance of ExpressRouteCircuits
+  - name: Get instance of Express Route Circuit
     azure_rm_applicationgatewayexpressroutecircuit_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
 
-  - name: List instances of ExpressRouteCircuits
+  - name: List instances of Express Route Circuit
     azure_rm_applicationgatewayexpressroutecircuit_facts:
 '''
 
@@ -144,9 +144,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
     def list_arp_table(self):
         '''
-        Gets facts of the specified ExpressRouteCircuits.
+        Gets facts of the specified Express Route Circuit.
 
-        :return: deserialized ExpressRouteCircuitsinstance state dictionary
+        :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
         results = False
@@ -168,9 +168,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
     def list_routes_table(self):
         '''
-        Gets facts of the specified ExpressRouteCircuits.
+        Gets facts of the specified Express Route Circuit.
 
-        :return: deserialized ExpressRouteCircuitsinstance state dictionary
+        :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
         results = False
@@ -192,9 +192,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
     def list_routes_table_summary(self):
         '''
-        Gets facts of the specified ExpressRouteCircuits.
+        Gets facts of the specified Express Route Circuit.
 
-        :return: deserialized ExpressRouteCircuitsinstance state dictionary
+        :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
         results = False
@@ -216,9 +216,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified ExpressRouteCircuits.
+        Gets facts of the specified Express Route Circuit.
 
-        :return: deserialized ExpressRouteCircuitsinstance state dictionary
+        :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
         results = False
@@ -236,9 +236,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified ExpressRouteCircuits.
+        Gets facts of the specified Express Route Circuit.
 
-        :return: deserialized ExpressRouteCircuitsinstance state dictionary
+        :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
         results = False

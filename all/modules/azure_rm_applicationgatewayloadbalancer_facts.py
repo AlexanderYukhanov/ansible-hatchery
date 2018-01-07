@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayloadbalancer_facts
 version_added: "2.5"
-short_description: Get LoadBalancers facts.
+short_description: Get Load Balancer facts.
 description:
-    - Get facts of LoadBalancers.
+    - Get facts of Load Balancer.
 
 options:
     resource_group:
@@ -41,13 +41,13 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of LoadBalancers
+  - name: Get instance of Load Balancer
     azure_rm_applicationgatewayloadbalancer_facts:
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
       expand: expand
 
-  - name: List instances of LoadBalancers
+  - name: List instances of Load Balancer
     azure_rm_applicationgatewayloadbalancer_facts:
 '''
 
@@ -102,9 +102,9 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified LoadBalancers.
+        Gets facts of the specified Load Balancer.
 
-        :return: deserialized LoadBalancersinstance state dictionary
+        :return: deserialized Load Balancerinstance state dictionary
         '''
         response = None
         results = False
@@ -122,9 +122,9 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
 
     def list_all(self):
         '''
-        Gets facts of the specified LoadBalancers.
+        Gets facts of the specified Load Balancer.
 
-        :return: deserialized LoadBalancersinstance state dictionary
+        :return: deserialized Load Balancerinstance state dictionary
         '''
         response = None
         results = False

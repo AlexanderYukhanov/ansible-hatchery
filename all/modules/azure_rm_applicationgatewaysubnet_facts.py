@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaysubnet_facts
 version_added: "2.5"
-short_description: Get Subnets facts.
+short_description: Get Subnet facts.
 description:
-    - Get facts of Subnets.
+    - Get facts of Subnet.
 
 options:
     resource_group:
@@ -47,7 +47,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of Subnets
+  - name: Get instance of Subnet
     azure_rm_applicationgatewaysubnet_facts:
       resource_group: resource_group_name
       virtual_network_name: virtual_network_name
@@ -113,9 +113,9 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified Subnets.
+        Gets facts of the specified Subnet.
 
-        :return: deserialized Subnetsinstance state dictionary
+        :return: deserialized Subnetinstance state dictionary
         '''
         response = None
         results = False

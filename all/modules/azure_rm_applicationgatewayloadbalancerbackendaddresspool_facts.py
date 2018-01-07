@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewayloadbalancerbackendaddresspool_facts
 version_added: "2.5"
-short_description: Get LoadBalancerBackendAddressPools facts.
+short_description: Get Load Balancer Backend Address Pool facts.
 description:
-    - Get facts of LoadBalancerBackendAddressPools.
+    - Get facts of Load Balancer Backend Address Pool.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of LoadBalancerBackendAddressPools
+  - name: Get instance of Load Balancer Backend Address Pool
     azure_rm_applicationgatewayloadbalancerbackendaddresspool_facts:
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
@@ -105,9 +105,9 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified LoadBalancerBackendAddressPools.
+        Gets facts of the specified Load Balancer Backend Address Pool.
 
-        :return: deserialized LoadBalancerBackendAddressPoolsinstance state dictionary
+        :return: deserialized Load Balancer Backend Address Poolinstance state dictionary
         '''
         response = None
         results = False

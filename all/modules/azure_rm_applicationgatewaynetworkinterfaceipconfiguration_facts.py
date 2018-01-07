@@ -17,9 +17,9 @@ DOCUMENTATION = '''
 ---
 module: azure_rm_applicationgatewaynetworkinterfaceipconfiguration_facts
 version_added: "2.5"
-short_description: Get NetworkInterfaceIPConfigurations facts.
+short_description: Get Network Interface I P Configuration facts.
 description:
-    - Get facts of NetworkInterfaceIPConfigurations.
+    - Get facts of Network Interface I P Configuration.
 
 options:
     resource_group:
@@ -44,7 +44,7 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Get instance of NetworkInterfaceIPConfigurations
+  - name: Get instance of Network Interface I P Configuration
     azure_rm_applicationgatewaynetworkinterfaceipconfiguration_facts:
       resource_group: resource_group_name
       network_interface_name: network_interface_name
@@ -105,9 +105,9 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
 
     def get(self):
         '''
-        Gets facts of the specified NetworkInterfaceIPConfigurations.
+        Gets facts of the specified Network Interface I P Configuration.
 
-        :return: deserialized NetworkInterfaceIPConfigurationsinstance state dictionary
+        :return: deserialized Network Interface I P Configurationinstance state dictionary
         '''
         response = None
         results = False
