@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_sqlelasticpoolactivitie_facts
+module: azure_rm_sqltransparentdataencryptionactivity_facts
 version_added: "2.5"
-short_description: Get ElasticPoolActivities facts.
+short_description: Get TransparentDataEncryptionActivities facts.
 description:
-    - Get facts of ElasticPoolActivities.
+    - Get facts of TransparentDataEncryptionActivities.
 
 options:
     resource_group:
@@ -30,9 +30,13 @@ options:
         description:
             - The name of the server.
         required: True
-    elastic_pool_name:
+    database_name:
         description:
-            - The name of the elastic pool for which to get the current activity.
+            - The name of the database for which the transparent data encryption applies.
+        required: True
+    transparent_data_encryption_name:
+        description:
+            - The name of the transparent data encryption configuration.
         required: True
 
 extends_documentation_fragment:
@@ -44,11 +48,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of ElasticPoolActivities
-    azure_rm_sqlelasticpoolactivitie_facts:
+  - name: List instances of TransparentDataEncryptionActivities
+    azure_rm_sqltransparentdataencryptionactivity_facts:
       resource_group: resource_group_name
       server_name: server_name
-      elastic_pool_name: elastic_pool_name
+      database_name: database_name
+      transparent_data_encryption_name: transparent_data_encryption_name
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -63,7 +68,7 @@ except ImportError:
     pass
 
 
-class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
+class AzureRMTransparentDataEncryptionActivitiesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
@@ -75,7 +80,11 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            elastic_pool_name=dict(
+            database_name=dict(
+                type='str',
+                required=True
+            ),
+            transparent_data_encryption_name=dict(
                 type='str',
                 required=True
             )
@@ -88,8 +97,9 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
         self.mgmt_client = None
         self.resource_group = None
         self.server_name = None
-        self.elastic_pool_name = None
-        super(AzureRMElasticPoolActivitiesFacts, self).__init__(self.module_arg_spec)
+        self.database_name = None
+        self.transparent_data_encryption_name = None
+        super(AzureRMTransparentDataEncryptionActivitiesFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
@@ -99,25 +109,27 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.server_name is not None and
-                self.elastic_pool_name is not None):
-            self.results['ansible_facts']['list_by_elastic_pool'] = self.list_by_elastic_pool()
+                self.database_name is not None and
+                self.transparent_data_encryption_name is not None):
+            self.results['ansible_facts']['list_by_configuration'] = self.list_by_configuration()
         return self.results
 
-    def list_by_elastic_pool(self):
+    def list_by_configuration(self):
         '''
-        Gets facts of the specified ElasticPoolActivities.
+        Gets facts of the specified TransparentDataEncryptionActivities.
 
-        :return: deserialized ElasticPoolActivitiesinstance state dictionary
+        :return: deserialized TransparentDataEncryptionActivitiesinstance state dictionary
         '''
         response = None
         results = False
         try:
-            response = self.mgmt_client.elastic_pool_activities.list_by_elastic_pool(resource_group_name=self.resource_group,
-                                                                                     server_name=self.server_name,
-                                                                                     elastic_pool_name=self.elastic_pool_name)
+            response = self.mgmt_client.transparent_data_encryption_activities.list_by_configuration(resource_group_name=self.resource_group,
+                                                                                                     server_name=self.server_name,
+                                                                                                     database_name=self.database_name,
+                                                                                                     transparent_data_encryption_name=self.transparent_data_encryption_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
-            self.log('Could not get facts for ElasticPoolActivities.')
+            self.log('Could not get facts for TransparentDataEncryptionActivities.')
 
         if response is not None:
             results = []
@@ -128,6 +140,6 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMElasticPoolActivitiesFacts()
+    AzureRMTransparentDataEncryptionActivitiesFacts()
 if __name__ == '__main__':
     main()

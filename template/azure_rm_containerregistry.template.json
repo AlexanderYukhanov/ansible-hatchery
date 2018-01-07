@@ -1,7 +1,7 @@
 {
   "Modules": [
     {
-      "ModuleName": "azure_rm_containerregistryregistrie",
+      "ModuleName": "azure_rm_containerregistryregistry",
       "ModuleNameAlt": "azure_rm_containerregistryxx",
       "Options": [
         {
@@ -473,7 +473,7 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_containerregistryregistrie_facts",
+      "ModuleName": "azure_rm_containerregistryregistry_facts",
       "ModuleNameAlt": "azure_rm_containerregistry_facts",
       "Options": [
         {

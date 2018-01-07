@@ -4,7 +4,7 @@
   run_once: yes
 
 - name: Gather facts ElasticPoolActivities
-  azure_rm_sqlelasticpoolactivitie_facts:
+  azure_rm_sqlelasticpoolactivity_facts:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert that facts are returned

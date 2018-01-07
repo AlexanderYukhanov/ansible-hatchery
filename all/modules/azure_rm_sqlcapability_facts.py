@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_sqlcapabilitie_facts
+module: azure_rm_sqlcapability_facts
 version_added: "2.5"
 short_description: Get Capabilities facts.
 description:
@@ -37,7 +37,7 @@ author:
 
 EXAMPLES = '''
   - name: List instances of Capabilities
-    azure_rm_sqlcapabilitie_facts:
+    azure_rm_sqlcapability_facts:
       location_id: location_id
 '''
 

@@ -3,8 +3,8 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts TransparentDataEncryptionActivities
-  azure_rm_sqltransparentdataencryptionactivitie_facts:
+- name: Gather facts ElasticPoolDatabaseActivities
+  azure_rm_sqlelasticpooldatabaseactivity_facts:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert that facts are returned

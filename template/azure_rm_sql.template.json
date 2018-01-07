@@ -1071,8 +1071,8 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_sqlcapabilitie_facts",
-      "ModuleNameAlt": "azure_rm_sqlcapabilitie_facts",
+      "ModuleName": "azure_rm_sqlcapability_facts",
+      "ModuleNameAlt": "azure_rm_sqlcapability_facts",
       "Options": [
         {
           "Name": "location_id",
@@ -8053,8 +8053,8 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_sqlelasticpoolactivitie_facts",
-      "ModuleNameAlt": "azure_rm_sqlelasticpoolactivitie_facts",
+      "ModuleName": "azure_rm_sqlelasticpoolactivity_facts",
+      "ModuleNameAlt": "azure_rm_sqlelasticpoolactivity_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8161,8 +8161,8 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_sqlelasticpooldatabaseactivitie_facts",
-      "ModuleNameAlt": "azure_rm_sqlelasticpooldatabaseactivitie_facts",
+      "ModuleName": "azure_rm_sqlelasticpooldatabaseactivity_facts",
+      "ModuleNameAlt": "azure_rm_sqlelasticpooldatabaseactivity_facts",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -8911,8 +8911,8 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_sqltransparentdataencryptionactivitie_facts",
-      "ModuleNameAlt": "azure_rm_sqltransparentdataencryptionactivitie_facts",
+      "ModuleName": "azure_rm_sqltransparentdataencryptionactivity_facts",
+      "ModuleNameAlt": "azure_rm_sqltransparentdataencryptionactivity_facts",
       "Options": [
         {
           "Name": "resource_group_name",

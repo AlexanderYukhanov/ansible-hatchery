@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_sqlelasticpooldatabaseactivitie_facts
+module: azure_rm_sqlelasticpoolactivity_facts
 version_added: "2.5"
-short_description: Get ElasticPoolDatabaseActivities facts.
+short_description: Get ElasticPoolActivities facts.
 description:
-    - Get facts of ElasticPoolDatabaseActivities.
+    - Get facts of ElasticPoolActivities.
 
 options:
     resource_group:
@@ -32,7 +32,7 @@ options:
         required: True
     elastic_pool_name:
         description:
-            - The name of the elastic pool.
+            - The name of the elastic pool for which to get the current activity.
         required: True
 
 extends_documentation_fragment:
@@ -44,8 +44,8 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of ElasticPoolDatabaseActivities
-    azure_rm_sqlelasticpooldatabaseactivitie_facts:
+  - name: List instances of ElasticPoolActivities
+    azure_rm_sqlelasticpoolactivity_facts:
       resource_group: resource_group_name
       server_name: server_name
       elastic_pool_name: elastic_pool_name
@@ -63,7 +63,7 @@ except ImportError:
     pass
 
 
-class AzureRMElasticPoolDatabaseActivitiesFacts(AzureRMModuleBase):
+class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
@@ -89,7 +89,7 @@ class AzureRMElasticPoolDatabaseActivitiesFacts(AzureRMModuleBase):
         self.resource_group = None
         self.server_name = None
         self.elastic_pool_name = None
-        super(AzureRMElasticPoolDatabaseActivitiesFacts, self).__init__(self.module_arg_spec)
+        super(AzureRMElasticPoolActivitiesFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
         for key in self.module_arg_spec:
@@ -105,19 +105,19 @@ class AzureRMElasticPoolDatabaseActivitiesFacts(AzureRMModuleBase):
 
     def list_by_elastic_pool(self):
         '''
-        Gets facts of the specified ElasticPoolDatabaseActivities.
+        Gets facts of the specified ElasticPoolActivities.
 
-        :return: deserialized ElasticPoolDatabaseActivitiesinstance state dictionary
+        :return: deserialized ElasticPoolActivitiesinstance state dictionary
         '''
         response = None
         results = False
         try:
-            response = self.mgmt_client.elastic_pool_database_activities.list_by_elastic_pool(resource_group_name=self.resource_group,
-                                                                                              server_name=self.server_name,
-                                                                                              elastic_pool_name=self.elastic_pool_name)
+            response = self.mgmt_client.elastic_pool_activities.list_by_elastic_pool(resource_group_name=self.resource_group,
+                                                                                     server_name=self.server_name,
+                                                                                     elastic_pool_name=self.elastic_pool_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
-            self.log('Could not get facts for ElasticPoolDatabaseActivities.')
+            self.log('Could not get facts for ElasticPoolActivities.')
 
         if response is not None:
             results = []
@@ -128,6 +128,6 @@ class AzureRMElasticPoolDatabaseActivitiesFacts(AzureRMModuleBase):
 
 
 def main():
-    AzureRMElasticPoolDatabaseActivitiesFacts()
+    AzureRMElasticPoolActivitiesFacts()
 if __name__ == '__main__':
     main()
