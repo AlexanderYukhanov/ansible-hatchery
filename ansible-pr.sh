@@ -11,4 +11,4 @@ cp ~/ansible-hatchery/role/modules/$1.py ~/$1/lib/ansible/modules/cloud/azure/$1
 cp -v -r ~/ansible-hatchery/role/tests/$1 ~/$1/test/integration/targets
 git add -A
 git commit -m "updates to $1"
-git push --set-upstream origin $1
+git push https://$GIT_USER:$GIT_PASSWORD@github.com/VSChina/ansible.git --set-upstream origin $1
