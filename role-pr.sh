@@ -1,4 +1,5 @@
 cd ~/ansible-hatchery
+git checkout master
 git pull
 
 cd ~/azure_preview_modules
