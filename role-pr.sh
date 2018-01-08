@@ -10,4 +10,4 @@ cp -rfv ~/ansible-hatchery/role/tests/* ~/azure_preview_modules/tests/integratio
 
 git add -A
 git commit -m "updated modules"
-git push https://$GIT_USER:$GIT_PASSWORD@github.com/Azure/azure_preview_modules.git hatchery-pr-branch:hatchery-pr-branch
+git push https://$GIT_USER:$GIT_PASSWORD@github.com/Azure/azure_preview_modules.git refs/heads/hatchery-pr-branch:refs/heads/hatchery-pr-branch
