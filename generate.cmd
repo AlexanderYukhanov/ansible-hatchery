@@ -1,4 +1,4 @@
-
+rem test
 rmdir /S /Q c:\dev\ansible-hatchery\prs
 rmdir /S /Q c:\dev\ansible-hatchery\role
 rmdir /S /Q c:\dev\ansible-hatchery\all
