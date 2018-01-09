@@ -86,7 +86,7 @@ status:
     returned: always
     type: complex
     sample: status
-    suboptions:
+    contains:
 '''
 
 import time

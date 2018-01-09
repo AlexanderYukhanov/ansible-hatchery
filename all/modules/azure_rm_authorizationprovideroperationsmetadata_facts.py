@@ -46,31 +46,31 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - The provider id.
-        returned: always
-        type: str
-        sample: id
-    name:
-        description:
-            - The provider name.
-        returned: always
-        type: str
-        sample: name
-    type:
-        description:
-            - The provider type.
-        returned: always
-        type: str
-        sample: type
-    operations:
-        description:
-            - The provider operations.
-        returned: always
-        type: complex
-        sample: operations
-        suboptions:
+id:
+    description:
+        - The provider id.
+    returned: always
+    type: str
+    sample: id
+name:
+    description:
+        - The provider name.
+    returned: always
+    type: str
+    sample: name
+type:
+    description:
+        - The provider type.
+    returned: always
+    type: str
+    sample: type
+operations:
+    description:
+        - The provider operations.
+    returned: always
+    type: complex
+    sample: operations
+    contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -56,31 +56,31 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest
-                 -5678/backupLongTermRetentionVaults/RegisteredVault"
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: RegisteredVault
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Sql/servers/backupLongTermRetentionVaults
-    location:
-        description:
-            - The geo-location where the resource lives
-        returned: always
-        type: str
-        sample: Japan East
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest
+             -5678/backupLongTermRetentionVaults/RegisteredVault"
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: RegisteredVault
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Sql/servers/backupLongTermRetentionVaults
+location:
+    description:
+        - The geo-location where the resource lives
+    returned: always
+    type: str
+    sample: Japan East
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

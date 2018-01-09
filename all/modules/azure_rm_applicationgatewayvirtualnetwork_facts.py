@@ -57,37 +57,37 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: test-vnet
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Network/virtualNetworks
-    location:
-        description:
-            - Resource location.
-        returned: always
-        type: str
-        sample: westus
-    subnets:
-        description:
-            - A list of subnets in a Virtual Network.
-        returned: always
-        type: complex
-        sample: subnets
-        suboptions:
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: test-vnet
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Network/virtualNetworks
+location:
+    description:
+        - Resource location.
+    returned: always
+    type: str
+    sample: westus
+subnets:
+    description:
+        - A list of subnets in a Virtual Network.
+    returned: always
+    type: complex
+    sample: subnets
+    contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -62,37 +62,37 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-8931/providers/Microsoft.Sql/servers/sqlcrudtest-2137/databases/test
-                 db/replicationLinks/f0550bf5-07ce-4270-8e4b-71737975973a"
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: f0550bf5-07ce-4270-8e4b-71737975973a
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Sql/servers/databases/replicationLinks
-    location:
-        description:
-            - Location of the server that contains this firewall rule.
-        returned: always
-        type: str
-        sample: Japan East
-    role:
-        description:
-            - The role of the database in the replication link. Possible values include: C(Primary), C(Secondary), C(NonReadableSecondary), C(Source), C(Copy)
-        returned: always
-        type: str
-        sample: Secondary
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-8931/providers/Microsoft.Sql/servers/sqlcrudtest-2137/databases/test
+             db/replicationLinks/f0550bf5-07ce-4270-8e4b-71737975973a"
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: f0550bf5-07ce-4270-8e4b-71737975973a
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Sql/servers/databases/replicationLinks
+location:
+    description:
+        - Location of the server that contains this firewall rule.
+    returned: always
+    type: str
+    sample: Japan East
+role:
+    description:
+        - The role of the database in the replication link. Possible values include: C(Primary), C(Secondary), C(NonReadableSecondary), C(Source), C(Copy)
+    returned: always
+    type: str
+    sample: Secondary
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -83,37 +83,37 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - The role assignment ID.
-        returned: always
-        type: str
-        sample: /subscriptions/subId/resourcegroups/rgname/providers/Microsoft.Authorization/roleAssignments/roleassignmentId
-    name:
-        description:
-            - The role assignment name.
-        returned: always
-        type: str
-        sample: raId
-    type:
-        description:
-            - The role assignment type.
-        returned: always
-        type: str
-        sample: Microsoft.Authorization/roleAssignments
-    properties:
-        description:
-            - Role assignment properties.
-        returned: always
-        type: complex
-        sample: properties
-        suboptions:
-            scope:
-                description:
-                    - The role assignment scope.
-                returned: always
-                type: str
-                sample: /subscriptions/subId/resourcegroups/rgname
+id:
+    description:
+        - The role assignment ID.
+    returned: always
+    type: str
+    sample: /subscriptions/subId/resourcegroups/rgname/providers/Microsoft.Authorization/roleAssignments/roleassignmentId
+name:
+    description:
+        - The role assignment name.
+    returned: always
+    type: str
+    sample: raId
+type:
+    description:
+        - The role assignment type.
+    returned: always
+    type: str
+    sample: Microsoft.Authorization/roleAssignments
+properties:
+    description:
+        - Role assignment properties.
+    returned: always
+    type: complex
+    sample: properties
+    contains:
+        scope:
+            description:
+                - The role assignment scope.
+            returned: always
+            type: str
+            sample: /subscriptions/subId/resourcegroups/rgname
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

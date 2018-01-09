@@ -56,31 +56,31 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID
-        returned: always
-        type: str
-        sample: "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRul
-                 es/vnet-firewall-rule"
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: vnet-firewall-rule
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.DBforMySQL/servers/virtualNetworkRules
-    state:
-        description:
-            - Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)
-        returned: always
-        type: str
-        sample: Ready
+id:
+    description:
+        - Resource ID
+    returned: always
+    type: str
+    sample: "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRul
+             es/vnet-firewall-rule"
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: vnet-firewall-rule
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.DBforMySQL/servers/virtualNetworkRules
+state:
+    description:
+        - Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)
+    returned: always
+    type: str
+    sample: Ready
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

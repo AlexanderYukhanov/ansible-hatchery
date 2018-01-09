@@ -52,50 +52,50 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: lb
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Network/loadBalancers
-    location:
-        description:
-            - Resource location.
-        returned: always
-        type: str
-        sample: westus
-    sku:
-        description:
-            - The load balancer SKU.
-        returned: always
-        type: complex
-        sample: sku
-        suboptions:
-            name:
-                description:
-                    - Name of a load balancer SKU. Possible values include: C(Basic), C(Standard)
-                returned: always
-                type: str
-                sample: Basic
-    probes:
-        description:
-            - Collection of probe objects used in the load balancer
-        returned: always
-        type: complex
-        sample: probes
-        suboptions:
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: lb
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Network/loadBalancers
+location:
+    description:
+        - Resource location.
+    returned: always
+    type: str
+    sample: westus
+sku:
+    description:
+        - The load balancer SKU.
+    returned: always
+    type: complex
+    sample: sku
+    contains:
+        name:
+            description:
+                - Name of a load balancer SKU. Possible values include: C(Basic), C(Standard)
+            returned: always
+            type: str
+            sample: Basic
+probes:
+    description:
+        - Collection of probe objects used in the load balancer
+    returned: always
+    type: complex
+    sample: probes
+    contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

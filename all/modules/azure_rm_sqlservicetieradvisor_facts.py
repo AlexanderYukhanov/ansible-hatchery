@@ -62,31 +62,31 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlc
-                 rudtest-9187/serviceTierAdvisors/Current"
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: Current
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Sql/servers/databases/serviceTierAdvisors
-    confidence:
-        description:
-            - Gets or sets confidence for service tier advisor.
-        returned: always
-        type: float
-        sample: 1
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlc
+             rudtest-9187/serviceTierAdvisors/Current"
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: Current
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Sql/servers/databases/serviceTierAdvisors
+confidence:
+    description:
+        - Gets or sets confidence for service tier advisor.
+    returned: always
+    type: float
+    sample: 1
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

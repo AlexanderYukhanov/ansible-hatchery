@@ -56,31 +56,31 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators
-                 /activeDirectory"
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: activeDirectory
-    login:
-        description:
-            - The server administrator login value.
-        returned: always
-        type: str
-        sample: bob@contoso.com
-    sid:
-        description:
-            - The server administrator Sid (Secure ID).
-        returned: always
-        type: str
-        sample: c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators
+             /activeDirectory"
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: activeDirectory
+login:
+    description:
+        - The server administrator login value.
+    returned: always
+    type: str
+    sample: bob@contoso.com
+sid:
+    description:
+        - The server administrator Sid (Secure ID).
+    returned: always
+    type: str
+    sample: c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

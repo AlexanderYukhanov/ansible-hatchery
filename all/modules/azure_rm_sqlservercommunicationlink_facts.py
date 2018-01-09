@@ -56,43 +56,43 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationL
-                 inks/link1"
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: link1
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Sql/servers/communicationLinks
-    state:
-        description:
-            - The state.
-        returned: always
-        type: str
-        sample: Ready
-    location:
-        description:
-            - Communication link location.
-        returned: always
-        type: str
-        sample: Central US
-    kind:
-        description:
-            - Communication link kind.  This property is used for Azure Portal metadata.
-        returned: always
-        type: str
-        sample: kind
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationL
+             inks/link1"
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: link1
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Sql/servers/communicationLinks
+state:
+    description:
+        - The state.
+    returned: always
+    type: str
+    sample: Ready
+location:
+    description:
+        - Communication link location.
+    returned: always
+    type: str
+    sample: Central US
+kind:
+    description:
+        - Communication link kind.  This property is used for Azure Portal metadata.
+    returned: always
+    type: str
+    sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -619,18 +619,18 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource Id.
-        returned: always
-        type: str
-        sample: id
-    state:
-        description:
-            - Current state of the app.
-        returned: always
-        type: str
-        sample: state
+id:
+    description:
+        - Resource Id.
+    returned: always
+    type: str
+    sample: id
+state:
+    description:
+        - Current state of the app.
+    returned: always
+    type: str
+    sample: state
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

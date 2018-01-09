@@ -214,18 +214,18 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource Id.
-        returned: always
-        type: str
-        sample: id
-    status:
-        description:
-            - Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)
-        returned: always
-        type: str
-        sample: status
+id:
+    description:
+        - Resource Id.
+    returned: always
+    type: str
+    sample: id
+status:
+    description:
+        - Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)
+    returned: always
+    type: str
+    sample: status
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

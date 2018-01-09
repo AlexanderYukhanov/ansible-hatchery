@@ -82,36 +82,36 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: test-nic
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Network/networkInterfaces
-    location:
-        description:
-            - Resource location.
-        returned: always
-        type: str
-        sample: eastus
-    primary:
-        description:
-            - Gets whether this is a primary network interface on a virtual machine.
-        returned: always
-        type: str
-        sample: True
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: test-nic
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Network/networkInterfaces
+location:
+    description:
+        - Resource location.
+    returned: always
+    type: str
+    sample: eastus
+primary:
+    description:
+        - Gets whether this is a primary network interface on a virtual machine.
+    returned: always
+    type: str
+    sample: True
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

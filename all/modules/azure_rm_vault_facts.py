@@ -56,12 +56,12 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - The Azure Resource Manager resource ID for the key vault.
-        returned: always
-        type: str
-        sample: id
+id:
+    description:
+        - The Azure Resource Manager resource ID for the key vault.
+    returned: always
+    type: str
+    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

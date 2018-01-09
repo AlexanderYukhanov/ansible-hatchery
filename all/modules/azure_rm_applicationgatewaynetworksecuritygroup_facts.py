@@ -52,30 +52,30 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg
-    name:
-        description:
-            - Resource name.
-        returned: always
-        type: str
-        sample: testnsg
-    type:
-        description:
-            - Resource type.
-        returned: always
-        type: str
-        sample: Microsoft.Network/networkSecurityGroups
-    location:
-        description:
-            - Resource location.
-        returned: always
-        type: str
-        sample: westus
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg
+name:
+    description:
+        - Resource name.
+    returned: always
+    type: str
+    sample: testnsg
+type:
+    description:
+        - Resource type.
+    returned: always
+    type: str
+    sample: Microsoft.Network/networkSecurityGroups
+location:
+    description:
+        - Resource location.
+    returned: always
+    type: str
+    sample: westus
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -52,38 +52,38 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/probes/probe1
-    protocol:
-        description:
-            - "The protocol of the end point. Possible values are: C(Http) or C(Tcp). If C(Tcp) is specified, a received ACK is required for the probe to be succ
-               essful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful. Possible values include: C(H
-               ttp), C(Tcp)"
-        returned: always
-        type: str
-        sample: Http
-    port:
-        description:
-            - The port for communicating the probe. Possible values range from 1 to 65535, inclusive.
-        returned: always
-        type: int
-        sample: 80
-    name:
-        description:
-            - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
-        returned: always
-        type: str
-        sample: probe1
-    etag:
-        description:
-            - A unique read-only string that changes whenever the resource is updated.
-        returned: always
-        type: str
-        sample: W/\"00000000-0000-0000-0000-000000000000\"
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/probes/probe1
+protocol:
+    description:
+        - "The protocol of the end point. Possible values are: C(Http) or C(Tcp). If C(Tcp) is specified, a received ACK is required for the probe to be succ
+           essful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful. Possible values include: C(H
+           ttp), C(Tcp)"
+    returned: always
+    type: str
+    sample: Http
+port:
+    description:
+        - The port for communicating the probe. Possible values range from 1 to 65535, inclusive.
+    returned: always
+    type: int
+    sample: 80
+name:
+    description:
+        - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
+    returned: always
+    type: str
+    sample: probe1
+etag:
+    description:
+        - A unique read-only string that changes whenever the resource is updated.
+    returned: always
+    type: str
+    sample: W/\"00000000-0000-0000-0000-000000000000\"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

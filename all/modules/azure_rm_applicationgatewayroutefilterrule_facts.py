@@ -56,47 +56,47 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource ID.
-        returned: always
-        type: str
-        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName
-    access:
-        description:
-            - The access type of the rule. Valid values are: C(Allow), C(Deny). Possible values include: C(Allow), C(Deny)
-        returned: always
-        type: str
-        sample: Allow
-    communities:
-        description:
-            - The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]
-        returned: always
-        type: str
-        sample: [
-      "12076:5030",
-      "12076:5040"
-    ]
-    name:
-        description:
-            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
-        returned: always
-        type: str
-        sample: ruleName
-    etag:
-        description:
-            - A unique read-only string that changes whenever the resource is updated.
-        returned: always
-        type: str
-        sample: w/\00000000-0000-0000-0000-000000000000\
-    tags:
-        description:
-            - Resource tags.
-        returned: always
-        type: complex
-        sample: {
-      "key1": "value1"
-    }
+id:
+    description:
+        - Resource ID.
+    returned: always
+    type: str
+    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName
+access:
+    description:
+        - The access type of the rule. Valid values are: C(Allow), C(Deny). Possible values include: C(Allow), C(Deny)
+    returned: always
+    type: str
+    sample: Allow
+communities:
+    description:
+        - The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]
+    returned: always
+    type: str
+    sample: [
+  "12076:5030",
+  "12076:5040"
+]
+name:
+    description:
+        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+    returned: always
+    type: str
+    sample: ruleName
+etag:
+    description:
+        - A unique read-only string that changes whenever the resource is updated.
+    returned: always
+    type: str
+    sample: w/\00000000-0000-0000-0000-000000000000\
+tags:
+    description:
+        - Resource tags.
+    returned: always
+    type: complex
+    sample: {
+  "key1": "value1"
+}
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

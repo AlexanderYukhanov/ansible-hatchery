@@ -55,19 +55,19 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-    id:
-        description:
-            - Resource Id.
-        returned: always
-        type: str
-        sample: id
-    status:
-        description:
-            - "Current order status. Possible values include: C(Pendingissuance), C(Issued), C(Revoked), C(Canceled), C(Denied), C(Pendingrevocation), C(PendingR
-               ekey), C(Unused), C(Expired), C(NotSubmitted)"
-        returned: always
-        type: str
-        sample: status
+id:
+    description:
+        - Resource Id.
+    returned: always
+    type: str
+    sample: id
+status:
+    description:
+        - "Current order status. Possible values include: C(Pendingissuance), C(Issued), C(Revoked), C(Canceled), C(Denied), C(Pendingrevocation), C(PendingR
+           ekey), C(Unused), C(Expired), C(NotSubmitted)"
+    returned: always
+    type: str
+    sample: status
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
