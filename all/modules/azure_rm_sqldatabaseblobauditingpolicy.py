@@ -93,7 +93,7 @@ state:
            ed), C(Disabled)"
     returned: always
     type: str
-    sample: state
+    sample: Enabled
 '''
 
 import time

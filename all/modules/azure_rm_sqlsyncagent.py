@@ -67,13 +67,13 @@ state:
         - State of the sync agent. Possible values include: C(Online), C(Offline), C(NeverConnected)
     returned: always
     type: str
-    sample: state
+    sample: NeverConnected
 version:
     description:
         - Version of the sync agent.
     returned: always
     type: str
-    sample: version
+    sample: 4.2.0.0
 '''
 
 import time

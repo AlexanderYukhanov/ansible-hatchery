@@ -426,9 +426,9 @@
               "Description": "The detailed message for the status, including alerts and error messages.",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "message",
+              "SampleValue": "The registry is ready.",
               "SubFields": [],
-              "Info": "NO SAMPLE DATA"
+              "Info": "The registry is ready."
             },
             {
               "Name": "timestamp",
@@ -436,12 +436,12 @@
               "Description": "The timestamp when the status was changed to the current value.",
               "Type": "datetime",
               "Returned": "always",
-              "SampleValue": "timestamp",
+              "SampleValue": "2017-03-01T23:15:37.0707808Z",
               "SubFields": [],
-              "Info": "NO SAMPLE DATA"
+              "Info": "2017-03-01T23:15:37.0707808Z"
             }
           ],
-          "Info": "NO SAMPLE DATA"
+          "Info": "{\r\n  \"displayStatus\": \"Ready\",\r\n  \"message\": \"The registry is ready.\",\r\n  \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n}"
         },
         {
           "Name": "admin_user_enabled",
@@ -889,9 +889,9 @@
               "Description": "The detailed message for the status, including alerts and error messages.",
               "Type": "str",
               "Returned": "always",
-              "SampleValue": "message",
+              "SampleValue": "The replication is ready.",
               "SubFields": [],
-              "Info": "NO SAMPLE DATA"
+              "Info": "The replication is ready."
             },
             {
               "Name": "timestamp",
@@ -899,12 +899,12 @@
               "Description": "The timestamp when the status was changed to the current value.",
               "Type": "datetime",
               "Returned": "always",
-              "SampleValue": "timestamp",
+              "SampleValue": "2017-03-01T23:15:37.0707808Z",
               "SubFields": [],
-              "Info": "NO SAMPLE DATA"
+              "Info": "2017-03-01T23:15:37.0707808Z"
             }
           ],
-          "Info": "NO SAMPLE DATA"
+          "Info": "{\r\n  \"displayStatus\": \"Ready\",\r\n  \"message\": \"The replication is ready.\",\r\n  \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n}"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -1417,9 +1417,9 @@
           "Description": "The status of the webhook at the time the operation was called. Possible values include: 'enabled', 'disabled'",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "status",
+          "SampleValue": "enabled",
           "SubFields": [],
-          "Info": "NO SAMPLE DATA"
+          "Info": "enabled"
         },
         {
           "Name": "scope",
@@ -1427,9 +1427,9 @@
           "Description": "The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "scope",
+          "SampleValue": "myRepository",
           "SubFields": [],
-          "Info": "NO SAMPLE DATA"
+          "Info": "myRepository"
         },
         {
           "Name": "actions",
@@ -1437,9 +1437,9 @@
           "Description": "The list of actions that trigger the webhook to post notifications.",
           "Type": "str",
           "Returned": "always",
-          "SampleValue": "actions",
+          "SampleValue": "[\r\n  \"push\"\r\n]",
           "SubFields": [],
-          "Info": "NO SAMPLE DATA"
+          "Info": "[\r\n  \"push\"\r\n]"
         },
         {
           "Name": "provisioning_state",
@@ -1664,5 +1664,231 @@
     "EXAMPLE OBJECT -- {\"WebhookGetCallbackConfig\":{\"parameters\":{\"api-version\":\"2017-10-01\",\"subscriptionId\":\"00000000-0000-0000-0000-000000000000\",\"resourceGroupName\":\"myResourceGroup\",\"registryName\":\"myRegistry\",\"webhookName\":\"myWebhook\"},\"responses\":{\"200\":{\"body\":{\"serviceUri\":\"http://myservice.com\",\"customHeaders\":{\"Authorization\":\"Basic 000000000000000000000000000000000000000000000000000\"}}}}}}",
     "EXAMPLE -- WebhookListEvents",
     "EXAMPLE OBJECT -- {\"WebhookListEvents\":{\"parameters\":{\"api-version\":\"2017-10-01\",\"subscriptionId\":\"00000000-0000-0000-0000-000000000000\",\"resourceGroupName\":\"myResourceGroup\",\"registryName\":\"myRegistry\",\"webhookName\":\"myWebhook\"},\"responses\":{\"200\":{\"body\":{\"value\":[{\"id\":\"00000000-0000-0000-0000-000000000000\",\"eventRequestMessage\":{\"content\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"timestamp\":\"2017-03-01T23:14:37.0707808Z\",\"action\":\"push\",\"target\":{\"mediaType\":\"application/vnd.docker.distribution.manifest.v2+json\",\"size\":\"708\",\"digest\":\"sha256:fea8895f450959fa676bcc1df0611ea93823a735a01205fd8622846041d0c7cf\",\"length\":\"708\",\"repository\":\"hello-world\",\"url\":\"http://192.168.100.227:5000/v2/hello-world/manifests/sha256:fea8895f450959fa676bcc1df0611ea93823a735a01205fd8622846041d0c7cf\",\"tag\":\"latest\"},\"request\":{\"id\":\"00000000-0000-0000-0000-000000000000\",\"addr\":\"192.168.64.11:42961\",\"host\":\"192.168.100.227:5000\",\"method\":\"GET\",\"useragent\":\"curl/7.38.0\"},\"actor\":{},\"source\":{\"addr\":\"xtal.local:5000\",\"instanceID\":\"00000000-0000-0000-0000-000000000000\"}},\"headers\":{\"Content-Type\":\"application/json\",\"Content-Length\":\"719\",\"Authorization\":\"******\"},\"method\":\"POST\",\"requestUri\":\"http://myservice.com\",\"version\":\"1.1\"},\"eventResponseMessage\":{\"headers\":{\"Content-Length\":\"0\"},\"statusCode\":\"200\",\"version\":\"1.1\"}}]}}}}}"
+  ],
+  "Info": [
+    "Getting example for: create",
+    "Found example for: create",
+    "Found response for: create",
+    "Found properties",
+    "Sample after properties copied ---",
+    "{\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\r\n  \"name\": \"myRegistry\",\r\n  \"type\": \"Microsoft.ContainerRegistry/registries\",\r\n  \"location\": \"westus\",\r\n  \"tags\": {\r\n    \"key\": \"value\"\r\n  },\r\n  \"sku\": {\r\n    \"name\": \"Standard\",\r\n    \"tier\": \"Standard\"\r\n  },\r\n  \"properties\": {\r\n    \"loginServer\": \"myregistry.azurecr.io\",\r\n    \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\r\n    \"provisioningState\": \"Succeeded\",\r\n    \"status\": {\r\n      \"displayStatus\": \"Ready\",\r\n      \"message\": \"The registry is ready.\",\r\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n    },\r\n    \"adminUserEnabled\": true\r\n  },\r\n  \"loginServer\": \"myregistry.azurecr.io\",\r\n  \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\r\n  \"provisioningState\": \"Succeeded\",\r\n  \"status\": {\r\n    \"displayStatus\": \"Ready\",\r\n    \"message\": \"The registry is ready.\",\r\n    \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n  },\r\n  \"adminUserEnabled\": true\r\n}",
+    "Getting example for: update",
+    "Found example for: update",
+    "Found response for: update",
+    "Found properties",
+    "Sample after properties copied ---",
+    "{\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\r\n  \"name\": \"myRegistry\",\r\n  \"type\": \"Microsoft.ContainerRegistry/registries\",\r\n  \"location\": \"westus\",\r\n  \"tags\": {\r\n    \"key\": \"value\"\r\n  },\r\n  \"sku\": {\r\n    \"name\": \"Standard\",\r\n    \"tier\": \"Standard\"\r\n  },\r\n  \"properties\": {\r\n    \"loginServer\": \"myregistry.azurecr.io\",\r\n    \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\r\n    \"provisioningState\": \"Succeeded\",\r\n    \"status\": {\r\n      \"displayStatus\": \"Ready\",\r\n      \"message\": \"The registry is ready.\",\r\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n    },\r\n    \"adminUserEnabled\": true\r\n  },\r\n  \"loginServer\": \"myregistry.azurecr.io\",\r\n  \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\r\n  \"provisioningState\": \"Succeeded\",\r\n  \"status\": {\r\n    \"displayStatus\": \"Ready\",\r\n    \"message\": \"The registry is ready.\",\r\n    \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n  },\r\n  \"adminUserEnabled\": true\r\n}",
+    "Getting example for: create",
+    "Found example for: create",
+    "Found response for: create",
+    "Found properties",
+    "Sample after properties copied ---",
+    "{\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\r\n  \"name\": \"myReplication\",\r\n  \"type\": \"Microsoft.ContainerRegistry/registries/replications\",\r\n  \"location\": \"eastus\",\r\n  \"tags\": {\r\n    \"key\": \"value\"\r\n  },\r\n  \"properties\": {\r\n    \"provisioningState\": \"Succeeded\",\r\n    \"status\": {\r\n      \"displayStatus\": \"Ready\",\r\n      \"message\": \"The replication is ready.\",\r\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n    }\r\n  },\r\n  \"provisioningState\": \"Succeeded\",\r\n  \"status\": {\r\n    \"displayStatus\": \"Ready\",\r\n    \"message\": \"The replication is ready.\",\r\n    \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n  }\r\n}",
+    "Getting example for: update",
+    "Found example for: update",
+    "Found response for: update",
+    "Found properties",
+    "Sample after properties copied ---",
+    "{\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\r\n  \"name\": \"myReplication\",\r\n  \"type\": \"Microsoft.ContainerRegistry/registries/replications\",\r\n  \"location\": \"eastus\",\r\n  \"tags\": {\r\n    \"key\": \"value\"\r\n  },\r\n  \"properties\": {\r\n    \"provisioningState\": \"Succeeded\",\r\n    \"status\": {\r\n      \"displayStatus\": \"Ready\",\r\n      \"message\": \"The replication is ready.\",\r\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n    }\r\n  },\r\n  \"provisioningState\": \"Succeeded\",\r\n  \"status\": {\r\n    \"displayStatus\": \"Ready\",\r\n    \"message\": \"The replication is ready.\",\r\n    \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n  }\r\n}",
+    "Getting example for: create",
+    "Found example for: create",
+    "Found response for: create",
+    "Found properties",
+    "Sample after properties copied ---",
+    "{\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\r\n  \"name\": \"myWebhook\",\r\n  \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\",\r\n  \"location\": \"westus\",\r\n  \"tags\": {\r\n    \"key\": \"value\"\r\n  },\r\n  \"properties\": {\r\n    \"status\": \"enabled\",\r\n    \"scope\": \"myRepository\",\r\n    \"actions\": [\r\n      \"push\"\r\n    ],\r\n    \"provisioningState\": \"Succeeded\"\r\n  },\r\n  \"status\": \"enabled\",\r\n  \"scope\": \"myRepository\",\r\n  \"actions\": [\r\n    \"push\"\r\n  ],\r\n  \"provisioningState\": \"Succeeded\"\r\n}",
+    "Getting example for: update",
+    "Found example for: update",
+    "Found response for: update",
+    "Found properties",
+    "Sample after properties copied ---",
+    "{\r\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\r\n  \"name\": \"myWebhook\",\r\n  \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\",\r\n  \"location\": \"westus\",\r\n  \"tags\": {\r\n    \"key\": \"value\"\r\n  },\r\n  \"properties\": {\r\n    \"status\": \"enabled\",\r\n    \"scope\": \"myRepository\",\r\n    \"actions\": [\r\n      \"push\"\r\n    ],\r\n    \"provisioningState\": \"Succeeded\"\r\n  },\r\n  \"status\": \"enabled\",\r\n  \"scope\": \"myRepository\",\r\n  \"actions\": [\r\n    \"push\"\r\n  ],\r\n  \"provisioningState\": \"Succeeded\"\r\n}"
   ]
+}
+Getting example for: create
+Found example for: create
+Found response for: create
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry",
+  "name": "myRegistry",
+  "type": "Microsoft.ContainerRegistry/registries",
+  "location": "westus",
+  "tags": {
+    "key": "value"
+  },
+  "sku": {
+    "name": "Standard",
+    "tier": "Standard"
+  },
+  "properties": {
+    "loginServer": "myregistry.azurecr.io",
+    "creationDate": "2017-03-01T23:14:37.0707808Z",
+    "provisioningState": "Succeeded",
+    "status": {
+      "displayStatus": "Ready",
+      "message": "The registry is ready.",
+      "timestamp": "2017-03-01T23:15:37.0707808Z"
+    },
+    "adminUserEnabled": true
+  },
+  "loginServer": "myregistry.azurecr.io",
+  "creationDate": "2017-03-01T23:14:37.0707808Z",
+  "provisioningState": "Succeeded",
+  "status": {
+    "displayStatus": "Ready",
+    "message": "The registry is ready.",
+    "timestamp": "2017-03-01T23:15:37.0707808Z"
+  },
+  "adminUserEnabled": true
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry",
+  "name": "myRegistry",
+  "type": "Microsoft.ContainerRegistry/registries",
+  "location": "westus",
+  "tags": {
+    "key": "value"
+  },
+  "sku": {
+    "name": "Standard",
+    "tier": "Standard"
+  },
+  "properties": {
+    "loginServer": "myregistry.azurecr.io",
+    "creationDate": "2017-03-01T23:14:37.0707808Z",
+    "provisioningState": "Succeeded",
+    "status": {
+      "displayStatus": "Ready",
+      "message": "The registry is ready.",
+      "timestamp": "2017-03-01T23:15:37.0707808Z"
+    },
+    "adminUserEnabled": true
+  },
+  "loginServer": "myregistry.azurecr.io",
+  "creationDate": "2017-03-01T23:14:37.0707808Z",
+  "provisioningState": "Succeeded",
+  "status": {
+    "displayStatus": "Ready",
+    "message": "The registry is ready.",
+    "timestamp": "2017-03-01T23:15:37.0707808Z"
+  },
+  "adminUserEnabled": true
+}
+Getting example for: create
+Found example for: create
+Found response for: create
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication",
+  "name": "myReplication",
+  "type": "Microsoft.ContainerRegistry/registries/replications",
+  "location": "eastus",
+  "tags": {
+    "key": "value"
+  },
+  "properties": {
+    "provisioningState": "Succeeded",
+    "status": {
+      "displayStatus": "Ready",
+      "message": "The replication is ready.",
+      "timestamp": "2017-03-01T23:15:37.0707808Z"
+    }
+  },
+  "provisioningState": "Succeeded",
+  "status": {
+    "displayStatus": "Ready",
+    "message": "The replication is ready.",
+    "timestamp": "2017-03-01T23:15:37.0707808Z"
+  }
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication",
+  "name": "myReplication",
+  "type": "Microsoft.ContainerRegistry/registries/replications",
+  "location": "eastus",
+  "tags": {
+    "key": "value"
+  },
+  "properties": {
+    "provisioningState": "Succeeded",
+    "status": {
+      "displayStatus": "Ready",
+      "message": "The replication is ready.",
+      "timestamp": "2017-03-01T23:15:37.0707808Z"
+    }
+  },
+  "provisioningState": "Succeeded",
+  "status": {
+    "displayStatus": "Ready",
+    "message": "The replication is ready.",
+    "timestamp": "2017-03-01T23:15:37.0707808Z"
+  }
+}
+Getting example for: create
+Found example for: create
+Found response for: create
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook",
+  "name": "myWebhook",
+  "type": "Microsoft.ContainerRegistry/registries/webhooks",
+  "location": "westus",
+  "tags": {
+    "key": "value"
+  },
+  "properties": {
+    "status": "enabled",
+    "scope": "myRepository",
+    "actions": [
+      "push"
+    ],
+    "provisioningState": "Succeeded"
+  },
+  "status": "enabled",
+  "scope": "myRepository",
+  "actions": [
+    "push"
+  ],
+  "provisioningState": "Succeeded"
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook",
+  "name": "myWebhook",
+  "type": "Microsoft.ContainerRegistry/registries/webhooks",
+  "location": "westus",
+  "tags": {
+    "key": "value"
+  },
+  "properties": {
+    "status": "enabled",
+    "scope": "myRepository",
+    "actions": [
+      "push"
+    ],
+    "provisioningState": "Succeeded"
+  },
+  "status": "enabled",
+  "scope": "myRepository",
+  "actions": [
+    "push"
+  ],
+  "provisioningState": "Succeeded"
 }

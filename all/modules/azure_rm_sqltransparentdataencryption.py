@@ -73,7 +73,7 @@ status:
         - The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)
     returned: always
     type: str
-    sample: status
+    sample: Enabled
 '''
 
 import time

@@ -161,7 +161,7 @@ status:
         - App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)
     returned: always
     type: str
-    sample: status
+    sample: Ready
 '''
 
 import time
