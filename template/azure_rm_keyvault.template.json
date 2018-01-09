@@ -1292,8 +1292,5 @@
   "NamespaceUpper": "Keyvault",
   "Name": "KeyVaultManagementClient",
   "ApiVersion": "",
-  "Operations": [
-    "Vaults[ create_or_update delete get list_by_resource_group list_deleted get_deleted purge_deleted list MAIN FACTS ]"
-  ],
   "Info": null
 }

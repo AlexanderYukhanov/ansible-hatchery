@@ -1,3 +1,15 @@
+------------------------------- Registry
+  check_name_availability
+  get
+  create
+  delete
+  update
+  list_by_resource_group
+  list
+  list_credentials
+  regenerate_credential
+  list_usages
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -112,6 +124,7 @@ Sample after properties copied ---
   },
   "adminUserEnabled": true
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -150,6 +163,15 @@ Sample after properties copied ---
   },
   "adminUserEnabled": true
 }
+------------------------------- Registry
+  list
+------------------------------- Operation
+  get
+  create
+  delete
+  update
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -234,6 +256,7 @@ Sample after properties copied ---
     "timestamp": "2017-03-01T23:15:37.0707808Z"
   }
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -262,6 +285,16 @@ Sample after properties copied ---
     "timestamp": "2017-03-01T23:15:37.0707808Z"
   }
 }
+------------------------------- Replication
+  get
+  create
+  delete
+  update
+  list
+  ping
+  get_callback_config
+  list_events
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -346,6 +379,7 @@ Sample after properties copied ---
   ],
   "provisioningState": "Succeeded"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get

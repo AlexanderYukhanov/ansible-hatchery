@@ -1,3 +1,8 @@
+------------------------------- Backup Long Term Retention Policy
+  get
+  create_or_update
+  list_by_database
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -32,6 +37,7 @@ Sample after properties copied ---
   "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
   "state": "Enabled"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -49,6 +55,11 @@ Sample after properties copied ---
   "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
   "state": "Enabled"
 }
+------------------------------- Backup Long Term Retention Policy
+  get
+  create_or_update
+  list_by_server
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -79,6 +90,7 @@ Sample after properties copied ---
   },
   "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -94,6 +106,13 @@ Sample after properties copied ---
   },
   "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
 }
+------------------------------- Backup Long Term Retention Vault
+  list_by_database
+  ** CREATING FACT MODULE
+------------------------------- Restore Point
+  get
+  list_by_server
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -114,6 +133,10 @@ Sample after properties copied ---
   "lastAvailableBackupDate": "2017-05-26T01:06:29.78Z",
   "elasticPoolName": null
 }
+------------------------------- Recoverable Database
+  get
+  list_by_server
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -143,6 +166,13 @@ Sample after properties copied ---
   "deletionDate": "2017-05-27T02:49:47.69Z",
   "earliestRestoreDate": "2017-05-20T02:49:47.69Z"
 }
+------------------------------- Restorable Dropped Database
+  list_by_location
+  ** CREATING FACT MODULE
+------------------------------- Capability
+  create_or_update
+  get
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -175,6 +205,7 @@ Sample after properties copied ---
   },
   "connectionType": "Proxy"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -191,6 +222,10 @@ Sample after properties copied ---
   },
   "connectionType": "Default"
 }
+------------------------------- Server Connection Policy
+  get
+  create_or_update
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -250,6 +285,7 @@ Sample after properties copied ---
   "storageEndpoint": "https://mystorage.blob.core.windows.net",
   "useServerDefault": "Enabled"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -280,6 +316,10 @@ Sample after properties copied ---
   "storageEndpoint": "",
   "useServerDefault": "Enabled"
 }
+------------------------------- Database Threat Detection Policy
+  create_or_update
+  get
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -324,6 +364,7 @@ Sample after properties copied ---
   "exemptPrincipals": "testuser;",
   "maskingLevel": ""
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -346,6 +387,10 @@ Sample after properties copied ---
   "exemptPrincipals": "",
   "maskingLevel": ""
 }
+------------------------------- Data Masking Policy
+  create_or_update
+  list_by_database
+  ** CREATING MAIN MODULE
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -384,6 +429,13 @@ Sample after properties copied ---
   "suffixSize": "0",
   "replacementString": "asdf"
 }
+  ** CREATING FACT MODULE
+------------------------------- Data Masking Rule
+  create_or_update
+  delete
+  get
+  list_by_server
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -420,6 +472,7 @@ Sample after properties copied ---
   "startIpAddress": "0.0.0.3",
   "endIpAddress": "0.0.0.3"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -438,6 +491,11 @@ Sample after properties copied ---
   "startIpAddress": "0.0.0.0",
   "endIpAddress": "0.0.0.0"
 }
+------------------------------- Firewall Rule
+  create_or_update
+  get
+  list_by_database
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -474,6 +532,7 @@ Sample after properties copied ---
   "state": "Enabled",
   "storageType": null
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -492,6 +551,25 @@ Sample after properties copied ---
   "state": "Enabled",
   "storageType": "Premium"
 }
+------------------------------- Geo Backup Policy
+  import_method
+  create_import_operation
+  export
+  list_metrics
+  list_metric_definitions
+  pause
+  resume
+  create_or_update
+  update
+  delete
+  get
+  list_by_server
+  get_by_elastic_pool
+  list_by_elastic_pool
+  get_by_recommended_elastic_pool
+  list_by_recommended_elastic_pool
+  rename
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -635,6 +713,7 @@ Sample after properties copied ---
   "readScale": "Disabled",
   "failoverGroupId": null
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -686,6 +765,15 @@ Sample after properties copied ---
   "readScale": "Disabled",
   "failoverGroupId": null
 }
+------------------------------- Database
+  list_metrics
+  list_metric_definitions
+  create_or_update
+  update
+  delete
+  get
+  list_by_server
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -770,6 +858,7 @@ Sample after properties copied ---
   "databaseDtuMax": "5",
   "storageMB": "5000"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -798,6 +887,13 @@ Sample after properties copied ---
   "databaseDtuMax": "5",
   "storageMB": "5000"
 }
+------------------------------- Elastic Pool
+  delete
+  get
+  failover
+  failover_allow_data_loss
+  list_by_database
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -831,6 +927,12 @@ Sample after properties copied ---
   "replicationState": "CATCH_UP",
   "isTerminationAllowed": true
 }
+------------------------------- Replication Link
+  create_or_update
+  delete
+  get
+  list_by_server
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -869,6 +971,7 @@ Sample after properties copied ---
   "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
   "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -888,6 +991,12 @@ Sample after properties copied ---
   "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
   "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
 }
+------------------------------- Server Azure A D Administrator
+  delete
+  get
+  create_or_update
+  list_by_server
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -908,6 +1017,7 @@ Sample after properties copied ---
 }
 Getting example for: create_or_update
 Found example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -926,9 +1036,22 @@ Sample after properties copied ---
   "state": "Ready",
   "partnerServer": "sqlcrudtest-test"
 }
+------------------------------- Server Communication Link
+  get
+  list_by_server
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
+------------------------------- Service Objective
+  check_name_availability
+  list
+  list_by_resource_group
+  get
+  create_or_update
+  delete
+  update
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1004,6 +1127,7 @@ Sample after properties copied ---
   "version": "12.0",
   "state": "Ready"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1029,6 +1153,17 @@ Sample after properties copied ---
   "version": "12.0",
   "state": "Ready"
 }
+------------------------------- Server
+  list_by_elastic_pool
+  ** CREATING FACT MODULE
+------------------------------- Elastic Pool Activity
+  list_by_elastic_pool
+  ** CREATING FACT MODULE
+------------------------------- Elastic Pool Database Activity
+  get
+  list_by_server
+  list_metrics
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1095,6 +1230,10 @@ Sample after properties copied ---
     }
   ]
 }
+------------------------------- Recommended Elastic Pool
+  get
+  list_by_database
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1157,6 +1296,10 @@ Sample after properties copied ---
   "overallRecommendationServiceLevelObjectiveId": null,
   "confidence": "1"
 }
+------------------------------- Service Tier Advisor
+  create_or_update
+  get
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1187,6 +1330,7 @@ Sample after properties copied ---
   },
   "status": "Enabled"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1202,6 +1346,19 @@ Sample after properties copied ---
   },
   "status": "Enabled"
 }
+------------------------------- Transparent Data Encryption
+  list_by_configuration
+  ** CREATING FACT MODULE
+------------------------------- Transparent Data Encryption Activity
+  list_by_server
+  ** CREATING FACT MODULE
+------------------------------- Server Usage
+  list_by_database
+  ** CREATING FACT MODULE
+------------------------------- Database Usage
+  get
+  create_or_update
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1262,6 +1419,7 @@ Sample after properties copied ---
     "UPDATE on database::TestDatabaseName by public"
   ]
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1287,6 +1445,11 @@ Sample after properties copied ---
   "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000",
   "isStorageSecondaryKeyInUse": false
 }
+------------------------------- Database Blob Auditing Policy
+  list_by_server
+  get
+  create_or_update
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1325,6 +1488,7 @@ Sample after properties copied ---
   "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
   "serverKeyType": "AzureKeyVault"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1345,6 +1509,15 @@ Sample after properties copied ---
   "serverKeyType": "AzureKeyVault",
   "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
 }
+------------------------------- Encryption Protector
+  get
+  create_or_update
+  delete
+  update
+  list_by_server
+  failover
+  force_failover_allow_data_loss
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1496,6 +1669,7 @@ Sample after properties copied ---
     "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-1"
   ]
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1543,6 +1717,14 @@ Sample after properties copied ---
   ],
   "databases": []
 }
+------------------------------- Failover Group
+  list
+------------------------------- Operation
+  list_by_server
+  get
+  create_or_update
+  delete
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1587,6 +1769,7 @@ Sample after properties copied ---
   "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
   "creationDate": "2017-05-01T00:00:00Z"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1609,6 +1792,14 @@ Sample after properties copied ---
   "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
   "creationDate": "2017-05-01T00:00:00Z"
 }
+------------------------------- Server Key
+  get
+  create_or_update
+  delete
+  list_by_server
+  generate_key
+  list_linked_databases
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1653,6 +1844,7 @@ Sample after properties copied ---
   "expiryTime": "9999-12-31T23:59:59.9999999Z",
   "version": "4.2.0.0"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1675,6 +1867,19 @@ Sample after properties copied ---
   "expiryTime": "9999-12-31T23:59:59.9999999Z",
   "version": "4.2.0.0"
 }
+------------------------------- Sync Agent
+  list_sync_database_ids
+  refresh_hub_schema
+  list_hub_schemas
+  list_logs
+  cancel_sync
+  trigger_sync
+  get
+  create_or_update
+  delete
+  update
+  list_by_database
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1747,6 +1952,7 @@ Sample after properties copied ---
   "hubDatabaseUserName": "hubUser",
   "syncState": "NotReady"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1771,6 +1977,15 @@ Sample after properties copied ---
   "hubDatabaseUserName": "hubUser",
   "syncState": "NotReady"
 }
+------------------------------- Sync Group
+  get
+  create_or_update
+  delete
+  update
+  list_by_sync_group
+  list_member_schemas
+  refresh_member_schema
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1843,6 +2058,7 @@ Sample after properties copied ---
   "syncDirection": "Bidirectional",
   "syncState": "UnProvisioned"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1867,6 +2083,10 @@ Sample after properties copied ---
   "syncDirection": "Bidirectional",
   "syncState": "UnProvisioned"
 }
+------------------------------- Sync Member
+  list_by_location
+  get
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1887,6 +2107,12 @@ Sample after properties copied ---
   "limit": "20",
   "unit": "Count"
 }
+------------------------------- Subscription Usage
+  get
+  create_or_update
+  delete
+  list_by_server
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1921,6 +2147,7 @@ Sample after properties copied ---
   "ignoreMissingVnetServiceEndpoint": false,
   "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1939,6 +2166,17 @@ Sample after properties copied ---
   "state": "Ready",
   "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
 }
+------------------------------- Virtual Network Rule
+  cancel
+  list_by_database
+  ** CREATING FACT MODULE
+------------------------------- Database Operation
+  get
+  create_or_update
+  delete
+  list_by_server
+  acquire
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1967,6 +2205,7 @@ Sample after properties copied ---
   },
   "azureDnsRecord": "dns-alias-name-1.database.windows.net"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get

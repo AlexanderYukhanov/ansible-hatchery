@@ -1,3 +1,10 @@
+------------------------------- Container Group
+  list
+  list_by_resource_group
+  get
+  create_or_update
+  delete
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -312,6 +319,7 @@ Sample after properties copied ---
     }
   ]
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -485,3 +493,7 @@ Sample after properties copied ---
     "state": "Running"
   }
 }
+------------------------------- Container Group
+  list
+------------------------------- Operation
+  list

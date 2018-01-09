@@ -1,6 +1,29 @@
+------------------------------- Application Gateway
+  delete
+  get
+  create_or_update
+  update_tags
+  list
+  list_all
+  start
+  stop
+  backend_health
+  list_available_waf_rule_sets
+  list_available_ssl_options
+  list_available_ssl_predefined_policies
+  get_ssl_predefined_policy
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Application Gateway
+  delete
+  get
+  create_or_update
+  list_all
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -35,6 +58,7 @@ Sample after properties copied ---
   "provisioningState": "Succeeded",
   "resourceGuid": "00000000-0000-0000-0000-000000000000"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -52,15 +76,57 @@ Sample after properties copied ---
   "provisioningState": "Succeeded",
   "resourceGuid": "00000000-0000-0000-0000-000000000000"
 }
+------------------------------- Application Security Group
+  check_dns_name_availability
+-------------------------------
+  list
+------------------------------- Available Endpoint Service
+  delete
+  get
+  create_or_update
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Express Route Circuit Authorization
+  delete
+  get
+  create_or_update
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Express Route Circuit Peering
+  delete
+  get
+  create_or_update
+  update_tags
+  list_arp_table
+  list_routes_table
+  list_routes_table_summary
+  get_stats
+  get_peering_stats
+  list
+  list_all
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Express Route Circuit
+  list
+------------------------------- Express Route Service Provider
+  delete
+  get
+  create_or_update
+  update_tags
+  list_all
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -501,6 +567,7 @@ Sample after properties copied ---
   "outboundNatRules": [],
   "inboundNatPools": []
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -721,6 +788,10 @@ Sample after properties copied ---
   "outboundNatRules": [],
   "inboundNatPools": []
 }
+------------------------------- Load Balancer
+  list
+  get
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -755,6 +826,10 @@ Sample after properties copied ---
     }
   ]
 }
+------------------------------- Load Balancer Backend Address Pool
+  list
+  get
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -799,6 +874,12 @@ Sample after properties copied ---
     }
   ]
 }
+------------------------------- Load Balancer Frontend I P Configuration
+  list
+  delete
+  get
+  create_or_update
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -869,6 +950,7 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
   }
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -904,6 +986,10 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
   }
 }
+------------------------------- Inbound Nat Rule
+  list
+  get
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -948,6 +1034,12 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1"
   }
 }
+------------------------------- Load Balancer Load Balancing Rule
+  list
+------------------------------- Load Balancer Network Interface
+  list
+  get
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -982,6 +1074,21 @@ Sample after properties copied ---
     }
   ]
 }
+------------------------------- Load Balancer Probe
+  delete
+  get
+  create_or_update
+  update_tags
+  list_all
+  list
+  get_effective_route_table
+  list_effective_network_security_groups
+  list_virtual_machine_scale_set_vm_network_interfaces
+  list_virtual_machine_scale_set_network_interfaces
+  get_virtual_machine_scale_set_network_interface
+  list_virtual_machine_scale_set_ip_configurations
+  get_virtual_machine_scale_set_ip_configuration
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1130,6 +1237,7 @@ Sample after properties copied ---
   "enableAcceleratedNetworking": true,
   "enableIPForwarding": false
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1213,6 +1321,10 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachines/vm1"
   }
 }
+------------------------------- Network Interface
+  list
+  get
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1259,6 +1371,16 @@ Sample after properties copied ---
     }
   ]
 }
+------------------------------- Network Interface I P Configuration
+  list
+------------------------------- Network Interface Load Balancer
+  delete
+  get
+  create_or_update
+  update_tags
+  list_all
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1717,6 +1839,7 @@ Sample after properties copied ---
     }
   ]
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -1962,6 +2085,12 @@ Sample after properties copied ---
     }
   ]
 }
+------------------------------- Network Security Group
+  delete
+  get
+  create_or_update
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2020,6 +2149,7 @@ Sample after properties copied ---
   "priority": "100",
   "direction": "Outbound"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2049,6 +2179,10 @@ Sample after properties copied ---
   "priority": "130",
   "direction": "Inbound"
 }
+------------------------------- Security Rule
+  list
+  get
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2088,12 +2222,54 @@ Sample after properties copied ---
   "sourceAddressPrefixes": [],
   "destinationAddressPrefixes": []
 }
+------------------------------- Default Security Rule
+  create_or_update
+  get
+  delete
+  update_tags
+  list
+  list_all
+  get_topology
+  verify_ip_flow
+  get_next_hop
+  get_vm_security_rules
+  get_troubleshooting
+  get_troubleshooting_result
+  set_flow_log_configuration
+  get_flow_log_status
+  check_connectivity
+  get_azure_reachability_report
+  list_available_providers
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Network Watcher
+  create
+  get
+  delete
+  stop
+  get_status
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Packet Capture
+  list
+------------------------------- Operation
+  delete
+  get
+  create_or_update
+  update_tags
+  list_all
+  list
+  list_virtual_machine_scale_set_public_ip_addresses
+  list_virtual_machine_scale_set_vm_public_ip_addresses
+  get_virtual_machine_scale_set_public_ip_address
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2151,6 +2327,7 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
   }
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2178,6 +2355,14 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
   }
 }
+------------------------------- Public I P Addresse
+  delete
+  get
+  create_or_update
+  update
+  list_by_resource_group
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2335,6 +2520,7 @@ Sample after properties copied ---
   ],
   "peerings": []
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2388,6 +2574,13 @@ Sample after properties copied ---
   ],
   "peerings": []
 }
+------------------------------- Route Filter
+  delete
+  get
+  create_or_update
+  update
+  list_by_route_filter
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2475,6 +2668,7 @@ Sample after properties copied ---
     "12076:5040"
   ]
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2504,6 +2698,14 @@ Sample after properties copied ---
     "12076:5040"
   ]
 }
+------------------------------- Route Filter Rule
+  delete
+  get
+  create_or_update
+  update_tags
+  list
+  list_all
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2562,6 +2764,7 @@ Sample after properties copied ---
   "routes": [],
   "disableBgpRoutePropagation": true
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2601,6 +2804,12 @@ Sample after properties copied ---
     }
   ]
 }
+------------------------------- Route Table
+  delete
+  get
+  create_or_update
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2635,6 +2844,7 @@ Sample after properties copied ---
   "addressPrefix": "10.0.3.0/24",
   "nextHopType": "VirtualNetworkGateway"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2652,6 +2862,20 @@ Sample after properties copied ---
   "addressPrefix": "10.0.3.0/24",
   "nextHopType": "Internet"
 }
+------------------------------- Route
+  list
+------------------------------- Bgp Service Community
+  list
+------------------------------- Usage
+  delete
+  get
+  create_or_update
+  update_tags
+  list_all
+  list
+  check_ip_address_availability
+  list_usage
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2738,6 +2962,7 @@ Sample after properties copied ---
   "subnets": [],
   "virtualNetworkPeerings": []
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2795,6 +3020,12 @@ Sample after properties copied ---
   ],
   "virtualNetworkPeerings": []
 }
+------------------------------- Virtual Network
+  delete
+  get
+  create_or_update
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2825,6 +3056,7 @@ Sample after properties copied ---
   "addressPrefix": "10.0.0.0/16",
   "provisioningState": "Succeeded"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2840,6 +3072,12 @@ Sample after properties copied ---
   "addressPrefix": "10.0.0.0/16",
   "provisioningState": "Succeeded"
 }
+------------------------------- Subnet
+  delete
+  get
+  create_or_update
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2918,6 +3156,7 @@ Sample after properties copied ---
   "peeringState": "Initiated",
   "provisioningState": "Succeeded"
 }
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -2957,12 +3196,49 @@ Sample after properties copied ---
   "peeringState": "Initiated",
   "provisioningState": "Succeeded"
 }
+------------------------------- Virtual Network Peering
+  create_or_update
+  get
+  delete
+  update_tags
+  list
+  list_connections
+  reset
+  generatevpnclientpackage
+  generate_vpn_profile
+  get_vpn_profile_package_url
+  get_bgp_peer_status
+  supported_vpn_devices
+  get_learned_routes
+  get_advertised_routes
+  vpn_device_configuration_script
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Virtual Network Gateway
+  create_or_update
+  get
+  delete
+  update_tags
+  set_shared_key
+  get_shared_key
+  list
+  reset_shared_key
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
+------------------------------- Virtual Network Gateway Connection
+  create_or_update
+  get
+  delete
+  update_tags
+  list
+  ** CREATING MAIN MODULE
 Getting example for: get
 Getting example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get

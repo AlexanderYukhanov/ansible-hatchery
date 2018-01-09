@@ -1,3 +1,13 @@
+------------------------------- Classic Administrator
+  list
+------------------------------- Classic Administrator
+  list_for_resource_group
+  list_for_resource
+  ** CREATING FACT MODULE
+------------------------------- Permission
+  get
+  list
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -16,6 +26,18 @@ Sample after properties copied ---
   ],
   "operations": []
 }
+------------------------------- Provider Operations Metadata
+  list_for_resource
+  list_for_resource_group
+  delete
+  create
+  get
+  delete_by_id
+  create_by_id
+  get_by_id
+  list
+  list_for_scope
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -36,6 +58,7 @@ Sample after properties copied ---
 }
 Getting example for: create
 Found example for: create
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -54,6 +77,13 @@ Sample after properties copied ---
   "principalId": "Pid",
   "scope": "/subscriptions/subId/resourcegroups/rgname"
 }
+------------------------------- Role Assignment
+  delete
+  get
+  create_or_update
+  list
+  get_by_id
+  ** CREATING MAIN MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
@@ -96,6 +126,7 @@ Sample after properties copied ---
 }
 Getting example for: create_or_update
 Found example for: create_or_update
+  ** CREATING FACT MODULE
 Getting example for: get
 Found example for: get
 Found response for: get
