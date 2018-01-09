@@ -55,6 +55,15 @@ EXAMPLES = '''
       server_name: server_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID
+        returned: always
+        type: str
+        sample: /subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforPostgreSQL/servers/testserver/firewallRules/rule1
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

@@ -56,6 +56,22 @@ EXAMPLES = '''
       blob_auditing_policy_name: blob_auditing_policy_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-6852/providers/Microsoft.Sql/servers/blobauditingtest-2080/databases/testdb
+    state:
+        description:
+            - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(Enabl
+               ed), C(Disabled)"
+        returned: always
+        type: str
+        sample: Disabled
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

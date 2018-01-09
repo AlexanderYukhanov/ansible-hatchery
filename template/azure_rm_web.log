@@ -1,7 +1,61 @@
+Getting example for: get
 Getting example for: create_or_update
 Getting example for: update
+Getting example for: get
+Getting example for: get
 Getting example for: create_or_update
 Getting example for: update
+Getting example for: get
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Error copying property --- name
+Sample after properties copied ---
+{
+  "id": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/providers/Microsoft.DomainRegistration/topLevelDomains/com",
+  "name": "com",
+  "type": "Microsoft.DomainRegistration/topLevelDomains",
+  "location": "global",
+  "properties": {
+    "name": "com",
+    "privacy": true
+  },
+  "privacy": true
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282",
+  "name": "testc6282",
+  "type": "Microsoft.Web/certificates",
+  "location": "East US",
+  "properties": {
+    "friendlyName": "",
+    "subjectName": "ServerCert",
+    "hostNames": [
+      "ServerCert"
+    ],
+    "issuer": "CACert",
+    "issueDate": "2015-11-13T07:40:25+08:00",
+    "expirationDate": "2040-01-01T07:59:59+08:00",
+    "thumbprint": "FE703D7411A44163B6D32B3AD9B03E175886EBFE",
+    "password": "SWsSsd__233$Sdsds#%Sd!"
+  },
+  "friendlyName": "",
+  "subjectName": "ServerCert",
+  "hostNames": [
+    "ServerCert"
+  ],
+  "issuer": "CACert",
+  "issueDate": "2015-11-13T07:40:25+08:00",
+  "expirationDate": "2040-01-01T07:59:59+08:00",
+  "thumbprint": "FE703D7411A44163B6D32B3AD9B03E175886EBFE",
+  "password": "SWsSsd__233$Sdsds#%Sd!"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -68,10 +122,100 @@ Sample after properties copied ---
   "thumbprint": "FE703D7411A44163B6D32B3AD9B03E175886EBFE",
   "password": "SWsSsd__233$Sdsds#%Sd!"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282",
+  "name": "testc6282",
+  "type": "Microsoft.Web/certificates",
+  "location": "East US",
+  "properties": {
+    "friendlyName": "",
+    "subjectName": "ServerCert",
+    "hostNames": [
+      "ServerCert"
+    ],
+    "issuer": "CACert",
+    "issueDate": "2015-11-13T07:40:25+08:00",
+    "expirationDate": "2040-01-01T07:59:59+08:00",
+    "thumbprint": "FE703D7411A44163B6D32B3AD9B03E175886EBFE",
+    "password": "SWsSsd__233$Sdsds#%Sd!"
+  },
+  "friendlyName": "",
+  "subjectName": "ServerCert",
+  "hostNames": [
+    "ServerCert"
+  ],
+  "issuer": "CACert",
+  "issueDate": "2015-11-13T07:40:25+08:00",
+  "expirationDate": "2040-01-01T07:59:59+08:00",
+  "thumbprint": "FE703D7411A44163B6D32B3AD9B03E175886EBFE",
+  "password": "SWsSsd__233$Sdsds#%Sd!"
+}
+Getting example for: get
 Getting example for: create_or_update
 Getting example for: update
+Getting example for: get
+Getting example for: get
 Getting example for: create_or_update
 Getting example for: update
+Getting example for: get
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Error copying property --- name
+Error copying property --- kind
+Sample after properties copied ---
+{
+  "id": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141",
+  "name": "testsf6141",
+  "type": "Microsoft.Web/serverfarms",
+  "kind": "app",
+  "location": "East US",
+  "properties": {
+    "name": "testsf6141",
+    "workerSize": "Default",
+    "numberOfWorkers": "1",
+    "currentWorkerSize": "Default",
+    "currentNumberOfWorkers": "1",
+    "status": "Ready",
+    "maximumNumberOfWorkers": "20",
+    "geoRegion": "East US",
+    "numberOfSites": "4",
+    "isSpot": false,
+    "kind": "app",
+    "reserved": false,
+    "mdmId": "waws-prod-blu-033_4740",
+    "targetWorkerCount": "0",
+    "targetWorkerSizeId": "0",
+    "provisioningState": "Succeeded"
+  },
+  "sku": {
+    "name": "P1",
+    "tier": "Premium",
+    "size": "P1",
+    "family": "P",
+    "capacity": "1"
+  },
+  "workerSize": "Default",
+  "numberOfWorkers": "1",
+  "currentWorkerSize": "Default",
+  "currentNumberOfWorkers": "1",
+  "status": "Ready",
+  "maximumNumberOfWorkers": "20",
+  "geoRegion": "East US",
+  "numberOfSites": "4",
+  "isSpot": false,
+  "reserved": false,
+  "mdmId": "waws-prod-blu-033_4740",
+  "targetWorkerCount": "0",
+  "targetWorkerSizeId": "0",
+  "provisioningState": "Succeeded"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -164,6 +308,59 @@ Sample after properties copied ---
   "maximumNumberOfWorkers": "20",
   "geoRegion": "East US",
   "numberOfSites": "4",
+  "reserved": false,
+  "mdmId": "waws-prod-blu-033_4740",
+  "targetWorkerCount": "0",
+  "targetWorkerSizeId": "0",
+  "provisioningState": "Succeeded"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Error copying property --- name
+Error copying property --- kind
+Sample after properties copied ---
+{
+  "id": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141",
+  "name": "testsf6141",
+  "type": "Microsoft.Web/serverfarms",
+  "kind": "app",
+  "location": "East US",
+  "properties": {
+    "name": "testsf6141",
+    "workerSize": "Default",
+    "numberOfWorkers": "1",
+    "currentWorkerSize": "Default",
+    "currentNumberOfWorkers": "1",
+    "status": "Ready",
+    "maximumNumberOfWorkers": "20",
+    "geoRegion": "East US",
+    "numberOfSites": "4",
+    "isSpot": false,
+    "kind": "app",
+    "reserved": false,
+    "mdmId": "waws-prod-blu-033_4740",
+    "targetWorkerCount": "0",
+    "targetWorkerSizeId": "0",
+    "provisioningState": "Succeeded"
+  },
+  "sku": {
+    "name": "P1",
+    "tier": "Premium",
+    "size": "P1",
+    "family": "P",
+    "capacity": "1"
+  },
+  "workerSize": "Default",
+  "numberOfWorkers": "1",
+  "currentWorkerSize": "Default",
+  "currentNumberOfWorkers": "1",
+  "status": "Ready",
+  "maximumNumberOfWorkers": "20",
+  "geoRegion": "East US",
+  "numberOfSites": "4",
+  "isSpot": false,
   "reserved": false,
   "mdmId": "waws-prod-blu-033_4740",
   "targetWorkerCount": "0",

@@ -61,6 +61,9 @@ EXAMPLES = '''
       resource_group: resource_group_name
 '''
 
+RETURN = '''
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

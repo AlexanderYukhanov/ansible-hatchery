@@ -51,6 +51,22 @@ EXAMPLES = '''
       replication_name: replication_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - The resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication
+    status:
+        description:
+            - The status of the replication at the time the operation was called.
+        returned: always
+        type: complex
+        sample: status
+        suboptions:
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

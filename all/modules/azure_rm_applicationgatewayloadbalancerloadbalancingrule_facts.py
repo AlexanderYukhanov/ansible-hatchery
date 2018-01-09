@@ -51,6 +51,15 @@ EXAMPLES = '''
       load_balancing_rule_name: load_balancing_rule_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/loadBalancingRules/rule1
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

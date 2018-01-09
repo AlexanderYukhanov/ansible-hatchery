@@ -234,7 +234,201 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The provider id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": [],
+          "Info": "id"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The provider name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": [],
+          "Info": "name"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The provider type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "type"
+        },
+        {
+          "Name": "display_name",
+          "NameAlt": "x",
+          "Description": "The provider display name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "display_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "resource_types",
+          "NameAlt": "x",
+          "Description": "The provider resource types",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "resource_types",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "The resource type name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "display_name",
+              "NameAlt": "x",
+              "Description": "The resource type display name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "display_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "operations",
+              "NameAlt": "x",
+              "Description": "The resource type operations.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "operations",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "The operation name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "display_name",
+                  "NameAlt": "x",
+                  "Description": "The operation display name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "display_name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "description",
+                  "NameAlt": "x",
+                  "Description": "The operation description.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "description",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "origin",
+                  "NameAlt": "x",
+                  "Description": "The operation origin.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "origin",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "properties",
+                  "NameAlt": "x",
+                  "Description": "The operation properties.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "properties",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "operations",
+          "NameAlt": "x",
+          "Description": "The provider operations.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "operations",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "The operation name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "display_name",
+              "NameAlt": "x",
+              "Description": "The operation display name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "display_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "description",
+              "NameAlt": "x",
+              "Description": "The operation description.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "description",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "origin",
+              "NameAlt": "x",
+              "Description": "The operation origin.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "origin",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "properties",
+              "NameAlt": "x",
+              "Description": "The operation properties.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "properties",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "[]"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -773,7 +967,79 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The role assignment ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/subId/resourcegroups/rgname/providers/Microsoft.Authorization/roleAssignments/roleassignmentId",
+          "SubFields": [],
+          "Info": "/subscriptions/subId/resourcegroups/rgname/providers/Microsoft.Authorization/roleAssignments/roleassignmentId"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The role assignment name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "raId",
+          "SubFields": [],
+          "Info": "raId"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The role assignment type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Authorization/roleAssignments",
+          "SubFields": [],
+          "Info": "Microsoft.Authorization/roleAssignments"
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "x",
+          "Description": "Role assignment properties.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "properties",
+          "SubFields": [
+            {
+              "Name": "scope",
+              "NameAlt": "x",
+              "Description": "The role assignment scope.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "/subscriptions/subId/resourcegroups/rgname",
+              "SubFields": [],
+              "Info": "/subscriptions/subId/resourcegroups/rgname"
+            },
+            {
+              "Name": "role_definition_id",
+              "NameAlt": "x",
+              "Description": "The role definition ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "role_definition_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "principal_id",
+              "NameAlt": "x",
+              "Description": "The principal ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "principal_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "{\r\n  \"roleDefinitionId\": \"/subscriptions/subId/providers/Microsoft.Authorization/roleDefinitions/roledefinitionId\",\r\n  \"principalId\": \"Pid\",\r\n  \"scope\": \"/subscriptions/subId/resourcegroups/rgname\"\r\n}"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -1291,7 +1557,120 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The role definition ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/subID/providers/Microsoft.Authorization/roleDefinitions/roleDefinitionId",
+          "SubFields": [],
+          "Info": "/subscriptions/subID/providers/Microsoft.Authorization/roleDefinitions/roleDefinitionId"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The role definition name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "roleDefinitionId",
+          "SubFields": [],
+          "Info": "roleDefinitionId"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The role definition type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Authorization/roleDefinitions",
+          "SubFields": [],
+          "Info": "Microsoft.Authorization/roleDefinitions"
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "x",
+          "Description": "Role definition properties.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "properties",
+          "SubFields": [
+            {
+              "Name": "role_name",
+              "NameAlt": "x",
+              "Description": "The role name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "role_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "description",
+              "NameAlt": "x",
+              "Description": "The role definition description.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "Role description",
+              "SubFields": [],
+              "Info": "Role description"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "The role type.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "roletype",
+              "SubFields": [],
+              "Info": "roletype"
+            },
+            {
+              "Name": "permissions",
+              "NameAlt": "x",
+              "Description": "Role definition permissions.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "permissions",
+              "SubFields": [
+                {
+                  "Name": "actions",
+                  "NameAlt": "x",
+                  "Description": "Allowed actions.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "actions",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "not_actions",
+                  "NameAlt": "x",
+                  "Description": "Denied actions.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "not_actions",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "[\r\n  {\r\n    \"actions\": [\r\n      \"action\"\r\n    ],\r\n    \"notActions\": []\r\n  }\r\n]"
+            },
+            {
+              "Name": "assignable_scopes",
+              "NameAlt": "x",
+              "Description": "Role definition assignable scopes.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "assignable_scopes",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "{\r\n  \"roleName\": \"Role name\",\r\n  \"type\": \"roletype\",\r\n  \"description\": \"Role description\",\r\n  \"assignableScopes\": [\r\n    \"/subscriptions/subId\"\r\n  ],\r\n  \"permissions\": [\r\n    {\r\n      \"actions\": [\r\n        \"action\"\r\n      ],\r\n      \"notActions\": []\r\n    }\r\n  ]\r\n}"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,

@@ -53,6 +53,15 @@ EXAMPLES = '''
       name: name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource Id.
+        returned: always
+        type: str
+        sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/providers/Microsoft.DomainRegistration/topLevelDomains/com
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

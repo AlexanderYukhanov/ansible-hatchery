@@ -56,6 +56,15 @@ EXAMPLES = '''
       data_masking_policy_name: data_masking_policy_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

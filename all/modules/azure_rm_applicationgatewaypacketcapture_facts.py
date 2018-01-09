@@ -51,6 +51,15 @@ EXAMPLES = '''
       packet_capture_name: packet_capture_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - ID of the packet capture operation.
+        returned: always
+        type: str
+        sample: id
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

@@ -51,6 +51,15 @@ EXAMPLES = '''
       ip_configuration_name: ip_configuration_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/mynic/ipConfigurations/ipconfig1
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

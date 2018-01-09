@@ -1,6 +1,6 @@
-Getting example for: create_or_update
-Found example for: create_or_update
-Found response for: create_or_update
+Getting example for: get
+Found example for: get
+Found response for: get
 Found properties
 Sample after properties copied ---
 {
@@ -21,6 +21,40 @@ Found response for: create_or_update
 Found properties
 Sample after properties copied ---
 {
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+  "location": "Japan East",
+  "properties": {
+    "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
+    "state": "Enabled"
+  },
+  "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
+  "state": "Enabled"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+  "location": "Japan East",
+  "properties": {
+    "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
+    "state": "Enabled"
+  },
+  "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
+  "state": "Enabled"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
   "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault",
   "name": "RegisteredVault",
   "type": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
@@ -29,6 +63,101 @@ Sample after properties copied ---
     "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
   },
   "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault",
+  "name": "RegisteredVault",
+  "type": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
+  "location": "Japan East",
+  "properties": {
+    "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
+  },
+  "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault",
+  "name": "RegisteredVault",
+  "type": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
+  "location": "Japan East",
+  "properties": {
+    "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
+  },
+  "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/recoverabledatabasetest-6852/providers/Microsoft.Sql/servers/recoverabledatabasetest-2080/recoverabledatabases/recoverabledatabasetest-9187",
+  "name": "recoverabledatabasetest-9187",
+  "type": "Microsoft.Sql/servers/recoverabledatabases",
+  "properties": {
+    "edition": "Basic",
+    "serviceLevelObjective": "Basic",
+    "lastAvailableBackupDate": "2017-05-26T01:06:29.78Z",
+    "elasticPoolName": null
+  },
+  "edition": "Basic",
+  "serviceLevelObjective": "Basic",
+  "lastAvailableBackupDate": "2017-05-26T01:06:29.78Z",
+  "elasticPoolName": null
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/restorabledroppeddatabasetest-1257/providers/Microsoft.Sql/servers/restorabledroppeddatabasetest-2389/restorableDroppedDatabases/restorabledroppeddatabasetest-7654,131403269876900000",
+  "name": "restorabledroppeddatabasetest-7654,131403269876900000",
+  "type": "Microsoft.Sql/servers/restorableDroppedDatabases",
+  "location": "Japan East",
+  "properties": {
+    "databaseName": "restorabledroppeddatabasetest-7654",
+    "edition": "Basic",
+    "maxSizeBytes": "2147483648",
+    "serviceLevelObjective": "Basic",
+    "elasticPoolName": null,
+    "creationDate": "2017-02-10T00:56:19.2Z",
+    "deletionDate": "2017-05-27T02:49:47.69Z",
+    "earliestRestoreDate": "2017-05-20T02:49:47.69Z"
+  },
+  "databaseName": "restorabledroppeddatabasetest-7654",
+  "edition": "Basic",
+  "maxSizeBytes": "2147483648",
+  "serviceLevelObjective": "Basic",
+  "elasticPoolName": null,
+  "creationDate": "2017-02-10T00:56:19.2Z",
+  "deletionDate": "2017-05-27T02:49:47.69Z",
+  "earliestRestoreDate": "2017-05-20T02:49:47.69Z"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/connectionPolicies",
+  "location": "West US",
+  "kind": null,
+  "properties": {
+    "connectionType": "Default"
+  },
+  "connectionType": "Default"
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -45,6 +174,52 @@ Sample after properties copied ---
     "connectionType": "Proxy"
   },
   "connectionType": "Proxy"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/connectionPolicies",
+  "location": "West US",
+  "kind": null,
+  "properties": {
+    "connectionType": "Default"
+  },
+  "connectionType": "Default"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-6852/providers/Microsoft.Sql/servers/securityalert-2080/databases/testdb",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/databases/securityAlertPolicies",
+  "location": "Japan East",
+  "kind": "V12",
+  "properties": {
+    "state": "Enabled",
+    "emailAccountAdmins": "Enabled",
+    "emailAddresses": "test@microsoft.com;user@microsoft.com",
+    "disabledAlerts": "Usage_Anomaly",
+    "retentionDays": "0",
+    "storageAccountAccessKey": "",
+    "storageEndpoint": "",
+    "useServerDefault": "Enabled"
+  },
+  "state": "Enabled",
+  "emailAccountAdmins": "Enabled",
+  "emailAddresses": "test@microsoft.com;user@microsoft.com",
+  "disabledAlerts": "Usage_Anomaly",
+  "retentionDays": "0",
+  "storageAccountAccessKey": "",
+  "storageEndpoint": "",
+  "useServerDefault": "Enabled"
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -75,6 +250,58 @@ Sample after properties copied ---
   "storageEndpoint": "https://mystorage.blob.core.windows.net",
   "useServerDefault": "Enabled"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-6852/providers/Microsoft.Sql/servers/securityalert-2080/databases/testdb",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/databases/securityAlertPolicies",
+  "location": "Japan East",
+  "kind": "V12",
+  "properties": {
+    "state": "Enabled",
+    "emailAccountAdmins": "Enabled",
+    "emailAddresses": "test@microsoft.com;user@microsoft.com",
+    "disabledAlerts": "Usage_Anomaly",
+    "retentionDays": "0",
+    "storageAccountAccessKey": "",
+    "storageEndpoint": "",
+    "useServerDefault": "Enabled"
+  },
+  "state": "Enabled",
+  "emailAccountAdmins": "Enabled",
+  "emailAddresses": "test@microsoft.com;user@microsoft.com",
+  "disabledAlerts": "Usage_Anomaly",
+  "retentionDays": "0",
+  "storageAccountAccessKey": "",
+  "storageEndpoint": "",
+  "useServerDefault": "Enabled"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/dataMaskingPolicies",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "dataMaskingState": "Enabled",
+    "applicationPrincipals": "",
+    "exemptPrincipals": "",
+    "maskingLevel": ""
+  },
+  "dataMaskingState": "Enabled",
+  "applicationPrincipals": "",
+  "exemptPrincipals": "",
+  "maskingLevel": ""
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -95,6 +322,28 @@ Sample after properties copied ---
   "dataMaskingState": "Enabled",
   "applicationPrincipals": "",
   "exemptPrincipals": "testuser;",
+  "maskingLevel": ""
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/dataMaskingPolicies",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "dataMaskingState": "Enabled",
+    "applicationPrincipals": "",
+    "exemptPrincipals": "",
+    "maskingLevel": ""
+  },
+  "dataMaskingState": "Enabled",
+  "applicationPrincipals": "",
+  "exemptPrincipals": "",
   "maskingLevel": ""
 }
 Getting example for: create_or_update
@@ -135,6 +384,24 @@ Sample after properties copied ---
   "suffixSize": "0",
   "replacementString": "asdf"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-2304",
+  "name": "firewallrulecrudtest-2304",
+  "type": "Microsoft.Sql/servers/firewallRules",
+  "location": "Japan East",
+  "kind": "v12.0",
+  "properties": {
+    "startIpAddress": "0.0.0.0",
+    "endIpAddress": "0.0.0.0"
+  },
+  "startIpAddress": "0.0.0.0",
+  "endIpAddress": "0.0.0.0"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -152,6 +419,42 @@ Sample after properties copied ---
   },
   "startIpAddress": "0.0.0.3",
   "endIpAddress": "0.0.0.3"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-2304",
+  "name": "firewallrulecrudtest-2304",
+  "type": "Microsoft.Sql/servers/firewallRules",
+  "location": "Japan East",
+  "kind": "v12.0",
+  "properties": {
+    "startIpAddress": "0.0.0.0",
+    "endIpAddress": "0.0.0.0"
+  },
+  "startIpAddress": "0.0.0.0",
+  "endIpAddress": "0.0.0.0"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "state": "Enabled",
+    "storageType": "Premium"
+  },
+  "state": "Enabled",
+  "storageType": "Premium"
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -171,6 +474,75 @@ Sample after properties copied ---
   "state": "Enabled",
   "storageType": null
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "state": "Enabled",
+    "storageType": "Premium"
+  },
+  "state": "Enabled",
+  "storageType": "Premium"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "tags": {
+    "tagKey1": "TagValue1"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187",
+  "name": "sqlcrudtest-9187",
+  "type": "Microsoft.Sql/servers/databases",
+  "location": "Japan East",
+  "kind": "v12.0,user",
+  "properties": {
+    "databaseId": "200216b2-dc19-4866-85aa-f73fe4a1ebac",
+    "edition": "Basic",
+    "status": "Online",
+    "serviceLevelObjective": "Basic",
+    "collation": "SQL_Latin1_General_CP1_CI_AS",
+    "maxSizeBytes": "2147483648",
+    "creationDate": "2017-02-10T00:56:19.2Z",
+    "currentServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+    "requestedServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+    "requestedServiceObjectiveName": "Basic",
+    "sampleName": null,
+    "defaultSecondaryLocation": "Japan West",
+    "earliestRestoreDate": "2017-02-10T01:06:29.78Z",
+    "elasticPoolName": null,
+    "containmentState": "2",
+    "readScale": "Disabled",
+    "failoverGroupId": null
+  },
+  "databaseId": "200216b2-dc19-4866-85aa-f73fe4a1ebac",
+  "edition": "Basic",
+  "status": "Online",
+  "serviceLevelObjective": "Basic",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "maxSizeBytes": "2147483648",
+  "creationDate": "2017-02-10T00:56:19.2Z",
+  "currentServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+  "requestedServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+  "requestedServiceObjectiveName": "Basic",
+  "sampleName": null,
+  "defaultSecondaryLocation": "Japan West",
+  "earliestRestoreDate": "2017-02-10T01:06:29.78Z",
+  "elasticPoolName": null,
+  "containmentState": "2",
+  "readScale": "Disabled",
+  "failoverGroupId": null
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -263,6 +635,85 @@ Sample after properties copied ---
   "readScale": "Disabled",
   "failoverGroupId": null
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "tags": {
+    "tagKey1": "TagValue1"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187",
+  "name": "sqlcrudtest-9187",
+  "type": "Microsoft.Sql/servers/databases",
+  "location": "Japan East",
+  "kind": "v12.0,user",
+  "properties": {
+    "databaseId": "200216b2-dc19-4866-85aa-f73fe4a1ebac",
+    "edition": "Basic",
+    "status": "Online",
+    "serviceLevelObjective": "Basic",
+    "collation": "SQL_Latin1_General_CP1_CI_AS",
+    "maxSizeBytes": "2147483648",
+    "creationDate": "2017-02-10T00:56:19.2Z",
+    "currentServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+    "requestedServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+    "requestedServiceObjectiveName": "Basic",
+    "sampleName": null,
+    "defaultSecondaryLocation": "Japan West",
+    "earliestRestoreDate": "2017-02-10T01:06:29.78Z",
+    "elasticPoolName": null,
+    "containmentState": "2",
+    "readScale": "Disabled",
+    "failoverGroupId": null
+  },
+  "databaseId": "200216b2-dc19-4866-85aa-f73fe4a1ebac",
+  "edition": "Basic",
+  "status": "Online",
+  "serviceLevelObjective": "Basic",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "maxSizeBytes": "2147483648",
+  "creationDate": "2017-02-10T00:56:19.2Z",
+  "currentServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+  "requestedServiceObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+  "requestedServiceObjectiveName": "Basic",
+  "sampleName": null,
+  "defaultSecondaryLocation": "Japan West",
+  "earliestRestoreDate": "2017-02-10T01:06:29.78Z",
+  "elasticPoolName": null,
+  "containmentState": "2",
+  "readScale": "Disabled",
+  "failoverGroupId": null
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102",
+  "name": "sqlcrudtest-8102",
+  "type": "Microsoft.Sql/servers/elasticPools",
+  "location": "Japan East",
+  "kind": null,
+  "properties": {
+    "creationDate": "2017-02-10T01:25:25.033Z",
+    "edition": "Basic",
+    "state": "Ready",
+    "dtu": "50",
+    "databaseDtuMin": "0",
+    "databaseDtuMax": "5",
+    "storageMB": "5000"
+  },
+  "creationDate": "2017-02-10T01:25:25.033Z",
+  "edition": "Basic",
+  "state": "Ready",
+  "dtu": "50",
+  "databaseDtuMin": "0",
+  "databaseDtuMax": "5",
+  "storageMB": "5000"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -318,6 +769,86 @@ Sample after properties copied ---
   "databaseDtuMin": "0",
   "databaseDtuMax": "5",
   "storageMB": "5000"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102",
+  "name": "sqlcrudtest-8102",
+  "type": "Microsoft.Sql/servers/elasticPools",
+  "location": "Japan East",
+  "kind": null,
+  "properties": {
+    "creationDate": "2017-02-10T01:25:25.033Z",
+    "edition": "Basic",
+    "state": "Ready",
+    "dtu": "50",
+    "databaseDtuMin": "0",
+    "databaseDtuMax": "5",
+    "storageMB": "5000"
+  },
+  "creationDate": "2017-02-10T01:25:25.033Z",
+  "edition": "Basic",
+  "state": "Ready",
+  "dtu": "50",
+  "databaseDtuMin": "0",
+  "databaseDtuMax": "5",
+  "storageMB": "5000"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-8931/providers/Microsoft.Sql/servers/sqlcrudtest-2137/databases/testdb/replicationLinks/f0550bf5-07ce-4270-8e4b-71737975973a",
+  "name": "f0550bf5-07ce-4270-8e4b-71737975973a",
+  "type": "Microsoft.Sql/servers/databases/replicationLinks",
+  "location": "Japan East",
+  "properties": {
+    "partnerServer": "sqlcrudtest-1932",
+    "partnerDatabase": "testdb",
+    "partnerLocation": "Japan East",
+    "role": "Secondary",
+    "partnerRole": "Primary",
+    "replicationMode": "ASYNC",
+    "startTime": "2017-02-10T01:37:49.153",
+    "percentComplete": "100",
+    "replicationState": "CATCH_UP",
+    "isTerminationAllowed": true
+  },
+  "partnerServer": "sqlcrudtest-1932",
+  "partnerDatabase": "testdb",
+  "partnerLocation": "Japan East",
+  "role": "Secondary",
+  "partnerRole": "Primary",
+  "replicationMode": "ASYNC",
+  "startTime": "2017-02-10T01:37:49.153",
+  "percentComplete": "100",
+  "replicationState": "CATCH_UP",
+  "isTerminationAllowed": true
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory",
+  "name": "activeDirectory",
+  "properties": {
+    "administratorType": "ActiveDirectory",
+    "login": "bob@contoso.com",
+    "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
+    "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
+  },
+  "administratorType": "ActiveDirectory",
+  "login": "bob@contoso.com",
+  "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
+  "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -338,8 +869,91 @@ Sample after properties copied ---
   "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
   "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory",
+  "name": "activeDirectory",
+  "properties": {
+    "administratorType": "ActiveDirectory",
+    "login": "bob@contoso.com",
+    "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
+    "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
+  },
+  "administratorType": "ActiveDirectory",
+  "login": "bob@contoso.com",
+  "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
+  "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationLinks/link1",
+  "name": "link1",
+  "type": "Microsoft.Sql/servers/communicationLinks",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "state": "Ready",
+    "partnerServer": "sqlcrudtest-test"
+  },
+  "state": "Ready",
+  "partnerServer": "sqlcrudtest-test"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationLinks/link1",
+  "name": "link1",
+  "type": "Microsoft.Sql/servers/communicationLinks",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "state": "Ready",
+    "partnerServer": "sqlcrudtest-test"
+  },
+  "state": "Ready",
+  "partnerServer": "sqlcrudtest-test"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "tags": {
+    "tagKey1": "TagValue1"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645",
+  "name": "sqlcrudtest-4645",
+  "type": "Microsoft.Sql/servers",
+  "location": "japaneast",
+  "kind": "v12.0",
+  "properties": {
+    "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+    "administratorLogin": "dummylogin",
+    "version": "12.0",
+    "state": "Ready"
+  },
+  "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+  "administratorLogin": "dummylogin",
+  "version": "12.0",
+  "state": "Ready"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -390,6 +1004,174 @@ Sample after properties copied ---
   "version": "12.0",
   "state": "Ready"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "tags": {
+    "tagKey1": "TagValue1"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645",
+  "name": "sqlcrudtest-4645",
+  "type": "Microsoft.Sql/servers",
+  "location": "japaneast",
+  "kind": "v12.0",
+  "properties": {
+    "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+    "administratorLogin": "dummylogin",
+    "version": "12.0",
+    "state": "Ready"
+  },
+  "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+  "administratorLogin": "dummylogin",
+  "version": "12.0",
+  "state": "Ready"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/recommendedElasticPools/ElasticPool1",
+  "name": "ElasticPool1",
+  "type": "Microsoft.Sql/servers/recommendedElasticPools",
+  "properties": {
+    "databaseEdition": "Standard",
+    "dtu": "1000",
+    "databaseDtuMin": "100.6",
+    "databaseDtuMax": "200.5",
+    "storageMB": "1000.3",
+    "observationPeriodStart": "2014-11-01T00:00:00Z",
+    "observationPeriodEnd": "2014-11-15T00:00:00Z",
+    "maxObservedDtu": "900.2",
+    "maxObservedStorageMB": "350",
+    "databases": [],
+    "metrics": [
+      {
+        "dateTime": "2015-04-01T00:00:00Z",
+        "dtu": "100.5",
+        "sizeGB": "15.4"
+      },
+      {
+        "dateTime": "2015-04-02T00:00:00Z",
+        "dtu": "135",
+        "sizeGB": "12.754"
+      },
+      {
+        "dateTime": "2015-04-03T00:00:00Z",
+        "dtu": "135",
+        "sizeGB": "12.754"
+      }
+    ]
+  },
+  "databaseEdition": "Standard",
+  "dtu": "1000",
+  "databaseDtuMin": "100.6",
+  "databaseDtuMax": "200.5",
+  "storageMB": "1000.3",
+  "observationPeriodStart": "2014-11-01T00:00:00Z",
+  "observationPeriodEnd": "2014-11-15T00:00:00Z",
+  "maxObservedDtu": "900.2",
+  "maxObservedStorageMB": "350",
+  "databases": [],
+  "metrics": [
+    {
+      "dateTime": "2015-04-01T00:00:00Z",
+      "dtu": "100.5",
+      "sizeGB": "15.4"
+    },
+    {
+      "dateTime": "2015-04-02T00:00:00Z",
+      "dtu": "135",
+      "sizeGB": "12.754"
+    },
+    {
+      "dateTime": "2015-04-03T00:00:00Z",
+      "dtu": "135",
+      "sizeGB": "12.754"
+    }
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/serviceTierAdvisors/Current",
+  "name": "Current",
+  "type": "Microsoft.Sql/servers/databases/serviceTierAdvisors",
+  "properties": {
+    "observationPeriodStart": "2017-07-12T12:00:00Z",
+    "observationPeriodEnd": "2017-07-26T13:00:00Z",
+    "activeTimeRatio": "0",
+    "minDtu": "0",
+    "avgDtu": "0",
+    "maxDtu": "0",
+    "maxSizeInGB": "0.0234375",
+    "serviceLevelObjectiveUsageMetrics": [
+      {
+        "serviceLevelObjective": "Basic",
+        "serviceLevelObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+        "inRangeTimeRatio": "1"
+      }
+    ],
+    "currentServiceLevelObjective": "S0",
+    "currentServiceLevelObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+    "usageBasedRecommendationServiceLevelObjective": null,
+    "usageBasedRecommendationServiceLevelObjectiveId": null,
+    "databaseSizeBasedRecommendationServiceLevelObjective": null,
+    "databaseSizeBasedRecommendationServiceLevelObjectiveId": null,
+    "disasterPlanBasedRecommendationServiceLevelObjective": null,
+    "disasterPlanBasedRecommendationServiceLevelObjectiveId": null,
+    "overallRecommendationServiceLevelObjective": null,
+    "overallRecommendationServiceLevelObjectiveId": null,
+    "confidence": "1"
+  },
+  "observationPeriodStart": "2017-07-12T12:00:00Z",
+  "observationPeriodEnd": "2017-07-26T13:00:00Z",
+  "activeTimeRatio": "0",
+  "minDtu": "0",
+  "avgDtu": "0",
+  "maxDtu": "0",
+  "maxSizeInGB": "0.0234375",
+  "serviceLevelObjectiveUsageMetrics": [
+    {
+      "serviceLevelObjective": "Basic",
+      "serviceLevelObjectiveId": "dd6d99bb-f193-4ec1-86f2-43d3bccbc49c",
+      "inRangeTimeRatio": "1"
+    }
+  ],
+  "currentServiceLevelObjective": "S0",
+  "currentServiceLevelObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+  "usageBasedRecommendationServiceLevelObjective": null,
+  "usageBasedRecommendationServiceLevelObjectiveId": null,
+  "databaseSizeBasedRecommendationServiceLevelObjective": null,
+  "databaseSizeBasedRecommendationServiceLevelObjectiveId": null,
+  "disasterPlanBasedRecommendationServiceLevelObjective": null,
+  "disasterPlanBasedRecommendationServiceLevelObjectiveId": null,
+  "overallRecommendationServiceLevelObjective": null,
+  "overallRecommendationServiceLevelObjectiveId": null,
+  "confidence": "1"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "current",
+  "location": "North Europe",
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current",
+  "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+  "properties": {
+    "status": "Enabled"
+  },
+  "status": "Enabled"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -404,6 +1186,46 @@ Sample after properties copied ---
     "status": "Enabled"
   },
   "status": "Enabled"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "current",
+  "location": "North Europe",
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current",
+  "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+  "properties": {
+    "status": "Enabled"
+  },
+  "status": "Enabled"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-6852/providers/Microsoft.Sql/servers/blobauditingtest-2080/databases/testdb",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/databases/auditingSettings",
+  "kind": "V12",
+  "properties": {
+    "state": "Disabled",
+    "storageEndpoint": "",
+    "retentionDays": "0",
+    "auditActionsAndGroups": [],
+    "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000",
+    "isStorageSecondaryKeyInUse": false
+  },
+  "state": "Disabled",
+  "storageEndpoint": "",
+  "retentionDays": "0",
+  "auditActionsAndGroups": [],
+  "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000",
+  "isStorageSecondaryKeyInUse": false
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -440,6 +1262,51 @@ Sample after properties copied ---
     "UPDATE on database::TestDatabaseName by public"
   ]
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-6852/providers/Microsoft.Sql/servers/blobauditingtest-2080/databases/testdb",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/databases/auditingSettings",
+  "kind": "V12",
+  "properties": {
+    "state": "Disabled",
+    "storageEndpoint": "",
+    "retentionDays": "0",
+    "auditActionsAndGroups": [],
+    "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000",
+    "isStorageSecondaryKeyInUse": false
+  },
+  "state": "Disabled",
+  "storageEndpoint": "",
+  "retentionDays": "0",
+  "auditActionsAndGroups": [],
+  "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000",
+  "isStorageSecondaryKeyInUse": false
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current",
+  "name": "current",
+  "type": "Microsoft.Sql/servers/encryptionProtector",
+  "location": "Japan East",
+  "kind": "azurekeyvault",
+  "properties": {
+    "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
+    "serverKeyType": "AzureKeyVault",
+    "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
+  },
+  "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
+  "serverKeyType": "AzureKeyVault",
+  "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -457,6 +1324,73 @@ Sample after properties copied ---
   },
   "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
   "serverKeyType": "AzureKeyVault"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current",
+  "name": "current",
+  "type": "Microsoft.Sql/servers/encryptionProtector",
+  "location": "Japan East",
+  "kind": "azurekeyvault",
+  "properties": {
+    "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
+    "serverKeyType": "AzureKeyVault",
+    "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
+  },
+  "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
+  "serverKeyType": "AzureKeyVault",
+  "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test",
+  "name": "failover-group-test",
+  "type": "Microsoft.Sql/servers/failoverGroups",
+  "location": "Japan East",
+  "properties": {
+    "readWriteEndpoint": {
+      "failoverPolicy": "Automatic",
+      "failoverWithDataLossGracePeriodMinutes": "480"
+    },
+    "readOnlyEndpoint": {
+      "failoverPolicy": "Disabled"
+    },
+    "replicationRole": "Primary",
+    "replicationState": "CATCH_UP",
+    "partnerServers": [
+      {
+        "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+        "location": "Japan West",
+        "replicationRole": "Secondary"
+      }
+    ],
+    "databases": []
+  },
+  "readWriteEndpoint": {
+    "failoverPolicy": "Automatic",
+    "failoverWithDataLossGracePeriodMinutes": "480"
+  },
+  "readOnlyEndpoint": {
+    "failoverPolicy": "Disabled"
+  },
+  "replicationRole": "Primary",
+  "replicationState": "CATCH_UP",
+  "partnerServers": [
+    {
+      "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+      "location": "Japan West",
+      "replicationRole": "Secondary"
+    }
+  ],
+  "databases": []
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -562,9 +1496,56 @@ Sample after properties copied ---
     "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-1"
   ]
 }
-Getting example for: create_or_update
-Found example for: create_or_update
-Found response for: create_or_update
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test",
+  "name": "failover-group-test",
+  "type": "Microsoft.Sql/servers/failoverGroups",
+  "location": "Japan East",
+  "properties": {
+    "readWriteEndpoint": {
+      "failoverPolicy": "Automatic",
+      "failoverWithDataLossGracePeriodMinutes": "480"
+    },
+    "readOnlyEndpoint": {
+      "failoverPolicy": "Disabled"
+    },
+    "replicationRole": "Primary",
+    "replicationState": "CATCH_UP",
+    "partnerServers": [
+      {
+        "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+        "location": "Japan West",
+        "replicationRole": "Secondary"
+      }
+    ],
+    "databases": []
+  },
+  "readWriteEndpoint": {
+    "failoverPolicy": "Automatic",
+    "failoverWithDataLossGracePeriodMinutes": "480"
+  },
+  "readOnlyEndpoint": {
+    "failoverPolicy": "Disabled"
+  },
+  "replicationRole": "Primary",
+  "replicationState": "CATCH_UP",
+  "partnerServers": [
+    {
+      "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+      "location": "Japan West",
+      "replicationRole": "Secondary"
+    }
+  ],
+  "databases": []
+}
+Getting example for: get
+Found example for: get
+Found response for: get
 Found properties
 Sample after properties copied ---
 {
@@ -590,6 +1571,50 @@ Found response for: create_or_update
 Found properties
 Sample after properties copied ---
 {
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901",
+  "name": "sqlcrudtest-4645",
+  "type": "Microsoft.Sql/servers/keys",
+  "location": "Japan East",
+  "kind": "azurekeyvault",
+  "properties": {
+    "serverKeyType": "AzureKeyVault",
+    "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+    "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
+    "creationDate": "2017-05-01T00:00:00Z"
+  },
+  "serverKeyType": "AzureKeyVault",
+  "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+  "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
+  "creationDate": "2017-05-01T00:00:00Z"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901",
+  "name": "sqlcrudtest-4645",
+  "type": "Microsoft.Sql/servers/keys",
+  "location": "Japan East",
+  "kind": "azurekeyvault",
+  "properties": {
+    "serverKeyType": "AzureKeyVault",
+    "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+    "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
+    "creationDate": "2017-05-01T00:00:00Z"
+  },
+  "serverKeyType": "AzureKeyVault",
+  "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+  "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
+  "creationDate": "2017-05-01T00:00:00Z"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
   "properties": {
     "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/databases/sync",
     "state": "NeverConnected",
@@ -605,6 +1630,74 @@ Sample after properties copied ---
   "isUpToDate": true,
   "expiryTime": "9999-12-31T23:59:59.9999999Z",
   "version": "4.2.0.0"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/databases/sync",
+    "state": "NeverConnected",
+    "isUpToDate": true,
+    "expiryTime": "9999-12-31T23:59:59.9999999Z",
+    "version": "4.2.0.0"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187",
+  "name": "syncagent",
+  "type": "Microsoft.Sql/servers/syncAgents",
+  "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/databases/sync",
+  "state": "NeverConnected",
+  "isUpToDate": true,
+  "expiryTime": "9999-12-31T23:59:59.9999999Z",
+  "version": "4.2.0.0"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/databases/sync",
+    "state": "NeverConnected",
+    "isUpToDate": true,
+    "expiryTime": "9999-12-31T23:59:59.9999999Z",
+    "version": "4.2.0.0"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187",
+  "name": "syncagent",
+  "type": "Microsoft.Sql/servers/syncAgents",
+  "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/databases/sync",
+  "state": "NeverConnected",
+  "isUpToDate": true,
+  "expiryTime": "9999-12-31T23:59:59.9999999Z",
+  "version": "4.2.0.0"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "interval": "-1",
+    "lastSyncTime": "0001-01-01T08:00:00Z",
+    "conflictResolutionPolicy": "HubWin",
+    "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+    "hubDatabaseUserName": "hubUser",
+    "syncState": "NotReady"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187",
+  "name": "syncgroupcrud-3187",
+  "type": "Microsoft.Sql/servers/databases/syncGroups",
+  "interval": "-1",
+  "lastSyncTime": "0001-01-01T08:00:00Z",
+  "conflictResolutionPolicy": "HubWin",
+  "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+  "hubDatabaseUserName": "hubUser",
+  "syncState": "NotReady"
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -654,6 +1747,54 @@ Sample after properties copied ---
   "hubDatabaseUserName": "hubUser",
   "syncState": "NotReady"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "interval": "-1",
+    "lastSyncTime": "0001-01-01T08:00:00Z",
+    "conflictResolutionPolicy": "HubWin",
+    "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+    "hubDatabaseUserName": "hubUser",
+    "syncState": "NotReady"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187",
+  "name": "syncgroupcrud-3187",
+  "type": "Microsoft.Sql/servers/databases/syncGroups",
+  "interval": "-1",
+  "lastSyncTime": "0001-01-01T08:00:00Z",
+  "conflictResolutionPolicy": "HubWin",
+  "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+  "hubDatabaseUserName": "hubUser",
+  "syncState": "NotReady"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "databaseType": "AzureSqlDatabase",
+    "serverName": "syncgroupcrud-3379.database.windows.net",
+    "databaseName": "syncgroupcrud-7421",
+    "userName": "myUser",
+    "syncDirection": "Bidirectional",
+    "syncState": "UnProvisioned"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879",
+  "name": "syncgroupcrud-4879",
+  "type": "Microsoft.Sql/servers/databases/syncGroups/syncMembers",
+  "databaseType": "AzureSqlDatabase",
+  "serverName": "syncgroupcrud-3379.database.windows.net",
+  "databaseName": "syncgroupcrud-7421",
+  "userName": "myUser",
+  "syncDirection": "Bidirectional",
+  "syncState": "UnProvisioned"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -702,6 +1843,68 @@ Sample after properties copied ---
   "syncDirection": "Bidirectional",
   "syncState": "UnProvisioned"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "databaseType": "AzureSqlDatabase",
+    "serverName": "syncgroupcrud-3379.database.windows.net",
+    "databaseName": "syncgroupcrud-7421",
+    "userName": "myUser",
+    "syncDirection": "Bidirectional",
+    "syncState": "UnProvisioned"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879",
+  "name": "syncgroupcrud-4879",
+  "type": "Microsoft.Sql/servers/databases/syncGroups/syncMembers",
+  "databaseType": "AzureSqlDatabase",
+  "serverName": "syncgroupcrud-3379.database.windows.net",
+  "databaseName": "syncgroupcrud-7421",
+  "userName": "myUser",
+  "syncDirection": "Bidirectional",
+  "syncState": "UnProvisioned"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "displayName": "Regional Server Quota for West US",
+    "currentValue": "1",
+    "limit": "20",
+    "unit": "Count"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/ServerQuota",
+  "name": "ServerQuota",
+  "type": "Microsoft.Sql/locations/usages",
+  "displayName": "Regional Server Quota for West US",
+  "currentValue": "1",
+  "limit": "20",
+  "unit": "Count"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
+  "name": "vnet-firewall-rule",
+  "type": "Microsoft.Sql/servers/virtualNetworkRules",
+  "properties": {
+    "ignoreMissingVnetServiceEndpoint": false,
+    "state": "Ready",
+    "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+  },
+  "ignoreMissingVnetServiceEndpoint": false,
+  "state": "Ready",
+  "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -718,9 +1921,55 @@ Sample after properties copied ---
   "ignoreMissingVnetServiceEndpoint": false,
   "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
+  "name": "vnet-firewall-rule",
+  "type": "Microsoft.Sql/servers/virtualNetworkRules",
+  "properties": {
+    "ignoreMissingVnetServiceEndpoint": false,
+    "state": "Ready",
+    "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+  },
+  "ignoreMissingVnetServiceEndpoint": false,
+  "state": "Ready",
+  "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1",
+  "name": "dns-alias-name-1",
+  "type": "Microsoft.Sql/servers/dnsAliases",
+  "properties": {
+    "azureDnsRecord": "dns-alias-name-1.database.windows.net"
+  },
+  "azureDnsRecord": "dns-alias-name-1.database.windows.net"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1",
+  "name": "dns-alias-name-1",
+  "type": "Microsoft.Sql/servers/dnsAliases",
+  "properties": {
+    "azureDnsRecord": "dns-alias-name-1.database.windows.net"
+  },
+  "azureDnsRecord": "dns-alias-name-1.database.windows.net"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
 Found properties
 Sample after properties copied ---
 {

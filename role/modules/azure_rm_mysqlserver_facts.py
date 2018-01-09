@@ -49,6 +49,33 @@ EXAMPLES = '''
       resource_group: resource_group_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID
+        returned: always
+        type: str
+        sample: /subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver
+    version:
+        description:
+            - Server version. Possible values include: C(5.6), C(5.7)
+        returned: always
+        type: str
+        sample: version
+    user_visible_state:
+        description:
+            - A state of a server that is visible to user. Possible values include: C(Ready), C(Dropping), C(Disabled)
+        returned: always
+        type: str
+        sample: user_visible_state
+    fully_qualified_domain_name:
+        description:
+            - The fully qualified domain name of a server.
+        returned: always
+        type: str
+        sample: fully_qualified_domain_name
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

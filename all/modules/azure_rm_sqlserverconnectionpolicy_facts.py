@@ -51,6 +51,15 @@ EXAMPLES = '''
       connection_policy_name: connection_policy_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

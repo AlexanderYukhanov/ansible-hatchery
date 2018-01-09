@@ -71,6 +71,21 @@ EXAMPLES = '''
       server_name: server_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102
+    state:
+        description:
+            - The state of the elastic pool. Possible values include: C(Creating), C(Ready), C(Disabled)
+        returned: always
+        type: str
+        sample: Ready
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

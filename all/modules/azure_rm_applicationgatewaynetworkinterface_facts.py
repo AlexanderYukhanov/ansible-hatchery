@@ -81,6 +81,15 @@ EXAMPLES = '''
     azure_rm_applicationgatewaynetworkinterface_facts:
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

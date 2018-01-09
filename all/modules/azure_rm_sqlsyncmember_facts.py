@@ -75,6 +75,15 @@ EXAMPLES = '''
       sync_group_name: sync_group_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

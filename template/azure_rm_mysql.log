@@ -1,3 +1,34 @@
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver",
+  "name": "testserver",
+  "type": "Microsoft.DBforMySQL/servers",
+  "location": "onebox",
+  "sku": {
+    "name": "MYSQLS3M100",
+    "tier": "Basic",
+    "capacity": "100"
+  },
+  "tags": {
+    "elasticServer": "1"
+  },
+  "properties": {
+    "administratorLogin": "cloudsa",
+    "storageMB": "1024",
+    "sslEnforcement": "Enabled",
+    "userVisibleState": "Ready",
+    "fullyQualifiedDomainName": "testserver.test-vm1.onebox.xdb.mscds.com"
+  },
+  "administratorLogin": "cloudsa",
+  "storageMB": "1024",
+  "sslEnforcement": "Enabled",
+  "userVisibleState": "Ready",
+  "fullyQualifiedDomainName": "testserver.test-vm1.onebox.xdb.mscds.com"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -60,9 +91,40 @@ Sample after properties copied ---
   "userVisibleState": "Ready",
   "fullyQualifiedDomainName": "testserver.test-vm1.onebox.xdb.mscds.com"
 }
-Getting example for: create_or_update
-Found example for: create_or_update
-Found response for: create_or_update
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver",
+  "name": "testserver",
+  "type": "Microsoft.DBforMySQL/servers",
+  "location": "onebox",
+  "sku": {
+    "name": "MYSQLS3M100",
+    "tier": "Basic",
+    "capacity": "100"
+  },
+  "tags": {
+    "elasticServer": "1"
+  },
+  "properties": {
+    "administratorLogin": "cloudsa",
+    "storageMB": "1024",
+    "sslEnforcement": "Enabled",
+    "userVisibleState": "Ready",
+    "fullyQualifiedDomainName": "testserver.test-vm1.onebox.xdb.mscds.com"
+  },
+  "administratorLogin": "cloudsa",
+  "storageMB": "1024",
+  "sslEnforcement": "Enabled",
+  "userVisibleState": "Ready",
+  "fullyQualifiedDomainName": "testserver.test-vm1.onebox.xdb.mscds.com"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
 Found properties
 Sample after properties copied ---
 {
@@ -82,6 +144,56 @@ Found response for: create_or_update
 Found properties
 Sample after properties copied ---
 {
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1",
+  "name": "rule1",
+  "type": "Microsoft.DBforMySQL/servers/firewallRules",
+  "properties": {
+    "startIpAddress": "0.0.0.0",
+    "endIpAddress": "255.255.255.255"
+  },
+  "startIpAddress": "0.0.0.0",
+  "endIpAddress": "255.255.255.255"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1",
+  "name": "rule1",
+  "type": "Microsoft.DBforMySQL/servers/firewallRules",
+  "properties": {
+    "startIpAddress": "0.0.0.0",
+    "endIpAddress": "255.255.255.255"
+  },
+  "startIpAddress": "0.0.0.0",
+  "endIpAddress": "255.255.255.255"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
+  "name": "vnet-firewall-rule",
+  "type": "Microsoft.DBforMySQL/servers/virtualNetworkRules",
+  "properties": {
+    "ignoreMissingVnetServiceEndpoint": false,
+    "state": "Ready",
+    "virtualNetworkSubnetId": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+  },
+  "ignoreMissingVnetServiceEndpoint": false,
+  "state": "Ready",
+  "virtualNetworkSubnetId": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
   "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
   "name": "vnet-firewall-rule",
   "type": "Microsoft.DBforMySQL/servers/virtualNetworkRules",
@@ -91,6 +203,40 @@ Sample after properties copied ---
   },
   "ignoreMissingVnetServiceEndpoint": false,
   "virtualNetworkSubnetId": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
+  "name": "vnet-firewall-rule",
+  "type": "Microsoft.DBforMySQL/servers/virtualNetworkRules",
+  "properties": {
+    "ignoreMissingVnetServiceEndpoint": false,
+    "state": "Ready",
+    "virtualNetworkSubnetId": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+  },
+  "ignoreMissingVnetServiceEndpoint": false,
+  "state": "Ready",
+  "virtualNetworkSubnetId": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/databases/db1",
+  "name": "db1",
+  "type": "Microsoft.DBforMySQL/servers/databases",
+  "properties": {
+    "charset": "utf8",
+    "collation": "utf8_general_ci"
+  },
+  "charset": "utf8",
+  "collation": "utf8_general_ci"
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -107,6 +253,46 @@ Sample after properties copied ---
   },
   "charset": "utf8",
   "collation": "utf8_general_ci"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/databases/db1",
+  "name": "db1",
+  "type": "Microsoft.DBforMySQL/servers/databases",
+  "properties": {
+    "charset": "utf8",
+    "collation": "utf8_general_ci"
+  },
+  "charset": "utf8",
+  "collation": "utf8_general_ci"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "value": "OFF",
+    "description": "Indicates the status of the Event Scheduler.",
+    "defaultValue": "OFF",
+    "dataType": "Enumeration",
+    "allowedValues": "ON,OFF,DISABLED",
+    "source": "system-default"
+  },
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler",
+  "name": "event_scheduler",
+  "type": "Microsoft.DBforMySQL/servers/configurations",
+  "value": "OFF",
+  "description": "Indicates the status of the Event Scheduler.",
+  "defaultValue": "OFF",
+  "dataType": "Enumeration",
+  "allowedValues": "ON,OFF,DISABLED",
+  "source": "system-default"
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -131,4 +317,28 @@ Sample after properties copied ---
   "dataType": "Enumeration",
   "allowedValues": "ON,OFF,DISABLED",
   "source": "user-override"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "value": "OFF",
+    "description": "Indicates the status of the Event Scheduler.",
+    "defaultValue": "OFF",
+    "dataType": "Enumeration",
+    "allowedValues": "ON,OFF,DISABLED",
+    "source": "system-default"
+  },
+  "id": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler",
+  "name": "event_scheduler",
+  "type": "Microsoft.DBforMySQL/servers/configurations",
+  "value": "OFF",
+  "description": "Indicates the status of the Event Scheduler.",
+  "defaultValue": "OFF",
+  "dataType": "Enumeration",
+  "allowedValues": "ON,OFF,DISABLED",
+  "source": "system-default"
 }

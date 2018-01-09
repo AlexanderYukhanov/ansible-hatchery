@@ -46,6 +46,15 @@ EXAMPLES = '''
       local_network_gateway_name: local_network_gateway_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: id
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

@@ -51,6 +51,15 @@ EXAMPLES = '''
       route_name: route_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt/routes/route1
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

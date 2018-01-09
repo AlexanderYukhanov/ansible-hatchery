@@ -978,7 +978,531 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource Name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource Location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "certificates",
+          "NameAlt": "x",
+          "Description": "State of the Key Vault secret.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "certificates",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "distinguished_name",
+          "NameAlt": "x",
+          "Description": "Certificate distinguished name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "distinguished_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "domain_verification_token",
+          "NameAlt": "x",
+          "Description": "Domain verification token.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "domain_verification_token",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "validity_in_years",
+          "NameAlt": "x",
+          "Description": "Duration in years (must be between 1 and 3).",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "validity_in_years",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "key_size",
+          "NameAlt": "x",
+          "Description": "Certificate key size.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "key_size",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "product_type",
+          "NameAlt": "x",
+          "Description": "Certificate product type. Possible values include: 'StandardDomainValidatedSsl', 'StandardDomainValidatedWildCardSsl'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "product_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "auto_renew",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if the certificate should be automatically renewed when it expires; otherwise, <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "auto_renew",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "Status of certificate order. Possible values include: 'Succeeded', 'Failed', 'Canceled', 'InProgress', 'Deleting'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "Current order status. Possible values include: 'Pendingissuance', 'Issued', 'Revoked', 'Canceled', 'Denied', 'Pendingrevocation', 'PendingRekey', 'Unused', 'Expired', 'NotSubmitted'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "status",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "signed_certificate",
+          "NameAlt": "x",
+          "Description": "Signed certificate.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "signed_certificate",
+          "SubFields": [
+            {
+              "Name": "version",
+              "NameAlt": "x",
+              "Description": "Certificate Version.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "serial_number",
+              "NameAlt": "x",
+              "Description": "Certificate Serial Number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "serial_number",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "thumbprint",
+              "NameAlt": "x",
+              "Description": "Certificate Thumbprint.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "thumbprint",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "subject",
+              "NameAlt": "x",
+              "Description": "Certificate Subject.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "subject",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "not_before",
+              "NameAlt": "x",
+              "Description": "Date Certificate is valid from.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "not_before",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "not_after",
+              "NameAlt": "x",
+              "Description": "Date Certificate is valid to.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "not_after",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "signature_algorithm",
+              "NameAlt": "x",
+              "Description": "Certificate Signature algorithm.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "signature_algorithm",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "issuer",
+              "NameAlt": "x",
+              "Description": "Certificate Issuer.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "issuer",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "raw_data",
+              "NameAlt": "x",
+              "Description": "Raw certificate data.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "raw_data",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "csr",
+          "NameAlt": "x",
+          "Description": "Last CSR that was created for this order.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "csr",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "intermediate",
+          "NameAlt": "x",
+          "Description": "Intermediate certificate.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "intermediate",
+          "SubFields": [
+            {
+              "Name": "version",
+              "NameAlt": "x",
+              "Description": "Certificate Version.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "serial_number",
+              "NameAlt": "x",
+              "Description": "Certificate Serial Number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "serial_number",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "thumbprint",
+              "NameAlt": "x",
+              "Description": "Certificate Thumbprint.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "thumbprint",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "subject",
+              "NameAlt": "x",
+              "Description": "Certificate Subject.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "subject",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "not_before",
+              "NameAlt": "x",
+              "Description": "Date Certificate is valid from.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "not_before",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "not_after",
+              "NameAlt": "x",
+              "Description": "Date Certificate is valid to.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "not_after",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "signature_algorithm",
+              "NameAlt": "x",
+              "Description": "Certificate Signature algorithm.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "signature_algorithm",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "issuer",
+              "NameAlt": "x",
+              "Description": "Certificate Issuer.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "issuer",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "raw_data",
+              "NameAlt": "x",
+              "Description": "Raw certificate data.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "raw_data",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "root",
+          "NameAlt": "x",
+          "Description": "Root certificate.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "root",
+          "SubFields": [
+            {
+              "Name": "version",
+              "NameAlt": "x",
+              "Description": "Certificate Version.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "serial_number",
+              "NameAlt": "x",
+              "Description": "Certificate Serial Number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "serial_number",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "thumbprint",
+              "NameAlt": "x",
+              "Description": "Certificate Thumbprint.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "thumbprint",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "subject",
+              "NameAlt": "x",
+              "Description": "Certificate Subject.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "subject",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "not_before",
+              "NameAlt": "x",
+              "Description": "Date Certificate is valid from.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "not_before",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "not_after",
+              "NameAlt": "x",
+              "Description": "Date Certificate is valid to.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "not_after",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "signature_algorithm",
+              "NameAlt": "x",
+              "Description": "Certificate Signature algorithm.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "signature_algorithm",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "issuer",
+              "NameAlt": "x",
+              "Description": "Certificate Issuer.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "issuer",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "raw_data",
+              "NameAlt": "x",
+              "Description": "Raw certificate data.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "raw_data",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "serial_number",
+          "NameAlt": "x",
+          "Description": "Current serial number of the certificate.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "serial_number",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "last_certificate_issuance_time",
+          "NameAlt": "x",
+          "Description": "Certificate last issuance time.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "last_certificate_issuance_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "expiration_time",
+          "NameAlt": "x",
+          "Description": "Certificate expiration time.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "expiration_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "is_private_key_external",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if private key is external; otherwise, <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_private_key_external",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "app_service_certificate_not_renewable_reasons",
+          "NameAlt": "x",
+          "Description": "Reasons why App Service Certificate is not renewable at the current moment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "app_service_certificate_not_renewable_reasons",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "next_auto_renewal_time_stamp",
+          "NameAlt": "x",
+          "Description": "Time stamp when the certificate would be auto renewed next",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "next_auto_renewal_time_stamp",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -4119,7 +4643,968 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource Name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource Location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "contact_admin",
+          "NameAlt": "x",
+          "Description": "Administrative contact.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "contact_admin",
+          "SubFields": [
+            {
+              "Name": "address_mailing",
+              "NameAlt": "x",
+              "Description": "Mailing address.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "address_mailing",
+              "SubFields": [
+                {
+                  "Name": "address1",
+                  "NameAlt": "x",
+                  "Description": "First line of an Address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address1",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "address2",
+                  "NameAlt": "x",
+                  "Description": "The second line of the Address. Optional.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address2",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "city",
+                  "NameAlt": "x",
+                  "Description": "The city for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "city",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "country",
+                  "NameAlt": "x",
+                  "Description": "The country for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "country",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "postal_code",
+                  "NameAlt": "x",
+                  "Description": "The postal code for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "postal_code",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "state",
+                  "NameAlt": "x",
+                  "Description": "The state or province for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "state",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "email",
+              "NameAlt": "x",
+              "Description": "Email address.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "email",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "fax",
+              "NameAlt": "x",
+              "Description": "Fax number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "fax",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "job_title",
+              "NameAlt": "x",
+              "Description": "Job title.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "job_title",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_first",
+              "NameAlt": "x",
+              "Description": "First name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_first",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_last",
+              "NameAlt": "x",
+              "Description": "Last name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_last",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_middle",
+              "NameAlt": "x",
+              "Description": "Middle name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_middle",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "organization",
+              "NameAlt": "x",
+              "Description": "Organization contact belongs to.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "organization",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "phone",
+              "NameAlt": "x",
+              "Description": "Phone number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "phone",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "contact_billing",
+          "NameAlt": "x",
+          "Description": "Billing contact.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "contact_billing",
+          "SubFields": [
+            {
+              "Name": "address_mailing",
+              "NameAlt": "x",
+              "Description": "Mailing address.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "address_mailing",
+              "SubFields": [
+                {
+                  "Name": "address1",
+                  "NameAlt": "x",
+                  "Description": "First line of an Address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address1",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "address2",
+                  "NameAlt": "x",
+                  "Description": "The second line of the Address. Optional.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address2",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "city",
+                  "NameAlt": "x",
+                  "Description": "The city for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "city",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "country",
+                  "NameAlt": "x",
+                  "Description": "The country for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "country",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "postal_code",
+                  "NameAlt": "x",
+                  "Description": "The postal code for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "postal_code",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "state",
+                  "NameAlt": "x",
+                  "Description": "The state or province for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "state",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "email",
+              "NameAlt": "x",
+              "Description": "Email address.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "email",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "fax",
+              "NameAlt": "x",
+              "Description": "Fax number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "fax",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "job_title",
+              "NameAlt": "x",
+              "Description": "Job title.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "job_title",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_first",
+              "NameAlt": "x",
+              "Description": "First name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_first",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_last",
+              "NameAlt": "x",
+              "Description": "Last name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_last",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_middle",
+              "NameAlt": "x",
+              "Description": "Middle name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_middle",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "organization",
+              "NameAlt": "x",
+              "Description": "Organization contact belongs to.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "organization",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "phone",
+              "NameAlt": "x",
+              "Description": "Phone number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "phone",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "contact_registrant",
+          "NameAlt": "x",
+          "Description": "Registrant contact.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "contact_registrant",
+          "SubFields": [
+            {
+              "Name": "address_mailing",
+              "NameAlt": "x",
+              "Description": "Mailing address.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "address_mailing",
+              "SubFields": [
+                {
+                  "Name": "address1",
+                  "NameAlt": "x",
+                  "Description": "First line of an Address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address1",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "address2",
+                  "NameAlt": "x",
+                  "Description": "The second line of the Address. Optional.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address2",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "city",
+                  "NameAlt": "x",
+                  "Description": "The city for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "city",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "country",
+                  "NameAlt": "x",
+                  "Description": "The country for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "country",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "postal_code",
+                  "NameAlt": "x",
+                  "Description": "The postal code for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "postal_code",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "state",
+                  "NameAlt": "x",
+                  "Description": "The state or province for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "state",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "email",
+              "NameAlt": "x",
+              "Description": "Email address.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "email",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "fax",
+              "NameAlt": "x",
+              "Description": "Fax number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "fax",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "job_title",
+              "NameAlt": "x",
+              "Description": "Job title.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "job_title",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_first",
+              "NameAlt": "x",
+              "Description": "First name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_first",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_last",
+              "NameAlt": "x",
+              "Description": "Last name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_last",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_middle",
+              "NameAlt": "x",
+              "Description": "Middle name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_middle",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "organization",
+              "NameAlt": "x",
+              "Description": "Organization contact belongs to.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "organization",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "phone",
+              "NameAlt": "x",
+              "Description": "Phone number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "phone",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "contact_tech",
+          "NameAlt": "x",
+          "Description": "Technical contact.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "contact_tech",
+          "SubFields": [
+            {
+              "Name": "address_mailing",
+              "NameAlt": "x",
+              "Description": "Mailing address.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "address_mailing",
+              "SubFields": [
+                {
+                  "Name": "address1",
+                  "NameAlt": "x",
+                  "Description": "First line of an Address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address1",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "address2",
+                  "NameAlt": "x",
+                  "Description": "The second line of the Address. Optional.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "address2",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "city",
+                  "NameAlt": "x",
+                  "Description": "The city for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "city",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "country",
+                  "NameAlt": "x",
+                  "Description": "The country for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "country",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "postal_code",
+                  "NameAlt": "x",
+                  "Description": "The postal code for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "postal_code",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "state",
+                  "NameAlt": "x",
+                  "Description": "The state or province for the address.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "state",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "email",
+              "NameAlt": "x",
+              "Description": "Email address.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "email",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "fax",
+              "NameAlt": "x",
+              "Description": "Fax number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "fax",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "job_title",
+              "NameAlt": "x",
+              "Description": "Job title.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "job_title",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_first",
+              "NameAlt": "x",
+              "Description": "First name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_first",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_last",
+              "NameAlt": "x",
+              "Description": "Last name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_last",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name_middle",
+              "NameAlt": "x",
+              "Description": "Middle name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name_middle",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "organization",
+              "NameAlt": "x",
+              "Description": "Organization contact belongs to.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "organization",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "phone",
+              "NameAlt": "x",
+              "Description": "Phone number.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "phone",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "registration_status",
+          "NameAlt": "x",
+          "Description": "Domain registration status. Possible values include: 'Active', 'Awaiting', 'Cancelled', 'Confiscated', 'Disabled', 'Excluded', 'Expired', 'Failed', 'Held', 'Locked', 'Parked', 'Pending', 'Reserved', 'Reverted', 'Suspended', 'Transferred', 'Unknown', 'Unlocked', 'Unparked', 'Updated', 'JsonConverterFailed'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "registration_status",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "Domain provisioning state. Possible values include: 'Succeeded', 'Failed', 'Canceled', 'InProgress', 'Deleting'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "name_servers",
+          "NameAlt": "x",
+          "Description": "Name servers.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name_servers",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "privacy",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if domain privacy is enabled for this domain; otherwise, <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "privacy",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "created_time",
+          "NameAlt": "x",
+          "Description": "Domain creation timestamp.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "created_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "expiration_time",
+          "NameAlt": "x",
+          "Description": "Domain expiration timestamp.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "expiration_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "last_renewed_time",
+          "NameAlt": "x",
+          "Description": "Timestamp when the domain was renewed last time.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "last_renewed_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "auto_renew",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if the domain should be automatically renewed; otherwise, <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "auto_renew",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "ready_for_dns_record_management",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if Azure can assign this domain to App Service apps; otherwise, <code>false</code>. This value will be <code>true</code> if domain registration status is active and \n it is hosted on name servers Azure has programmatic access to.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ready_for_dns_record_management",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "managed_host_names",
+          "NameAlt": "x",
+          "Description": "All hostnames derived from the domain and assigned to Azure resources.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "managed_host_names",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Name of the hostname.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "site_names",
+              "NameAlt": "x",
+              "Description": "List of apps the hostname is assigned to. This list will have more than one app only if the hostname is pointing to a Traffic Manager.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "site_names",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "azure_resource_name",
+              "NameAlt": "x",
+              "Description": "Name of the Azure resource the hostname is assigned to. If it is assigned to a Traffic Manager then it will be the Traffic Manager name otherwise it will be the app name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "azure_resource_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "azure_resource_type",
+              "NameAlt": "x",
+              "Description": "Type of the Azure resource the hostname is assigned to. Possible values include: 'Website', 'TrafficManager'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "azure_resource_type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "custom_host_name_dns_record_type",
+              "NameAlt": "x",
+              "Description": "Type of the DNS record. Possible values include: 'CName', 'A'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "custom_host_name_dns_record_type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "host_name_type",
+              "NameAlt": "x",
+              "Description": "Type of the hostname. Possible values include: 'Verified', 'Managed'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "host_name_type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "consent",
+          "NameAlt": "x",
+          "Description": "Legal agreement consent.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "consent",
+          "SubFields": [
+            {
+              "Name": "agreement_keys",
+              "NameAlt": "x",
+              "Description": "List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code> resource.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "agreement_keys",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "agreed_by",
+              "NameAlt": "x",
+              "Description": "Client IP address.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "agreed_by",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "agreed_at",
+              "NameAlt": "x",
+              "Description": "Timestamp when the agreements were accepted.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "agreed_at",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "domain_not_renewable_reasons",
+          "NameAlt": "x",
+          "Description": "Reasons why domain is not renewable.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "domain_not_renewable_reasons",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "dns_type",
+          "NameAlt": "x",
+          "Description": "Current DNS type. Possible values include: 'AzureDns', 'DefaultDomainRegistrarDns'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "dns_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "dns_zone_id",
+          "NameAlt": "x",
+          "Description": "Azure DNS Zone to use",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "dns_zone_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "target_dns_type",
+          "NameAlt": "x",
+          "Description": "Target DNS type (would be used for migration). Possible values include: 'AzureDns', 'DefaultDomainRegistrarDns'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "target_dns_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "auth_code",
+          "NameAlt": "x",
+          "Description": "",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "auth_code",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -4234,7 +5719,68 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/providers/Microsoft.DomainRegistration/topLevelDomains/com",
+          "SubFields": [],
+          "Info": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/providers/Microsoft.DomainRegistration/topLevelDomains/com"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource Name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "com",
+          "SubFields": [],
+          "Info": "com"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.DomainRegistration/topLevelDomains",
+          "SubFields": [],
+          "Info": "Microsoft.DomainRegistration/topLevelDomains"
+        },
+        {
+          "Name": "domain_name",
+          "NameAlt": "x",
+          "Description": "Name of the top level domain.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "domain_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "privacy",
+          "NameAlt": "x",
+          "Description": "If <code>true</code>, then the top level domain supports domain privacy; otherwise, <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "True",
+          "SubFields": [],
+          "Info": "True"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -4979,7 +6525,299 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282",
+          "SubFields": [],
+          "Info": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource Name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "testc6282",
+          "SubFields": [],
+          "Info": "testc6282"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource Location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "East US",
+          "SubFields": [],
+          "Info": "East US"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Web/certificates",
+          "SubFields": [],
+          "Info": "Microsoft.Web/certificates"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "friendly_name",
+          "NameAlt": "x",
+          "Description": "Friendly name of the certificate.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "friendly_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "subject_name",
+          "NameAlt": "x",
+          "Description": "Subject name of the certificate.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "subject_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "host_names",
+          "NameAlt": "x",
+          "Description": "Host names the certificate applies to.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "host_names",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "pfx_blob",
+          "NameAlt": "x",
+          "Description": "Pfx blob.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "pfx_blob",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "site_name",
+          "NameAlt": "x",
+          "Description": "App name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "site_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "self_link",
+          "NameAlt": "x",
+          "Description": "Self link.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "self_link",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "issuer",
+          "NameAlt": "x",
+          "Description": "Certificate issuer.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "CACert",
+          "SubFields": [],
+          "Info": "CACert"
+        },
+        {
+          "Name": "issue_date",
+          "NameAlt": "x",
+          "Description": "Certificate issue Date.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "issue_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "expiration_date",
+          "NameAlt": "x",
+          "Description": "Certificate expriration date.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "expiration_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "password",
+          "NameAlt": "x",
+          "Description": "Certificate password.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "SWsSsd__233$Sdsds#%Sd!",
+          "SubFields": [],
+          "Info": "SWsSsd__233$Sdsds#%Sd!"
+        },
+        {
+          "Name": "thumbprint",
+          "NameAlt": "x",
+          "Description": "Certificate thumbprint.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "FE703D7411A44163B6D32B3AD9B03E175886EBFE",
+          "SubFields": [],
+          "Info": "FE703D7411A44163B6D32B3AD9B03E175886EBFE"
+        },
+        {
+          "Name": "valid",
+          "NameAlt": "x",
+          "Description": "Is the certificate valid?.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "valid",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "cer_blob",
+          "NameAlt": "x",
+          "Description": "Raw bytes of .cer file",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "cer_blob",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "public_key_hash",
+          "NameAlt": "x",
+          "Description": "Public key hash.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "public_key_hash",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "hosting_environment_profile",
+          "NameAlt": "x",
+          "Description": "Specification for the App Service Environment to use for the certificate.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "hosting_environment_profile",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource ID of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Name of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "key_vault_id",
+          "NameAlt": "x",
+          "Description": "Key Vault Csm resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "key_vault_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "key_vault_secret_name",
+          "NameAlt": "x",
+          "Description": "Key Vault secret name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "key_vault_secret_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "key_vault_secret_status",
+          "NameAlt": "x",
+          "Description": "Status of the Key Vault secret. Possible values include: 'Initialized', 'WaitingOnCertificateOrder', 'Succeeded', 'CertificateOrderFailed', 'OperationNotPermittedOnKeyVault', 'AzureServiceUnauthorizedToAccessKeyVault', 'KeyVaultDoesNotExist', 'KeyVaultSecretDoesNotExist', 'UnknownError', 'ExternalPrivateKey', 'Unknown'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "key_vault_secret_status",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "geo_region",
+          "NameAlt": "x",
+          "Description": "Region of the certificate.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "geo_region",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "server_farm_id",
+          "NameAlt": "x",
+          "Description": "Resource ID of the associated App Service plan, formatted as: \"/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}\".",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "server_farm_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -12771,7 +14609,1856 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource Name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource Location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "Current state of the app.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "host_names",
+          "NameAlt": "x",
+          "Description": "Hostnames associated with the app.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "host_names",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "repository_site_name",
+          "NameAlt": "x",
+          "Description": "Name of the repository site.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "repository_site_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "usage_state",
+          "NameAlt": "x",
+          "Description": "State indicating whether the app has exceeded its quota usage. Read-only. Possible values include: 'Normal', 'Exceeded'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "usage_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "enabled",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if the app is enabled; otherwise, <code>false</code>. Setting this value to false disables the app (takes the app offline).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "enabled",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "enabled_host_names",
+          "NameAlt": "x",
+          "Description": "Enabled hostnames for the app.Hostnames need to be assigned (see HostNames) AND enabled. Otherwise,\nthe app is not served on those hostnames.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "enabled_host_names",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "availability_state",
+          "NameAlt": "x",
+          "Description": "Management information availability state for the app. Possible values include: 'Normal', 'Limited', 'DisasterRecoveryMode'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "availability_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "host_name_ssl_states",
+          "NameAlt": "x",
+          "Description": "Hostname SSL states are used to manage the SSL bindings for app's hostnames.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "host_name_ssl_states",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Hostname.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "ssl_state",
+              "NameAlt": "x",
+              "Description": "SSL type. Possible values include: 'Disabled', 'SniEnabled', 'IpBasedEnabled'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "ssl_state",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "virtual_ip",
+              "NameAlt": "x",
+              "Description": "Virtual IP address assigned to the hostname if IP based SSL is enabled.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "virtual_ip",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "thumbprint",
+              "NameAlt": "x",
+              "Description": "SSL certificate thumbprint.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "thumbprint",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "to_update",
+              "NameAlt": "x",
+              "Description": "Set to <code>true</code> to update existing hostname.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "to_update",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "host_type",
+              "NameAlt": "x",
+              "Description": "Indicates whether the hostname is a standard or repository hostname. Possible values include: 'Standard', 'Repository'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "host_type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "server_farm_id",
+          "NameAlt": "x",
+          "Description": "Resource ID of the associated App Service plan, formatted as: \"/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}\".",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "server_farm_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "reserved",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if reserved; otherwise, <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "reserved",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "last_modified_time_utc",
+          "NameAlt": "x",
+          "Description": "Last time the app was modified, in UTC. Read-only.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "last_modified_time_utc",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "site_config",
+          "NameAlt": "x",
+          "Description": "Configuration of the app.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "site_config",
+          "SubFields": [
+            {
+              "Name": "number_of_workers",
+              "NameAlt": "x",
+              "Description": "Number of workers.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "number_of_workers",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "default_documents",
+              "NameAlt": "x",
+              "Description": "Default documents.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "default_documents",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "net_framework_version",
+              "NameAlt": "x",
+              "Description": ".NET Framework version.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "net_framework_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "php_version",
+              "NameAlt": "x",
+              "Description": "Version of PHP.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "php_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "python_version",
+              "NameAlt": "x",
+              "Description": "Version of Python.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "python_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "node_version",
+              "NameAlt": "x",
+              "Description": "Version of Node.js.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "node_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "linux_fx_version",
+              "NameAlt": "x",
+              "Description": "Linux App Framework and version",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "linux_fx_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "request_tracing_enabled",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if request tracing is enabled; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "request_tracing_enabled",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "request_tracing_expiration_time",
+              "NameAlt": "x",
+              "Description": "Request tracing expiration time.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "request_tracing_expiration_time",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "remote_debugging_enabled",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if remote debugging is enabled; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "remote_debugging_enabled",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "remote_debugging_version",
+              "NameAlt": "x",
+              "Description": "Remote debugging version.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "remote_debugging_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "http_logging_enabled",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if HTTP logging is enabled; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "http_logging_enabled",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "logs_directory_size_limit",
+              "NameAlt": "x",
+              "Description": "HTTP logs directory size limit.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "logs_directory_size_limit",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "detailed_error_logging_enabled",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if detailed error logging is enabled; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "detailed_error_logging_enabled",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "publishing_username",
+              "NameAlt": "x",
+              "Description": "Publishing user name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "publishing_username",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "app_settings",
+              "NameAlt": "x",
+              "Description": "Application settings.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "app_settings",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "Pair name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "value",
+                  "NameAlt": "x",
+                  "Description": "Pair value.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "value",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "connection_strings",
+              "NameAlt": "x",
+              "Description": "Connection strings.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "connection_strings",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "Name of connection string.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "connection_string",
+                  "NameAlt": "x",
+                  "Description": "Connection string value.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "connection_string",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "type",
+                  "NameAlt": "x",
+                  "Description": "Type of database. Possible values include: 'MySql', 'SQLServer', 'SQLAzure', 'Custom', 'NotificationHub', 'ServiceBus', 'EventHub', 'ApiHub', 'DocDb', 'RedisCache', 'PostgreSQL'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "type",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "machine_key",
+              "NameAlt": "x",
+              "Description": "Site MachineKey.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "machine_key",
+              "SubFields": [
+                {
+                  "Name": "validation",
+                  "NameAlt": "x",
+                  "Description": "MachineKey validation.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "validation",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "validation_key",
+                  "NameAlt": "x",
+                  "Description": "Validation key.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "validation_key",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "decryption",
+                  "NameAlt": "x",
+                  "Description": "Algorithm used for decryption.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "decryption",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "decryption_key",
+                  "NameAlt": "x",
+                  "Description": "Decryption key.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "decryption_key",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "handler_mappings",
+              "NameAlt": "x",
+              "Description": "Handler mappings.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "handler_mappings",
+              "SubFields": [
+                {
+                  "Name": "extension",
+                  "NameAlt": "x",
+                  "Description": "Requests with this extension will be handled using the specified FastCGI application.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "extension",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "script_processor",
+                  "NameAlt": "x",
+                  "Description": "The absolute path to the FastCGI application.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "script_processor",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "arguments",
+                  "NameAlt": "x",
+                  "Description": "Command-line arguments to be passed to the script processor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "arguments",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "document_root",
+              "NameAlt": "x",
+              "Description": "Document root.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "document_root",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "scm_type",
+              "NameAlt": "x",
+              "Description": "SCM type. Possible values include: 'None', 'Dropbox', 'Tfs', 'LocalGit', 'GitHub', 'CodePlexGit', 'CodePlexHg', 'BitbucketGit', 'BitbucketHg', 'ExternalGit', 'ExternalHg', 'OneDrive', 'VSO'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "scm_type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "use32_bit_worker_process",
+              "NameAlt": "x",
+              "Description": "<code>true</code> to use 32-bit worker process; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "use32_bit_worker_process",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "web_sockets_enabled",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if WebSocket is enabled; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "web_sockets_enabled",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "always_on",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if Always On is enabled; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "always_on",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "java_version",
+              "NameAlt": "x",
+              "Description": "Java version.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "java_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "java_container",
+              "NameAlt": "x",
+              "Description": "Java container.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "java_container",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "java_container_version",
+              "NameAlt": "x",
+              "Description": "Java container version.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "java_container_version",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "app_command_line",
+              "NameAlt": "x",
+              "Description": "App command line to launch.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "app_command_line",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "managed_pipeline_mode",
+              "NameAlt": "x",
+              "Description": "Managed pipeline mode. Possible values include: 'Integrated', 'Classic'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "managed_pipeline_mode",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "virtual_applications",
+              "NameAlt": "x",
+              "Description": "Virtual applications.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "virtual_applications",
+              "SubFields": [
+                {
+                  "Name": "virtual_path",
+                  "NameAlt": "x",
+                  "Description": "Virtual path.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "virtual_path",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "physical_path",
+                  "NameAlt": "x",
+                  "Description": "Physical path.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "physical_path",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "preload_enabled",
+                  "NameAlt": "x",
+                  "Description": "<code>true</code> if preloading is enabled; otherwise, <code>false</code>.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "preload_enabled",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "virtual_directories",
+                  "NameAlt": "x",
+                  "Description": "Virtual directories for virtual application.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "virtual_directories",
+                  "SubFields": [
+                    {
+                      "Name": "virtual_path",
+                      "NameAlt": "x",
+                      "Description": "Path to virtual application.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "virtual_path",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "physical_path",
+                      "NameAlt": "x",
+                      "Description": "Physical path.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "physical_path",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "load_balancing",
+              "NameAlt": "x",
+              "Description": "Site load balancing. Possible values include: 'WeightedRoundRobin', 'LeastRequests', 'LeastResponseTime', 'WeightedTotalTraffic', 'RequestHash'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "load_balancing",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "experiments",
+              "NameAlt": "x",
+              "Description": "This is work around for polymophic types.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "experiments",
+              "SubFields": [
+                {
+                  "Name": "ramp_up_rules",
+                  "NameAlt": "x",
+                  "Description": "List of ramp-up rules.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "ramp_up_rules",
+                  "SubFields": [
+                    {
+                      "Name": "action_host_name",
+                      "NameAlt": "x",
+                      "Description": "Hostname of a slot to which the traffic will be redirected if decided to. E.g. myapp-stage.azurewebsites.net.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "action_host_name",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "reroute_percentage",
+                      "NameAlt": "x",
+                      "Description": "Percentage of the traffic which will be redirected to <code>ActionHostName</code>.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "reroute_percentage",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "change_step",
+                      "NameAlt": "x",
+                      "Description": "In auto ramp up scenario this is the step to to add/remove from <code>ReroutePercentage</code> until it reaches \n<code>MinReroutePercentage</code> or <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specificed in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDecisionCallbackUrl</code>.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "change_step",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "change_interval_in_minutes",
+                      "NameAlt": "x",
+                      "Description": "Specifies interval in mimuntes to reevaluate ReroutePercentage.",
+                      "Type": "int",
+                      "Returned": "always",
+                      "SampleValue": "change_interval_in_minutes",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "min_reroute_percentage",
+                      "NameAlt": "x",
+                      "Description": "Specifies lower boundary above which ReroutePercentage will stay.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "min_reroute_percentage",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "max_reroute_percentage",
+                      "NameAlt": "x",
+                      "Description": "Specifies upper boundary below which ReroutePercentage will stay.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "max_reroute_percentage",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "change_decision_callback_url",
+                      "NameAlt": "x",
+                      "Description": "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback site extension for the scaffold and contracts.\nhttps://www.siteextensions.net/packages/TiPCallback/",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "change_decision_callback_url",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "name",
+                      "NameAlt": "x",
+                      "Description": "Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the experiment.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "name",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "limits",
+              "NameAlt": "x",
+              "Description": "Site limits.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "limits",
+              "SubFields": [
+                {
+                  "Name": "max_percentage_cpu",
+                  "NameAlt": "x",
+                  "Description": "Maximum allowed CPU usage percentage.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "max_percentage_cpu",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "max_memory_in_mb",
+                  "NameAlt": "x",
+                  "Description": "Maximum allowed memory usage in MB.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "max_memory_in_mb",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "max_disk_size_in_mb",
+                  "NameAlt": "x",
+                  "Description": "Maximum allowed disk size usage in MB.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "max_disk_size_in_mb",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "auto_heal_enabled",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if Auto Heal is enabled; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "auto_heal_enabled",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "auto_heal_rules",
+              "NameAlt": "x",
+              "Description": "Auto Heal rules.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "auto_heal_rules",
+              "SubFields": [
+                {
+                  "Name": "triggers",
+                  "NameAlt": "x",
+                  "Description": "Conditions that describe when to execute the auto-heal actions.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "triggers",
+                  "SubFields": [
+                    {
+                      "Name": "requests",
+                      "NameAlt": "x",
+                      "Description": "A rule based on total requests.",
+                      "Type": "complex",
+                      "Returned": "always",
+                      "SampleValue": "requests",
+                      "SubFields": [
+                        {
+                          "Name": "count",
+                          "NameAlt": "x",
+                          "Description": "Request Count.",
+                          "Type": "int",
+                          "Returned": "always",
+                          "SampleValue": "count",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "time_interval",
+                          "NameAlt": "x",
+                          "Description": "Time interval.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "time_interval",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        }
+                      ],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "private_bytes_in_kb",
+                      "NameAlt": "x",
+                      "Description": "A rule based on private bytes.",
+                      "Type": "int",
+                      "Returned": "always",
+                      "SampleValue": "private_bytes_in_kb",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "status_codes",
+                      "NameAlt": "x",
+                      "Description": "A rule based on status codes.",
+                      "Type": "complex",
+                      "Returned": "always",
+                      "SampleValue": "status_codes",
+                      "SubFields": [
+                        {
+                          "Name": "status",
+                          "NameAlt": "x",
+                          "Description": "HTTP status code.",
+                          "Type": "int",
+                          "Returned": "always",
+                          "SampleValue": "status",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "sub_status",
+                          "NameAlt": "x",
+                          "Description": "Request Sub Status.",
+                          "Type": "int",
+                          "Returned": "always",
+                          "SampleValue": "sub_status",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "win32_status",
+                          "NameAlt": "x",
+                          "Description": "Win32 error code.",
+                          "Type": "int",
+                          "Returned": "always",
+                          "SampleValue": "win32_status",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "count",
+                          "NameAlt": "x",
+                          "Description": "Request Count.",
+                          "Type": "int",
+                          "Returned": "always",
+                          "SampleValue": "count",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "time_interval",
+                          "NameAlt": "x",
+                          "Description": "Time interval.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "time_interval",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        }
+                      ],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "slow_requests",
+                      "NameAlt": "x",
+                      "Description": "A rule based on request execution time.",
+                      "Type": "complex",
+                      "Returned": "always",
+                      "SampleValue": "slow_requests",
+                      "SubFields": [
+                        {
+                          "Name": "time_taken",
+                          "NameAlt": "x",
+                          "Description": "Time taken.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "time_taken",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "count",
+                          "NameAlt": "x",
+                          "Description": "Request Count.",
+                          "Type": "int",
+                          "Returned": "always",
+                          "SampleValue": "count",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "time_interval",
+                          "NameAlt": "x",
+                          "Description": "Time interval.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "time_interval",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        }
+                      ],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "actions",
+                  "NameAlt": "x",
+                  "Description": "Actions to be executed when a rule is triggered.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "actions",
+                  "SubFields": [
+                    {
+                      "Name": "action_type",
+                      "NameAlt": "x",
+                      "Description": "Predefined action to be taken. Possible values include: 'Recycle', 'LogEvent', 'CustomAction'",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "action_type",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "custom_action",
+                      "NameAlt": "x",
+                      "Description": "Custom action to be taken.",
+                      "Type": "complex",
+                      "Returned": "always",
+                      "SampleValue": "custom_action",
+                      "SubFields": [
+                        {
+                          "Name": "exe",
+                          "NameAlt": "x",
+                          "Description": "Executable to be run.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "exe",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        },
+                        {
+                          "Name": "parameters",
+                          "NameAlt": "x",
+                          "Description": "Parameters for the executable.",
+                          "Type": "str",
+                          "Returned": "always",
+                          "SampleValue": "parameters",
+                          "SubFields": [],
+                          "Info": "NO SAMPLE DATA"
+                        }
+                      ],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "min_process_execution_time",
+                      "NameAlt": "x",
+                      "Description": "Minimum time the process must execute\nbefore taking the action",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "min_process_execution_time",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "tracing_options",
+              "NameAlt": "x",
+              "Description": "Tracing options.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "tracing_options",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "vnet_name",
+              "NameAlt": "x",
+              "Description": "Virtual Network name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "vnet_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "cors",
+              "NameAlt": "x",
+              "Description": "Cross-Origin Resource Sharing (CORS) settings.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "cors",
+              "SubFields": [
+                {
+                  "Name": "allowed_origins",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets the list of origins that should be allowed to make cross-origin\ncalls (for example: http://example.com:12345). Use \"*\" to allow all.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "allowed_origins",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "push",
+              "NameAlt": "x",
+              "Description": "Push endpoint settings.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "push",
+              "SubFields": [
+                {
+                  "Name": "id",
+                  "NameAlt": "x",
+                  "Description": "Resource Id.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "Resource Name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "kind",
+                  "NameAlt": "x",
+                  "Description": "Kind of resource.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "kind",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "type",
+                  "NameAlt": "x",
+                  "Description": "Resource type.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "type",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "is_push_enabled",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets a flag indicating whether the Push endpoint is enabled.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "is_push_enabled",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "tag_whitelist_json",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration endpoint.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "tag_whitelist_json",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "tags_requiring_auth",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endpoint.\nTags can consist of alphanumeric characters and the following:\n'_', '@', '#', '.', ':', '-'. \nValidation should be performed at the PushRequestHandler.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "tags_requiring_auth",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "dynamic_tags_json",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration endpoint.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "dynamic_tags_json",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "api_definition",
+              "NameAlt": "x",
+              "Description": "Information about the formal API definition for the app.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "api_definition",
+              "SubFields": [
+                {
+                  "Name": "url",
+                  "NameAlt": "x",
+                  "Description": "The URL of the API definition.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "url",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "auto_swap_slot_name",
+              "NameAlt": "x",
+              "Description": "Auto-swap slot name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "auto_swap_slot_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "local_my_sql_enabled",
+              "NameAlt": "x",
+              "Description": "<code>true</code> to enable local MySQL; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "local_my_sql_enabled",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "ip_security_restrictions",
+              "NameAlt": "x",
+              "Description": "IP security restrictions.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "ip_security_restrictions",
+              "SubFields": [
+                {
+                  "Name": "ip_address",
+                  "NameAlt": "x",
+                  "Description": "IP address the security restriction is valid for.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "ip_address",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "subnet_mask",
+                  "NameAlt": "x",
+                  "Description": "Subnet mask for the range of IP addresses the restriction is valid for.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "subnet_mask",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "traffic_manager_host_names",
+          "NameAlt": "x",
+          "Description": "Azure Traffic Manager hostnames associated with the app. Read-only.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "traffic_manager_host_names",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "scm_site_also_stopped",
+          "NameAlt": "x",
+          "Description": "<code>true</code> to stop SCM (KUDU) site when the app is stopped; otherwise, <code>false</code>. The default is <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "scm_site_also_stopped",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "target_swap_slot",
+          "NameAlt": "x",
+          "Description": "Specifies which deployment slot this app will swap into. Read-only.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "target_swap_slot",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "hosting_environment_profile",
+          "NameAlt": "x",
+          "Description": "App Service Environment to use for the app.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "hosting_environment_profile",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource ID of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Name of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "client_affinity_enabled",
+          "NameAlt": "x",
+          "Description": "<code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which route client requests in the same session to the same instance. Default is <code>true</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "client_affinity_enabled",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "client_cert_enabled",
+          "NameAlt": "x",
+          "Description": "<code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise, <code>false</code>. Default is <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "client_cert_enabled",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "host_names_disabled",
+          "NameAlt": "x",
+          "Description": "<code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.\n If <code>true</code>, the app is only accessible via API management process.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "host_names_disabled",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "outbound_ip_addresses",
+          "NameAlt": "x",
+          "Description": "List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from tenants that site can be hosted with current settings. Read-only.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "outbound_ip_addresses",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "possible_outbound_ip_addresses",
+          "NameAlt": "x",
+          "Description": "List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from all tenants. Read-only.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "possible_outbound_ip_addresses",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "container_size",
+          "NameAlt": "x",
+          "Description": "Size of the function container.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "container_size",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "daily_memory_time_quota",
+          "NameAlt": "x",
+          "Description": "Maximum allowed daily memory-time quota (applicable on dynamic apps only).",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "daily_memory_time_quota",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "suspended_till",
+          "NameAlt": "x",
+          "Description": "App suspended till in case memory-time quota is exceeded.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "suspended_till",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "max_number_of_workers",
+          "NameAlt": "x",
+          "Description": "Maximum number of workers.\nThis only applies to Functions container.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "max_number_of_workers",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "cloning_info",
+          "NameAlt": "x",
+          "Description": "If specified during app creation, the app is cloned from a source app.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "cloning_info",
+          "SubFields": [
+            {
+              "Name": "correlation_id",
+              "NameAlt": "x",
+              "Description": "Correlation ID of cloning operation. This ID ties multiple cloning operations\ntogether to use the same snapshot.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "correlation_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "overwrite",
+              "NameAlt": "x",
+              "Description": "<code>true</code> to overwrite destination app; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "overwrite",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "clone_custom_host_names",
+              "NameAlt": "x",
+              "Description": "<code>true</code> to clone custom hostnames from source app; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "clone_custom_host_names",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "clone_source_control",
+              "NameAlt": "x",
+              "Description": "<code>true</code> to clone source control from source app; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "clone_source_control",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "source_web_app_id",
+              "NameAlt": "x",
+              "Description": "ARM resource ID of the source app. App resource ID is of the form \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "source_web_app_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "hosting_environment",
+              "NameAlt": "x",
+              "Description": "App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "hosting_environment",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "app_settings_overrides",
+              "NameAlt": "x",
+              "Description": "Application setting overrides for cloned app. If specified, these settings override the settings cloned \nfrom source app. Otherwise, application settings from source app are retained.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "app_settings_overrides",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "configure_load_balancing",
+              "NameAlt": "x",
+              "Description": "<code>true</code> to configure load balancing for source and destination app.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "configure_load_balancing",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "traffic_manager_profile_id",
+              "NameAlt": "x",
+              "Description": "ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "traffic_manager_profile_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "traffic_manager_profile_name",
+              "NameAlt": "x",
+              "Description": "Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already exist.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "traffic_manager_profile_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "ignore_quotas",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if quotas should be ignored; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "ignore_quotas",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "snapshot_info",
+          "NameAlt": "x",
+          "Description": "If specified during app creation, the app is created from a previous snapshot.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "snapshot_info",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource Id.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Resource Name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "kind",
+              "NameAlt": "x",
+              "Description": "Kind of resource.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "kind",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "snapshot_time",
+              "NameAlt": "x",
+              "Description": "Point in time in which the app recovery should be attempted, formatted as a DateTime string.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "snapshot_time",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "recovery_target",
+              "NameAlt": "x",
+              "Description": "Specifies the web app that snapshot contents will be written to.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "recovery_target",
+              "SubFields": [
+                {
+                  "Name": "location",
+                  "NameAlt": "x",
+                  "Description": "Geographical location of the target web app, e.g. SouthEastAsia, SouthCentralUS",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "location",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "id",
+                  "NameAlt": "x",
+                  "Description": "ARM resource ID of the target app. \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "overwrite",
+              "NameAlt": "x",
+              "Description": "If <code>true</code> the recovery operation can overwrite source app; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "overwrite",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "recover_configuration",
+              "NameAlt": "x",
+              "Description": "If true, site configuration, in addition to content, will be reverted.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "recover_configuration",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "ignore_conflicting_host_names",
+              "NameAlt": "x",
+              "Description": "If true, custom hostname conflicts will be ignored when recovering to a target web app.\nThis setting is only necessary when RecoverConfiguration is enabled.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "ignore_conflicting_host_names",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "resource_group",
+          "NameAlt": "x",
+          "Description": "Name of the resource group the app belongs to. Read-only.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "resource_group",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "is_default_container",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if the app is a default container; otherwise, <code>false</code>.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_default_container",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "default_host_name",
+          "NameAlt": "x",
+          "Description": "Default hostname of the app. Read-only.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "default_host_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "slot_swap_status",
+          "NameAlt": "x",
+          "Description": "Status of the last deployment slot swap operation.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "slot_swap_status",
+          "SubFields": [
+            {
+              "Name": "timestamp_utc",
+              "NameAlt": "x",
+              "Description": "The time the last successful slot swap completed.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "timestamp_utc",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "source_slot_name",
+              "NameAlt": "x",
+              "Description": "The source slot of the last swap operation.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "source_slot_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "destination_slot_name",
+              "NameAlt": "x",
+              "Description": "The destination slot of the last swap operation.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "destination_slot_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "https_only",
+          "NameAlt": "x",
+          "Description": "HttpsOnly: configures a web site to accept only https requests. Issues redirect for\nhttp requests",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "https_only",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "identity",
+          "NameAlt": "x",
+          "Description": "",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "identity",
+          "SubFields": [
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Type of managed service identity.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "tenant_id",
+              "NameAlt": "x",
+              "Description": "Tenant of managed service identity.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "tenant_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "principal_id",
+              "NameAlt": "x",
+              "Description": "Principal Id of managed service identity.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "principal_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -15033,7 +18720,724 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource Name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource Location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "app_service_environment_resource_name",
+          "NameAlt": "x",
+          "Description": "Name of the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "app_service_environment_resource_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "app_service_environment_resource_location",
+          "NameAlt": "x",
+          "Description": "Location of the App Service Environment, e.g. \"West US\".",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "app_service_environment_resource_location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "Provisioning state of the App Service Environment. Possible values include: 'Succeeded', 'Failed', 'Canceled', 'InProgress', 'Deleting'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "Current status of the App Service Environment. Possible values include: 'Preparing', 'Ready', 'Scaling', 'Deleting'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "status",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "vnet_name",
+          "NameAlt": "x",
+          "Description": "Name of the Virtual Network for the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "vnet_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "vnet_resource_group_name",
+          "NameAlt": "x",
+          "Description": "Resource group of the Virtual Network.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "vnet_resource_group_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "vnet_subnet_name",
+          "NameAlt": "x",
+          "Description": "Subnet of the Virtual Network.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "vnet_subnet_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "virtual_network",
+          "NameAlt": "x",
+          "Description": "Description of the Virtual Network.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "virtual_network",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource id of the Virtual Network.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Name of the Virtual Network (read-only).",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type of the Virtual Network (read-only).",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "subnet",
+              "NameAlt": "x",
+              "Description": "Subnet within the Virtual Network.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "subnet",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "internal_load_balancing_mode",
+          "NameAlt": "x",
+          "Description": "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values include: 'None', 'Web', 'Publishing'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "internal_load_balancing_mode",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "multi_size",
+          "NameAlt": "x",
+          "Description": "Front-end VM size, e.g. \"Medium\", \"Large\".",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "multi_size",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "multi_role_count",
+          "NameAlt": "x",
+          "Description": "Number of front-end instances.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "multi_role_count",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "worker_pools",
+          "NameAlt": "x",
+          "Description": "Description of worker pools with worker size IDs, VM sizes, and number of workers in each pool.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "worker_pools",
+          "SubFields": [
+            {
+              "Name": "worker_size_id",
+              "NameAlt": "x",
+              "Description": "Worker size ID for referencing this worker pool.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "worker_size_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "compute_mode",
+              "NameAlt": "x",
+              "Description": "Shared or dedicated app hosting. Possible values include: 'Shared', 'Dedicated', 'Dynamic'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "compute_mode",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "worker_size",
+              "NameAlt": "x",
+              "Description": "VM size of the worker pool instances.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "worker_size",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "worker_count",
+              "NameAlt": "x",
+              "Description": "Number of instances in the worker pool.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "worker_count",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "instance_names",
+              "NameAlt": "x",
+              "Description": "Names of all instances in the worker pool (read only).",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "instance_names",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "ipssl_address_count",
+          "NameAlt": "x",
+          "Description": "Number of IP SSL addresses reserved for the App Service Environment.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "ipssl_address_count",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_edition",
+          "NameAlt": "x",
+          "Description": "Edition of the metadata database for the App Service Environment, e.g. \"Standard\".",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_edition",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_service_objective",
+          "NameAlt": "x",
+          "Description": "Service objective of the metadata database for the App Service Environment, e.g. \"S0\".",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_service_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "upgrade_domains",
+          "NameAlt": "x",
+          "Description": "Number of upgrade domains of the App Service Environment.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "upgrade_domains",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "subscription_id",
+          "NameAlt": "x",
+          "Description": "Subscription of the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "subscription_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "dns_suffix",
+          "NameAlt": "x",
+          "Description": "DNS suffix of the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "dns_suffix",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "last_action",
+          "NameAlt": "x",
+          "Description": "Last deployment action on the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "last_action",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "last_action_result",
+          "NameAlt": "x",
+          "Description": "Result of the last deployment action on the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "last_action_result",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "allowed_multi_sizes",
+          "NameAlt": "x",
+          "Description": "List of comma separated strings describing which VM sizes are allowed for front-ends.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "allowed_multi_sizes",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "allowed_worker_sizes",
+          "NameAlt": "x",
+          "Description": "List of comma separated strings describing which VM sizes are allowed for workers.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "allowed_worker_sizes",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "maximum_number_of_machines",
+          "NameAlt": "x",
+          "Description": "Maximum number of VMs in the App Service Environment.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "maximum_number_of_machines",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "vip_mappings",
+          "NameAlt": "x",
+          "Description": "Description of IP SSL mapping for the App Service Environment.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "vip_mappings",
+          "SubFields": [
+            {
+              "Name": "virtual_ip",
+              "NameAlt": "x",
+              "Description": "Virtual IP address.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "virtual_ip",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "internal_http_port",
+              "NameAlt": "x",
+              "Description": "Internal HTTP port.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "internal_http_port",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "internal_https_port",
+              "NameAlt": "x",
+              "Description": "Internal HTTPS port.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "internal_https_port",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "in_use",
+              "NameAlt": "x",
+              "Description": "Is virtual IP mapping in use.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "in_use",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "environment_capacities",
+          "NameAlt": "x",
+          "Description": "Current total, used, and available worker capacities.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "environment_capacities",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Name of the stamp.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "available_capacity",
+              "NameAlt": "x",
+              "Description": "Available capacity (# of machines, bytes of storage etc...).",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "available_capacity",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "total_capacity",
+              "NameAlt": "x",
+              "Description": "Total capacity (# of machines, bytes of storage etc...).",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "total_capacity",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "unit",
+              "NameAlt": "x",
+              "Description": "Name of the unit.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "unit",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "compute_mode",
+              "NameAlt": "x",
+              "Description": "Shared/dedicated workers. Possible values include: 'Shared', 'Dedicated', 'Dynamic'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "compute_mode",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "worker_size",
+              "NameAlt": "x",
+              "Description": "Size of the machines. Possible values include: 'Default', 'Small', 'Medium', 'Large', 'D1', 'D2', 'D3'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "worker_size",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "worker_size_id",
+              "NameAlt": "x",
+              "Description": "Size ID of machines: \n0 - Small\n1 - Medium\n2 - Large",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "worker_size_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "exclude_from_capacity_allocation",
+              "NameAlt": "x",
+              "Description": "If <code>true</code>, it includes basic apps.\nBasic apps are not used for capacity allocation.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "exclude_from_capacity_allocation",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "is_applicable_for_all_compute_modes",
+              "NameAlt": "x",
+              "Description": "<code>true</code> if capacity is applicable for all apps; otherwise, <code>false</code>.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "is_applicable_for_all_compute_modes",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "site_mode",
+              "NameAlt": "x",
+              "Description": "Shared or Dedicated.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "site_mode",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "network_access_control_list",
+          "NameAlt": "x",
+          "Description": "Access control list for controlling traffic to the App Service Environment.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "network_access_control_list",
+          "SubFields": [
+            {
+              "Name": "action",
+              "NameAlt": "x",
+              "Description": "Action object. Possible values include: 'Permit', 'Deny'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "action",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "description",
+              "NameAlt": "x",
+              "Description": "Description of network access control entry.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "description",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "order",
+              "NameAlt": "x",
+              "Description": "Order of precedence.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "order",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "remote_subnet",
+              "NameAlt": "x",
+              "Description": "Remote subnet.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "remote_subnet",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "environment_is_healthy",
+          "NameAlt": "x",
+          "Description": "True/false indicating whether the App Service Environment is healthy.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "environment_is_healthy",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "environment_status",
+          "NameAlt": "x",
+          "Description": "Detailed message about with results of the last check of the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "environment_status",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "resource_group",
+          "NameAlt": "x",
+          "Description": "Resource group of the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "resource_group",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "front_end_scale_factor",
+          "NameAlt": "x",
+          "Description": "Scale factor for front-ends.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "front_end_scale_factor",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "default_front_end_scale_factor",
+          "NameAlt": "x",
+          "Description": "Default Scale Factor for FrontEnds.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "default_front_end_scale_factor",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "api_management_account_id",
+          "NameAlt": "x",
+          "Description": "API Management Account associated with the App Service Environment.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "api_management_account_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "suspended",
+          "NameAlt": "x",
+          "Description": "<code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can be suspended, e.g. when the management endpoint is no longer available\n (most likely because NSG blocked the incoming traffic).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "suspended",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "dynamic_cache_enabled",
+          "NameAlt": "x",
+          "Description": "True/false indicating whether the App Service Environment is suspended. The environment can be suspended e.g. when the management endpoint is no longer available\n(most likely because NSG blocked the incoming traffic).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "dynamic_cache_enabled",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "cluster_settings",
+          "NameAlt": "x",
+          "Description": "Custom settings for changing the behavior of the App Service Environment.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "cluster_settings",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Pair name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "value",
+              "NameAlt": "x",
+              "Description": "Pair value.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "value",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "user_whitelisted_ip_ranges",
+          "NameAlt": "x",
+          "Description": "User added ip ranges to whitelist on ASE db",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "user_whitelisted_ip_ranges",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -16686,7 +21090,432 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141",
+          "SubFields": [],
+          "Info": "/subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource Name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "testsf6141",
+          "SubFields": [],
+          "Info": "testsf6141"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "app",
+          "SubFields": [],
+          "Info": "app"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource Location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "East US",
+          "SubFields": [],
+          "Info": "East US"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Web/serverfarms",
+          "SubFields": [],
+          "Info": "Microsoft.Web/serverfarms"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "app_service_plan_name",
+          "NameAlt": "x",
+          "Description": "Name for the App Service plan.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "app_service_plan_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "worker_tier_name",
+          "NameAlt": "x",
+          "Description": "Target worker tier assigned to the App Service plan.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "worker_tier_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "App Service plan status. Possible values include: 'Ready', 'Pending', 'Creating'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Ready",
+          "SubFields": [],
+          "Info": "Ready"
+        },
+        {
+          "Name": "subscription",
+          "NameAlt": "x",
+          "Description": "App Service plan subscription.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "subscription",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "admin_site_name",
+          "NameAlt": "x",
+          "Description": "App Service plan administration site.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "admin_site_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "hosting_environment_profile",
+          "NameAlt": "x",
+          "Description": "Specification for the App Service Environment to use for the App Service plan.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "hosting_environment_profile",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource ID of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Name of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type of the App Service Environment.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "maximum_number_of_workers",
+          "NameAlt": "x",
+          "Description": "Maximum number of instances that can be assigned to this App Service plan.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "maximum_number_of_workers",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "geo_region",
+          "NameAlt": "x",
+          "Description": "Geographical location for the App Service plan.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "geo_region",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "per_site_scaling",
+          "NameAlt": "x",
+          "Description": "If <code>true</code>, apps assigned to this App Service plan can be scaled independently.\nIf <code>false</code>, apps assigned to this App Service plan will scale to all instances of the plan.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "per_site_scaling",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "number_of_sites",
+          "NameAlt": "x",
+          "Description": "Number of apps assigned to this App Service plan.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "number_of_sites",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "is_spot",
+          "NameAlt": "x",
+          "Description": "If <code>true</code>, this App Service Plan owns spot instances.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_spot",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "spot_expiration_time",
+          "NameAlt": "x",
+          "Description": "The time when the server farm expires. Valid only if it is a spot server farm.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "spot_expiration_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "resource_group",
+          "NameAlt": "x",
+          "Description": "Resource group of the App Service plan.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "resource_group",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "reserved",
+          "NameAlt": "x",
+          "Description": "If Linux app service plan <code>true</code>, <code>false</code> otherwise.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "False",
+          "SubFields": [],
+          "Info": "False"
+        },
+        {
+          "Name": "target_worker_count",
+          "NameAlt": "x",
+          "Description": "Scaling worker count.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "target_worker_count",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "target_worker_size_id",
+          "NameAlt": "x",
+          "Description": "Scaling worker size ID.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "target_worker_size_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "Provisioning state of the App Service Environment. Possible values include: 'Succeeded', 'Failed', 'Canceled', 'InProgress', 'Deleting'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sku",
+          "NameAlt": "x",
+          "Description": "",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "sku",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Name of the resource SKU.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "P1",
+              "SubFields": [],
+              "Info": "P1"
+            },
+            {
+              "Name": "tier",
+              "NameAlt": "x",
+              "Description": "Service tier of the resource SKU.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "Premium",
+              "SubFields": [],
+              "Info": "Premium"
+            },
+            {
+              "Name": "size",
+              "NameAlt": "x",
+              "Description": "Size specifier of the resource SKU.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "P1",
+              "SubFields": [],
+              "Info": "P1"
+            },
+            {
+              "Name": "family",
+              "NameAlt": "x",
+              "Description": "Family code of the resource SKU.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "P",
+              "SubFields": [],
+              "Info": "P"
+            },
+            {
+              "Name": "capacity",
+              "NameAlt": "x",
+              "Description": "Current number of instances assigned to the resource.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "1",
+              "SubFields": [],
+              "Info": "1"
+            },
+            {
+              "Name": "sku_capacity",
+              "NameAlt": "x",
+              "Description": "Min, max, and default scale values of the SKU.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "sku_capacity",
+              "SubFields": [
+                {
+                  "Name": "minimum",
+                  "NameAlt": "x",
+                  "Description": "Minimum number of workers for this App Service plan SKU.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "minimum",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "maximum",
+                  "NameAlt": "x",
+                  "Description": "Maximum number of workers for this App Service plan SKU.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "maximum",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "default",
+                  "NameAlt": "x",
+                  "Description": "Default number of workers for this App Service plan SKU.",
+                  "Type": "int",
+                  "Returned": "always",
+                  "SampleValue": "default",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "scale_type",
+                  "NameAlt": "x",
+                  "Description": "Available scale configurations for an App Service plan.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "scale_type",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "locations",
+              "NameAlt": "x",
+              "Description": "Locations of the SKU.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "locations",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "capabilities",
+              "NameAlt": "x",
+              "Description": "Capabilities of the SKU, e.g., is traffic manager enabled?",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "capabilities",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "Name of the SKU capability.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "value",
+                  "NameAlt": "x",
+                  "Description": "Value of the SKU capability.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "value",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "reason",
+                  "NameAlt": "x",
+                  "Description": "Reason of the SKU capability.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "reason",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "{\r\n  \"name\": \"P1\",\r\n  \"tier\": \"Premium\",\r\n  \"size\": \"P1\",\r\n  \"family\": \"P\",\r\n  \"capacity\": \"1\"\r\n}"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,

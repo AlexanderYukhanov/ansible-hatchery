@@ -55,6 +55,15 @@ EXAMPLES = '''
       expand: expand
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

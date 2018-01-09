@@ -1,4 +1,23 @@
+Getting example for: get
 Getting example for: create_or_update
+Getting example for: get
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "test-asg",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/applicationSecurityGroups/test-asg",
+  "type": "Microsoft.Network/applicationSecurityGroups",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "00000000-0000-0000-0000-000000000000"
+  },
+  "provisioningState": "Succeeded",
+  "resourceGuid": "00000000-0000-0000-0000-000000000000"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -16,12 +35,35 @@ Sample after properties copied ---
   "provisioningState": "Succeeded",
   "resourceGuid": "00000000-0000-0000-0000-000000000000"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "test-asg",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/applicationSecurityGroups/test-asg",
+  "type": "Microsoft.Network/applicationSecurityGroups",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "00000000-0000-0000-0000-000000000000"
+  },
+  "provisioningState": "Succeeded",
+  "resourceGuid": "00000000-0000-0000-0000-000000000000"
+}
+Getting example for: get
 Getting example for: create_or_update
+Getting example for: get
+Getting example for: get
 Getting example for: create_or_update
+Getting example for: get
+Getting example for: get
 Getting example for: create_or_update
-Getting example for: create_or_update
-Found example for: create_or_update
-Found response for: create_or_update
+Getting example for: get
+Getting example for: get
+Found example for: get
+Found response for: get
 Found properties
 Sample after properties copied ---
 {
@@ -245,6 +287,524 @@ Found response for: create_or_update
 Found properties
 Sample after properties copied ---
 {
+  "name": "lb",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb",
+  "type": "Microsoft.Network/loadBalancers",
+  "location": "westus",
+  "sku": {
+    "name": "Basic"
+  },
+  "properties": {
+    "provisioningState": "Succeeded",
+    "frontendIPConfigurations": [
+      {
+        "name": "fe-lb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAddress": "10.0.1.4",
+          "privateIPAllocationMethod": "Dynamic",
+          "subnet": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb"
+          },
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+            }
+          ],
+          "inboundNatRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule"
+            }
+          ]
+        }
+      }
+    ],
+    "backendAddressPools": [
+      {
+        "name": "be-lb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+            }
+          ]
+        }
+      }
+    ],
+    "loadBalancingRules": [
+      {
+        "name": "rulelb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+          },
+          "frontendPort": "80",
+          "backendPort": "80",
+          "enableFloatingIP": true,
+          "idleTimeoutInMinutes": "15",
+          "protocol": "Tcp",
+          "loadDistribution": "Default",
+          "backendAddressPool": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb"
+          },
+          "probe": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb"
+          },
+          "disableOutboundSnat": false
+        }
+      }
+    ],
+    "probes": [
+      {
+        "name": "probe-lb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "protocol": "Http",
+          "port": "80",
+          "requestPath": "healthcheck.aspx",
+          "intervalInSeconds": "15",
+          "numberOfProbes": "2",
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+            }
+          ]
+        }
+      }
+    ],
+    "inboundNatRules": [
+      {
+        "name": "in-nat-rule",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+          },
+          "frontendPort": "3389",
+          "backendPort": "3389",
+          "enableFloatingIP": true,
+          "idleTimeoutInMinutes": "15",
+          "protocol": "Tcp"
+        }
+      }
+    ],
+    "outboundNatRules": [],
+    "inboundNatPools": []
+  },
+  "provisioningState": "Succeeded",
+  "frontendIPConfigurations": [
+    {
+      "name": "fe-lb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "privateIPAddress": "10.0.1.4",
+        "privateIPAllocationMethod": "Dynamic",
+        "subnet": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb"
+        },
+        "loadBalancingRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule"
+          }
+        ]
+      }
+    }
+  ],
+  "backendAddressPools": [
+    {
+      "name": "be-lb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "loadBalancingRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+          }
+        ]
+      }
+    }
+  ],
+  "loadBalancingRules": [
+    {
+      "name": "rulelb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "frontendIPConfiguration": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+        },
+        "frontendPort": "80",
+        "backendPort": "80",
+        "enableFloatingIP": true,
+        "idleTimeoutInMinutes": "15",
+        "protocol": "Tcp",
+        "loadDistribution": "Default",
+        "backendAddressPool": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb"
+        },
+        "probe": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb"
+        },
+        "disableOutboundSnat": false
+      }
+    }
+  ],
+  "probes": [
+    {
+      "name": "probe-lb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "protocol": "Http",
+        "port": "80",
+        "requestPath": "healthcheck.aspx",
+        "intervalInSeconds": "15",
+        "numberOfProbes": "2",
+        "loadBalancingRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+          }
+        ]
+      }
+    }
+  ],
+  "inboundNatRules": [
+    {
+      "name": "in-nat-rule",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "frontendIPConfiguration": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+        },
+        "frontendPort": "3389",
+        "backendPort": "3389",
+        "enableFloatingIP": true,
+        "idleTimeoutInMinutes": "15",
+        "protocol": "Tcp"
+      }
+    }
+  ],
+  "outboundNatRules": [],
+  "inboundNatPools": []
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "lb",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb",
+  "type": "Microsoft.Network/loadBalancers",
+  "location": "westus",
+  "sku": {
+    "name": "Basic"
+  },
+  "properties": {
+    "provisioningState": "Succeeded",
+    "frontendIPConfigurations": [
+      {
+        "name": "fe-lb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAddress": "10.0.1.4",
+          "privateIPAllocationMethod": "Dynamic",
+          "subnet": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb"
+          },
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+            }
+          ],
+          "inboundNatRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule"
+            }
+          ]
+        }
+      }
+    ],
+    "backendAddressPools": [
+      {
+        "name": "be-lb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+            }
+          ]
+        }
+      }
+    ],
+    "loadBalancingRules": [
+      {
+        "name": "rulelb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+          },
+          "frontendPort": "80",
+          "backendPort": "80",
+          "enableFloatingIP": true,
+          "idleTimeoutInMinutes": "15",
+          "protocol": "Tcp",
+          "loadDistribution": "Default",
+          "backendAddressPool": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb"
+          },
+          "probe": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb"
+          },
+          "disableOutboundSnat": false
+        }
+      }
+    ],
+    "probes": [
+      {
+        "name": "probe-lb",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "protocol": "Http",
+          "port": "80",
+          "requestPath": "healthcheck.aspx",
+          "intervalInSeconds": "15",
+          "numberOfProbes": "2",
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+            }
+          ]
+        }
+      }
+    ],
+    "inboundNatRules": [
+      {
+        "name": "in-nat-rule",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+          },
+          "frontendPort": "3389",
+          "backendPort": "3389",
+          "enableFloatingIP": true,
+          "idleTimeoutInMinutes": "15",
+          "protocol": "Tcp"
+        }
+      }
+    ],
+    "outboundNatRules": [],
+    "inboundNatPools": []
+  },
+  "provisioningState": "Succeeded",
+  "frontendIPConfigurations": [
+    {
+      "name": "fe-lb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "privateIPAddress": "10.0.1.4",
+        "privateIPAllocationMethod": "Dynamic",
+        "subnet": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb"
+        },
+        "loadBalancingRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule"
+          }
+        ]
+      }
+    }
+  ],
+  "backendAddressPools": [
+    {
+      "name": "be-lb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "loadBalancingRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+          }
+        ]
+      }
+    }
+  ],
+  "loadBalancingRules": [
+    {
+      "name": "rulelb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "frontendIPConfiguration": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+        },
+        "frontendPort": "80",
+        "backendPort": "80",
+        "enableFloatingIP": true,
+        "idleTimeoutInMinutes": "15",
+        "protocol": "Tcp",
+        "loadDistribution": "Default",
+        "backendAddressPool": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/be-lb"
+        },
+        "probe": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb"
+        },
+        "disableOutboundSnat": false
+      }
+    }
+  ],
+  "probes": [
+    {
+      "name": "probe-lb",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/probes/probe-lb",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "protocol": "Http",
+        "port": "80",
+        "requestPath": "healthcheck.aspx",
+        "intervalInSeconds": "15",
+        "numberOfProbes": "2",
+        "loadBalancingRules": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+          }
+        ]
+      }
+    }
+  ],
+  "inboundNatRules": [
+    {
+      "name": "in-nat-rule",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/in-nat-rule",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "frontendIPConfiguration": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe-lb"
+        },
+        "frontendPort": "3389",
+        "backendPort": "3389",
+        "enableFloatingIP": true,
+        "idleTimeoutInMinutes": "15",
+        "protocol": "Tcp"
+      }
+    }
+  ],
+  "outboundNatRules": [],
+  "inboundNatPools": []
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "backend",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/backend",
+  "etag": "W/\\\"00000000-0000-0000-0000-000000000000\\\"",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "backendIPConfigurations": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/nic/ipConfigurations/default-ip-config"
+      }
+    ],
+    "loadBalancingRules": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "backendIPConfigurations": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/nic/ipConfigurations/default-ip-config"
+    }
+  ],
+  "loadBalancingRules": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+    }
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "frontend",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/frontend",
+  "etag": "W/\\\"00000000-0000-0000-0000-000000000000\\\"",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "privateIPAddress": "10.0.1.4",
+    "privateIPAllocationMethod": "Dynamic",
+    "subnet": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb"
+    },
+    "loadBalancingRules": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+      }
+    ],
+    "inboundNatRules": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/inrlb"
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "privateIPAddress": "10.0.1.4",
+  "privateIPAllocationMethod": "Dynamic",
+  "subnet": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb"
+  },
+  "loadBalancingRules": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+    }
+  ],
+  "inboundNatRules": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/inboundNatRules/inrlb"
+    }
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
   "name": "natRule1.1",
   "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/inboundNatRules/natRule1.1",
   "properties": {
@@ -272,6 +832,237 @@ Sample after properties copied ---
   "protocol": "Tcp",
   "backendIPConfiguration": {
     "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
+  }
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "name": "natRule1.1",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/inboundNatRules/natRule1.1",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "frontendIPConfiguration": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/frontendIPConfigurations/ip1"
+    },
+    "frontendPort": "3390",
+    "backendPort": "3389",
+    "enableFloatingIP": false,
+    "idleTimeoutInMinutes": "4",
+    "protocol": "Tcp",
+    "backendIPConfiguration": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
+    }
+  },
+  "provisioningState": "Succeeded",
+  "frontendIPConfiguration": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/frontendIPConfigurations/ip1"
+  },
+  "frontendPort": "3390",
+  "backendPort": "3389",
+  "enableFloatingIP": false,
+  "idleTimeoutInMinutes": "4",
+  "protocol": "Tcp",
+  "backendIPConfiguration": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
+  }
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "natRule1.1",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/inboundNatRules/natRule1.1",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "frontendIPConfiguration": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/frontendIPConfigurations/ip1"
+    },
+    "frontendPort": "3390",
+    "backendPort": "3389",
+    "enableFloatingIP": false,
+    "idleTimeoutInMinutes": "4",
+    "protocol": "Tcp",
+    "backendIPConfiguration": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
+    }
+  },
+  "provisioningState": "Succeeded",
+  "frontendIPConfiguration": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/frontendIPConfigurations/ip1"
+  },
+  "frontendPort": "3390",
+  "backendPort": "3389",
+  "enableFloatingIP": false,
+  "idleTimeoutInMinutes": "4",
+  "protocol": "Tcp",
+  "backendIPConfiguration": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
+  }
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "rule1",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/loadBalancingRules/rule1",
+  "etag": "W/\\\"00000000-0000-0000-0000-000000000000\\\"",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "frontendIPConfiguration": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/frontendIPConfigurations/lbfrontend"
+    },
+    "frontendPort": "80",
+    "backendPort": "80",
+    "enableFloatingIP": false,
+    "idleTimeoutInMinutes": "15",
+    "protocol": "Tcp",
+    "loadDistribution": "Default",
+    "backendAddressPool": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/backendAddressPools/bepool1"
+    },
+    "probe": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1"
+    }
+  },
+  "provisioningState": "Succeeded",
+  "frontendIPConfiguration": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/frontendIPConfigurations/lbfrontend"
+  },
+  "frontendPort": "80",
+  "backendPort": "80",
+  "enableFloatingIP": false,
+  "idleTimeoutInMinutes": "15",
+  "protocol": "Tcp",
+  "loadDistribution": "Default",
+  "backendAddressPool": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/backendAddressPools/bepool1"
+  },
+  "probe": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1"
+  }
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "probe1",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/probes/probe1",
+  "etag": "W/\\\"00000000-0000-0000-0000-000000000000\\\"",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "protocol": "Http",
+    "port": "80",
+    "requestPath": "healthcheck.aspx",
+    "intervalInSeconds": "15",
+    "numberOfProbes": "2",
+    "loadBalancingRules": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "protocol": "Http",
+  "port": "80",
+  "requestPath": "healthcheck.aspx",
+  "intervalInSeconds": "15",
+  "numberOfProbes": "2",
+  "loadBalancingRules": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/loadBalancingRules/rulelb"
+    }
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "test-nic",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic",
+  "location": "eastus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "ipConfigurations": [
+      {
+        "name": "ipconfig1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic/ipConfigurations/ipconfig1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAddress": "172.20.2.4",
+          "privateIPAllocationMethod": "Dynamic",
+          "publicIPAddress": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/test-ip"
+          },
+          "subnet": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/rg1-vnet/subnets/default"
+          },
+          "primary": true,
+          "privateIPAddressVersion": "IPv4"
+        }
+      }
+    ],
+    "dnsSettings": {
+      "dnsServers": [],
+      "appliedDnsServers": [],
+      "internalDomainNameSuffix": "test.bx.internal.cloudapp.net"
+    },
+    "macAddress": "00-0D-3A-1B-C7-21",
+    "enableAcceleratedNetworking": true,
+    "enableIPForwarding": false,
+    "networkSecurityGroup": {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/nsg"
+    },
+    "primary": true,
+    "virtualMachine": {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachines/vm1"
+    }
+  },
+  "type": "Microsoft.Network/networkInterfaces",
+  "provisioningState": "Succeeded",
+  "ipConfigurations": [
+    {
+      "name": "ipconfig1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic/ipConfigurations/ipconfig1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "privateIPAddress": "172.20.2.4",
+        "privateIPAllocationMethod": "Dynamic",
+        "publicIPAddress": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/test-ip"
+        },
+        "subnet": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/rg1-vnet/subnets/default"
+        },
+        "primary": true,
+        "privateIPAddressVersion": "IPv4"
+      }
+    }
+  ],
+  "dnsSettings": {
+    "dnsServers": [],
+    "appliedDnsServers": [],
+    "internalDomainNameSuffix": "test.bx.internal.cloudapp.net"
+  },
+  "macAddress": "00-0D-3A-1B-C7-21",
+  "enableAcceleratedNetworking": true,
+  "enableIPForwarding": false,
+  "networkSecurityGroup": {
+    "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/nsg"
+  },
+  "primary": true,
+  "virtualMachine": {
+    "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachines/vm1"
   }
 }
 Getting example for: create_or_update
@@ -338,6 +1129,380 @@ Sample after properties copied ---
   },
   "enableAcceleratedNetworking": true,
   "enableIPForwarding": false
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "test-nic",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic",
+  "location": "eastus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "ipConfigurations": [
+      {
+        "name": "ipconfig1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic/ipConfigurations/ipconfig1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAddress": "172.20.2.4",
+          "privateIPAllocationMethod": "Dynamic",
+          "publicIPAddress": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/test-ip"
+          },
+          "subnet": {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/rg1-vnet/subnets/default"
+          },
+          "primary": true,
+          "privateIPAddressVersion": "IPv4"
+        }
+      }
+    ],
+    "dnsSettings": {
+      "dnsServers": [],
+      "appliedDnsServers": [],
+      "internalDomainNameSuffix": "test.bx.internal.cloudapp.net"
+    },
+    "macAddress": "00-0D-3A-1B-C7-21",
+    "enableAcceleratedNetworking": true,
+    "enableIPForwarding": false,
+    "networkSecurityGroup": {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/nsg"
+    },
+    "primary": true,
+    "virtualMachine": {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachines/vm1"
+    }
+  },
+  "type": "Microsoft.Network/networkInterfaces",
+  "provisioningState": "Succeeded",
+  "ipConfigurations": [
+    {
+      "name": "ipconfig1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic/ipConfigurations/ipconfig1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "privateIPAddress": "172.20.2.4",
+        "privateIPAllocationMethod": "Dynamic",
+        "publicIPAddress": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/test-ip"
+        },
+        "subnet": {
+          "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/rg1-vnet/subnets/default"
+        },
+        "primary": true,
+        "privateIPAddressVersion": "IPv4"
+      }
+    }
+  ],
+  "dnsSettings": {
+    "dnsServers": [],
+    "appliedDnsServers": [],
+    "internalDomainNameSuffix": "test.bx.internal.cloudapp.net"
+  },
+  "macAddress": "00-0D-3A-1B-C7-21",
+  "enableAcceleratedNetworking": true,
+  "enableIPForwarding": false,
+  "networkSecurityGroup": {
+    "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/nsg"
+  },
+  "primary": true,
+  "virtualMachine": {
+    "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachines/vm1"
+  }
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "ipconfig1",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/mynic/ipConfigurations/ipconfig1",
+  "etag": "W/\\\"00000000-0000-0000-0000-000000000000\\\"",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "privateIPAddress": "10.0.1.4",
+    "privateIPAllocationMethod": "Dynamic",
+    "subnet": {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/myVirtualNetwork/subnets/frontendSubnet"
+    },
+    "privateIPAddressVersion": "IPv4",
+    "loadBalancerBackendAddressPools": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lbname1/backendAddressPools/bepool1"
+      }
+    ],
+    "loadBalancerInboundNatRules": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lbname1/inboundNatRules/inbound1"
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "privateIPAddress": "10.0.1.4",
+  "privateIPAllocationMethod": "Dynamic",
+  "subnet": {
+    "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/myVirtualNetwork/subnets/frontendSubnet"
+  },
+  "privateIPAddressVersion": "IPv4",
+  "loadBalancerBackendAddressPools": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lbname1/backendAddressPools/bepool1"
+    }
+  ],
+  "loadBalancerInboundNatRules": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lbname1/inboundNatRules/inbound1"
+    }
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "testnsg",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg",
+  "type": "Microsoft.Network/networkSecurityGroups",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "securityRules": [
+      {
+        "name": "rule1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/securityRules/rule1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "80",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Allow",
+          "priority": "130",
+          "direction": "Inbound"
+        }
+      }
+    ],
+    "defaultSecurityRules": [
+      {
+        "name": "AllowVnetInBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetInBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow inbound traffic from all VMs in VNET",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": "65000",
+          "direction": "Inbound"
+        }
+      },
+      {
+        "name": "AllowAzureLoadBalancerInBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow inbound traffic from azure load balancer",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "AzureLoadBalancer",
+          "destinationAddressPrefix": "*",
+          "access": "Allow",
+          "priority": "65001",
+          "direction": "Inbound"
+        }
+      },
+      {
+        "name": "DenyAllInBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllInBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Deny all inbound traffic",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": "65500",
+          "direction": "Inbound"
+        }
+      },
+      {
+        "name": "AllowVnetOutBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetOutBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": "65000",
+          "direction": "Outbound"
+        }
+      },
+      {
+        "name": "AllowInternetOutBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowInternetOutBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow outbound traffic from all VMs to Internet",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "Internet",
+          "access": "Allow",
+          "priority": "65001",
+          "direction": "Outbound"
+        }
+      },
+      {
+        "name": "DenyAllOutBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllOutBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Deny all outbound traffic",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": "65500",
+          "direction": "Outbound"
+        }
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "securityRules": [
+    {
+      "name": "rule1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/securityRules/rule1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "80",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "*",
+        "access": "Allow",
+        "priority": "130",
+        "direction": "Inbound"
+      }
+    }
+  ],
+  "defaultSecurityRules": [
+    {
+      "name": "AllowVnetInBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetInBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow inbound traffic from all VMs in VNET",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "VirtualNetwork",
+        "destinationAddressPrefix": "VirtualNetwork",
+        "access": "Allow",
+        "priority": "65000",
+        "direction": "Inbound"
+      }
+    },
+    {
+      "name": "AllowAzureLoadBalancerInBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow inbound traffic from azure load balancer",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "AzureLoadBalancer",
+        "destinationAddressPrefix": "*",
+        "access": "Allow",
+        "priority": "65001",
+        "direction": "Inbound"
+      }
+    },
+    {
+      "name": "DenyAllInBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllInBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Deny all inbound traffic",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "*",
+        "access": "Deny",
+        "priority": "65500",
+        "direction": "Inbound"
+      }
+    },
+    {
+      "name": "AllowVnetOutBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetOutBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "VirtualNetwork",
+        "destinationAddressPrefix": "VirtualNetwork",
+        "access": "Allow",
+        "priority": "65000",
+        "direction": "Outbound"
+      }
+    },
+    {
+      "name": "AllowInternetOutBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowInternetOutBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow outbound traffic from all VMs to Internet",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "Internet",
+        "access": "Allow",
+        "priority": "65001",
+        "direction": "Outbound"
+      }
+    },
+    {
+      "name": "DenyAllOutBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllOutBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Deny all outbound traffic",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "*",
+        "access": "Deny",
+        "priority": "65500",
+        "direction": "Outbound"
+      }
+    }
+  ]
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -552,6 +1717,280 @@ Sample after properties copied ---
     }
   ]
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "testnsg",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg",
+  "type": "Microsoft.Network/networkSecurityGroups",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "securityRules": [
+      {
+        "name": "rule1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/securityRules/rule1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "80",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Allow",
+          "priority": "130",
+          "direction": "Inbound"
+        }
+      }
+    ],
+    "defaultSecurityRules": [
+      {
+        "name": "AllowVnetInBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetInBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow inbound traffic from all VMs in VNET",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": "65000",
+          "direction": "Inbound"
+        }
+      },
+      {
+        "name": "AllowAzureLoadBalancerInBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow inbound traffic from azure load balancer",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "AzureLoadBalancer",
+          "destinationAddressPrefix": "*",
+          "access": "Allow",
+          "priority": "65001",
+          "direction": "Inbound"
+        }
+      },
+      {
+        "name": "DenyAllInBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllInBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Deny all inbound traffic",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": "65500",
+          "direction": "Inbound"
+        }
+      },
+      {
+        "name": "AllowVnetOutBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetOutBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": "65000",
+          "direction": "Outbound"
+        }
+      },
+      {
+        "name": "AllowInternetOutBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowInternetOutBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Allow outbound traffic from all VMs to Internet",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "Internet",
+          "access": "Allow",
+          "priority": "65001",
+          "direction": "Outbound"
+        }
+      },
+      {
+        "name": "DenyAllOutBound",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllOutBound",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "description": "Deny all outbound traffic",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "destinationPortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": "65500",
+          "direction": "Outbound"
+        }
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "securityRules": [
+    {
+      "name": "rule1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/securityRules/rule1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "80",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "*",
+        "access": "Allow",
+        "priority": "130",
+        "direction": "Inbound"
+      }
+    }
+  ],
+  "defaultSecurityRules": [
+    {
+      "name": "AllowVnetInBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetInBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow inbound traffic from all VMs in VNET",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "VirtualNetwork",
+        "destinationAddressPrefix": "VirtualNetwork",
+        "access": "Allow",
+        "priority": "65000",
+        "direction": "Inbound"
+      }
+    },
+    {
+      "name": "AllowAzureLoadBalancerInBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow inbound traffic from azure load balancer",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "AzureLoadBalancer",
+        "destinationAddressPrefix": "*",
+        "access": "Allow",
+        "priority": "65001",
+        "direction": "Inbound"
+      }
+    },
+    {
+      "name": "DenyAllInBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllInBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Deny all inbound traffic",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "*",
+        "access": "Deny",
+        "priority": "65500",
+        "direction": "Inbound"
+      }
+    },
+    {
+      "name": "AllowVnetOutBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowVnetOutBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "VirtualNetwork",
+        "destinationAddressPrefix": "VirtualNetwork",
+        "access": "Allow",
+        "priority": "65000",
+        "direction": "Outbound"
+      }
+    },
+    {
+      "name": "AllowInternetOutBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/AllowInternetOutBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Allow outbound traffic from all VMs to Internet",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "Internet",
+        "access": "Allow",
+        "priority": "65001",
+        "direction": "Outbound"
+      }
+    },
+    {
+      "name": "DenyAllOutBound",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/defaultSecurityRules/DenyAllOutBound",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "description": "Deny all outbound traffic",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "*",
+        "access": "Deny",
+        "priority": "65500",
+        "direction": "Outbound"
+      }
+    }
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "rule1",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/securityRules/rule1",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "protocol": "*",
+    "sourcePortRange": "*",
+    "destinationPortRange": "80",
+    "sourceAddressPrefix": "*",
+    "destinationAddressPrefix": "*",
+    "access": "Allow",
+    "priority": "130",
+    "direction": "Inbound"
+  },
+  "provisioningState": "Succeeded",
+  "protocol": "*",
+  "sourcePortRange": "*",
+  "destinationPortRange": "80",
+  "sourceAddressPrefix": "*",
+  "destinationAddressPrefix": "*",
+  "access": "Allow",
+  "priority": "130",
+  "direction": "Inbound"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -581,8 +2020,107 @@ Sample after properties copied ---
   "priority": "100",
   "direction": "Outbound"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "rule1",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkSecurityGroups/testnsg/securityRules/rule1",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "protocol": "*",
+    "sourcePortRange": "*",
+    "destinationPortRange": "80",
+    "sourceAddressPrefix": "*",
+    "destinationAddressPrefix": "*",
+    "access": "Allow",
+    "priority": "130",
+    "direction": "Inbound"
+  },
+  "provisioningState": "Succeeded",
+  "protocol": "*",
+  "sourcePortRange": "*",
+  "destinationPortRange": "80",
+  "sourceAddressPrefix": "*",
+  "destinationAddressPrefix": "*",
+  "access": "Allow",
+  "priority": "130",
+  "direction": "Inbound"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "AllowVnetInBound",
+  "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/nsg1/defaultSecurityRules/AllowVnetInBound",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "description": "Allow inbound traffic from all VMs in VNET",
+    "protocol": "*",
+    "sourcePortRange": "*",
+    "destinationPortRange": "*",
+    "sourceAddressPrefix": "VirtualNetwork",
+    "destinationAddressPrefix": "VirtualNetwork",
+    "access": "Allow",
+    "priority": "65000",
+    "direction": "Inbound",
+    "sourcePortRanges": [],
+    "destinationPortRanges": [],
+    "sourceAddressPrefixes": [],
+    "destinationAddressPrefixes": []
+  },
+  "provisioningState": "Succeeded",
+  "description": "Allow inbound traffic from all VMs in VNET",
+  "protocol": "*",
+  "sourcePortRange": "*",
+  "destinationPortRange": "*",
+  "sourceAddressPrefix": "VirtualNetwork",
+  "destinationAddressPrefix": "VirtualNetwork",
+  "access": "Allow",
+  "priority": "65000",
+  "direction": "Inbound",
+  "sourcePortRanges": [],
+  "destinationPortRanges": [],
+  "sourceAddressPrefixes": [],
+  "destinationAddressPrefixes": []
+}
+Getting example for: get
 Getting example for: create_or_update
+Getting example for: get
+Getting example for: get
 Getting example for: create
+Getting example for: get
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "testDNS-ip",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/testDNS-ip",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "publicIPAddressVersion": "IPv4",
+    "publicIPAllocationMethod": "Dynamic",
+    "idleTimeoutInMinutes": "4",
+    "ipConfiguration": {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
+    }
+  },
+  "type": "Microsoft.Network/publicIPAddresses",
+  "provisioningState": "Succeeded",
+  "publicIPAddressVersion": "IPv4",
+  "publicIPAllocationMethod": "Dynamic",
+  "idleTimeoutInMinutes": "4",
+  "ipConfiguration": {
+    "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
+  }
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -612,6 +2150,86 @@ Sample after properties copied ---
   "ipConfiguration": {
     "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
   }
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "testDNS-ip",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/testDNS-ip",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "publicIPAddressVersion": "IPv4",
+    "publicIPAllocationMethod": "Dynamic",
+    "idleTimeoutInMinutes": "4",
+    "ipConfiguration": {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
+    }
+  },
+  "type": "Microsoft.Network/publicIPAddresses",
+  "provisioningState": "Succeeded",
+  "publicIPAddressVersion": "IPv4",
+  "publicIPAllocationMethod": "Dynamic",
+  "idleTimeoutInMinutes": "4",
+  "ipConfiguration": {
+    "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
+  }
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName",
+  "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+  "location": "West US",
+  "name": "filterName",
+  "type": "Microsofot.Network/routeFilters",
+  "tags": {
+    "key1": "value1"
+  },
+  "properties": {
+    "provisioningState": "Succeeded",
+    "rules": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName",
+        "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+        "name": "ruleName",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "access": "Allow",
+          "routeFilterRuleType": "Community",
+          "communities": [
+            "12076:5030",
+            "12076:5040"
+          ]
+        }
+      }
+    ],
+    "peerings": []
+  },
+  "provisioningState": "Succeeded",
+  "rules": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName",
+      "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+      "name": "ruleName",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "access": "Allow",
+        "routeFilterRuleType": "Community",
+        "communities": [
+          "12076:5030",
+          "12076:5040"
+        ]
+      }
+    }
+  ],
+  "peerings": []
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -717,6 +2335,88 @@ Sample after properties copied ---
   ],
   "peerings": []
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName",
+  "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+  "location": "West US",
+  "name": "filterName",
+  "type": "Microsofot.Network/routeFilters",
+  "tags": {
+    "key1": "value1"
+  },
+  "properties": {
+    "provisioningState": "Succeeded",
+    "rules": [
+      {
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName",
+        "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+        "name": "ruleName",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "access": "Allow",
+          "routeFilterRuleType": "Community",
+          "communities": [
+            "12076:5030",
+            "12076:5040"
+          ]
+        }
+      }
+    ],
+    "peerings": []
+  },
+  "provisioningState": "Succeeded",
+  "rules": [
+    {
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName",
+      "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+      "name": "ruleName",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "access": "Allow",
+        "routeFilterRuleType": "Community",
+        "communities": [
+          "12076:5030",
+          "12076:5040"
+        ]
+      }
+    }
+  ],
+  "peerings": []
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName",
+  "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+  "tags": {
+    "key1": "value1"
+  },
+  "name": "ruleName",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "access": "Allow",
+    "routeFilterRuleType": "Community",
+    "communities": [
+      "12076:5030",
+      "12076:5040"
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "access": "Allow",
+  "routeFilterRuleType": "Community",
+  "communities": [
+    "12076:5030",
+    "12076:5040"
+  ]
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -775,6 +2475,74 @@ Sample after properties copied ---
     "12076:5040"
   ]
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName",
+  "etag": "w/\\00000000-0000-0000-0000-000000000000\\",
+  "tags": {
+    "key1": "value1"
+  },
+  "name": "ruleName",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "access": "Allow",
+    "routeFilterRuleType": "Community",
+    "communities": [
+      "12076:5030",
+      "12076:5040"
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "access": "Allow",
+  "routeFilterRuleType": "Community",
+  "communities": [
+    "12076:5030",
+    "12076:5040"
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "testrt",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt",
+  "type": "Microsoft.Network/routeTables",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "disableBgpRoutePropagation": false,
+    "routes": [
+      {
+        "name": "route1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt/routes/route1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "addressPrefix": "10.0.3.0/24",
+          "nextHopType": "VirtualNetworkGateway"
+        }
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "disableBgpRoutePropagation": false,
+  "routes": [
+    {
+      "name": "route1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt/routes/route1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "addressPrefix": "10.0.3.0/24",
+        "nextHopType": "VirtualNetworkGateway"
+      }
+    }
+  ]
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -794,6 +2562,62 @@ Sample after properties copied ---
   "routes": [],
   "disableBgpRoutePropagation": true
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "testrt",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt",
+  "type": "Microsoft.Network/routeTables",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "disableBgpRoutePropagation": false,
+    "routes": [
+      {
+        "name": "route1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt/routes/route1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "addressPrefix": "10.0.3.0/24",
+          "nextHopType": "VirtualNetworkGateway"
+        }
+      }
+    ]
+  },
+  "provisioningState": "Succeeded",
+  "disableBgpRoutePropagation": false,
+  "routes": [
+    {
+      "name": "route1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt/routes/route1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "addressPrefix": "10.0.3.0/24",
+        "nextHopType": "VirtualNetworkGateway"
+      }
+    }
+  ]
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "route1",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt/routes/route1",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "addressPrefix": "10.0.3.0/24",
+    "nextHopType": "Internet"
+  },
+  "provisioningState": "Succeeded",
+  "addressPrefix": "10.0.3.0/24",
+  "nextHopType": "Internet"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -810,6 +2634,80 @@ Sample after properties copied ---
   "provisioningState": "Succeeded",
   "addressPrefix": "10.0.3.0/24",
   "nextHopType": "VirtualNetworkGateway"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "route1",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/routeTables/testrt/routes/route1",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "addressPrefix": "10.0.3.0/24",
+    "nextHopType": "Internet"
+  },
+  "provisioningState": "Succeeded",
+  "addressPrefix": "10.0.3.0/24",
+  "nextHopType": "Internet"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "test-vnet",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet",
+  "type": "Microsoft.Network/virtualNetworks",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "addressSpace": {
+      "addressPrefixes": [
+        "10.0.0.0/16"
+      ]
+    },
+    "subnets": [
+      {
+        "name": "subnet1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "addressPrefix": "10.0.1.0/24",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe"
+            }
+          ]
+        }
+      }
+    ],
+    "virtualNetworkPeerings": []
+  },
+  "provisioningState": "Succeeded",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/16"
+    ]
+  },
+  "subnets": [
+    {
+      "name": "subnet1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "addressPrefix": "10.0.1.0/24",
+        "ipConfigurations": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe"
+          }
+        ]
+      }
+    }
+  ],
+  "virtualNetworkPeerings": []
 }
 Getting example for: create_or_update
 Found example for: create_or_update
@@ -840,6 +2738,78 @@ Sample after properties copied ---
   "subnets": [],
   "virtualNetworkPeerings": []
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "name": "test-vnet",
+  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet",
+  "type": "Microsoft.Network/virtualNetworks",
+  "location": "westus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "addressSpace": {
+      "addressPrefixes": [
+        "10.0.0.0/16"
+      ]
+    },
+    "subnets": [
+      {
+        "name": "subnet1",
+        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "addressPrefix": "10.0.1.0/24",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe"
+            }
+          ]
+        }
+      }
+    ],
+    "virtualNetworkPeerings": []
+  },
+  "provisioningState": "Succeeded",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/16"
+    ]
+  },
+  "subnets": [
+    {
+      "name": "subnet1",
+      "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "addressPrefix": "10.0.1.0/24",
+        "ipConfigurations": [
+          {
+            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe"
+          }
+        ]
+      }
+    }
+  ],
+  "virtualNetworkPeerings": []
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1",
+  "name": "subnet1",
+  "properties": {
+    "addressPrefix": "10.0.0.0/16",
+    "provisioningState": "Succeeded"
+  },
+  "addressPrefix": "10.0.0.0/16",
+  "provisioningState": "Succeeded"
+}
 Getting example for: create_or_update
 Found example for: create_or_update
 Found response for: create_or_update
@@ -853,6 +2823,60 @@ Sample after properties copied ---
     "provisioningState": "Succeeded"
   },
   "addressPrefix": "10.0.0.0/16",
+  "provisioningState": "Succeeded"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1",
+  "name": "subnet1",
+  "properties": {
+    "addressPrefix": "10.0.0.0/16",
+    "provisioningState": "Succeeded"
+  },
+  "addressPrefix": "10.0.0.0/16",
+  "provisioningState": "Succeeded"
+}
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer",
+  "name": "peer",
+  "properties": {
+    "allowVirtualNetworkAccess": true,
+    "allowForwardedTraffic": true,
+    "allowGatewayTransit": false,
+    "useRemoteGateways": false,
+    "remoteVirtualNetwork": {
+      "id": "/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2"
+    },
+    "remoteAddressSpace": {
+      "addressPrefixes": [
+        "12.0.0.0/8"
+      ]
+    },
+    "peeringState": "Initiated",
+    "provisioningState": "Succeeded"
+  },
+  "allowVirtualNetworkAccess": true,
+  "allowForwardedTraffic": true,
+  "allowGatewayTransit": false,
+  "useRemoteGateways": false,
+  "remoteVirtualNetwork": {
+    "id": "/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2"
+  },
+  "remoteAddressSpace": {
+    "addressPrefixes": [
+      "12.0.0.0/8"
+    ]
+  },
+  "peeringState": "Initiated",
   "provisioningState": "Succeeded"
 }
 Getting example for: create_or_update
@@ -894,6 +2918,51 @@ Sample after properties copied ---
   "peeringState": "Initiated",
   "provisioningState": "Succeeded"
 }
+Getting example for: get
+Found example for: get
+Found response for: get
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer",
+  "name": "peer",
+  "properties": {
+    "allowVirtualNetworkAccess": true,
+    "allowForwardedTraffic": true,
+    "allowGatewayTransit": false,
+    "useRemoteGateways": false,
+    "remoteVirtualNetwork": {
+      "id": "/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2"
+    },
+    "remoteAddressSpace": {
+      "addressPrefixes": [
+        "12.0.0.0/8"
+      ]
+    },
+    "peeringState": "Initiated",
+    "provisioningState": "Succeeded"
+  },
+  "allowVirtualNetworkAccess": true,
+  "allowForwardedTraffic": true,
+  "allowGatewayTransit": false,
+  "useRemoteGateways": false,
+  "remoteVirtualNetwork": {
+    "id": "/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2"
+  },
+  "remoteAddressSpace": {
+    "addressPrefixes": [
+      "12.0.0.0/8"
+    ]
+  },
+  "peeringState": "Initiated",
+  "provisioningState": "Succeeded"
+}
+Getting example for: get
 Getting example for: create_or_update
+Getting example for: get
+Getting example for: get
 Getting example for: create_or_update
+Getting example for: get
+Getting example for: get
 Getting example for: create_or_update
+Getting example for: get

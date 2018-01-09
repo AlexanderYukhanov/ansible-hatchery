@@ -57,6 +57,21 @@ EXAMPLES = '''
       webhook_name: webhook_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - The resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook
+    status:
+        description:
+            - The status of the webhook at the time the operation was called. Possible values include: C(enabled), C(disabled)
+        returned: always
+        type: str
+        sample: enabled
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

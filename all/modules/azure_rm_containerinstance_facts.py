@@ -49,6 +49,15 @@ EXAMPLES = '''
       resource_group: resource_group_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - The resource id.
+        returned: always
+        type: str
+        sample: /subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

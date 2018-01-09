@@ -61,6 +61,21 @@ EXAMPLES = '''
       database_name: database_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default
+    state:
+        description:
+            - The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)
+        returned: always
+        type: str
+        sample: Enabled
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

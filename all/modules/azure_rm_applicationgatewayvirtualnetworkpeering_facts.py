@@ -51,6 +51,15 @@ EXAMPLES = '''
       virtual_network_peering_name: virtual_network_peering_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

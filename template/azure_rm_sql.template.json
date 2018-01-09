@@ -402,7 +402,68 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Default",
+          "SubFields": [],
+          "Info": "Default"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The geo-location where the resource lives",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Enabled",
+          "SubFields": [],
+          "Info": "Enabled"
+        },
+        {
+          "Name": "recovery_services_backup_policy_resource_id",
+          "NameAlt": "x",
+          "Description": "The azure recovery services backup protection policy resource id",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "recovery_services_backup_policy_resource_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -719,7 +780,58 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "RegisteredVault",
+          "SubFields": [],
+          "Info": "RegisteredVault"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/backupLongTermRetentionVaults"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The geo-location where the resource lives",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "recovery_services_vault_resource_id",
+          "NameAlt": "x",
+          "Description": "The azure recovery services vault resource id",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "recovery_services_vault_resource_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -946,7 +1058,78 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/recoverabledatabasetest-6852/providers/Microsoft.Sql/servers/recoverabledatabasetest-2080/recoverabledatabases/recoverabledatabasetest-9187",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/recoverabledatabasetest-6852/providers/Microsoft.Sql/servers/recoverabledatabasetest-2080/recoverabledatabases/recoverabledatabasetest-9187"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "recoverabledatabasetest-9187",
+          "SubFields": [],
+          "Info": "recoverabledatabasetest-9187"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/recoverabledatabases",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/recoverabledatabases"
+        },
+        {
+          "Name": "edition",
+          "NameAlt": "x",
+          "Description": "The edition of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Basic",
+          "SubFields": [],
+          "Info": "Basic"
+        },
+        {
+          "Name": "service_level_objective",
+          "NameAlt": "x",
+          "Description": "The service level objective name of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "elastic_pool_name",
+          "NameAlt": "x",
+          "Description": "The elastic pool name of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "elastic_pool_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "last_available_backup_date",
+          "NameAlt": "x",
+          "Description": "The last available backup date of the database (ISO8601 format)",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "last_available_backup_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -1065,7 +1248,128 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/restorabledroppeddatabasetest-1257/providers/Microsoft.Sql/servers/restorabledroppeddatabasetest-2389/restorableDroppedDatabases/restorabledroppeddatabasetest-7654,131403269876900000",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/restorabledroppeddatabasetest-1257/providers/Microsoft.Sql/servers/restorabledroppeddatabasetest-2389/restorableDroppedDatabases/restorabledroppeddatabasetest-7654,131403269876900000"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "restorabledroppeddatabasetest-7654,131403269876900000",
+          "SubFields": [],
+          "Info": "restorabledroppeddatabasetest-7654,131403269876900000"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/restorableDroppedDatabases",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/restorableDroppedDatabases"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The geo-location where the resource lives",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "database_name",
+          "NameAlt": "x",
+          "Description": "The name of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "edition",
+          "NameAlt": "x",
+          "Description": "The edition of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Basic",
+          "SubFields": [],
+          "Info": "Basic"
+        },
+        {
+          "Name": "max_size_bytes",
+          "NameAlt": "x",
+          "Description": "The max size in bytes of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "max_size_bytes",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "service_level_objective",
+          "NameAlt": "x",
+          "Description": "The service level objective name of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "elastic_pool_name",
+          "NameAlt": "x",
+          "Description": "The elastic pool name of the database",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "elastic_pool_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "creation_date",
+          "NameAlt": "x",
+          "Description": "The creation date of the database (ISO8601 format)",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "creation_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "deletion_date",
+          "NameAlt": "x",
+          "Description": "The deletion date of the database (ISO8601 format)",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "deletion_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "earliest_restore_date",
+          "NameAlt": "x",
+          "Description": "The earliest restore date of the database (ISO8601 format)",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "earliest_restore_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -1450,7 +1754,68 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "default",
+          "SubFields": [],
+          "Info": "default"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/connectionPolicies",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/connectionPolicies"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Metadata used for the Azure portal experience.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": ""
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "West US",
+          "SubFields": [],
+          "Info": "West US"
+        },
+        {
+          "Name": "connection_type",
+          "NameAlt": "x",
+          "Description": "The server connection type. Possible values include: 'Default', 'Proxy', 'Redirect'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "connection_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -2137,7 +2502,138 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-6852/providers/Microsoft.Sql/servers/securityalert-2080/databases/testdb",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-6852/providers/Microsoft.Sql/servers/securityalert-2080/databases/testdb"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "default",
+          "SubFields": [],
+          "Info": "default"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/securityAlertPolicies",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/securityAlertPolicies"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The geo-location where the resource lives",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Resource kind.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "V12",
+          "SubFields": [],
+          "Info": "V12"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'New', 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Enabled",
+          "SubFields": [],
+          "Info": "Enabled"
+        },
+        {
+          "Name": "disabled_alerts",
+          "NameAlt": "x",
+          "Description": "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection; Sql_Injection_Vulnerability; Access_Anomaly; Usage_Anomaly.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "disabled_alerts",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "email_addresses",
+          "NameAlt": "x",
+          "Description": "Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "email_addresses",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "email_account_admins",
+          "NameAlt": "x",
+          "Description": "Specifies that the alert is sent to the account administrators. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "email_account_admins",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_endpoint",
+          "NameAlt": "x",
+          "Description": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. If state is Enabled, storageEndpoint is required.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "storage_endpoint",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_account_access_key",
+          "NameAlt": "x",
+          "Description": "Specifies the identifier key of the Threat Detection audit storage account. If state is Enabled, storageAccountAccessKey is required.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "storage_account_access_key",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "retention_days",
+          "NameAlt": "x",
+          "Description": "Specifies the number of days to keep in the Threat Detection audit logs.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "retention_days",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "use_server_default",
+          "NameAlt": "x",
+          "Description": "Specifies whether to use the default server policy. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "use_server_default",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -2571,7 +3067,98 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Default",
+          "SubFields": [],
+          "Info": "Default"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/dataMaskingPolicies",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/dataMaskingPolicies"
+        },
+        {
+          "Name": "data_masking_state",
+          "NameAlt": "x",
+          "Description": "The state of the data masking policy. Possible values include: 'Disabled', 'Enabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "data_masking_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "exempt_principals",
+          "NameAlt": "x",
+          "Description": "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not apply. The specified users receive data results without masking for all of the database queries.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "exempt_principals",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "application_principals",
+          "NameAlt": "x",
+          "Description": "The list of the application principals. This is a legacy parameter and is no longer used.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "application_principals",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "masking_level",
+          "NameAlt": "x",
+          "Description": "The masking level. This is a legacy parameter and is no longer used.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "masking_level",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The location of the data masking policy.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Central US",
+          "SubFields": [],
+          "Info": "Central US"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "The kind of data masking policy. Metadata, used for Azure portal.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": ""
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -3753,7 +4340,78 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-2304",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-2304"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "firewallrulecrudtest-2304",
+          "SubFields": [],
+          "Info": "firewallrulecrudtest-2304"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/firewallRules",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/firewallRules"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of server that contains this firewall rule.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "v12.0",
+          "SubFields": [],
+          "Info": "v12.0"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Location of the server that contains this firewall rule.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "start_ip_address",
+          "NameAlt": "x",
+          "Description": "The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "start_ip_address",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "end_ip_address",
+          "NameAlt": "x",
+          "Description": "The end IP address of the firewall rule. Must be IPv4 format. Must be greater than or equal to startIpAddress. Use value '0.0.0.0' to represent all Azure-internal IP addresses.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "end_ip_address",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_sqlfirewallrule",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -4155,7 +4813,78 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Default",
+          "SubFields": [],
+          "Info": "Default"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/geoBackupPolicies"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Enabled",
+          "SubFields": [],
+          "Info": "Enabled"
+        },
+        {
+          "Name": "storage_type",
+          "NameAlt": "x",
+          "Description": "The storage type of the geo backup policy.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "storage_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of geo backup policy.  This is metadata used for the Azure portal experience.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": ""
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Backup policy location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Central US",
+          "SubFields": [],
+          "Info": "Central US"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_sqlgeobackuppolicy",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -5969,7 +6698,864 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sqlcrudtest-9187",
+          "SubFields": [],
+          "Info": "sqlcrudtest-9187"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "{\r\n  \"tagKey1\": \"TagValue1\"\r\n}",
+          "SubFields": [],
+          "Info": "{\r\n  \"tagKey1\": \"TagValue1\"\r\n}"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of database.  This is metadata used for the Azure portal experience.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "v12.0,user",
+          "SubFields": [],
+          "Info": "v12.0,user"
+        },
+        {
+          "Name": "collation",
+          "NameAlt": "x",
+          "Description": "The collation of the database. If createMode is not Default, this value is ignored.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "SQL_Latin1_General_CP1_CI_AS",
+          "SubFields": [],
+          "Info": "SQL_Latin1_General_CP1_CI_AS"
+        },
+        {
+          "Name": "creation_date",
+          "NameAlt": "x",
+          "Description": "The creation date of the database (ISO8601 format).",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "creation_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "containment_state",
+          "NameAlt": "x",
+          "Description": "The containment state of the database.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "containment_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "current_service_objective_id",
+          "NameAlt": "x",
+          "Description": "The current service level objective ID of the database. This is the ID of the service level objective that is currently active.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "current_service_objective_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_id",
+          "NameAlt": "x",
+          "Description": "The ID of the database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "earliest_restore_date",
+          "NameAlt": "x",
+          "Description": "This records the earliest start date and time that restore is available for this database (ISO8601 format).",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "earliest_restore_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "create_mode",
+          "NameAlt": "x",
+          "Description": "Specifies the mode of database creation.\n\nDefault: regular database creation.\n\nCopy: creates a database as a copy of an existing database. sourceDatabaseId must be specified as the resource ID of the source database.\n\nOnlineSecondary/NonReadableSecondary: creates a database as a (readable or nonreadable) secondary replica of an existing database. sourceDatabaseId must be specified as the resource ID of the existing primary database.\n\nPointInTimeRestore: Creates a database by restoring a point in time backup of an existing database. sourceDatabaseId must be specified as the resource ID of the existing database, and restorePointInTime must be specified.\n\nRecovery: Creates a database by restoring a geo-replicated backup. sourceDatabaseId must be specified as the recoverable database resource ID to restore.\n\nRestore: Creates a database by restoring a backup of a deleted database. sourceDatabaseId must be specified. If sourceDatabaseId is the database's original resource ID, then sourceDatabaseDeletionDate must be specified. Otherwise sourceDatabaseId must be the restorable dropped database resource ID and sourceDatabaseDeletionDate is ignored. restorePointInTime may also be specified to restore from an earlier point in time.\n\nRestoreLongTermRetentionBackup: Creates a database by restoring from a long term retention vault. recoveryServicesRecoveryPointResourceId must be specified as the recovery point resource ID.\n\nCopy, NonReadableSecondary, OnlineSecondary and RestoreLongTermRetentionBackup are not supported for DataWarehouse edition. Possible values include: 'Copy', 'Default', 'NonReadableSecondary', 'OnlineSecondary', 'PointInTimeRestore', 'Recovery', 'Restore', 'RestoreLongTermRetentionBackup'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "create_mode",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "source_database_id",
+          "NameAlt": "x",
+          "Description": "Conditional. If createMode is Copy, NonReadableSecondary, OnlineSecondary, PointInTimeRestore, Recovery, or Restore, then this value is required. Specifies the resource ID of the source database. If createMode is NonReadableSecondary or OnlineSecondary, the name of the source database must be the same as the new database being created.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "source_database_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "source_database_deletion_date",
+          "NameAlt": "x",
+          "Description": "Conditional. If createMode is Restore and sourceDatabaseId is the deleted database's original resource id when it existed (as opposed to its current restorable dropped database id), then this value is required. Specifies the time that the database was deleted.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "source_database_deletion_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "restore_point_in_time",
+          "NameAlt": "x",
+          "Description": "Conditional. If createMode is PointInTimeRestore, this value is required. If createMode is Restore, this value is optional. Specifies the point in time (ISO8601 format) of the source database that will be restored to create the new database. Must be greater than or equal to the source database's earliestRestoreDate value.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "restore_point_in_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "recovery_services_recovery_point_resource_id",
+          "NameAlt": "x",
+          "Description": "Conditional. If createMode is RestoreLongTermRetentionBackup, then this value is required. Specifies the resource ID of the recovery point to restore from.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "recovery_services_recovery_point_resource_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "edition",
+          "NameAlt": "x",
+          "Description": "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSecondary or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Basic",
+          "SubFields": [],
+          "Info": "Basic"
+        },
+        {
+          "Name": "max_size_bytes",
+          "NameAlt": "x",
+          "Description": "The max size of the database expressed in bytes. If createMode is not Default, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\"",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "max_size_bytes",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "requested_service_objective_id",
+          "NameAlt": "x",
+          "Description": "The configured service level objective ID of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of currentServiceObjectiveId property. If requestedServiceObjectiveId and requestedServiceObjectiveName are both updated, the value of requestedServiceObjectiveId overrides the value of requestedServiceObjectiveName. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\"",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "requested_service_objective_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "requested_service_objective_name",
+          "NameAlt": "x",
+          "Description": "The name of the configured service level objective of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of serviceLevelObjective property. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "requested_service_objective_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "service_level_objective",
+          "NameAlt": "x",
+          "Description": "The current service level objective of the database. Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "The status of the database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Online",
+          "SubFields": [],
+          "Info": "Online"
+        },
+        {
+          "Name": "elastic_pool_name",
+          "NameAlt": "x",
+          "Description": "The name of the elastic pool the database is in. If elasticPoolName and requestedServiceObjectiveName are both updated, the value of requestedServiceObjectiveName is ignored. Not supported for DataWarehouse edition.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "elastic_pool_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "default_secondary_location",
+          "NameAlt": "x",
+          "Description": "The default secondary region for this database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "default_secondary_location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "service_tier_advisors",
+          "NameAlt": "x",
+          "Description": "The list of service tier advisors for this database. Expanded property",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "service_tier_advisors",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Resource name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "observation_period_start",
+              "NameAlt": "x",
+              "Description": "The observation period start (ISO8601 format).",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "observation_period_start",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "observation_period_end",
+              "NameAlt": "x",
+              "Description": "The observation period start (ISO8601 format).",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "observation_period_end",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "active_time_ratio",
+              "NameAlt": "x",
+              "Description": "The activeTimeRatio for service tier advisor.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "active_time_ratio",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "min_dtu",
+              "NameAlt": "x",
+              "Description": "Gets or sets minDtu for service tier advisor.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "min_dtu",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "avg_dtu",
+              "NameAlt": "x",
+              "Description": "Gets or sets avgDtu for service tier advisor.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "avg_dtu",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "max_dtu",
+              "NameAlt": "x",
+              "Description": "Gets or sets maxDtu for service tier advisor.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "max_dtu",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "max_size_in_gb",
+              "NameAlt": "x",
+              "Description": "Gets or sets maxSizeInGB for service tier advisor.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "max_size_in_gb",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "service_level_objective_usage_metrics",
+              "NameAlt": "x",
+              "Description": "Gets or sets serviceLevelObjectiveUsageMetrics for the service tier advisor.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "service_level_objective_usage_metrics",
+              "SubFields": [
+                {
+                  "Name": "service_level_objective",
+                  "NameAlt": "x",
+                  "Description": "The serviceLevelObjective for SLO usage metric. Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "service_level_objective",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "service_level_objective_id",
+                  "NameAlt": "x",
+                  "Description": "The serviceLevelObjectiveId for SLO usage metric.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "service_level_objective_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "in_range_time_ratio",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets inRangeTimeRatio for SLO usage metric.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "in_range_time_ratio",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "current_service_level_objective",
+              "NameAlt": "x",
+              "Description": "Gets or sets currentServiceLevelObjective for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "current_service_level_objective",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "current_service_level_objective_id",
+              "NameAlt": "x",
+              "Description": "Gets or sets currentServiceLevelObjectiveId for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "current_service_level_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "usage_based_recommendation_service_level_objective",
+              "NameAlt": "x",
+              "Description": "Gets or sets usageBasedRecommendationServiceLevelObjective for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "usage_based_recommendation_service_level_objective",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "usage_based_recommendation_service_level_objective_id",
+              "NameAlt": "x",
+              "Description": "Gets or sets usageBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "usage_based_recommendation_service_level_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "database_size_based_recommendation_service_level_objective",
+              "NameAlt": "x",
+              "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjective for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "database_size_based_recommendation_service_level_objective",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "database_size_based_recommendation_service_level_objective_id",
+              "NameAlt": "x",
+              "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "database_size_based_recommendation_service_level_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "disaster_plan_based_recommendation_service_level_objective",
+              "NameAlt": "x",
+              "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjective for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "disaster_plan_based_recommendation_service_level_objective",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "disaster_plan_based_recommendation_service_level_objective_id",
+              "NameAlt": "x",
+              "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "disaster_plan_based_recommendation_service_level_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "overall_recommendation_service_level_objective",
+              "NameAlt": "x",
+              "Description": "Gets or sets overallRecommendationServiceLevelObjective for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "overall_recommendation_service_level_objective",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "overall_recommendation_service_level_objective_id",
+              "NameAlt": "x",
+              "Description": "Gets or sets overallRecommendationServiceLevelObjectiveId for service tier advisor.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "overall_recommendation_service_level_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "confidence",
+              "NameAlt": "x",
+              "Description": "Gets or sets confidence for service tier advisor.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "confidence",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "transparent_data_encryption",
+          "NameAlt": "x",
+          "Description": "The transparent data encryption info for this database.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "transparent_data_encryption",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Resource name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "location",
+              "NameAlt": "x",
+              "Description": "Resource location.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "location",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "status",
+              "NameAlt": "x",
+              "Description": "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "status",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "recommended_index",
+          "NameAlt": "x",
+          "Description": "The recommended indices for this database.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "recommended_index",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Resource name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "action",
+              "NameAlt": "x",
+              "Description": "The proposed index action. You can create a missing index, drop an unused index, or rebuild an existing index to improve its performance. Possible values include: 'Create', 'Drop', 'Rebuild'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "action",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "state",
+              "NameAlt": "x",
+              "Description": "The current recommendation state. Possible values include: 'Active', 'Pending', 'Executing', 'Verifying', 'Pending Revert', 'Reverting', 'Reverted', 'Ignored', 'Expired', 'Blocked', 'Success'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "state",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "created",
+              "NameAlt": "x",
+              "Description": "The UTC datetime showing when this resource was created (ISO8601 format).",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "created",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "last_modified",
+              "NameAlt": "x",
+              "Description": "The UTC datetime of when was this resource last changed (ISO8601 format).",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "last_modified",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "index_type",
+              "NameAlt": "x",
+              "Description": "The type of index (CLUSTERED, NONCLUSTERED, COLUMNSTORE, CLUSTERED COLUMNSTORE). Possible values include: 'CLUSTERED', 'NONCLUSTERED', 'COLUMNSTORE', 'CLUSTERED COLUMNSTORE'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "index_type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "schema",
+              "NameAlt": "x",
+              "Description": "The schema where table to build index over resides",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "schema",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "table",
+              "NameAlt": "x",
+              "Description": "The table on which to build index.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "table",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "columns",
+              "NameAlt": "x",
+              "Description": "Columns over which to build index",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "columns",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "included_columns",
+              "NameAlt": "x",
+              "Description": "The list of column names to be included in the index",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "included_columns",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "index_script",
+              "NameAlt": "x",
+              "Description": "The full build index script",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "index_script",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "estimated_impact",
+              "NameAlt": "x",
+              "Description": "The estimated impact of doing recommended index action.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "estimated_impact",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "The name of the impact dimension.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "unit",
+                  "NameAlt": "x",
+                  "Description": "The unit in which estimated impact to dimension is measured.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "unit",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "change_value_absolute",
+                  "NameAlt": "x",
+                  "Description": "The absolute impact to dimension.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "change_value_absolute",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "change_value_relative",
+                  "NameAlt": "x",
+                  "Description": "The relative impact to dimension (null if not applicable)",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "change_value_relative",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "reported_impact",
+              "NameAlt": "x",
+              "Description": "The values reported after index action is complete.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "reported_impact",
+              "SubFields": [
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "The name of the impact dimension.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "unit",
+                  "NameAlt": "x",
+                  "Description": "The unit in which estimated impact to dimension is measured.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "unit",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "change_value_absolute",
+                  "NameAlt": "x",
+                  "Description": "The absolute impact to dimension.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "change_value_absolute",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "change_value_relative",
+                  "NameAlt": "x",
+                  "Description": "The relative impact to dimension (null if not applicable)",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "change_value_relative",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "failover_group_id",
+          "NameAlt": "x",
+          "Description": "The resource identifier of the failover group containing this database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "failover_group_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "read_scale",
+          "NameAlt": "x",
+          "Description": "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for DataWarehouse edition. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "read_scale",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sample_name",
+          "NameAlt": "x",
+          "Description": "Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not supported for DataWarehouse edition. Possible values include: 'AdventureWorksLT'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sample_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "zone_redundant",
+          "NameAlt": "x",
+          "Description": "Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "zone_redundant",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_sqldatabase",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -6637,7 +8223,148 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sqlcrudtest-8102",
+          "SubFields": [],
+          "Info": "sqlcrudtest-8102"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/elasticPools",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/elasticPools"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "creation_date",
+          "NameAlt": "x",
+          "Description": "The creation date of the elastic pool (ISO8601 format).",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "creation_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "The state of the elastic pool. Possible values include: 'Creating', 'Ready', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Ready",
+          "SubFields": [],
+          "Info": "Ready"
+        },
+        {
+          "Name": "edition",
+          "NameAlt": "x",
+          "Description": "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Basic",
+          "SubFields": [],
+          "Info": "Basic"
+        },
+        {
+          "Name": "dtu",
+          "NameAlt": "x",
+          "Description": "The total shared DTU for the database elastic pool.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "50",
+          "SubFields": [],
+          "Info": "50"
+        },
+        {
+          "Name": "database_dtu_max",
+          "NameAlt": "x",
+          "Description": "The maximum DTU any one database can consume.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "database_dtu_max",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_dtu_min",
+          "NameAlt": "x",
+          "Description": "The minimum DTU all databases are guaranteed.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "database_dtu_min",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_mb",
+          "NameAlt": "x",
+          "Description": "Gets storage limit for the database elastic pool in MB.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "storage_mb",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "zone_redundant",
+          "NameAlt": "x",
+          "Description": "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availability zones.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "zone_redundant",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of elastic pool.  This is metadata used for the Azure portal experience.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": ""
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_sqlelasticpool",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -6784,7 +8511,148 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-8931/providers/Microsoft.Sql/servers/sqlcrudtest-2137/databases/testdb/replicationLinks/f0550bf5-07ce-4270-8e4b-71737975973a",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-8931/providers/Microsoft.Sql/servers/sqlcrudtest-2137/databases/testdb/replicationLinks/f0550bf5-07ce-4270-8e4b-71737975973a"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "f0550bf5-07ce-4270-8e4b-71737975973a",
+          "SubFields": [],
+          "Info": "f0550bf5-07ce-4270-8e4b-71737975973a"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/replicationLinks",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/replicationLinks"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Location of the server that contains this firewall rule.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "is_termination_allowed",
+          "NameAlt": "x",
+          "Description": "Legacy value indicating whether termination is allowed.  Currently always returns true.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_termination_allowed",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "replication_mode",
+          "NameAlt": "x",
+          "Description": "Replication mode of this replication link.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "replication_mode",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "partner_server",
+          "NameAlt": "x",
+          "Description": "The name of the server hosting the partner database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "partner_server",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "partner_database",
+          "NameAlt": "x",
+          "Description": "The name of the partner database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "partner_database",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "partner_location",
+          "NameAlt": "x",
+          "Description": "The Azure Region of the partner database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "partner_location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "role",
+          "NameAlt": "x",
+          "Description": "The role of the database in the replication link. Possible values include: 'Primary', 'Secondary', 'NonReadableSecondary', 'Source', 'Copy'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Secondary",
+          "SubFields": [],
+          "Info": "Secondary"
+        },
+        {
+          "Name": "partner_role",
+          "NameAlt": "x",
+          "Description": "The role of the partner database in the replication link. Possible values include: 'Primary', 'Secondary', 'NonReadableSecondary', 'Source', 'Copy'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "partner_role",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "start_time",
+          "NameAlt": "x",
+          "Description": "The start time for the replication link.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "start_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "percent_complete",
+          "NameAlt": "x",
+          "Description": "The percentage of seeding complete for the replication link.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "percent_complete",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "replication_state",
+          "NameAlt": "x",
+          "Description": "The replication state for the replication link. Possible values include: 'PENDING', 'SEEDING', 'CATCH_UP', 'SUSPENDED'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "replication_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -7230,7 +9098,78 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "activeDirectory",
+          "SubFields": [],
+          "Info": "activeDirectory"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "administrator_type",
+          "NameAlt": "x",
+          "Description": "The type of administrator.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "administrator_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "login",
+          "NameAlt": "x",
+          "Description": "The server administrator login value.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "bob@contoso.com",
+          "SubFields": [],
+          "Info": "bob@contoso.com"
+        },
+        {
+          "Name": "sid",
+          "NameAlt": "x",
+          "Description": "The server administrator Sid (Secure ID).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
+          "SubFields": [],
+          "Info": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
+        },
+        {
+          "Name": "tenant_id",
+          "NameAlt": "x",
+          "Description": "The server Active Directory Administrator tenant id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "tenant_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -7580,7 +9519,78 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationLinks/link1",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationLinks/link1"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "link1",
+          "SubFields": [],
+          "Info": "link1"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/communicationLinks",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/communicationLinks"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "The state.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Ready",
+          "SubFields": [],
+          "Info": "Ready"
+        },
+        {
+          "Name": "partner_server",
+          "NameAlt": "x",
+          "Description": "The name of the partner server.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "partner_server",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Communication link location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Central US",
+          "SubFields": [],
+          "Info": "Central US"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Communication link kind.  This property is used for Azure Portal metadata.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "kind",
+          "SubFields": [],
+          "Info": ""
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -7699,7 +9709,88 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "service_objective_name",
+          "NameAlt": "x",
+          "Description": "The name for the service objective.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "service_objective_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "is_default",
+          "NameAlt": "x",
+          "Description": "Gets whether the service level objective is the default service objective.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_default",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "is_system",
+          "NameAlt": "x",
+          "Description": "Gets whether the service level objective is a system service objective.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_system",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "description",
+          "NameAlt": "x",
+          "Description": "The description for the service level objective.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "description",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "enabled",
+          "NameAlt": "x",
+          "Description": "Gets whether the service level objective is enabled.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "enabled",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -8234,7 +10325,159 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sqlcrudtest-4645",
+          "SubFields": [],
+          "Info": "sqlcrudtest-4645"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "{\r\n  \"tagKey1\": \"TagValue1\"\r\n}",
+          "SubFields": [],
+          "Info": "{\r\n  \"tagKey1\": \"TagValue1\"\r\n}"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "japaneast",
+          "SubFields": [],
+          "Info": "japaneast"
+        },
+        {
+          "Name": "identity",
+          "NameAlt": "x",
+          "Description": "The Azure Active Directory identity of the server.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "identity",
+          "SubFields": [
+            {
+              "Name": "principal_id",
+              "NameAlt": "x",
+              "Description": "The Azure Active Directory principal id.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "principal_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource. Possible values include: 'SystemAssigned'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "tenant_id",
+              "NameAlt": "x",
+              "Description": "The Azure Active Directory tenant id.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "tenant_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of sql server. This is metadata used for the Azure portal experience.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "v12.0",
+          "SubFields": [],
+          "Info": "v12.0"
+        },
+        {
+          "Name": "administrator_login",
+          "NameAlt": "x",
+          "Description": "Administrator username for the server. Once created it cannot be changed.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "administrator_login",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "administrator_login_password",
+          "NameAlt": "x",
+          "Description": "The administrator login password (required for server creation).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "administrator_login_password",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "version",
+          "NameAlt": "version",
+          "Description": "The version of the server.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "12.0",
+          "SubFields": [],
+          "Info": "12.0"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "The state of the server.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Ready",
+          "SubFields": [],
+          "Info": "Ready"
+        },
+        {
+          "Name": "fully_qualified_domain_name",
+          "NameAlt": "fully_qualified_domain_name",
+          "Description": "The fully qualified domain name of the server.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "fully_qualified_domain_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_sqlserver",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -8582,7 +10825,1036 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/recommendedElasticPools/ElasticPool1",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/recommendedElasticPools/ElasticPool1"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ElasticPool1",
+          "SubFields": [],
+          "Info": "ElasticPool1"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/recommendedElasticPools",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/recommendedElasticPools"
+        },
+        {
+          "Name": "database_edition",
+          "NameAlt": "x",
+          "Description": "The edition of the recommended elastic pool. The ElasticPoolEdition enumeration contains all the valid editions. Possible values include: 'Basic', 'Standard', 'Premium'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_edition",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "dtu",
+          "NameAlt": "x",
+          "Description": "The DTU for the recommended elastic pool.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "1000",
+          "SubFields": [],
+          "Info": "1000"
+        },
+        {
+          "Name": "database_dtu_min",
+          "NameAlt": "x",
+          "Description": "The minimum DTU for the database.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "database_dtu_min",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_dtu_max",
+          "NameAlt": "x",
+          "Description": "The maximum DTU for the database.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "database_dtu_max",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_mb",
+          "NameAlt": "x",
+          "Description": "Gets storage size in megabytes.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "storage_mb",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "observation_period_start",
+          "NameAlt": "x",
+          "Description": "The observation period start (ISO8601 format).",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "observation_period_start",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "observation_period_end",
+          "NameAlt": "x",
+          "Description": "The observation period start (ISO8601 format).",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "observation_period_end",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "max_observed_dtu",
+          "NameAlt": "x",
+          "Description": "Gets maximum observed DTU.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "max_observed_dtu",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "max_observed_storage_mb",
+          "NameAlt": "x",
+          "Description": "Gets maximum observed storage in megabytes.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "max_observed_storage_mb",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "databases",
+          "NameAlt": "x",
+          "Description": "The list of databases in this pool. Expanded property",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "databases",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource ID.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "Resource name.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "type",
+              "NameAlt": "x",
+              "Description": "Resource type.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "type",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "tags",
+              "NameAlt": "x",
+              "Description": "Resource tags.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "tags",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "location",
+              "NameAlt": "x",
+              "Description": "Resource location.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "location",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "kind",
+              "NameAlt": "x",
+              "Description": "Kind of database.  This is metadata used for the Azure portal experience.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "kind",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "collation",
+              "NameAlt": "x",
+              "Description": "The collation of the database. If createMode is not Default, this value is ignored.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "collation",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "creation_date",
+              "NameAlt": "x",
+              "Description": "The creation date of the database (ISO8601 format).",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "creation_date",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "containment_state",
+              "NameAlt": "x",
+              "Description": "The containment state of the database.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "containment_state",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "current_service_objective_id",
+              "NameAlt": "x",
+              "Description": "The current service level objective ID of the database. This is the ID of the service level objective that is currently active.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "current_service_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "database_id",
+              "NameAlt": "x",
+              "Description": "The ID of the database.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "database_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "earliest_restore_date",
+              "NameAlt": "x",
+              "Description": "This records the earliest start date and time that restore is available for this database (ISO8601 format).",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "earliest_restore_date",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "create_mode",
+              "NameAlt": "x",
+              "Description": "Specifies the mode of database creation.\n\nDefault: regular database creation.\n\nCopy: creates a database as a copy of an existing database. sourceDatabaseId must be specified as the resource ID of the source database.\n\nOnlineSecondary/NonReadableSecondary: creates a database as a (readable or nonreadable) secondary replica of an existing database. sourceDatabaseId must be specified as the resource ID of the existing primary database.\n\nPointInTimeRestore: Creates a database by restoring a point in time backup of an existing database. sourceDatabaseId must be specified as the resource ID of the existing database, and restorePointInTime must be specified.\n\nRecovery: Creates a database by restoring a geo-replicated backup. sourceDatabaseId must be specified as the recoverable database resource ID to restore.\n\nRestore: Creates a database by restoring a backup of a deleted database. sourceDatabaseId must be specified. If sourceDatabaseId is the database's original resource ID, then sourceDatabaseDeletionDate must be specified. Otherwise sourceDatabaseId must be the restorable dropped database resource ID and sourceDatabaseDeletionDate is ignored. restorePointInTime may also be specified to restore from an earlier point in time.\n\nRestoreLongTermRetentionBackup: Creates a database by restoring from a long term retention vault. recoveryServicesRecoveryPointResourceId must be specified as the recovery point resource ID.\n\nCopy, NonReadableSecondary, OnlineSecondary and RestoreLongTermRetentionBackup are not supported for DataWarehouse edition. Possible values include: 'Copy', 'Default', 'NonReadableSecondary', 'OnlineSecondary', 'PointInTimeRestore', 'Recovery', 'Restore', 'RestoreLongTermRetentionBackup'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "create_mode",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "source_database_id",
+              "NameAlt": "x",
+              "Description": "Conditional. If createMode is Copy, NonReadableSecondary, OnlineSecondary, PointInTimeRestore, Recovery, or Restore, then this value is required. Specifies the resource ID of the source database. If createMode is NonReadableSecondary or OnlineSecondary, the name of the source database must be the same as the new database being created.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "source_database_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "source_database_deletion_date",
+              "NameAlt": "x",
+              "Description": "Conditional. If createMode is Restore and sourceDatabaseId is the deleted database's original resource id when it existed (as opposed to its current restorable dropped database id), then this value is required. Specifies the time that the database was deleted.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "source_database_deletion_date",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "restore_point_in_time",
+              "NameAlt": "x",
+              "Description": "Conditional. If createMode is PointInTimeRestore, this value is required. If createMode is Restore, this value is optional. Specifies the point in time (ISO8601 format) of the source database that will be restored to create the new database. Must be greater than or equal to the source database's earliestRestoreDate value.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "restore_point_in_time",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "recovery_services_recovery_point_resource_id",
+              "NameAlt": "x",
+              "Description": "Conditional. If createMode is RestoreLongTermRetentionBackup, then this value is required. Specifies the resource ID of the recovery point to restore from.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "recovery_services_recovery_point_resource_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "edition",
+              "NameAlt": "x",
+              "Description": "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSecondary or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "edition",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "max_size_bytes",
+              "NameAlt": "x",
+              "Description": "The max size of the database expressed in bytes. If createMode is not Default, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\"",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "max_size_bytes",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "requested_service_objective_id",
+              "NameAlt": "x",
+              "Description": "The configured service level objective ID of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of currentServiceObjectiveId property. If requestedServiceObjectiveId and requestedServiceObjectiveName are both updated, the value of requestedServiceObjectiveId overrides the value of requestedServiceObjectiveName. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\"",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "requested_service_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "requested_service_objective_name",
+              "NameAlt": "x",
+              "Description": "The name of the configured service level objective of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of serviceLevelObjective property. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "requested_service_objective_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "service_level_objective",
+              "NameAlt": "x",
+              "Description": "The current service level objective of the database. Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "service_level_objective",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "status",
+              "NameAlt": "x",
+              "Description": "The status of the database.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "status",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "elastic_pool_name",
+              "NameAlt": "x",
+              "Description": "The name of the elastic pool the database is in. If elasticPoolName and requestedServiceObjectiveName are both updated, the value of requestedServiceObjectiveName is ignored. Not supported for DataWarehouse edition.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "elastic_pool_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "default_secondary_location",
+              "NameAlt": "x",
+              "Description": "The default secondary region for this database.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "default_secondary_location",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "service_tier_advisors",
+              "NameAlt": "x",
+              "Description": "The list of service tier advisors for this database. Expanded property",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "service_tier_advisors",
+              "SubFields": [
+                {
+                  "Name": "id",
+                  "NameAlt": "x",
+                  "Description": "Resource ID.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "Resource name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "type",
+                  "NameAlt": "x",
+                  "Description": "Resource type.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "type",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "observation_period_start",
+                  "NameAlt": "x",
+                  "Description": "The observation period start (ISO8601 format).",
+                  "Type": "datetime",
+                  "Returned": "always",
+                  "SampleValue": "observation_period_start",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "observation_period_end",
+                  "NameAlt": "x",
+                  "Description": "The observation period start (ISO8601 format).",
+                  "Type": "datetime",
+                  "Returned": "always",
+                  "SampleValue": "observation_period_end",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "active_time_ratio",
+                  "NameAlt": "x",
+                  "Description": "The activeTimeRatio for service tier advisor.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "active_time_ratio",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "min_dtu",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets minDtu for service tier advisor.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "min_dtu",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "avg_dtu",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets avgDtu for service tier advisor.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "avg_dtu",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "max_dtu",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets maxDtu for service tier advisor.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "max_dtu",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "max_size_in_gb",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets maxSizeInGB for service tier advisor.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "max_size_in_gb",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "service_level_objective_usage_metrics",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets serviceLevelObjectiveUsageMetrics for the service tier advisor.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "service_level_objective_usage_metrics",
+                  "SubFields": [
+                    {
+                      "Name": "service_level_objective",
+                      "NameAlt": "x",
+                      "Description": "The serviceLevelObjective for SLO usage metric. Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "service_level_objective",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "service_level_objective_id",
+                      "NameAlt": "x",
+                      "Description": "The serviceLevelObjectiveId for SLO usage metric.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "service_level_objective_id",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "in_range_time_ratio",
+                      "NameAlt": "x",
+                      "Description": "Gets or sets inRangeTimeRatio for SLO usage metric.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "in_range_time_ratio",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "current_service_level_objective",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets currentServiceLevelObjective for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "current_service_level_objective",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "current_service_level_objective_id",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets currentServiceLevelObjectiveId for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "current_service_level_objective_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "usage_based_recommendation_service_level_objective",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets usageBasedRecommendationServiceLevelObjective for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "usage_based_recommendation_service_level_objective",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "usage_based_recommendation_service_level_objective_id",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets usageBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "usage_based_recommendation_service_level_objective_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "database_size_based_recommendation_service_level_objective",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjective for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "database_size_based_recommendation_service_level_objective",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "database_size_based_recommendation_service_level_objective_id",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "database_size_based_recommendation_service_level_objective_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "disaster_plan_based_recommendation_service_level_objective",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjective for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "disaster_plan_based_recommendation_service_level_objective",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "disaster_plan_based_recommendation_service_level_objective_id",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "disaster_plan_based_recommendation_service_level_objective_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "overall_recommendation_service_level_objective",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets overallRecommendationServiceLevelObjective for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "overall_recommendation_service_level_objective",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "overall_recommendation_service_level_objective_id",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets overallRecommendationServiceLevelObjectiveId for service tier advisor.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "overall_recommendation_service_level_objective_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "confidence",
+                  "NameAlt": "x",
+                  "Description": "Gets or sets confidence for service tier advisor.",
+                  "Type": "float",
+                  "Returned": "always",
+                  "SampleValue": "confidence",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "transparent_data_encryption",
+              "NameAlt": "x",
+              "Description": "The transparent data encryption info for this database.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "transparent_data_encryption",
+              "SubFields": [
+                {
+                  "Name": "id",
+                  "NameAlt": "x",
+                  "Description": "Resource ID.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "Resource name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "type",
+                  "NameAlt": "x",
+                  "Description": "Resource type.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "type",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "location",
+                  "NameAlt": "x",
+                  "Description": "Resource location.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "location",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "status",
+                  "NameAlt": "x",
+                  "Description": "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "status",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "recommended_index",
+              "NameAlt": "x",
+              "Description": "The recommended indices for this database.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "recommended_index",
+              "SubFields": [
+                {
+                  "Name": "id",
+                  "NameAlt": "x",
+                  "Description": "Resource ID.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "Resource name.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "type",
+                  "NameAlt": "x",
+                  "Description": "Resource type.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "type",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "action",
+                  "NameAlt": "x",
+                  "Description": "The proposed index action. You can create a missing index, drop an unused index, or rebuild an existing index to improve its performance. Possible values include: 'Create', 'Drop', 'Rebuild'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "action",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "state",
+                  "NameAlt": "x",
+                  "Description": "The current recommendation state. Possible values include: 'Active', 'Pending', 'Executing', 'Verifying', 'Pending Revert', 'Reverting', 'Reverted', 'Ignored', 'Expired', 'Blocked', 'Success'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "state",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "created",
+                  "NameAlt": "x",
+                  "Description": "The UTC datetime showing when this resource was created (ISO8601 format).",
+                  "Type": "datetime",
+                  "Returned": "always",
+                  "SampleValue": "created",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "last_modified",
+                  "NameAlt": "x",
+                  "Description": "The UTC datetime of when was this resource last changed (ISO8601 format).",
+                  "Type": "datetime",
+                  "Returned": "always",
+                  "SampleValue": "last_modified",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "index_type",
+                  "NameAlt": "x",
+                  "Description": "The type of index (CLUSTERED, NONCLUSTERED, COLUMNSTORE, CLUSTERED COLUMNSTORE). Possible values include: 'CLUSTERED', 'NONCLUSTERED', 'COLUMNSTORE', 'CLUSTERED COLUMNSTORE'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "index_type",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "schema",
+                  "NameAlt": "x",
+                  "Description": "The schema where table to build index over resides",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "schema",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "table",
+                  "NameAlt": "x",
+                  "Description": "The table on which to build index.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "table",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "columns",
+                  "NameAlt": "x",
+                  "Description": "Columns over which to build index",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "columns",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "included_columns",
+                  "NameAlt": "x",
+                  "Description": "The list of column names to be included in the index",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "included_columns",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "index_script",
+                  "NameAlt": "x",
+                  "Description": "The full build index script",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "index_script",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "estimated_impact",
+                  "NameAlt": "x",
+                  "Description": "The estimated impact of doing recommended index action.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "estimated_impact",
+                  "SubFields": [
+                    {
+                      "Name": "name",
+                      "NameAlt": "x",
+                      "Description": "The name of the impact dimension.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "name",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "unit",
+                      "NameAlt": "x",
+                      "Description": "The unit in which estimated impact to dimension is measured.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "unit",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "change_value_absolute",
+                      "NameAlt": "x",
+                      "Description": "The absolute impact to dimension.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "change_value_absolute",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "change_value_relative",
+                      "NameAlt": "x",
+                      "Description": "The relative impact to dimension (null if not applicable)",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "change_value_relative",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "reported_impact",
+                  "NameAlt": "x",
+                  "Description": "The values reported after index action is complete.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "reported_impact",
+                  "SubFields": [
+                    {
+                      "Name": "name",
+                      "NameAlt": "x",
+                      "Description": "The name of the impact dimension.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "name",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "unit",
+                      "NameAlt": "x",
+                      "Description": "The unit in which estimated impact to dimension is measured.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "unit",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "change_value_absolute",
+                      "NameAlt": "x",
+                      "Description": "The absolute impact to dimension.",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "change_value_absolute",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "change_value_relative",
+                      "NameAlt": "x",
+                      "Description": "The relative impact to dimension (null if not applicable)",
+                      "Type": "float",
+                      "Returned": "always",
+                      "SampleValue": "change_value_relative",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "failover_group_id",
+              "NameAlt": "x",
+              "Description": "The resource identifier of the failover group containing this database.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "failover_group_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "read_scale",
+              "NameAlt": "x",
+              "Description": "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for DataWarehouse edition. Possible values include: 'Enabled', 'Disabled'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "read_scale",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "sample_name",
+              "NameAlt": "x",
+              "Description": "Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not supported for DataWarehouse edition. Possible values include: 'AdventureWorksLT'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "sample_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "zone_redundant",
+              "NameAlt": "x",
+              "Description": "Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "zone_redundant",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "[]"
+        },
+        {
+          "Name": "metrics",
+          "NameAlt": "x",
+          "Description": "The list of databases housed in the server. Expanded property",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "metrics",
+          "SubFields": [
+            {
+              "Name": "date_time_property",
+              "NameAlt": "x",
+              "Description": "The time of metric (ISO8601 format).",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "date_time_property",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "dtu",
+              "NameAlt": "x",
+              "Description": "Gets or sets the DTUs (Database Transaction Units). See https://azure.microsoft.com/documentation/articles/sql-database-what-is-a-dtu/",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "dtu",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "size_gb",
+              "NameAlt": "x",
+              "Description": "Gets or sets size in gigabytes.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "size_gb",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "[\r\n  {\r\n    \"dateTime\": \"2015-04-01T00:00:00Z\",\r\n    \"dtu\": \"100.5\",\r\n    \"sizeGB\": \"15.4\"\r\n  },\r\n  {\r\n    \"dateTime\": \"2015-04-02T00:00:00Z\",\r\n    \"dtu\": \"135\",\r\n    \"sizeGB\": \"12.754\"\r\n  },\r\n  {\r\n    \"dateTime\": \"2015-04-03T00:00:00Z\",\r\n    \"dtu\": \"135\",\r\n    \"sizeGB\": \"12.754\"\r\n  }\r\n]"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -8729,7 +12001,259 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/serviceTierAdvisors/Current",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/serviceTierAdvisors/Current"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Current",
+          "SubFields": [],
+          "Info": "Current"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/serviceTierAdvisors",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/serviceTierAdvisors"
+        },
+        {
+          "Name": "observation_period_start",
+          "NameAlt": "x",
+          "Description": "The observation period start (ISO8601 format).",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "observation_period_start",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "observation_period_end",
+          "NameAlt": "x",
+          "Description": "The observation period start (ISO8601 format).",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "observation_period_end",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "active_time_ratio",
+          "NameAlt": "x",
+          "Description": "The activeTimeRatio for service tier advisor.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "active_time_ratio",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "min_dtu",
+          "NameAlt": "x",
+          "Description": "Gets or sets minDtu for service tier advisor.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "min_dtu",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "avg_dtu",
+          "NameAlt": "x",
+          "Description": "Gets or sets avgDtu for service tier advisor.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "avg_dtu",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "max_dtu",
+          "NameAlt": "x",
+          "Description": "Gets or sets maxDtu for service tier advisor.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "max_dtu",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "max_size_in_gb",
+          "NameAlt": "x",
+          "Description": "Gets or sets maxSizeInGB for service tier advisor.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "max_size_in_gb",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "service_level_objective_usage_metrics",
+          "NameAlt": "x",
+          "Description": "Gets or sets serviceLevelObjectiveUsageMetrics for the service tier advisor.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "service_level_objective_usage_metrics",
+          "SubFields": [
+            {
+              "Name": "service_level_objective",
+              "NameAlt": "x",
+              "Description": "The serviceLevelObjective for SLO usage metric. Possible values include: 'Basic', 'S0', 'S1', 'S2', 'S3', 'P1', 'P2', 'P3', 'P4', 'P6', 'P11', 'P15', 'System', 'System2', 'ElasticPool'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "service_level_objective",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "service_level_objective_id",
+              "NameAlt": "x",
+              "Description": "The serviceLevelObjectiveId for SLO usage metric.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "service_level_objective_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "in_range_time_ratio",
+              "NameAlt": "x",
+              "Description": "Gets or sets inRangeTimeRatio for SLO usage metric.",
+              "Type": "float",
+              "Returned": "always",
+              "SampleValue": "in_range_time_ratio",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "current_service_level_objective",
+          "NameAlt": "x",
+          "Description": "Gets or sets currentServiceLevelObjective for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "current_service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "current_service_level_objective_id",
+          "NameAlt": "x",
+          "Description": "Gets or sets currentServiceLevelObjectiveId for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "current_service_level_objective_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "usage_based_recommendation_service_level_objective",
+          "NameAlt": "x",
+          "Description": "Gets or sets usageBasedRecommendationServiceLevelObjective for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "usage_based_recommendation_service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "usage_based_recommendation_service_level_objective_id",
+          "NameAlt": "x",
+          "Description": "Gets or sets usageBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "usage_based_recommendation_service_level_objective_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_size_based_recommendation_service_level_objective",
+          "NameAlt": "x",
+          "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjective for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_size_based_recommendation_service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_size_based_recommendation_service_level_objective_id",
+          "NameAlt": "x",
+          "Description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_size_based_recommendation_service_level_objective_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "disaster_plan_based_recommendation_service_level_objective",
+          "NameAlt": "x",
+          "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjective for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "disaster_plan_based_recommendation_service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "disaster_plan_based_recommendation_service_level_objective_id",
+          "NameAlt": "x",
+          "Description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "disaster_plan_based_recommendation_service_level_objective_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "overall_recommendation_service_level_objective",
+          "NameAlt": "x",
+          "Description": "Gets or sets overallRecommendationServiceLevelObjective for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "overall_recommendation_service_level_objective",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "overall_recommendation_service_level_objective_id",
+          "NameAlt": "x",
+          "Description": "Gets or sets overallRecommendationServiceLevelObjectiveId for service tier advisor.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "overall_recommendation_service_level_objective_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "confidence",
+          "NameAlt": "x",
+          "Description": "Gets or sets confidence for service tier advisor.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "1",
+          "SubFields": [],
+          "Info": "1"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -9097,7 +12621,58 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "current",
+          "SubFields": [],
+          "Info": "current"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/transparentDataEncryption"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "North Europe",
+          "SubFields": [],
+          "Info": "North Europe"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "The status of the database transparent data encryption. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Enabled",
+          "SubFields": [],
+          "Info": "Enabled"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -10018,7 +13593,118 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-6852/providers/Microsoft.Sql/servers/blobauditingtest-2080/databases/testdb",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-6852/providers/Microsoft.Sql/servers/blobauditingtest-2080/databases/testdb"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "default",
+          "SubFields": [],
+          "Info": "default"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/auditingSettings",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/auditingSettings"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Resource kind.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "V12",
+          "SubFields": [],
+          "Info": "V12"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Disabled",
+          "SubFields": [],
+          "Info": "Disabled"
+        },
+        {
+          "Name": "storage_endpoint",
+          "NameAlt": "x",
+          "Description": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "storage_endpoint",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_account_access_key",
+          "NameAlt": "x",
+          "Description": "Specifies the identifier key of the auditing storage account. If state is Enabled, storageAccountAccessKey is required.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "storage_account_access_key",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "retention_days",
+          "NameAlt": "x",
+          "Description": "Specifies the number of days to keep in the audit logs.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "retention_days",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "audit_actions_and_groups",
+          "NameAlt": "x",
+          "Description": "Specifies the Actions and Actions-Groups to audit.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "audit_actions_and_groups",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_account_subscription_id",
+          "NameAlt": "x",
+          "Description": "Specifies the blob storage subscription Id.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "storage_account_subscription_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "is_storage_secondary_key_in_use",
+          "NameAlt": "x",
+          "Description": "Specifies whether storageAccountAccessKey value is the storage’s secondary key.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_storage_secondary_key_in_use",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -10466,7 +14152,108 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "current",
+          "SubFields": [],
+          "Info": "current"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/encryptionProtector",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/encryptionProtector"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "azurekeyvault",
+          "SubFields": [],
+          "Info": "azurekeyvault"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "subregion",
+          "NameAlt": "x",
+          "Description": "Subregion of the encryption protector.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "subregion",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "server_key_name",
+          "NameAlt": "x",
+          "Description": "The name of the server key.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "server_key_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "server_key_type",
+          "NameAlt": "x",
+          "Description": "The encryption protector type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "server_key_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "uri",
+          "NameAlt": "x",
+          "Description": "The URI of the server key.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+          "SubFields": [],
+          "Info": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
+        },
+        {
+          "Name": "thumbprint",
+          "NameAlt": "x",
+          "Description": "Thumbprint of the server key.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "thumbprint",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -11147,7 +14934,181 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "failover-group-test",
+          "SubFields": [],
+          "Info": "failover-group-test"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/failoverGroups",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/failoverGroups"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Resource tags.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "read_write_endpoint",
+          "NameAlt": "x",
+          "Description": "Read-write endpoint of the failover group instance.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "read_write_endpoint",
+          "SubFields": [
+            {
+              "Name": "failover_policy",
+              "NameAlt": "x",
+              "Description": "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required. Possible values include: 'Manual', 'Automatic'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "failover_policy",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "failover_with_data_loss_grace_period_minutes",
+              "NameAlt": "x",
+              "Description": "Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "failover_with_data_loss_grace_period_minutes",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "read_only_endpoint",
+          "NameAlt": "x",
+          "Description": "Read-only endpoint of the failover group instance.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "read_only_endpoint",
+          "SubFields": [
+            {
+              "Name": "failover_policy",
+              "NameAlt": "x",
+              "Description": "Failover policy of the read-only endpoint for the failover group. Possible values include: 'Disabled', 'Enabled'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "failover_policy",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "replication_role",
+          "NameAlt": "x",
+          "Description": "Local replication role of the failover group instance. Possible values include: 'Primary', 'Secondary'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "replication_role",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "replication_state",
+          "NameAlt": "x",
+          "Description": "Replication state of the failover group instance.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "replication_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "partner_servers",
+          "NameAlt": "x",
+          "Description": "List of partner server information for the failover group.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "partner_servers",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "Resource identifier of the partner server.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "location",
+              "NameAlt": "x",
+              "Description": "Geo location of the partner server.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "location",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "replication_role",
+              "NameAlt": "x",
+              "Description": "Replication role of the partner server. Possible values include: 'Primary', 'Secondary'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "replication_role",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "databases",
+          "NameAlt": "x",
+          "Description": "List of databases in the failover group.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "[]",
+          "SubFields": [],
+          "Info": "[]"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -11656,7 +15617,108 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sqlcrudtest-4645",
+          "SubFields": [],
+          "Info": "sqlcrudtest-4645"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/keys",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/keys"
+        },
+        {
+          "Name": "kind",
+          "NameAlt": "x",
+          "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "azurekeyvault",
+          "SubFields": [],
+          "Info": "azurekeyvault"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "Resource location.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Japan East",
+          "SubFields": [],
+          "Info": "Japan East"
+        },
+        {
+          "Name": "subregion",
+          "NameAlt": "x",
+          "Description": "Subregion of the server key.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "subregion",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "server_key_type",
+          "NameAlt": "x",
+          "Description": "The server key type like 'ServiceManaged', 'AzureKeyVault'. Possible values include: 'ServiceManaged', 'AzureKeyVault'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "server_key_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "uri",
+          "NameAlt": "x",
+          "Description": "The URI of the server key.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+          "SubFields": [],
+          "Info": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
+        },
+        {
+          "Name": "thumbprint",
+          "NameAlt": "x",
+          "Description": "Thumbprint of the server key.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "00112233445566778899AABBCCDDEEFFAABBCCDD",
+          "SubFields": [],
+          "Info": "00112233445566778899AABBCCDDEEFFAABBCCDD"
+        },
+        {
+          "Name": "creation_date",
+          "NameAlt": "x",
+          "Description": "The server key creation date.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "creation_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -12048,7 +16110,108 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "syncagent",
+          "SubFields": [],
+          "Info": "syncagent"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/syncAgents",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/syncAgents"
+        },
+        {
+          "Name": "sync_agent_name",
+          "NameAlt": "x",
+          "Description": "Name of the sync agent.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sync_agent_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sync_database_id",
+          "NameAlt": "x",
+          "Description": "ARM resource id of the sync database in the sync agent.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sync_database_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "last_alive_time",
+          "NameAlt": "x",
+          "Description": "Last alive time of the sync agent.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "last_alive_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "State of the sync agent. Possible values include: 'Online', 'Offline', 'NeverConnected'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "NeverConnected",
+          "SubFields": [],
+          "Info": "NeverConnected"
+        },
+        {
+          "Name": "is_up_to_date",
+          "NameAlt": "x",
+          "Description": "If the sync agent version is up to date.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "is_up_to_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "expiry_time",
+          "NameAlt": "x",
+          "Description": "Expiration time of the sync agent version.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "expiry_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "version",
+          "NameAlt": "version",
+          "Description": "Version of the sync agent.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "4.2.0.0",
+          "SubFields": [],
+          "Info": "4.2.0.0"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -13076,7 +17239,191 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "syncgroupcrud-3187",
+          "SubFields": [],
+          "Info": "syncgroupcrud-3187"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/syncGroups",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/syncGroups"
+        },
+        {
+          "Name": "interval",
+          "NameAlt": "x",
+          "Description": "Sync interval of the sync group.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "-1",
+          "SubFields": [],
+          "Info": "-1"
+        },
+        {
+          "Name": "last_sync_time",
+          "NameAlt": "x",
+          "Description": "Last sync time of the sync group.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "last_sync_time",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "conflict_resolution_policy",
+          "NameAlt": "x",
+          "Description": "Conflict resolution policy of the sync group. Possible values include: 'HubWin', 'MemberWin'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "conflict_resolution_policy",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sync_database_id",
+          "NameAlt": "x",
+          "Description": "ARM resource id of the sync database in the sync group.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sync_database_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "hub_database_user_name",
+          "NameAlt": "x",
+          "Description": "User name for the sync group hub database credential.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "hub_database_user_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "hub_database_password",
+          "NameAlt": "x",
+          "Description": "Password for the sync group hub database credential.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "hub_database_password",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sync_state",
+          "NameAlt": "x",
+          "Description": "Sync state of the sync group. Possible values include: 'NotReady', 'Error', 'Warning', 'Progressing', 'Good'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sync_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "schema",
+          "NameAlt": "x",
+          "Description": "Sync schema of the sync group.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "schema",
+          "SubFields": [
+            {
+              "Name": "tables",
+              "NameAlt": "x",
+              "Description": "List of tables in sync group schema.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "tables",
+              "SubFields": [
+                {
+                  "Name": "columns",
+                  "NameAlt": "x",
+                  "Description": "List of columns in sync group schema.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "columns",
+                  "SubFields": [
+                    {
+                      "Name": "quoted_name",
+                      "NameAlt": "x",
+                      "Description": "Quoted name of sync group table column.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "quoted_name",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "data_size",
+                      "NameAlt": "x",
+                      "Description": "Data size of the column.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "data_size",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "data_type",
+                      "NameAlt": "x",
+                      "Description": "Data type of the column.",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "data_type",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "quoted_name",
+                  "NameAlt": "x",
+                  "Description": "Quoted name of sync group schema table.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "quoted_name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "master_sync_member_name",
+              "NameAlt": "x",
+              "Description": "Name of master sync member where the schema is from.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "master_sync_member_name",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -13842,7 +18189,128 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "syncgroupcrud-4879",
+          "SubFields": [],
+          "Info": "syncgroupcrud-4879"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/databases/syncGroups/syncMembers",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/syncGroups/syncMembers"
+        },
+        {
+          "Name": "database_type",
+          "NameAlt": "x",
+          "Description": "Database type of the sync member. Possible values include: 'AzureSqlDatabase', 'SqlServerDatabase'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sync_agent_id",
+          "NameAlt": "x",
+          "Description": "ARM resource id of the sync agent in the sync member.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sync_agent_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sql_server_database_id",
+          "NameAlt": "x",
+          "Description": "SQL Server database id of the sync member.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sql_server_database_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "server_name",
+          "NameAlt": "x",
+          "Description": "Server name of the member database in the sync member",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "server_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "database_name",
+          "NameAlt": "x",
+          "Description": "Database name of the member database in the sync member.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "database_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "user_name",
+          "NameAlt": "x",
+          "Description": "User name of the member database in the sync member.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "user_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "password",
+          "NameAlt": "x",
+          "Description": "Password of the member database in the sync member.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "password",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sync_direction",
+          "NameAlt": "x",
+          "Description": "Sync direction of the sync member. Possible values include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sync_direction",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "sync_state",
+          "NameAlt": "x",
+          "Description": "Sync state of the sync member. Possible values include: 'SyncInProgress', 'SyncSucceeded', 'SyncFailed', 'DisabledTombstoneCleanup', 'DisabledBackupRestore', 'SyncSucceededWithWarnings', 'SyncCancelling', 'SyncCancelled', 'UnProvisioned', 'Provisioning', 'Provisioned', 'ProvisionFailed', 'DeProvisioning', 'DeProvisioned', 'DeProvisionFailed', 'Reprovisioning', 'ReprovisionFailed', 'UnReprovisioned'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "sync_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -13933,7 +18401,78 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/ServerQuota",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/ServerQuota"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ServerQuota",
+          "SubFields": [],
+          "Info": "ServerQuota"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/locations/usages",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/locations/usages"
+        },
+        {
+          "Name": "display_name",
+          "NameAlt": "x",
+          "Description": "User-readable name of the metric.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "display_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "current_value",
+          "NameAlt": "x",
+          "Description": "Current value of the metric.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "current_value",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "limit",
+          "NameAlt": "x",
+          "Description": "Boundary value of the metric.",
+          "Type": "float",
+          "Returned": "always",
+          "SampleValue": "20",
+          "SubFields": [],
+          "Info": "20"
+        },
+        {
+          "Name": "unit",
+          "NameAlt": "x",
+          "Description": "Unit of the metric.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Count",
+          "SubFields": [],
+          "Info": "Count"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -14298,7 +18837,68 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "vnet-firewall-rule",
+          "SubFields": [],
+          "Info": "vnet-firewall-rule"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/virtualNetworkRules",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/virtualNetworkRules"
+        },
+        {
+          "Name": "virtual_network_subnet_id",
+          "NameAlt": "x",
+          "Description": "The ARM resource id of the virtual network subnet.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "virtual_network_subnet_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "ignore_missing_vnet_service_endpoint",
+          "NameAlt": "x",
+          "Description": "Create firewall rule before the virtual network has vnet service endpoint enabled.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ignore_missing_vnet_service_endpoint",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Ready",
+          "SubFields": [],
+          "Info": "Ready"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -14700,7 +19300,48 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "dns-alias-name-1",
+          "SubFields": [],
+          "Info": "dns-alias-name-1"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.Sql/servers/dnsAliases",
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/dnsAliases"
+        },
+        {
+          "Name": "azure_dns_record",
+          "NameAlt": "x",
+          "Description": "The fully qualified DNS record for alias",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "azure_dns_record",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,

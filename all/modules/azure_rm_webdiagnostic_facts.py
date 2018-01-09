@@ -84,6 +84,9 @@ EXAMPLES = '''
       site_name: site_name
 '''
 
+RETURN = '''
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

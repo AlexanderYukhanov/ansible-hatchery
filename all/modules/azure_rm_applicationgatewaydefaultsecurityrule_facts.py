@@ -51,6 +51,15 @@ EXAMPLES = '''
       default_security_rule_name: default_security_rule_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/nsg1/defaultSecurityRules/AllowVnetInBound
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

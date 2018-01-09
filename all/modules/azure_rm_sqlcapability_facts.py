@@ -41,6 +41,9 @@ EXAMPLES = '''
       location_id: location_id
 '''
 
+RETURN = '''
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

@@ -745,7 +745,179 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver",
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "testserver",
+          "SubFields": [],
+          "Info": "testserver"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.DBforMySQL/servers",
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The location the resource resides in.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "onebox",
+          "SubFields": [],
+          "Info": "onebox"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "Application-specific metadata in the form of key-value pairs.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "{\r\n  \"elasticServer\": \"1\"\r\n}",
+          "SubFields": [],
+          "Info": "{\r\n  \"elasticServer\": \"1\"\r\n}"
+        },
+        {
+          "Name": "sku",
+          "NameAlt": "x",
+          "Description": "The SKU (pricing tier) of the server.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "sku",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "The name of the sku, typically, a letter + Number code, e.g. P3.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "MYSQLS3M100",
+              "SubFields": [],
+              "Info": "MYSQLS3M100"
+            },
+            {
+              "Name": "tier",
+              "NameAlt": "x",
+              "Description": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "Basic",
+              "SubFields": [],
+              "Info": "Basic"
+            },
+            {
+              "Name": "capacity",
+              "NameAlt": "x",
+              "Description": "The scale up/out capacity, representing server's compute units.",
+              "Type": "int",
+              "Returned": "always",
+              "SampleValue": "100",
+              "SubFields": [],
+              "Info": "100"
+            },
+            {
+              "Name": "size",
+              "NameAlt": "x",
+              "Description": "The size code, to be interpreted by resource as appropriate.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "size",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "family",
+              "NameAlt": "x",
+              "Description": "The family of hardware.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "family",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "{\r\n  \"name\": \"MYSQLS3M100\",\r\n  \"tier\": \"Basic\",\r\n  \"capacity\": \"100\"\r\n}"
+        },
+        {
+          "Name": "administrator_login",
+          "NameAlt": "x",
+          "Description": "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "administrator_login",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_mb",
+          "NameAlt": "x",
+          "Description": "The maximum storage allowed for a server.",
+          "Type": "int",
+          "Returned": "always",
+          "SampleValue": "storage_mb",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "version",
+          "NameAlt": "version",
+          "Description": "Server version. Possible values include: '5.6', '5.7'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "version",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "ssl_enforcement",
+          "NameAlt": "x",
+          "Description": "Enable ssl enforcement or not when connect to server. Possible values include: 'Enabled', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ssl_enforcement",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "user_visible_state",
+          "NameAlt": "user_visible_state",
+          "Description": "A state of a server that is visible to user. Possible values include: 'Ready', 'Dropping', 'Disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "user_visible_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "fully_qualified_domain_name",
+          "NameAlt": "fully_qualified_domain_name",
+          "Description": "The fully qualified domain name of a server.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "fully_qualified_domain_name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -1141,7 +1313,58 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1",
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "rule1",
+          "SubFields": [],
+          "Info": "rule1"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.DBforMySQL/servers/firewallRules",
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/firewallRules"
+        },
+        {
+          "Name": "start_ip_address",
+          "NameAlt": "x",
+          "Description": "The start IP address of the server firewall rule. Must be IPv4 format.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "start_ip_address",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "end_ip_address",
+          "NameAlt": "x",
+          "Description": "The end IP address of the server firewall rule. Must be IPv4 format.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "end_ip_address",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_mysqlfirewallrule",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -1548,7 +1771,68 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "vnet-firewall-rule",
+          "SubFields": [],
+          "Info": "vnet-firewall-rule"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.DBforMySQL/servers/virtualNetworkRules",
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/virtualNetworkRules"
+        },
+        {
+          "Name": "virtual_network_subnet_id",
+          "NameAlt": "x",
+          "Description": "The ARM resource id of the virtual network subnet.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "virtual_network_subnet_id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "ignore_missing_vnet_service_endpoint",
+          "NameAlt": "x",
+          "Description": "Create firewall rule before the virtual network has vnet service endpoint enabled.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "ignore_missing_vnet_service_endpoint",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "state",
+          "NameAlt": "state",
+          "Description": "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Ready",
+          "SubFields": [],
+          "Info": "Ready"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_mysqlvirtualnetworkrule",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -1926,7 +2210,58 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/databases/db1",
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/databases/db1"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "db1",
+          "SubFields": [],
+          "Info": "db1"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.DBforMySQL/servers/databases",
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/databases"
+        },
+        {
+          "Name": "charset",
+          "NameAlt": "x",
+          "Description": "The charset of the database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "utf8",
+          "SubFields": [],
+          "Info": "utf8"
+        },
+        {
+          "Name": "collation",
+          "NameAlt": "x",
+          "Description": "The collation of the database.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "utf8_general_ci",
+          "SubFields": [],
+          "Info": "utf8_general_ci"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_mysqldatabase",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -2332,7 +2667,98 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "Resource ID",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler",
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "Resource name.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "event_scheduler",
+          "SubFields": [],
+          "Info": "event_scheduler"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "Resource type.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.DBforMySQL/servers/configurations",
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/configurations"
+        },
+        {
+          "Name": "value",
+          "NameAlt": "x",
+          "Description": "Value of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "OFF",
+          "SubFields": [],
+          "Info": "OFF"
+        },
+        {
+          "Name": "description",
+          "NameAlt": "x",
+          "Description": "Description of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Indicates the status of the Event Scheduler.",
+          "SubFields": [],
+          "Info": "Indicates the status of the Event Scheduler."
+        },
+        {
+          "Name": "default_value",
+          "NameAlt": "x",
+          "Description": "Default value of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "default_value",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "data_type",
+          "NameAlt": "x",
+          "Description": "Data type of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "data_type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "allowed_values",
+          "NameAlt": "x",
+          "Description": "Allowed values of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "allowed_values",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "source",
+          "NameAlt": "x",
+          "Description": "Source of the configuration.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "system-default",
+          "SubFields": [],
+          "Info": "system-default"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_mysqlconfiguration",
       "TestPrerequisites": null,
       "TestPostrequisites": null,

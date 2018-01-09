@@ -1016,7 +1016,262 @@
           "RequiredOptions": []
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The Azure Resource Manager resource ID for the key vault.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "id",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The name of the key vault.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "name",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The resource type of the key vault.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "type",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The supported Azure location where the key vault should be created.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "location",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "The tags that will be assigned to the key vault. ",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "tags",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "properties",
+          "NameAlt": "x",
+          "Description": "Properties of the vault",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "properties",
+          "SubFields": [
+            {
+              "Name": "tenant_id",
+              "NameAlt": "x",
+              "Description": "The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "tenant_id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "sku",
+              "NameAlt": "x",
+              "Description": "SKU details",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "sku",
+              "SubFields": [
+                {
+                  "Name": "family",
+                  "NameAlt": "x",
+                  "Description": "SKU family name",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "family",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "name",
+                  "NameAlt": "x",
+                  "Description": "SKU name to specify whether the key vault is a standard vault or a premium vault. Possible values include: 'standard', 'premium'",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "name",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "access_policies",
+              "NameAlt": "x",
+              "Description": "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.",
+              "Type": "complex",
+              "Returned": "always",
+              "SampleValue": "access_policies",
+              "SubFields": [
+                {
+                  "Name": "tenant_id",
+                  "NameAlt": "x",
+                  "Description": "The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "tenant_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "object_id",
+                  "NameAlt": "x",
+                  "Description": "The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "object_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "application_id",
+                  "NameAlt": "x",
+                  "Description": " Application ID of the client making request on behalf of a principal",
+                  "Type": "str",
+                  "Returned": "always",
+                  "SampleValue": "application_id",
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
+                },
+                {
+                  "Name": "permissions",
+                  "NameAlt": "x",
+                  "Description": "Permissions the identity has for keys, secrets and certificates.",
+                  "Type": "complex",
+                  "Returned": "always",
+                  "SampleValue": "permissions",
+                  "SubFields": [
+                    {
+                      "Name": "keys",
+                      "NameAlt": "x",
+                      "Description": "Permissions to keys",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "keys",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "secrets",
+                      "NameAlt": "x",
+                      "Description": "Permissions to secrets",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "secrets",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "certificates",
+                      "NameAlt": "x",
+                      "Description": "Permissions to certificates",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "certificates",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    },
+                    {
+                      "Name": "storage",
+                      "NameAlt": "x",
+                      "Description": "Permissions to storage accounts",
+                      "Type": "str",
+                      "Returned": "always",
+                      "SampleValue": "storage",
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
+                    }
+                  ],
+                  "Info": "NO SAMPLE DATA"
+                }
+              ],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "vault_uri",
+              "NameAlt": "x",
+              "Description": "The URI of the vault for performing operations on keys and secrets.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "vault_uri",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "enabled_for_deployment",
+              "NameAlt": "x",
+              "Description": "Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "enabled_for_deployment",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "enabled_for_disk_encryption",
+              "NameAlt": "x",
+              "Description": "Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "enabled_for_disk_encryption",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "enabled_for_template_deployment",
+              "NameAlt": "x",
+              "Description": "Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "enabled_for_template_deployment",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "enable_soft_delete",
+              "NameAlt": "x",
+              "Description": "Property to specify whether the 'soft delete' functionality is enabled for this key vault. It does not accept false value.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "enable_soft_delete",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "create_mode",
+              "NameAlt": "x",
+              "Description": "The vault's create mode to indicate whether the vault need to be recovered or not. Possible values include: 'recover', 'default'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "create_mode",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": null,
       "TestPostrequisites": null,

@@ -55,6 +55,21 @@ EXAMPLES = '''
       server_name: server_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule
+    state:
+        description:
+            - Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)
+        returned: always
+        type: str
+        sample: Ready
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

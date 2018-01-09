@@ -61,6 +61,15 @@ EXAMPLES = '''
       database_name: database_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/serviceTierAdvisors/Current
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

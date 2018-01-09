@@ -51,6 +51,21 @@ EXAMPLES = '''
       peering_name: peering_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: id
+    state:
+        description:
+            - The state of peering. Possible values are: C(Disabled) and C(Enabled). Possible values include: C(Disabled), C(Enabled)
+        returned: always
+        type: str
+        sample: state
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

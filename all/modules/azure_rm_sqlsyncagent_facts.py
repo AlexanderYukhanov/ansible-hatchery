@@ -61,6 +61,27 @@ EXAMPLES = '''
       server_name: server_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187
+    state:
+        description:
+            - State of the sync agent. Possible values include: C(Online), C(Offline), C(NeverConnected)
+        returned: always
+        type: str
+        sample: NeverConnected
+    version:
+        description:
+            - Version of the sync agent.
+        returned: always
+        type: str
+        sample: 4.2.0.0
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

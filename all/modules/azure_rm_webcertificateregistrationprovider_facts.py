@@ -36,6 +36,9 @@ EXAMPLES = '''
     azure_rm_webcertificateregistrationprovider_facts:
 '''
 
+RETURN = '''
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

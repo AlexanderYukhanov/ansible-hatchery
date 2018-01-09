@@ -132,6 +132,21 @@ EXAMPLES = '''
       resource_group: resource_group_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource Id.
+        returned: always
+        type: str
+        sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141
+    status:
+        description:
+            - App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)
+        returned: always
+        type: str
+        sample: Ready
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

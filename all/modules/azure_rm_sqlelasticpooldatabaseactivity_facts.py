@@ -51,6 +51,9 @@ EXAMPLES = '''
       elastic_pool_name: elastic_pool_name
 '''
 
+RETURN = '''
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

@@ -82,6 +82,15 @@ EXAMPLES = '''
       filter: filter
 '''
 
+RETURN = '''
+    id:
+        description:
+            - The role assignment ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subId/resourcegroups/rgname/providers/Microsoft.Authorization/roleAssignments/roleassignmentId
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

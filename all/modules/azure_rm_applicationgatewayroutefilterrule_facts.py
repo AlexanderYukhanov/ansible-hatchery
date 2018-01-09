@@ -55,6 +55,15 @@ EXAMPLES = '''
       route_filter_name: route_filter_name
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

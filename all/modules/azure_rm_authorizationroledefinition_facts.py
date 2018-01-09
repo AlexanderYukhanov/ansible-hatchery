@@ -46,6 +46,15 @@ EXAMPLES = '''
       role_definition_id: role_definition_id
 '''
 
+RETURN = '''
+    id:
+        description:
+            - The role definition ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subID/providers/Microsoft.Authorization/roleDefinitions/roleDefinitionId
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

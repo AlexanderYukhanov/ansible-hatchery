@@ -47,6 +47,15 @@ EXAMPLES = '''
     azure_rm_applicationgatewayapplicationsecuritygroup_facts:
 '''
 
+RETURN = '''
+    id:
+        description:
+            - Resource ID.
+        returned: always
+        type: str
+        sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/applicationSecurityGroups/test-asg
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

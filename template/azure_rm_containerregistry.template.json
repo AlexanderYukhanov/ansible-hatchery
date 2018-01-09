@@ -587,7 +587,191 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The name of the resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "myRegistry",
+          "SubFields": [],
+          "Info": "myRegistry"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The type of the resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.ContainerRegistry/registries",
+          "SubFields": [],
+          "Info": "Microsoft.ContainerRegistry/registries"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The location of the resource. This cannot be changed after the resource is created.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "westus",
+          "SubFields": [],
+          "Info": "westus"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "The tags of the resource.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
+          "SubFields": [],
+          "Info": "{\r\n  \"key\": \"value\"\r\n}"
+        },
+        {
+          "Name": "sku",
+          "NameAlt": "x",
+          "Description": "The SKU of the container registry.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "sku",
+          "SubFields": [
+            {
+              "Name": "name",
+              "NameAlt": "x",
+              "Description": "The SKU name of the container registry. Required for registry creation. Possible values include: 'Classic', 'Basic', 'Standard', 'Premium'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "Standard",
+              "SubFields": [],
+              "Info": "Standard"
+            },
+            {
+              "Name": "tier",
+              "NameAlt": "x",
+              "Description": "The SKU tier based on the SKU name. Possible values include: 'Classic', 'Basic', 'Standard', 'Premium'",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "Standard",
+              "SubFields": [],
+              "Info": "Standard"
+            }
+          ],
+          "Info": "{\r\n  \"name\": \"Standard\",\r\n  \"tier\": \"Standard\"\r\n}"
+        },
+        {
+          "Name": "login_server",
+          "NameAlt": "x",
+          "Description": "The URL that can be used to log into the container registry.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "login_server",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "creation_date",
+          "NameAlt": "x",
+          "Description": "The creation date of the container registry in ISO8601 format.",
+          "Type": "datetime",
+          "Returned": "always",
+          "SampleValue": "creation_date",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "The provisioning state of the container registry at the time the operation was called. Possible values include: 'Creating', 'Updating', 'Deleting', 'Succeeded', 'Failed', 'Canceled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "The status of the container registry at the time the operation was called.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "status",
+          "SubFields": [
+            {
+              "Name": "display_status",
+              "NameAlt": "x",
+              "Description": "The short label for the status.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "display_status",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "message",
+              "NameAlt": "x",
+              "Description": "The detailed message for the status, including alerts and error messages.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "The registry is ready.",
+              "SubFields": [],
+              "Info": "The registry is ready."
+            },
+            {
+              "Name": "timestamp",
+              "NameAlt": "x",
+              "Description": "The timestamp when the status was changed to the current value.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "2017-03-01T23:15:37.0707808Z",
+              "SubFields": [],
+              "Info": "2017-03-01T23:15:37.0707808Z"
+            }
+          ],
+          "Info": "{\r\n  \"displayStatus\": \"Ready\",\r\n  \"message\": \"The registry is ready.\",\r\n  \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n}"
+        },
+        {
+          "Name": "admin_user_enabled",
+          "NameAlt": "x",
+          "Description": "The value that indicates whether the admin user is enabled.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "admin_user_enabled",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "storage_account",
+          "NameAlt": "x",
+          "Description": "The properties of the storage account for the container registry. Only applicable to Classic SKU.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "storage_account",
+          "SubFields": [
+            {
+              "Name": "id",
+              "NameAlt": "x",
+              "Description": "The resource ID of the storage account.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "id",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            }
+          ],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": null,
       "TestPrerequisites": [
         "- name: Create an container registry",
@@ -1032,7 +1216,109 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The name of the resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "myReplication",
+          "SubFields": [],
+          "Info": "myReplication"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The type of the resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.ContainerRegistry/registries/replications",
+          "SubFields": [],
+          "Info": "Microsoft.ContainerRegistry/registries/replications"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The location of the resource. This cannot be changed after the resource is created.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "eastus",
+          "SubFields": [],
+          "Info": "eastus"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "The tags of the resource.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
+          "SubFields": [],
+          "Info": "{\r\n  \"key\": \"value\"\r\n}"
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "The provisioning state of the replication at the time the operation was called. Possible values include: 'Creating', 'Updating', 'Deleting', 'Succeeded', 'Failed', 'Canceled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "The status of the replication at the time the operation was called.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "status",
+          "SubFields": [
+            {
+              "Name": "display_status",
+              "NameAlt": "x",
+              "Description": "The short label for the status.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "display_status",
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
+            },
+            {
+              "Name": "message",
+              "NameAlt": "x",
+              "Description": "The detailed message for the status, including alerts and error messages.",
+              "Type": "str",
+              "Returned": "always",
+              "SampleValue": "The replication is ready.",
+              "SubFields": [],
+              "Info": "The replication is ready."
+            },
+            {
+              "Name": "timestamp",
+              "NameAlt": "x",
+              "Description": "The timestamp when the status was changed to the current value.",
+              "Type": "datetime",
+              "Returned": "always",
+              "SampleValue": "2017-03-01T23:15:37.0707808Z",
+              "SubFields": [],
+              "Info": "2017-03-01T23:15:37.0707808Z"
+            }
+          ],
+          "Info": "{\r\n  \"displayStatus\": \"Ready\",\r\n  \"message\": \"The replication is ready.\",\r\n  \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\r\n}"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_containerregistryreplication",
       "TestPrerequisites": null,
       "TestPostrequisites": null,
@@ -1590,7 +1876,98 @@
           ]
         }
       ],
-      "ResponseFields": null,
+      "ResponseFields": [
+        {
+          "Name": "id",
+          "NameAlt": "id",
+          "Description": "The resource ID.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook",
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook"
+        },
+        {
+          "Name": "name",
+          "NameAlt": "x",
+          "Description": "The name of the resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "myWebhook",
+          "SubFields": [],
+          "Info": "myWebhook"
+        },
+        {
+          "Name": "type",
+          "NameAlt": "x",
+          "Description": "The type of the resource.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "Microsoft.ContainerRegistry/registries/webhooks",
+          "SubFields": [],
+          "Info": "Microsoft.ContainerRegistry/registries/webhooks"
+        },
+        {
+          "Name": "location",
+          "NameAlt": "x",
+          "Description": "The location of the resource. This cannot be changed after the resource is created.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "westus",
+          "SubFields": [],
+          "Info": "westus"
+        },
+        {
+          "Name": "tags",
+          "NameAlt": "x",
+          "Description": "The tags of the resource.",
+          "Type": "complex",
+          "Returned": "always",
+          "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
+          "SubFields": [],
+          "Info": "{\r\n  \"key\": \"value\"\r\n}"
+        },
+        {
+          "Name": "status",
+          "NameAlt": "status",
+          "Description": "The status of the webhook at the time the operation was called. Possible values include: 'enabled', 'disabled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "enabled",
+          "SubFields": [],
+          "Info": "enabled"
+        },
+        {
+          "Name": "scope",
+          "NameAlt": "x",
+          "Description": "The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "myRepository",
+          "SubFields": [],
+          "Info": "myRepository"
+        },
+        {
+          "Name": "actions",
+          "NameAlt": "x",
+          "Description": "The list of actions that trigger the webhook to post notifications.",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "[\r\n  \"push\"\r\n]",
+          "SubFields": [],
+          "Info": "[\r\n  \"push\"\r\n]"
+        },
+        {
+          "Name": "provisioning_state",
+          "NameAlt": "x",
+          "Description": "The provisioning state of the webhook at the time the operation was called. Possible values include: 'Creating', 'Updating', 'Deleting', 'Succeeded', 'Failed', 'Canceled'",
+          "Type": "str",
+          "Returned": "always",
+          "SampleValue": "provisioning_state",
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
+        }
+      ],
       "TestPrerequisitesModule": "azure_rm_containerregistrywebhook",
       "TestPrerequisites": null,
       "TestPostrequisites": null,

@@ -45,6 +45,15 @@ EXAMPLES = '''
       expand: expand
 '''
 
+RETURN = '''
+    id:
+        description:
+            - The provider id.
+        returned: always
+        type: str
+        sample: id
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:

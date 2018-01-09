@@ -56,6 +56,9 @@ EXAMPLES = '''
       transparent_data_encryption_name: transparent_data_encryption_name
 '''
 
+RETURN = '''
+'''
+
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
 
 try:
