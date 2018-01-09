@@ -78,14 +78,6 @@ location:
     returned: always
     type: str
     sample: West US
-tags:
-    description:
-        - Resource tags.
-    returned: always
-    type: complex
-    sample: {
-  "key1": "value1"
-}
 rules:
     description:
         - Collection of RouteFilterRules contained within a route filter.

@@ -630,7 +630,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
@@ -1259,7 +1259,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
@@ -1919,7 +1919,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "tags",
+          "NameAlt": "x",
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",

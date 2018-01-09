@@ -89,14 +89,6 @@ etag:
     returned: always
     type: str
     sample: w/\00000000-0000-0000-0000-000000000000\
-tags:
-    description:
-        - Resource tags.
-    returned: always
-    type: complex
-    sample: {
-  "key1": "value1"
-}
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
