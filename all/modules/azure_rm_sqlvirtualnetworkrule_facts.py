@@ -61,7 +61,8 @@ RETURN = '''
             - Resource ID.
         returned: always
         type: str
-        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule
+        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-f
+                 irewall-rule"
     name:
         description:
             - Resource name.

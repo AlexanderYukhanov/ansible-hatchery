@@ -61,7 +61,8 @@ RETURN = '''
             - Resource ID.
         returned: always
         type: str
-        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/recoverabledatabasetest-6852/providers/Microsoft.Sql/servers/recoverabledatabasetest-2080/recoverabledatabases/recoverabledatabasetest-9187
+        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/recoverabledatabasetest-6852/providers/Microsoft.Sql/servers/recoverabledatabase
+                 test-2080/recoverabledatabases/recoverabledatabasetest-9187"
     name:
         description:
             - Resource name.

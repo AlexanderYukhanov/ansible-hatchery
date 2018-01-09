@@ -61,7 +61,8 @@ RETURN = '''
             - Resource ID.
         returned: always
         type: str
-        sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationLinks/link1
+        sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicationL
+                 inks/link1"
     name:
         description:
             - Resource name.
