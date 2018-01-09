@@ -1359,14 +1359,5 @@
     "EXAMPLE -- GetConfigurations",
     "EXAMPLE OBJECT -- {\"GetConfigurations\":{\"parameters\":{\"roleDefinitionId\":\"roleDefinitionId\",\"api-version\":\"2015-07-01\"},\"responses\":{\"200\":{\"body\":{\"properties\":{\"roleName\":\"Role name\",\"type\":\"roletype\",\"description\":\"Role description\",\"assignableScopes\":[\"/subscriptions/subId\"],\"permissions\":[{\"actions\":[\"action\"],\"notActions\":[]}]},\"id\":\"/subscriptions/subID/providers/Microsoft.Authorization/roleDefinitions/roleDefinitionId\",\"type\":\"Microsoft.Authorization/roleDefinitions\",\"name\":\"roleDefinitionId\"}}}}}"
   ],
-  "Info": [
-    "Getting example for: create",
-    "Found example for: create",
-    "Getting example for: create_or_update",
-    "Found example for: create_or_update"
-  ]
+  "Info": null
 }
-Getting example for: create
-Found example for: create
-Getting example for: create_or_update
-Found example for: create_or_update

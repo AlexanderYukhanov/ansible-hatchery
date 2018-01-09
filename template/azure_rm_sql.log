@@ -1,0 +1,734 @@
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+  "location": "Japan East",
+  "properties": {
+    "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
+    "state": "Enabled"
+  },
+  "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
+  "state": "Enabled"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault",
+  "name": "RegisteredVault",
+  "type": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
+  "location": "Japan East",
+  "properties": {
+    "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
+  },
+  "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/connectionPolicies",
+  "location": "West US",
+  "kind": null,
+  "properties": {
+    "connectionType": "Proxy"
+  },
+  "connectionType": "Proxy"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-4799/providers/Microsoft.Sql/servers/securityalert-6440/databases/testdb",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/databases/securityAlertPolicies",
+  "kind": "V12",
+  "properties": {
+    "state": "Enabled",
+    "emailAccountAdmins": "Enabled",
+    "emailAddresses": "",
+    "disabledAlerts": "",
+    "retentionDays": "0",
+    "storageAccountAccessKey": "sdlfkjabc+sdlfkjsdlkfsjdfLDKFTERLKFDFKLjsdfksjdflsdkfD2342309432849328476458/3RSD==",
+    "storageEndpoint": "https://mystorage.blob.core.windows.net",
+    "useServerDefault": "Enabled"
+  },
+  "state": "Enabled",
+  "emailAccountAdmins": "Enabled",
+  "emailAddresses": "",
+  "disabledAlerts": "",
+  "retentionDays": "0",
+  "storageAccountAccessKey": "sdlfkjabc+sdlfkjsdlkfsjdfLDKFTERLKFDFKLjsdfksjdflsdkfD2342309432849328476458/3RSD==",
+  "storageEndpoint": "https://mystorage.blob.core.windows.net",
+  "useServerDefault": "Enabled"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/dataMaskingPolicies",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "dataMaskingState": "Enabled",
+    "applicationPrincipals": "",
+    "exemptPrincipals": "testuser;",
+    "maskingLevel": ""
+  },
+  "dataMaskingState": "Enabled",
+  "applicationPrincipals": "",
+  "exemptPrincipals": "testuser;",
+  "maskingLevel": ""
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Error copying property --- id
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-6852/databases/sqlcrudtest-331/dataMaskingPolicies/Default/rules/",
+  "name": null,
+  "type": "Microsoft.Sql/servers/databases/dataMaskingPolicies/rules",
+  "location": "Central US",
+  "kind": null,
+  "properties": {
+    "id": "dbo_Table_1_test1",
+    "ruleState": "Enabled",
+    "schemaName": "dbo",
+    "tableName": "Table_1",
+    "columnName": "test1",
+    "aliasName": null,
+    "maskingFunction": "Text",
+    "numberFrom": null,
+    "numberTo": null,
+    "prefixSize": "1",
+    "suffixSize": "0",
+    "replacementString": "asdf"
+  },
+  "ruleState": "Enabled",
+  "schemaName": "dbo",
+  "tableName": "Table_1",
+  "columnName": "test1",
+  "aliasName": null,
+  "maskingFunction": "Text",
+  "numberFrom": null,
+  "numberTo": null,
+  "prefixSize": "1",
+  "suffixSize": "0",
+  "replacementString": "asdf"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-5370",
+  "name": "firewallrulecrudtest-5370",
+  "type": "Microsoft.Sql/servers/firewallRules",
+  "location": "Japan East",
+  "kind": "v12.0",
+  "properties": {
+    "startIpAddress": "0.0.0.3",
+    "endIpAddress": "0.0.0.3"
+  },
+  "startIpAddress": "0.0.0.3",
+  "endIpAddress": "0.0.0.3"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default",
+  "name": "Default",
+  "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+  "location": null,
+  "kind": null,
+  "properties": {
+    "state": "Enabled",
+    "storageType": null
+  },
+  "state": "Enabled",
+  "storageType": null
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdb",
+  "name": "testdb",
+  "type": "Microsoft.Sql/servers/databases",
+  "location": "Japan East",
+  "kind": "v12.0,user",
+  "properties": {
+    "edition": "Standard",
+    "status": "Online",
+    "serviceLevelObjective": "S0",
+    "collation": "SQL_Latin1_General_CP1_CI_AS",
+    "creationDate": "2017-02-24T22:39:46.547Z",
+    "maxSizeBytes": "268435456000",
+    "currentServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+    "requestedServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+    "requestedServiceObjectiveName": "S0",
+    "sampleName": null,
+    "defaultSecondaryLocation": "Japan West",
+    "earliestRestoreDate": "2017-02-10T01:52:52.923Z",
+    "elasticPoolName": null,
+    "containmentState": "2",
+    "readScale": "Disabled",
+    "failoverGroupId": null
+  },
+  "edition": "Standard",
+  "status": "Online",
+  "serviceLevelObjective": "S0",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "creationDate": "2017-02-24T22:39:46.547Z",
+  "maxSizeBytes": "268435456000",
+  "currentServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+  "requestedServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+  "requestedServiceObjectiveName": "S0",
+  "sampleName": null,
+  "defaultSecondaryLocation": "Japan West",
+  "earliestRestoreDate": "2017-02-10T01:52:52.923Z",
+  "elasticPoolName": null,
+  "containmentState": "2",
+  "readScale": "Disabled",
+  "failoverGroupId": null
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdb",
+  "name": "testdb",
+  "type": "Microsoft.Sql/servers/databases",
+  "location": "Japan East",
+  "kind": "v12.0,user",
+  "properties": {
+    "edition": "Standard",
+    "status": "Online",
+    "serviceLevelObjective": "S0",
+    "collation": "SQL_Latin1_General_CP1_CI_AS",
+    "creationDate": "2017-02-24T22:39:46.547Z",
+    "maxSizeBytes": "268435456000",
+    "currentServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+    "requestedServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+    "requestedServiceObjectiveName": "S0",
+    "sampleName": null,
+    "defaultSecondaryLocation": "Japan West",
+    "earliestRestoreDate": "2017-02-10T01:52:52.923Z",
+    "elasticPoolName": null,
+    "containmentState": "2",
+    "readScale": "Disabled",
+    "failoverGroupId": null
+  },
+  "edition": "Standard",
+  "status": "Online",
+  "serviceLevelObjective": "S0",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "creationDate": "2017-02-24T22:39:46.547Z",
+  "maxSizeBytes": "268435456000",
+  "currentServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+  "requestedServiceObjectiveId": "f1173c43-91bd-4aaa-973c-54e79e15235b",
+  "requestedServiceObjectiveName": "S0",
+  "sampleName": null,
+  "defaultSecondaryLocation": "Japan West",
+  "earliestRestoreDate": "2017-02-10T01:52:52.923Z",
+  "elasticPoolName": null,
+  "containmentState": "2",
+  "readScale": "Disabled",
+  "failoverGroupId": null
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102",
+  "name": "sqlcrudtest-8102",
+  "type": "Microsoft.Sql/servers/elasticPools",
+  "location": "Japan East",
+  "kind": null,
+  "properties": {
+    "creationDate": "2017-02-10T01:25:25.033Z",
+    "edition": "Basic",
+    "state": "Ready",
+    "dtu": "50",
+    "databaseDtuMin": "0",
+    "databaseDtuMax": "5",
+    "storageMB": "5000"
+  },
+  "creationDate": "2017-02-10T01:25:25.033Z",
+  "edition": "Basic",
+  "state": "Ready",
+  "dtu": "50",
+  "databaseDtuMin": "0",
+  "databaseDtuMax": "5",
+  "storageMB": "5000"
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102",
+  "name": "sqlcrudtest-8102",
+  "type": "Microsoft.Sql/servers/elasticPools",
+  "location": "Japan East",
+  "kind": null,
+  "properties": {
+    "creationDate": "2017-02-10T01:25:25.033Z",
+    "edition": "Basic",
+    "state": "Ready",
+    "dtu": "50",
+    "databaseDtuMin": "0",
+    "databaseDtuMax": "5",
+    "storageMB": "5000"
+  },
+  "creationDate": "2017-02-10T01:25:25.033Z",
+  "edition": "Basic",
+  "state": "Ready",
+  "dtu": "50",
+  "databaseDtuMin": "0",
+  "databaseDtuMax": "5",
+  "storageMB": "5000"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory",
+  "name": "activeDirectory",
+  "properties": {
+    "administratorType": "ActiveDirectory",
+    "login": "bob@contoso.com",
+    "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
+    "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
+  },
+  "administratorType": "ActiveDirectory",
+  "login": "bob@contoso.com",
+  "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
+  "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "tags": {
+    "tagKey1": "TagValue1"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645",
+  "name": "sqlcrudtest-4645",
+  "type": "Microsoft.Sql/servers",
+  "location": "japaneast",
+  "kind": "v12.0",
+  "properties": {
+    "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+    "administratorLogin": "dummylogin",
+    "version": "12.0",
+    "state": "Ready"
+  },
+  "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+  "administratorLogin": "dummylogin",
+  "version": "12.0",
+  "state": "Ready"
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "tags": {
+    "tagKey1": "TagValue1"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645",
+  "name": "sqlcrudtest-4645",
+  "type": "Microsoft.Sql/servers",
+  "location": "japaneast",
+  "kind": "v12.0",
+  "properties": {
+    "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+    "administratorLogin": "dummylogin",
+    "version": "12.0",
+    "state": "Ready"
+  },
+  "fullyQualifiedDomainName": "sqlcrudtest-4645.database.windows.net",
+  "administratorLogin": "dummylogin",
+  "version": "12.0",
+  "state": "Ready"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "name": "current",
+  "location": "North Europe",
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current",
+  "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+  "properties": {
+    "status": "Enabled"
+  },
+  "status": "Enabled"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-4799/providers/Microsoft.Sql/servers/blobauditingtest-6440/databases/testdb",
+  "name": "default",
+  "type": "Microsoft.Sql/servers/databases/auditingSettings",
+  "kind": "V12",
+  "properties": {
+    "state": "Enabled",
+    "storageEndpoint": "https://mystorage.blob.core.windows.net",
+    "storageAccountAccessKey": "",
+    "retentionDays": "0",
+    "storageAccountSubscriptionId": "00000000-1234-0000-5678-000000000000",
+    "isStorageSecondaryKeyInUse": false,
+    "auditActionsAndGroups": [
+      "DATABASE_LOGOUT_GROUP",
+      "DATABASE_ROLE_MEMBER_CHANGE_GROUP",
+      "UPDATE on database::TestDatabaseName by public"
+    ]
+  },
+  "state": "Enabled",
+  "storageEndpoint": "https://mystorage.blob.core.windows.net",
+  "storageAccountAccessKey": "",
+  "retentionDays": "0",
+  "storageAccountSubscriptionId": "00000000-1234-0000-5678-000000000000",
+  "isStorageSecondaryKeyInUse": false,
+  "auditActionsAndGroups": [
+    "DATABASE_LOGOUT_GROUP",
+    "DATABASE_ROLE_MEMBER_CHANGE_GROUP",
+    "UPDATE on database::TestDatabaseName by public"
+  ]
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current",
+  "name": "current",
+  "type": "Microsoft.Sql/servers/encryptionProtector",
+  "location": "West US",
+  "kind": "azurekeyvault",
+  "properties": {
+    "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
+    "serverKeyType": "AzureKeyVault"
+  },
+  "serverKeyName": "someVault_someKey_01234567890123456789012345678901",
+  "serverKeyType": "AzureKeyVault"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test-3",
+  "name": "failover-group-test-3",
+  "type": "Microsoft.Sql/servers/failoverGroups",
+  "location": "Japan East",
+  "properties": {
+    "readWriteEndpoint": {
+      "failoverPolicy": "Automatic",
+      "failoverWithDataLossGracePeriodMinutes": "480"
+    },
+    "readOnlyEndpoint": {
+      "failoverPolicy": "Disabled"
+    },
+    "replicationRole": "Primary",
+    "replicationState": "CATCH_UP",
+    "partnerServers": [
+      {
+        "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+        "location": "Japan West",
+        "replicationRole": "Secondary"
+      }
+    ],
+    "databases": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-1",
+      "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-2"
+    ]
+  },
+  "readWriteEndpoint": {
+    "failoverPolicy": "Automatic",
+    "failoverWithDataLossGracePeriodMinutes": "480"
+  },
+  "readOnlyEndpoint": {
+    "failoverPolicy": "Disabled"
+  },
+  "replicationRole": "Primary",
+  "replicationState": "CATCH_UP",
+  "partnerServers": [
+    {
+      "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+      "location": "Japan West",
+      "replicationRole": "Secondary"
+    }
+  ],
+  "databases": [
+    "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-1",
+    "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-2"
+  ]
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test-3",
+  "name": "failover-group-test-3",
+  "type": "Microsoft.Sql/servers/failoverGroups",
+  "location": "Japan East",
+  "properties": {
+    "readWriteEndpoint": {
+      "failoverPolicy": "Automatic",
+      "failoverWithDataLossGracePeriodMinutes": "120"
+    },
+    "readOnlyEndpoint": {
+      "failoverPolicy": "Disabled"
+    },
+    "replicationRole": "Primary",
+    "replicationState": "CATCH_UP",
+    "partnerServers": [
+      {
+        "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+        "location": "Japan West",
+        "replicationRole": "Secondary"
+      }
+    ],
+    "databases": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-1"
+    ]
+  },
+  "readWriteEndpoint": {
+    "failoverPolicy": "Automatic",
+    "failoverWithDataLossGracePeriodMinutes": "120"
+  },
+  "readOnlyEndpoint": {
+    "failoverPolicy": "Disabled"
+  },
+  "replicationRole": "Primary",
+  "replicationState": "CATCH_UP",
+  "partnerServers": [
+    {
+      "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-secondary-server",
+      "location": "Japan West",
+      "replicationRole": "Secondary"
+    }
+  ],
+  "databases": [
+    "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/databases/testdb-1"
+  ]
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901",
+  "name": "sqlcrudtest-4645",
+  "type": "Microsoft.Sql/servers/keys",
+  "location": "Japan East",
+  "kind": "azurekeyvault",
+  "properties": {
+    "serverKeyType": "AzureKeyVault",
+    "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+    "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
+    "creationDate": "2017-05-01T00:00:00Z"
+  },
+  "serverKeyType": "AzureKeyVault",
+  "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901",
+  "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
+  "creationDate": "2017-05-01T00:00:00Z"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/databases/sync",
+    "state": "NeverConnected",
+    "isUpToDate": true,
+    "expiryTime": "9999-12-31T23:59:59.9999999Z",
+    "version": "4.2.0.0"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187",
+  "name": "syncagent",
+  "type": "Microsoft.Sql/servers/syncAgents",
+  "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/databases/sync",
+  "state": "NeverConnected",
+  "isUpToDate": true,
+  "expiryTime": "9999-12-31T23:59:59.9999999Z",
+  "version": "4.2.0.0"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "interval": "-1",
+    "lastSyncTime": "0001-01-01T08:00:00Z",
+    "conflictResolutionPolicy": "HubWin",
+    "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+    "hubDatabaseUserName": "hubUser",
+    "syncState": "NotReady"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187",
+  "name": "syncgroupcrud-3187",
+  "type": "Microsoft.Sql/servers/databases/syncGroups",
+  "interval": "-1",
+  "lastSyncTime": "0001-01-01T08:00:00Z",
+  "conflictResolutionPolicy": "HubWin",
+  "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+  "hubDatabaseUserName": "hubUser",
+  "syncState": "NotReady"
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "interval": "-1",
+    "lastSyncTime": "0001-01-01T08:00:00Z",
+    "conflictResolutionPolicy": "HubWin",
+    "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+    "hubDatabaseUserName": "hubUser",
+    "syncState": "NotReady"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187",
+  "name": "syncgroup",
+  "type": "Microsoft.Sql/servers/databases/syncGroups",
+  "interval": "-1",
+  "lastSyncTime": "0001-01-01T08:00:00Z",
+  "conflictResolutionPolicy": "HubWin",
+  "syncDatabaseId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328",
+  "hubDatabaseUserName": "hubUser",
+  "syncState": "NotReady"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "databaseType": "AzureSqlDatabase",
+    "serverName": "syncgroupcrud-3379.database.windows.net",
+    "databaseName": "syncgroupcrud-7421",
+    "userName": "myUser",
+    "syncDirection": "Bidirectional",
+    "syncState": "UnProvisioned"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879",
+  "name": "syncgroupcrud-4879",
+  "type": "Microsoft.Sql/servers/databases/syncGroups/syncMembers",
+  "databaseType": "AzureSqlDatabase",
+  "serverName": "syncgroupcrud-3379.database.windows.net",
+  "databaseName": "syncgroupcrud-7421",
+  "userName": "myUser",
+  "syncDirection": "Bidirectional",
+  "syncState": "UnProvisioned"
+}
+Getting example for: update
+Found example for: update
+Found response for: update
+Found properties
+Sample after properties copied ---
+{
+  "properties": {
+    "databaseType": "AzureSqlDatabase",
+    "serverName": "syncgroupcrud-3379.database.windows.net",
+    "databaseName": "syncgroupcrud-7421",
+    "userName": "myUser",
+    "syncDirection": "Bidirectional",
+    "syncState": "UnProvisioned"
+  },
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879",
+  "name": "syncgroupcrud-4879",
+  "type": "Microsoft.Sql/servers/databases/syncGroups/syncMembers",
+  "databaseType": "AzureSqlDatabase",
+  "serverName": "syncgroupcrud-3379.database.windows.net",
+  "databaseName": "syncgroupcrud-7421",
+  "userName": "myUser",
+  "syncDirection": "Bidirectional",
+  "syncState": "UnProvisioned"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
+  "name": "vnet-firewall-rule",
+  "type": "Microsoft.Sql/servers/virtualNetworkRules",
+  "properties": {
+    "ignoreMissingVnetServiceEndpoint": false,
+    "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+  },
+  "ignoreMissingVnetServiceEndpoint": false,
+  "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
+}
+Getting example for: create_or_update
+Found example for: create_or_update
+Found response for: create_or_update
+Found properties
+Sample after properties copied ---
+{
+  "id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1",
+  "name": "dns-alias-name-1",
+  "type": "Microsoft.Sql/servers/dnsAliases",
+  "properties": {
+    "azureDnsRecord": "dns-alias-name-1.database.windows.net"
+  },
+  "azureDnsRecord": "dns-alias-name-1.database.windows.net"
+}
