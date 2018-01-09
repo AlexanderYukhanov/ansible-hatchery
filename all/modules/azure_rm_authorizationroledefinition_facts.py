@@ -53,6 +53,44 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/subID/providers/Microsoft.Authorization/roleDefinitions/roleDefinitionId
+    name:
+        description:
+            - The role definition name.
+        returned: always
+        type: str
+        sample: roleDefinitionId
+    type:
+        description:
+            - The role definition type.
+        returned: always
+        type: str
+        sample: Microsoft.Authorization/roleDefinitions
+    properties:
+        description:
+            - Role definition properties.
+        returned: always
+        type: complex
+        sample: properties
+        suboptions:
+            description:
+                description:
+                    - The role definition description.
+                returned: always
+                type: str
+                sample: Role description
+            type:
+                description:
+                    - The role type.
+                returned: always
+                type: str
+                sample: roletype
+            permissions:
+                description:
+                    - Role definition permissions.
+                returned: always
+                type: complex
+                sample: permissions
+                suboptions:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

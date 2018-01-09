@@ -68,6 +68,38 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/recommendedElasticPools/ElasticPool1
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: ElasticPool1
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/recommendedElasticPools
+    dtu:
+        description:
+            - The DTU for the recommended elastic pool.
+        returned: always
+        type: float
+        sample: 1000
+    databases:
+        description:
+            - The list of databases in this pool. Expanded property
+        returned: always
+        type: complex
+        sample: databases
+        suboptions:
+    metrics:
+        description:
+            - The list of databases housed in the server. Expanded property
+        returned: always
+        type: complex
+        sample: metrics
+        suboptions:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

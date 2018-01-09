@@ -83,6 +83,24 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/testDNS-ip
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: testDNS-ip
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Network/publicIPAddresses
+    location:
+        description:
+            - Resource location.
+        returned: always
+        type: str
+        sample: westus
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

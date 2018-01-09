@@ -60,6 +60,24 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/providers/Microsoft.DomainRegistration/topLevelDomains/com
+    name:
+        description:
+            - Resource Name.
+        returned: always
+        type: str
+        sample: com
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.DomainRegistration/topLevelDomains
+    privacy:
+        description:
+            - If <code>true</code>, then the top level domain supports domain privacy; otherwise, <code>false</code>.
+        returned: always
+        type: str
+        sample: True
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

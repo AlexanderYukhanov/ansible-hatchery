@@ -247,7 +247,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "The provider name.",
           "Type": "str",
           "Returned": "always",
@@ -257,7 +257,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "The provider type.",
           "Type": "str",
           "Returned": "always",
@@ -369,7 +369,7 @@
         },
         {
           "Name": "operations",
-          "NameAlt": "x",
+          "NameAlt": "operations",
           "Description": "The provider operations.",
           "Type": "complex",
           "Returned": "always",
@@ -980,7 +980,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "The role assignment name.",
           "Type": "str",
           "Returned": "always",
@@ -990,7 +990,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "The role assignment type.",
           "Type": "str",
           "Returned": "always",
@@ -1000,7 +1000,7 @@
         },
         {
           "Name": "properties",
-          "NameAlt": "x",
+          "NameAlt": "properties",
           "Description": "Role assignment properties.",
           "Type": "complex",
           "Returned": "always",
@@ -1008,7 +1008,7 @@
           "SubFields": [
             {
               "Name": "scope",
-              "NameAlt": "x",
+              "NameAlt": "scope",
               "Description": "The role assignment scope.",
               "Type": "str",
               "Returned": "always",
@@ -1570,7 +1570,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "The role definition name.",
           "Type": "str",
           "Returned": "always",
@@ -1580,7 +1580,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "The role definition type.",
           "Type": "str",
           "Returned": "always",
@@ -1590,7 +1590,7 @@
         },
         {
           "Name": "properties",
-          "NameAlt": "x",
+          "NameAlt": "properties",
           "Description": "Role definition properties.",
           "Type": "complex",
           "Returned": "always",
@@ -1608,7 +1608,7 @@
             },
             {
               "Name": "description",
-              "NameAlt": "x",
+              "NameAlt": "description",
               "Description": "The role definition description.",
               "Type": "str",
               "Returned": "always",
@@ -1618,7 +1618,7 @@
             },
             {
               "Name": "type",
-              "NameAlt": "x",
+              "NameAlt": "type",
               "Description": "The role type.",
               "Type": "str",
               "Returned": "always",
@@ -1628,7 +1628,7 @@
             },
             {
               "Name": "permissions",
-              "NameAlt": "x",
+              "NameAlt": "permissions",
               "Description": "Role definition permissions.",
               "Type": "complex",
               "Returned": "always",

@@ -58,6 +58,30 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: default
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/connectionPolicies
+    kind:
+        description:
+            - Metadata used for the Azure portal experience.
+        returned: always
+        type: str
+        sample: kind
+    location:
+        description:
+            - Resource location.
+        returned: always
+        type: str
+        sample: West US
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

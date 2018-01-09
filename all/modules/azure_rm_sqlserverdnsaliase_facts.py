@@ -62,6 +62,18 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: dns-alias-name-1
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/dnsAliases
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

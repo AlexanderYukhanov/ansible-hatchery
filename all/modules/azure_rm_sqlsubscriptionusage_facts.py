@@ -56,6 +56,30 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/ServerQuota
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: ServerQuota
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/locations/usages
+    limit:
+        description:
+            - Boundary value of the metric.
+        returned: always
+        type: float
+        sample: 20
+    unit:
+        description:
+            - Unit of the metric.
+        returned: always
+        type: str
+        sample: Count
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

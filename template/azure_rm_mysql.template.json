@@ -758,7 +758,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -768,7 +768,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -778,7 +778,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The location the resource resides in.",
           "Type": "str",
           "Returned": "always",
@@ -788,7 +788,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "x",
+          "NameAlt": "tags",
           "Description": "Application-specific metadata in the form of key-value pairs.",
           "Type": "complex",
           "Returned": "always",
@@ -798,7 +798,7 @@
         },
         {
           "Name": "sku",
-          "NameAlt": "x",
+          "NameAlt": "sku",
           "Description": "The SKU (pricing tier) of the server.",
           "Type": "complex",
           "Returned": "always",
@@ -806,7 +806,7 @@
           "SubFields": [
             {
               "Name": "name",
-              "NameAlt": "x",
+              "NameAlt": "name",
               "Description": "The name of the sku, typically, a letter + Number code, e.g. P3.",
               "Type": "str",
               "Returned": "always",
@@ -816,7 +816,7 @@
             },
             {
               "Name": "tier",
-              "NameAlt": "x",
+              "NameAlt": "tier",
               "Description": "The tier of the particular SKU, e.g. Basic. Possible values include: 'Basic', 'Standard'",
               "Type": "str",
               "Returned": "always",
@@ -826,7 +826,7 @@
             },
             {
               "Name": "capacity",
-              "NameAlt": "x",
+              "NameAlt": "capacity",
               "Description": "The scale up/out capacity, representing server's compute units.",
               "Type": "int",
               "Returned": "always",
@@ -1326,7 +1326,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1336,7 +1336,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1784,7 +1784,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1794,7 +1794,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -2223,7 +2223,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -2233,7 +2233,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -2243,7 +2243,7 @@
         },
         {
           "Name": "charset",
-          "NameAlt": "x",
+          "NameAlt": "charset",
           "Description": "The charset of the database.",
           "Type": "str",
           "Returned": "always",
@@ -2253,7 +2253,7 @@
         },
         {
           "Name": "collation",
-          "NameAlt": "x",
+          "NameAlt": "collation",
           "Description": "The collation of the database.",
           "Type": "str",
           "Returned": "always",
@@ -2680,7 +2680,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -2690,7 +2690,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -2700,7 +2700,7 @@
         },
         {
           "Name": "value",
-          "NameAlt": "x",
+          "NameAlt": "value",
           "Description": "Value of the configuration.",
           "Type": "str",
           "Returned": "always",
@@ -2710,7 +2710,7 @@
         },
         {
           "Name": "description",
-          "NameAlt": "x",
+          "NameAlt": "description",
           "Description": "Description of the configuration.",
           "Type": "str",
           "Returned": "always",
@@ -2750,7 +2750,7 @@
         },
         {
           "Name": "source",
-          "NameAlt": "x",
+          "NameAlt": "source",
           "Description": "Source of the configuration.",
           "Type": "str",
           "Returned": "always",

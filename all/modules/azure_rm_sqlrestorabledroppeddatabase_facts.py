@@ -62,6 +62,30 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/restorabledroppeddatabasetest-1257/providers/Microsoft.Sql/servers/restorabledroppeddatabasetest-2389/restorableDroppedDatabases/restorabledroppeddatabasetest-7654,131403269876900000
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: restorabledroppeddatabasetest-7654,131403269876900000
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/restorableDroppedDatabases
+    location:
+        description:
+            - The geo-location where the resource lives
+        returned: always
+        type: str
+        sample: Japan East
+    edition:
+        description:
+            - The edition of the database
+        returned: always
+        type: str
+        sample: Basic
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -63,6 +63,30 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: Default
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/databases/dataMaskingPolicies
+    location:
+        description:
+            - The location of the data masking policy.
+        returned: always
+        type: str
+        sample: Central US
+    kind:
+        description:
+            - The kind of data masking policy. Metadata, used for Azure portal.
+        returned: always
+        type: str
+        sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

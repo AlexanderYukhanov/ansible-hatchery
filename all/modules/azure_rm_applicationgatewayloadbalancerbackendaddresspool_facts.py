@@ -58,6 +58,18 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/backend
+    name:
+        description:
+            - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
+        returned: always
+        type: str
+        sample: backend
+    etag:
+        description:
+            - A unique read-only string that changes whenever the resource is updated.
+        returned: always
+        type: str
+        sample: W/\"00000000-0000-0000-0000-000000000000\"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

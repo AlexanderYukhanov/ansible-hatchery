@@ -60,6 +60,52 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: filterName
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsofot.Network/routeFilters
+    location:
+        description:
+            - Resource location.
+        returned: always
+        type: str
+        sample: West US
+    tags:
+        description:
+            - Resource tags.
+        returned: always
+        type: complex
+        sample: {
+      "key1": "value1"
+    }
+    rules:
+        description:
+            - Collection of RouteFilterRules contained within a route filter.
+        returned: always
+        type: complex
+        sample: rules
+        suboptions:
+    peerings:
+        description:
+            - A collection of references to express route circuit peerings.
+        returned: always
+        type: complex
+        sample: peerings
+        suboptions:
+    etag:
+        description:
+            - Gets a unique read-only string that changes whenever the resource is updated.
+        returned: always
+        type: str
+        sample: w/\00000000-0000-0000-0000-000000000000\
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

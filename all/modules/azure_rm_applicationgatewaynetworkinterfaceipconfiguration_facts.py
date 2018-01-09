@@ -58,6 +58,31 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/mynic/ipConfigurations/ipconfig1
+    subnet:
+        description:
+            - Subnet bound to the IP configuration.
+        returned: always
+        type: complex
+        sample: subnet
+        suboptions:
+            id:
+                description:
+                    - Resource ID.
+                returned: always
+                type: str
+                sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/myVirtualNetwork/subnets/frontendSubnet
+    name:
+        description:
+            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+        returned: always
+        type: str
+        sample: ipconfig1
+    etag:
+        description:
+            - A unique read-only string that changes whenever the resource is updated.
+        returned: always
+        type: str
+        sample: W/\"00000000-0000-0000-0000-000000000000\"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

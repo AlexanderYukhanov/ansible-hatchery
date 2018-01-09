@@ -139,12 +139,79 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141
+    name:
+        description:
+            - Resource Name.
+        returned: always
+        type: str
+        sample: testsf6141
+    kind:
+        description:
+            - Kind of resource.
+        returned: always
+        type: str
+        sample: app
+    location:
+        description:
+            - Resource Location.
+        returned: always
+        type: str
+        sample: East US
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Web/serverfarms
     status:
         description:
             - App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)
         returned: always
         type: str
         sample: Ready
+    reserved:
+        description:
+            - If Linux app service plan <code>true</code>, <code>false</code> otherwise.
+        returned: always
+        type: str
+        sample: False
+    sku:
+        description:
+            -
+        returned: always
+        type: complex
+        sample: sku
+        suboptions:
+            name:
+                description:
+                    - Name of the resource SKU.
+                returned: always
+                type: str
+                sample: P1
+            tier:
+                description:
+                    - Service tier of the resource SKU.
+                returned: always
+                type: str
+                sample: Premium
+            size:
+                description:
+                    - Size specifier of the resource SKU.
+                returned: always
+                type: str
+                sample: P1
+            family:
+                description:
+                    - Family code of the resource SKU.
+                returned: always
+                type: str
+                sample: P
+            capacity:
+                description:
+                    - Current number of instances assigned to the resource.
+                returned: always
+                type: int
+                sample: 1
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

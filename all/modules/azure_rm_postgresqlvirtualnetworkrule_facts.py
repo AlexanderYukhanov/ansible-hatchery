@@ -62,6 +62,18 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforPostgreSQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: vnet-firewall-rule
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.DBforPostgreSQL/servers/virtualNetworkRules
     state:
         description:
             - Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)

@@ -600,7 +600,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "The name of the resource.",
           "Type": "str",
           "Returned": "always",
@@ -610,7 +610,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "The type of the resource.",
           "Type": "str",
           "Returned": "always",
@@ -620,7 +620,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The location of the resource. This cannot be changed after the resource is created.",
           "Type": "str",
           "Returned": "always",
@@ -630,7 +630,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "x",
+          "NameAlt": "tags",
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
@@ -640,7 +640,7 @@
         },
         {
           "Name": "sku",
-          "NameAlt": "x",
+          "NameAlt": "sku",
           "Description": "The SKU of the container registry.",
           "Type": "complex",
           "Returned": "always",
@@ -648,7 +648,7 @@
           "SubFields": [
             {
               "Name": "name",
-              "NameAlt": "x",
+              "NameAlt": "name",
               "Description": "The SKU name of the container registry. Required for registry creation. Possible values include: 'Classic', 'Basic', 'Standard', 'Premium'",
               "Type": "str",
               "Returned": "always",
@@ -658,7 +658,7 @@
             },
             {
               "Name": "tier",
-              "NameAlt": "x",
+              "NameAlt": "tier",
               "Description": "The SKU tier based on the SKU name. Possible values include: 'Classic', 'Basic', 'Standard', 'Premium'",
               "Type": "str",
               "Returned": "always",
@@ -719,7 +719,7 @@
             },
             {
               "Name": "message",
-              "NameAlt": "x",
+              "NameAlt": "message",
               "Description": "The detailed message for the status, including alerts and error messages.",
               "Type": "str",
               "Returned": "always",
@@ -729,7 +729,7 @@
             },
             {
               "Name": "timestamp",
-              "NameAlt": "x",
+              "NameAlt": "timestamp",
               "Description": "The timestamp when the status was changed to the current value.",
               "Type": "datetime",
               "Returned": "always",
@@ -1229,7 +1229,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "The name of the resource.",
           "Type": "str",
           "Returned": "always",
@@ -1239,7 +1239,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "The type of the resource.",
           "Type": "str",
           "Returned": "always",
@@ -1249,7 +1249,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The location of the resource. This cannot be changed after the resource is created.",
           "Type": "str",
           "Returned": "always",
@@ -1259,7 +1259,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "x",
+          "NameAlt": "tags",
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
@@ -1297,7 +1297,7 @@
             },
             {
               "Name": "message",
-              "NameAlt": "x",
+              "NameAlt": "message",
               "Description": "The detailed message for the status, including alerts and error messages.",
               "Type": "str",
               "Returned": "always",
@@ -1307,7 +1307,7 @@
             },
             {
               "Name": "timestamp",
-              "NameAlt": "x",
+              "NameAlt": "timestamp",
               "Description": "The timestamp when the status was changed to the current value.",
               "Type": "datetime",
               "Returned": "always",
@@ -1889,7 +1889,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "The name of the resource.",
           "Type": "str",
           "Returned": "always",
@@ -1899,7 +1899,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "The type of the resource.",
           "Type": "str",
           "Returned": "always",
@@ -1909,7 +1909,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The location of the resource. This cannot be changed after the resource is created.",
           "Type": "str",
           "Returned": "always",
@@ -1919,7 +1919,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "x",
+          "NameAlt": "tags",
           "Description": "The tags of the resource.",
           "Type": "complex",
           "Returned": "always",
@@ -1939,7 +1939,7 @@
         },
         {
           "Name": "scope",
-          "NameAlt": "x",
+          "NameAlt": "scope",
           "Description": "The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.",
           "Type": "str",
           "Returned": "always",
@@ -1949,7 +1949,7 @@
         },
         {
           "Name": "actions",
-          "NameAlt": "x",
+          "NameAlt": "actions",
           "Description": "The list of actions that trigger the webhook to post notifications.",
           "Type": "str",
           "Returned": "always",

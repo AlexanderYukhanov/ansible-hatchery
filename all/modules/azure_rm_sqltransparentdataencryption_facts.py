@@ -63,6 +63,24 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: current
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/databases/transparentDataEncryption
+    location:
+        description:
+            - Resource location.
+        returned: always
+        type: str
+        sample: North Europe
     status:
         description:
             - The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)

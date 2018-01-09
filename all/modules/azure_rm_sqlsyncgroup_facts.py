@@ -102,6 +102,24 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: syncgroupcrud-3187
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/databases/syncGroups
+    interval:
+        description:
+            - Sync interval of the sync group.
+        returned: always
+        type: int
+        sample: -1
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

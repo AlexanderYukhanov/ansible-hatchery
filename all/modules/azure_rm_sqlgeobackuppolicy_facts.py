@@ -68,12 +68,36 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: Default
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/databases/geoBackupPolicies
     state:
         description:
             - The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)
         returned: always
         type: str
         sample: Enabled
+    kind:
+        description:
+            - Kind of geo backup policy.  This is metadata used for the Azure portal experience.
+        returned: always
+        type: str
+        sample: kind
+    location:
+        description:
+            - Backup policy location.
+        returned: always
+        type: str
+        sample: Central US
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

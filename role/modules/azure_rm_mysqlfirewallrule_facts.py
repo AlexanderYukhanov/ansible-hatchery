@@ -62,6 +62,18 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: rule1
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.DBforMySQL/servers/firewallRules
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

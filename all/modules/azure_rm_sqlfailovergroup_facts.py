@@ -62,6 +62,30 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: failover-group-test
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Sql/servers/failoverGroups
+    location:
+        description:
+            - Resource location.
+        returned: always
+        type: str
+        sample: Japan East
+    databases:
+        description:
+            - List of databases in the failover group.
+        returned: always
+        type: str
+        sample: []
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

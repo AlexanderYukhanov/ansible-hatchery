@@ -5732,7 +5732,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource Name.",
           "Type": "str",
           "Returned": "always",
@@ -5752,7 +5752,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -5772,7 +5772,7 @@
         },
         {
           "Name": "privacy",
-          "NameAlt": "x",
+          "NameAlt": "privacy",
           "Description": "If <code>true</code>, then the top level domain supports domain privacy; otherwise, <code>false</code>.",
           "Type": "str",
           "Returned": "always",
@@ -6538,7 +6538,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource Name.",
           "Type": "str",
           "Returned": "always",
@@ -6558,7 +6558,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource Location.",
           "Type": "str",
           "Returned": "always",
@@ -6568,7 +6568,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -6648,7 +6648,7 @@
         },
         {
           "Name": "issuer",
-          "NameAlt": "x",
+          "NameAlt": "issuer",
           "Description": "Certificate issuer.",
           "Type": "str",
           "Returned": "always",
@@ -6678,7 +6678,7 @@
         },
         {
           "Name": "password",
-          "NameAlt": "x",
+          "NameAlt": "password",
           "Description": "Certificate password.",
           "Type": "str",
           "Returned": "always",
@@ -6688,7 +6688,7 @@
         },
         {
           "Name": "thumbprint",
-          "NameAlt": "x",
+          "NameAlt": "thumbprint",
           "Description": "Certificate thumbprint.",
           "Type": "str",
           "Returned": "always",
@@ -21103,7 +21103,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource Name.",
           "Type": "str",
           "Returned": "always",
@@ -21113,7 +21113,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of resource.",
           "Type": "str",
           "Returned": "always",
@@ -21123,7 +21123,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource Location.",
           "Type": "str",
           "Returned": "always",
@@ -21133,7 +21133,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -21314,7 +21314,7 @@
         },
         {
           "Name": "reserved",
-          "NameAlt": "x",
+          "NameAlt": "reserved",
           "Description": "If Linux app service plan <code>true</code>, <code>false</code> otherwise.",
           "Type": "str",
           "Returned": "always",
@@ -21354,7 +21354,7 @@
         },
         {
           "Name": "sku",
-          "NameAlt": "x",
+          "NameAlt": "sku",
           "Description": "",
           "Type": "complex",
           "Returned": "always",
@@ -21362,7 +21362,7 @@
           "SubFields": [
             {
               "Name": "name",
-              "NameAlt": "x",
+              "NameAlt": "name",
               "Description": "Name of the resource SKU.",
               "Type": "str",
               "Returned": "always",
@@ -21372,7 +21372,7 @@
             },
             {
               "Name": "tier",
-              "NameAlt": "x",
+              "NameAlt": "tier",
               "Description": "Service tier of the resource SKU.",
               "Type": "str",
               "Returned": "always",
@@ -21382,7 +21382,7 @@
             },
             {
               "Name": "size",
-              "NameAlt": "x",
+              "NameAlt": "size",
               "Description": "Size specifier of the resource SKU.",
               "Type": "str",
               "Returned": "always",
@@ -21392,7 +21392,7 @@
             },
             {
               "Name": "family",
-              "NameAlt": "x",
+              "NameAlt": "family",
               "Description": "Family code of the resource SKU.",
               "Type": "str",
               "Returned": "always",
@@ -21402,7 +21402,7 @@
             },
             {
               "Name": "capacity",
-              "NameAlt": "x",
+              "NameAlt": "capacity",
               "Description": "Current number of instances assigned to the resource.",
               "Type": "int",
               "Returned": "always",

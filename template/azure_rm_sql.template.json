@@ -415,7 +415,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -425,7 +425,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -435,7 +435,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
@@ -793,7 +793,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -803,7 +803,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -813,7 +813,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
@@ -1071,7 +1071,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1081,7 +1081,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1091,7 +1091,7 @@
         },
         {
           "Name": "edition",
-          "NameAlt": "x",
+          "NameAlt": "edition",
           "Description": "The edition of the database",
           "Type": "str",
           "Returned": "always",
@@ -1261,7 +1261,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1271,7 +1271,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1281,7 +1281,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
@@ -1301,7 +1301,7 @@
         },
         {
           "Name": "edition",
-          "NameAlt": "x",
+          "NameAlt": "edition",
           "Description": "The edition of the database",
           "Type": "str",
           "Returned": "always",
@@ -1767,7 +1767,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -1777,7 +1777,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -1787,7 +1787,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -1797,7 +1797,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -2515,7 +2515,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -2525,7 +2525,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -2535,7 +2535,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The geo-location where the resource lives",
           "Type": "str",
           "Returned": "always",
@@ -2545,7 +2545,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Resource kind.",
           "Type": "str",
           "Returned": "always",
@@ -3080,7 +3080,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -3090,7 +3090,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -3140,7 +3140,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "The location of the data masking policy.",
           "Type": "str",
           "Returned": "always",
@@ -3150,7 +3150,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "The kind of data masking policy. Metadata, used for Azure portal.",
           "Type": "str",
           "Returned": "always",
@@ -4353,7 +4353,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -4363,7 +4363,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -4373,7 +4373,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of server that contains this firewall rule.",
           "Type": "str",
           "Returned": "always",
@@ -4383,7 +4383,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Location of the server that contains this firewall rule.",
           "Type": "str",
           "Returned": "always",
@@ -4826,7 +4826,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -4836,7 +4836,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -4866,7 +4866,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of geo backup policy.  This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -4876,7 +4876,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Backup policy location.",
           "Type": "str",
           "Returned": "always",
@@ -6711,7 +6711,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -6721,7 +6721,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -6731,7 +6731,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "x",
+          "NameAlt": "tags",
           "Description": "Resource tags.",
           "Type": "complex",
           "Returned": "always",
@@ -6741,7 +6741,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -6751,7 +6751,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of database.  This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -6761,7 +6761,7 @@
         },
         {
           "Name": "collation",
-          "NameAlt": "x",
+          "NameAlt": "collation",
           "Description": "The collation of the database. If createMode is not Default, this value is ignored.",
           "Type": "str",
           "Returned": "always",
@@ -6871,7 +6871,7 @@
         },
         {
           "Name": "edition",
-          "NameAlt": "x",
+          "NameAlt": "edition",
           "Description": "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSecondary or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: \"Capabilities_ListByLocation.\". Possible values include: 'Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2'",
           "Type": "str",
           "Returned": "always",
@@ -8236,7 +8236,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -8246,7 +8246,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -8266,7 +8266,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -8296,7 +8296,7 @@
         },
         {
           "Name": "edition",
-          "NameAlt": "x",
+          "NameAlt": "edition",
           "Description": "The edition of the elastic pool. Possible values include: 'Basic', 'Standard', 'Premium'",
           "Type": "str",
           "Returned": "always",
@@ -8306,7 +8306,7 @@
         },
         {
           "Name": "dtu",
-          "NameAlt": "x",
+          "NameAlt": "dtu",
           "Description": "The total shared DTU for the database elastic pool.",
           "Type": "int",
           "Returned": "always",
@@ -8356,7 +8356,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of elastic pool.  This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -8524,7 +8524,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -8534,7 +8534,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -8544,7 +8544,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Location of the server that contains this firewall rule.",
           "Type": "str",
           "Returned": "always",
@@ -8604,7 +8604,7 @@
         },
         {
           "Name": "role",
-          "NameAlt": "x",
+          "NameAlt": "role",
           "Description": "The role of the database in the replication link. Possible values include: 'Primary', 'Secondary', 'NonReadableSecondary', 'Source', 'Copy'",
           "Type": "str",
           "Returned": "always",
@@ -9111,7 +9111,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -9141,7 +9141,7 @@
         },
         {
           "Name": "login",
-          "NameAlt": "x",
+          "NameAlt": "login",
           "Description": "The server administrator login value.",
           "Type": "str",
           "Returned": "always",
@@ -9151,7 +9151,7 @@
         },
         {
           "Name": "sid",
-          "NameAlt": "x",
+          "NameAlt": "sid",
           "Description": "The server administrator Sid (Secure ID).",
           "Type": "str",
           "Returned": "always",
@@ -9532,7 +9532,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -9542,7 +9542,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -9572,7 +9572,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Communication link location.",
           "Type": "str",
           "Returned": "always",
@@ -9582,7 +9582,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Communication link kind.  This property is used for Azure Portal metadata.",
           "Type": "str",
           "Returned": "always",
@@ -10338,7 +10338,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -10348,7 +10348,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -10358,7 +10358,7 @@
         },
         {
           "Name": "tags",
-          "NameAlt": "x",
+          "NameAlt": "tags",
           "Description": "Resource tags.",
           "Type": "complex",
           "Returned": "always",
@@ -10368,7 +10368,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -10419,7 +10419,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of sql server. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -10838,7 +10838,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -10848,7 +10848,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -10868,7 +10868,7 @@
         },
         {
           "Name": "dtu",
-          "NameAlt": "x",
+          "NameAlt": "dtu",
           "Description": "The DTU for the recommended elastic pool.",
           "Type": "float",
           "Returned": "always",
@@ -10948,7 +10948,7 @@
         },
         {
           "Name": "databases",
-          "NameAlt": "x",
+          "NameAlt": "databases",
           "Description": "The list of databases in this pool. Expanded property",
           "Type": "complex",
           "Returned": "always",
@@ -11815,7 +11815,7 @@
         },
         {
           "Name": "metrics",
-          "NameAlt": "x",
+          "NameAlt": "metrics",
           "Description": "The list of databases housed in the server. Expanded property",
           "Type": "complex",
           "Returned": "always",
@@ -12014,7 +12014,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -12024,7 +12024,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -12245,7 +12245,7 @@
         },
         {
           "Name": "confidence",
-          "NameAlt": "x",
+          "NameAlt": "confidence",
           "Description": "Gets or sets confidence for service tier advisor.",
           "Type": "float",
           "Returned": "always",
@@ -12634,7 +12634,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -12644,7 +12644,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -12654,7 +12654,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -13606,7 +13606,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -13616,7 +13616,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -13626,7 +13626,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Resource kind.",
           "Type": "str",
           "Returned": "always",
@@ -14165,7 +14165,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -14175,7 +14175,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -14185,7 +14185,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -14195,7 +14195,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -14235,7 +14235,7 @@
         },
         {
           "Name": "uri",
-          "NameAlt": "x",
+          "NameAlt": "uri",
           "Description": "The URI of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -14947,7 +14947,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -14957,7 +14957,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -14967,7 +14967,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -15100,7 +15100,7 @@
         },
         {
           "Name": "databases",
-          "NameAlt": "x",
+          "NameAlt": "databases",
           "Description": "List of databases in the failover group.",
           "Type": "str",
           "Returned": "always",
@@ -15630,7 +15630,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -15640,7 +15640,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -15650,7 +15650,7 @@
         },
         {
           "Name": "kind",
-          "NameAlt": "x",
+          "NameAlt": "kind",
           "Description": "Kind of encryption protector. This is metadata used for the Azure portal experience.",
           "Type": "str",
           "Returned": "always",
@@ -15660,7 +15660,7 @@
         },
         {
           "Name": "location",
-          "NameAlt": "x",
+          "NameAlt": "location",
           "Description": "Resource location.",
           "Type": "str",
           "Returned": "always",
@@ -15690,7 +15690,7 @@
         },
         {
           "Name": "uri",
-          "NameAlt": "x",
+          "NameAlt": "uri",
           "Description": "The URI of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -15700,7 +15700,7 @@
         },
         {
           "Name": "thumbprint",
-          "NameAlt": "x",
+          "NameAlt": "thumbprint",
           "Description": "Thumbprint of the server key.",
           "Type": "str",
           "Returned": "always",
@@ -16123,7 +16123,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -16133,7 +16133,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -17252,7 +17252,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -17262,7 +17262,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -17272,7 +17272,7 @@
         },
         {
           "Name": "interval",
-          "NameAlt": "x",
+          "NameAlt": "interval",
           "Description": "Sync interval of the sync group.",
           "Type": "int",
           "Returned": "always",
@@ -18202,7 +18202,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -18212,7 +18212,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -18414,7 +18414,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -18424,7 +18424,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -18454,7 +18454,7 @@
         },
         {
           "Name": "limit",
-          "NameAlt": "x",
+          "NameAlt": "limit",
           "Description": "Boundary value of the metric.",
           "Type": "float",
           "Returned": "always",
@@ -18464,7 +18464,7 @@
         },
         {
           "Name": "unit",
-          "NameAlt": "x",
+          "NameAlt": "unit",
           "Description": "Unit of the metric.",
           "Type": "str",
           "Returned": "always",
@@ -18850,7 +18850,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -18860,7 +18860,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",
@@ -19313,7 +19313,7 @@
         },
         {
           "Name": "name",
-          "NameAlt": "x",
+          "NameAlt": "name",
           "Description": "Resource name.",
           "Type": "str",
           "Returned": "always",
@@ -19323,7 +19323,7 @@
         },
         {
           "Name": "type",
-          "NameAlt": "x",
+          "NameAlt": "type",
           "Description": "Resource type.",
           "Type": "str",
           "Returned": "always",

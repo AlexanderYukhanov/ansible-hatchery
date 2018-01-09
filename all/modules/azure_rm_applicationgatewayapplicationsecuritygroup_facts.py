@@ -54,6 +54,24 @@ RETURN = '''
         returned: always
         type: str
         sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/applicationSecurityGroups/test-asg
+    name:
+        description:
+            - Resource name.
+        returned: always
+        type: str
+        sample: test-asg
+    type:
+        description:
+            - Resource type.
+        returned: always
+        type: str
+        sample: Microsoft.Network/applicationSecurityGroups
+    location:
+        description:
+            - Resource location.
+        returned: always
+        type: str
+        sample: westus
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
