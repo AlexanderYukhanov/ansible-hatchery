@@ -1182,7 +1182,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/ae43b1e3-c35d-4c8c-bc0d-f148b4c52b78/resourceGroups/demo/providers/Microsoft.ContainerInstance/containerGroups/mycontainers"
         },
         {
           "Name": "name",
@@ -1191,7 +1192,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "mycontainers",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "mycontainers"
         },
         {
           "Name": "type",
@@ -1200,7 +1202,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.ContainerInstance/containerGroups",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.ContainerInstance/containerGroups"
         },
         {
           "Name": "location",
@@ -1209,7 +1212,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "westus",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "westus"
         },
         {
           "Name": "tags",
@@ -1218,7 +1222,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "provisioning_state",
@@ -1227,7 +1232,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "provisioning_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "containers",
@@ -1244,7 +1250,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "name",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "image",
@@ -1253,7 +1260,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "image",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "command",
@@ -1262,7 +1270,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "command",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "ports",
@@ -1279,7 +1288,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "protocol",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "port",
@@ -1288,9 +1298,11 @@
                   "Type": "int",
                   "Returned": "always",
                   "SampleValue": "port",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "environment_variables",
@@ -1307,7 +1319,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "value",
@@ -1316,9 +1329,11 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "value",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "instance_view",
@@ -1335,7 +1350,8 @@
                   "Type": "int",
                   "Returned": "always",
                   "SampleValue": "restart_count",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "current_state",
@@ -1352,7 +1368,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "state",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "start_time",
@@ -1361,7 +1378,8 @@
                       "Type": "datetime",
                       "Returned": "always",
                       "SampleValue": "start_time",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "exit_code",
@@ -1370,7 +1388,8 @@
                       "Type": "int",
                       "Returned": "always",
                       "SampleValue": "exit_code",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "finish_time",
@@ -1379,7 +1398,8 @@
                       "Type": "datetime",
                       "Returned": "always",
                       "SampleValue": "finish_time",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "detail_status",
@@ -1388,9 +1408,11 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "detail_status",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     }
-                  ]
+                  ],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "previous_state",
@@ -1407,7 +1429,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "state",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "start_time",
@@ -1416,7 +1439,8 @@
                       "Type": "datetime",
                       "Returned": "always",
                       "SampleValue": "start_time",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "exit_code",
@@ -1425,7 +1449,8 @@
                       "Type": "int",
                       "Returned": "always",
                       "SampleValue": "exit_code",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "finish_time",
@@ -1434,7 +1459,8 @@
                       "Type": "datetime",
                       "Returned": "always",
                       "SampleValue": "finish_time",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "detail_status",
@@ -1443,9 +1469,11 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "detail_status",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     }
-                  ]
+                  ],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "events",
@@ -1462,7 +1490,8 @@
                       "Type": "int",
                       "Returned": "always",
                       "SampleValue": "count",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "first_timestamp",
@@ -1471,7 +1500,8 @@
                       "Type": "datetime",
                       "Returned": "always",
                       "SampleValue": "first_timestamp",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "last_timestamp",
@@ -1480,7 +1510,8 @@
                       "Type": "datetime",
                       "Returned": "always",
                       "SampleValue": "last_timestamp",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "name",
@@ -1489,7 +1520,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "name",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "message",
@@ -1498,7 +1530,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "message",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "type",
@@ -1507,11 +1540,14 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "type",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     }
-                  ]
+                  ],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "resources",
@@ -1536,7 +1572,8 @@
                       "Type": "float",
                       "Returned": "always",
                       "SampleValue": "memory_in_gb",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "cpu",
@@ -1545,9 +1582,11 @@
                       "Type": "float",
                       "Returned": "always",
                       "SampleValue": "cpu",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     }
-                  ]
+                  ],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "limits",
@@ -1564,7 +1603,8 @@
                       "Type": "float",
                       "Returned": "always",
                       "SampleValue": "memory_in_gb",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "cpu",
@@ -1573,11 +1613,14 @@
                       "Type": "float",
                       "Returned": "always",
                       "SampleValue": "cpu",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     }
-                  ]
+                  ],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "volume_mounts",
@@ -1594,7 +1637,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "mount_path",
@@ -1603,7 +1647,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "mount_path",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "read_only",
@@ -1612,11 +1657,14 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "read_only",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "image_registry_credentials",
@@ -1633,7 +1681,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "server",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "username",
@@ -1642,7 +1691,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "username",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "password",
@@ -1651,9 +1701,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "password",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "restart_policy",
@@ -1662,7 +1714,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "restart_policy",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "ip_address",
@@ -1687,7 +1740,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "protocol",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "port",
@@ -1696,9 +1750,11 @@
                   "Type": "int",
                   "Returned": "always",
                   "SampleValue": "port",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "type",
@@ -1707,7 +1763,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "type",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "ip",
@@ -1716,9 +1773,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "ip",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "os_type",
@@ -1727,7 +1786,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "os_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "volumes",
@@ -1744,7 +1804,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "name",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "azure_file",
@@ -1761,7 +1822,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "share_name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "read_only",
@@ -1770,7 +1832,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "read_only",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "storage_account_name",
@@ -1779,7 +1842,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "storage_account_name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "storage_account_key",
@@ -1788,9 +1852,11 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "storage_account_key",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "empty_dir",
@@ -1799,9 +1865,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "empty_dir",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "instance_view",
@@ -1826,7 +1894,8 @@
                   "Type": "int",
                   "Returned": "always",
                   "SampleValue": "count",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "first_timestamp",
@@ -1835,7 +1904,8 @@
                   "Type": "datetime",
                   "Returned": "always",
                   "SampleValue": "first_timestamp",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "last_timestamp",
@@ -1844,7 +1914,8 @@
                   "Type": "datetime",
                   "Returned": "always",
                   "SampleValue": "last_timestamp",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "name",
@@ -1853,7 +1924,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "message",
@@ -1862,7 +1934,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "message",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "type",
@@ -1871,9 +1944,11 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "type",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "state",
@@ -1882,9 +1957,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "state",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",

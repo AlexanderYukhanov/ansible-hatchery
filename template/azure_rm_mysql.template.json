@@ -490,7 +490,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/12345678-1234-1234-1234-123412341234/testrg/providers/Microsoft.DBforMySQL/servers/mysqlsrv1b6dd89593",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver"
         },
         {
           "Name": "name",
@@ -499,7 +500,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "testserver",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "testserver"
         },
         {
           "Name": "type",
@@ -508,7 +510,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.DBforMySQL/servers",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers"
         },
         {
           "Name": "location",
@@ -517,7 +520,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "onebox",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "onebox"
         },
         {
           "Name": "tags",
@@ -526,7 +530,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "{\r\n  \"elasticServer\": \"1\"\r\n}",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "{\r\n  \"elasticServer\": \"1\"\r\n}"
         },
         {
           "Name": "sku",
@@ -543,7 +548,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "MYSQLS3M100",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "MYSQLS3M100"
             },
             {
               "Name": "tier",
@@ -552,7 +558,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "Basic",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "Basic"
             },
             {
               "Name": "capacity",
@@ -561,7 +568,8 @@
               "Type": "int",
               "Returned": "always",
               "SampleValue": "100",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "100"
             },
             {
               "Name": "size",
@@ -570,7 +578,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "size",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "family",
@@ -579,9 +588,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "family",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "{\r\n  \"name\": \"MYSQLS3M100\",\r\n  \"tier\": \"Basic\",\r\n  \"capacity\": \"100\"\r\n}"
         },
         {
           "Name": "administrator_login",
@@ -590,7 +601,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "administrator_login",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_mb",
@@ -599,7 +611,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "storage_mb",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "version",
@@ -608,7 +621,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "5.6",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "ssl_enforcement",
@@ -617,7 +631,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "ssl_enforcement",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "user_visible_state",
@@ -626,7 +641,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Ready",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "fully_qualified_domain_name",
@@ -635,7 +651,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "mysqlsrv1b6dd89593.mysql.database.azure.com",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -945,7 +962,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/firewallRules/rule1"
         },
         {
           "Name": "name",
@@ -954,7 +972,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "rule1",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "rule1"
         },
         {
           "Name": "type",
@@ -963,7 +982,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.DBforMySQL/servers/firewallRules",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/firewallRules"
         },
         {
           "Name": "start_ip_address",
@@ -972,7 +992,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "start_ip_address",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "end_ip_address",
@@ -981,7 +1002,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "end_ip_address",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
@@ -1336,7 +1358,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule"
         },
         {
           "Name": "name",
@@ -1345,7 +1368,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "vnet-firewall-rule",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "vnet-firewall-rule"
         },
         {
           "Name": "type",
@@ -1354,7 +1378,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.DBforMySQL/servers/virtualNetworkRules",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/virtualNetworkRules"
         },
         {
           "Name": "virtual_network_subnet_id",
@@ -1363,7 +1388,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "virtual_network_subnet_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "ignore_missing_vnet_service_endpoint",
@@ -1372,7 +1398,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "ignore_missing_vnet_service_endpoint",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "state",
@@ -1381,7 +1408,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
@@ -1736,7 +1764,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/databases/db1",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/databases/db1"
         },
         {
           "Name": "name",
@@ -1745,7 +1774,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "db1",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "db1"
         },
         {
           "Name": "type",
@@ -1754,7 +1784,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.DBforMySQL/servers/databases",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/databases"
         },
         {
           "Name": "charset",
@@ -1763,7 +1794,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "charset",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "collation",
@@ -1772,7 +1804,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "collation",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",
@@ -2097,7 +2130,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.DBforMySQL/servers/testserver/configurations/event_scheduler"
         },
         {
           "Name": "name",
@@ -2106,7 +2140,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "event_scheduler",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "event_scheduler"
         },
         {
           "Name": "type",
@@ -2115,7 +2150,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.DBforMySQL/servers/configurations",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.DBforMySQL/servers/configurations"
         },
         {
           "Name": "value",
@@ -2124,7 +2160,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "value",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "description",
@@ -2133,7 +2170,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "description",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "default_value",
@@ -2142,7 +2180,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "default_value",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "data_type",
@@ -2151,7 +2190,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "data_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "allowed_values",
@@ -2160,7 +2200,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "allowed_values",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "source",
@@ -2169,7 +2210,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "source",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "azure_rm_mysqlserver",

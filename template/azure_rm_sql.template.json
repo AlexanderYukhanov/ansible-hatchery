@@ -202,7 +202,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default"
         },
         {
           "Name": "name",
@@ -211,7 +212,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Default"
         },
         {
           "Name": "type",
@@ -220,7 +222,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies"
         },
         {
           "Name": "location",
@@ -229,7 +232,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Japan East",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Japan East"
         },
         {
           "Name": "state",
@@ -238,7 +242,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "recovery_services_backup_policy_resource_id",
@@ -247,7 +252,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "recovery_services_backup_policy_resource_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -551,7 +557,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault"
         },
         {
           "Name": "name",
@@ -560,7 +567,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "RegisteredVault",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "RegisteredVault"
         },
         {
           "Name": "type",
@@ -569,7 +577,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/backupLongTermRetentionVaults"
         },
         {
           "Name": "location",
@@ -578,7 +587,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Japan East",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Japan East"
         },
         {
           "Name": "recovery_services_vault_resource_id",
@@ -587,7 +597,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "recovery_services_vault_resource_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -1278,7 +1289,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/test-1234/providers/Microsoft.Sql/servers/test-5678/connectionPolicies/default"
         },
         {
           "Name": "name",
@@ -1287,7 +1299,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "default"
         },
         {
           "Name": "type",
@@ -1296,7 +1309,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/connectionPolicies",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/connectionPolicies"
         },
         {
           "Name": "kind",
@@ -1305,7 +1319,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "kind",
-          "SubFields": []
+          "SubFields": [],
+          "Info": ""
         },
         {
           "Name": "location",
@@ -1314,7 +1329,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "West US",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "West US"
         },
         {
           "Name": "connection_type",
@@ -1323,7 +1339,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "connection_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -1863,7 +1880,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-4799/providers/Microsoft.Sql/servers/securityalert-6440/databases/testdb",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-4799/providers/Microsoft.Sql/servers/securityalert-6440/databases/testdb"
         },
         {
           "Name": "name",
@@ -1872,7 +1890,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "default"
         },
         {
           "Name": "type",
@@ -1881,7 +1900,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/securityAlertPolicies",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/securityAlertPolicies"
         },
         {
           "Name": "location",
@@ -1890,7 +1910,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "location",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "kind",
@@ -1899,7 +1920,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "V12",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "V12"
         },
         {
           "Name": "state",
@@ -1908,7 +1930,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "disabled_alerts",
@@ -1917,7 +1940,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "disabled_alerts",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "email_addresses",
@@ -1926,7 +1950,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "email_addresses",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "email_account_admins",
@@ -1935,7 +1960,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "email_account_admins",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_endpoint",
@@ -1944,7 +1970,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "storage_endpoint",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_account_access_key",
@@ -1953,7 +1980,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "storage_account_access_key",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "retention_days",
@@ -1962,7 +1990,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "retention_days",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "use_server_default",
@@ -1971,7 +2000,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "use_server_default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -2324,7 +2354,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default"
         },
         {
           "Name": "name",
@@ -2333,7 +2364,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Default"
         },
         {
           "Name": "type",
@@ -2342,7 +2374,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/dataMaskingPolicies",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/dataMaskingPolicies"
         },
         {
           "Name": "data_masking_state",
@@ -2351,7 +2384,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "data_masking_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "exempt_principals",
@@ -2360,7 +2394,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "exempt_principals",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "application_principals",
@@ -2369,7 +2404,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "application_principals",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "masking_level",
@@ -2378,7 +2414,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "masking_level",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "location",
@@ -2387,7 +2424,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Central US",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Central US"
         },
         {
           "Name": "kind",
@@ -2396,7 +2434,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "kind",
-          "SubFields": []
+          "SubFields": [],
+          "Info": ""
         }
       ],
       "TestPrerequisitesModule": "",
@@ -3024,7 +3063,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-6852/databases/sqlcrudtest-331/dataMaskingPolicies/Default/rules/",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-6852/databases/sqlcrudtest-331/dataMaskingPolicies/Default/rules/"
         },
         {
           "Name": "name",
@@ -3033,7 +3073,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": ""
         },
         {
           "Name": "type",
@@ -3042,7 +3083,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/dataMaskingPolicies/rules",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/dataMaskingPolicies/rules"
         },
         {
           "Name": "data_masking_rule_id",
@@ -3051,7 +3093,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "data_masking_rule_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "alias_name",
@@ -3060,7 +3103,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "alias_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "rule_state",
@@ -3069,7 +3113,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "rule_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "schema_name",
@@ -3078,7 +3123,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "schema_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "table_name",
@@ -3087,7 +3133,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "table_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "column_name",
@@ -3096,7 +3143,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "column_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "masking_function",
@@ -3105,7 +3153,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "masking_function",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "number_from",
@@ -3114,7 +3163,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "number_from",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "number_to",
@@ -3123,7 +3173,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "number_to",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "prefix_size",
@@ -3132,7 +3183,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "prefix_size",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "suffix_size",
@@ -3141,7 +3193,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "suffix_size",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "replacement_string",
@@ -3150,7 +3203,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "replacement_string",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "location",
@@ -3159,7 +3213,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Central US",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Central US"
         },
         {
           "Name": "kind",
@@ -3168,7 +3223,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "kind",
-          "SubFields": []
+          "SubFields": [],
+          "Info": ""
         }
       ],
       "TestPrerequisitesModule": "",
@@ -3498,7 +3554,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-5370",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/firewallrulecrudtest-12/providers/Microsoft.Sql/servers/firewallrulecrudtest-6285/firewallRules/firewallrulecrudtest-5370"
         },
         {
           "Name": "name",
@@ -3507,7 +3564,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "firewallrulecrudtest-5370",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "firewallrulecrudtest-5370"
         },
         {
           "Name": "type",
@@ -3516,7 +3574,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/firewallRules",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/firewallRules"
         },
         {
           "Name": "kind",
@@ -3525,7 +3584,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "v12.0",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "v12.0"
         },
         {
           "Name": "location",
@@ -3534,7 +3594,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Japan East",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Japan East"
         },
         {
           "Name": "start_ip_address",
@@ -3543,7 +3604,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "start_ip_address",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "end_ip_address",
@@ -3552,7 +3614,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "end_ip_address",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "azure_rm_sqlserver",
@@ -3882,7 +3945,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdw/geoBackupPolicies/Default"
         },
         {
           "Name": "name",
@@ -3891,7 +3955,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Default"
         },
         {
           "Name": "type",
@@ -3900,7 +3965,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/geoBackupPolicies",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/geoBackupPolicies"
         },
         {
           "Name": "state",
@@ -3909,7 +3975,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_type",
@@ -3918,7 +3985,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "storage_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "kind",
@@ -3927,7 +3995,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "kind",
-          "SubFields": []
+          "SubFields": [],
+          "Info": ""
         },
         {
           "Name": "location",
@@ -3936,7 +4005,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "location",
-          "SubFields": []
+          "SubFields": [],
+          "Info": ""
         }
       ],
       "TestPrerequisitesModule": "azure_rm_sqldatabase",
@@ -4778,7 +4848,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdb",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/testdb"
         },
         {
           "Name": "name",
@@ -4787,7 +4858,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "testdb",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "testdb"
         },
         {
           "Name": "type",
@@ -4796,7 +4868,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases"
         },
         {
           "Name": "tags",
@@ -4805,7 +4878,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "location",
@@ -4814,7 +4888,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Japan East",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Japan East"
         },
         {
           "Name": "kind",
@@ -4823,7 +4898,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "v12.0,user",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "v12.0,user"
         },
         {
           "Name": "collation",
@@ -4832,7 +4908,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "collation",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "creation_date",
@@ -4841,7 +4918,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "creation_date",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "containment_state",
@@ -4850,7 +4928,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "containment_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "current_service_objective_id",
@@ -4859,7 +4938,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "current_service_objective_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "database_id",
@@ -4868,7 +4948,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "database_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "earliest_restore_date",
@@ -4877,7 +4958,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "earliest_restore_date",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "create_mode",
@@ -4886,7 +4968,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "create_mode",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "source_database_id",
@@ -4895,7 +4978,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "source_database_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "source_database_deletion_date",
@@ -4904,7 +4988,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "source_database_deletion_date",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "restore_point_in_time",
@@ -4913,7 +4998,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "restore_point_in_time",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "recovery_services_recovery_point_resource_id",
@@ -4922,7 +5008,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "recovery_services_recovery_point_resource_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "edition",
@@ -4931,7 +5018,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "edition",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "max_size_bytes",
@@ -4940,7 +5028,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "max_size_bytes",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "requested_service_objective_id",
@@ -4949,7 +5038,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "requested_service_objective_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "requested_service_objective_name",
@@ -4958,7 +5048,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "requested_service_objective_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "service_level_objective",
@@ -4967,7 +5058,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "service_level_objective",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "status",
@@ -4976,7 +5068,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "status",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "elastic_pool_name",
@@ -4985,7 +5078,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "elastic_pool_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "default_secondary_location",
@@ -4994,7 +5088,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "default_secondary_location",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "service_tier_advisors",
@@ -5011,7 +5106,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "name",
@@ -5020,7 +5116,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "name",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "type",
@@ -5029,7 +5126,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "type",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "observation_period_start",
@@ -5038,7 +5136,8 @@
               "Type": "datetime",
               "Returned": "always",
               "SampleValue": "observation_period_start",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "observation_period_end",
@@ -5047,7 +5146,8 @@
               "Type": "datetime",
               "Returned": "always",
               "SampleValue": "observation_period_end",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "active_time_ratio",
@@ -5056,7 +5156,8 @@
               "Type": "float",
               "Returned": "always",
               "SampleValue": "active_time_ratio",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "min_dtu",
@@ -5065,7 +5166,8 @@
               "Type": "float",
               "Returned": "always",
               "SampleValue": "min_dtu",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "avg_dtu",
@@ -5074,7 +5176,8 @@
               "Type": "float",
               "Returned": "always",
               "SampleValue": "avg_dtu",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "max_dtu",
@@ -5083,7 +5186,8 @@
               "Type": "float",
               "Returned": "always",
               "SampleValue": "max_dtu",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "max_size_in_gb",
@@ -5092,7 +5196,8 @@
               "Type": "float",
               "Returned": "always",
               "SampleValue": "max_size_in_gb",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "service_level_objective_usage_metrics",
@@ -5109,7 +5214,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "service_level_objective",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "service_level_objective_id",
@@ -5118,7 +5224,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "service_level_objective_id",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "in_range_time_ratio",
@@ -5127,9 +5234,11 @@
                   "Type": "float",
                   "Returned": "always",
                   "SampleValue": "in_range_time_ratio",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "current_service_level_objective",
@@ -5138,7 +5247,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "current_service_level_objective",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "current_service_level_objective_id",
@@ -5147,7 +5257,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "current_service_level_objective_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "usage_based_recommendation_service_level_objective",
@@ -5156,7 +5267,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "usage_based_recommendation_service_level_objective",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "usage_based_recommendation_service_level_objective_id",
@@ -5165,7 +5277,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "usage_based_recommendation_service_level_objective_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "database_size_based_recommendation_service_level_objective",
@@ -5174,7 +5287,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "database_size_based_recommendation_service_level_objective",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "database_size_based_recommendation_service_level_objective_id",
@@ -5183,7 +5297,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "database_size_based_recommendation_service_level_objective_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "disaster_plan_based_recommendation_service_level_objective",
@@ -5192,7 +5307,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "disaster_plan_based_recommendation_service_level_objective",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "disaster_plan_based_recommendation_service_level_objective_id",
@@ -5201,7 +5317,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "disaster_plan_based_recommendation_service_level_objective_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "overall_recommendation_service_level_objective",
@@ -5210,7 +5327,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "overall_recommendation_service_level_objective",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "overall_recommendation_service_level_objective_id",
@@ -5219,7 +5337,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "overall_recommendation_service_level_objective_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "confidence",
@@ -5228,9 +5347,11 @@
               "Type": "float",
               "Returned": "always",
               "SampleValue": "confidence",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "transparent_data_encryption",
@@ -5247,7 +5368,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "name",
@@ -5256,7 +5378,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "name",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "type",
@@ -5265,7 +5388,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "type",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "location",
@@ -5274,7 +5398,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "location",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "status",
@@ -5283,9 +5408,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "status",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "recommended_index",
@@ -5302,7 +5429,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "name",
@@ -5311,7 +5439,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "name",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "type",
@@ -5320,7 +5449,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "type",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "action",
@@ -5329,7 +5459,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "action",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "state",
@@ -5338,7 +5469,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "state",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "created",
@@ -5347,7 +5479,8 @@
               "Type": "datetime",
               "Returned": "always",
               "SampleValue": "created",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "last_modified",
@@ -5356,7 +5489,8 @@
               "Type": "datetime",
               "Returned": "always",
               "SampleValue": "last_modified",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "index_type",
@@ -5365,7 +5499,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "index_type",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "schema",
@@ -5374,7 +5509,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "schema",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "table",
@@ -5383,7 +5519,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "table",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "columns",
@@ -5392,7 +5529,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "columns",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "included_columns",
@@ -5401,7 +5539,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "included_columns",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "index_script",
@@ -5410,7 +5549,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "index_script",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "estimated_impact",
@@ -5427,7 +5567,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "unit",
@@ -5436,7 +5577,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "unit",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "change_value_absolute",
@@ -5445,7 +5587,8 @@
                   "Type": "float",
                   "Returned": "always",
                   "SampleValue": "change_value_absolute",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "change_value_relative",
@@ -5454,9 +5597,11 @@
                   "Type": "float",
                   "Returned": "always",
                   "SampleValue": "change_value_relative",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "reported_impact",
@@ -5473,7 +5618,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "unit",
@@ -5482,7 +5628,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "unit",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "change_value_absolute",
@@ -5491,7 +5638,8 @@
                   "Type": "float",
                   "Returned": "always",
                   "SampleValue": "change_value_absolute",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "change_value_relative",
@@ -5500,11 +5648,14 @@
                   "Type": "float",
                   "Returned": "always",
                   "SampleValue": "change_value_relative",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "failover_group_id",
@@ -5513,7 +5664,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "failover_group_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "read_scale",
@@ -5522,7 +5674,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "read_scale",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sample_name",
@@ -5531,7 +5684,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sample_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "zone_redundant",
@@ -5540,7 +5694,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "zone_redundant",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "azure_rm_sqlserver",
@@ -6178,7 +6333,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-2369/providers/Microsoft.Sql/servers/sqlcrudtest-8069/elasticPools/sqlcrudtest-8102"
         },
         {
           "Name": "name",
@@ -6187,7 +6343,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sqlcrudtest-8102",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "sqlcrudtest-8102"
         },
         {
           "Name": "type",
@@ -6196,7 +6353,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/elasticPools",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/elasticPools"
         },
         {
           "Name": "tags",
@@ -6205,7 +6363,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "location",
@@ -6214,7 +6373,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Japan East",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Japan East"
         },
         {
           "Name": "creation_date",
@@ -6223,7 +6383,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "creation_date",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "state",
@@ -6232,7 +6393,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "edition",
@@ -6241,7 +6403,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "edition",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "dtu",
@@ -6250,7 +6413,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "dtu",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "database_dtu_max",
@@ -6259,7 +6423,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "database_dtu_max",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "database_dtu_min",
@@ -6268,7 +6433,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "database_dtu_min",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_mb",
@@ -6277,7 +6443,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "storage_mb",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "zone_redundant",
@@ -6286,7 +6453,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "zone_redundant",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "kind",
@@ -6295,7 +6463,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "kind",
-          "SubFields": []
+          "SubFields": [],
+          "Info": ""
         }
       ],
       "TestPrerequisitesModule": "azure_rm_sqlserver",
@@ -6879,7 +7048,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrators/activeDirectory"
         },
         {
           "Name": "name",
@@ -6888,7 +7058,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "activeDirectory",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "activeDirectory"
         },
         {
           "Name": "type",
@@ -6897,7 +7068,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "administrator_type",
@@ -6906,7 +7078,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "administrator_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "login",
@@ -6915,7 +7088,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "login",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sid",
@@ -6924,7 +7098,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sid",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "tenant_id",
@@ -6933,7 +7108,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "tenant_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -7222,7 +7398,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "name",
@@ -7231,7 +7408,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "type",
@@ -7240,7 +7418,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "state",
@@ -7249,7 +7428,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "partner_server",
@@ -7258,7 +7438,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "partner_server",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "location",
@@ -7267,7 +7448,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "location",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "kind",
@@ -7276,7 +7458,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "kind",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -7816,7 +7999,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645"
         },
         {
           "Name": "name",
@@ -7825,7 +8009,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sqlcrudtest-4645",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "sqlcrudtest-4645"
         },
         {
           "Name": "type",
@@ -7834,7 +8019,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers"
         },
         {
           "Name": "tags",
@@ -7843,7 +8029,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "{\r\n  \"tagKey1\": \"TagValue1\"\r\n}",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "{\r\n  \"tagKey1\": \"TagValue1\"\r\n}"
         },
         {
           "Name": "location",
@@ -7852,7 +8039,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "japaneast",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "japaneast"
         },
         {
           "Name": "identity",
@@ -7869,7 +8057,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "principal_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "type",
@@ -7878,7 +8067,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "type",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "tenant_id",
@@ -7887,9 +8077,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "tenant_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "kind",
@@ -7898,7 +8090,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "v12.0",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "v12.0"
         },
         {
           "Name": "administrator_login",
@@ -7907,7 +8100,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "administrator_login",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "administrator_login_password",
@@ -7916,7 +8110,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "administrator_login_password",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "version",
@@ -7925,7 +8120,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "12.0",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "state",
@@ -7934,7 +8130,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "fully_qualified_domain_name",
@@ -7943,7 +8140,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sqlcrudtest-4645.database.windows.net",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -8722,7 +8920,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/sqlcrudtest-9187/transparentDataEncryption/current"
         },
         {
           "Name": "name",
@@ -8731,7 +8930,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "current",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "current"
         },
         {
           "Name": "type",
@@ -8740,7 +8940,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/transparentDataEncryption",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/transparentDataEncryption"
         },
         {
           "Name": "location",
@@ -8749,7 +8950,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "North Europe",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "North Europe"
         },
         {
           "Name": "status",
@@ -8758,7 +8960,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "status",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -9578,7 +9781,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-4799/providers/Microsoft.Sql/servers/blobauditingtest-6440/databases/testdb",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/blobauditingtest-4799/providers/Microsoft.Sql/servers/blobauditingtest-6440/databases/testdb"
         },
         {
           "Name": "name",
@@ -9587,7 +9791,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "default",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "default"
         },
         {
           "Name": "type",
@@ -9596,7 +9801,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/auditingSettings",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/auditingSettings"
         },
         {
           "Name": "kind",
@@ -9605,7 +9811,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "V12",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "V12"
         },
         {
           "Name": "state",
@@ -9614,7 +9821,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_endpoint",
@@ -9623,7 +9831,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "storage_endpoint",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_account_access_key",
@@ -9632,7 +9841,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "storage_account_access_key",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "retention_days",
@@ -9641,7 +9851,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "retention_days",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "audit_actions_and_groups",
@@ -9650,7 +9861,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "audit_actions_and_groups",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_account_subscription_id",
@@ -9659,7 +9871,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "storage_account_subscription_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "is_storage_secondary_key_in_use",
@@ -9668,7 +9881,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "is_storage_secondary_key_in_use",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -10040,7 +10254,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProtector/current"
         },
         {
           "Name": "name",
@@ -10049,7 +10264,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "current",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "current"
         },
         {
           "Name": "type",
@@ -10058,7 +10274,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/encryptionProtector",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/encryptionProtector"
         },
         {
           "Name": "kind",
@@ -10067,7 +10284,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "azurekeyvault",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "azurekeyvault"
         },
         {
           "Name": "location",
@@ -10076,7 +10294,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "West US",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "West US"
         },
         {
           "Name": "subregion",
@@ -10085,7 +10304,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "subregion",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "server_key_name",
@@ -10094,7 +10314,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "server_key_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "server_key_type",
@@ -10103,7 +10324,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "server_key_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "uri",
@@ -10112,7 +10334,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "uri",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "thumbprint",
@@ -10121,7 +10344,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "thumbprint",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -10638,7 +10862,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test-3",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/failover-group-primary-server/failoverGroups/failover-group-test-3"
         },
         {
           "Name": "name",
@@ -10647,7 +10872,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "failover-group-test-3",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "failover-group-test-3"
         },
         {
           "Name": "type",
@@ -10656,7 +10882,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/failoverGroups",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/failoverGroups"
         },
         {
           "Name": "location",
@@ -10665,7 +10892,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Japan East",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Japan East"
         },
         {
           "Name": "tags",
@@ -10674,7 +10902,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "read_write_endpoint",
@@ -10691,7 +10920,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "failover_policy",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "failover_with_data_loss_grace_period_minutes",
@@ -10700,9 +10930,11 @@
               "Type": "int",
               "Returned": "always",
               "SampleValue": "failover_with_data_loss_grace_period_minutes",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "read_only_endpoint",
@@ -10719,9 +10951,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "failover_policy",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "replication_role",
@@ -10730,7 +10964,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "replication_role",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "replication_state",
@@ -10739,7 +10974,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "replication_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "partner_servers",
@@ -10756,7 +10992,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "location",
@@ -10765,7 +11002,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "location",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "replication_role",
@@ -10774,9 +11012,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "replication_role",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "databases",
@@ -10785,7 +11025,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "databases",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -11203,7 +11444,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault_someKey_01234567890123456789012345678901"
         },
         {
           "Name": "name",
@@ -11212,7 +11454,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sqlcrudtest-4645",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "sqlcrudtest-4645"
         },
         {
           "Name": "type",
@@ -11221,7 +11464,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/keys",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/keys"
         },
         {
           "Name": "kind",
@@ -11230,7 +11474,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "azurekeyvault",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "azurekeyvault"
         },
         {
           "Name": "location",
@@ -11239,7 +11484,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Japan East",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Japan East"
         },
         {
           "Name": "subregion",
@@ -11248,7 +11494,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "subregion",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "server_key_type",
@@ -11257,7 +11504,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "server_key_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "uri",
@@ -11266,7 +11514,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "uri",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "thumbprint",
@@ -11275,7 +11524,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "thumbprint",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "creation_date",
@@ -11284,7 +11534,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "creation_date",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -11572,7 +11823,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default-SQL-Onebox/providers/Microsoft.Sql/servers/syncagentcrud-8475/syncAgents/syncagentcrud-3187"
         },
         {
           "Name": "name",
@@ -11581,7 +11833,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "syncagent",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "syncagent"
         },
         {
           "Name": "type",
@@ -11590,7 +11843,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/syncAgents",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/syncAgents"
         },
         {
           "Name": "sync_agent_name",
@@ -11599,7 +11853,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sync_agent_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sync_database_id",
@@ -11608,7 +11863,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sync_database_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "last_alive_time",
@@ -11617,7 +11873,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "last_alive_time",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "state",
@@ -11626,7 +11883,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "is_up_to_date",
@@ -11635,7 +11893,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "is_up_to_date",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "expiry_time",
@@ -11644,7 +11903,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "expiry_time",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "version",
@@ -11653,7 +11913,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "version",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -12326,7 +12587,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187"
         },
         {
           "Name": "name",
@@ -12335,7 +12597,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "syncgroup",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "syncgroup"
         },
         {
           "Name": "type",
@@ -12344,7 +12607,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/syncGroups",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/syncGroups"
         },
         {
           "Name": "interval",
@@ -12353,7 +12617,8 @@
           "Type": "int",
           "Returned": "always",
           "SampleValue": "interval",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "last_sync_time",
@@ -12362,7 +12627,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "last_sync_time",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "conflict_resolution_policy",
@@ -12371,7 +12637,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "conflict_resolution_policy",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sync_database_id",
@@ -12380,7 +12647,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sync_database_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "hub_database_user_name",
@@ -12389,7 +12657,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "hub_database_user_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "hub_database_password",
@@ -12398,7 +12667,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "hub_database_password",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sync_state",
@@ -12407,7 +12677,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sync_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "schema",
@@ -12440,7 +12711,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "quoted_name",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "data_size",
@@ -12449,7 +12721,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "data_size",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "data_type",
@@ -12458,9 +12731,11 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "data_type",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     }
-                  ]
+                  ],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "quoted_name",
@@ -12469,9 +12744,11 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "quoted_name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "master_sync_member_name",
@@ -12480,9 +12757,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "master_sync_member_name",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -13258,7 +13537,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879"
         },
         {
           "Name": "name",
@@ -13267,7 +13547,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "syncgroupcrud-4879",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "syncgroupcrud-4879"
         },
         {
           "Name": "type",
@@ -13276,7 +13557,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/databases/syncGroups/syncMembers",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/databases/syncGroups/syncMembers"
         },
         {
           "Name": "database_type",
@@ -13285,7 +13567,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "database_type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sync_agent_id",
@@ -13294,7 +13577,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sync_agent_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sql_server_database_id",
@@ -13303,7 +13587,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sql_server_database_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "server_name",
@@ -13312,7 +13597,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "server_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "database_name",
@@ -13321,7 +13607,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "database_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "user_name",
@@ -13330,7 +13617,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "user_name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "password",
@@ -13339,7 +13627,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "password",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sync_direction",
@@ -13348,7 +13637,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sync_direction",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "sync_state",
@@ -13357,7 +13647,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "sync_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -13835,7 +14126,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vnet-firewall-rule"
         },
         {
           "Name": "name",
@@ -13844,7 +14136,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "vnet-firewall-rule",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "vnet-firewall-rule"
         },
         {
           "Name": "type",
@@ -13853,7 +14146,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/virtualNetworkRules",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/virtualNetworkRules"
         },
         {
           "Name": "virtual_network_subnet_id",
@@ -13862,7 +14156,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "virtual_network_subnet_id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "ignore_missing_vnet_service_endpoint",
@@ -13871,7 +14166,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "ignore_missing_vnet_service_endpoint",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "state",
@@ -13880,7 +14176,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -14251,7 +14548,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias-name-1"
         },
         {
           "Name": "name",
@@ -14260,7 +14558,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "dns-alias-name-1",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "dns-alias-name-1"
         },
         {
           "Name": "type",
@@ -14269,7 +14568,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.Sql/servers/dnsAliases",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.Sql/servers/dnsAliases"
         },
         {
           "Name": "azure_dns_record",
@@ -14278,7 +14578,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "azure_dns_record",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",

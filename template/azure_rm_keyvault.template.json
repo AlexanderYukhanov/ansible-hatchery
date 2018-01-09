@@ -648,7 +648,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "id",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "name",
@@ -657,7 +658,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "name",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "type",
@@ -666,7 +668,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "type",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "location",
@@ -675,7 +678,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "location",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "tags",
@@ -684,7 +688,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "tags",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "properties",
@@ -701,7 +706,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "tenant_id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "sku",
@@ -718,7 +724,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "family",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "name",
@@ -727,9 +734,11 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "name",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "access_policies",
@@ -746,7 +755,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "tenant_id",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "object_id",
@@ -755,7 +765,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "object_id",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "application_id",
@@ -764,7 +775,8 @@
                   "Type": "str",
                   "Returned": "always",
                   "SampleValue": "application_id",
-                  "SubFields": []
+                  "SubFields": [],
+                  "Info": "NO SAMPLE DATA"
                 },
                 {
                   "Name": "permissions",
@@ -781,7 +793,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "keys",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "secrets",
@@ -790,7 +803,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "secrets",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "certificates",
@@ -799,7 +813,8 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "certificates",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     },
                     {
                       "Name": "storage",
@@ -808,11 +823,14 @@
                       "Type": "str",
                       "Returned": "always",
                       "SampleValue": "storage",
-                      "SubFields": []
+                      "SubFields": [],
+                      "Info": "NO SAMPLE DATA"
                     }
-                  ]
+                  ],
+                  "Info": "NO SAMPLE DATA"
                 }
-              ]
+              ],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "vault_uri",
@@ -821,7 +839,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "vault_uri",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "enabled_for_deployment",
@@ -830,7 +849,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "enabled_for_deployment",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "enabled_for_disk_encryption",
@@ -839,7 +859,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "enabled_for_disk_encryption",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "enabled_for_template_deployment",
@@ -848,7 +869,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "enabled_for_template_deployment",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "enable_soft_delete",
@@ -857,7 +879,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "enable_soft_delete",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "create_mode",
@@ -866,9 +889,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "create_mode",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",

@@ -298,7 +298,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry"
         },
         {
           "Name": "name",
@@ -307,7 +308,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "myRegistry",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "myRegistry"
         },
         {
           "Name": "type",
@@ -316,7 +318,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.ContainerRegistry/registries",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.ContainerRegistry/registries"
         },
         {
           "Name": "location",
@@ -325,7 +328,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "westus",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "westus"
         },
         {
           "Name": "tags",
@@ -334,7 +338,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "{\r\n  \"key\": \"value\"\r\n}"
         },
         {
           "Name": "sku",
@@ -351,7 +356,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "Standard",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "Standard"
             },
             {
               "Name": "tier",
@@ -360,9 +366,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "Standard",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "Standard"
             }
-          ]
+          ],
+          "Info": "{\r\n  \"name\": \"Standard\",\r\n  \"tier\": \"Standard\"\r\n}"
         },
         {
           "Name": "login_server",
@@ -371,7 +379,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "login_server",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "creation_date",
@@ -380,7 +389,8 @@
           "Type": "datetime",
           "Returned": "always",
           "SampleValue": "creation_date",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "provisioning_state",
@@ -389,7 +399,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "provisioning_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "status",
@@ -406,7 +417,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "display_status",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "message",
@@ -415,7 +427,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "message",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "timestamp",
@@ -424,9 +437,11 @@
               "Type": "datetime",
               "Returned": "always",
               "SampleValue": "timestamp",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "admin_user_enabled",
@@ -435,7 +450,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "admin_user_enabled",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "storage_account",
@@ -452,9 +468,11 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "id",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -794,7 +812,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication"
         },
         {
           "Name": "name",
@@ -803,7 +822,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "myReplication",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "myReplication"
         },
         {
           "Name": "type",
@@ -812,7 +832,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.ContainerRegistry/registries/replications",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.ContainerRegistry/registries/replications"
         },
         {
           "Name": "location",
@@ -821,7 +842,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "eastus",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "eastus"
         },
         {
           "Name": "tags",
@@ -830,7 +852,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "{\r\n  \"key\": \"value\"\r\n}"
         },
         {
           "Name": "provisioning_state",
@@ -839,7 +862,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "provisioning_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "status",
@@ -856,7 +880,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "display_status",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "message",
@@ -865,7 +890,8 @@
               "Type": "str",
               "Returned": "always",
               "SampleValue": "message",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             },
             {
               "Name": "timestamp",
@@ -874,9 +900,11 @@
               "Type": "datetime",
               "Returned": "always",
               "SampleValue": "timestamp",
-              "SubFields": []
+              "SubFields": [],
+              "Info": "NO SAMPLE DATA"
             }
-          ]
+          ],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
@@ -1340,7 +1368,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook"
         },
         {
           "Name": "name",
@@ -1349,7 +1378,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "myWebhook",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "myWebhook"
         },
         {
           "Name": "type",
@@ -1358,7 +1388,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "Microsoft.ContainerRegistry/registries/webhooks",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "Microsoft.ContainerRegistry/registries/webhooks"
         },
         {
           "Name": "location",
@@ -1367,7 +1398,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "westus",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "westus"
         },
         {
           "Name": "tags",
@@ -1376,7 +1408,8 @@
           "Type": "complex",
           "Returned": "always",
           "SampleValue": "{\r\n  \"key\": \"value\"\r\n}",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "{\r\n  \"key\": \"value\"\r\n}"
         },
         {
           "Name": "status",
@@ -1385,7 +1418,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "status",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "scope",
@@ -1394,7 +1428,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "scope",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "actions",
@@ -1403,7 +1438,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "actions",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         },
         {
           "Name": "provisioning_state",
@@ -1412,7 +1448,8 @@
           "Type": "str",
           "Returned": "always",
           "SampleValue": "provisioning_state",
-          "SubFields": []
+          "SubFields": [],
+          "Info": "NO SAMPLE DATA"
         }
       ],
       "TestPrerequisitesModule": "",
