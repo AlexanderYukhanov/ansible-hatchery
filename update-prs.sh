@@ -13,3 +13,11 @@
 ./ansible-pr.sh azure_rm_sqlfirewallrule_facts
 ./ansible-pr.sh azure_rm_mysqlfirewallrule_facts
 ./ansible-pr.sh azure_rm_postgresqlfirewallrule_facts
+
+./ansible-pr.sh azure_rm_containerregistry_facts
+./ansible-pr.sh azure_rm_containerinstance_facts
+
+./ansible-pr.sh azure_rm_containerregistryreplication
+./ansible-pr.sh azure_rm_containerregistryreplication_facts
+./ansible-pr.sh azure_rm_containerregistrywebhook
+./ansible-pr.sh azure_rm_containerregistrywebhook_facts
