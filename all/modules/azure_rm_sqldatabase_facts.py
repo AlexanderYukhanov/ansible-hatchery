@@ -22,10 +22,6 @@ description:
     - Get facts of SQL Database.
 
 options:
-    resource_group:
-        description:
-            - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
-        required: True
     server_name:
         description:
             - The name of the server.
