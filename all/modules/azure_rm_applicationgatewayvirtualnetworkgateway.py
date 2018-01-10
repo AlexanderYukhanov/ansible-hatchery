@@ -47,7 +47,9 @@ options:
             private_ip_allocation_method:
                 description:
                     - "The private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
-                choices: ['static', 'dynamic']
+                choices:
+                    - 'static'
+                    - 'dynamic'
             subnet:
                 description:
                     - The reference of the subnet resource.
@@ -71,11 +73,15 @@ options:
     gateway_type:
         description:
             - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute)."
-        choices: ['vpn', 'express_route']
+        choices:
+            - 'vpn'
+            - 'express_route'
     vpn_type:
         description:
             - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased)."
-        choices: ['policy_based', 'route_based']
+        choices:
+            - 'policy_based'
+            - 'route_based'
     enable_bgp:
         description:
             - Whether BGP is enabled for this virtual network gateway or not.
@@ -97,11 +103,25 @@ options:
             name:
                 description:
                     - Gateway SKU name.
-                choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
+                choices:
+                    - 'basic'
+                    - 'high_performance'
+                    - 'standard'
+                    - 'ultra_performance'
+                    - 'vpn_gw1'
+                    - 'vpn_gw2'
+                    - 'vpn_gw3'
             tier:
                 description:
                     - Gateway SKU tier.
-                choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
+                choices:
+                    - 'basic'
+                    - 'high_performance'
+                    - 'standard'
+                    - 'ultra_performance'
+                    - 'vpn_gw1'
+                    - 'vpn_gw2'
+                    - 'vpn_gw3'
             capacity:
                 description:
                     - The capacity.
@@ -248,11 +268,13 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
             ),
             gateway_type=dict(
                 type='str',
-                choices=['vpn', 'express_route']
+                choices=['vpn',
+                         'express_route']
             ),
             vpn_type=dict(
                 type='str',
-                choices=['policy_based', 'route_based']
+                choices=['policy_based',
+                         'route_based']
             ),
             enable_bgp=dict(
                 type='str'

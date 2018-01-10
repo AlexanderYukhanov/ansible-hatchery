@@ -43,7 +43,9 @@ options:
             name:
                 description:
                     - Name of a load balancer SKU.
-                choices: ['basic', 'standard']
+                choices:
+                    - 'basic'
+                    - 'standard'
     frontend_ip_configurations:
         description:
             - Object representing the frontend IPs to be used for the load balancer
@@ -58,7 +60,9 @@ options:
             private_ip_allocation_method:
                 description:
                     - "The Private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
-                choices: ['static', 'dynamic']
+                choices:
+                    - 'static'
+                    - 'dynamic'
             subnet:
                 description:
                     - The reference of the subnet resource.
@@ -94,7 +98,10 @@ options:
                                         description:
                                             - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                         required: True
-                                        choices: ['tcp', 'udp', '*']
+                                        choices:
+                                            - 'tcp'
+                                            - 'udp'
+                                            - '*'
                                     source_port_range:
                                         description:
                                             - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -139,7 +146,9 @@ options:
                                         description:
                                             - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
                                         required: True
-                                        choices: ['allow', 'deny']
+                                        choices:
+                                            - 'allow'
+                                            - 'deny'
                                     priority:
                                         description:
                                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each r
@@ -149,7 +158,9 @@ options:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
                                                 Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
-                                        choices: ['inbound', 'outbound']
+                                        choices:
+                                            - 'inbound'
+                                            - 'outbound'
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)
@@ -175,7 +186,10 @@ options:
                                         description:
                                             - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
                                         required: True
-                                        choices: ['tcp', 'udp', '*']
+                                        choices:
+                                            - 'tcp'
+                                            - 'udp'
+                                            - '*'
                                     source_port_range:
                                         description:
                                             - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
@@ -220,7 +234,9 @@ options:
                                         description:
                                             - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
                                         required: True
-                                        choices: ['allow', 'deny']
+                                        choices:
+                                            - 'allow'
+                                            - 'deny'
                                     priority:
                                         description:
                                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each r
@@ -230,7 +246,9 @@ options:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
                                                 Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
-                                        choices: ['inbound', 'outbound']
+                                        choices:
+                                            - 'inbound'
+                                            - 'outbound'
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)
@@ -276,7 +294,12 @@ options:
                                             - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal
                                                ), C(Internet), C(VirtualAppliance), and C(None)."
                                         required: True
-                                        choices: ['virtual_network_gateway', 'vnet_local', 'internet', 'virtual_appliance', 'none']
+                                        choices:
+                                            - 'virtual_network_gateway'
+                                            - 'vnet_local'
+                                            - 'internet'
+                                            - 'virtual_appliance'
+                                            - 'none'
                                     next_hop_ip_address:
                                         description:
                                             - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop t
@@ -357,15 +380,21 @@ options:
                             name:
                                 description:
                                     - Name of a public IP address SKU.
-                                choices: ['basic', 'standard']
+                                choices:
+                                    - 'basic'
+                                    - 'standard'
                     public_ip_allocation_method:
                         description:
                             - "The public IP allocation method. Possible values are: C(Static) and C(Dynamic)."
-                        choices: ['static', 'dynamic']
+                        choices:
+                            - 'static'
+                            - 'dynamic'
                     public_ip_address_version:
                         description:
                             - "The public IP address version. Possible values are: C(IPv4) and C(IPv6)."
-                        choices: ['ipv4', 'ipv6']
+                        choices:
+                            - 'ipv4'
+                            - 'ipv6'
                     dns_settings:
                         description:
                             - The FQDN of the DNS record associated with the public IP address.
@@ -466,11 +495,17 @@ options:
                 description:
                     - "Possible values include: C(Udp), C(Tcp), C(All)"
                 required: True
-                choices: ['udp', 'tcp', 'all']
+                choices:
+                    - 'udp'
+                    - 'tcp'
+                    - 'all'
             load_distribution:
                 description:
                     - The load distribution policy for this rule. Possible values are C(Default), C(SourceIP), and C(SourceIPProtocol).
-                choices: ['default', 'source_ip', 'source_ip_protocol']
+                choices:
+                    - 'default'
+                    - 'source_ip'
+                    - 'source_ip_protocol'
             frontend_port:
                 description:
                     - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values are between
@@ -514,7 +549,9 @@ options:
                     - "The protocol of the end point. Possible values are: C(Http) or C(Tcp). If C(Tcp) is specified, a received ACK is required for the prob
                        e to be successful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful."
                 required: True
-                choices: ['http', 'tcp']
+                choices:
+                    - 'http'
+                    - 'tcp'
             port:
                 description:
                     - The port for communicating the probe. Possible values range from 1 to 65535, inclusive.
@@ -561,7 +598,10 @@ options:
             protocol:
                 description:
                     - "Possible values include: C(Udp), C(Tcp), C(All)"
-                choices: ['udp', 'tcp', 'all']
+                choices:
+                    - 'udp'
+                    - 'tcp'
+                    - 'all'
             frontend_port:
                 description:
                     - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1
@@ -609,7 +649,10 @@ options:
                 description:
                     - "Possible values include: C(Udp), C(Tcp), C(All)"
                 required: True
-                choices: ['udp', 'tcp', 'all']
+                choices:
+                    - 'udp'
+                    - 'tcp'
+                    - 'all'
             frontend_port_range_start:
                 description:
                     - "The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer.

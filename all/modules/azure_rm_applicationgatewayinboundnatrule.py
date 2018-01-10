@@ -47,7 +47,10 @@ options:
     protocol:
         description:
             - "Possible values include: C(Udp), C(Tcp), C(All)"
-        choices: ['udp', 'tcp', 'all']
+        choices:
+            - 'udp'
+            - 'tcp'
+            - 'all'
     frontend_port:
         description:
             - The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.
@@ -139,7 +142,9 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
             ),
             protocol=dict(
                 type='str',
-                choices=['udp', 'tcp', 'all']
+                choices=['udp',
+                         'tcp',
+                         'all']
             ),
             frontend_port=dict(
                 type='int'

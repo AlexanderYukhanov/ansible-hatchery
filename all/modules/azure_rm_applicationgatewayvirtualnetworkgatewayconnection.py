@@ -61,7 +61,9 @@ options:
                     private_ip_allocation_method:
                         description:
                             - "The private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
-                        choices: ['static', 'dynamic']
+                        choices:
+                            - 'static'
+                            - 'dynamic'
                     subnet:
                         description:
                             - The reference of the subnet resource.
@@ -85,11 +87,15 @@ options:
             gateway_type:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute)."
-                choices: ['vpn', 'express_route']
+                choices:
+                    - 'vpn'
+                    - 'express_route'
             vpn_type:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased)."
-                choices: ['policy_based', 'route_based']
+                choices:
+                    - 'policy_based'
+                    - 'route_based'
             enable_bgp:
                 description:
                     - Whether BGP is enabled for this virtual network gateway or not.
@@ -111,11 +117,25 @@ options:
                     name:
                         description:
                             - Gateway SKU name.
-                        choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
+                        choices:
+                            - 'basic'
+                            - 'high_performance'
+                            - 'standard'
+                            - 'ultra_performance'
+                            - 'vpn_gw1'
+                            - 'vpn_gw2'
+                            - 'vpn_gw3'
                     tier:
                         description:
                             - Gateway SKU tier.
-                        choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
+                        choices:
+                            - 'basic'
+                            - 'high_performance'
+                            - 'standard'
+                            - 'ultra_performance'
+                            - 'vpn_gw1'
+                            - 'vpn_gw2'
+                            - 'vpn_gw3'
                     capacity:
                         description:
                             - The capacity.
@@ -216,7 +236,9 @@ options:
                     private_ip_allocation_method:
                         description:
                             - "The private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
-                        choices: ['static', 'dynamic']
+                        choices:
+                            - 'static'
+                            - 'dynamic'
                     subnet:
                         description:
                             - The reference of the subnet resource.
@@ -240,11 +262,15 @@ options:
             gateway_type:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute)."
-                choices: ['vpn', 'express_route']
+                choices:
+                    - 'vpn'
+                    - 'express_route'
             vpn_type:
                 description:
                     - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased)."
-                choices: ['policy_based', 'route_based']
+                choices:
+                    - 'policy_based'
+                    - 'route_based'
             enable_bgp:
                 description:
                     - Whether BGP is enabled for this virtual network gateway or not.
@@ -266,11 +292,25 @@ options:
                     name:
                         description:
                             - Gateway SKU name.
-                        choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
+                        choices:
+                            - 'basic'
+                            - 'high_performance'
+                            - 'standard'
+                            - 'ultra_performance'
+                            - 'vpn_gw1'
+                            - 'vpn_gw2'
+                            - 'vpn_gw3'
                     tier:
                         description:
                             - Gateway SKU tier.
-                        choices: ['basic', 'high_performance', 'standard', 'ultra_performance', 'vpn_gw1', 'vpn_gw2', 'vpn_gw3']
+                        choices:
+                            - 'basic'
+                            - 'high_performance'
+                            - 'standard'
+                            - 'ultra_performance'
+                            - 'vpn_gw1'
+                            - 'vpn_gw2'
+                            - 'vpn_gw3'
                     capacity:
                         description:
                             - The capacity.
@@ -394,7 +434,11 @@ options:
         description:
             - "Gateway connection type. Possible values are: C(Ipsec),C(Vnet2Vnet),C(ExpressRoute), and 'VPNClient."
         required: True
-        choices: ['ipsec', 'vnet2_vnet', 'express_route', 'vpn_client']
+        choices:
+            - 'ipsec'
+            - 'vnet2_vnet'
+            - 'express_route'
+            - 'vpn_client'
     routing_weight:
         description:
             - The routing weight.
@@ -431,32 +475,71 @@ options:
                 description:
                     - The IPSec encryption algorithm (IKE phase 1).
                 required: True
-                choices: ['none', 'des', 'des3', 'aes128', 'aes192', 'aes256', 'gcmaes128', 'gcmaes192', 'gcmaes256']
+                choices:
+                    - 'none'
+                    - 'des'
+                    - 'des3'
+                    - 'aes128'
+                    - 'aes192'
+                    - 'aes256'
+                    - 'gcmaes128'
+                    - 'gcmaes192'
+                    - 'gcmaes256'
             ipsec_integrity:
                 description:
                     - The IPSec integrity algorithm (IKE phase 1).
                 required: True
-                choices: ['md5', 'sha1', 'sha256', 'gcmaes128', 'gcmaes192', 'gcmaes256']
+                choices:
+                    - 'md5'
+                    - 'sha1'
+                    - 'sha256'
+                    - 'gcmaes128'
+                    - 'gcmaes192'
+                    - 'gcmaes256'
             ike_encryption:
                 description:
                     - The IKE encryption algorithm (IKE phase 2).
                 required: True
-                choices: ['des', 'des3', 'aes128', 'aes192', 'aes256']
+                choices:
+                    - 'des'
+                    - 'des3'
+                    - 'aes128'
+                    - 'aes192'
+                    - 'aes256'
             ike_integrity:
                 description:
                     - The IKE integrity algorithm (IKE phase 2).
                 required: True
-                choices: ['md5', 'sha1', 'sha256', 'sha384']
+                choices:
+                    - 'md5'
+                    - 'sha1'
+                    - 'sha256'
+                    - 'sha384'
             dh_group:
                 description:
                     - The DH Groups used in IKE Phase 1 for initial SA.
                 required: True
-                choices: ['none', 'dh_group1', 'dh_group2', 'dh_group14', 'dh_group2048', 'ecp256', 'ecp384', 'dh_group24']
+                choices:
+                    - 'none'
+                    - 'dh_group1'
+                    - 'dh_group2'
+                    - 'dh_group14'
+                    - 'dh_group2048'
+                    - 'ecp256'
+                    - 'ecp384'
+                    - 'dh_group24'
             pfs_group:
                 description:
                     - The DH Groups used in IKE Phase 2 for new child SA.
                 required: True
-                choices: ['none', 'pfs1', 'pfs2', 'pfs2048', 'ecp256', 'ecp384', 'pfs24']
+                choices:
+                    - 'none'
+                    - 'pfs1'
+                    - 'pfs2'
+                    - 'pfs2048'
+                    - 'ecp256'
+                    - 'ecp384'
+                    - 'pfs24'
     resource_guid:
         description:
             - The resource GUID property of the VirtualNetworkGatewayConnection resource.
@@ -540,7 +623,10 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
             ),
             connection_type=dict(
                 type='str',
-                choices=['ipsec', 'vnet2_vnet', 'express_route', 'vpn_client'],
+                choices=['ipsec',
+                         'vnet2_vnet',
+                         'express_route',
+                         'vpn_client'],
                 required=True
             ),
             routing_weight=dict(

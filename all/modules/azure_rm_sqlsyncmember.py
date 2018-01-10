@@ -45,7 +45,9 @@ options:
     database_type:
         description:
             - Database type of the sync member.
-        choices: ['azure_sql_database', 'sql_server_database']
+        choices:
+            - 'azure_sql_database'
+            - 'sql_server_database'
     sync_agent_id:
         description:
             - ARM resource id of the sync agent in the sync member.
@@ -67,7 +69,10 @@ options:
     sync_direction:
         description:
             - Sync direction of the sync member.
-        choices: ['bidirectional', 'one_way_member_to_hub', 'one_way_hub_to_member']
+        choices:
+            - 'bidirectional'
+            - 'one_way_member_to_hub'
+            - 'one_way_hub_to_member'
 
 extends_documentation_fragment:
     - azure
@@ -141,7 +146,8 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             ),
             database_type=dict(
                 type='str',
-                choices=['azure_sql_database', 'sql_server_database']
+                choices=['azure_sql_database',
+                         'sql_server_database']
             ),
             sync_agent_id=dict(
                 type='str'
@@ -164,7 +170,9 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             ),
             sync_direction=dict(
                 type='str',
-                choices=['bidirectional', 'one_way_member_to_hub', 'one_way_hub_to_member']
+                choices=['bidirectional',
+                         'one_way_member_to_hub',
+                         'one_way_hub_to_member']
             ),
             state=dict(
                 type='str',

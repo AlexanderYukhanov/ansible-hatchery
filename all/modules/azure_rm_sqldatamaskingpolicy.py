@@ -42,7 +42,9 @@ options:
         description:
             - The state of the data masking policy.
         required: True
-        choices: ['disabled', 'enabled']
+        choices:
+            - 'disabled'
+            - 'enabled'
     exempt_principals:
         description:
             - "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not apply.
@@ -117,7 +119,8 @@ class AzureRMDataMaskingPolicies(AzureRMModuleBase):
             ),
             data_masking_state=dict(
                 type='str',
-                choices=['disabled', 'enabled'],
+                choices=['disabled',
+                         'enabled'],
                 required=True
             ),
             exempt_principals=dict(

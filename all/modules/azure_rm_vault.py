@@ -55,7 +55,9 @@ options:
                         description:
                             - SKU name to specify whether the key vault is a standard vault or a premium vault.
                         required: True
-                        choices: ['standard', 'premium']
+                        choices:
+                            - 'standard'
+                            - 'premium'
             access_policies:
                 description:
                     - "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key v
@@ -113,7 +115,9 @@ options:
             create_mode:
                 description:
                     - "The vault's create mode to indicate whether the vault need to be recovered or not."
-                choices: ['recover', 'default']
+                choices:
+                    - 'recover'
+                    - 'default'
 
 extends_documentation_fragment:
     - azure

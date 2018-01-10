@@ -42,7 +42,9 @@ options:
         description:
             - The status of the backup long term retention policy.
         required: True
-        choices: ['disabled', 'enabled']
+        choices:
+            - 'disabled'
+            - 'enabled'
     recovery_services_backup_policy_resource_id:
         description:
             - The azure recovery services backup protection policy resource id
@@ -123,7 +125,8 @@ class AzureRMBackupLongTermRetentionPolicies(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                choices=['disabled', 'enabled'],
+                choices=['disabled',
+                         'enabled'],
                 required=True
             ),
             recovery_services_backup_policy_resource_id=dict(

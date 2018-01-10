@@ -48,7 +48,9 @@ options:
                 description:
                     - "The access type of the rule. Valid values are: C(Allow), C(Deny)."
                 required: True
-                choices: ['allow', 'deny']
+                choices:
+                    - 'allow'
+                    - 'deny'
             route_filter_rule_type:
                 description:
                     - "The rule type of the rule. Valid value is: C(Community)"
@@ -75,11 +77,16 @@ options:
             peering_type:
                 description:
                     - "The PeeringType. Possible values are: C(AzurePublicPeering), C(AzurePrivatePeering), and C(MicrosoftPeering)."
-                choices: ['azure_public_peering', 'azure_private_peering', 'microsoft_peering']
+                choices:
+                    - 'azure_public_peering'
+                    - 'azure_private_peering'
+                    - 'microsoft_peering'
             state:
                 description:
                     - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
-                choices: ['disabled', 'enabled']
+                choices:
+                    - 'disabled'
+                    - 'enabled'
             azure_asn:
                 description:
                     - The Azure ASN.
@@ -120,7 +127,11 @@ options:
                         description:
                             - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configured), and
                                C(ValidationNeeded)."
-                        choices: ['not_configured', 'configuring', 'configured', 'validation_needed']
+                        choices:
+                            - 'not_configured'
+                            - 'configuring'
+                            - 'configured'
+                            - 'validation_needed'
                     legacy_mode:
                         description:
                             - The legacy mode of the peering.
@@ -177,7 +188,9 @@ options:
                                 description:
                                     - "The access type of the rule. Valid values are: C(Allow), C(Deny)."
                                 required: True
-                                choices: ['allow', 'deny']
+                                choices:
+                                    - 'allow'
+                                    - 'deny'
                             route_filter_rule_type:
                                 description:
                                     - "The rule type of the rule. Valid value is: C(Community)"
@@ -204,11 +217,16 @@ options:
                             peering_type:
                                 description:
                                     - "The PeeringType. Possible values are: C(AzurePublicPeering), C(AzurePrivatePeering), and C(MicrosoftPeering)."
-                                choices: ['azure_public_peering', 'azure_private_peering', 'microsoft_peering']
+                                choices:
+                                    - 'azure_public_peering'
+                                    - 'azure_private_peering'
+                                    - 'microsoft_peering'
                             state:
                                 description:
                                     - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
-                                choices: ['disabled', 'enabled']
+                                choices:
+                                    - 'disabled'
+                                    - 'enabled'
                             azure_asn:
                                 description:
                                     - The Azure ASN.
@@ -249,7 +267,11 @@ options:
                                         description:
                                             - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(C
                                                onfigured), and C(ValidationNeeded)."
-                                        choices: ['not_configured', 'configuring', 'configured', 'validation_needed']
+                                        choices:
+                                            - 'not_configured'
+                                            - 'configuring'
+                                            - 'configured'
+                                            - 'validation_needed'
                                     legacy_mode:
                                         description:
                                             - The legacy mode of the peering.
@@ -321,7 +343,9 @@ options:
                                     state:
                                         description:
                                             - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
-                                        choices: ['disabled', 'enabled']
+                                        choices:
+                                            - 'disabled'
+                                            - 'enabled'
                             name:
                                 description:
                                     - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -351,7 +375,11 @@ options:
                                 description:
                                     - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configure
                                        d), and C(ValidationNeeded)."
-                                choices: ['not_configured', 'configuring', 'configured', 'validation_needed']
+                                choices:
+                                    - 'not_configured'
+                                    - 'configuring'
+                                    - 'configured'
+                                    - 'validation_needed'
                             legacy_mode:
                                 description:
                                     - The legacy mode of the peering.
@@ -383,7 +411,9 @@ options:
                                         description:
                                             - "The access type of the rule. Valid values are: C(Allow), C(Deny)."
                                         required: True
-                                        choices: ['allow', 'deny']
+                                        choices:
+                                            - 'allow'
+                                            - 'deny'
                                     route_filter_rule_type:
                                         description:
                                             - "The rule type of the rule. Valid value is: C(Community)"
@@ -410,11 +440,16 @@ options:
                                     peering_type:
                                         description:
                                             - "The PeeringType. Possible values are: C(AzurePublicPeering), C(AzurePrivatePeering), and C(MicrosoftPeering)."
-                                        choices: ['azure_public_peering', 'azure_private_peering', 'microsoft_peering']
+                                        choices:
+                                            - 'azure_public_peering'
+                                            - 'azure_private_peering'
+                                            - 'microsoft_peering'
                                     state:
                                         description:
                                             - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
-                                        choices: ['disabled', 'enabled']
+                                        choices:
+                                            - 'disabled'
+                                            - 'enabled'
                                     azure_asn:
                                         description:
                                             - The Azure ASN.
@@ -467,7 +502,9 @@ options:
                     state:
                         description:
                             - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
-                        choices: ['disabled', 'enabled']
+                        choices:
+                            - 'disabled'
+                            - 'enabled'
             name:
                 description:
                     - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.

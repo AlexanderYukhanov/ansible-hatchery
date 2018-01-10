@@ -43,7 +43,9 @@ options:
         description:
             - The server key type like C(ServiceManaged), C(AzureKeyVault).
         required: True
-        choices: ['service_managed', 'azure_key_vault']
+        choices:
+            - 'service_managed'
+            - 'azure_key_vault'
     uri:
         description:
             - The URI of the server key.
@@ -119,7 +121,8 @@ class AzureRMServerKeys(AzureRMModuleBase):
             ),
             server_key_type=dict(
                 type='str',
-                choices=['service_managed', 'azure_key_vault'],
+                choices=['service_managed',
+                         'azure_key_vault'],
                 required=True
             ),
             uri=dict(

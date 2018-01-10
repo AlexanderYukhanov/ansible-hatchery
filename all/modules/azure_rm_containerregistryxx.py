@@ -42,7 +42,11 @@ options:
                 description:
                     - The SKU name of the container registry. Required for registry creation.
                 required: True
-                choices: ['classic', 'basic', 'standard', 'premium']
+                choices:
+                    - 'classic'
+                    - 'basic'
+                    - 'standard'
+                    - 'premium'
     admin_user_enabled:
         description:
             - The value that indicates whether the admin user is enabled.

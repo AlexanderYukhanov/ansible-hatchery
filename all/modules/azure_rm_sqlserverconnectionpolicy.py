@@ -38,7 +38,10 @@ options:
         description:
             - The server connection type.
         required: True
-        choices: ['default', 'proxy', 'redirect']
+        choices:
+            - 'default'
+            - 'proxy'
+            - 'redirect'
 
 extends_documentation_fragment:
     - azure
@@ -102,7 +105,9 @@ class AzureRMServerConnectionPolicies(AzureRMModuleBase):
             ),
             connection_type=dict(
                 type='str',
-                choices=['default', 'proxy', 'redirect'],
+                choices=['default',
+                         'proxy',
+                         'redirect'],
                 required=True
             ),
             state=dict(

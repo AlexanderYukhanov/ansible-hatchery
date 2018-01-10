@@ -58,7 +58,9 @@ options:
                     protocol:
                         description:
                             - The protocol associated with the port.
-                        choices: ['tcp', 'udp']
+                        choices:
+                            - 'tcp'
+                            - 'udp'
                     port:
                         description:
                             - The port number exposed within the container group.
@@ -140,7 +142,10 @@ options:
         description:
             - "Restart policy for all containers within the container group. \n- `Always` Always restart\n- `OnFailure` Restart on failure\n- `Never` Never r
                estart\n."
-        choices: ['always', 'on_failure', 'never']
+        choices:
+            - 'always'
+            - 'on_failure'
+            - 'never'
     ip_address:
         description:
             - The IP address type of the container group.
@@ -154,7 +159,9 @@ options:
                     protocol:
                         description:
                             - The protocol associated with the port.
-                        choices: ['tcp', 'udp']
+                        choices:
+                            - 'tcp'
+                            - 'udp'
                     port:
                         description:
                             - The port number.
@@ -169,7 +176,9 @@ options:
     os_type:
         description:
             - The operating system type required by the containers in the container group.
-        choices: ['windows', 'linux']
+        choices:
+            - 'windows'
+            - 'linux'
     volumes:
         description:
             - The list of volumes that can be mounted by containers in this container group.
@@ -267,14 +276,17 @@ class AzureRMContainerGroups(AzureRMModuleBase):
             ),
             restart_policy=dict(
                 type='str',
-                choices=['always', 'on_failure', 'never']
+                choices=['always',
+                         'on_failure',
+                         'never']
             ),
             ip_address=dict(
                 type='dict'
             ),
             os_type=dict(
                 type='str',
-                choices=['windows', 'linux']
+                choices=['windows',
+                         'linux']
             ),
             volumes=dict(
                 type='list'

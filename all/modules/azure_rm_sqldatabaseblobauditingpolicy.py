@@ -42,7 +42,9 @@ options:
         description:
             - Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required.
         required: True
-        choices: ['enabled', 'disabled']
+        choices:
+            - 'enabled'
+            - 'disabled'
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required."
@@ -137,7 +139,8 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                choices=['enabled', 'disabled'],
+                choices=['enabled',
+                         'disabled'],
                 required=True
             ),
             storage_endpoint=dict(

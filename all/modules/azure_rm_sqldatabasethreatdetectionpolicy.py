@@ -45,7 +45,10 @@ options:
         description:
             - Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required.
         required: True
-        choices: ['new', 'enabled', 'disabled']
+        choices:
+            - 'new'
+            - 'enabled'
+            - 'disabled'
     disabled_alerts:
         description:
             - "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection; Sql_
@@ -56,7 +59,9 @@ options:
     email_account_admins:
         description:
             - Specifies that the alert is sent to the account administrators.
-        choices: ['enabled', 'disabled']
+        choices:
+            - 'enabled'
+            - 'disabled'
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
@@ -70,7 +75,9 @@ options:
     use_server_default:
         description:
             - Specifies whether to use the default server policy.
-        choices: ['enabled', 'disabled']
+        choices:
+            - 'enabled'
+            - 'disabled'
 
 extends_documentation_fragment:
     - azure
@@ -150,7 +157,9 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             ),
             state=dict(
                 type='str',
-                choices=['new', 'enabled', 'disabled'],
+                choices=['new',
+                         'enabled',
+                         'disabled'],
                 required=True
             ),
             disabled_alerts=dict(
@@ -161,7 +170,8 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             ),
             email_account_admins=dict(
                 type='str',
-                choices=['enabled', 'disabled']
+                choices=['enabled',
+                         'disabled']
             ),
             storage_endpoint=dict(
                 type='str'
@@ -174,7 +184,8 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             ),
             use_server_default=dict(
                 type='str',
-                choices=['enabled', 'disabled']
+                choices=['enabled',
+                         'disabled']
             ),
             state=dict(
                 type='str',

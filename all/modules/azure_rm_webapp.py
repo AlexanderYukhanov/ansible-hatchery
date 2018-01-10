@@ -50,7 +50,10 @@ options:
             ssl_state:
                 description:
                     - SSL type.
-                choices: ['disabled', 'sni_enabled', 'ip_based_enabled']
+                choices:
+                    - 'disabled'
+                    - 'sni_enabled'
+                    - 'ip_based_enabled'
             virtual_ip:
                 description:
                     - Virtual IP address assigned to the hostname if IP based SSL is enabled.
@@ -63,7 +66,9 @@ options:
             host_type:
                 description:
                     - Indicates whether the hostname is a standard or repository hostname.
-                choices: ['standard', 'repository']
+                choices:
+                    - 'standard'
+                    - 'repository'
     server_farm_id:
         description:
             - "Resource ID of the associated App Service plan, formatted as: '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.
@@ -146,7 +151,18 @@ options:
                     type:
                         description:
                             - Type of database.
-                        choices: ['my_sql', 'sql_server', 'sql_azure', 'custom', 'notification_hub', 'service_bus', 'event_hub', 'api_hub', 'doc_db', 'redis_cache', 'postgre_sql']
+                        choices:
+                            - 'my_sql'
+                            - 'sql_server'
+                            - 'sql_azure'
+                            - 'custom'
+                            - 'notification_hub'
+                            - 'service_bus'
+                            - 'event_hub'
+                            - 'api_hub'
+                            - 'doc_db'
+                            - 'redis_cache'
+                            - 'postgre_sql'
             handler_mappings:
                 description:
                     - Handler mappings.
@@ -167,7 +183,20 @@ options:
             scm_type:
                 description:
                     - SCM type.
-                choices: ['none', 'dropbox', 'tfs', 'local_git', 'git_hub', 'code_plex_git', 'code_plex_hg', 'bitbucket_git', 'bitbucket_hg', 'external_git', 'external_hg', 'one_drive', 'vso']
+                choices:
+                    - 'none'
+                    - 'dropbox'
+                    - 'tfs'
+                    - 'local_git'
+                    - 'git_hub'
+                    - 'code_plex_git'
+                    - 'code_plex_hg'
+                    - 'bitbucket_git'
+                    - 'bitbucket_hg'
+                    - 'external_git'
+                    - 'external_hg'
+                    - 'one_drive'
+                    - 'vso'
             use32_bit_worker_process:
                 description:
                     - <code>true</code> to use 32-bit worker process; otherwise, <code>false</code>.
@@ -192,7 +221,9 @@ options:
             managed_pipeline_mode:
                 description:
                     - Managed pipeline mode.
-                choices: ['integrated', 'classic']
+                choices:
+                    - 'integrated'
+                    - 'classic'
             virtual_applications:
                 description:
                     - Virtual applications.
@@ -221,7 +252,12 @@ options:
             load_balancing:
                 description:
                     - Site load balancing.
-                choices: ['weighted_round_robin', 'least_requests', 'least_response_time', 'weighted_total_traffic', 'request_hash']
+                choices:
+                    - 'weighted_round_robin'
+                    - 'least_requests'
+                    - 'least_response_time'
+                    - 'weighted_total_traffic'
+                    - 'request_hash'
             experiments:
                 description:
                     - This is work around for polymophic types.
@@ -337,7 +373,10 @@ options:
                             action_type:
                                 description:
                                     - Predefined action to be taken.
-                                choices: ['recycle', 'log_event', 'custom_action']
+                                choices:
+                                    - 'recycle'
+                                    - 'log_event'
+                                    - 'custom_action'
                             custom_action:
                                 description:
                                     - Custom action to be taken.
