@@ -13,6 +13,46 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'supported_by': 'community'}
 
 
+DOCUMENTATION = '''
+---
+module: azure_rm_sqldatabase_facts
+version_added: "2.5"
+short_description: Get SQL Database facts.
+description:
+    - Get facts of SQL Database.
+
+options:
+    resource_group:
+        description:
+            - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+        required: True
+    server_name:
+        description:
+            - The name of the server.
+        required: True
+    database_name:
+        description:
+            - The name of the database.
+    filter:
+        description:
+            - An OData filter expression that describes a subset of metrics to return.
+    expand:
+        description:
+            - A comma separated list of child objects to expand in the response. Possible properties: serviceTierAdvisors, transparentDataEncryption.
+    elastic_pool_name:
+        description:
+            - The name of the elastic pool to be retrieved.
+    recommended_elastic_pool_name:
+        description:
+            - The name of the recommended elastic pool to be retrieved.
+
+extends_documentation_fragment:
+    - azure
+
+author:
+    - "Zim Kalinowski (@zikalino)"
+
+'''
 
 EXAMPLES = '''
   - name: List instances of SQL Database
@@ -96,8 +136,8 @@ collation:
 edition:
     description:
         - "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSecondary or OnlineSeco
-           ndary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/location
-           s/{locationID}/capabilities) referred to by operationId: 'Capabilities_ListByLocation.'. Possible values include: C(Web), C(Business), C(Basic), C
+           ndary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/subscriptionId/providers/Microsoft.Sql/location
+           s/locationID/capabilities) referred to by operationId: 'Capabilities_ListByLocation.'. Possible values include: C(Web), C(Business), C(Basic), C
            (Standard), C(Premium), C(Free), C(Stretch), C(DataWarehouse), C(System), C(System2)"
     returned: always
     type: str
