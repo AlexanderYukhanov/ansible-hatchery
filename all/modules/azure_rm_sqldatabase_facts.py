@@ -22,6 +22,10 @@ description:
     - Get facts of SQL Database.
 
 options:
+    resource_group:
+        description:
+            - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+        required: True
     server_name:
         description:
             - The name of the server.
@@ -32,6 +36,9 @@ options:
     filter:
         description:
             - An OData filter expression that describes a subset of metrics to return.
+    expandxx:
+        description:
+            - A comma separated list of child objects to expand in the response. Possible properties: serviceTierAdvisors, transparentDataEncryption.
     elastic_pool_name:
         description:
             - The name of the elastic pool to be retrieved.
