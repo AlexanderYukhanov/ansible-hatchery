@@ -42,11 +42,11 @@ options:
             - The authorization key.
     authorization_use_status:
         description:
-            - AuthorizationUseStatus. Possible values are: C(Available) and C(InUse).
+            - "AuthorizationUseStatus. Possible values are: C(Available) and C(InUse)."
         choices: ['available', 'in_use']
     provisioning_state:
         description:
-            - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+            - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
     name:
         description:
             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.

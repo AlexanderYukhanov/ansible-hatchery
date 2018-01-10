@@ -57,7 +57,7 @@ options:
                     - The private IP address of the IP configuration.
             private_ip_allocation_method:
                 description:
-                    - The Private IP allocation method. Possible values are: C(Static) and C(Dynamic).
+                    - "The Private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
                 choices: ['static', 'dynamic']
             subnet:
                 description:
@@ -137,7 +137,7 @@ options:
                                         type: list
                                     access:
                                         description:
-                                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
+                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
                                         required: True
                                         choices: ['allow', 'deny']
                                     priority:
@@ -152,7 +152,8 @@ options:
                                         choices: ['inbound', 'outbound']
                                     provisioning_state:
                                         description:
-                                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                                            - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)
+                                               ."
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -217,7 +218,7 @@ options:
                                         type: list
                                     access:
                                         description:
-                                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
+                                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
                                         required: True
                                         choices: ['allow', 'deny']
                                     priority:
@@ -232,7 +233,8 @@ options:
                                         choices: ['inbound', 'outbound']
                                     provisioning_state:
                                         description:
-                                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                                            - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)
+                                               ."
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -244,7 +246,7 @@ options:
                                     - The resource GUID property of the network security group resource.
                             provisioning_state:
                                 description:
-                                    - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                                    - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
                             etag:
                                 description:
                                     - A unique read-only string that changes whenever the resource is updated.
@@ -281,7 +283,7 @@ options:
                                                ype is VirtualAppliance."
                                     provisioning_state:
                                         description:
-                                            - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                                            - "The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -293,7 +295,7 @@ options:
                                     - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
                             provisioning_state:
                                 description:
-                                    - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                                    - "The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
                             etag:
                                 description:
                                     - Gets a unique read-only string that changes whenever the resource is updated.
@@ -358,11 +360,11 @@ options:
                                 choices: ['basic', 'standard']
                     public_ip_allocation_method:
                         description:
-                            - The public IP allocation method. Possible values are: C(Static) and C(Dynamic).
+                            - "The public IP allocation method. Possible values are: C(Static) and C(Dynamic)."
                         choices: ['static', 'dynamic']
                     public_ip_address_version:
                         description:
-                            - The public IP address version. Possible values are: C(IPv4) and C(IPv6).
+                            - "The public IP address version. Possible values are: C(IPv4) and C(IPv6)."
                         choices: ['ipv4', 'ipv6']
                     dns_settings:
                         description:
@@ -393,7 +395,7 @@ options:
                             - The resource GUID property of the public IP resource.
                     provisioning_state:
                         description:
-                            - The provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                            - "The provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
                     etag:
                         description:
                             - A unique read-only string that changes whenever the resource is updated.
@@ -403,7 +405,7 @@ options:
                         type: list
             provisioning_state:
                 description:
-                    - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             name:
                 description:
                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -424,7 +426,7 @@ options:
                     - Resource ID.
             provisioning_state:
                 description:
-                    - Get provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "Get provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             name:
                 description:
                     - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -462,7 +464,7 @@ options:
                             - Resource ID.
             protocol:
                 description:
-                    - Possible values include: C(Udp), C(Tcp), C(All)
+                    - "Possible values include: C(Udp), C(Tcp), C(All)"
                 required: True
                 choices: ['udp', 'tcp', 'all']
             load_distribution:
@@ -492,7 +494,7 @@ options:
                     - Configures SNAT for the VMs in the backend pool to use the publicIP address specified in the frontend of the load balancing rule.
             provisioning_state:
                 description:
-                    - Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             name:
                 description:
                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -532,7 +534,7 @@ options:
                        ere is no default value."
             provisioning_state:
                 description:
-                    - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             name:
                 description:
                     - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -558,7 +560,7 @@ options:
                             - Resource ID.
             protocol:
                 description:
-                    - Possible values include: C(Udp), C(Tcp), C(All)
+                    - "Possible values include: C(Udp), C(Tcp), C(All)"
                 choices: ['udp', 'tcp', 'all']
             frontend_port:
                 description:
@@ -578,7 +580,7 @@ options:
                        endpoint."
             provisioning_state:
                 description:
-                    - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             name:
                 description:
                     - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -605,7 +607,7 @@ options:
                             - Resource ID.
             protocol:
                 description:
-                    - Possible values include: C(Udp), C(Tcp), C(All)
+                    - "Possible values include: C(Udp), C(Tcp), C(All)"
                 required: True
                 choices: ['udp', 'tcp', 'all']
             frontend_port_range_start:
@@ -624,7 +626,7 @@ options:
                 required: True
             provisioning_state:
                 description:
-                    - Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             name:
                 description:
                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -660,7 +662,7 @@ options:
                             - Resource ID.
             provisioning_state:
                 description:
-                    - Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             name:
                 description:
                     - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -672,7 +674,7 @@ options:
             - The resource GUID property of the load balancer resource.
     provisioning_state:
         description:
-            - Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+            - "Gets the provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.

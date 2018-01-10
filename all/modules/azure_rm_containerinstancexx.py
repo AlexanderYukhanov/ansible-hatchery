@@ -115,7 +115,7 @@ options:
                         required: True
                     mount_path:
                         description:
-                            - The path within the container where the volume should be mounted. Must not contain colon (:).
+                            - "The path within the container where the volume should be mounted. Must not contain colon (:)."
                         required: True
                     read_only:
                         description:

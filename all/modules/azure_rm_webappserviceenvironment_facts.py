@@ -222,7 +222,7 @@ id:
     sample: id
 status:
     description:
-        - Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)
+        - "Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)"
     returned: always
     type: str
     sample: status

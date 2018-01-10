@@ -83,7 +83,7 @@ type:
     sample: Microsoft.Sql/servers/syncAgents
 state:
     description:
-        - State of the sync agent. Possible values include: C(Online), C(Offline), C(NeverConnected)
+        - "State of the sync agent. Possible values include: C(Online), C(Offline), C(NeverConnected)"
     returned: always
     type: str
     sample: NeverConnected

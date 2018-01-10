@@ -66,13 +66,13 @@ description:
     sample: Allow inbound traffic from all VMs in VNET
 protocol:
     description:
-        - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)
+        - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)"
     returned: always
     type: str
     sample: *
 access:
     description:
-        - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)
+        - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)"
     returned: always
     type: str
     sample: Allow

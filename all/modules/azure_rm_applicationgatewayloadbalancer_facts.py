@@ -85,7 +85,7 @@ sku:
     contains:
         name:
             description:
-                - Name of a load balancer SKU. Possible values include: C(Basic), C(Standard)
+                - "Name of a load balancer SKU. Possible values include: C(Basic), C(Standard)"
             returned: always
             type: str
             sample: Basic

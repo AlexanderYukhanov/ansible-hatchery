@@ -46,7 +46,7 @@ options:
                     - Resource ID.
     protocol:
         description:
-            - Possible values include: C(Udp), C(Tcp), C(All)
+            - "Possible values include: C(Udp), C(Tcp), C(All)"
         choices: ['udp', 'tcp', 'all']
     frontend_port:
         description:
@@ -64,7 +64,7 @@ options:
                is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the endpoint."
     provisioning_state:
         description:
-            - Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+            - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
     name:
         description:
             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.

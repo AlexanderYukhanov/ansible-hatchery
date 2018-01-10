@@ -45,7 +45,7 @@ options:
         choices: ['enabled', 'disabled']
     storage_endpoint:
         description:
-            - Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required.
+            - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required."
     storage_account_access_key:
         description:
             - Specifies the identifier key of the auditing storage account. If state is Enabled, storageAccountAccessKey is required.

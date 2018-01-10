@@ -121,7 +121,7 @@ options:
                         type: list
                     access:
                         description:
-                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
+                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
                         required: True
                         choices: ['allow', 'deny']
                     priority:
@@ -136,7 +136,7 @@ options:
                         choices: ['inbound', 'outbound']
                     provisioning_state:
                         description:
-                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                            - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -214,7 +214,7 @@ options:
                         type: list
                     access:
                         description:
-                            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
+                            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
                         required: True
                         choices: ['allow', 'deny']
                     priority:
@@ -229,7 +229,7 @@ options:
                         choices: ['inbound', 'outbound']
                     provisioning_state:
                         description:
-                            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                            - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -241,7 +241,7 @@ options:
                     - The resource GUID property of the network security group resource.
             provisioning_state:
                 description:
-                    - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             etag:
                 description:
                     - A unique read-only string that changes whenever the resource is updated.
@@ -278,7 +278,7 @@ options:
                                pliance."
                     provisioning_state:
                         description:
-                            - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                            - "The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
                     name:
                         description:
                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -290,7 +290,7 @@ options:
                     - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
             provisioning_state:
                 description:
-                    - The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+                    - "The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
             etag:
                 description:
                     - Gets a unique read-only string that changes whenever the resource is updated.

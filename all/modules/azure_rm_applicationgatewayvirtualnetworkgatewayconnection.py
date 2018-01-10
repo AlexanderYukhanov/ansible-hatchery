@@ -60,7 +60,7 @@ options:
                             - Resource ID.
                     private_ip_allocation_method:
                         description:
-                            - The private IP allocation method. Possible values are: C(Static) and C(Dynamic).
+                            - "The private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
                         choices: ['static', 'dynamic']
                     subnet:
                         description:
@@ -84,11 +84,11 @@ options:
                             - A unique read-only string that changes whenever the resource is updated.
             gateway_type:
                 description:
-                    - The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute).
+                    - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute)."
                 choices: ['vpn', 'express_route']
             vpn_type:
                 description:
-                    - The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased).
+                    - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased)."
                 choices: ['policy_based', 'route_based']
             enable_bgp:
                 description:
@@ -215,7 +215,7 @@ options:
                             - Resource ID.
                     private_ip_allocation_method:
                         description:
-                            - The private IP allocation method. Possible values are: C(Static) and C(Dynamic).
+                            - "The private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
                         choices: ['static', 'dynamic']
                     subnet:
                         description:
@@ -239,11 +239,11 @@ options:
                             - A unique read-only string that changes whenever the resource is updated.
             gateway_type:
                 description:
-                    - The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute).
+                    - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute)."
                 choices: ['vpn', 'express_route']
             vpn_type:
                 description:
-                    - The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased).
+                    - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased)."
                 choices: ['policy_based', 'route_based']
             enable_bgp:
                 description:

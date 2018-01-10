@@ -99,7 +99,7 @@ options:
         type: list
     access:
         description:
-            - The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny).
+            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
         required: True
         choices: ['allow', 'deny']
     priority:
@@ -114,7 +114,7 @@ options:
         choices: ['inbound', 'outbound']
     provisioning_state:
         description:
-            - The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed).
+            - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
     name:
         description:
             - The name of the resource that is unique within a resource group. This name can be used to access the resource.

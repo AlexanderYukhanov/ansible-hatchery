@@ -89,7 +89,7 @@ location:
     sample: Japan East
 role:
     description:
-        - The role of the database in the replication link. Possible values include: C(Primary), C(Secondary), C(NonReadableSecondary), C(Source), C(Copy)
+        - "The role of the database in the replication link. Possible values include: C(Primary), C(Secondary), C(NonReadableSecondary), C(Source), C(Copy)"
     returned: always
     type: str
     sample: Secondary

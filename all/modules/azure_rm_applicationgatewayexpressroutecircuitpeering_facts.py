@@ -60,7 +60,7 @@ id:
     sample: id
 state:
     description:
-        - The state of peering. Possible values are: C(Disabled) and C(Enabled). Possible values include: C(Disabled), C(Enabled)
+        - "The state of peering. Possible values are: C(Disabled) and C(Enabled). Possible values include: C(Disabled), C(Enabled)"
     returned: always
     type: str
     sample: state

@@ -71,7 +71,7 @@ id:
              rudtest-9187/transparentDataEncryption/current"
 status:
     description:
-        - The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)
+        - "The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)"
     returned: always
     type: str
     sample: Enabled

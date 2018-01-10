@@ -73,7 +73,7 @@ probe:
             sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1
 protocol:
     description:
-        - Possible values include: C(Udp), C(Tcp), C(All)
+        - "Possible values include: C(Udp), C(Tcp), C(All)"
     returned: always
     type: str
     sample: Tcp

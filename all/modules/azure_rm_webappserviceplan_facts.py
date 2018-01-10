@@ -35,7 +35,7 @@ options:
                m (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list"
     filter:
         description:
-            - Supported filter: $filter=state eq running. Returns only web apps that are currently running
+            - "Supported filter: $filter=state eq running. Returns only web apps that are currently running"
     top:
         description:
             - List page size. If specified, results are paged.
@@ -165,7 +165,7 @@ type:
     sample: Microsoft.Web/serverfarms
 status:
     description:
-        - App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)
+        - "App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)"
     returned: always
     type: str
     sample: Ready
