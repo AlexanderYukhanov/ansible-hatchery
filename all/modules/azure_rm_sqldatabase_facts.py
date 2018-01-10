@@ -36,9 +36,9 @@ options:
     filter:
         description:
             - An OData filter expression that describes a subset of metrics to return.
-    expandxx:
+    expanxx:
         description:
-            - A comma separated list of child objects to expand in the response. Possible properties: serviceTierAdvisors, transparentDataEncryption.
+            - xxxxxxx
     elastic_pool_name:
         description:
             - The name of the elastic pool to be retrieved.
