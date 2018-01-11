@@ -73,23 +73,22 @@ options:
                 description:
                     - Permissions the identity has for keys, secrets and certificates.
                 required: True
-                suboptions:
-                    keys:
-                        description:
-                            - Permissions to keys
-                        type: list
-                    secrets:
-                        description:
-                            - Permissions to secrets
-                        type: list
-                    certificates:
-                        description:
-                            - Permissions to certificates
-                        type: list
-                    storage:
-                        description:
-                            - Permissions to storage accounts
-                        type: list
+            keys:
+                description:
+                    - Permissions to keys
+                type: list
+            secrets:
+                description:
+                    - Permissions to secrets
+                type: list
+            certificates:
+                description:
+                    - Permissions to certificates
+                type: list
+            storage:
+                description:
+                    - Permissions to storage accounts
+                type: list
     vault_uri:
         description:
             - The URI of the vault for performing operations on keys and secrets.

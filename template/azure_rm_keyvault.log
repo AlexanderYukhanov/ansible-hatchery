@@ -12,3 +12,6 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+TWEAK: RENAMING resource_group_name -- A
+TWEAK: FLATTENING properties.access_policies.permissions -- ABCDE
+TWEAK: FLATTENING properties -- ABCDE
