@@ -902,7 +902,7 @@
       "ModuleOperationNameUpper": "Vaults",
       "ModuleOperationName": "vaults",
       "ObjectName": "Key Vault",
-      "ReleaseStatus": "",
+      "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
