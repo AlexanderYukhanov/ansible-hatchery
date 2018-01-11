@@ -8,6 +8,9 @@
     resource_group: "{{ resource_group }}"
     vault_name: "{{ rpfx }}vault"
     tenant_id: aaaaaa12345678837
+    sku:
+      name: standard
+      family: xxxx
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -20,6 +23,9 @@
     resource_group: "{{ resource_group }}"
     vault_name: "{{ rpfx }}vault"
     tenant_id: aaaaaa12345678837
+    sku:
+      name: standard
+      family: xxxx
   register: output
 - name: Assert the resource instance is well created
   assert:
