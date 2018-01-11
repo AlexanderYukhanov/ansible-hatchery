@@ -15,11 +15,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_vault
+module: azure_rm_keyvault
 version_added: "2.5"
-short_description: Manage Vault instance.
+short_description: Manage Key Vault instance.
 description:
-    - Create, update and delete instance of Vault.
+    - Create, update and delete instance of Key Vault.
 
 options:
     resource_group:
@@ -30,6 +30,9 @@ options:
         description:
             - Name of the vault
         required: True
+    parameters:
+        description:
+            - Parameters to create or update the vault
     location:
         description:
             - Resource location. If not set, location from the resource group will be used as default.
@@ -128,10 +131,11 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: Create (or update) Vault
-    azure_rm_vault:
+  - name: Create (or update) Key Vault
+    azure_rm_keyvault:
       resource_group: NOT FOUND
       vault_name: NOT FOUND
+      parameters: parameters
       location: eastus
 '''
 
@@ -162,7 +166,7 @@ class Actions:
 
 
 class AzureRMVaults(AzureRMModuleBase):
-    """Configuration class for an Azure RM Vault resource"""
+    """Configuration class for an Azure RM Key Vault resource"""
 
     def __init__(self):
         self.module_arg_spec = dict(
@@ -173,6 +177,9 @@ class AzureRMVaults(AzureRMModuleBase):
             vault_name=dict(
                 type='str',
                 required=True
+            ),
+            parameters=dict(
+                type='dict'
             ),
             location=dict(
                 type='str'
@@ -190,7 +197,8 @@ class AzureRMVaults(AzureRMModuleBase):
 
         self.resource_group = None
         self.vault_name = None
-        self.parameters = dict()
+        self.location = None
+        self.properties = None
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -207,11 +215,6 @@ class AzureRMVaults(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
-            elif kwargs[key] is not None:
-                if key == "location":
-                    self.parameters["location"] = kwargs[key]
-                elif key == "properties":
-                    self.parameters["properties"] = kwargs[key]
 
         old_response = None
         response = None
@@ -224,30 +227,30 @@ class AzureRMVaults(AzureRMModuleBase):
         if "location" not in self.parameters:
             self.parameters["location"] = resource_group.location
 
-        old_response = self.get_vault()
+        old_response = self.get_keyvault()
 
         if not old_response:
-            self.log("Vault instance doesn't exist")
+            self.log("Key Vault instance doesn't exist")
             if self.state == 'absent':
                 self.log("Old instance didn't exist")
             else:
                 self.to_do = Actions.Create
         else:
-            self.log("Vault instance already exists")
+            self.log("Key Vault instance already exists")
             if self.state == 'absent':
                 self.to_do = Actions.Delete
             elif self.state == 'present':
-                self.log("Need to check if Vault instance has to be deleted or may be updated")
+                self.log("Need to check if Key Vault instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
-            self.log("Need to Create / Update the Vault instance")
+            self.log("Need to Create / Update the Key Vault instance")
 
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
 
-            response = self.create_update_vault()
+            response = self.create_update_keyvault()
 
             if not old_response:
                 self.results['changed'] = True
@@ -255,19 +258,19 @@ class AzureRMVaults(AzureRMModuleBase):
                 self.results['changed'] = old_response.__ne__(response)
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
-            self.log("Vault instance deleted")
+            self.log("Key Vault instance deleted")
             self.results['changed'] = True
 
             if self.check_mode:
                 return self.results
 
-            self.delete_vault()
+            self.delete_keyvault()
             # make sure instance is actually deleted, for some Azure resources, instance is hanging around
             # for some time after deletion -- this should be really fixed in Azure
-            while self.get_vault():
+            while self.get_keyvault():
                 time.sleep(20)
         else:
-            self.log("Vault instance unchanged")
+            self.log("Key Vault instance unchanged")
             self.results['changed'] = False
             response = old_response
 
@@ -276,58 +279,59 @@ class AzureRMVaults(AzureRMModuleBase):
 
         return self.results
 
-    def create_update_vault(self):
+    def create_update_keyvault(self):
         '''
-        Creates or updates Vault with the specified configuration.
+        Creates or updates Key Vault with the specified configuration.
 
-        :return: deserialized Vault instance state dictionary
+        :return: deserialized Key Vault instance state dictionary
         '''
-        self.log("Creating / Updating the Vault instance {0}".format(self.vault_name))
+        self.log("Creating / Updating the Key Vault instance {0}".format(self.vault_name))
 
         try:
             response = self.mgmt_client.vaults.create_or_update(resource_group_name=self.resource_group,
                                                                 vault_name=self.vault_name,
-                                                                parameters=self.parameters)
+                                                                location=self.location,
+                                                                properties=self.properties)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
         except CloudError as exc:
-            self.log('Error attempting to create the Vault instance.')
-            self.fail("Error creating the Vault instance: {0}".format(str(exc)))
+            self.log('Error attempting to create the Key Vault instance.')
+            self.fail("Error creating the Key Vault instance: {0}".format(str(exc)))
         return response.as_dict()
 
-    def delete_vault(self):
+    def delete_keyvault(self):
         '''
-        Deletes specified Vault instance in the specified subscription and resource group.
+        Deletes specified Key Vault instance in the specified subscription and resource group.
 
         :return: True
         '''
-        self.log("Deleting the Vault instance {0}".format(self.vault_name))
+        self.log("Deleting the Key Vault instance {0}".format(self.vault_name))
         try:
             response = self.mgmt_client.vaults.delete(resource_group_name=self.resource_group,
                                                       vault_name=self.vault_name)
         except CloudError as e:
-            self.log('Error attempting to delete the Vault instance.')
-            self.fail("Error deleting the Vault instance: {0}".format(str(e)))
+            self.log('Error attempting to delete the Key Vault instance.')
+            self.fail("Error deleting the Key Vault instance: {0}".format(str(e)))
 
         return True
 
-    def get_vault(self):
+    def get_keyvault(self):
         '''
-        Gets the properties of the specified Vault.
+        Gets the properties of the specified Key Vault.
 
-        :return: deserialized Vault instance state dictionary
+        :return: deserialized Key Vault instance state dictionary
         '''
-        self.log("Checking if the Vault instance {0} is present".format(self.vault_name))
+        self.log("Checking if the Key Vault instance {0} is present".format(self.vault_name))
         found = False
         try:
             response = self.mgmt_client.vaults.get(resource_group_name=self.resource_group,
                                                    vault_name=self.vault_name)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Vault instance : {0} found".format(response.name))
+            self.log("Key Vault instance : {0} found".format(response.name))
         except CloudError as e:
-            self.log('Did not find the Vault instance.')
+            self.log('Did not find the Key Vault instance.')
         if found is True:
             return response.as_dict()
 

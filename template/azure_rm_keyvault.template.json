@@ -2,7 +2,7 @@
   "Modules": [
     {
       "ModuleName": "azure_rm_vault",
-      "ModuleNameAlt": "azure_rm_vault",
+      "ModuleNameAlt": "azure_rm_keyvault",
       "Options": [
         {
           "Name": "resource_group_name",
@@ -55,7 +55,7 @@
         {
           "Name": "parameters",
           "NameAlt": "parameters",
-          "Disposition": "dictionary",
+          "Disposition": "none",
           "Type": "dict",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -79,7 +79,7 @@
         {
           "Name": "location",
           "NameAlt": "location",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -103,7 +103,7 @@
         {
           "Name": "properties",
           "NameAlt": "properties",
-          "Disposition": "parameters",
+          "Disposition": "default",
           "Type": "dict",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -625,7 +625,8 @@
           "RequiredOptions": [
             "resource_group_name",
             "vault_name",
-            "parameters"
+            "location",
+            "properties"
           ]
         },
         {
@@ -903,7 +904,7 @@
       "AssertStateExpectedValue": "Ready",
       "ModuleOperationNameUpper": "Vaults",
       "ModuleOperationName": "vaults",
-      "ObjectName": "Vault",
+      "ObjectName": "Key Vault",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,

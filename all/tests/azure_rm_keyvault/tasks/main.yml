@@ -3,8 +3,8 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
-- name: Create instance of Vault -- check mode
-  azure_rm_vault:
+- name: Create instance of Key Vault -- check mode
+  azure_rm_keyvault:
     resource_group: "{{ resource_group }}"
   check_mode: yes
   register: output
@@ -13,8 +13,8 @@
     that:
       - output.changed
 
-- name: Create instance of Vault
-  azure_rm_vault:
+- name: Create instance of Key Vault
+  azure_rm_keyvault:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the resource instance is well created
@@ -22,8 +22,8 @@
     that:
       - output.changed
 
-- name: Create again instance of Vault
-  azure_rm_vault:
+- name: Create again instance of Key Vault
+  azure_rm_keyvault:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert the state has not changed
@@ -31,8 +31,8 @@
     that:
       - output.changed == false
 
-- name: Delete instance of Vault -- check mode
-  azure_rm_vault:
+- name: Delete instance of Key Vault -- check mode
+  azure_rm_keyvault:
     resource_group: "{{ resource_group }}"
     state: absent
   check_mode: yes
@@ -42,8 +42,8 @@
     that:
       - output.changed
 
-- name: Delete instance of Vault
-  azure_rm_vault:
+- name: Delete instance of Key Vault
+  azure_rm_keyvault:
     resource_group: "{{ resource_group }}"
     state: absent
   register: output
@@ -52,8 +52,8 @@
     that:
       - output.changed
 
-- name: Delete unexisting instance of Vault
-  azure_rm_vault:
+- name: Delete unexisting instance of Key Vault
+  azure_rm_keyvault:
     resource_group: "{{ resource_group }}"
     state: absent
   register: output
