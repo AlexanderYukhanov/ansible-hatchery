@@ -67,8 +67,8 @@ id:
         - Resource ID.
     returned: always
     type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiontest
-             -5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default"
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiont
+            est-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default"
 name:
     description:
         - Resource name.

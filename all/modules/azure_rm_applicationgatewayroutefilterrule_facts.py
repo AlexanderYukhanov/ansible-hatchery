@@ -73,10 +73,7 @@ communities:
         - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
     returned: always
     type: str
-    sample: [
-  "12076:5030",
-  "12076:5040"
-]
+    sample: "[\n\n  '12076:5030',\n\n  '12076:5040'\n\n]"
 name:
     description:
         - The name of the resource that is unique within a resource group. This name can be used to access the resource.

@@ -61,8 +61,8 @@ id:
         - Resource ID.
     returned: always
     type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionProt
-             ector/current"
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionP
+            rotector/current"
 name:
     description:
         - Resource name.
@@ -92,7 +92,7 @@ uri:
         - The URI of the server key.
     returned: always
     type: str
-    sample: https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901
+    sample: "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

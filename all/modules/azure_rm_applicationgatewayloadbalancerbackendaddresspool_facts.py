@@ -69,7 +69,7 @@ etag:
         - A unique read-only string that changes whenever the resource is updated.
     returned: always
     type: str
-    sample: W/\"00000000-0000-0000-0000-000000000000\"
+    sample: "W/\'00000000-0000-0000-0000-000000000000\'"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

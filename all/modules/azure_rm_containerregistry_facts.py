@@ -122,7 +122,7 @@ status:
                 - The timestamp when the status was changed to the current value.
             returned: always
             type: datetime
-            sample: 2017-03-01T23:15:37.0707808Z
+            sample: "2017-03-01T23:15:37.0707808Z"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

@@ -61,8 +61,8 @@ id:
         - Resource ID.
     returned: always
     type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVault
-             _someKey_01234567890123456789012345678901"
+    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/keys/someVa
+            ult_someKey_01234567890123456789012345678901"
 name:
     description:
         - Resource name.
@@ -92,7 +92,7 @@ uri:
         - The URI of the server key.
     returned: always
     type: str
-    sample: https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901
+    sample: "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
 thumbprint:
     description:
         - Thumbprint of the server key.
