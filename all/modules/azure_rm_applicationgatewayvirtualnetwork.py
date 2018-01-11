@@ -101,8 +101,8 @@ options:
                             source_address_prefix:
                                 description:
                                     - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetw
-                                       ork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traff
-                                       ic originates from. "
+                                      ork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traff
+                                      ic originates from. "
                             source_address_prefixes:
                                 description:
                                     - The CIDR or source IP ranges.
@@ -121,7 +121,7 @@ options:
                             destination_address_prefix:
                                 description:
                                     - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. D
-                                       efault tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
+                                      efault tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                             destination_address_prefixes:
                                 description:
                                     - The destination address prefixes. CIDR or destination IP ranges.
@@ -155,11 +155,11 @@ options:
                             priority:
                                 description:
                                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in t
-                                       he collection. The lower the priority number, the higher the priority of the rule."
+                                      he collection. The lower the priority number, the higher the priority of the rule."
                             direction:
                                 description:
                                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possibl
-                                       e values are: C(Inbound) and C(Outbound)."
+                                      e values are: C(Inbound) and C(Outbound)."
                                 required: True
                                 choices:
                                     - 'inbound'
@@ -201,8 +201,8 @@ options:
                             source_address_prefix:
                                 description:
                                     - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetw
-                                       ork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traff
-                                       ic originates from. "
+                                      ork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traff
+                                      ic originates from. "
                             source_address_prefixes:
                                 description:
                                     - The CIDR or source IP ranges.
@@ -221,7 +221,7 @@ options:
                             destination_address_prefix:
                                 description:
                                     - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. D
-                                       efault tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
+                                      efault tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                             destination_address_prefixes:
                                 description:
                                     - The destination address prefixes. CIDR or destination IP ranges.
@@ -255,11 +255,11 @@ options:
                             priority:
                                 description:
                                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in t
-                                       he collection. The lower the priority number, the higher the priority of the rule."
+                                      he collection. The lower the priority number, the higher the priority of the rule."
                             direction:
                                 description:
                                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possibl
-                                       e values are: C(Inbound) and C(Outbound)."
+                                      e values are: C(Inbound) and C(Outbound)."
                                 required: True
                                 choices:
                                     - 'inbound'
@@ -306,7 +306,7 @@ options:
                             next_hop_type:
                                 description:
                                     - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal), C(Int
-                                       ernet), C(VirtualAppliance), and C(None)."
+                                      ernet), C(VirtualAppliance), and C(None)."
                                 required: True
                                 choices:
                                     - 'virtual_network_gateway'
@@ -317,7 +317,7 @@ options:
                             next_hop_ip_address:
                                 description:
                                     - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is V
-                                       irtualAppliance."
+                                      irtualAppliance."
                             provisioning_state:
                                 description:
                                     - "The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
@@ -397,12 +397,12 @@ options:
             use_remote_gateways:
                 description:
                     - "If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also
-                       true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This f
-                       lag cannot be set if virtual network already has a gateway."
+                      true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This f
+                      lag cannot be set if virtual network already has a gateway."
             remote_virtual_network:
                 description:
                     - "The reference of the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to
-                       register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)."
+                      register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)."
                 suboptions:
                     id:
                         description:

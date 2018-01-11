@@ -52,7 +52,7 @@ options:
     disabled_alerts:
         description:
             - "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection; Sql_
-               Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
+              Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
     email_addresses:
         description:
             - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
@@ -65,7 +65,7 @@ options:
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
-               s. If state is Enabled, storageEndpoint is required."
+              s. If state is Enabled, storageEndpoint is required."
     storage_account_access_key:
         description:
             - Specifies the identifier key of the Threat Detection audit storage account. If state is Enabled, storageAccountAccessKey is required.
@@ -108,7 +108,7 @@ id:
 state:
     description:
         - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(New),
-            C(Enabled), C(Disabled)"
+           C(Enabled), C(Disabled)"
     returned: always
     type: str
     sample: Enabled

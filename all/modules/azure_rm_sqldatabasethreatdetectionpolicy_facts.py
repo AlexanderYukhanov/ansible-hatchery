@@ -91,7 +91,7 @@ kind:
 state:
     description:
         - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(New),
-            C(Enabled), C(Disabled)"
+           C(Enabled), C(Disabled)"
     returned: always
     type: str
     sample: Enabled

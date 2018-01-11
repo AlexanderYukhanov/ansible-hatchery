@@ -32,7 +32,7 @@ options:
     skip_token:
         description:
             - "Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting fro
-               m (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list"
+              m (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list"
     filter:
         description:
             - "Supported filter: $filter=state eq running. Returns only web apps that are currently running"

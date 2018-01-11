@@ -55,7 +55,7 @@ options:
     server_farm_id:
         description:
             - "Resource ID of the associated App Service plan, formatted as: '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.
-               Web/serverfarms/{appServicePlanName}'."
+              Web/serverfarms/{appServicePlanName}'."
 
 extends_documentation_fragment:
     - azure

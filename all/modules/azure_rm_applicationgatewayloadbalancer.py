@@ -108,12 +108,12 @@ options:
                                     destination_port_range:
                                         description:
                                             - "The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match al
-                                               l ports."
+                                              l ports."
                                     source_address_prefix:
                                         description:
                                             - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(Vir
-                                               tualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies whe
-                                               re network traffic originates from. "
+                                              tualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies whe
+                                              re network traffic originates from. "
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
@@ -125,7 +125,7 @@ options:
                                     destination_address_prefix:
                                         description:
                                             - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all sourc
-                                               e IPs. Default tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
+                                              e IPs. Default tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -152,11 +152,11 @@ options:
                                     priority:
                                         description:
                                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each r
-                                               ule in the collection. The lower the priority number, the higher the priority of the rule."
+                                              ule in the collection. The lower the priority number, the higher the priority of the rule."
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: C(Inbound) and C(Outbound)."
+                                               Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
                                         choices:
                                             - 'inbound'
@@ -164,7 +164,7 @@ options:
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)
-                                               ."
+                                              ."
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -196,12 +196,12 @@ options:
                                     destination_port_range:
                                         description:
                                             - "The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match al
-                                               l ports."
+                                              l ports."
                                     source_address_prefix:
                                         description:
                                             - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(Vir
-                                               tualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies whe
-                                               re network traffic originates from. "
+                                              tualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies whe
+                                              re network traffic originates from. "
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
@@ -213,7 +213,7 @@ options:
                                     destination_address_prefix:
                                         description:
                                             - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all sourc
-                                               e IPs. Default tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
+                                              e IPs. Default tags such as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -240,11 +240,11 @@ options:
                                     priority:
                                         description:
                                             - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each r
-                                               ule in the collection. The lower the priority number, the higher the priority of the rule."
+                                              ule in the collection. The lower the priority number, the higher the priority of the rule."
                                     direction:
                                         description:
                                             - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic.
-                                                Possible values are: C(Inbound) and C(Outbound)."
+                                               Possible values are: C(Inbound) and C(Outbound)."
                                         required: True
                                         choices:
                                             - 'inbound'
@@ -252,7 +252,7 @@ options:
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)
-                                               ."
+                                              ."
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -292,7 +292,7 @@ options:
                                     next_hop_type:
                                         description:
                                             - "The type of Azure hop the packet should be sent to. Possible values are: C(VirtualNetworkGateway), C(VnetLocal
-                                               ), C(Internet), C(VirtualAppliance), and C(None)."
+                                              ), C(Internet), C(VirtualAppliance), and C(None)."
                                         required: True
                                         choices:
                                             - 'virtual_network_gateway'
@@ -303,7 +303,7 @@ options:
                                     next_hop_ip_address:
                                         description:
                                             - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop t
-                                               ype is VirtualAppliance."
+                                              ype is VirtualAppliance."
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
@@ -402,17 +402,17 @@ options:
                             domain_name_label:
                                 description:
                                     - "Gets or sets the Domain name label.The concatenation of the domain name label and the regionalized DNS zone make up th
-                                       e fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS rec
-                                       ord is created for the public IP in the Microsoft Azure DNS system."
+                                      e fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS rec
+                                      ord is created for the public IP in the Microsoft Azure DNS system."
                             fqdn:
                                 description:
                                     - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the concatenatio
-                                       n of the domainNameLabel and the regionalized DNS zone."
+                                      n of the domainNameLabel and the regionalized DNS zone."
                             reverse_fqdn:
                                 description:
                                     - "Gets or Sets the Reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If
-                                        the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domai
-                                       n to the reverse FQDN. "
+                                       the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domai
+                                      n to the reverse FQDN. "
                     ip_address:
                         description:
                             - The IP address associated with the public IP address resource.
@@ -509,21 +509,21 @@ options:
             frontend_port:
                 description:
                     - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values are between
-                       0 and 65534. Note that value 0 enables 'Any Port'"
+                      0 and 65534. Note that value 0 enables 'Any Port'"
                 required: True
             backend_port:
                 description:
                     - "The port used for internal connections on the endpoint. Acceptable values are between 0 and 65535. Note that value 0 enables 'Any Port
-                       '"
+                      '"
             idle_timeout_in_minutes:
                 description:
                     - "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element i
-                       s only used when the protocol is set to TCP."
+                      s only used when the protocol is set to TCP."
             enable_floating_ip:
                 description:
                     - "Configures a virtual machineC(s endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This
-                       setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the
-                       endpoint."
+                      setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the
+                      endpoint."
             disable_outbound_snat:
                 description:
                     - Configures SNAT for the VMs in the backend pool to use the publicIP address specified in the frontend of the load balancing rule.
@@ -547,7 +547,7 @@ options:
             protocol:
                 description:
                     - "The protocol of the end point. Possible values are: C(Http) or C(Tcp). If C(Tcp) is specified, a received ACK is required for the prob
-                       e to be successful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful."
+                      e to be successful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful."
                 required: True
                 choices:
                     - 'http'
@@ -559,16 +559,16 @@ options:
             interval_in_seconds:
                 description:
                     - "The interval, in seconds, for how frequently to probe the endpoint for health status. Typically, the interval is slightly less than ha
-                       lf the allocated timeout period (in seconds) which allows two full probes before taking the instance out of rotation. The default valu
-                       e is 15, the minimum value is 5."
+                      lf the allocated timeout period (in seconds) which allows two full probes before taking the instance out of rotation. The default valu
+                      e is 15, the minimum value is 5."
             number_of_probes:
                 description:
                     - "The number of probes where if no response, will result in stopping further traffic from being delivered to the endpoint. This values a
-                       llows endpoints to be taken out of rotation faster or slower than the typical times used in Azure."
+                      llows endpoints to be taken out of rotation faster or slower than the typical times used in Azure."
             request_path:
                 description:
                     - "The URI used for requesting health status from the VM. Path is required if a protocol is set to http. Otherwise, it is not allowed. Th
-                       ere is no default value."
+                      ere is no default value."
             provisioning_state:
                 description:
                     - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
@@ -581,8 +581,8 @@ options:
     inbound_nat_rules:
         description:
             - "Collection of inbound NAT Rules used by a load balancer. Defining inbound NAT rules on your load balancer is mutually exclusive with defining
-               an inbound NAT pool. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machin
-               es cannot reference an Inbound NAT pool. They have to reference individual inbound NAT rules."
+              an inbound NAT pool. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machin
+              es cannot reference an Inbound NAT pool. They have to reference individual inbound NAT rules."
         type: list
         suboptions:
             id:
@@ -605,19 +605,19 @@ options:
             frontend_port:
                 description:
                     - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1
-                        to 65534."
+                       to 65534."
             backend_port:
                 description:
                     - The port used for the internal endpoint. Acceptable values range from 1 to 65535.
             idle_timeout_in_minutes:
                 description:
                     - "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element i
-                       s only used when the protocol is set to TCP."
+                      s only used when the protocol is set to TCP."
             enable_floating_ip:
                 description:
                     - "Configures a virtual machineC(s endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This
-                       setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the
-                       endpoint."
+                      setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the
+                      endpoint."
             provisioning_state:
                 description:
                     - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
@@ -630,9 +630,9 @@ options:
     inbound_nat_pools:
         description:
             - "Defines an external port range for inbound NAT to a single backend port on NICs associated with a load balancer. Inbound NAT rules are created
-                automatically for each NIC associated with the Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Loa
-               d Balancer is mutually exclusive with defining inbound Nat rules. Inbound NAT pools are referenced from virtual machine scale sets. NICs that
-               are associated with individual virtual machines cannot reference an inbound NAT pool. They have to reference individual inbound NAT rules."
+               automatically for each NIC associated with the Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Loa
+              d Balancer is mutually exclusive with defining inbound Nat rules. Inbound NAT pools are referenced from virtual machine scale sets. NICs that
+              are associated with individual virtual machines cannot reference an inbound NAT pool. They have to reference individual inbound NAT rules."
         type: list
         suboptions:
             id:
@@ -656,12 +656,12 @@ options:
             frontend_port_range_start:
                 description:
                     - "The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer.
-                        Acceptable values range between 1 and 65534."
+                       Acceptable values range between 1 and 65534."
                 required: True
             frontend_port_range_end:
                 description:
                     - "The last port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with a load balancer.
-                       Acceptable values range between 1 and 65535."
+                      Acceptable values range between 1 and 65535."
                 required: True
             backend_port:
                 description:

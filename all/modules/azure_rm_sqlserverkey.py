@@ -33,8 +33,8 @@ options:
     key_name:
         description:
             - "The name of the server key to be operated on (updated or created). The key name is required to be in the format of C(vault_key_version). For e
-               xample, if the keyId is https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901, then the server key name shou
-               ld be formatted as: YourVaultName_YourKeyName_01234567890123456789012345678901"
+              xample, if the keyId is https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901, then the server key name shou
+              ld be formatted as: YourVaultName_YourKeyName_01234567890123456789012345678901"
         required: True
     kind:
         description:

@@ -42,7 +42,7 @@ options:
             failover_policy:
                 description:
                     - "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriod
-                       Minutes is required."
+                      Minutes is required."
                 required: True
                 choices:
                     - 'manual'
@@ -50,7 +50,7 @@ options:
             failover_with_data_loss_grace_period_minutes:
                 description:
                     - "Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWith
-                       DataLossGracePeriodMinutes is required."
+                      DataLossGracePeriodMinutes is required."
     read_only_endpoint:
         description:
             - Read-only endpoint of the failover group instance.

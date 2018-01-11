@@ -61,8 +61,8 @@ id:
 protocol:
     description:
         - "The protocol of the end point. Possible values are: C(Http) or C(Tcp). If C(Tcp) is specified, a received ACK is required for the probe to be succ
-           essful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful. Possible values include: C(H
-           ttp), C(Tcp)"
+          essful. If C(Http) is specified, a 200 OK response from the specifies URI is required for the probe to be successful. Possible values include: C(H
+          ttp), C(Tcp)"
     returned: always
     type: str
     sample: Http

@@ -64,7 +64,7 @@ options:
             source_address_prefix:
                 description:
                     - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetwork), C(AzureLoa
-                       dBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                      dBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates from. "
             source_address_prefixes:
                 description:
                     - The CIDR or source IP ranges.
@@ -83,7 +83,7 @@ options:
             destination_address_prefix:
                 description:
                     - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. Default tags such
-                        as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
+                       as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
             destination_address_prefixes:
                 description:
                     - The destination address prefixes. CIDR or destination IP ranges.
@@ -117,11 +117,11 @@ options:
             priority:
                 description:
                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. T
-                       he lower the priority number, the higher the priority of the rule."
+                      he lower the priority number, the higher the priority of the rule."
             direction:
                 description:
                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(
-                       Inbound) and C(Outbound)."
+                      Inbound) and C(Outbound)."
                 required: True
                 choices:
                     - 'inbound'
@@ -163,7 +163,7 @@ options:
             source_address_prefix:
                 description:
                     - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetwork), C(AzureLoa
-                       dBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                      dBalancer) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates from. "
             source_address_prefixes:
                 description:
                     - The CIDR or source IP ranges.
@@ -182,7 +182,7 @@ options:
             destination_address_prefix:
                 description:
                     - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. Default tags such
-                        as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
+                       as C(VirtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
             destination_address_prefixes:
                 description:
                     - The destination address prefixes. CIDR or destination IP ranges.
@@ -216,11 +216,11 @@ options:
             priority:
                 description:
                     - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. T
-                       he lower the priority number, the higher the priority of the rule."
+                      he lower the priority number, the higher the priority of the rule."
             direction:
                 description:
                     - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(
-                       Inbound) and C(Outbound)."
+                      Inbound) and C(Outbound)."
                 required: True
                 choices:
                     - 'inbound'

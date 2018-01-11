@@ -79,14 +79,14 @@ access:
 priority:
     description:
         - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the
-            priority number, the higher the priority of the rule."
+           priority number, the higher the priority of the rule."
     returned: always
     type: int
     sample: 65000
 direction:
     description:
         - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(Inbound) and
-            C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+           C(Outbound). Possible values include: C(Inbound), C(Outbound)"
     returned: always
     type: str
     sample: Inbound

@@ -61,7 +61,7 @@ options:
             file_path:
                 description:
                     - "A valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual machine it must start wit
-                       h /var/captures. Required if no storage ID is provided, otherwise optional."
+                      h /var/captures. Required if no storage ID is provided, otherwise optional."
     filters:
         description:
             -
@@ -77,21 +77,21 @@ options:
             local_ip_address:
                 description:
                     - "Local IP Address to be filtered on. Notation: '127.0.0.1' for single address entry. '127.0.0.1-127.0.0.255' for range. '127.0.0.1;127.
-                       0.0.5'? for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. De
-                       fault = null."
+                      0.0.5'? for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. De
+                      fault = null."
             remote_ip_address:
                 description:
                     - "Local IP Address to be filtered on. Notation: '127.0.0.1' for single address entry. '127.0.0.1-127.0.0.255' for range. '127.0.0.1;127.
-                       0.0.5;' for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. De
-                       fault = null."
+                      0.0.5;' for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. De
+                      fault = null."
             local_port:
                 description:
                     - "Local port to be filtered on. Notation: '80' for single port entry.'80-85' for range. '80;443;' for multiple entries. Multiple ranges
-                       not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
+                      not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
             remote_port:
                 description:
                     - "Remote port to be filtered on. Notation: '80' for single port entry.'80-85' for range. '80;443;' for multiple entries. Multiple ranges
-                        not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
+                       not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
 
 extends_documentation_fragment:
     - azure

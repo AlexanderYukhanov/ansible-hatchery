@@ -44,7 +44,7 @@ options:
     filter:
         description:
             - "Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq C(Metric1) or name.value
-               eq C(Metric2)) and startTime eq C(2014-01-01T00:00:00Z) and endTime eq C(2014-12-31T23:59:59Z) and timeGrain eq durationC([Hour|Minute|Day])."
+              eq C(Metric2)) and startTime eq C(2014-01-01T00:00:00Z) and endTime eq C(2014-12-31T23:59:59Z) and timeGrain eq durationC([Hour|Minute|Day])."
     worker_pool_name:
         description:
             - Name of the worker pool.

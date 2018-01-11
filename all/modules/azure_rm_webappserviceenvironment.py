@@ -134,11 +134,11 @@ options:
     suspended:
         description:
             - "<code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can be suspended, e.g. when the
-               management endpoint is no longer available\n (most likely because NSG blocked the incoming traffic)."
+              management endpoint is no longer available\n (most likely because NSG blocked the incoming traffic)."
     dynamic_cache_enabled:
         description:
             - "True/false indicating whether the App Service Environment is suspended. The environment can be suspended e.g. when the management endpoint is
-               no longer available\n(most likely because NSG blocked the incoming traffic)."
+              no longer available\n(most likely because NSG blocked the incoming traffic)."
     cluster_settings:
         description:
             - Custom settings for changing the behavior of the App Service Environment.

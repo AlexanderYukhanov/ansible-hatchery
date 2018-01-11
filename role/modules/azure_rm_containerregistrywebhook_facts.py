@@ -92,7 +92,7 @@ status:
 scope:
     description:
         - "The scope of repositories where the event can be triggered. For example, C(foo:*) means events for all tags under repository C(foo). C(foo:bar) me
-           ans events for C(foo:bar) only. C(foo) is equivalent to C(foo:latest). Empty means all events."
+          ans events for C(foo:bar) only. C(foo) is equivalent to C(foo:latest). Empty means all events."
     returned: always
     type: str
     sample: myRepository

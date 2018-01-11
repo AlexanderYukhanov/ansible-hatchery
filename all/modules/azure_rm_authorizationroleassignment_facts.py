@@ -40,7 +40,7 @@ options:
     filter:
         description:
             - "The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {
-               id} to return all role assignments at, above or below the scope for the specified principal."
+              id} to return all role assignments at, above or below the scope for the specified principal."
     scope:
         description:
             - The scope of the role assignment.

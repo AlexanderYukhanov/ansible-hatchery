@@ -72,7 +72,7 @@ options:
     server_farm_id:
         description:
             - "Resource ID of the associated App Service plan, formatted as: '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.
-               Web/serverfarms/{appServicePlanName}'."
+              Web/serverfarms/{appServicePlanName}'."
     reserved:
         description:
             - <code>true</code> if reserved; otherwise, <code>false</code>.
@@ -276,9 +276,9 @@ options:
                             change_step:
                                 description:
                                     - "In auto ramp up scenario this is the step to to add/remove from <code>ReroutePercentage</code> until it reaches \n<cod
-                                       e>MinReroutePercentage</code> or <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specifice
-                                       d in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm can be provided in TiPCallback site extension wh
-                                       ich URL can be specified in <code>ChangeDecisionCallbackUrl</code>."
+                                      e>MinReroutePercentage</code> or <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specifice
+                                      d in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm can be provided in TiPCallback site extension wh
+                                      ich URL can be specified in <code>ChangeDecisionCallbackUrl</code>."
                             change_interval_in_minutes:
                                 description:
                                     - Specifies interval in mimuntes to reevaluate ReroutePercentage.
@@ -291,11 +291,11 @@ options:
                             change_decision_callback_url:
                                 description:
                                     - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback si
-                                       te extension for the scaffold and contracts.\nhttps://www.siteextensions.net/packages/TiPCallback/"
+                                      te extension for the scaffold and contracts.\nhttps://www.siteextensions.net/packages/TiPCallback/"
                             name:
                                 description:
                                     - "Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the exp
-                                       eriment."
+                                      eriment."
             limits:
                 description:
                     - Site limits.
@@ -403,7 +403,7 @@ options:
                     allowed_origins:
                         description:
                             - "Gets or sets the list of origins that should be allowed to make cross-origin\ncalls (for example: http://example.com:12345). U
-                               se '*' to allow all."
+                              se '*' to allow all."
                         type: list
             push:
                 description:
@@ -421,12 +421,12 @@ options:
                     tags_requiring_auth:
                         description:
                             - "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endp
-                               oint.\nTags can consist of alphanumeric characters and the following:\nC(_), C(@), C(#), C(.), C(:), C(-). \nValidation should
-                                be performed at the PushRequestHandler."
+                              oint.\nTags can consist of alphanumeric characters and the following:\nC(_), C(@), C(#), C(.), C(:), C(-). \nValidation should
+                               be performed at the PushRequestHandler."
                     dynamic_tags_json:
                         description:
                             - "Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration
-                               endpoint."
+                              endpoint."
             api_definition:
                 description:
                     - Information about the formal API definition for the app.
@@ -465,15 +465,15 @@ options:
     client_affinity_enabled:
         description:
             - "<code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which route client requests in the s
-               ame session to the same instance. Default is <code>true</code>."
+              ame session to the same instance. Default is <code>true</code>."
     client_cert_enabled:
         description:
             - "<code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise, <code>false</code>. Default is <code>fal
-               se</code>."
+              se</code>."
     host_names_disabled:
         description:
             - "<code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.\n If <code>true</code>, the app is only accessibl
-               e via API management process."
+              e via API management process."
     container_size:
         description:
             - Size of the function container.
@@ -499,8 +499,8 @@ options:
             source_web_app_id:
                 description:
                     - "ARM resource ID of the source app. App resource ID is of the form \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/provider
-                       s/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Micros
-                       oft.Web/sites/{siteName}/slots/{slotName} for other slots."
+                      s/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Micros
+                      oft.Web/sites/{siteName}/slots/{slotName} for other slots."
                 required: True
             hosting_environment:
                 description:
@@ -508,14 +508,14 @@ options:
             app_settings_overrides:
                 description:
                     - "Application setting overrides for cloned app. If specified, these settings override the settings cloned \nfrom source app. Otherwise,
-                       application settings from source app are retained."
+                      application settings from source app are retained."
             configure_load_balancing:
                 description:
                     - <code>true</code> to configure load balancing for source and destination app.
             traffic_manager_profile_id:
                 description:
                     - "ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form \n/subscriptions/{subI
-                       d}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}."
+                      d}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}."
             traffic_manager_profile_name:
                 description:
                     - Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already exist.
@@ -542,8 +542,8 @@ options:
                     id:
                         description:
                             - "ARM resource ID of the target app. \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{
-                               siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{
-                               siteName}/slots/{slotName} for other slots."
+                              siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{
+                              siteName}/slots/{slotName} for other slots."
             overwrite:
                 description:
                     - If <code>true</code> the recovery operation can overwrite source app; otherwise, <code>false</code>.
@@ -553,7 +553,7 @@ options:
             ignore_conflicting_host_names:
                 description:
                     - "If true, custom hostname conflicts will be ignored when recovering to a target web app.\nThis setting is only necessary when RecoverCo
-                       nfiguration is enabled."
+                      nfiguration is enabled."
     https_only:
         description:
             - "HttpsOnly: configures a web site to accept only https requests. Issues redirect for\nhttp requests"

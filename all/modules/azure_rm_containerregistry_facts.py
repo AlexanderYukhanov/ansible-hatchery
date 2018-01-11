@@ -94,7 +94,7 @@ sku:
         name:
             description:
                 - "The SKU name of the container registry. Required for registry creation. Possible values include: C(Classic), C(Basic), C(Standard), C(Prem
-                   ium)"
+                  ium)"
             returned: always
             type: str
             sample: Standard

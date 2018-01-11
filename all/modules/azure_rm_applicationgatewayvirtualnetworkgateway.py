@@ -91,7 +91,7 @@ options:
     gateway_default_site:
         description:
             - "The reference of the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case of remo
-               ving existing default site setting."
+              ving existing default site setting."
         suboptions:
             id:
                 description:

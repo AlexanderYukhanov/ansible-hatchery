@@ -36,7 +36,7 @@ options:
     filter:
         description:
             - "Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channels eq C(Api) or channel eq C(N
-               otification)"
+              otification)"
 
 extends_documentation_fragment:
     - azure

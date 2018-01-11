@@ -61,7 +61,7 @@ options:
             access_policies:
                 description:
                     - "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key v
-                       ault's tenant ID."
+                      ault's tenant ID."
                 type: list
                 suboptions:
                     tenant_id:
@@ -71,7 +71,7 @@ options:
                     object_id:
                         description:
                             - "The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID
-                                must be unique for the list of access policies."
+                               must be unique for the list of access policies."
                         required: True
                     application_id:
                         description:

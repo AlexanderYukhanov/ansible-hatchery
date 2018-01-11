@@ -52,7 +52,7 @@ options:
     scope:
         description:
             - "The scope of repositories where the event can be triggered. For example, C(foo:*) means events for all tags under repository C(foo). C(foo:bar
-               ) means events for C(foo:bar) only. C(foo) is equivalent to C(foo:latest). Empty means all events."
+              ) means events for C(foo:bar) only. C(foo) is equivalent to C(foo:latest). Empty means all events."
     actions:
         description:
             - The list of actions that trigger the webhook to post notifications.

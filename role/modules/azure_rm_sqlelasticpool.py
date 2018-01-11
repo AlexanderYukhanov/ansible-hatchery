@@ -59,7 +59,7 @@ options:
     zone_redundant:
         description:
             - "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availabi
-               lity zones."
+              lity zones."
 
 extends_documentation_fragment:
     - azure

@@ -89,7 +89,7 @@ options:
             advertised_public_prefixes_state:
                 description:
                     - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configured), and C(Valida
-                       tionNeeded)."
+                      tionNeeded)."
                 choices:
                     - 'not_configured'
                     - 'configuring'
@@ -229,7 +229,7 @@ options:
                             advertised_public_prefixes_state:
                                 description:
                                     - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configure
-                                       d), and C(ValidationNeeded)."
+                                      d), and C(ValidationNeeded)."
                                 choices:
                                     - 'not_configured'
                                     - 'configuring'
@@ -363,7 +363,7 @@ options:
                                     provisioning_state:
                                         description:
                                             - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Fa
-                                               iled)."
+                                              iled)."
                                     gateway_manager_etag:
                                         description:
                                             - The GatewayManager Etag.
@@ -404,7 +404,7 @@ options:
                                     advertised_public_prefixes_state:
                                         description:
                                             - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(C
-                                               onfigured), and C(ValidationNeeded)."
+                                              onfigured), and C(ValidationNeeded)."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'
@@ -471,7 +471,7 @@ options:
                     advertised_public_prefixes_state:
                         description:
                             - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configured), and
-                               C(ValidationNeeded)."
+                              C(ValidationNeeded)."
                         choices:
                             - 'not_configured'
                             - 'configuring'
@@ -586,7 +586,7 @@ options:
                                     advertised_public_prefixes_state:
                                         description:
                                             - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(C
-                                               onfigured), and C(ValidationNeeded)."
+                                              onfigured), and C(ValidationNeeded)."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'

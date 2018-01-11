@@ -87,7 +87,7 @@ id:
 status:
     description:
         - "Current order status. Possible values include: C(Pendingissuance), C(Issued), C(Revoked), C(Canceled), C(Denied), C(Pendingrevocation), C(PendingR
-           ekey), C(Unused), C(Expired), C(NotSubmitted)"
+          ekey), C(Unused), C(Expired), C(NotSubmitted)"
     returned: always
     type: str
     sample: status

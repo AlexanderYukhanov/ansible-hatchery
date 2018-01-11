@@ -25,8 +25,8 @@ options:
     scope:
         description:
             - "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use C(/subscriptions/{subscription-id}/)
-                for a subscription, C(/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}) for a resource group, and C(/subscriptions/{subs
-               cription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}) for a resource."
+               for a subscription, C(/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}) for a resource group, and C(/subscriptions/{subs
+              cription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}) for a resource."
         required: True
     role_assignment_name:
         description:
@@ -45,7 +45,7 @@ options:
             principal_id:
                 description:
                     - "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or
-                       security group."
+                      security group."
 
 extends_documentation_fragment:
     - azure

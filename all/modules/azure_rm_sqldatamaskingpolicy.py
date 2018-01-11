@@ -48,7 +48,7 @@ options:
     exempt_principals:
         description:
             - "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not apply.
-               The specified users receive data results without masking for all of the database queries."
+              The specified users receive data results without masking for all of the database queries."
 
 extends_documentation_fragment:
     - azure

@@ -60,11 +60,11 @@ options:
     idle_timeout_in_minutes:
         description:
             - "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only u
-               sed when the protocol is set to TCP."
+              sed when the protocol is set to TCP."
     enable_floating_ip:
         description:
             - "Configures a virtual machineC(s endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting
-               is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the endpoint."
+              is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can)t be changed after you create the endpoint."
     provisioning_state:
         description:
             - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."

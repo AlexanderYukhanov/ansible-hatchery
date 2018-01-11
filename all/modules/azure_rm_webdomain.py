@@ -285,7 +285,7 @@ options:
             agreement_keys:
                 description:
                     - "List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code> re
-                       source."
+                      source."
                 type: list
             agreed_by:
                 description:
