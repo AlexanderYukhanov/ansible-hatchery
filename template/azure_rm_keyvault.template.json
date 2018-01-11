@@ -55,7 +55,7 @@
         {
           "Name": "parameters",
           "NameAlt": "parameters",
-          "Disposition": "none",
+          "Disposition": "dictionary",
           "Type": "dict",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -79,7 +79,7 @@
         {
           "Name": "location",
           "NameAlt": "location",
-          "Disposition": "default",
+          "Disposition": "parameters",
           "Type": "str",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -103,7 +103,7 @@
         {
           "Name": "properties",
           "NameAlt": "properties",
-          "Disposition": "default",
+          "Disposition": "parameters:dictionary",
           "Type": "dict",
           "ValueIfFalse": null,
           "ValueIfTrue": null,
@@ -111,6 +111,136 @@
           "Required": "True",
           "VariableValue": "None",
           "Documentation": "Properties of the vault",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Model"
+        },
+        {
+          "Name": "tenant_id",
+          "NameAlt": "tenant_id",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "sku",
+          "NameAlt": "sku",
+          "Disposition": "parameters:properties",
+          "Type": "dict",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "SKU details",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [
+            {
+              "Name": "family",
+              "NameAlt": "family",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "SKU family name",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "name",
+              "NameAlt": "name",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "SKU name to specify whether the key vault is a standard vault or a premium vault.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [
+                {
+                  "Key": "standard",
+                  "Value": "standard"
+                },
+                {
+                  "Key": "premium",
+                  "Value": "premium"
+                }
+              ],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- Enum"
+            }
+          ],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Model"
+        },
+        {
+          "Name": "access_policies",
+          "NameAlt": "access_policies",
+          "Disposition": "parameters:properties",
+          "Type": "dict",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": true,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
@@ -142,8 +272,56 @@
               "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
             },
             {
-              "Name": "sku",
-              "NameAlt": "sku",
+              "Name": "object_id",
+              "NameAlt": "object_id",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "True",
+              "VariableValue": "None",
+              "Documentation": "The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "application_id",
+              "NameAlt": "application_id",
+              "Disposition": "default",
+              "Type": "str",
+              "ValueIfFalse": null,
+              "ValueIfTrue": null,
+              "IsList": false,
+              "Required": "False",
+              "VariableValue": "None",
+              "Documentation": " Application ID of the client making request on behalf of a principal",
+              "DefaultValue": null,
+              "DefaultValueSample": {
+                "default": "",
+                "test:default": ""
+              },
+              "SubOptions": [],
+              "RequiredCount": 0,
+              "NoLog": false,
+              "EnumValues": [],
+              "IncludeInDocumentation": true,
+              "IncludeInArgSpec": true,
+              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+            },
+            {
+              "Name": "permissions",
+              "NameAlt": "permissions",
               "Disposition": "default",
               "Type": "dict",
               "ValueIfFalse": null,
@@ -151,7 +329,7 @@
               "IsList": false,
               "Required": "True",
               "VariableValue": "None",
-              "Documentation": "SKU details",
+              "Documentation": "Permissions the identity has for keys, secrets and certificates.",
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
@@ -159,16 +337,16 @@
               },
               "SubOptions": [
                 {
-                  "Name": "family",
-                  "NameAlt": "family",
+                  "Name": "keys",
+                  "NameAlt": "keys",
                   "Disposition": "default",
                   "Type": "str",
                   "ValueIfFalse": null,
                   "ValueIfTrue": null,
-                  "IsList": false,
-                  "Required": "True",
+                  "IsList": true,
+                  "Required": "False",
                   "VariableValue": "None",
-                  "Documentation": "SKU family name",
+                  "Documentation": "Permissions to keys",
                   "DefaultValue": null,
                   "DefaultValueSample": {
                     "default": "",
@@ -180,19 +358,19 @@
                   "EnumValues": [],
                   "IncludeInDocumentation": true,
                   "IncludeInArgSpec": true,
-                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+                  "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
                 },
                 {
-                  "Name": "name",
-                  "NameAlt": "name",
+                  "Name": "secrets",
+                  "NameAlt": "secrets",
                   "Disposition": "default",
                   "Type": "str",
                   "ValueIfFalse": null,
                   "ValueIfTrue": null,
-                  "IsList": false,
-                  "Required": "True",
+                  "IsList": true,
+                  "Required": "False",
                   "VariableValue": "None",
-                  "Documentation": "SKU name to specify whether the key vault is a standard vault or a premium vault.",
+                  "Documentation": "Permissions to secrets",
                   "DefaultValue": null,
                   "DefaultValueSample": {
                     "default": "",
@@ -201,19 +379,58 @@
                   "SubOptions": [],
                   "RequiredCount": 0,
                   "NoLog": false,
-                  "EnumValues": [
-                    {
-                      "Key": "standard",
-                      "Value": "standard"
-                    },
-                    {
-                      "Key": "premium",
-                      "Value": "premium"
-                    }
-                  ],
+                  "EnumValues": [],
                   "IncludeInDocumentation": true,
                   "IncludeInArgSpec": true,
-                  "AdditionalInfo": "NO XML PROPERTIES --- Enum"
+                  "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+                },
+                {
+                  "Name": "certificates",
+                  "NameAlt": "certificates",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": true,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "Permissions to certificates",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+                },
+                {
+                  "Name": "storage",
+                  "NameAlt": "storage",
+                  "Disposition": "default",
+                  "Type": "str",
+                  "ValueIfFalse": null,
+                  "ValueIfTrue": null,
+                  "IsList": true,
+                  "Required": "False",
+                  "VariableValue": "None",
+                  "Documentation": "Permissions to storage accounts",
+                  "DefaultValue": null,
+                  "DefaultValueSample": {
+                    "default": "",
+                    "test:default": ""
+                  },
+                  "SubOptions": [],
+                  "RequiredCount": 0,
+                  "NoLog": false,
+                  "EnumValues": [],
+                  "IncludeInDocumentation": true,
+                  "IncludeInArgSpec": true,
+                  "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
                 }
               ],
               "RequiredCount": 0,
@@ -222,377 +439,6 @@
               "IncludeInDocumentation": true,
               "IncludeInArgSpec": true,
               "AdditionalInfo": "NO XML PROPERTIES --- Model"
-            },
-            {
-              "Name": "access_policies",
-              "NameAlt": "access_policies",
-              "Disposition": "default",
-              "Type": "dict",
-              "ValueIfFalse": null,
-              "ValueIfTrue": null,
-              "IsList": true,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.",
-              "DefaultValue": null,
-              "DefaultValueSample": {
-                "default": "",
-                "test:default": ""
-              },
-              "SubOptions": [
-                {
-                  "Name": "tenant_id",
-                  "NameAlt": "tenant_id",
-                  "Disposition": "default",
-                  "Type": "str",
-                  "ValueIfFalse": null,
-                  "ValueIfTrue": null,
-                  "IsList": false,
-                  "Required": "True",
-                  "VariableValue": "None",
-                  "Documentation": "The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.",
-                  "DefaultValue": null,
-                  "DefaultValueSample": {
-                    "default": "",
-                    "test:default": ""
-                  },
-                  "SubOptions": [],
-                  "RequiredCount": 0,
-                  "NoLog": false,
-                  "EnumValues": [],
-                  "IncludeInDocumentation": true,
-                  "IncludeInArgSpec": true,
-                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-                },
-                {
-                  "Name": "object_id",
-                  "NameAlt": "object_id",
-                  "Disposition": "default",
-                  "Type": "str",
-                  "ValueIfFalse": null,
-                  "ValueIfTrue": null,
-                  "IsList": false,
-                  "Required": "True",
-                  "VariableValue": "None",
-                  "Documentation": "The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.",
-                  "DefaultValue": null,
-                  "DefaultValueSample": {
-                    "default": "",
-                    "test:default": ""
-                  },
-                  "SubOptions": [],
-                  "RequiredCount": 0,
-                  "NoLog": false,
-                  "EnumValues": [],
-                  "IncludeInDocumentation": true,
-                  "IncludeInArgSpec": true,
-                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-                },
-                {
-                  "Name": "application_id",
-                  "NameAlt": "application_id",
-                  "Disposition": "default",
-                  "Type": "str",
-                  "ValueIfFalse": null,
-                  "ValueIfTrue": null,
-                  "IsList": false,
-                  "Required": "False",
-                  "VariableValue": "None",
-                  "Documentation": " Application ID of the client making request on behalf of a principal",
-                  "DefaultValue": null,
-                  "DefaultValueSample": {
-                    "default": "",
-                    "test:default": ""
-                  },
-                  "SubOptions": [],
-                  "RequiredCount": 0,
-                  "NoLog": false,
-                  "EnumValues": [],
-                  "IncludeInDocumentation": true,
-                  "IncludeInArgSpec": true,
-                  "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-                },
-                {
-                  "Name": "permissions",
-                  "NameAlt": "permissions",
-                  "Disposition": "default",
-                  "Type": "dict",
-                  "ValueIfFalse": null,
-                  "ValueIfTrue": null,
-                  "IsList": false,
-                  "Required": "True",
-                  "VariableValue": "None",
-                  "Documentation": "Permissions the identity has for keys, secrets and certificates.",
-                  "DefaultValue": null,
-                  "DefaultValueSample": {
-                    "default": "",
-                    "test:default": ""
-                  },
-                  "SubOptions": [
-                    {
-                      "Name": "keys",
-                      "NameAlt": "keys",
-                      "Disposition": "default",
-                      "Type": "str",
-                      "ValueIfFalse": null,
-                      "ValueIfTrue": null,
-                      "IsList": true,
-                      "Required": "False",
-                      "VariableValue": "None",
-                      "Documentation": "Permissions to keys",
-                      "DefaultValue": null,
-                      "DefaultValueSample": {
-                        "default": "",
-                        "test:default": ""
-                      },
-                      "SubOptions": [],
-                      "RequiredCount": 0,
-                      "NoLog": false,
-                      "EnumValues": [],
-                      "IncludeInDocumentation": true,
-                      "IncludeInArgSpec": true,
-                      "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
-                    },
-                    {
-                      "Name": "secrets",
-                      "NameAlt": "secrets",
-                      "Disposition": "default",
-                      "Type": "str",
-                      "ValueIfFalse": null,
-                      "ValueIfTrue": null,
-                      "IsList": true,
-                      "Required": "False",
-                      "VariableValue": "None",
-                      "Documentation": "Permissions to secrets",
-                      "DefaultValue": null,
-                      "DefaultValueSample": {
-                        "default": "",
-                        "test:default": ""
-                      },
-                      "SubOptions": [],
-                      "RequiredCount": 0,
-                      "NoLog": false,
-                      "EnumValues": [],
-                      "IncludeInDocumentation": true,
-                      "IncludeInArgSpec": true,
-                      "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
-                    },
-                    {
-                      "Name": "certificates",
-                      "NameAlt": "certificates",
-                      "Disposition": "default",
-                      "Type": "str",
-                      "ValueIfFalse": null,
-                      "ValueIfTrue": null,
-                      "IsList": true,
-                      "Required": "False",
-                      "VariableValue": "None",
-                      "Documentation": "Permissions to certificates",
-                      "DefaultValue": null,
-                      "DefaultValueSample": {
-                        "default": "",
-                        "test:default": ""
-                      },
-                      "SubOptions": [],
-                      "RequiredCount": 0,
-                      "NoLog": false,
-                      "EnumValues": [],
-                      "IncludeInDocumentation": true,
-                      "IncludeInArgSpec": true,
-                      "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
-                    },
-                    {
-                      "Name": "storage",
-                      "NameAlt": "storage",
-                      "Disposition": "default",
-                      "Type": "str",
-                      "ValueIfFalse": null,
-                      "ValueIfTrue": null,
-                      "IsList": true,
-                      "Required": "False",
-                      "VariableValue": "None",
-                      "Documentation": "Permissions to storage accounts",
-                      "DefaultValue": null,
-                      "DefaultValueSample": {
-                        "default": "",
-                        "test:default": ""
-                      },
-                      "SubOptions": [],
-                      "RequiredCount": 0,
-                      "NoLog": false,
-                      "EnumValues": [],
-                      "IncludeInDocumentation": true,
-                      "IncludeInArgSpec": true,
-                      "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
-                    }
-                  ],
-                  "RequiredCount": 0,
-                  "NoLog": false,
-                  "EnumValues": [],
-                  "IncludeInDocumentation": true,
-                  "IncludeInArgSpec": true,
-                  "AdditionalInfo": "NO XML PROPERTIES --- Model"
-                }
-              ],
-              "RequiredCount": 0,
-              "NoLog": false,
-              "EnumValues": [],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
-              "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
-            },
-            {
-              "Name": "vault_uri",
-              "NameAlt": "vault_uri",
-              "Disposition": "default",
-              "Type": "str",
-              "ValueIfFalse": null,
-              "ValueIfTrue": null,
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "The URI of the vault for performing operations on keys and secrets.",
-              "DefaultValue": null,
-              "DefaultValueSample": {
-                "default": "",
-                "test:default": ""
-              },
-              "SubOptions": [],
-              "RequiredCount": 0,
-              "NoLog": false,
-              "EnumValues": [],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
-              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-            },
-            {
-              "Name": "enabled_for_deployment",
-              "NameAlt": "enabled_for_deployment",
-              "Disposition": "default",
-              "Type": "str",
-              "ValueIfFalse": null,
-              "ValueIfTrue": null,
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.",
-              "DefaultValue": null,
-              "DefaultValueSample": {
-                "default": "",
-                "test:default": ""
-              },
-              "SubOptions": [],
-              "RequiredCount": 0,
-              "NoLog": false,
-              "EnumValues": [],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
-              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-            },
-            {
-              "Name": "enabled_for_disk_encryption",
-              "NameAlt": "enabled_for_disk_encryption",
-              "Disposition": "default",
-              "Type": "str",
-              "ValueIfFalse": null,
-              "ValueIfTrue": null,
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.",
-              "DefaultValue": null,
-              "DefaultValueSample": {
-                "default": "",
-                "test:default": ""
-              },
-              "SubOptions": [],
-              "RequiredCount": 0,
-              "NoLog": false,
-              "EnumValues": [],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
-              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-            },
-            {
-              "Name": "enabled_for_template_deployment",
-              "NameAlt": "enabled_for_template_deployment",
-              "Disposition": "default",
-              "Type": "str",
-              "ValueIfFalse": null,
-              "ValueIfTrue": null,
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.",
-              "DefaultValue": null,
-              "DefaultValueSample": {
-                "default": "",
-                "test:default": ""
-              },
-              "SubOptions": [],
-              "RequiredCount": 0,
-              "NoLog": false,
-              "EnumValues": [],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
-              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-            },
-            {
-              "Name": "enable_soft_delete",
-              "NameAlt": "enable_soft_delete",
-              "Disposition": "default",
-              "Type": "str",
-              "ValueIfFalse": null,
-              "ValueIfTrue": null,
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "Property to specify whether the 'soft delete' functionality is enabled for this key vault. It does not accept false value.",
-              "DefaultValue": null,
-              "DefaultValueSample": {
-                "default": "",
-                "test:default": ""
-              },
-              "SubOptions": [],
-              "RequiredCount": 0,
-              "NoLog": false,
-              "EnumValues": [],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
-              "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
-            },
-            {
-              "Name": "create_mode",
-              "NameAlt": "create_mode",
-              "Disposition": "default",
-              "Type": "str",
-              "ValueIfFalse": null,
-              "ValueIfTrue": null,
-              "IsList": false,
-              "Required": "False",
-              "VariableValue": "None",
-              "Documentation": "The vault's create mode to indicate whether the vault need to be recovered or not.",
-              "DefaultValue": null,
-              "DefaultValueSample": {
-                "default": "",
-                "test:default": ""
-              },
-              "SubOptions": [],
-              "RequiredCount": 0,
-              "NoLog": false,
-              "EnumValues": [
-                {
-                  "Key": "recover",
-                  "Value": "recover"
-                },
-                {
-                  "Key": "default",
-                  "Value": "default"
-                }
-              ],
-              "IncludeInDocumentation": true,
-              "IncludeInArgSpec": true,
-              "AdditionalInfo": "NO XML PROPERTIES --- Enum"
             }
           ],
           "RequiredCount": 0,
@@ -600,7 +446,160 @@
           "EnumValues": [],
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
-          "AdditionalInfo": "NO XML PROPERTIES --- Model"
+          "AdditionalInfo": "NO XML PROPERTIES --- Dictionary"
+        },
+        {
+          "Name": "vault_uri",
+          "NameAlt": "vault_uri",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The URI of the vault for performing operations on keys and secrets.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "enabled_for_deployment",
+          "NameAlt": "enabled_for_deployment",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "enabled_for_disk_encryption",
+          "NameAlt": "enabled_for_disk_encryption",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "enabled_for_template_deployment",
+          "NameAlt": "enabled_for_template_deployment",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "enable_soft_delete",
+          "NameAlt": "enable_soft_delete",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Property to specify whether the 'soft delete' functionality is enabled for this key vault. It does not accept false value.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
+        },
+        {
+          "Name": "create_mode",
+          "NameAlt": "create_mode",
+          "Disposition": "parameters:properties",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The vault's create mode to indicate whether the vault need to be recovered or not.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "",
+            "test:default": ""
+          },
+          "SubOptions": [],
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": [
+            {
+              "Key": "recover",
+              "Value": "recover"
+            },
+            {
+              "Key": "default",
+              "Value": "default"
+            }
+          ],
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": "NO XML PROPERTIES --- Enum"
         }
       ],
       "Methods": [
@@ -625,8 +624,7 @@
           "RequiredOptions": [
             "resource_group_name",
             "vault_name",
-            "location",
-            "properties"
+            "parameters"
           ]
         },
         {

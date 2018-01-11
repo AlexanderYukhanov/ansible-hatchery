@@ -30,97 +30,87 @@ options:
         description:
             - Name of the vault
         required: True
-    parameters:
-        description:
-            - Parameters to create or update the vault
     location:
         description:
             - Resource location. If not set, location from the resource group will be used as default.
-    properties:
+    tenant_id:
         description:
-            - Properties of the vault
-        required: True
+            - The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
+    sku:
+        description:
+            - SKU details
+        suboptions:
+            family:
+                description:
+                    - SKU family name
+                required: True
+            name:
+                description:
+                    - SKU name to specify whether the key vault is a standard vault or a premium vault.
+                required: True
+                choices:
+                    - 'standard'
+                    - 'premium'
+    access_policies:
+        description:
+            - "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's t
+              enant ID."
+        type: list
         suboptions:
             tenant_id:
                 description:
                     - The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
                 required: True
-            sku:
+            object_id:
                 description:
-                    - SKU details
+                    - "The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be
+                       unique for the list of access policies."
+                required: True
+            application_id:
+                description:
+                    -  Application ID of the client making request on behalf of a principal
+            permissions:
+                description:
+                    - Permissions the identity has for keys, secrets and certificates.
                 required: True
                 suboptions:
-                    family:
+                    keys:
                         description:
-                            - SKU family name
-                        required: True
-                    name:
+                            - Permissions to keys
+                        type: list
+                    secrets:
                         description:
-                            - SKU name to specify whether the key vault is a standard vault or a premium vault.
-                        required: True
-                        choices:
-                            - 'standard'
-                            - 'premium'
-            access_policies:
-                description:
-                    - "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key v
-                      ault's tenant ID."
-                type: list
-                suboptions:
-                    tenant_id:
+                            - Permissions to secrets
+                        type: list
+                    certificates:
                         description:
-                            - The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
-                        required: True
-                    object_id:
+                            - Permissions to certificates
+                        type: list
+                    storage:
                         description:
-                            - "The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID
-                               must be unique for the list of access policies."
-                        required: True
-                    application_id:
-                        description:
-                            -  Application ID of the client making request on behalf of a principal
-                    permissions:
-                        description:
-                            - Permissions the identity has for keys, secrets and certificates.
-                        required: True
-                        suboptions:
-                            keys:
-                                description:
-                                    - Permissions to keys
-                                type: list
-                            secrets:
-                                description:
-                                    - Permissions to secrets
-                                type: list
-                            certificates:
-                                description:
-                                    - Permissions to certificates
-                                type: list
-                            storage:
-                                description:
-                                    - Permissions to storage accounts
-                                type: list
-            vault_uri:
-                description:
-                    - The URI of the vault for performing operations on keys and secrets.
-            enabled_for_deployment:
-                description:
-                    - Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.
-            enabled_for_disk_encryption:
-                description:
-                    - Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.
-            enabled_for_template_deployment:
-                description:
-                    - Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
-            enable_soft_delete:
-                description:
-                    - Property to specify whether the C(soft delete) functionality is enabled for this key vault. It does not accept false value.
-            create_mode:
-                description:
-                    - "The vault's create mode to indicate whether the vault need to be recovered or not."
-                choices:
-                    - 'recover'
-                    - 'default'
+                            - Permissions to storage accounts
+                        type: list
+    vault_uri:
+        description:
+            - The URI of the vault for performing operations on keys and secrets.
+    enabled_for_deployment:
+        description:
+            - Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.
+    enabled_for_disk_encryption:
+        description:
+            - Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.
+    enabled_for_template_deployment:
+        description:
+            - Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
+    enable_soft_delete:
+        description:
+            - Property to specify whether the C(soft delete) functionality is enabled for this key vault. It does not accept false value.
+    create_mode:
+        description:
+            - "The vault's create mode to indicate whether the vault need to be recovered or not."
+        choices:
+            - 'recover'
+            - 'default'
 
 extends_documentation_fragment:
     - azure
@@ -135,7 +125,6 @@ EXAMPLES = '''
     azure_rm_keyvault:
       resource_group: NOT FOUND
       vault_name: NOT FOUND
-      parameters: parameters
       location: eastus
 '''
 
@@ -178,15 +167,37 @@ class AzureRMVaults(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            parameters=dict(
-                type='dict'
-            ),
             location=dict(
                 type='str'
             ),
-            properties=dict(
-                type='dict',
-                required=True
+            tenant_id=dict(
+                type='str'
+            ),
+            sku=dict(
+                type='dict'
+            ),
+            access_policies=dict(
+                type='list'
+            ),
+            vault_uri=dict(
+                type='str'
+            ),
+            enabled_for_deployment=dict(
+                type='str'
+            ),
+            enabled_for_disk_encryption=dict(
+                type='str'
+            ),
+            enabled_for_template_deployment=dict(
+                type='str'
+            ),
+            enable_soft_delete=dict(
+                type='str'
+            ),
+            create_mode=dict(
+                type='str',
+                choices=['recover',
+                         'default']
             ),
             state=dict(
                 type='str',
@@ -197,8 +208,7 @@ class AzureRMVaults(AzureRMModuleBase):
 
         self.resource_group = None
         self.vault_name = None
-        self.location = None
-        self.properties = None
+        self.parameters = dict()
 
         self.results = dict(changed=False)
         self.mgmt_client = None
@@ -215,6 +225,27 @@ class AzureRMVaults(AzureRMModuleBase):
         for key in list(self.module_arg_spec.keys()):
             if hasattr(self, key):
                 setattr(self, key, kwargs[key])
+            elif kwargs[key] is not None:
+                if key == "location":
+                    self.parameters["location"] = kwargs[key]
+                elif key == "tenant_id":
+                    self.parameters.setdefault("properties", {})["tenant_id"] = kwargs[key]
+                elif key == "sku":
+                    self.parameters.setdefault("properties", {})["sku"] = kwargs[key]
+                elif key == "access_policies":
+                    self.parameters.setdefault("properties", {})["access_policies"] = kwargs[key]
+                elif key == "vault_uri":
+                    self.parameters.setdefault("properties", {})["vault_uri"] = kwargs[key]
+                elif key == "enabled_for_deployment":
+                    self.parameters.setdefault("properties", {})["enabled_for_deployment"] = kwargs[key]
+                elif key == "enabled_for_disk_encryption":
+                    self.parameters.setdefault("properties", {})["enabled_for_disk_encryption"] = kwargs[key]
+                elif key == "enabled_for_template_deployment":
+                    self.parameters.setdefault("properties", {})["enabled_for_template_deployment"] = kwargs[key]
+                elif key == "enable_soft_delete":
+                    self.parameters.setdefault("properties", {})["enable_soft_delete"] = kwargs[key]
+                elif key == "create_mode":
+                    self.parameters.setdefault("properties", {})["create_mode"] = kwargs[key]
 
         old_response = None
         response = None
@@ -290,8 +321,7 @@ class AzureRMVaults(AzureRMModuleBase):
         try:
             response = self.mgmt_client.vaults.create_or_update(resource_group_name=self.resource_group,
                                                                 vault_name=self.vault_name,
-                                                                location=self.location,
-                                                                properties=self.properties)
+                                                                parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
