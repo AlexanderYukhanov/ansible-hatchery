@@ -171,7 +171,7 @@ class AzureRMDatabases(AzureRMModuleBase):
                     self.to_do = Actions.Update
                 if ('charset' in self.parameters) and (self.parameters['charset'] != old_response['charset']):
                     self.to_do = Actions.Update
-                if self.to_do == Actions.Update
+                if self.to_do == Actions.Update:
                     self.delete_postgresqldatabase()
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
