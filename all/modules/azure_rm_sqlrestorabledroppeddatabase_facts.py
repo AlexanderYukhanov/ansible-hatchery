@@ -56,37 +56,46 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+restorable_dropped_databases:
+    description: A list of dict results where the key is the name of the Restorable Dropped Database and the values are the facts for that Restorable Dropped Database.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/restorabledroppeddatabasetest-1257/providers/Microsoft.Sql/servers/restorable
-            droppeddatabasetest-2389/restorableDroppedDatabases/restorabledroppeddatabasetest-7654,131403269876900000"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: restorabledroppeddatabasetest-7654,131403269876900000
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/restorableDroppedDatabases
-location:
-    description:
-        - The geo-location where the resource lives
-    returned: always
-    type: str
-    sample: Japan East
-edition:
-    description:
-        - The edition of the database
-    returned: always
-    type: str
-    sample: Basic
+    type: complex
+    contains:
+        restorabledroppeddatabase_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/restorabledroppeddatabasetest-1257/providers/Microsoft.Sql/se
+                            rvers/restorabledroppeddatabasetest-2389/restorableDroppedDatabases/restorabledroppeddatabasetest-7654,131403269876900000"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: restorabledroppeddatabasetest-7654,131403269876900000
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/restorableDroppedDatabases
+                location:
+                    description:
+                        - The geo-location where the resource lives
+                    returned: always
+                    type: str
+                    sample: Japan East
+                edition:
+                    description:
+                        - The edition of the database
+                    returned: always
+                    type: str
+                    sample: Basic
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -137,10 +146,10 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.restorable_droppeded_database_id is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['restorable_dropped_databases'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['restorable_dropped_databases'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -160,7 +169,8 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RestorableDroppedDatabases.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -180,9 +190,9 @@ class AzureRMRestorableDroppedDatabasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RestorableDroppedDatabases.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

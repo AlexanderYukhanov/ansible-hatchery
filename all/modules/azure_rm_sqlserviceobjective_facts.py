@@ -56,12 +56,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+service_objectives:
+    description: A list of dict results where the key is the name of the Service Objective and the values are the facts for that Service Objective.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        serviceobjective_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -112,10 +121,10 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.service_objective_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['service_objectives'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['service_objectives'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -135,7 +144,8 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServiceObjectives.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -155,9 +165,9 @@ class AzureRMServiceObjectivesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServiceObjectives.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

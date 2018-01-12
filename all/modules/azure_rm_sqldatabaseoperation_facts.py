@@ -52,6 +52,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+database_operations:
+    description: A list of dict results where the key is the name of the Database Operation and the values are the facts for that Database Operation.
+    returned: always
+    type: complex
+    contains:
+        databaseoperation_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -103,7 +112,7 @@ class AzureRMDatabaseOperationsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['database_operations'] = self.list_by_database()
         return self.results
 
     def list_by_database(self):
@@ -123,9 +132,9 @@ class AzureRMDatabaseOperationsFacts(AzureRMModuleBase):
             self.log('Could not get facts for DatabaseOperations.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

@@ -62,45 +62,54 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
-    returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/recommended
-            ElasticPools/ElasticPool1"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: ElasticPool1
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/recommendedElasticPools
-dtu:
-    description:
-        - The DTU for the recommended elastic pool.
-    returned: always
-    type: float
-    sample: 1000
-databases:
-    description:
-        - The list of databases in this pool. Expanded property
+recommended_elastic_pools:
+    description: A list of dict results where the key is the name of the Recommended Elastic Pool and the values are the facts for that Recommended Elastic Pool.
     returned: always
     type: complex
-    sample: databases
     contains:
-metrics:
-    description:
-        - The list of databases housed in the server. Expanded property
-    returned: always
-    type: complex
-    sample: metrics
-    contains:
+        recommendedelasticpool_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            2080/recommendedElasticPools/ElasticPool1"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: ElasticPool1
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/recommendedElasticPools
+                dtu:
+                    description:
+                        - The DTU for the recommended elastic pool.
+                    returned: always
+                    type: float
+                    sample: 1000
+                databases:
+                    description:
+                        - The list of databases in this pool. Expanded property
+                    returned: always
+                    type: complex
+                    sample: databases
+                    contains:
+                metrics:
+                    description:
+                        - The list of databases housed in the server. Expanded property
+                    returned: always
+                    type: complex
+                    sample: metrics
+                    contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -151,14 +160,14 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.recommended_elastic_pool_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['recommended_elastic_pools'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.recommended_elastic_pool_name is not None):
-            self.results['ansible_facts']['list_metrics'] = self.list_metrics()
+            self.results['recommended_elastic_pools'] = self.list_metrics()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['recommended_elastic_pools'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -178,7 +187,8 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecommendedElasticPools.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -199,9 +209,9 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecommendedElasticPools.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -221,9 +231,9 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecommendedElasticPools.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

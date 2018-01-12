@@ -57,6 +57,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+data_masking_rules:
+    description: A list of dict results where the key is the name of the Data Masking Rule and the values are the facts for that Data Masking Rule.
+    returned: always
+    type: complex
+    contains:
+        datamaskingrule_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -114,7 +123,7 @@ class AzureRMDataMaskingRulesFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.data_masking_policy_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['data_masking_rules'] = self.list_by_database()
         return self.results
 
     def list_by_database(self):
@@ -135,9 +144,9 @@ class AzureRMDataMaskingRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for DataMaskingRules.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

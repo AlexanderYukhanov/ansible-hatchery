@@ -52,6 +52,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+restore_points:
+    description: A list of dict results where the key is the name of the Restore Point and the values are the facts for that Restore Point.
+    returned: always
+    type: complex
+    contains:
+        restorepoint_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -103,7 +112,7 @@ class AzureRMRestorePointsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['restore_points'] = self.list_by_database()
         return self.results
 
     def list_by_database(self):
@@ -123,9 +132,9 @@ class AzureRMRestorePointsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RestorePoints.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

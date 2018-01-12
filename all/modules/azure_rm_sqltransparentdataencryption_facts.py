@@ -57,37 +57,46 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+transparent_data_encryptions:
+    description: A list of dict results where the key is the name of the Transparent Data Encryption and the values are the facts for that Transparent Data Encryption.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/s
-            qlcrudtest-9187/transparentDataEncryption/current"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: current
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/transparentDataEncryption
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: North Europe
-status:
-    description:
-        - "The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)"
-    returned: always
-    type: str
-    sample: Enabled
+    type: complex
+    contains:
+        transparentdataencryption_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            2080/databases/sqlcrudtest-9187/transparentDataEncryption/current"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: current
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/transparentDataEncryption
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: North Europe
+                status:
+                    description:
+                        - "The status of the database transparent data encryption. Possible values include: C(Enabled), C(Disabled)"
+                    returned: always
+                    type: str
+                    sample: Enabled
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -145,7 +154,7 @@ class AzureRMTransparentDataEncryptionsFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.transparent_data_encryption_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['transparent_data_encryptions'] = self.get()
         return self.results
 
     def get(self):
@@ -166,7 +175,8 @@ class AzureRMTransparentDataEncryptionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for TransparentDataEncryptions.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

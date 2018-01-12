@@ -56,43 +56,52 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+encryption_protectors:
+    description: A list of dict results where the key is the name of the Encryption Protector and the values are the facts for that Encryption Protector.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/encryptionP
-            rotector/current"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: current
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/encryptionProtector
-kind:
-    description:
-        - Kind of encryption protector. This is metadata used for the Azure portal experience.
-    returned: always
-    type: str
-    sample: azurekeyvault
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: Japan East
-uri:
-    description:
-        - The URI of the server key.
-    returned: always
-    type: str
-    sample: "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
+    type: complex
+    contains:
+        encryptionprotector_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            4645/encryptionProtector/current"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: current
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/encryptionProtector
+                kind:
+                    description:
+                        - Kind of encryption protector. This is metadata used for the Azure portal experience.
+                    returned: always
+                    type: str
+                    sample: azurekeyvault
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: Japan East
+                uri:
+                    description:
+                        - The URI of the server key.
+                    returned: always
+                    type: str
+                    sample: "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -143,10 +152,10 @@ class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.encryption_protector_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['encryption_protectors'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['encryption_protectors'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -166,7 +175,8 @@ class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for EncryptionProtectors.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -186,9 +196,9 @@ class AzureRMEncryptionProtectorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for EncryptionProtectors.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

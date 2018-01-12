@@ -56,31 +56,40 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+virtual_network_rules:
+    description: A list of dict results where the key is the name of the Virtual Network Rule and the values are the facts for that Virtual Network Rule.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtualNetworkRules/vne
-            t-firewall-rule"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: vnet-firewall-rule
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/virtualNetworkRules
-state:
-    description:
-        - "Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)"
-    returned: always
-    type: str
-    sample: Ready
+    type: complex
+    contains:
+        virtualnetworkrule_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/vnet-test-svr/virtual
+                            NetworkRules/vnet-firewall-rule"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: vnet-firewall-rule
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/virtualNetworkRules
+                state:
+                    description:
+                        - "Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)"
+                    returned: always
+                    type: str
+                    sample: Ready
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -131,10 +140,10 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.virtual_network_rule_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['virtual_network_rules'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['virtual_network_rules'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -154,7 +163,8 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworkRules.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -174,9 +184,9 @@ class AzureRMVirtualNetworkRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworkRules.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

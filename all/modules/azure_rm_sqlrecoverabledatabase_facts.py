@@ -56,31 +56,40 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+recoverable_databases:
+    description: A list of dict results where the key is the name of the Recoverable Database and the values are the facts for that Recoverable Database.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/recoverabledatabasetest-6852/providers/Microsoft.Sql/servers/recoverabledatab
-            asetest-2080/recoverabledatabases/recoverabledatabasetest-9187"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: recoverabledatabasetest-9187
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/recoverabledatabases
-edition:
-    description:
-        - The edition of the database
-    returned: always
-    type: str
-    sample: Basic
+    type: complex
+    contains:
+        recoverabledatabase_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/recoverabledatabasetest-6852/providers/Microsoft.Sql/servers/
+                            recoverabledatabasetest-2080/recoverabledatabases/recoverabledatabasetest-9187"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: recoverabledatabasetest-9187
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/recoverabledatabases
+                edition:
+                    description:
+                        - The edition of the database
+                    returned: always
+                    type: str
+                    sample: Basic
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -131,10 +140,10 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['recoverable_databases'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['recoverable_databases'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -154,7 +163,8 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecoverableDatabases.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -174,9 +184,9 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecoverableDatabases.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

@@ -62,31 +62,40 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+service_tier_advisors:
+    description: A list of dict results where the key is the name of the Service Tier Advisor and the values are the facts for that Service Tier Advisor.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/s
-            qlcrudtest-9187/serviceTierAdvisors/Current"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: Current
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/serviceTierAdvisors
-confidence:
-    description:
-        - Gets or sets confidence for service tier advisor.
-    returned: always
-    type: float
-    sample: 1
+    type: complex
+    contains:
+        servicetieradvisor_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            2080/databases/sqlcrudtest-9187/serviceTierAdvisors/Current"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: Current
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/serviceTierAdvisors
+                confidence:
+                    description:
+                        - Gets or sets confidence for service tier advisor.
+                    returned: always
+                    type: float
+                    sample: 1
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -143,11 +152,11 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.service_tier_advisor_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['service_tier_advisors'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['service_tier_advisors'] = self.list_by_database()
         return self.results
 
     def get(self):
@@ -168,7 +177,8 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServiceTierAdvisors.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -189,9 +199,9 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServiceTierAdvisors.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

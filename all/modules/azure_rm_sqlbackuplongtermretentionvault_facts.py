@@ -56,31 +56,40 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+backup_long_term_retention_vaults:
+    description: A list of dict results where the key is the name of the Backup Long Term Retention Vault and the values are the facts for that Backup Long Term Retention Vault.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiont
-            est-5678/backupLongTermRetentionVaults/RegisteredVault"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: RegisteredVault
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/backupLongTermRetentionVaults
-location:
-    description:
-        - The geo-location where the resource lives
-    returned: always
-    type: str
-    sample: Japan East
+    type: complex
+    contains:
+        backuplongtermretentionvault_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/lo
+                            ngtermretentiontest-5678/backupLongTermRetentionVaults/RegisteredVault"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: RegisteredVault
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/backupLongTermRetentionVaults
+                location:
+                    description:
+                        - The geo-location where the resource lives
+                    returned: always
+                    type: str
+                    sample: Japan East
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -131,10 +140,10 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.backup_long_term_retention_vault_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['backup_long_term_retention_vaults'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['backup_long_term_retention_vaults'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -154,7 +163,8 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionVaults.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -174,9 +184,9 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionVaults.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

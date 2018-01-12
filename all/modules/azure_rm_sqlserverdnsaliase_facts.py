@@ -56,25 +56,34 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+server_dns_aliases:
+    description: A list of dict results where the key is the name of the Server Dns Aliase and the values are the facts for that Server Dns Aliase.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsAliases/dns-alias
-            -name-1"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: dns-alias-name-1
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/dnsAliases
+    type: complex
+    contains:
+        serverdnsaliase_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Sql/servers/dns-alias-server/dnsA
+                            liases/dns-alias-name-1"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: dns-alias-name-1
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/dnsAliases
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -125,10 +134,10 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.dns_alias_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['server_dns_aliases'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['server_dns_aliases'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -148,7 +157,8 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerDnsAliases.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -168,9 +178,9 @@ class AzureRMServerDnsAliasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerDnsAliases.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

@@ -57,44 +57,53 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+database_threat_detection_policies:
+    description: A list of dict results where the key is the name of the Database Threat Detection Policy and the values are the facts for that Database Threat Detection Policy.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-6852/providers/Microsoft.Sql/servers/securityalert-2080/databas
-            es/testdb"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: default
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/securityAlertPolicies
-location:
-    description:
-        - The geo-location where the resource lives
-    returned: always
-    type: str
-    sample: Japan East
-kind:
-    description:
-        - Resource kind.
-    returned: always
-    type: str
-    sample: V12
-state:
-    description:
-        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(New),
-           C(Enabled), C(Disabled)"
-    returned: always
-    type: str
-    sample: Enabled
+    type: complex
+    contains:
+        databasethreatdetectionpolicy_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/securityalert-6852/providers/Microsoft.Sql/servers/securityal
+                            ert-2080/databases/testdb"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: default
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/securityAlertPolicies
+                location:
+                    description:
+                        - The geo-location where the resource lives
+                    returned: always
+                    type: str
+                    sample: Japan East
+                kind:
+                    description:
+                        - Resource kind.
+                    returned: always
+                    type: str
+                    sample: V12
+                state:
+                    description:
+                        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values
+                          include: C(New), C(Enabled), C(Disabled)"
+                    returned: always
+                    type: str
+                    sample: Enabled
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -152,7 +161,7 @@ class AzureRMDatabaseThreatDetectionPoliciesFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.security_alert_policy_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['database_threat_detection_policies'] = self.get()
         return self.results
 
     def get(self):
@@ -173,7 +182,8 @@ class AzureRMDatabaseThreatDetectionPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for DatabaseThreatDetectionPolicies.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

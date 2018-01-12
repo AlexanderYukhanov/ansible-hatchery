@@ -47,6 +47,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+server_usages:
+    description: A list of dict results where the key is the name of the Server Usage and the values are the facts for that Server Usage.
+    returned: always
+    type: complex
+    contains:
+        serverusage_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -92,7 +101,7 @@ class AzureRMServerUsagesFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['server_usages'] = self.list_by_server()
         return self.results
 
     def list_by_server(self):
@@ -111,9 +120,9 @@ class AzureRMServerUsagesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerUsages.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

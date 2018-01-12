@@ -52,6 +52,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+database_usages:
+    description: A list of dict results where the key is the name of the Database Usage and the values are the facts for that Database Usage.
+    returned: always
+    type: complex
+    contains:
+        databaseusage_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -103,7 +112,7 @@ class AzureRMDatabaseUsagesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['database_usages'] = self.list_by_database()
         return self.results
 
     def list_by_database(self):
@@ -123,9 +132,9 @@ class AzureRMDatabaseUsagesFacts(AzureRMModuleBase):
             self.log('Could not get facts for DatabaseUsages.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

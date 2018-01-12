@@ -57,37 +57,46 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+data_masking_policies:
+    description: A list of dict results where the key is the name of the Data Masking Policy and the values are the facts for that Data Masking Policy.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-2080/databases/s
-            qlcrudtest-331/dataMaskingPolicies/Default"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: Default
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/dataMaskingPolicies
-location:
-    description:
-        - The location of the data masking policy.
-    returned: always
-    type: str
-    sample: Central US
-kind:
-    description:
-        - The kind of data masking policy. Metadata, used for Azure portal.
-    returned: always
-    type: str
-    sample: kind
+    type: complex
+    contains:
+        datamaskingpolicy_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-6852/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            2080/databases/sqlcrudtest-331/dataMaskingPolicies/Default"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: Default
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/dataMaskingPolicies
+                location:
+                    description:
+                        - The location of the data masking policy.
+                    returned: always
+                    type: str
+                    sample: Central US
+                kind:
+                    description:
+                        - The kind of data masking policy. Metadata, used for Azure portal.
+                    returned: always
+                    type: str
+                    sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -145,7 +154,7 @@ class AzureRMDataMaskingPoliciesFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.data_masking_policy_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['data_masking_policies'] = self.get()
         return self.results
 
     def get(self):
@@ -166,7 +175,8 @@ class AzureRMDataMaskingPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for DataMaskingPolicies.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

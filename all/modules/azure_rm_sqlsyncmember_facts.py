@@ -76,25 +76,34 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+sync_members:
+    description: A list of dict results where the key is the name of the Sync Member and the values are the facts for that Sync Member.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databa
-            ses/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: syncgroupcrud-4879
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/syncGroups/syncMembers
+    type: complex
+    contains:
+        syncmember_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-65440/providers/Microsoft.Sql/servers/syncgroup
+                            crud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187/syncMembers/syncgroupcrud-4879"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: syncgroupcrud-4879
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/syncGroups/syncMembers
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -157,18 +166,18 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
                 self.database_name is not None and
                 self.sync_group_name is not None and
                 self.sync_member_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['sync_members'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None and
               self.sync_group_name is not None and
               self.sync_member_name is not None):
-            self.results['ansible_facts']['list_member_schemas'] = self.list_member_schemas()
+            self.results['sync_members'] = self.list_member_schemas()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None and
               self.sync_group_name is not None):
-            self.results['ansible_facts']['list_by_sync_group'] = self.list_by_sync_group()
+            self.results['sync_members'] = self.list_by_sync_group()
         return self.results
 
     def get(self):
@@ -190,7 +199,8 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncMembers.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -213,9 +223,9 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncMembers.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -237,9 +247,9 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncMembers.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

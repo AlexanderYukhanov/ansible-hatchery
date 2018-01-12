@@ -56,43 +56,52 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+server_communication_links:
+    description: A list of dict results where the key is the name of the Server Communication Link and the values are the facts for that Server Communication Link.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-4645/communicati
-            onLinks/link1"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: link1
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/communicationLinks
-state:
-    description:
-        - The state.
-    returned: always
-    type: str
-    sample: Ready
-location:
-    description:
-        - Communication link location.
-    returned: always
-    type: str
-    sample: Central US
-kind:
-    description:
-        - Communication link kind.  This property is used for Azure Portal metadata.
-    returned: always
-    type: str
-    sample: kind
+    type: complex
+    contains:
+        servercommunicationlink_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-7398/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            4645/communicationLinks/link1"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: link1
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/communicationLinks
+                state:
+                    description:
+                        - The state.
+                    returned: always
+                    type: str
+                    sample: Ready
+                location:
+                    description:
+                        - Communication link location.
+                    returned: always
+                    type: str
+                    sample: Central US
+                kind:
+                    description:
+                        - Communication link kind.  This property is used for Azure Portal metadata.
+                    returned: always
+                    type: str
+                    sample: kind
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -143,10 +152,10 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.communication_link_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['server_communication_links'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['server_communication_links'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -166,7 +175,8 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerCommunicationLinks.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -186,9 +196,9 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerCommunicationLinks.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

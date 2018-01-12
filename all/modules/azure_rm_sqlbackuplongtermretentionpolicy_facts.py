@@ -62,37 +62,46 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+backup_long_term_retention_policies:
+    description: A list of dict results where the key is the name of the Backup Long Term Retention Policy and the values are the facts for that Backup Long Term Retention Policy.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/longtermretentiont
-            est-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: Default
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies
-location:
-    description:
-        - The geo-location where the resource lives
-    returned: always
-    type: str
-    sample: Japan East
-state:
-    description:
-        - "The status of the backup long term retention policy. Possible values include: C(Disabled), C(Enabled)"
-    returned: always
-    type: str
-    sample: Enabled
+    type: complex
+    contains:
+        backuplongtermretentionpolicy_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentiontest-1234/providers/Microsoft.Sql/servers/lo
+                            ngtermretentiontest-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: Default
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies
+                location:
+                    description:
+                        - The geo-location where the resource lives
+                    returned: always
+                    type: str
+                    sample: Japan East
+                state:
+                    description:
+                        - "The status of the backup long term retention policy. Possible values include: C(Disabled), C(Enabled)"
+                    returned: always
+                    type: str
+                    sample: Enabled
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -149,11 +158,11 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.backup_long_term_retention_policy_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['backup_long_term_retention_policies'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['backup_long_term_retention_policies'] = self.list_by_database()
         return self.results
 
     def get(self):
@@ -174,7 +183,8 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionPolicies.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -195,9 +205,9 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionPolicies.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

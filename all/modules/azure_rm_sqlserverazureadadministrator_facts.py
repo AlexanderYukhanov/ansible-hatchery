@@ -56,31 +56,40 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+server_azure_ad_administrators:
+    description: A list of dict results where the key is the name of the Server Azure A D Administrator and the values are the facts for that Server Azure A D Administrator.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-6440/administrat
-            ors/activeDirectory"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: activeDirectory
-login:
-    description:
-        - The server administrator login value.
-    returned: always
-    type: str
-    sample: bob@contoso.com
-sid:
-    description:
-        - The server administrator Sid (Secure ID).
-    returned: always
-    type: str
-    sample: c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c
+    type: complex
+    contains:
+        serverazureadadministrator_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            6440/administrators/activeDirectory"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: activeDirectory
+                login:
+                    description:
+                        - The server administrator login value.
+                    returned: always
+                    type: str
+                    sample: bob@contoso.com
+                sid:
+                    description:
+                        - The server administrator Sid (Secure ID).
+                    returned: always
+                    type: str
+                    sample: c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -131,10 +140,10 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.administrator_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['server_azure_ad_administrators'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['server_azure_ad_administrators'] = self.list_by_server()
         return self.results
 
     def get(self):
@@ -154,7 +163,8 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerAzureADAdministrators.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -174,9 +184,9 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerAzureADAdministrators.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

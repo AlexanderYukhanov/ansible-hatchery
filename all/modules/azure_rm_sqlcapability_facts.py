@@ -42,6 +42,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+capabilities:
+    description: A list of dict results where the key is the name of the Capability and the values are the facts for that Capability.
+    returned: always
+    type: complex
+    contains:
+        capability_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -81,7 +90,7 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.location_id is not None):
-            self.results['ansible_facts']['list_by_location'] = self.list_by_location()
+            self.results['capabilities'] = self.list_by_location()
         return self.results
 
     def list_by_location(self):
@@ -99,9 +108,9 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
             self.log('Could not get facts for Capabilities.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

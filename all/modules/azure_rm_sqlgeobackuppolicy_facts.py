@@ -62,43 +62,52 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+geo_backup_policies:
+    description: A list of dict results where the key is the name of the Geo Backup Policy and the values are the facts for that Geo Backup Policy.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-5961/databases/t
-            estdw/geoBackupPolicies/Default"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: Default
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/geoBackupPolicies
-state:
-    description:
-        - "The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)"
-    returned: always
-    type: str
-    sample: Enabled
-kind:
-    description:
-        - Kind of geo backup policy.  This is metadata used for the Azure portal experience.
-    returned: always
-    type: str
-    sample: kind
-location:
-    description:
-        - Backup policy location.
-    returned: always
-    type: str
-    sample: Central US
+    type: complex
+    contains:
+        geobackuppolicy_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/sqlcrudtest-4799/providers/Microsoft.Sql/servers/sqlcrudtest-
+                            5961/databases/testdw/geoBackupPolicies/Default"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: Default
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/geoBackupPolicies
+                state:
+                    description:
+                        - "The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)"
+                    returned: always
+                    type: str
+                    sample: Enabled
+                kind:
+                    description:
+                        - Kind of geo backup policy.  This is metadata used for the Azure portal experience.
+                    returned: always
+                    type: str
+                    sample: kind
+                location:
+                    description:
+                        - Backup policy location.
+                    returned: always
+                    type: str
+                    sample: Central US
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -155,11 +164,11 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.geo_backup_policy_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['geo_backup_policies'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['geo_backup_policies'] = self.list_by_database()
         return self.results
 
     def get(self):
@@ -180,7 +189,8 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for GeoBackupPolicies.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -201,9 +211,9 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for GeoBackupPolicies.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

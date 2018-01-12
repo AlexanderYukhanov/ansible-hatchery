@@ -52,6 +52,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+elastic_pool_activities:
+    description: A list of dict results where the key is the name of the Elastic Pool Activity and the values are the facts for that Elastic Pool Activity.
+    returned: always
+    type: complex
+    contains:
+        elasticpoolactivity_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -103,7 +112,7 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.elastic_pool_name is not None):
-            self.results['ansible_facts']['list_by_elastic_pool'] = self.list_by_elastic_pool()
+            self.results['elastic_pool_activities'] = self.list_by_elastic_pool()
         return self.results
 
     def list_by_elastic_pool(self):
@@ -123,9 +132,9 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ElasticPoolActivities.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

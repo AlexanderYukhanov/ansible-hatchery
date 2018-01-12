@@ -96,31 +96,40 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+sync_groups:
+    description: A list of dict results where the key is the name of the Sync Group and the values are the facts for that Sync Group.
     returned: always
-    type: str
-    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupcrud-8475/databas
-            es/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187"
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: syncgroupcrud-3187
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Sql/servers/databases/syncGroups
-interval:
-    description:
-        - Sync interval of the sync group.
-    returned: always
-    type: int
-    sample: -1
+    type: complex
+    contains:
+        syncgroup_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/syncgroupcrud-3521/providers/Microsoft.Sql/servers/syncgroupc
+                            rud-8475/databases/syncgroupcrud-4328/syncGroups/syncgroupcrud-3187"
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: syncgroupcrud-3187
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Sql/servers/databases/syncGroups
+                interval:
+                    description:
+                        - Sync interval of the sync group.
+                    returned: always
+                    type: int
+                    sample: -1
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -197,23 +206,23 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
                 self.start_time is not None and
                 self.end_time is not None and
                 self.type is not None):
-            self.results['ansible_facts']['list_logs'] = self.list_logs()
+            self.results['sync_groups'] = self.list_logs()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None and
               self.sync_group_name is not None):
-            self.results['ansible_facts']['list_hub_schemas'] = self.list_hub_schemas()
+            self.results['sync_groups'] = self.list_hub_schemas()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None and
               self.sync_group_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['sync_groups'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None):
-            self.results['ansible_facts']['list_by_database'] = self.list_by_database()
+            self.results['sync_groups'] = self.list_by_database()
         elif (self.location_name is not None):
-            self.results['ansible_facts']['list_sync_database_ids'] = self.list_sync_database_ids()
+            self.results['sync_groups'] = self.list_sync_database_ids()
         return self.results
 
     def list_logs(self):
@@ -237,9 +246,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncGroups.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -261,9 +270,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncGroups.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -285,7 +294,8 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncGroups.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -306,9 +316,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncGroups.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -327,9 +337,9 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncGroups.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

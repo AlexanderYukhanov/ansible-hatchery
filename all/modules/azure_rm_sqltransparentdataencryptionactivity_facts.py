@@ -57,6 +57,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+transparent_data_encryption_activities:
+    description: A list of dict results where the key is the name of the Transparent Data Encryption Activity and the values are the facts for that Transparent Data Encryption Activity.
+    returned: always
+    type: complex
+    contains:
+        transparentdataencryptionactivity_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -114,7 +123,7 @@ class AzureRMTransparentDataEncryptionActivitiesFacts(AzureRMModuleBase):
                 self.server_name is not None and
                 self.database_name is not None and
                 self.transparent_data_encryption_name is not None):
-            self.results['ansible_facts']['list_by_configuration'] = self.list_by_configuration()
+            self.results['transparent_data_encryption_activities'] = self.list_by_configuration()
         return self.results
 
     def list_by_configuration(self):
@@ -135,9 +144,9 @@ class AzureRMTransparentDataEncryptionActivitiesFacts(AzureRMModuleBase):
             self.log('Could not get facts for TransparentDataEncryptionActivities.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
