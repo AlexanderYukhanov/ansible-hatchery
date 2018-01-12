@@ -173,7 +173,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
         if response is not None:
             results = {}
-            results = results[response.name] = response.as_dict()
+            results[response.name] = response.as_dict()
 
         return results
 
