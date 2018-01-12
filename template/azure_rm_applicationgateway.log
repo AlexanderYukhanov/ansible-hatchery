@@ -3242,3 +3242,6 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+TWEAK: RENAMING resource_group_name -- A
+TWEAK: RENAMING application_gateway_name -- A
+TWEAK: RENAMING application_gateway_name -- A

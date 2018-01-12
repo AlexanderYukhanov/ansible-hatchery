@@ -389,3 +389,13 @@ Sample after properties copied ---
   execute
 ------------------------------- Check Name Availability
   list
+TWEAK: RENAMING resource_group_name -- A
+TWEAK: RENAMING server_name -- A
+TWEAK: RENAMING properties.administrator_login -- A
+TWEAK: RENAMING properties.administrator_login_password -- A
+TWEAK: RENAMING properties.ssl_enforcement -- A
+TWEAK: FLATTENING properties -- ABCDE
+TWEAK: RENAMING database_name -- A
+TWEAK: RENAMING firewall_rule_name -- A
+TWEAK: RENAMING configuration_name -- A
+TWEAK: RENAMING virtual_network_rule_name -- A

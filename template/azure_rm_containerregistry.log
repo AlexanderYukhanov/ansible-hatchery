@@ -408,3 +408,4 @@ Sample after properties copied ---
   ],
   "provisioningState": "Succeeded"
 }
+TWEAK: RENAMING resource_group_name -- A

@@ -2103,7 +2103,24 @@
       "ReleaseStatus": "RP",
       "NeedsDeleteBeforeUpdate": true,
       "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
+      "UpdateComparisonRules": [
+        {
+          "Option": [
+            "collation"
+          ],
+          "ReturnField": [
+            "collation"
+          ]
+        },
+        {
+          "Option": [
+            "charset"
+          ],
+          "ReturnField": [
+            "charset"
+          ]
+        }
+      ],
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
     },

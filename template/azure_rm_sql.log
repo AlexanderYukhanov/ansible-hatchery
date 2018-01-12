@@ -2220,3 +2220,13 @@ Sample after properties copied ---
   },
   "azureDnsRecord": "dns-alias-name-1.database.windows.net"
 }
+TWEAK: RENAMING resource_group_name -- A
+TWEAK: RENAMING server_name -- A
+TWEAK: RENAMING administrator_login -- A
+TWEAK: RENAMING administrator_login_password -- A
+TWEAK: RENAMING identity.type -- A
+TWEAK: FLATTENING identity -- ABCDE
+TWEAK: RENAMING database_name -- A
+TWEAK: RENAMING elastic_pool_name -- A
+TWEAK: RENAMING firewall_rule_name -- A
+TWEAK: RENAMING state -- A

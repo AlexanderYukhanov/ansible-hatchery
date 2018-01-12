@@ -865,3 +865,4 @@ Sample after properties copied ---
   "targetWorkerSizeId": "0",
   "provisioningState": "Succeeded"
 }
+TWEAK: RENAMING resource_group_name -- A

@@ -167,3 +167,5 @@ Sample after properties copied ---
     }
   ]
 }
+TWEAK: RENAMING resource_group_name --
+TWEAK: FLATTENING properties -- ABCDE
