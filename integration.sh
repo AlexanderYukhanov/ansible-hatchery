@@ -9,7 +9,7 @@ do
   cp -v ~/ansible-hatchery/all/modules/$name.py ~/ansible/lib/ansible/modules/cloud/azure/$name.py
   cp -v -r ~/ansible-hatchery/all/tests/$name ~/ansible/test/integration/targets 
 
-  ansible-test integration -v --allow-destructive $name
+  ansible-test integration -vv --allow-destructive $name
 
 done
 
