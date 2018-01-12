@@ -173,7 +173,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
 
         if response is not None:
             results = {}
-            results = results[response.server_name] = response.as_dict()
+            results = results[response.name] = response.as_dict()
 
         return results
 
@@ -194,7 +194,7 @@ class AzureRMServersFacts(AzureRMModuleBase):
         if response is not None:
             results = {}
             for item in response:
-                results[item.server_name] = item.as_dict()
+                results[item.name] = item.as_dict()
 
         return results
 
