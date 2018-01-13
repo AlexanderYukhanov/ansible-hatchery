@@ -493,6 +493,7 @@ Sample after properties copied ---
     "state": "Running"
   }
 }
+  resource name fields: container_group_name container_group_name name
 ------------------------------- Container Group
   list
 ------------------------------- Operation

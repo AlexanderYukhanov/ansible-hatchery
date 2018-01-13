@@ -4,6 +4,7 @@
   list_for_resource_group
   list_for_resource
   ** CREATING FACT MODULE
+  resource name fields: permission_name resource_name resource_name
 ------------------------------- Permission
   get
   list
@@ -26,6 +27,7 @@ Sample after properties copied ---
   ],
   "operations": []
 }
+  resource name fields: provider_operations_metadata_name  name
 ------------------------------- Provider Operations Metadata
   list_for_resource
   list_for_resource_group
@@ -77,6 +79,7 @@ Sample after properties copied ---
   "principalId": "Pid",
   "scope": "/subscriptions/subId/resourcegroups/rgname"
 }
+  resource name fields: role_assignment_name role_assignment_name name
 ------------------------------- Role Assignment
   delete
   get
@@ -167,5 +170,6 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: role_definition_name  name
 TWEAK: RENAMING resource_group_name --
 TWEAK: FLATTENING properties -- ABCDE

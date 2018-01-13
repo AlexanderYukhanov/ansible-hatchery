@@ -82,36 +82,45 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+network_interfaces:
+    description: A list of dict results where the key is the name of the Network Interface and the values are the facts for that Network Interface.
     returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: test-nic
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Network/networkInterfaces
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: eastus
-primary:
-    description:
-        - Gets whether this is a primary network interface on a virtual machine.
-    returned: always
-    type: str
-    sample: True
+    type: complex
+    contains:
+        networkinterface_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/test-nic
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: test-nic
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Network/networkInterfaces
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: eastus
+                primary:
+                    description:
+                        - Gets whether this is a primary network interface on a virtual machine.
+                    returned: always
+                    type: str
+                    sample: True
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -169,21 +178,21 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                 self.virtual_machine_scale_set_name is not None and
                 self.virtualmachine_index is not None and
                 self.network_interface_name is not None):
-            self.results['ansible_facts']['list_virtual_machine_scale_set_ip_configurations'] = self.list_virtual_machine_scale_set_ip_configurations()
+            self.results['network_interfaces'] = self.list_virtual_machine_scale_set_ip_configurations()
         elif (self.resource_group is not None and
               self.network_interface_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['network_interfaces'] = self.get()
         elif (self.resource_group is not None and
               self.virtual_machine_scale_set_name is not None and
               self.virtualmachine_index is not None):
-            self.results['ansible_facts']['list_virtual_machine_scale_set_vm_network_interfaces'] = self.list_virtual_machine_scale_set_vm_network_interfaces()
+            self.results['network_interfaces'] = self.list_virtual_machine_scale_set_vm_network_interfaces()
         elif (self.resource_group is not None and
               self.network_interface_name is not None):
-            self.results['ansible_facts']['list_effective_network_security_groups'] = self.list_effective_network_security_groups()
+            self.results['network_interfaces'] = self.list_effective_network_security_groups()
         elif (self.resource_group is not None and
               self.virtual_machine_scale_set_name is not None):
-            self.results['ansible_facts']['list_virtual_machine_scale_set_network_interfaces'] = self.list_virtual_machine_scale_set_network_interfaces()
-            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['network_interfaces'] = self.list_virtual_machine_scale_set_network_interfaces()
+            self.results['network_interfaces'] = self.list_all()
         return self.results
 
     def list_virtual_machine_scale_set_ip_configurations(self):
@@ -204,9 +213,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -226,7 +235,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -247,9 +257,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -269,9 +279,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -291,9 +301,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -312,9 +322,9 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

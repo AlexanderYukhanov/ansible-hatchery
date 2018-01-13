@@ -10,6 +10,7 @@
   assert:
     that:
       - output.changed == False
+      - output.top_level_domains.xxxunknownxxx.id != None
 
 - name: Gather facts Top Level Domain
   azure_rm_webtopleveldomain_facts:
@@ -18,3 +19,4 @@
   assert:
     that:
       - output.changed == False
+      - output.top_level_domains.xxxunknownxxx.id != None

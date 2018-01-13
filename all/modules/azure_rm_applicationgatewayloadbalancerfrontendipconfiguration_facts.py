@@ -52,37 +52,46 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
-    returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/frontend
-subnet:
-    description:
-        - The reference of the subnet resource.
+load_balancer_frontend_ip_configurations:
+    description: A list of dict results where the key is the name of the Load Balancer Frontend I P Configuration and the values are the facts for that Load Balancer Frontend I P Configuration.
     returned: always
     type: complex
-    sample: subnet
     contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb
-name:
-    description:
-        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
-    returned: always
-    type: str
-    sample: frontend
-etag:
-    description:
-        - A unique read-only string that changes whenever the resource is updated.
-    returned: always
-    type: str
-    sample: "W/\'00000000-0000-0000-0000-000000000000\'"
+        loadbalancerfrontendipconfiguration_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/frontend
+                subnet:
+                    description:
+                        - The reference of the subnet resource.
+                    returned: always
+                    type: complex
+                    sample: subnet
+                    contains:
+                        id:
+                            description:
+                                - Resource ID.
+                            returned: always
+                            type: str
+                            sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/virtualNetworks/vnetlb/subnets/subnetlb
+                name:
+                    description:
+                        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                    returned: always
+                    type: str
+                    sample: frontend
+                etag:
+                    description:
+                        - A unique read-only string that changes whenever the resource is updated.
+                    returned: always
+                    type: str
+                    sample: "W/\'00000000-0000-0000-0000-000000000000\'"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -134,7 +143,7 @@ class AzureRMLoadBalancerFrontendIPConfigurationsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.load_balancer_name is not None and
                 self.frontend_ip_configuration_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['load_balancer_frontend_ip_configurations'] = self.get()
         return self.results
 
     def get(self):
@@ -154,7 +163,8 @@ class AzureRMLoadBalancerFrontendIPConfigurationsFacts(AzureRMModuleBase):
             self.log('Could not get facts for LoadBalancerFrontendIPConfigurations.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

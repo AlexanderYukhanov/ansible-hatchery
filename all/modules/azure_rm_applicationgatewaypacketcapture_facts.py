@@ -52,12 +52,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - ID of the packet capture operation.
+packet_captures:
+    description: A list of dict results where the key is the name of the Packet Capture and the values are the facts for that Packet Capture.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        packetcapture_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - ID of the packet capture operation.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -109,7 +118,7 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.network_watcher_name is not None and
                 self.packet_capture_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['packet_captures'] = self.get()
         return self.results
 
     def get(self):
@@ -129,7 +138,8 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PacketCaptures.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

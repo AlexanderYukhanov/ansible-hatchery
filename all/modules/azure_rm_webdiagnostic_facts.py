@@ -85,6 +85,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+diagnostics:
+    description: A list of dict results where the key is the name of the Diagnostic and the values are the facts for that Diagnostic.
+    returned: always
+    type: complex
+    contains:
+        diagnostic_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -140,27 +149,27 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
                 self.site_name is not None and
                 self.diagnostic_category is not None and
                 self.slot is not None):
-            self.results['ansible_facts']['list_site_analyses_slot'] = self.list_site_analyses_slot()
+            self.results['diagnostics'] = self.list_site_analyses_slot()
         elif (self.resource_group is not None and
               self.site_name is not None and
               self.diagnostic_category is not None and
               self.slot is not None):
-            self.results['ansible_facts']['list_site_detectors_slot'] = self.list_site_detectors_slot()
+            self.results['diagnostics'] = self.list_site_detectors_slot()
         elif (self.resource_group is not None and
               self.site_name is not None and
               self.diagnostic_category is not None):
-            self.results['ansible_facts']['list_site_analyses'] = self.list_site_analyses()
+            self.results['diagnostics'] = self.list_site_analyses()
         elif (self.resource_group is not None and
               self.site_name is not None and
               self.diagnostic_category is not None):
-            self.results['ansible_facts']['list_site_detectors'] = self.list_site_detectors()
+            self.results['diagnostics'] = self.list_site_detectors()
         elif (self.resource_group is not None and
               self.site_name is not None and
               self.slot is not None):
-            self.results['ansible_facts']['list_site_diagnostic_categories_slot'] = self.list_site_diagnostic_categories_slot()
+            self.results['diagnostics'] = self.list_site_diagnostic_categories_slot()
         elif (self.resource_group is not None and
               self.site_name is not None):
-            self.results['ansible_facts']['list_site_diagnostic_categories'] = self.list_site_diagnostic_categories()
+            self.results['diagnostics'] = self.list_site_diagnostic_categories()
         return self.results
 
     def list_site_analyses_slot(self):
@@ -181,9 +190,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -205,9 +214,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -228,9 +237,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -251,9 +260,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -274,9 +283,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -296,9 +305,9 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

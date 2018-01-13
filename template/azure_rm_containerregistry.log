@@ -163,6 +163,7 @@ Sample after properties copied ---
   },
   "adminUserEnabled": true
 }
+  resource name fields: registry_name registry_name name
 ------------------------------- Registry
   list
 ------------------------------- Operation
@@ -285,6 +286,7 @@ Sample after properties copied ---
     "timestamp": "2017-03-01T23:15:37.0707808Z"
   }
 }
+  resource name fields: replication_name replication_name name
 ------------------------------- Replication
   get
   create
@@ -408,4 +410,5 @@ Sample after properties copied ---
   ],
   "provisioningState": "Succeeded"
 }
+  resource name fields: webhook_name webhook_name name
 TWEAK: RENAMING resource_group_name -- A

@@ -54,30 +54,39 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource Id.
+top_level_domains:
+    description: A list of dict results where the key is the name of the Top Level Domain and the values are the facts for that Top Level Domain.
     returned: always
-    type: str
-    sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/providers/Microsoft.DomainRegistration/topLevelDomains/com
-name:
-    description:
-        - Resource Name.
-    returned: always
-    type: str
-    sample: com
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.DomainRegistration/topLevelDomains
-privacy:
-    description:
-        - If <code>true</code>, then the top level domain supports domain privacy; otherwise, <code>false</code>.
-    returned: always
-    type: str
-    sample: True
+    type: complex
+    contains:
+        topleveldomain_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource Id.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/providers/Microsoft.DomainRegistration/topLevelDomains/com
+                name:
+                    description:
+                        - Resource Name.
+                    returned: always
+                    type: str
+                    sample: com
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.DomainRegistration/topLevelDomains
+                privacy:
+                    description:
+                        - If <code>true</code>, then the top level domain supports domain privacy; otherwise, <code>false</code>.
+                    returned: always
+                    type: str
+                    sample: True
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -125,9 +134,9 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.name is not None):
-            self.results['ansible_facts']['list_agreements'] = self.list_agreements()
+            self.results['top_level_domains'] = self.list_agreements()
         elif (self.name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['top_level_domains'] = self.get()
         return self.results
 
     def list_agreements(self):
@@ -145,9 +154,9 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for TopLevelDomains.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -166,7 +175,8 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for TopLevelDomains.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

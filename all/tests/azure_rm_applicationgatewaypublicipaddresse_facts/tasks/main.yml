@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.public_ip_addresses.xxxunknownxxx.id != None
 
 - name: Gather facts Public I P Addresse
   azure_rm_applicationgatewaypublicipaddresse_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.public_ip_addresses.xxxunknownxxx.id != None
 
 - name: Gather facts Public I P Addresse
   azure_rm_applicationgatewaypublicipaddresse_facts:
@@ -29,6 +31,7 @@
   assert:
     that:
       - output.changed == False
+      - output.public_ip_addresses.xxxunknownxxx.id != None
 
 - name: Gather facts Public I P Addresse
   azure_rm_applicationgatewaypublicipaddresse_facts:
@@ -37,3 +40,4 @@
   assert:
     that:
       - output.changed == False
+      - output.public_ip_addresses.xxxunknownxxx.id != None

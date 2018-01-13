@@ -37,6 +37,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+provider:
+    description: A list of dict results where the key is the name of the Provider and the values are the facts for that Provider.
+    returned: always
+    type: complex
+    contains:
+        provider_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -70,7 +79,7 @@ class AzureRMProviderFacts(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-            self.results['ansible_facts']['list_operations'] = self.list_operations()
+            self.results['provider'] = self.list_operations()
         return self.results
 
     def list_operations(self):
@@ -88,9 +97,9 @@ class AzureRMProviderFacts(AzureRMModuleBase):
             self.log('Could not get facts for Provider.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

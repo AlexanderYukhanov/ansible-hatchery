@@ -46,31 +46,40 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - The provider id.
-    returned: always
-    type: str
-    sample: id
-name:
-    description:
-        - The provider name.
-    returned: always
-    type: str
-    sample: name
-type:
-    description:
-        - The provider type.
-    returned: always
-    type: str
-    sample: type
-operations:
-    description:
-        - The provider operations.
+provider_operations_metadata:
+    description: A list of dict results where the key is the name of the Provider Operations Metadata and the values are the facts for that Provider Operations Metadata.
     returned: always
     type: complex
-    sample: operations
     contains:
+        provideroperationsmetadata_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - The provider id.
+                    returned: always
+                    type: str
+                    sample: id
+                name:
+                    description:
+                        - The provider name.
+                    returned: always
+                    type: str
+                    sample: name
+                type:
+                    description:
+                        - The provider type.
+                    returned: always
+                    type: str
+                    sample: type
+                operations:
+                    description:
+                        - The provider operations.
+                    returned: always
+                    type: complex
+                    sample: operations
+                    contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -114,7 +123,7 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.resource_provider_namespace is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['provider_operations_metadata'] = self.get()
         return self.results
 
     def get(self):
@@ -132,7 +141,8 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
             self.log('Could not get facts for ProviderOperationsMetadata.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

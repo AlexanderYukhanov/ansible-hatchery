@@ -54,6 +54,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+:
+    description: A list of dict results where the key is the name of the  and the values are the facts for that .
+    returned: always
+    type: complex
+    contains:
+        _name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -95,10 +104,10 @@ class AzureRMFacts(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-            self.results['ansible_facts']['list_geo_regions'] = self.list_geo_regions()
-            self.results['ansible_facts']['list_premier_add_on_offers'] = self.list_premier_add_on_offers()
-            self.results['ansible_facts']['list_skus'] = self.list_skus()
-            self.results['ansible_facts']['list_source_controls'] = self.list_source_controls()
+            self.results[''] = self.list_geo_regions()
+            self.results[''] = self.list_premier_add_on_offers()
+            self.results[''] = self.list_skus()
+            self.results[''] = self.list_source_controls()
         return self.results
 
     def list_geo_regions(self):
@@ -116,9 +125,9 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -137,9 +146,9 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -158,9 +167,9 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -179,9 +188,9 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

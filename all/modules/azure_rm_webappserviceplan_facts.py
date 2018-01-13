@@ -133,85 +133,94 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource Id.
-    returned: always
-    type: str
-    sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141
-name:
-    description:
-        - Resource Name.
-    returned: always
-    type: str
-    sample: testsf6141
-kind:
-    description:
-        - Kind of resource.
-    returned: always
-    type: str
-    sample: app
-location:
-    description:
-        - Resource Location.
-    returned: always
-    type: str
-    sample: East US
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Web/serverfarms
-status:
-    description:
-        - "App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)"
-    returned: always
-    type: str
-    sample: Ready
-reserved:
-    description:
-        - If Linux app service plan <code>true</code>, <code>false</code> otherwise.
-    returned: always
-    type: str
-    sample: False
-sku:
-    description:
-        -
+app_service_plans:
+    description: A list of dict results where the key is the name of the App Service Plan and the values are the facts for that App Service Plan.
     returned: always
     type: complex
-    sample: sku
     contains:
-        name:
-            description:
-                - Name of the resource SKU.
-            returned: always
-            type: str
-            sample: P1
-        tier:
-            description:
-                - Service tier of the resource SKU.
-            returned: always
-            type: str
-            sample: Premium
-        size:
-            description:
-                - Size specifier of the resource SKU.
-            returned: always
-            type: str
-            sample: P1
-        family:
-            description:
-                - Family code of the resource SKU.
-            returned: always
-            type: str
-            sample: P
-        capacity:
-            description:
-                - Current number of instances assigned to the resource.
-            returned: always
-            type: int
-            sample: 1
+        appserviceplan_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource Id.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141
+                name:
+                    description:
+                        - Resource Name.
+                    returned: always
+                    type: str
+                    sample: testsf6141
+                kind:
+                    description:
+                        - Kind of resource.
+                    returned: always
+                    type: str
+                    sample: app
+                location:
+                    description:
+                        - Resource Location.
+                    returned: always
+                    type: str
+                    sample: East US
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Web/serverfarms
+                status:
+                    description:
+                        - "App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)"
+                    returned: always
+                    type: str
+                    sample: Ready
+                reserved:
+                    description:
+                        - If Linux app service plan <code>true</code>, <code>false</code> otherwise.
+                    returned: always
+                    type: str
+                    sample: False
+                sku:
+                    description:
+                        -
+                    returned: always
+                    type: complex
+                    sample: sku
+                    contains:
+                        name:
+                            description:
+                                - Name of the resource SKU.
+                            returned: always
+                            type: str
+                            sample: P1
+                        tier:
+                            description:
+                                - Service tier of the resource SKU.
+                            returned: always
+                            type: str
+                            sample: Premium
+                        size:
+                            description:
+                                - Size specifier of the resource SKU.
+                            returned: always
+                            type: str
+                            sample: P1
+                        family:
+                            description:
+                                - Family code of the resource SKU.
+                            returned: always
+                            type: str
+                            sample: P
+                        capacity:
+                            description:
+                                - Current number of instances assigned to the resource.
+                            returned: always
+                            type: int
+                            sample: 1
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -284,44 +293,44 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.name is not None):
-            self.results['ansible_facts']['list_web_apps'] = self.list_web_apps()
+            self.results['app_service_plans'] = self.list_web_apps()
         elif (self.resource_group is not None and
               self.name is not None and
               self.namespace_name is not None and
               self.relay_name is not None):
-            self.results['ansible_facts']['list_hybrid_connection_keys'] = self.list_hybrid_connection_keys()
+            self.results['app_service_plans'] = self.list_hybrid_connection_keys()
         elif (self.resource_group is not None and
               self.name is not None and
               self.namespace_name is not None and
               self.relay_name is not None):
-            self.results['ansible_facts']['list_web_apps_by_hybrid_connection'] = self.list_web_apps_by_hybrid_connection()
+            self.results['app_service_plans'] = self.list_web_apps_by_hybrid_connection()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_metrics'] = self.list_metrics()
+            self.results['app_service_plans'] = self.list_metrics()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_usages'] = self.list_usages()
+            self.results['app_service_plans'] = self.list_usages()
         elif (self.resource_group is not None and
               self.name is not None and
               self.vnet_name is not None):
-            self.results['ansible_facts']['list_routes_for_vnet'] = self.list_routes_for_vnet()
+            self.results['app_service_plans'] = self.list_routes_for_vnet()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['app_service_plans'] = self.get()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_capabilities'] = self.list_capabilities()
+            self.results['app_service_plans'] = self.list_capabilities()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_hybrid_connections'] = self.list_hybrid_connections()
+            self.results['app_service_plans'] = self.list_hybrid_connections()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_metric_defintions'] = self.list_metric_defintions()
+            self.results['app_service_plans'] = self.list_metric_defintions()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_vnets'] = self.list_vnets()
+            self.results['app_service_plans'] = self.list_vnets()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
+            self.results['app_service_plans'] = self.list_by_resource_group()
         return self.results
 
     def list_web_apps(self):
@@ -340,9 +349,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -364,9 +373,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -388,9 +397,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -410,9 +419,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -432,9 +441,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -455,9 +464,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -477,7 +486,8 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -497,9 +507,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -519,9 +529,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -541,9 +551,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -563,9 +573,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -584,9 +594,9 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

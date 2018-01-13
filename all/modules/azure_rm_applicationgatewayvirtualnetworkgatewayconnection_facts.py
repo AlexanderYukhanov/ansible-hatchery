@@ -47,12 +47,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+virtual_network_gateway_connections:
+    description: A list of dict results where the key is the name of the Virtual Network Gateway Connection and the values are the facts for that Virtual Network Gateway Connection.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        virtualnetworkgatewayconnection_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -98,7 +107,7 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.virtual_network_gateway_connection_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['virtual_network_gateway_connections'] = self.get()
         return self.results
 
     def get(self):
@@ -117,7 +126,8 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworkGatewayConnections.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

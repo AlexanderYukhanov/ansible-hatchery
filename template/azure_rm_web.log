@@ -25,9 +25,11 @@ Getting example for: create_or_update
 Getting example for: update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: app_service_certificate_order_name certificate_order_name name
 ------------------------------- App Service Certificate Order
   list_operations
   ** CREATING FACT MODULE
+  resource name fields: certificate_registration_provider_name
 ------------------------------- Certificate Registration Provider
   check_availability
   list
@@ -49,6 +51,7 @@ Getting example for: create_or_update
 Getting example for: update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: domain_name domain_name name
 ------------------------------- Domain
   list
   get
@@ -71,9 +74,11 @@ Sample after properties copied ---
   },
   "privacy": true
 }
+  resource name fields: top_level_domain_name  name
 ------------------------------- Top Level Domain
   list_operations
   ** CREATING FACT MODULE
+  resource name fields: domain_registration_provider_name
 ------------------------------- Domain Registration Provider
   list
   list_by_resource_group
@@ -215,6 +220,7 @@ Sample after properties copied ---
   "thumbprint": "FE703D7411A44163B6D32B3AD9B03E175886EBFE",
   "password": "SWsSsd__233$Sdsds#%Sd!"
 }
+  resource name fields: certificate_name resource_group_name name
 ------------------------------- Certificate
   list
 ------------------------------- Deleted Web App
@@ -235,11 +241,13 @@ Sample after properties copied ---
   get_site_detector_slot
   execute_site_detector_slot
   ** CREATING FACT MODULE
+  resource name fields: diagnostic_name site_name site_name
 ------------------------------- Diagnostic
   get_available_stacks
   list_operations
   get_available_stacks_on_prem
   ** CREATING FACT MODULE
+  resource name fields: provider_name
 ------------------------------- Provider
   list
   reset_all_filters
@@ -249,6 +257,7 @@ Sample after properties copied ---
   reset_all_filters_for_web_app
   get_rule_details_by_web_app
   ** CREATING FACT MODULE
+  resource name fields: recommendation_name site_name site_name
 ------------------------------- Recommendation
   get_publishing_user
   update_publishing_user
@@ -265,6 +274,7 @@ Sample after properties copied ---
   validate
   validate_move
   ** CREATING FACT MODULE
+  resource name fields: _name
 -------------------------------
   list
   list_by_resource_group
@@ -583,6 +593,7 @@ Getting example for: create_or_update
 Getting example for: update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: web_app_name web_job_name name
 ------------------------------- Web App
   list
   list_by_resource_group
@@ -629,6 +640,7 @@ Getting example for: create_or_update
 Getting example for: update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: app_service_environment_name worker_pool_name name
 ------------------------------- App Service Environment
   list
   list_by_resource_group
@@ -865,4 +877,5 @@ Sample after properties copied ---
   "targetWorkerSizeId": "0",
   "provisioningState": "Succeeded"
 }
+  resource name fields: app_service_plan_name vnet_name name
 TWEAK: RENAMING resource_group_name -- A

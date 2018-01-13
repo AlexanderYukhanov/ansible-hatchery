@@ -11,3 +11,4 @@
   assert:
     that:
       - output.changed == False
+      - output.load_balancer_frontend_ip_configurations.xxxunknownxxx.id != None

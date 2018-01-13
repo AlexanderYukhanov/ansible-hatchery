@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.certificates.{{ resource_group }}.id != None
 
 - name: Gather facts Certificate
   azure_rm_webcertificate_facts:
@@ -20,3 +21,4 @@
   assert:
     that:
       - output.changed == False
+      - output.certificates.{{ resource_group }}.id != None

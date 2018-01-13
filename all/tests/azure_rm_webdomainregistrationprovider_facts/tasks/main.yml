@@ -10,3 +10,4 @@
   assert:
     that:
       - output.changed == False
+      - output.domain_registration_provider.xxxunknownxxx.id != None

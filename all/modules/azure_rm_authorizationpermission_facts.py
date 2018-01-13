@@ -62,6 +62,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+permissions:
+    description: A list of dict results where the key is the name of the Permission and the values are the facts for that Permission.
+    returned: always
+    type: complex
+    contains:
+        permission_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -121,9 +130,9 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
                 self.parent_resource_path is not None and
                 self.resource_type is not None and
                 self.resource_name is not None):
-            self.results['ansible_facts']['list_for_resource'] = self.list_for_resource()
+            self.results['permissions'] = self.list_for_resource()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_for_resource_group'] = self.list_for_resource_group()
+            self.results['permissions'] = self.list_for_resource_group()
         return self.results
 
     def list_for_resource(self):
@@ -145,9 +154,9 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Permissions.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -166,9 +175,9 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Permissions.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

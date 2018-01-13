@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.diagnostics.xxxunknownxxx.id != None
 
 - name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.diagnostics.xxxunknownxxx.id != None
 
 - name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
@@ -29,6 +31,7 @@
   assert:
     that:
       - output.changed == False
+      - output.diagnostics.xxxunknownxxx.id != None
 
 - name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
@@ -38,6 +41,7 @@
   assert:
     that:
       - output.changed == False
+      - output.diagnostics.xxxunknownxxx.id != None
 
 - name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
@@ -47,6 +51,7 @@
   assert:
     that:
       - output.changed == False
+      - output.diagnostics.xxxunknownxxx.id != None
 
 - name: Gather facts Diagnostic
   azure_rm_webdiagnostic_facts:
@@ -56,3 +61,4 @@
   assert:
     that:
       - output.changed == False
+      - output.diagnostics.xxxunknownxxx.id != None

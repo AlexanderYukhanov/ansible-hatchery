@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.recommendations.xxxunknownxxx.id != None
 
 - name: Gather facts Recommendation
   azure_rm_webrecommendation_facts:
@@ -20,3 +21,4 @@
   assert:
     that:
       - output.changed == False
+      - output.recommendations.xxxunknownxxx.id != None

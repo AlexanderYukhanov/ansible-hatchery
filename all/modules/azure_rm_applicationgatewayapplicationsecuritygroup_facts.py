@@ -48,30 +48,39 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+application_security_groups:
+    description: A list of dict results where the key is the name of the Application Security Group and the values are the facts for that Application Security Group.
     returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/applicationSecurityGroups/test-asg
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: test-asg
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Network/applicationSecurityGroups
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: westus
+    type: complex
+    contains:
+        applicationsecuritygroup_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/applicationSecurityGroups/test-asg
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: test-asg
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Network/applicationSecurityGroups
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: westus
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -115,8 +124,8 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.application_security_group_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
-            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['application_security_groups'] = self.get()
+            self.results['application_security_groups'] = self.list_all()
         return self.results
 
     def get(self):
@@ -135,7 +144,8 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationSecurityGroups.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -154,9 +164,9 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationSecurityGroups.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

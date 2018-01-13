@@ -17,6 +17,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: application_gateway_name application_gateway_name name
 ------------------------------- Application Gateway
   delete
   get
@@ -76,6 +77,7 @@ Sample after properties copied ---
   "provisioningState": "Succeeded",
   "resourceGuid": "00000000-0000-0000-0000-000000000000"
 }
+  resource name fields: application_security_group_name application_security_group_name name
 ------------------------------- Application Security Group
   check_dns_name_availability
 -------------------------------
@@ -90,6 +92,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: express_route_circuit_authorization_name authorization_name name
 ------------------------------- Express Route Circuit Authorization
   delete
   get
@@ -100,6 +103,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: express_route_circuit_peering_name peering_name name
 ------------------------------- Express Route Circuit Peering
   delete
   get
@@ -117,6 +121,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: express_route_circuit_name peering_name name
 ------------------------------- Express Route Circuit
   list
 ------------------------------- Express Route Service Provider
@@ -788,6 +793,7 @@ Sample after properties copied ---
   "outboundNatRules": [],
   "inboundNatPools": []
 }
+  resource name fields: load_balancer_name load_balancer_name name
 ------------------------------- Load Balancer
   list
   get
@@ -826,6 +832,7 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: load_balancer_backend_address_pool_name backend_address_pool_name name
 ------------------------------- Load Balancer Backend Address Pool
   list
   get
@@ -874,6 +881,7 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: load_balancer_frontend_ip_configuration_name frontend_ip_configuration_name name
 ------------------------------- Load Balancer Frontend I P Configuration
   list
   delete
@@ -986,6 +994,7 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1/virtualMachines/1/networkInterfaces/nic1/ipConfigurations/ip1"
   }
 }
+  resource name fields: inbound_nat_rule_name inbound_nat_rule_name name
 ------------------------------- Inbound Nat Rule
   list
   get
@@ -1034,6 +1043,7 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1"
   }
 }
+  resource name fields: load_balancer_load_balancing_rule_name load_balancing_rule_name name
 ------------------------------- Load Balancer Load Balancing Rule
   list
 ------------------------------- Load Balancer Network Interface
@@ -1074,6 +1084,7 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: load_balancer_probe_name probe_name name
 ------------------------------- Load Balancer Probe
   delete
   get
@@ -1321,6 +1332,7 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachines/vm1"
   }
 }
+  resource name fields: network_interface_name network_interface_name name
 ------------------------------- Network Interface
   list
   get
@@ -1371,6 +1383,7 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: network_interface_ip_configuration_name ip_configuration_name name
 ------------------------------- Network Interface I P Configuration
   list
 ------------------------------- Network Interface Load Balancer
@@ -2085,6 +2098,7 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: network_security_group_name network_security_group_name name
 ------------------------------- Network Security Group
   delete
   get
@@ -2179,6 +2193,7 @@ Sample after properties copied ---
   "priority": "130",
   "direction": "Inbound"
 }
+  resource name fields: security_rule_name security_rule_name name
 ------------------------------- Security Rule
   list
   get
@@ -2222,6 +2237,7 @@ Sample after properties copied ---
   "sourceAddressPrefixes": [],
   "destinationAddressPrefixes": []
 }
+  resource name fields: default_security_rule_name default_security_rule_name name
 ------------------------------- Default Security Rule
   create_or_update
   get
@@ -2245,6 +2261,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: network_watcher_name network_watcher_name name
 ------------------------------- Network Watcher
   create
   get
@@ -2257,6 +2274,7 @@ Getting example for: get
 Getting example for: create
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: packet_capture_name packet_capture_name name
 ------------------------------- Packet Capture
   list
 ------------------------------- Operation
@@ -2355,6 +2373,7 @@ Sample after properties copied ---
     "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/networkInterfaces/testDNS649/ipConfigurations/ipconfig1"
   }
 }
+  resource name fields: public_ip_addresse_name public_ip_address_name name
 ------------------------------- Public I P Addresse
   delete
   get
@@ -2574,6 +2593,7 @@ Sample after properties copied ---
   ],
   "peerings": []
 }
+  resource name fields: route_filter_name route_filter_name name
 ------------------------------- Route Filter
   delete
   get
@@ -2698,6 +2718,7 @@ Sample after properties copied ---
     "12076:5040"
   ]
 }
+  resource name fields: route_filter_rule_name rule_name name
 ------------------------------- Route Filter Rule
   delete
   get
@@ -2804,6 +2825,7 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: route_table_name route_table_name name
 ------------------------------- Route Table
   delete
   get
@@ -2862,6 +2884,7 @@ Sample after properties copied ---
   "addressPrefix": "10.0.3.0/24",
   "nextHopType": "Internet"
 }
+  resource name fields: route_name route_name name
 ------------------------------- Route
   list
 ------------------------------- Bgp Service Community
@@ -3020,6 +3043,7 @@ Sample after properties copied ---
   ],
   "virtualNetworkPeerings": []
 }
+  resource name fields: virtual_network_name virtual_network_name name
 ------------------------------- Virtual Network
   delete
   get
@@ -3072,6 +3096,7 @@ Sample after properties copied ---
   "addressPrefix": "10.0.0.0/16",
   "provisioningState": "Succeeded"
 }
+  resource name fields: subnet_name subnet_name name
 ------------------------------- Subnet
   delete
   get
@@ -3196,6 +3221,7 @@ Sample after properties copied ---
   "peeringState": "Initiated",
   "provisioningState": "Succeeded"
 }
+  resource name fields: virtual_network_peering_name virtual_network_peering_name name
 ------------------------------- Virtual Network Peering
   create_or_update
   get
@@ -3217,6 +3243,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: virtual_network_gateway_name virtual_network_gateway_name name
 ------------------------------- Virtual Network Gateway
   create_or_update
   get
@@ -3231,6 +3258,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: virtual_network_gateway_connection_name virtual_network_gateway_connection_name name
 ------------------------------- Virtual Network Gateway Connection
   create_or_update
   get
@@ -3242,6 +3270,7 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
+  resource name fields: local_network_gateway_name local_network_gateway_name name
 TWEAK: RENAMING resource_group_name -- A
 TWEAK: RENAMING application_gateway_name -- A
 TWEAK: RENAMING application_gateway_name -- A

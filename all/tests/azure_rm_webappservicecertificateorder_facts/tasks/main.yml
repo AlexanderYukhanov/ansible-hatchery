@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_certificate_orders.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Certificate Order
   azure_rm_webappservicecertificateorder_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_certificate_orders.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Certificate Order
   azure_rm_webappservicecertificateorder_facts:
@@ -29,3 +31,4 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_certificate_orders.xxxunknownxxx.id != None

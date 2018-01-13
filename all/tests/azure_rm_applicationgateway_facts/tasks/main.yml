@@ -12,6 +12,7 @@
   assert:
     that:
       - output.changed == False
+      - output.application_gateways.appgateway{{ rpfx }}.id != None
 
 - name: Gather facts Application Gateway
   azure_rm_applicationgateway_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.application_gateways.appgateway{{ rpfx }}.id != None
 
 - name: Gather facts Application Gateway
   azure_rm_applicationgateway_facts:
@@ -28,6 +30,7 @@
   assert:
     that:
       - output.changed == False
+      - output.application_gateways.appgateway{{ rpfx }}.id != None
 
 - name: Gather facts Application Gateway
   azure_rm_applicationgateway_facts:
@@ -36,6 +39,7 @@
   assert:
     that:
       - output.changed == False
+      - output.application_gateways.appgateway{{ rpfx }}.id != None
 
 - name: Gather facts Application Gateway
   azure_rm_applicationgateway_facts:
@@ -44,3 +48,4 @@
   assert:
     that:
       - output.changed == False
+      - output.application_gateways.appgateway{{ rpfx }}.id != None

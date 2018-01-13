@@ -50,48 +50,57 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource Id.
+certificates:
+    description: A list of dict results where the key is the name of the Certificate and the values are the facts for that Certificate.
     returned: always
-    type: str
-    sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282
-name:
-    description:
-        - Resource Name.
-    returned: always
-    type: str
-    sample: testc6282
-location:
-    description:
-        - Resource Location.
-    returned: always
-    type: str
-    sample: East US
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Web/certificates
-issuer:
-    description:
-        - Certificate issuer.
-    returned: always
-    type: str
-    sample: CACert
-password:
-    description:
-        - Certificate password.
-    returned: always
-    type: str
-    sample: SWsSsd__233$Sdsds#%Sd!
-thumbprint:
-    description:
-        - Certificate thumbprint.
-    returned: always
-    type: str
-    sample: FE703D7411A44163B6D32B3AD9B03E175886EBFE
+    type: complex
+    contains:
+        certificate_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource Id.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/certificates/testc6282
+                name:
+                    description:
+                        - Resource Name.
+                    returned: always
+                    type: str
+                    sample: testc6282
+                location:
+                    description:
+                        - Resource Location.
+                    returned: always
+                    type: str
+                    sample: East US
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Web/certificates
+                issuer:
+                    description:
+                        - Certificate issuer.
+                    returned: always
+                    type: str
+                    sample: CACert
+                password:
+                    description:
+                        - Certificate password.
+                    returned: always
+                    type: str
+                    sample: SWsSsd__233$Sdsds#%Sd!
+                thumbprint:
+                    description:
+                        - Certificate thumbprint.
+                    returned: always
+                    type: str
+                    sample: FE703D7411A44163B6D32B3AD9B03E175886EBFE
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -136,9 +145,9 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['certificates'] = self.get()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
+            self.results['certificates'] = self.list_by_resource_group()
         return self.results
 
     def get(self):
@@ -157,7 +166,8 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
             self.log('Could not get facts for Certificates.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -176,9 +186,9 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
             self.log('Could not get facts for Certificates.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

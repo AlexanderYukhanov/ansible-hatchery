@@ -75,12 +75,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+express_route_circuits:
+    description: A list of dict results where the key is the name of the Express Route Circuit and the values are the facts for that Express Route Circuit.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        expressroutecircuit_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -134,21 +143,21 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
                 self.circuit_name is not None and
                 self.peering_name is not None and
                 self.device_path is not None):
-            self.results['ansible_facts']['list_arp_table'] = self.list_arp_table()
+            self.results['express_route_circuits'] = self.list_arp_table()
         elif (self.resource_group is not None and
               self.circuit_name is not None and
               self.peering_name is not None and
               self.device_path is not None):
-            self.results['ansible_facts']['list_routes_table'] = self.list_routes_table()
+            self.results['express_route_circuits'] = self.list_routes_table()
         elif (self.resource_group is not None and
               self.circuit_name is not None and
               self.peering_name is not None and
               self.device_path is not None):
-            self.results['ansible_facts']['list_routes_table_summary'] = self.list_routes_table_summary()
+            self.results['express_route_circuits'] = self.list_routes_table_summary()
         elif (self.resource_group is not None and
               self.circuit_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
-            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['express_route_circuits'] = self.get()
+            self.results['express_route_circuits'] = self.list_all()
         return self.results
 
     def list_arp_table(self):
@@ -169,9 +178,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -193,9 +202,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -217,9 +226,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -239,7 +248,8 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -258,9 +268,9 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

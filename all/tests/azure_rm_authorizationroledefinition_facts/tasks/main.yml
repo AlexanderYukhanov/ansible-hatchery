@@ -10,3 +10,4 @@
   assert:
     that:
       - output.changed == False
+      - output.role_definitions.xxxunknownxxx.id != None

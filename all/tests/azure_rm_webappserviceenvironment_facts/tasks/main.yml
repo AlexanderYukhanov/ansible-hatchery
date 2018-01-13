@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -29,6 +31,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -38,6 +41,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -47,6 +51,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -56,6 +61,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -65,6 +71,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -74,6 +81,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -83,6 +91,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -92,6 +101,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -101,6 +111,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -110,6 +121,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -119,6 +131,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -128,6 +141,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -137,6 +151,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -146,6 +161,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -155,6 +171,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -164,6 +181,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -173,6 +191,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -182,6 +201,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -191,6 +211,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -200,6 +221,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -209,6 +231,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -218,6 +241,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -227,3 +251,4 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.xxxunknownxxx.id != None

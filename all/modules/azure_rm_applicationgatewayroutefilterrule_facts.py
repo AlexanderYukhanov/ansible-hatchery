@@ -56,36 +56,45 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+route_filter_rules:
+    description: A list of dict results where the key is the name of the Route Filter Rule and the values are the facts for that Route Filter Rule.
     returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName
-access:
-    description:
-        - "The access type of the rule. Valid values are: C(Allow), C(Deny). Possible values include: C(Allow), C(Deny)"
-    returned: always
-    type: str
-    sample: Allow
-communities:
-    description:
-        - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
-    returned: always
-    type: str
-    sample: "[\n\n  '12076:5030',\n\n  '12076:5040'\n\n]"
-name:
-    description:
-        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
-    returned: always
-    type: str
-    sample: ruleName
-etag:
-    description:
-        - A unique read-only string that changes whenever the resource is updated.
-    returned: always
-    type: str
-    sample: w/\00000000-0000-0000-0000-000000000000\
+    type: complex
+    contains:
+        routefilterrule_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName
+                access:
+                    description:
+                        - "The access type of the rule. Valid values are: C(Allow), C(Deny). Possible values include: C(Allow), C(Deny)"
+                    returned: always
+                    type: str
+                    sample: Allow
+                communities:
+                    description:
+                        - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
+                    returned: always
+                    type: str
+                    sample: "[\n\n  '12076:5030',\n\n  '12076:5040'\n\n]"
+                name:
+                    description:
+                        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                    returned: always
+                    type: str
+                    sample: ruleName
+                etag:
+                    description:
+                        - A unique read-only string that changes whenever the resource is updated.
+                    returned: always
+                    type: str
+                    sample: w/\00000000-0000-0000-0000-000000000000\
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -136,10 +145,10 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.route_filter_name is not None and
                 self.rule_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['route_filter_rules'] = self.get()
         elif (self.resource_group is not None and
               self.route_filter_name is not None):
-            self.results['ansible_facts']['list_by_route_filter'] = self.list_by_route_filter()
+            self.results['route_filter_rules'] = self.list_by_route_filter()
         return self.results
 
     def get(self):
@@ -159,7 +168,8 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RouteFilterRules.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -179,9 +189,9 @@ class AzureRMRouteFilterRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RouteFilterRules.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

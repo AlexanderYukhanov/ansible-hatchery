@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.role_assignments.xxxunknownxxx.id != None
 
 - name: Gather facts Role Assignment
   azure_rm_authorizationroleassignment_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.role_assignments.xxxunknownxxx.id != None
 
 - name: Gather facts Role Assignment
   azure_rm_authorizationroleassignment_facts:
@@ -28,6 +30,7 @@
   assert:
     that:
       - output.changed == False
+      - output.role_assignments.xxxunknownxxx.id != None
 
 - name: Gather facts Role Assignment
   azure_rm_authorizationroleassignment_facts:
@@ -36,3 +39,4 @@
   assert:
     that:
       - output.changed == False
+      - output.role_assignments.xxxunknownxxx.id != None

@@ -52,43 +52,52 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
-    returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/loadBalancingRules/rule1
-probe:
-    description:
-        - The reference of the load balancer probe used by the load balancing rule.
+load_balancer_load_balancing_rules:
+    description: A list of dict results where the key is the name of the Load Balancer Load Balancing Rule and the values are the facts for that Load Balancer Load Balancing Rule.
     returned: always
     type: complex
-    sample: probe
     contains:
-        id:
-            description:
-                - Resource ID.
-            returned: always
-            type: str
-            sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1
-protocol:
-    description:
-        - "Possible values include: C(Udp), C(Tcp), C(All)"
-    returned: always
-    type: str
-    sample: Tcp
-name:
-    description:
-        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
-    returned: always
-    type: str
-    sample: rule1
-etag:
-    description:
-        - A unique read-only string that changes whenever the resource is updated.
-    returned: always
-    type: str
-    sample: "W/\'00000000-0000-0000-0000-000000000000\'"
+        loadbalancerloadbalancingrule_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/loadBalancingRules/rule1
+                probe:
+                    description:
+                        - The reference of the load balancer probe used by the load balancing rule.
+                    returned: always
+                    type: complex
+                    sample: probe
+                    contains:
+                        id:
+                            description:
+                                - Resource ID.
+                            returned: always
+                            type: str
+                            sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1
+                protocol:
+                    description:
+                        - "Possible values include: C(Udp), C(Tcp), C(All)"
+                    returned: always
+                    type: str
+                    sample: Tcp
+                name:
+                    description:
+                        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                    returned: always
+                    type: str
+                    sample: rule1
+                etag:
+                    description:
+                        - A unique read-only string that changes whenever the resource is updated.
+                    returned: always
+                    type: str
+                    sample: "W/\'00000000-0000-0000-0000-000000000000\'"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -140,7 +149,7 @@ class AzureRMLoadBalancerLoadBalancingRulesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.load_balancer_name is not None and
                 self.load_balancing_rule_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['load_balancer_load_balancing_rules'] = self.get()
         return self.results
 
     def get(self):
@@ -160,7 +169,8 @@ class AzureRMLoadBalancerLoadBalancingRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for LoadBalancerLoadBalancingRules.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

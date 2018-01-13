@@ -54,50 +54,59 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
-    returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: filterName
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsofot.Network/routeFilters
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: West US
-rules:
-    description:
-        - Collection of RouteFilterRules contained within a route filter.
+route_filters:
+    description: A list of dict results where the key is the name of the Route Filter and the values are the facts for that Route Filter.
     returned: always
     type: complex
-    sample: rules
     contains:
-peerings:
-    description:
-        - A collection of references to express route circuit peerings.
-    returned: always
-    type: complex
-    sample: peerings
-    contains:
-etag:
-    description:
-        - Gets a unique read-only string that changes whenever the resource is updated.
-    returned: always
-    type: str
-    sample: w/\00000000-0000-0000-0000-000000000000\
+        routefilter_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: filterName
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsofot.Network/routeFilters
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: West US
+                rules:
+                    description:
+                        - Collection of RouteFilterRules contained within a route filter.
+                    returned: always
+                    type: complex
+                    sample: rules
+                    contains:
+                peerings:
+                    description:
+                        - A collection of references to express route circuit peerings.
+                    returned: always
+                    type: complex
+                    sample: peerings
+                    contains:
+                etag:
+                    description:
+                        - Gets a unique read-only string that changes whenever the resource is updated.
+                    returned: always
+                    type: str
+                    sample: w/\00000000-0000-0000-0000-000000000000\
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -146,9 +155,9 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.route_filter_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['route_filters'] = self.get()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
+            self.results['route_filters'] = self.list_by_resource_group()
         return self.results
 
     def get(self):
@@ -167,7 +176,8 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
             self.log('Could not get facts for RouteFilters.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -186,9 +196,9 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
             self.log('Could not get facts for RouteFilters.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

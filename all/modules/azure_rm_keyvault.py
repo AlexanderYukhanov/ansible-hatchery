@@ -313,11 +313,10 @@ class AzureRMVaults(AzureRMModuleBase):
 
     def adjust_parameters(self):
         if self.parameters.get('access_policies', None) is not None:
-            # option keys must go to dictionary :permissions as keys
-            # option secrets must go to dictionary :permissions as secrets
-            # option certificates must go to dictionary :permissions as certificates
-            # option storage must go to dictionary :permissions as storage
-            return
+        # option keys must go to dictionary :permissions as keys
+        # option secrets must go to dictionary :permissions as secrets
+        # option certificates must go to dictionary :permissions as certificates
+        # option storage must go to dictionary :permissions as storage
 
     def rename_key(self, d, old_name, new_name):
         old_value = d.get(old_name, None)

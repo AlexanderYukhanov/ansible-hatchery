@@ -77,30 +77,39 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+public_ip_addresses:
+    description: A list of dict results where the key is the name of the Public I P Addresse and the values are the facts for that Public I P Addresse.
     returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/testDNS-ip
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: testDNS-ip
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Network/publicIPAddresses
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: westus
+    type: complex
+    contains:
+        publicipaddresse_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/publicIPAddresses/testDNS-ip
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: testDNS-ip
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Network/publicIPAddresses
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: westus
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -167,14 +176,14 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
                 self.virtualmachine_index is not None and
                 self.network_interface_name is not None and
                 self.ip_configuration_name is not None):
-            self.results['ansible_facts']['list_virtual_machine_scale_set_vm_public_ip_addresses'] = self.list_virtual_machine_scale_set_vm_public_ip_addresses()
+            self.results['public_ip_addresses'] = self.list_virtual_machine_scale_set_vm_public_ip_addresses()
         elif (self.resource_group is not None and
               self.public_ip_address_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['public_ip_addresses'] = self.get()
         elif (self.resource_group is not None and
               self.virtual_machine_scale_set_name is not None):
-            self.results['ansible_facts']['list_virtual_machine_scale_set_public_ip_addresses'] = self.list_virtual_machine_scale_set_public_ip_addresses()
-            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['public_ip_addresses'] = self.list_virtual_machine_scale_set_public_ip_addresses()
+            self.results['public_ip_addresses'] = self.list_all()
         return self.results
 
     def list_virtual_machine_scale_set_vm_public_ip_addresses(self):
@@ -196,9 +205,9 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PublicIPAddresses.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -218,7 +227,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PublicIPAddresses.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -238,9 +248,9 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PublicIPAddresses.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -259,9 +269,9 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PublicIPAddresses.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

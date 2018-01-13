@@ -214,18 +214,27 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource Id.
+app_service_environments:
+    description: A list of dict results where the key is the name of the App Service Environment and the values are the facts for that App Service Environment.
     returned: always
-    type: str
-    sample: id
-status:
-    description:
-        - "Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)"
-    returned: always
-    type: str
-    sample: status
+    type: complex
+    contains:
+        appserviceenvironment_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource Id.
+                    returned: always
+                    type: str
+                    sample: id
+                status:
+                    description:
+                        - "Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)"
+                    returned: always
+                    type: str
+                    sample: status
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -302,88 +311,88 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.name is not None):
-            self.results['ansible_facts']['list_multi_role_metrics'] = self.list_multi_role_metrics()
+            self.results['app_service_environments'] = self.list_multi_role_metrics()
         elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None and
               self.instance is not None):
-            self.results['ansible_facts']['list_worker_pool_instance_metrics'] = self.list_worker_pool_instance_metrics()
+            self.results['app_service_environments'] = self.list_worker_pool_instance_metrics()
         elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
-            self.results['ansible_facts']['list_web_worker_metrics'] = self.list_web_worker_metrics()
+            self.results['app_service_environments'] = self.list_web_worker_metrics()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_metrics'] = self.list_metrics()
+            self.results['app_service_environments'] = self.list_metrics()
         elif (self.resource_group is not None and
               self.name is not None and
               self.instance is not None):
-            self.results['ansible_facts']['list_multi_role_pool_instance_metrics'] = self.list_multi_role_pool_instance_metrics()
+            self.results['app_service_environments'] = self.list_multi_role_pool_instance_metrics()
         elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None and
               self.instance is not None):
-            self.results['ansible_facts']['list_worker_pool_instance_metric_definitions'] = self.list_worker_pool_instance_metric_definitions()
+            self.results['app_service_environments'] = self.list_worker_pool_instance_metric_definitions()
         elif (self.resource_group is not None and
               self.name is not None and
               self.instance is not None):
-            self.results['ansible_facts']['list_multi_role_pool_instance_metric_definitions'] = self.list_multi_role_pool_instance_metric_definitions()
+            self.results['app_service_environments'] = self.list_multi_role_pool_instance_metric_definitions()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_web_apps'] = self.list_web_apps()
+            self.results['app_service_environments'] = self.list_web_apps()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_usages'] = self.list_usages()
+            self.results['app_service_environments'] = self.list_usages()
         elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
-            self.results['ansible_facts']['list_web_worker_metric_definitions'] = self.list_web_worker_metric_definitions()
+            self.results['app_service_environments'] = self.list_web_worker_metric_definitions()
         elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
-            self.results['ansible_facts']['list_worker_pool_skus'] = self.list_worker_pool_skus()
+            self.results['app_service_environments'] = self.list_worker_pool_skus()
         elif (self.resource_group is not None and
               self.name is not None and
               self.worker_pool_name is not None):
-            self.results['ansible_facts']['list_web_worker_usages'] = self.list_web_worker_usages()
+            self.results['app_service_environments'] = self.list_web_worker_usages()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['app_service_environments'] = self.get()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_capacities'] = self.list_capacities()
+            self.results['app_service_environments'] = self.list_capacities()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_vips'] = self.list_vips()
+            self.results['app_service_environments'] = self.list_vips()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_diagnostics'] = self.list_diagnostics()
+            self.results['app_service_environments'] = self.list_diagnostics()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_metric_definitions'] = self.list_metric_definitions()
+            self.results['app_service_environments'] = self.list_metric_definitions()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_multi_role_pools'] = self.list_multi_role_pools()
+            self.results['app_service_environments'] = self.list_multi_role_pools()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_multi_role_metric_definitions'] = self.list_multi_role_metric_definitions()
+            self.results['app_service_environments'] = self.list_multi_role_metric_definitions()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_multi_role_pool_skus'] = self.list_multi_role_pool_skus()
+            self.results['app_service_environments'] = self.list_multi_role_pool_skus()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_multi_role_usages'] = self.list_multi_role_usages()
+            self.results['app_service_environments'] = self.list_multi_role_usages()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_operations'] = self.list_operations()
+            self.results['app_service_environments'] = self.list_operations()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_app_service_plans'] = self.list_app_service_plans()
+            self.results['app_service_environments'] = self.list_app_service_plans()
         elif (self.resource_group is not None and
               self.name is not None):
-            self.results['ansible_facts']['list_worker_pools'] = self.list_worker_pools()
+            self.results['app_service_environments'] = self.list_worker_pools()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
+            self.results['app_service_environments'] = self.list_by_resource_group()
         return self.results
 
     def list_multi_role_metrics(self):
@@ -402,9 +411,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -426,9 +435,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -449,9 +458,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -471,9 +480,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -494,9 +503,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -518,9 +527,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -541,9 +550,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -563,9 +572,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -585,9 +594,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -608,9 +617,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -631,9 +640,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -654,9 +663,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -676,7 +685,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -696,9 +706,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -718,9 +728,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -740,9 +750,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -762,9 +772,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -784,9 +794,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -806,9 +816,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -828,9 +838,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -850,9 +860,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -872,9 +882,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -894,9 +904,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -916,9 +926,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -937,9 +947,9 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceEnvironments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

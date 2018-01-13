@@ -57,12 +57,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+network_watchers:
+    description: A list of dict results where the key is the name of the Network Watcher and the values are the facts for that Network Watcher.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        networkwatcher_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -111,11 +120,11 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.network_watcher_name is not None and
                 self.parameters is not None):
-            self.results['ansible_facts']['list_available_providers'] = self.list_available_providers()
+            self.results['network_watchers'] = self.list_available_providers()
         elif (self.resource_group is not None and
               self.network_watcher_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
-            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['network_watchers'] = self.get()
+            self.results['network_watchers'] = self.list_all()
         return self.results
 
     def list_available_providers(self):
@@ -135,9 +144,9 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkWatchers.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -157,7 +166,8 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkWatchers.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -176,9 +186,9 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkWatchers.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

@@ -56,18 +56,27 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+subnets:
+    description: A list of dict results where the key is the name of the Subnet and the values are the facts for that Subnet.
     returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1
-name:
-    description:
-        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
-    returned: always
-    type: str
-    sample: subnet1
+    type: complex
+    contains:
+        subnet_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1
+                name:
+                    description:
+                        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                    returned: always
+                    type: str
+                    sample: subnet1
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -123,7 +132,7 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.virtual_network_name is not None and
                 self.subnet_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['subnets'] = self.get()
         return self.results
 
     def get(self):
@@ -143,7 +152,8 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Subnets.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

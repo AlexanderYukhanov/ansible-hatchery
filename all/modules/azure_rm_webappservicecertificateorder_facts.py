@@ -55,19 +55,28 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource Id.
+app_service_certificate_orders:
+    description: A list of dict results where the key is the name of the App Service Certificate Order and the values are the facts for that App Service Certificate Order.
     returned: always
-    type: str
-    sample: id
-status:
-    description:
-        - "Current order status. Possible values include: C(Pendingissuance), C(Issued), C(Revoked), C(Canceled), C(Denied), C(Pendingrevocation), C(PendingR
-          ekey), C(Unused), C(Expired), C(NotSubmitted)"
-    returned: always
-    type: str
-    sample: status
+    type: complex
+    contains:
+        appservicecertificateorder_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource Id.
+                    returned: always
+                    type: str
+                    sample: id
+                status:
+                    description:
+                        - "Current order status. Possible values include: C(Pendingissuance), C(Issued), C(Revoked), C(Canceled), C(Denied), C(Pendingrevocat
+                          ion), C(PendingRekey), C(Unused), C(Expired), C(NotSubmitted)"
+                    returned: always
+                    type: str
+                    sample: status
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -112,12 +121,12 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.certificate_order_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['app_service_certificate_orders'] = self.get()
         elif (self.resource_group is not None and
               self.certificate_order_name is not None):
-            self.results['ansible_facts']['list_certificates'] = self.list_certificates()
+            self.results['app_service_certificate_orders'] = self.list_certificates()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
+            self.results['app_service_certificate_orders'] = self.list_by_resource_group()
         return self.results
 
     def get(self):
@@ -136,7 +145,8 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceCertificateOrders.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -156,9 +166,9 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceCertificateOrders.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -177,9 +187,9 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceCertificateOrders.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

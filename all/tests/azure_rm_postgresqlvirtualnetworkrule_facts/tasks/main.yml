@@ -29,6 +29,7 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_network_rules.xxxunknownxxx.id != None
 
 - name: Gather facts PostgreSQL Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule_facts:
@@ -39,6 +40,7 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_network_rules.xxxunknownxxx.id != None
 
 - name: Delete instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:

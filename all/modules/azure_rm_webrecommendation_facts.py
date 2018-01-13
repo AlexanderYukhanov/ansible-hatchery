@@ -62,6 +62,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+recommendations:
+    description: A list of dict results where the key is the name of the Recommendation and the values are the facts for that Recommendation.
+    returned: always
+    type: complex
+    contains:
+        recommendation_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -115,10 +124,10 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.site_name is not None):
-            self.results['ansible_facts']['list_recommended_rules_for_web_app'] = self.list_recommended_rules_for_web_app()
+            self.results['recommendations'] = self.list_recommended_rules_for_web_app()
         elif (self.resource_group is not None and
               self.site_name is not None):
-            self.results['ansible_facts']['list_history_for_web_app'] = self.list_history_for_web_app()
+            self.results['recommendations'] = self.list_history_for_web_app()
         return self.results
 
     def list_recommended_rules_for_web_app(self):
@@ -137,9 +146,9 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Recommendations.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -159,9 +168,9 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Recommendations.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

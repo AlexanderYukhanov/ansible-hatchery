@@ -65,12 +65,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource Id.
+domains:
+    description: A list of dict results where the key is the name of the Domain and the values are the facts for that Domain.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        domain_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource Id.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -120,15 +129,15 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-            self.results['ansible_facts']['list_recommendations'] = self.list_recommendations()
+            self.results['domains'] = self.list_recommendations()
         elif (self.resource_group is not None and
               self.domain_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['domains'] = self.get()
         elif (self.resource_group is not None and
               self.domain_name is not None):
-            self.results['ansible_facts']['list_ownership_identifiers'] = self.list_ownership_identifiers()
+            self.results['domains'] = self.list_ownership_identifiers()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
+            self.results['domains'] = self.list_by_resource_group()
         return self.results
 
     def list_recommendations(self):
@@ -146,9 +155,9 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -168,7 +177,8 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -188,9 +198,9 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -209,9 +219,9 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

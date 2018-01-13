@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -29,6 +31,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -38,6 +41,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -47,6 +51,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -56,6 +61,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -65,6 +71,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -74,6 +81,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -83,6 +91,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -92,6 +101,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -101,6 +111,7 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -110,3 +121,4 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.xxxunknownxxx.id != None

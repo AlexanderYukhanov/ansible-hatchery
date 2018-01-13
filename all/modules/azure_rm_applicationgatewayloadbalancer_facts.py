@@ -52,50 +52,59 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
-    returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: lb
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Network/loadBalancers
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: westus
-sku:
-    description:
-        - The load balancer SKU.
+load_balancers:
+    description: A list of dict results where the key is the name of the Load Balancer and the values are the facts for that Load Balancer.
     returned: always
     type: complex
-    sample: sku
     contains:
-        name:
-            description:
-                - "Name of a load balancer SKU. Possible values include: C(Basic), C(Standard)"
-            returned: always
-            type: str
-            sample: Basic
-probes:
-    description:
-        - Collection of probe objects used in the load balancer
-    returned: always
-    type: complex
-    sample: probes
-    contains:
+        loadbalancer_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: lb
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Network/loadBalancers
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: westus
+                sku:
+                    description:
+                        - The load balancer SKU.
+                    returned: always
+                    type: complex
+                    sample: sku
+                    contains:
+                        name:
+                            description:
+                                - "Name of a load balancer SKU. Possible values include: C(Basic), C(Standard)"
+                            returned: always
+                            type: str
+                            sample: Basic
+                probes:
+                    description:
+                        - Collection of probe objects used in the load balancer
+                    returned: always
+                    type: complex
+                    sample: probes
+                    contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -143,8 +152,8 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.load_balancer_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
-            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['load_balancers'] = self.get()
+            self.results['load_balancers'] = self.list_all()
         return self.results
 
     def get(self):
@@ -163,7 +172,8 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
             self.log('Could not get facts for LoadBalancers.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -182,9 +192,9 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
             self.log('Could not get facts for LoadBalancers.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

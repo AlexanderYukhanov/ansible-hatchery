@@ -10,6 +10,7 @@
   assert:
     that:
       - output.changed == False
+      - output..xxxunknownxxx.id != None
 
 - name: Gather facts
   azure_rm_web_facts:
@@ -18,6 +19,7 @@
   assert:
     that:
       - output.changed == False
+      - output..xxxunknownxxx.id != None
 
 - name: Gather facts
   azure_rm_web_facts:
@@ -26,6 +28,7 @@
   assert:
     that:
       - output.changed == False
+      - output..xxxunknownxxx.id != None
 
 - name: Gather facts
   azure_rm_web_facts:
@@ -34,3 +37,4 @@
   assert:
     that:
       - output.changed == False
+      - output..xxxunknownxxx.id != None

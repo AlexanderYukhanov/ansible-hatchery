@@ -57,37 +57,46 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
-    returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet
-name:
-    description:
-        - Resource name.
-    returned: always
-    type: str
-    sample: test-vnet
-type:
-    description:
-        - Resource type.
-    returned: always
-    type: str
-    sample: Microsoft.Network/virtualNetworks
-location:
-    description:
-        - Resource location.
-    returned: always
-    type: str
-    sample: westus
-subnets:
-    description:
-        - A list of subnets in a Virtual Network.
+virtual_networks:
+    description: A list of dict results where the key is the name of the Virtual Network and the values are the facts for that Virtual Network.
     returned: always
     type: complex
-    sample: subnets
     contains:
+        virtualnetwork_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet
+                name:
+                    description:
+                        - Resource name.
+                    returned: always
+                    type: str
+                    sample: test-vnet
+                type:
+                    description:
+                        - Resource type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Network/virtualNetworks
+                location:
+                    description:
+                        - Resource location.
+                    returned: always
+                    type: str
+                    sample: westus
+                subnets:
+                    description:
+                        - A list of subnets in a Virtual Network.
+                    returned: always
+                    type: complex
+                    sample: subnets
+                    contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -135,11 +144,11 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.virtual_network_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['virtual_networks'] = self.get()
         elif (self.resource_group is not None and
               self.virtual_network_name is not None):
-            self.results['ansible_facts']['list_usage'] = self.list_usage()
-            self.results['ansible_facts']['list_all'] = self.list_all()
+            self.results['virtual_networks'] = self.list_usage()
+            self.results['virtual_networks'] = self.list_all()
         return self.results
 
     def get(self):
@@ -158,7 +167,8 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworks.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -178,9 +188,9 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworks.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -199,9 +209,9 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworks.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

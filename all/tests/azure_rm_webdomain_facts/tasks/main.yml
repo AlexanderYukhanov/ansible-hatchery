@@ -10,6 +10,7 @@
   assert:
     that:
       - output.changed == False
+      - output.domains.xxxunknownxxx.id != None
 
 - name: Gather facts Domain
   azure_rm_webdomain_facts:
@@ -19,6 +20,7 @@
   assert:
     that:
       - output.changed == False
+      - output.domains.xxxunknownxxx.id != None
 
 - name: Gather facts Domain
   azure_rm_webdomain_facts:
@@ -28,6 +30,7 @@
   assert:
     that:
       - output.changed == False
+      - output.domains.xxxunknownxxx.id != None
 
 - name: Gather facts Domain
   azure_rm_webdomain_facts:
@@ -37,3 +40,4 @@
   assert:
     that:
       - output.changed == False
+      - output.domains.xxxunknownxxx.id != None

@@ -47,50 +47,59 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - The role definition ID.
-    returned: always
-    type: str
-    sample: /subscriptions/subID/providers/Microsoft.Authorization/roleDefinitions/roleDefinitionId
-name:
-    description:
-        - The role definition name.
-    returned: always
-    type: str
-    sample: roleDefinitionId
-type:
-    description:
-        - The role definition type.
-    returned: always
-    type: str
-    sample: Microsoft.Authorization/roleDefinitions
-properties:
-    description:
-        - Role definition properties.
+role_definitions:
+    description: A list of dict results where the key is the name of the Role Definition and the values are the facts for that Role Definition.
     returned: always
     type: complex
-    sample: properties
     contains:
-        description:
-            description:
-                - The role definition description.
-            returned: always
-            type: str
-            sample: Role description
-        type:
-            description:
-                - The role type.
-            returned: always
-            type: str
-            sample: roletype
-        permissions:
-            description:
-                - Role definition permissions.
-            returned: always
+        roledefinition_name:
+            description: The key is the name of the server that the values relate to.
             type: complex
-            sample: permissions
             contains:
+                id:
+                    description:
+                        - The role definition ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subID/providers/Microsoft.Authorization/roleDefinitions/roleDefinitionId
+                name:
+                    description:
+                        - The role definition name.
+                    returned: always
+                    type: str
+                    sample: roleDefinitionId
+                type:
+                    description:
+                        - The role definition type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Authorization/roleDefinitions
+                properties:
+                    description:
+                        - Role definition properties.
+                    returned: always
+                    type: complex
+                    sample: properties
+                    contains:
+                        description:
+                            description:
+                                - The role definition description.
+                            returned: always
+                            type: str
+                            sample: Role description
+                        type:
+                            description:
+                                - The role type.
+                            returned: always
+                            type: str
+                            sample: roletype
+                        permissions:
+                            description:
+                                - Role definition permissions.
+                            returned: always
+                            type: complex
+                            sample: permissions
+                            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -136,7 +145,7 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
 
         if (self.scope is not None and
                 self.role_definition_id is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['role_definitions'] = self.get()
         return self.results
 
     def get(self):
@@ -155,7 +164,8 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleDefinitions.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

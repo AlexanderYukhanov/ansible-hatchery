@@ -11,3 +11,4 @@
   assert:
     that:
       - output.changed == False
+      - output.subnets.xxxunknownxxx.id != None

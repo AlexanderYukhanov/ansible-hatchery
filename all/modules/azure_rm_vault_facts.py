@@ -56,12 +56,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - The Azure Resource Manager resource ID for the key vault.
+vaults:
+    description: A list of dict results where the key is the name of the Vault and the values are the facts for that Vault.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        vault_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - The Azure Resource Manager resource ID for the key vault.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -109,10 +118,10 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.vault_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['vaults'] = self.get()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_by_resource_group'] = self.list_by_resource_group()
-            self.results['ansible_facts']['list_deleted'] = self.list_deleted()
+            self.results['vaults'] = self.list_by_resource_group()
+            self.results['vaults'] = self.list_deleted()
         return self.results
 
     def get(self):
@@ -131,7 +140,8 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Vaults.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -150,9 +160,9 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Vaults.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -171,9 +181,9 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Vaults.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

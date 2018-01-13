@@ -47,6 +47,15 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
+log_files:
+    description: A list of dict results where the key is the name of the Log File and the values are the facts for that Log File.
+    returned: always
+    type: complex
+    contains:
+        logfile_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -92,7 +101,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.server_name is not None):
-            self.results['ansible_facts']['list_by_server'] = self.list_by_server()
+            self.results['log_files'] = self.list_by_server()
         return self.results
 
     def list_by_server(self):
@@ -111,9 +120,9 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
             self.log('Could not get facts for LogFiles.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

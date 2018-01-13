@@ -36,10 +36,10 @@ options:
         required: True
     charset:
         description:
-            - The charset of the database.
+            - The charset of the database. Check MySQL documentation for possible values.
     collation:
         description:
-            - The collation of the database.
+            - The collation of the database. Check MySQL documentation for possible values.
 
 extends_documentation_fragment:
     - azure

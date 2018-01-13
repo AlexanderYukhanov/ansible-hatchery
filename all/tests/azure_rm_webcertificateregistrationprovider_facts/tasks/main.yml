@@ -10,3 +10,4 @@
   assert:
     that:
       - output.changed == False
+      - output.certificate_registration_provider.xxxunknownxxx.id != None

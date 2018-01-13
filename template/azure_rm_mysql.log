@@ -131,6 +131,7 @@ Sample after properties copied ---
   "userVisibleState": "Ready",
   "fullyQualifiedDomainName": "testserver.test-vm1.onebox.xdb.mscds.com"
 }
+  resource name fields: server_name server_name name
 ------------------------------- Server
   create_or_update
   delete
@@ -186,6 +187,7 @@ Sample after properties copied ---
   "startIpAddress": "0.0.0.0",
   "endIpAddress": "255.255.255.255"
 }
+  resource name fields: firewall_rule_name firewall_rule_name name
 ------------------------------- Firewall Rule
   get
   create_or_update
@@ -245,6 +247,7 @@ Sample after properties copied ---
   "state": "Ready",
   "virtualNetworkSubnetId": "/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/TestGroup/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
 }
+  resource name fields: virtual_network_rule_name virtual_network_rule_name name
 ------------------------------- Virtual Network Rule
   create_or_update
   delete
@@ -300,6 +303,7 @@ Sample after properties copied ---
   "charset": "utf8",
   "collation": "utf8_general_ci"
 }
+  resource name fields: database_name database_name name
 ------------------------------- Database
   create_or_update
   get
@@ -378,9 +382,11 @@ Sample after properties copied ---
   "allowedValues": "ON,OFF,DISABLED",
   "source": "system-default"
 }
+  resource name fields: configuration_name configuration_name name
 ------------------------------- Configuration
   list_by_server
   ** CREATING FACT MODULE
+  resource name fields: log_file_name server_name server_name
 ------------------------------- Log File
   list
 ------------------------------- Performance Tier

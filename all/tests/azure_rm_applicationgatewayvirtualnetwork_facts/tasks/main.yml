@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_networks.xxxunknownxxx.id != None
 
 - name: Gather facts Virtual Network
   azure_rm_applicationgatewayvirtualnetwork_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_networks.xxxunknownxxx.id != None
 
 - name: Gather facts Virtual Network
   azure_rm_applicationgatewayvirtualnetwork_facts:
@@ -28,3 +30,4 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_networks.xxxunknownxxx.id != None

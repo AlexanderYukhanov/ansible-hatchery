@@ -11,3 +11,4 @@
   assert:
     that:
       - output.changed == False
+      - output.express_route_circuit_authorizations.xxxunknownxxx.id != None

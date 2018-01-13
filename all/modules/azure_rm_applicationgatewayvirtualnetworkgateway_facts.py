@@ -52,12 +52,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+virtual_network_gateways:
+    description: A list of dict results where the key is the name of the Virtual Network Gateway and the values are the facts for that Virtual Network Gateway.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        virtualnetworkgateway_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -103,10 +112,10 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.virtual_network_gateway_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['virtual_network_gateways'] = self.get()
         elif (self.resource_group is not None and
               self.virtual_network_gateway_name is not None):
-            self.results['ansible_facts']['list_connections'] = self.list_connections()
+            self.results['virtual_network_gateways'] = self.list_connections()
         return self.results
 
     def get(self):
@@ -125,7 +134,8 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworkGateways.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -145,9 +155,9 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworkGateways.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

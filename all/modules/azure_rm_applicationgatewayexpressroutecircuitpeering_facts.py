@@ -52,18 +52,27 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+express_route_circuit_peerings:
+    description: A list of dict results where the key is the name of the Express Route Circuit Peering and the values are the facts for that Express Route Circuit Peering.
     returned: always
-    type: str
-    sample: id
-state:
-    description:
-        - "The state of peering. Possible values are: C(Disabled) and C(Enabled). Possible values include: C(Disabled), C(Enabled)"
-    returned: always
-    type: str
-    sample: state
+    type: complex
+    contains:
+        expressroutecircuitpeering_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: id
+                state:
+                    description:
+                        - "The state of peering. Possible values are: C(Disabled) and C(Enabled). Possible values include: C(Disabled), C(Enabled)"
+                    returned: always
+                    type: str
+                    sample: state
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -115,7 +124,7 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.circuit_name is not None and
                 self.peering_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['express_route_circuit_peerings'] = self.get()
         return self.results
 
     def get(self):
@@ -135,7 +144,8 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuitPeerings.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

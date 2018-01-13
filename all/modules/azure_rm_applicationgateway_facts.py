@@ -57,12 +57,21 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+application_gateways:
+    description: A list of dict results where the key is the name of the Application Gateway and the values are the facts for that Application Gateway.
     returned: always
-    type: str
-    sample: id
+    type: complex
+    contains:
+        applicationgateway_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: id
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -106,11 +115,11 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         if (self.resource_group is not None and
                 self.application_gateway_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
-            self.results['ansible_facts']['list_all'] = self.list_all()
-            self.results['ansible_facts']['list_available_waf_rule_sets'] = self.list_available_waf_rule_sets()
-            self.results['ansible_facts']['list_available_ssl_options'] = self.list_available_ssl_options()
-            self.results['ansible_facts']['list_available_ssl_predefined_policies'] = self.list_available_ssl_predefined_policies()
+            self.results['application_gateways'] = self.get()
+            self.results['application_gateways'] = self.list_all()
+            self.results['application_gateways'] = self.list_available_waf_rule_sets()
+            self.results['application_gateways'] = self.list_available_ssl_options()
+            self.results['application_gateways'] = self.list_available_ssl_predefined_policies()
         return self.results
 
     def get(self):
@@ -129,7 +138,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -148,9 +158,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -169,9 +179,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -190,9 +200,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -211,9 +221,9 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 

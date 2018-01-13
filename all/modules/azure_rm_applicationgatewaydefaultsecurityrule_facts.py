@@ -52,50 +52,60 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - Resource ID.
+default_security_rules:
+    description: A list of dict results where the key is the name of the Default Security Rule and the values are the facts for that Default Security Rule.
     returned: always
-    type: str
-    sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/nsg1/defaultSecurityRules/AllowVnetInBound
-description:
-    description:
-        - A description for this rule. Restricted to 140 chars.
-    returned: always
-    type: str
-    sample: Allow inbound traffic from all VMs in VNET
-protocol:
-    description:
-        - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)"
-    returned: always
-    type: str
-    sample: *
-access:
-    description:
-        - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)"
-    returned: always
-    type: str
-    sample: Allow
-priority:
-    description:
-        - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the
-           priority number, the higher the priority of the rule."
-    returned: always
-    type: int
-    sample: 65000
-direction:
-    description:
-        - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(Inbound) and
-           C(Outbound). Possible values include: C(Inbound), C(Outbound)"
-    returned: always
-    type: str
-    sample: Inbound
-name:
-    description:
-        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
-    returned: always
-    type: str
-    sample: AllowVnetInBound
+    type: complex
+    contains:
+        defaultsecurityrule_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - Resource ID.
+                    returned: always
+                    type: str
+                    sample: "/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/nsg1/defaultSecurityRules/AllowVnet
+                            InBound"
+                description:
+                    description:
+                        - A description for this rule. Restricted to 140 chars.
+                    returned: always
+                    type: str
+                    sample: Allow inbound traffic from all VMs in VNET
+                protocol:
+                    description:
+                        - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)"
+                    returned: always
+                    type: str
+                    sample: *
+                access:
+                    description:
+                        - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)"
+                    returned: always
+                    type: str
+                    sample: Allow
+                priority:
+                    description:
+                        - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collectio
+                          n. The lower the priority number, the higher the priority of the rule."
+                    returned: always
+                    type: int
+                    sample: 65000
+                direction:
+                    description:
+                        - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are
+                          : C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                    returned: always
+                    type: str
+                    sample: Inbound
+                name:
+                    description:
+                        - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                    returned: always
+                    type: str
+                    sample: AllowVnetInBound
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -147,7 +157,7 @@ class AzureRMDefaultSecurityRulesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.network_security_group_name is not None and
                 self.default_security_rule_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['default_security_rules'] = self.get()
         return self.results
 
     def get(self):
@@ -167,7 +177,8 @@ class AzureRMDefaultSecurityRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for DefaultSecurityRules.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 

@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.network_security_groups.xxxunknownxxx.id != None
 
 - name: Gather facts Network Security Group
   azure_rm_applicationgatewaynetworksecuritygroup_facts:
@@ -19,3 +20,4 @@
   assert:
     that:
       - output.changed == False
+      - output.network_security_groups.xxxunknownxxx.id != None

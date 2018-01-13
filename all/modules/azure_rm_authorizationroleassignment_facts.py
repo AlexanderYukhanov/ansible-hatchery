@@ -83,37 +83,46 @@ EXAMPLES = '''
 '''
 
 RETURN = '''
-id:
-    description:
-        - The role assignment ID.
-    returned: always
-    type: str
-    sample: /subscriptions/subId/resourcegroups/rgname/providers/Microsoft.Authorization/roleAssignments/roleassignmentId
-name:
-    description:
-        - The role assignment name.
-    returned: always
-    type: str
-    sample: raId
-type:
-    description:
-        - The role assignment type.
-    returned: always
-    type: str
-    sample: Microsoft.Authorization/roleAssignments
-properties:
-    description:
-        - Role assignment properties.
+role_assignments:
+    description: A list of dict results where the key is the name of the Role Assignment and the values are the facts for that Role Assignment.
     returned: always
     type: complex
-    sample: properties
     contains:
-        scope:
-            description:
-                - The role assignment scope.
-            returned: always
-            type: str
-            sample: /subscriptions/subId/resourcegroups/rgname
+        roleassignment_name:
+            description: The key is the name of the server that the values relate to.
+            type: complex
+            contains:
+                id:
+                    description:
+                        - The role assignment ID.
+                    returned: always
+                    type: str
+                    sample: /subscriptions/subId/resourcegroups/rgname/providers/Microsoft.Authorization/roleAssignments/roleassignmentId
+                name:
+                    description:
+                        - The role assignment name.
+                    returned: always
+                    type: str
+                    sample: raId
+                type:
+                    description:
+                        - The role assignment type.
+                    returned: always
+                    type: str
+                    sample: Microsoft.Authorization/roleAssignments
+                properties:
+                    description:
+                        - Role assignment properties.
+                    returned: always
+                    type: complex
+                    sample: properties
+                    contains:
+                        scope:
+                            description:
+                                - The role assignment scope.
+                            returned: always
+                            type: str
+                            sample: /subscriptions/subId/resourcegroups/rgname
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase
@@ -184,14 +193,14 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
                 self.parent_resource_path is not None and
                 self.resource_type is not None and
                 self.resource_name is not None):
-            self.results['ansible_facts']['list_for_resource'] = self.list_for_resource()
+            self.results['role_assignments'] = self.list_for_resource()
         elif (self.resource_group is not None):
-            self.results['ansible_facts']['list_for_resource_group'] = self.list_for_resource_group()
+            self.results['role_assignments'] = self.list_for_resource_group()
         elif (self.scope is not None and
               self.role_assignment_name is not None):
-            self.results['ansible_facts']['get'] = self.get()
+            self.results['role_assignments'] = self.get()
         elif (self.scope is not None):
-            self.results['ansible_facts']['list_for_scope'] = self.list_for_scope()
+            self.results['role_assignments'] = self.list_for_scope()
         return self.results
 
     def list_for_resource(self):
@@ -213,9 +222,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -234,9 +243,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
@@ -256,7 +265,8 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = response.as_dict()
+            results = {}
+            results[response.name] = response.as_dict()
 
         return results
 
@@ -275,9 +285,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = []
+            results = {}
             for item in response:
-                results.append(item.as_dict())
+                results[item.name] = item.as_dict()
 
         return results
 
