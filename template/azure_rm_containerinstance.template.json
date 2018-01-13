@@ -2023,7 +2023,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "container_group_name",
-            "test:default": ""
+            "test:default": "aci{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,
