@@ -10,6 +10,7 @@
   assert:
     that:
       - output.changed == False
+      - output.subscription_usages.xxxunknownxxx.id != None
 
 - name: Gather facts Subscription Usage
   azure_rm_sqlsubscriptionusage_facts:
@@ -18,3 +19,4 @@
   assert:
     that:
       - output.changed == False
+      - output.subscription_usages.xxxunknownxxx.id != None

@@ -11,3 +11,4 @@
   assert:
     that:
       - output.changed == False
+      - output.elastic_pool_database_activities.xxxunknownxxx.id != None

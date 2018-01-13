@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_groups.xxxunknownxxx.id != None
 
 - name: Gather facts Sync Group
   azure_rm_sqlsyncgroup_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_groups.xxxunknownxxx.id != None
 
 - name: Gather facts Sync Group
   azure_rm_sqlsyncgroup_facts:
@@ -29,6 +31,7 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_groups.xxxunknownxxx.id != None
 
 - name: Gather facts Sync Group
   azure_rm_sqlsyncgroup_facts:
@@ -38,6 +41,7 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_groups.xxxunknownxxx.id != None
 
 - name: Gather facts Sync Group
   azure_rm_sqlsyncgroup_facts:
@@ -46,3 +50,4 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_groups.xxxunknownxxx.id != None

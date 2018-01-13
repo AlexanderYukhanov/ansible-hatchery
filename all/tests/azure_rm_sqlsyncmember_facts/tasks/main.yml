@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_members.xxxunknownxxx.id != None
 
 - name: Gather facts Sync Member
   azure_rm_sqlsyncmember_facts:
@@ -20,6 +21,7 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_members.xxxunknownxxx.id != None
 
 - name: Gather facts Sync Member
   azure_rm_sqlsyncmember_facts:
@@ -29,3 +31,4 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_members.xxxunknownxxx.id != None

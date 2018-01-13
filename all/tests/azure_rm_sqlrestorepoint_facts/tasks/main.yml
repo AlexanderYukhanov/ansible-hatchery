@@ -11,3 +11,4 @@
   assert:
     that:
       - output.changed == False
+      - output.restore_points.xxxunknownxxx.id != None

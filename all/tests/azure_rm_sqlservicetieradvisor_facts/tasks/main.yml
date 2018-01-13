@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.service_tier_advisors.xxxunknownxxx.id != None
 
 - name: Gather facts Service Tier Advisor
   azure_rm_sqlservicetieradvisor_facts:
@@ -20,3 +21,4 @@
   assert:
     that:
       - output.changed == False
+      - output.service_tier_advisors.xxxunknownxxx.id != None

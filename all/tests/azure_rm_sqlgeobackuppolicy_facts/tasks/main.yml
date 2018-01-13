@@ -35,6 +35,7 @@
   assert:
     that:
       - output.changed == False
+      - output.geo_backup_policies.geo-policy-name.id != None
 
 - name: Gather facts Geo Backup Policy
   azure_rm_sqlgeobackuppolicy_facts:
@@ -46,6 +47,7 @@
   assert:
     that:
       - output.changed == False
+      - output.geo_backup_policies.geo-policy-name.id != None
 
 - name: Delete instance of SQL Database
   azure_rm_sqldatabase:

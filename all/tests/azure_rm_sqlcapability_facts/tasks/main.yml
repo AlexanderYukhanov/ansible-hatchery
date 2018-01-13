@@ -10,3 +10,4 @@
   assert:
     that:
       - output.changed == False
+      - output.capabilities.xxxunknownxxx.id != None

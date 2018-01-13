@@ -55,6 +55,7 @@ Sample after properties copied ---
   "recoveryServicesBackupPolicyResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc/backupPolicies/testPolicyxyz",
   "state": "Enabled"
 }
+  resource name fields: backup_long_term_retention_policy_name backup_long_term_retention_policy_name name
 ------------------------------- Backup Long Term Retention Policy
   get
   create_or_update
@@ -106,9 +107,11 @@ Sample after properties copied ---
   },
   "recoveryServicesVaultResourceId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/longtermretentionvaulttest-1234/providers/Microsoft.RecoveryServices/vaults/testVaultabc"
 }
+  resource name fields: backup_long_term_retention_vault_name backup_long_term_retention_vault_name name
 ------------------------------- Backup Long Term Retention Vault
   list_by_database
   ** CREATING FACT MODULE
+  resource name fields: restore_point_name database_name database_name
 ------------------------------- Restore Point
   get
   list_by_server
@@ -133,6 +136,7 @@ Sample after properties copied ---
   "lastAvailableBackupDate": "2017-05-26T01:06:29.78Z",
   "elasticPoolName": null
 }
+  resource name fields: recoverable_database_name database_name name
 ------------------------------- Recoverable Database
   get
   list_by_server
@@ -166,9 +170,11 @@ Sample after properties copied ---
   "deletionDate": "2017-05-27T02:49:47.69Z",
   "earliestRestoreDate": "2017-05-20T02:49:47.69Z"
 }
+  resource name fields: restorable_dropped_database_name server_name name
 ------------------------------- Restorable Dropped Database
   list_by_location
   ** CREATING FACT MODULE
+  resource name fields: capability_name
 ------------------------------- Capability
   create_or_update
   get
@@ -222,6 +228,7 @@ Sample after properties copied ---
   },
   "connectionType": "Default"
 }
+  resource name fields: server_connection_policy_name connection_policy_name name
 ------------------------------- Server Connection Policy
   get
   create_or_update
@@ -316,6 +323,7 @@ Sample after properties copied ---
   "storageEndpoint": "",
   "useServerDefault": "Enabled"
 }
+  resource name fields: database_threat_detection_policy_name security_alert_policy_name name
 ------------------------------- Database Threat Detection Policy
   create_or_update
   get
@@ -387,6 +395,7 @@ Sample after properties copied ---
   "exemptPrincipals": "",
   "maskingLevel": ""
 }
+  resource name fields: data_masking_policy_name data_masking_policy_name name
 ------------------------------- Data Masking Policy
   create_or_update
   list_by_database
@@ -430,6 +439,7 @@ Sample after properties copied ---
   "replacementString": "asdf"
 }
   ** CREATING FACT MODULE
+  resource name fields: data_masking_rule_name data_masking_policy_name data_masking_policy_name
 ------------------------------- Data Masking Rule
   create_or_update
   delete
@@ -491,6 +501,7 @@ Sample after properties copied ---
   "startIpAddress": "0.0.0.0",
   "endIpAddress": "0.0.0.0"
 }
+  resource name fields: firewall_rule_name firewall_rule_name name
 ------------------------------- Firewall Rule
   create_or_update
   get
@@ -551,6 +562,7 @@ Sample after properties copied ---
   "state": "Enabled",
   "storageType": "Premium"
 }
+  resource name fields: geo_backup_policy_name geo_backup_policy_name name
 ------------------------------- Geo Backup Policy
   import_method
   create_import_operation
@@ -765,6 +777,7 @@ Sample after properties copied ---
   "readScale": "Disabled",
   "failoverGroupId": null
 }
+  resource name fields: database_name database_name name
 ------------------------------- Database
   list_metrics
   list_metric_definitions
@@ -887,6 +900,7 @@ Sample after properties copied ---
   "databaseDtuMax": "5",
   "storageMB": "5000"
 }
+  resource name fields: elastic_pool_name elastic_pool_name name
 ------------------------------- Elastic Pool
   delete
   get
@@ -927,6 +941,7 @@ Sample after properties copied ---
   "replicationState": "CATCH_UP",
   "isTerminationAllowed": true
 }
+  resource name fields: replication_link_name database_name name
 ------------------------------- Replication Link
   create_or_update
   delete
@@ -991,6 +1006,7 @@ Sample after properties copied ---
   "sid": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c",
   "tenantId": "c6b82b90-a647-49cb-8a62-0d2d3cb7ac7c"
 }
+  resource name fields: server_azure_ad_administrator_name administrator_name name
 ------------------------------- Server Azure A D Administrator
   delete
   get
@@ -1036,6 +1052,7 @@ Sample after properties copied ---
   "state": "Ready",
   "partnerServer": "sqlcrudtest-test"
 }
+  resource name fields: server_communication_link_name communication_link_name name
 ------------------------------- Server Communication Link
   get
   list_by_server
@@ -1043,6 +1060,7 @@ Sample after properties copied ---
 Getting example for: get
 Found example for: get
 Found response for: get
+  resource name fields: service_objective_name service_objective_name name
 ------------------------------- Service Objective
   check_name_availability
   list
@@ -1153,12 +1171,15 @@ Sample after properties copied ---
   "version": "12.0",
   "state": "Ready"
 }
+  resource name fields: server_name server_name name
 ------------------------------- Server
   list_by_elastic_pool
   ** CREATING FACT MODULE
+  resource name fields: elastic_pool_activity_name elastic_pool_name elastic_pool_name
 ------------------------------- Elastic Pool Activity
   list_by_elastic_pool
   ** CREATING FACT MODULE
+  resource name fields: elastic_pool_database_activity_name elastic_pool_name elastic_pool_name
 ------------------------------- Elastic Pool Database Activity
   get
   list_by_server
@@ -1230,6 +1251,7 @@ Sample after properties copied ---
     }
   ]
 }
+  resource name fields: recommended_elastic_pool_name recommended_elastic_pool_name name
 ------------------------------- Recommended Elastic Pool
   get
   list_by_database
@@ -1296,6 +1318,7 @@ Sample after properties copied ---
   "overallRecommendationServiceLevelObjectiveId": null,
   "confidence": "1"
 }
+  resource name fields: service_tier_advisor_name service_tier_advisor_name name
 ------------------------------- Service Tier Advisor
   create_or_update
   get
@@ -1346,15 +1369,19 @@ Sample after properties copied ---
   },
   "status": "Enabled"
 }
+  resource name fields: transparent_data_encryption_name transparent_data_encryption_name name
 ------------------------------- Transparent Data Encryption
   list_by_configuration
   ** CREATING FACT MODULE
+  resource name fields: transparent_data_encryption_activity_name transparent_data_encryption_name transparent_data_encryption_name
 ------------------------------- Transparent Data Encryption Activity
   list_by_server
   ** CREATING FACT MODULE
+  resource name fields: server_usage_name server_name server_name
 ------------------------------- Server Usage
   list_by_database
   ** CREATING FACT MODULE
+  resource name fields: database_usage_name database_name database_name
 ------------------------------- Database Usage
   get
   create_or_update
@@ -1445,6 +1472,7 @@ Sample after properties copied ---
   "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000",
   "isStorageSecondaryKeyInUse": false
 }
+  resource name fields: database_blob_auditing_policy_name blob_auditing_policy_name name
 ------------------------------- Database Blob Auditing Policy
   list_by_server
   get
@@ -1509,6 +1537,7 @@ Sample after properties copied ---
   "serverKeyType": "AzureKeyVault",
   "uri": "https://someVault.vault.azure.net/keys/someKey/01234567890123456789012345678901"
 }
+  resource name fields: encryption_protector_name encryption_protector_name name
 ------------------------------- Encryption Protector
   get
   create_or_update
@@ -1717,6 +1746,7 @@ Sample after properties copied ---
   ],
   "databases": []
 }
+  resource name fields: failover_group_name failover_group_name name
 ------------------------------- Failover Group
   list
 ------------------------------- Operation
@@ -1792,6 +1822,7 @@ Sample after properties copied ---
   "thumbprint": "00112233445566778899AABBCCDDEEFFAABBCCDD",
   "creationDate": "2017-05-01T00:00:00Z"
 }
+  resource name fields: server_key_name key_name name
 ------------------------------- Server Key
   get
   create_or_update
@@ -1867,6 +1898,7 @@ Sample after properties copied ---
   "expiryTime": "9999-12-31T23:59:59.9999999Z",
   "version": "4.2.0.0"
 }
+  resource name fields: sync_agent_name sync_agent_name name
 ------------------------------- Sync Agent
   list_sync_database_ids
   refresh_hub_schema
@@ -1977,6 +2009,7 @@ Sample after properties copied ---
   "hubDatabaseUserName": "hubUser",
   "syncState": "NotReady"
 }
+  resource name fields: sync_group_name sync_group_name name
 ------------------------------- Sync Group
   get
   create_or_update
@@ -2083,6 +2116,7 @@ Sample after properties copied ---
   "syncDirection": "Bidirectional",
   "syncState": "UnProvisioned"
 }
+  resource name fields: sync_member_name sync_member_name name
 ------------------------------- Sync Member
   list_by_location
   get
@@ -2107,6 +2141,7 @@ Sample after properties copied ---
   "limit": "20",
   "unit": "Count"
 }
+  resource name fields: subscription_usage_name usage_name name
 ------------------------------- Subscription Usage
   get
   create_or_update
@@ -2166,10 +2201,12 @@ Sample after properties copied ---
   "state": "Ready",
   "virtualNetworkSubnetId": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet"
 }
+  resource name fields: virtual_network_rule_name virtual_network_rule_name name
 ------------------------------- Virtual Network Rule
   cancel
   list_by_database
   ** CREATING FACT MODULE
+  resource name fields: database_operation_name database_name database_name
 ------------------------------- Database Operation
   get
   create_or_update
@@ -2220,6 +2257,7 @@ Sample after properties copied ---
   },
   "azureDnsRecord": "dns-alias-name-1.database.windows.net"
 }
+  resource name fields: server_dns_aliase_name dns_alias_name name
 TWEAK: RENAMING resource_group_name -- A
 TWEAK: RENAMING server_name -- A
 TWEAK: RENAMING administrator_login -- A

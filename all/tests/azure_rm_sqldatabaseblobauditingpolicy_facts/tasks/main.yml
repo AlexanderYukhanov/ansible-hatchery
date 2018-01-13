@@ -11,3 +11,4 @@
   assert:
     that:
       - output.changed == False
+      - output.database_blob_auditing_policies.xxxunknownxxx.id != None

@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.recoverable_databases.xxxunknownxxx.id != None
 
 - name: Gather facts Recoverable Database
   azure_rm_sqlrecoverabledatabase_facts:
@@ -20,3 +21,4 @@
   assert:
     that:
       - output.changed == False
+      - output.recoverable_databases.xxxunknownxxx.id != None
