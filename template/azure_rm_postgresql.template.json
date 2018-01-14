@@ -2101,7 +2101,7 @@
       "UpdateComparisonRules": [
         {
           "Option": [
-            "collation"
+            "parameters['collation']"
           ],
           "ReturnField": [
             "collation"
@@ -2109,7 +2109,7 @@
         },
         {
           "Option": [
-            "charset"
+            "parameters['charset']"
           ],
           "ReturnField": [
             "charset"
