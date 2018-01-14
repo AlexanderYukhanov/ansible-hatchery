@@ -206,11 +206,6 @@ EXAMPLES = '''
   - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
-      name: name
-
-  - name: List instances of App Service Environment
-    azure_rm_webappserviceenvironment_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -367,9 +362,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         elif (self.resource_group is not None and
               self.name is not None):
             self.results['app_service_environments'] = self.list_diagnostics()
-        elif (self.resource_group is not None and
-              self.name is not None):
-            self.results['app_service_environments'] = self.list_metric_definitions()
         elif (self.resource_group is not None and
               self.name is not None):
             self.results['app_service_environments'] = self.list_multi_role_pools()
@@ -745,28 +737,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         try:
             response = self.mgmt_client.app_service_environments.list_diagnostics(resource_group_name=self.resource_group,
                                                                                   name=self.name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for AppServiceEnvironments.')
-
-        if response is not None:
-            results = {}
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_metric_definitions(self):
-        '''
-        Gets facts of the specified App Service Environment.
-
-        :return: deserialized App Service Environmentinstance state dictionary
-        '''
-        response = None
-        results = False
-        try:
-            response = self.mgmt_client.app_service_environments.list_metric_definitions(resource_group_name=self.resource_group,
-                                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')

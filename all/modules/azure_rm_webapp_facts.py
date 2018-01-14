@@ -611,11 +611,6 @@ EXAMPLES = '''
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
-
-  - name: List instances of Web App
-    azure_rm_webapp_facts:
-      resource_group: resource_group_name
-      name: name
 '''
 
 RETURN = '''
@@ -1059,9 +1054,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         elif (self.resource_group is not None and
               self.name is not None):
             self.results['web_apps'] = self.list_sync_function_triggers()
-        elif (self.resource_group is not None and
-              self.name is not None):
-            self.results['web_apps'] = self.list_metric_definitions()
         elif (self.resource_group is not None and
               self.name is not None):
             self.results['web_apps'] = self.list_premier_add_ons()
@@ -2870,28 +2862,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         try:
             response = self.mgmt_client.web_apps.list_sync_function_triggers(resource_group_name=self.resource_group,
                                                                              name=self.name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for WebApps.')
-
-        if response is not None:
-            results = {}
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_metric_definitions(self):
-        '''
-        Gets facts of the specified Web App.
-
-        :return: deserialized Web Appinstance state dictionary
-        '''
-        response = None
-        results = False
-        try:
-            response = self.mgmt_client.web_apps.list_metric_definitions(resource_group_name=self.resource_group,
-                                                                         name=self.name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for WebApps.')

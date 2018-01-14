@@ -13066,7 +13066,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 88,
+          "RequiredCount": 87,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -13090,7 +13090,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 87,
+          "RequiredCount": 86,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -14517,17 +14517,6 @@
         },
         {
           "Name": "list_sync_function_triggers",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_metric_definitions",
           "Options": [
             "resource_group_name",
             "name"
@@ -18219,7 +18208,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 25,
+          "RequiredCount": 24,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18243,7 +18232,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 24,
+          "RequiredCount": 23,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18645,17 +18634,6 @@
         },
         {
           "Name": "list_diagnostics",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_metric_definitions",
           "Options": [
             "resource_group_name",
             "name"

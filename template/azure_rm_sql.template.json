@@ -6505,7 +6505,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 6,
+          "RequiredCount": 5,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -6529,7 +6529,7 @@
             "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 6,
+          "RequiredCount": 5,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -6553,7 +6553,7 @@
             "test:default": "database{{ rpfx }}"
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -6698,19 +6698,6 @@
           "RequiredOptions": [
             "resource_group_name",
             "server_name"
-          ]
-        },
-        {
-          "Name": "list_metric_definitions",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "database_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "database_name"
           ]
         },
         {
@@ -8135,7 +8122,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 4,
+          "RequiredCount": 3,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -8159,7 +8146,7 @@
             "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 4,
+          "RequiredCount": 3,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -8183,7 +8170,7 @@
             "test:default": "elasticpool{{ rpfx }}"
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -8229,19 +8216,6 @@
             "server_name",
             "elastic_pool_name",
             "filter"
-          ]
-        },
-        {
-          "Name": "list_metric_definitions",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "elastic_pool_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "elastic_pool_name"
           ]
         },
         {
