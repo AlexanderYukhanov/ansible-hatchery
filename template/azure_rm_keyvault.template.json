@@ -904,7 +904,7 @@
       "ObjectName": "Key Vault",
       "ResourceNameFieldInRequest": null,
       "ResourceNameFieldInResponse": null,
-      "ReleaseStatus": "RP",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "CannotTestUpdate": true,
       "UpdateComparisonRules": null,
