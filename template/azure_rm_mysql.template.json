@@ -1003,7 +1003,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "rule1",
-            "test:default": "test-firewall-rule"
+            "test:default": "firewallrule{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,

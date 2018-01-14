@@ -534,7 +534,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "registry_name",
-            "test:default": ""
+            "test:default": "acr{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 3,

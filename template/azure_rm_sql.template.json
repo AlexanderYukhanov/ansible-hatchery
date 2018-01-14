@@ -4529,7 +4529,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testdw",
-            "test:default": "\"test-database\""
+            "test:default": "\"database{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4786,7 +4786,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "database_name",
-            "test:default": "\"test-database\""
+            "test:default": "\"database{{ rpfx }}\""
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -5006,7 +5006,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testdb",
-            "test:default": "test-database"
+            "test:default": "database{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6550,7 +6550,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "database_name",
-            "test:default": "test-database"
+            "test:default": "database{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 3,

@@ -1003,7 +1003,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "rule1",
-            "test:default": "test-firewall-rule"
+            "test:default": "firewallrule{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2646,7 +2646,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "configuration_name",
-            "test:default": "event_scheduler"
+            "test:default": "deadlock_timeout"
           },
           "SubOptions": null,
           "RequiredCount": 1,

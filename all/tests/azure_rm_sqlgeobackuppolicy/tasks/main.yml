@@ -14,14 +14,14 @@
   azure_rm_sqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
-    name: test-database
+    name: database{{ rpfx }}
     location: eastus
 
 - name: Create instance of Geo Backup Policy -- check mode
   azure_rm_sqlgeobackuppolicy:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
-    database_name: "test-database"
+    database_name: "database{{ rpfx }}"
     geo_backup_policy_name: "geo-policy-name"
     policy_state: "enabled"
   check_mode: yes
@@ -35,7 +35,7 @@
   azure_rm_sqlgeobackuppolicy:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
-    database_name: "test-database"
+    database_name: "database{{ rpfx }}"
     geo_backup_policy_name: "geo-policy-name"
     policy_state: "enabled"
   register: output
@@ -48,7 +48,7 @@
   azure_rm_sqlgeobackuppolicy:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
-    database_name: "test-database"
+    database_name: "database{{ rpfx }}"
     geo_backup_policy_name: "geo-policy-name"
     policy_state: "enabled"
   register: output
@@ -61,7 +61,7 @@
   azure_rm_sqldatabase:
     resource_group: "{{ resource_group }}"
     server_name: "sqlsrv{{ rpfx }}"
-    name: test-database
+    name: database{{ rpfx }}
     state: absent
 - name: Delete instance of SQL Server
   azure_rm_sqlserver:
