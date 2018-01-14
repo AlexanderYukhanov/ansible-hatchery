@@ -42,12 +42,3 @@
     that:
       - output.changed == False
       - output.express_route_circuits.xxxunknownxxx.id != None
-
-- name: Gather facts Express Route Circuit
-  azure_rm_applicationgatewayexpressroutecircuit_facts:
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.express_route_circuits.xxxunknownxxx.id != None

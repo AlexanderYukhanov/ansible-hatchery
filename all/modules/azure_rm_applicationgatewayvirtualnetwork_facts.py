@@ -25,9 +25,11 @@ options:
     resource_group:
         description:
             - The name of the resource group.
+        required: True
     virtual_network_name:
         description:
             - The name of the virtual network.
+        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -51,9 +53,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewayvirtualnetwork_facts:
       resource_group: resource_group_name
       virtual_network_name: virtual_network_name
-
-  - name: List instances of Virtual Network
-    azure_rm_applicationgatewayvirtualnetwork_facts:
 '''
 
 RETURN = '''
@@ -116,10 +115,12 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             virtual_network_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -148,7 +149,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         elif (self.resource_group is not None and
               self.virtual_network_name is not None):
             self.results['virtual_networks'] = self.list_usage()
-            self.results['virtual_networks'] = self.list_all()
         return self.results
 
     def get(self):
@@ -183,27 +183,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         try:
             response = self.mgmt_client.virtual_networks.list_usage(resource_group_name=self.resource_group,
                                                                     virtual_network_name=self.virtual_network_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for VirtualNetworks.')
-
-        if response is not None:
-            results = {}
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_all(self):
-        '''
-        Gets facts of the specified Virtual Network.
-
-        :return: deserialized Virtual Networkinstance state dictionary
-        '''
-        response = None
-        results = False
-        try:
-            response = self.mgmt_client.virtual_networks.list_all()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworks.')

@@ -51,9 +51,6 @@ EXAMPLES = '''
 
   - name: List instances of Application Gateway
     azure_rm_applicationgateway_facts:
-
-  - name: List instances of Application Gateway
-    azure_rm_applicationgateway_facts:
 '''
 
 RETURN = '''
@@ -116,7 +113,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.application_gateway_name is not None):
             self.results['application_gateways'] = self.get()
-            self.results['application_gateways'] = self.list_all()
             self.results['application_gateways'] = self.list_available_waf_rule_sets()
             self.results['application_gateways'] = self.list_available_ssl_options()
             self.results['application_gateways'] = self.list_available_ssl_predefined_policies()
@@ -140,27 +136,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         if response is not None:
             results = {}
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list_all(self):
-        '''
-        Gets facts of the specified Application Gateway.
-
-        :return: deserialized Application Gatewayinstance state dictionary
-        '''
-        response = None
-        results = False
-        try:
-            response = self.mgmt_client.application_gateways.list_all()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ApplicationGateways.')
-
-        if response is not None:
-            results = {}
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

@@ -25,9 +25,11 @@ options:
     resource_group:
         description:
             - The name of the resource group.
+        required: True
     load_balancer_name:
         description:
             - The name of the load balancer.
+        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -46,9 +48,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
       expand: expand
-
-  - name: List instances of Load Balancer
-    azure_rm_applicationgatewayloadbalancer_facts:
 '''
 
 RETURN = '''
@@ -124,10 +123,12 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             load_balancer_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -153,7 +154,6 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.load_balancer_name is not None):
             self.results['load_balancers'] = self.get()
-            self.results['load_balancers'] = self.list_all()
         return self.results
 
     def get(self):
@@ -174,27 +174,6 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
         if response is not None:
             results = {}
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list_all(self):
-        '''
-        Gets facts of the specified Load Balancer.
-
-        :return: deserialized Load Balancerinstance state dictionary
-        '''
-        response = None
-        results = False
-        try:
-            response = self.mgmt_client.load_balancers.list_all()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for LoadBalancers.')
-
-        if response is not None:
-            results = {}
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

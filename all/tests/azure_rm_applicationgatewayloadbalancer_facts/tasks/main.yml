@@ -12,12 +12,3 @@
     that:
       - output.changed == False
       - output.load_balancers.xxxunknownxxx.id != None
-
-- name: Gather facts Load Balancer
-  azure_rm_applicationgatewayloadbalancer_facts:
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.load_balancers.xxxunknownxxx.id != None

@@ -25,9 +25,11 @@ options:
     resource_group:
         description:
             - The name of the resource group.
+        required: True
     circuit_name:
         description:
             - The name of the express route circuit.
+        required: True
     peering_name:
         description:
             - The name of the peering.
@@ -69,9 +71,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewayexpressroutecircuit_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
-
-  - name: List instances of Express Route Circuit
-    azure_rm_applicationgatewayexpressroutecircuit_facts:
 '''
 
 RETURN = '''
@@ -109,10 +108,12 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             circuit_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             peering_name=dict(
                 type='str'
@@ -157,7 +158,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         elif (self.resource_group is not None and
               self.circuit_name is not None):
             self.results['express_route_circuits'] = self.get()
-            self.results['express_route_circuits'] = self.list_all()
         return self.results
 
     def list_arp_table(self):
@@ -250,27 +250,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         if response is not None:
             results = {}
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list_all(self):
-        '''
-        Gets facts of the specified Express Route Circuit.
-
-        :return: deserialized Express Route Circuitinstance state dictionary
-        '''
-        response = None
-        results = False
-        try:
-            response = self.mgmt_client.express_route_circuits.list_all()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ExpressRouteCircuits.')
-
-        if response is not None:
-            results = {}
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

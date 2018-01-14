@@ -25,9 +25,11 @@ options:
     resource_group:
         description:
             - The name of the resource group.
+        required: True
     network_security_group_name:
         description:
             - The name of the network security group.
+        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -46,9 +48,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       network_security_group_name: network_security_group_name
       expand: expand
-
-  - name: List instances of Network Security Group
-    azure_rm_applicationgatewaynetworksecuritygroup_facts:
 '''
 
 RETURN = '''
@@ -104,10 +103,12 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             network_security_group_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -133,7 +134,6 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.network_security_group_name is not None):
             self.results['network_security_groups'] = self.get()
-            self.results['network_security_groups'] = self.list_all()
         return self.results
 
     def get(self):
@@ -154,27 +154,6 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
         if response is not None:
             results = {}
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list_all(self):
-        '''
-        Gets facts of the specified Network Security Group.
-
-        :return: deserialized Network Security Groupinstance state dictionary
-        '''
-        response = None
-        results = False
-        try:
-            response = self.mgmt_client.network_security_groups.list_all()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkSecurityGroups.')
-
-        if response is not None:
-            results = {}
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 
