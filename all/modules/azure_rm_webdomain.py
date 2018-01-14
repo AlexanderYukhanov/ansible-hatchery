@@ -482,9 +482,6 @@ class AzureRMDomains(AzureRMModuleBase):
 
         resource_group = self.get_resource_group(self.resource_group)
 
-        if "location" not in self.parameters:
-            self.parameters["location"] = resource_group.location
-
         old_response = self.get_domain()
 
         if not old_response:
