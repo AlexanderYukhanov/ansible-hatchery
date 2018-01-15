@@ -133,7 +133,7 @@ class AzureRMDataMaskingRulesFacts(AzureRMModuleBase):
         :return: deserialized Data Masking Ruleinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.data_masking_rules.list_by_database(resource_group_name=self.resource_group,
                                                                             server_name=self.server_name,
@@ -144,7 +144,6 @@ class AzureRMDataMaskingRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for DataMaskingRules.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

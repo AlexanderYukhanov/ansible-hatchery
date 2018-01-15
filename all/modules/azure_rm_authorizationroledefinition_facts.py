@@ -155,7 +155,7 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
         :return: deserialized Role Definitioninstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.role_definitions.get(scope=self.scope,
                                                              role_definition_id=self.role_definition_id)
@@ -164,7 +164,6 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleDefinitions.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

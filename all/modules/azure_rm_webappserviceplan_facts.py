@@ -340,7 +340,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_web_apps(resource_group_name=self.resource_group,
                                                                         name=self.name)
@@ -349,7 +349,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -362,7 +361,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_hybrid_connection_keys(resource_group_name=self.resource_group,
                                                                                       name=self.name,
@@ -373,7 +372,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -386,7 +384,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_web_apps_by_hybrid_connection(resource_group_name=self.resource_group,
                                                                                              name=self.name,
@@ -397,7 +395,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -410,7 +407,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_metrics(resource_group_name=self.resource_group,
                                                                        name=self.name)
@@ -419,7 +416,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -432,7 +428,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_usages(resource_group_name=self.resource_group,
                                                                       name=self.name)
@@ -441,7 +437,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -454,7 +449,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_routes_for_vnet(resource_group_name=self.resource_group,
                                                                                name=self.name,
@@ -464,7 +459,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -477,7 +471,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.get(resource_group_name=self.resource_group,
                                                               name=self.name)
@@ -486,7 +480,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -498,7 +491,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_capabilities(resource_group_name=self.resource_group,
                                                                             name=self.name)
@@ -507,7 +500,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -520,7 +512,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_hybrid_connections(resource_group_name=self.resource_group,
                                                                                   name=self.name)
@@ -529,7 +521,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -542,7 +533,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_metric_defintions(resource_group_name=self.resource_group,
                                                                                  name=self.name)
@@ -551,7 +542,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -564,7 +554,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_vnets(resource_group_name=self.resource_group,
                                                                      name=self.name)
@@ -573,7 +563,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -586,7 +575,7 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         :return: deserialized App Service Planinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_plans.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -594,7 +583,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServicePlans.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

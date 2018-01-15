@@ -187,7 +187,7 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
         :return: deserialized Sync Memberinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.sync_members.get(resource_group_name=self.resource_group,
                                                          server_name=self.server_name,
@@ -199,7 +199,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncMembers.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -211,7 +210,7 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
         :return: deserialized Sync Memberinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.sync_members.list_member_schemas(resource_group_name=self.resource_group,
                                                                          server_name=self.server_name,
@@ -223,7 +222,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncMembers.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -236,7 +234,7 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
         :return: deserialized Sync Memberinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.sync_members.list_by_sync_group(resource_group_name=self.resource_group,
                                                                         server_name=self.server_name,
@@ -247,7 +245,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncMembers.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

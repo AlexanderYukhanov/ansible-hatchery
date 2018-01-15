@@ -153,7 +153,7 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
         :return: deserialized Server Azure A D Administratorinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.server_azure_ad_administrators.get(resource_group_name=self.resource_group,
                                                                            server_name=self.server_name,
@@ -163,7 +163,6 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerAzureADAdministrators.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -175,7 +174,7 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
         :return: deserialized Server Azure A D Administratorinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.server_azure_ad_administrators.list_by_server(resource_group_name=self.resource_group,
                                                                                       server_name=self.server_name)
@@ -184,7 +183,6 @@ class AzureRMServerAzureADAdministratorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerAzureADAdministrators.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

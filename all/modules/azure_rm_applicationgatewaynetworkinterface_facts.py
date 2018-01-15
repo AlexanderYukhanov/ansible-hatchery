@@ -200,7 +200,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_ip_configurations(resource_group_name=self.resource_group,
                                                                                                             virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
@@ -211,7 +211,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -224,7 +223,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_interfaces.get(resource_group_name=self.resource_group,
                                                                network_interface_name=self.network_interface_name)
@@ -233,7 +232,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -245,7 +243,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_vm_network_interfaces(resource_group_name=self.resource_group,
                                                                                                                 virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
@@ -255,7 +253,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -268,7 +265,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_interfaces.list_effective_network_security_groups(resource_group_name=self.resource_group,
                                                                                                   network_interface_name=self.network_interface_name)
@@ -277,7 +274,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -290,7 +286,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         :return: deserialized Network Interfaceinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_network_interfaces(resource_group_name=self.resource_group,
                                                                                                              virtual_machine_scale_set_name=self.virtual_machine_scale_set_name)
@@ -299,7 +295,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaces.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

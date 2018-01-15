@@ -167,7 +167,7 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
         :return: deserialized Route Filterinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.route_filters.get(resource_group_name=self.resource_group,
                                                           route_filter_name=self.route_filter_name)
@@ -176,7 +176,6 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
             self.log('Could not get facts for RouteFilters.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -188,7 +187,7 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
         :return: deserialized Route Filterinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.route_filters.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -196,7 +195,6 @@ class AzureRMRouteFiltersFacts(AzureRMModuleBase):
             self.log('Could not get facts for RouteFilters.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

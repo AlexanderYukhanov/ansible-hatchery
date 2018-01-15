@@ -153,7 +153,7 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
         :return: deserialized Recoverable Databaseinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.recoverable_databases.get(resource_group_name=self.resource_group,
                                                                   server_name=self.server_name,
@@ -163,7 +163,6 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecoverableDatabases.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -175,7 +174,7 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
         :return: deserialized Recoverable Databaseinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.recoverable_databases.list_by_server(resource_group_name=self.resource_group,
                                                                              server_name=self.server_name)
@@ -184,7 +183,6 @@ class AzureRMRecoverableDatabasesFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecoverableDatabases.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

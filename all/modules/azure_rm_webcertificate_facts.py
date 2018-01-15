@@ -157,7 +157,7 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
         :return: deserialized Certificateinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.certificates.get(resource_group_name=self.resource_group,
                                                          name=self.name)
@@ -166,7 +166,6 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
             self.log('Could not get facts for Certificates.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -178,7 +177,7 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
         :return: deserialized Certificateinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.certificates.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -186,7 +185,6 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
             self.log('Could not get facts for Certificates.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

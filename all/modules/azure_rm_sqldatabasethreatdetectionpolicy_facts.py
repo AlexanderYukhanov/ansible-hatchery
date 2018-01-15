@@ -171,7 +171,7 @@ class AzureRMDatabaseThreatDetectionPoliciesFacts(AzureRMModuleBase):
         :return: deserialized Database Threat Detection Policyinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.database_threat_detection_policies.get(resource_group_name=self.resource_group,
                                                                                server_name=self.server_name,
@@ -182,7 +182,6 @@ class AzureRMDatabaseThreatDetectionPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for DatabaseThreatDetectionPolicies.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

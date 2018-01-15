@@ -154,7 +154,7 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
         :return: deserialized Network Interface I P Configurationinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_interface_ip_configurations.get(resource_group_name=self.resource_group,
                                                                                 network_interface_name=self.network_interface_name,
@@ -164,7 +164,6 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkInterfaceIPConfigurations.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

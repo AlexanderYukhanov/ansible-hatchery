@@ -167,7 +167,7 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.express_route_circuits.list_arp_table(resource_group_name=self.resource_group,
                                                                               circuit_name=self.circuit_name,
@@ -178,7 +178,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -191,7 +190,7 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.express_route_circuits.list_routes_table(resource_group_name=self.resource_group,
                                                                                  circuit_name=self.circuit_name,
@@ -202,7 +201,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -215,7 +213,7 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.express_route_circuits.list_routes_table_summary(resource_group_name=self.resource_group,
                                                                                          circuit_name=self.circuit_name,
@@ -226,7 +224,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -239,7 +236,7 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         :return: deserialized Express Route Circuitinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.express_route_circuits.get(resource_group_name=self.resource_group,
                                                                    circuit_name=self.circuit_name)
@@ -248,7 +245,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuits.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

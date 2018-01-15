@@ -117,7 +117,7 @@ class AzureRMFacts(AzureRMModuleBase):
         :return: deserialized instance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client..list_geo_regions()
             self.log("Response : {0}".format(response))
@@ -125,7 +125,6 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -138,7 +137,7 @@ class AzureRMFacts(AzureRMModuleBase):
         :return: deserialized instance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client..list_premier_add_on_offers()
             self.log("Response : {0}".format(response))
@@ -146,7 +145,6 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -159,7 +157,7 @@ class AzureRMFacts(AzureRMModuleBase):
         :return: deserialized instance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client..list_skus()
             self.log("Response : {0}".format(response))
@@ -167,7 +165,6 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -180,7 +177,7 @@ class AzureRMFacts(AzureRMModuleBase):
         :return: deserialized instance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client..list_source_controls()
             self.log("Response : {0}".format(response))
@@ -188,7 +185,6 @@ class AzureRMFacts(AzureRMModuleBase):
             self.log('Could not get facts for .')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

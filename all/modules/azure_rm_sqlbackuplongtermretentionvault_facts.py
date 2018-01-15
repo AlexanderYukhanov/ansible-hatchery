@@ -153,7 +153,7 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
         :return: deserialized Backup Long Term Retention Vaultinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.backup_long_term_retention_vaults.get(resource_group_name=self.resource_group,
                                                                               server_name=self.server_name,
@@ -163,7 +163,6 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionVaults.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -175,7 +174,7 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
         :return: deserialized Backup Long Term Retention Vaultinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.backup_long_term_retention_vaults.list_by_server(resource_group_name=self.resource_group,
                                                                                          server_name=self.server_name)
@@ -184,7 +183,6 @@ class AzureRMBackupLongTermRetentionVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionVaults.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

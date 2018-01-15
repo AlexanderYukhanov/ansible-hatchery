@@ -153,7 +153,7 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
         :return: deserialized Server Connection Policyinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.server_connection_policies.get(resource_group_name=self.resource_group,
                                                                        server_name=self.server_name,
@@ -163,7 +163,6 @@ class AzureRMServerConnectionPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerConnectionPolicies.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

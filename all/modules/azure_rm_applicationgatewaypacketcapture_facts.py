@@ -128,7 +128,7 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
         :return: deserialized Packet Captureinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.packet_captures.get(resource_group_name=self.resource_group,
                                                             network_watcher_name=self.network_watcher_name,
@@ -138,7 +138,6 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PacketCaptures.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

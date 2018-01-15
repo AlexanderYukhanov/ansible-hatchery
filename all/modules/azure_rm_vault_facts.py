@@ -131,7 +131,7 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
         :return: deserialized Vaultinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.vaults.get(resource_group_name=self.resource_group,
                                                    vault_name=self.vault_name)
@@ -140,7 +140,6 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Vaults.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -152,7 +151,7 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
         :return: deserialized Vaultinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.vaults.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -160,7 +159,6 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Vaults.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -173,7 +171,7 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
         :return: deserialized Vaultinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.vaults.list_deleted()
             self.log("Response : {0}".format(response))
@@ -181,7 +179,6 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Vaults.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

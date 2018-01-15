@@ -142,7 +142,7 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
         :return: deserialized Permissioninstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.permissions.list_for_resource(resource_group_name=self.resource_group,
                                                                       resource_provider_namespace=self.resource_provider_namespace,
@@ -154,7 +154,6 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Permissions.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -167,7 +166,7 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
         :return: deserialized Permissioninstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.permissions.list_for_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -175,7 +174,6 @@ class AzureRMPermissionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Permissions.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

@@ -117,7 +117,7 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
         :return: deserialized Local Network Gatewayinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.local_network_gateways.get(resource_group_name=self.resource_group,
                                                                    local_network_gateway_name=self.local_network_gateway_name)
@@ -126,7 +126,6 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for LocalNetworkGateways.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

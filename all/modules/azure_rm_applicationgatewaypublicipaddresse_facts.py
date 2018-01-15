@@ -191,7 +191,7 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         :return: deserialized Public I P Addresseinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_vm_public_ip_addresses(resource_group_name=self.resource_group,
                                                                                                                   virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
@@ -203,7 +203,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PublicIPAddresses.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -216,7 +215,7 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         :return: deserialized Public I P Addresseinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.public_ip_addresses.get(resource_group_name=self.resource_group,
                                                                 public_ip_address_name=self.public_ip_address_name)
@@ -225,7 +224,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PublicIPAddresses.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -237,7 +235,7 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         :return: deserialized Public I P Addresseinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_public_ip_addresses(resource_group_name=self.resource_group,
                                                                                                                virtual_machine_scale_set_name=self.virtual_machine_scale_set_name)
@@ -246,7 +244,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
             self.log('Could not get facts for PublicIPAddresses.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

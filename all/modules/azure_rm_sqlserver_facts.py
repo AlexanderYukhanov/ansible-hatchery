@@ -191,7 +191,6 @@ class AzureRMServersFacts(AzureRMModuleBase):
             self.log('Could not get facts for Servers.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

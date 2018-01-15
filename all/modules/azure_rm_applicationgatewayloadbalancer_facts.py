@@ -163,7 +163,7 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
         :return: deserialized Load Balancerinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.load_balancers.get(resource_group_name=self.resource_group,
                                                            load_balancer_name=self.load_balancer_name)
@@ -172,7 +172,6 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
             self.log('Could not get facts for LoadBalancers.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

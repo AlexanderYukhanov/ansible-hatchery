@@ -122,7 +122,7 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
         :return: deserialized Elastic Pool Activityinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.elastic_pool_activities.list_by_elastic_pool(resource_group_name=self.resource_group,
                                                                                      server_name=self.server_name,
@@ -132,7 +132,6 @@ class AzureRMElasticPoolActivitiesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ElasticPoolActivities.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

@@ -178,7 +178,7 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
         :return: deserialized Geo Backup Policyinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.geo_backup_policies.get(resource_group_name=self.resource_group,
                                                                 server_name=self.server_name,
@@ -189,7 +189,6 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for GeoBackupPolicies.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -201,7 +200,7 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
         :return: deserialized Geo Backup Policyinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.geo_backup_policies.list_by_database(resource_group_name=self.resource_group,
                                                                              server_name=self.server_name,
@@ -211,7 +210,6 @@ class AzureRMGeoBackupPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for GeoBackupPolicies.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

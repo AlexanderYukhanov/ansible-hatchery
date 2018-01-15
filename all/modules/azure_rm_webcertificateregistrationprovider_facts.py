@@ -89,7 +89,7 @@ class AzureRMCertificateRegistrationProviderFacts(AzureRMModuleBase):
         :return: deserialized Certificate Registration Providerinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.certificate_registration_provider.list_operations()
             self.log("Response : {0}".format(response))
@@ -97,7 +97,6 @@ class AzureRMCertificateRegistrationProviderFacts(AzureRMModuleBase):
             self.log('Could not get facts for CertificateRegistrationProvider.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

@@ -135,7 +135,7 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
         :return: deserialized Application Security Groupinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.application_security_groups.get(resource_group_name=self.resource_group,
                                                                         application_security_group_name=self.application_security_group_name)
@@ -144,7 +144,6 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationSecurityGroups.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

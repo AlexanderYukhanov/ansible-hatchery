@@ -133,7 +133,7 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
         :return: deserialized Provider Operations Metadatainstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.provider_operations_metadata.get(resource_provider_namespace=self.resource_provider_namespace)
             self.log("Response : {0}".format(response))
@@ -141,7 +141,6 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
             self.log('Could not get facts for ProviderOperationsMetadata.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

@@ -210,7 +210,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.role_assignments.list_for_resource(resource_group_name=self.resource_group,
                                                                            resource_provider_namespace=self.resource_provider_namespace,
@@ -222,7 +222,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -235,7 +234,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.role_assignments.list_for_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -243,7 +242,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -256,7 +254,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.role_assignments.get(scope=self.scope,
                                                              role_assignment_name=self.role_assignment_name)
@@ -265,7 +263,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -277,7 +274,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         :return: deserialized Role Assignmentinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.role_assignments.list_for_scope(scope=self.scope)
             self.log("Response : {0}".format(response))
@@ -285,7 +282,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RoleAssignments.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

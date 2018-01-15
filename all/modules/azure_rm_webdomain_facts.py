@@ -147,7 +147,7 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         :return: deserialized Domaininstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.domains.list_recommendations()
             self.log("Response : {0}".format(response))
@@ -155,7 +155,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -168,7 +167,7 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         :return: deserialized Domaininstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.domains.get(resource_group_name=self.resource_group,
                                                     domain_name=self.domain_name)
@@ -177,7 +176,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -189,7 +187,7 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         :return: deserialized Domaininstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.domains.list_ownership_identifiers(resource_group_name=self.resource_group,
                                                                            domain_name=self.domain_name)
@@ -198,7 +196,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -211,7 +208,7 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         :return: deserialized Domaininstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.domains.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -219,7 +216,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Domains.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

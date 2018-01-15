@@ -136,7 +136,7 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         :return: deserialized App Service Certificate Orderinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_certificate_orders.get(resource_group_name=self.resource_group,
                                                                            certificate_order_name=self.certificate_order_name)
@@ -145,7 +145,6 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceCertificateOrders.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -157,7 +156,7 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         :return: deserialized App Service Certificate Orderinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_certificate_orders.list_certificates(resource_group_name=self.resource_group,
                                                                                          certificate_order_name=self.certificate_order_name)
@@ -166,7 +165,6 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceCertificateOrders.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -179,7 +177,7 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         :return: deserialized App Service Certificate Orderinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.app_service_certificate_orders.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -187,7 +185,6 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
             self.log('Could not get facts for AppServiceCertificateOrders.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

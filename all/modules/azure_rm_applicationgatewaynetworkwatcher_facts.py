@@ -134,7 +134,7 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         :return: deserialized Network Watcherinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_watchers.list_available_providers(resource_group_name=self.resource_group,
                                                                                   network_watcher_name=self.network_watcher_name,
@@ -144,7 +144,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkWatchers.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -157,7 +156,7 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         :return: deserialized Network Watcherinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.network_watchers.get(resource_group_name=self.resource_group,
                                                              network_watcher_name=self.network_watcher_name)
@@ -166,7 +165,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
             self.log('Could not get facts for NetworkWatchers.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

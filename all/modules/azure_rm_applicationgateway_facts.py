@@ -125,7 +125,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.application_gateways.get(resource_group_name=self.resource_group,
                                                                  application_gateway_name=self.name)
@@ -134,7 +134,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -146,7 +145,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.application_gateways.list_available_waf_rule_sets()
             self.log("Response : {0}".format(response))
@@ -154,7 +153,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -167,7 +165,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.application_gateways.list_available_ssl_options()
             self.log("Response : {0}".format(response))
@@ -175,7 +173,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -188,7 +185,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         :return: deserialized Application Gatewayinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.application_gateways.list_available_ssl_predefined_policies()
             self.log("Response : {0}".format(response))
@@ -196,7 +193,6 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationGateways.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

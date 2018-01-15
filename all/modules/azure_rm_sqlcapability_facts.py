@@ -100,7 +100,7 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
         :return: deserialized Capabilityinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.capabilities.list_by_location(location_id=self.location_id)
             self.log("Response : {0}".format(response))
@@ -108,7 +108,6 @@ class AzureRMCapabilitiesFacts(AzureRMModuleBase):
             self.log('Could not get facts for Capabilities.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

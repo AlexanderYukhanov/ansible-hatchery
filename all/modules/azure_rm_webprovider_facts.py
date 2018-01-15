@@ -89,7 +89,7 @@ class AzureRMProviderFacts(AzureRMModuleBase):
         :return: deserialized Providerinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.provider.list_operations()
             self.log("Response : {0}".format(response))
@@ -97,7 +97,6 @@ class AzureRMProviderFacts(AzureRMModuleBase):
             self.log('Could not get facts for Provider.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

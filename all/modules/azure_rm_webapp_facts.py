@@ -1090,7 +1090,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_backup_status_secrets_slot(resource_group_name=self.resource_group,
                                                                                  name=self.name,
@@ -1102,7 +1102,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1115,7 +1114,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connection_keys_slot(resource_group_name=self.resource_group,
                                                                                   name=self.name,
@@ -1127,7 +1126,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1140,7 +1138,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_process_modules_slot(resource_group_name=self.resource_group,
                                                                                     name=self.name,
@@ -1152,7 +1150,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1165,7 +1162,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_process_threads_slot(resource_group_name=self.resource_group,
                                                                                     name=self.name,
@@ -1177,7 +1174,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1190,7 +1186,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_metrics_slot(resource_group_name=self.resource_group,
                                                                    name=self.name,
@@ -1200,7 +1196,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1213,7 +1208,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_slot_differences_slot(resource_group_name=self.resource_group,
                                                                             name=self.name,
@@ -1225,7 +1220,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1238,7 +1232,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_backup_status_secrets(resource_group_name=self.resource_group,
                                                                             name=self.name,
@@ -1249,7 +1243,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1262,7 +1255,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connection_keys(resource_group_name=self.resource_group,
                                                                              name=self.name,
@@ -1273,7 +1266,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1286,7 +1278,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_process_modules(resource_group_name=self.resource_group,
                                                                                name=self.name,
@@ -1297,7 +1289,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1310,7 +1301,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_process_threads(resource_group_name=self.resource_group,
                                                                                name=self.name,
@@ -1321,7 +1312,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1334,7 +1324,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_metrics(resource_group_name=self.resource_group,
                                                               name=self.name)
@@ -1343,7 +1333,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1356,7 +1345,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_deployment_log_slot(resource_group_name=self.resource_group,
                                                                           name=self.name,
@@ -1367,7 +1356,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1380,7 +1368,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_function_secrets_slot(resource_group_name=self.resource_group,
                                                                             name=self.name,
@@ -1391,7 +1379,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1404,7 +1391,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_processes_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -1415,7 +1402,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1428,7 +1414,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_network_features_slot(resource_group_name=self.resource_group,
                                                                             name=self.name,
@@ -1439,7 +1425,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1452,7 +1437,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_perf_mon_counters_slot(resource_group_name=self.resource_group,
                                                                              name=self.name,
@@ -1462,7 +1447,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1475,7 +1459,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_process_modules_slot(resource_group_name=self.resource_group,
                                                                            name=self.name,
@@ -1486,7 +1470,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1499,7 +1482,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_process_threads_slot(resource_group_name=self.resource_group,
                                                                            name=self.name,
@@ -1510,7 +1493,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1523,7 +1505,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets_slot(resource_group_name=self.resource_group,
                                                                                                name=self.name,
@@ -1533,7 +1515,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1546,7 +1527,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_job_history_slot(resource_group_name=self.resource_group,
                                                                                      name=self.name,
@@ -1557,7 +1538,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1570,7 +1550,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_usages_slot(resource_group_name=self.resource_group,
                                                                   name=self.name,
@@ -1580,7 +1560,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1593,7 +1572,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_slot_differences_from_production(resource_group_name=self.resource_group,
                                                                                        name=self.name,
@@ -1604,7 +1583,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1617,7 +1595,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_deployment_log(resource_group_name=self.resource_group,
                                                                      name=self.name,
@@ -1627,7 +1605,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1640,7 +1617,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_function_secrets(resource_group_name=self.resource_group,
                                                                        name=self.name,
@@ -1650,7 +1627,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1663,7 +1639,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_processes(resource_group_name=self.resource_group,
                                                                          name=self.name,
@@ -1673,7 +1649,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1686,7 +1661,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_network_features(resource_group_name=self.resource_group,
                                                                        name=self.name,
@@ -1696,7 +1671,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1709,7 +1683,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_perf_mon_counters(resource_group_name=self.resource_group,
                                                                         name=self.name)
@@ -1718,7 +1692,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1731,7 +1704,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_process_modules(resource_group_name=self.resource_group,
                                                                       name=self.name,
@@ -1741,7 +1714,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1754,7 +1726,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_process_threads(resource_group_name=self.resource_group,
                                                                       name=self.name,
@@ -1764,7 +1736,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1777,7 +1748,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_publishing_profile_xml_with_secrets(resource_group_name=self.resource_group,
                                                                                           name=self.name)
@@ -1786,7 +1757,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1799,7 +1769,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_backups_slot(resource_group_name=self.resource_group,
                                                                    name=self.name,
@@ -1809,7 +1779,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1822,7 +1791,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_configurations_slot(resource_group_name=self.resource_group,
                                                                           name=self.name,
@@ -1832,7 +1801,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1845,7 +1813,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_application_settings_slot(resource_group_name=self.resource_group,
                                                                                 name=self.name,
@@ -1855,7 +1823,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1868,7 +1835,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_connection_strings_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -1878,7 +1845,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1891,7 +1857,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_metadata_slot(resource_group_name=self.resource_group,
                                                                     name=self.name,
@@ -1901,7 +1867,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1914,7 +1879,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_publishing_credentials_slot(resource_group_name=self.resource_group,
                                                                                   name=self.name,
@@ -1924,7 +1889,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1937,7 +1901,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_site_push_settings_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -1947,7 +1911,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1960,7 +1923,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_configuration_snapshot_info_slot(resource_group_name=self.resource_group,
                                                                                        name=self.name,
@@ -1970,7 +1933,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -1983,7 +1945,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_continuous_web_jobs_slot(resource_group_name=self.resource_group,
                                                                                name=self.name,
@@ -1993,7 +1955,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2006,7 +1967,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_deployments_slot(resource_group_name=self.resource_group,
                                                                        name=self.name,
@@ -2016,7 +1977,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2029,7 +1989,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_domain_ownership_identifiers_slot(resource_group_name=self.resource_group,
                                                                                         name=self.name,
@@ -2039,7 +1999,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2052,7 +2011,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_functions_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -2062,7 +2021,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2075,7 +2033,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_host_name_bindings_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -2085,7 +2043,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2098,7 +2055,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connections_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -2108,7 +2065,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2121,7 +2077,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_relay_service_connections_slot(resource_group_name=self.resource_group,
                                                                                      name=self.name,
@@ -2131,7 +2087,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2144,7 +2099,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_identifiers_slot(resource_group_name=self.resource_group,
                                                                                 name=self.name,
@@ -2154,7 +2109,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2167,7 +2121,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_sync_function_triggers_slot(resource_group_name=self.resource_group,
                                                                                   name=self.name,
@@ -2177,7 +2131,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2190,7 +2143,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_metric_definitions_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -2200,7 +2153,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2213,7 +2165,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_premier_add_ons_slot(resource_group_name=self.resource_group,
                                                                            name=self.name,
@@ -2223,7 +2175,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2236,7 +2187,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_processes_slot(resource_group_name=self.resource_group,
                                                                      name=self.name,
@@ -2246,7 +2197,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2259,7 +2209,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_public_certificates_slot(resource_group_name=self.resource_group,
                                                                                name=self.name,
@@ -2269,7 +2219,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2282,7 +2231,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_site_extensions_slot(resource_group_name=self.resource_group,
                                                                            name=self.name,
@@ -2292,7 +2241,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2305,7 +2253,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_snapshots_slot(resource_group_name=self.resource_group,
                                                                      name=self.name,
@@ -2315,7 +2263,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2328,7 +2275,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_jobs_slot(resource_group_name=self.resource_group,
                                                                               name=self.name,
@@ -2338,7 +2285,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2351,7 +2297,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_vnet_connections_slot(resource_group_name=self.resource_group,
                                                                             name=self.name,
@@ -2361,7 +2307,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2374,7 +2319,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_web_jobs_slot(resource_group_name=self.resource_group,
                                                                     name=self.name,
@@ -2384,7 +2329,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2397,7 +2341,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_job_history(resource_group_name=self.resource_group,
                                                                                 name=self.name,
@@ -2407,7 +2351,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2420,7 +2363,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_usages(resource_group_name=self.resource_group,
                                                              name=self.name)
@@ -2429,7 +2372,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2442,7 +2384,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_by_resource_group(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
@@ -2450,7 +2392,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2463,7 +2404,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.get(resource_group_name=self.resource_group,
                                                      name=self.name)
@@ -2472,7 +2413,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -2484,7 +2424,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_backups(resource_group_name=self.resource_group,
                                                               name=self.name)
@@ -2493,7 +2433,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2506,7 +2445,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_configurations(resource_group_name=self.resource_group,
                                                                      name=self.name)
@@ -2515,7 +2454,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2528,7 +2466,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_application_settings(resource_group_name=self.resource_group,
                                                                            name=self.name)
@@ -2537,7 +2475,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2550,7 +2487,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_connection_strings(resource_group_name=self.resource_group,
                                                                          name=self.name)
@@ -2559,7 +2496,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2572,7 +2508,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_metadata(resource_group_name=self.resource_group,
                                                                name=self.name)
@@ -2581,7 +2517,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2594,7 +2529,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_publishing_credentials(resource_group_name=self.resource_group,
                                                                              name=self.name)
@@ -2603,7 +2538,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2616,7 +2550,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_site_push_settings(resource_group_name=self.resource_group,
                                                                          name=self.name)
@@ -2625,7 +2559,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2638,7 +2571,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_slot_configuration_names(resource_group_name=self.resource_group,
                                                                                name=self.name)
@@ -2647,7 +2580,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2660,7 +2592,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_configuration_snapshot_info(resource_group_name=self.resource_group,
                                                                                   name=self.name)
@@ -2669,7 +2601,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2682,7 +2613,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_continuous_web_jobs(resource_group_name=self.resource_group,
                                                                           name=self.name)
@@ -2691,7 +2622,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2704,7 +2634,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_deployments(resource_group_name=self.resource_group,
                                                                   name=self.name)
@@ -2713,7 +2643,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2726,7 +2655,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_domain_ownership_identifiers(resource_group_name=self.resource_group,
                                                                                    name=self.name)
@@ -2735,7 +2664,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2748,7 +2676,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_functions(resource_group_name=self.resource_group,
                                                                 name=self.name)
@@ -2757,7 +2685,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2770,7 +2697,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_host_name_bindings(resource_group_name=self.resource_group,
                                                                          name=self.name)
@@ -2779,7 +2706,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2792,7 +2718,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_hybrid_connections(resource_group_name=self.resource_group,
                                                                          name=self.name)
@@ -2801,7 +2727,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2814,7 +2739,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_relay_service_connections(resource_group_name=self.resource_group,
                                                                                 name=self.name)
@@ -2823,7 +2748,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2836,7 +2760,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_instance_identifiers(resource_group_name=self.resource_group,
                                                                            name=self.name)
@@ -2845,7 +2769,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2858,7 +2781,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_sync_function_triggers(resource_group_name=self.resource_group,
                                                                              name=self.name)
@@ -2867,7 +2790,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2880,7 +2802,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_premier_add_ons(resource_group_name=self.resource_group,
                                                                       name=self.name)
@@ -2889,7 +2811,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2902,7 +2823,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_processes(resource_group_name=self.resource_group,
                                                                 name=self.name)
@@ -2911,7 +2832,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2924,7 +2844,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_public_certificates(resource_group_name=self.resource_group,
                                                                           name=self.name)
@@ -2933,7 +2853,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2946,7 +2865,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_site_extensions(resource_group_name=self.resource_group,
                                                                       name=self.name)
@@ -2955,7 +2874,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2968,7 +2886,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_slots(resource_group_name=self.resource_group,
                                                             name=self.name)
@@ -2977,7 +2895,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -2990,7 +2907,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_snapshots(resource_group_name=self.resource_group,
                                                                 name=self.name)
@@ -2999,7 +2916,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -3012,7 +2928,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_triggered_web_jobs(resource_group_name=self.resource_group,
                                                                          name=self.name)
@@ -3021,7 +2937,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -3034,7 +2949,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_vnet_connections(resource_group_name=self.resource_group,
                                                                        name=self.name)
@@ -3043,7 +2958,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -3056,7 +2970,7 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         :return: deserialized Web Appinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.web_apps.list_web_jobs(resource_group_name=self.resource_group,
                                                                name=self.name)
@@ -3065,7 +2979,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
             self.log('Could not get facts for WebApps.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

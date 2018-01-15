@@ -134,7 +134,7 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
         :return: deserialized Express Route Circuit Peeringinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.express_route_circuit_peerings.get(resource_group_name=self.resource_group,
                                                                            circuit_name=self.circuit_name,
@@ -144,7 +144,6 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ExpressRouteCircuitPeerings.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

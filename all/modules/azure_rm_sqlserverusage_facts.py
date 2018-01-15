@@ -111,7 +111,7 @@ class AzureRMServerUsagesFacts(AzureRMModuleBase):
         :return: deserialized Server Usageinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.server_usages.list_by_server(resource_group_name=self.resource_group,
                                                                      server_name=self.server_name)
@@ -120,7 +120,6 @@ class AzureRMServerUsagesFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerUsages.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

@@ -148,7 +148,7 @@ class AzureRMInboundNatRulesFacts(AzureRMModuleBase):
         :return: deserialized Inbound Nat Ruleinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.inbound_nat_rules.get(resource_group_name=self.resource_group,
                                                               load_balancer_name=self.load_balancer_name,
@@ -158,7 +158,6 @@ class AzureRMInboundNatRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for InboundNatRules.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

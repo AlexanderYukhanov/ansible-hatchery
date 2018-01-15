@@ -133,7 +133,7 @@ class AzureRMTransparentDataEncryptionActivitiesFacts(AzureRMModuleBase):
         :return: deserialized Transparent Data Encryption Activityinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.transparent_data_encryption_activities.list_by_configuration(resource_group_name=self.resource_group,
                                                                                                      server_name=self.server_name,
@@ -144,7 +144,6 @@ class AzureRMTransparentDataEncryptionActivitiesFacts(AzureRMModuleBase):
             self.log('Could not get facts for TransparentDataEncryptionActivities.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

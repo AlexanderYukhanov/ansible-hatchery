@@ -165,7 +165,7 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
         :return: deserialized Server Communication Linkinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.server_communication_links.get(resource_group_name=self.resource_group,
                                                                        server_name=self.server_name,
@@ -175,7 +175,6 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerCommunicationLinks.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -187,7 +186,7 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
         :return: deserialized Server Communication Linkinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.server_communication_links.list_by_server(resource_group_name=self.resource_group,
                                                                                   server_name=self.server_name)
@@ -196,7 +195,6 @@ class AzureRMServerCommunicationLinksFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServerCommunicationLinks.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

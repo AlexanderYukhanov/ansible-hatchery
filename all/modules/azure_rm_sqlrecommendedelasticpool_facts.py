@@ -177,7 +177,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         :return: deserialized Recommended Elastic Poolinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.recommended_elastic_pools.get(resource_group_name=self.resource_group,
                                                                       server_name=self.server_name,
@@ -187,7 +187,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecommendedElasticPools.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -199,7 +198,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         :return: deserialized Recommended Elastic Poolinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.recommended_elastic_pools.list_metrics(resource_group_name=self.resource_group,
                                                                                server_name=self.server_name,
@@ -209,7 +208,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecommendedElasticPools.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -222,7 +220,7 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
         :return: deserialized Recommended Elastic Poolinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.recommended_elastic_pools.list_by_server(resource_group_name=self.resource_group,
                                                                                  server_name=self.server_name)
@@ -231,7 +229,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RecommendedElasticPools.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

@@ -122,7 +122,7 @@ class AzureRMRestorePointsFacts(AzureRMModuleBase):
         :return: deserialized Restore Pointinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.restore_points.list_by_database(resource_group_name=self.resource_group,
                                                                         server_name=self.server_name,
@@ -132,7 +132,6 @@ class AzureRMRestorePointsFacts(AzureRMModuleBase):
             self.log('Could not get facts for RestorePoints.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

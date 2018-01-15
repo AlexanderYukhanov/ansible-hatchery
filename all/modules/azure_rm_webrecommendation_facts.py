@@ -137,7 +137,7 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
         :return: deserialized Recommendationinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.recommendations.list_recommended_rules_for_web_app(resource_group_name=self.resource_group,
                                                                                            site_name=self.site_name)
@@ -146,7 +146,6 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Recommendations.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -159,7 +158,7 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
         :return: deserialized Recommendationinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.recommendations.list_history_for_web_app(resource_group_name=self.resource_group,
                                                                                  site_name=self.site_name)
@@ -168,7 +167,6 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Recommendations.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

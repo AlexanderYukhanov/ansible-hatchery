@@ -169,7 +169,7 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
         :return: deserialized Sync Agentinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.sync_agents.get(resource_group_name=self.resource_group,
                                                         server_name=self.server_name,
@@ -179,7 +179,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncAgents.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -191,7 +190,7 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
         :return: deserialized Sync Agentinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.sync_agents.list_linked_databases(resource_group_name=self.resource_group,
                                                                           server_name=self.server_name,
@@ -201,7 +200,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncAgents.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -214,7 +212,7 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
         :return: deserialized Sync Agentinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.sync_agents.list_by_server(resource_group_name=self.resource_group,
                                                                    server_name=self.server_name)
@@ -223,7 +221,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
             self.log('Could not get facts for SyncAgents.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

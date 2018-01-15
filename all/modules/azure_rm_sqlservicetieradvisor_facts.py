@@ -166,7 +166,7 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
         :return: deserialized Service Tier Advisorinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.service_tier_advisors.get(resource_group_name=self.resource_group,
                                                                   server_name=self.server_name,
@@ -177,7 +177,6 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServiceTierAdvisors.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -189,7 +188,7 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
         :return: deserialized Service Tier Advisorinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.service_tier_advisors.list_by_database(resource_group_name=self.resource_group,
                                                                                server_name=self.server_name,
@@ -199,7 +198,6 @@ class AzureRMServiceTierAdvisorsFacts(AzureRMModuleBase):
             self.log('Could not get facts for ServiceTierAdvisors.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

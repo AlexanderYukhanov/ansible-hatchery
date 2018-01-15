@@ -158,7 +158,7 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         :return: deserialized Virtual Networkinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.virtual_networks.get(resource_group_name=self.resource_group,
                                                              virtual_network_name=self.virtual_network_name)
@@ -167,7 +167,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworks.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -179,7 +178,7 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         :return: deserialized Virtual Networkinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.virtual_networks.list_usage(resource_group_name=self.resource_group,
                                                                     virtual_network_name=self.virtual_network_name)
@@ -188,7 +187,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworks.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

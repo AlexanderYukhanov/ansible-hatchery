@@ -117,7 +117,7 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
         :return: deserialized Virtual Network Gateway Connectioninstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.virtual_network_gateway_connections.get(resource_group_name=self.resource_group,
                                                                                 virtual_network_gateway_connection_name=self.virtual_network_gateway_connection_name)
@@ -126,7 +126,6 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
             self.log('Could not get facts for VirtualNetworkGatewayConnections.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

@@ -172,7 +172,7 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
         :return: deserialized Backup Long Term Retention Policyinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.backup_long_term_retention_policies.get(resource_group_name=self.resource_group,
                                                                                 server_name=self.server_name,
@@ -183,7 +183,6 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionPolicies.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -195,7 +194,7 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
         :return: deserialized Backup Long Term Retention Policyinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.backup_long_term_retention_policies.list_by_database(resource_group_name=self.resource_group,
                                                                                              server_name=self.server_name,
@@ -205,7 +204,6 @@ class AzureRMBackupLongTermRetentionPoliciesFacts(AzureRMModuleBase):
             self.log('Could not get facts for BackupLongTermRetentionPolicies.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

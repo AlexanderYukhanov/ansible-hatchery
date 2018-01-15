@@ -179,7 +179,7 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.diagnostics.list_site_analyses_slot(resource_group_name=self.resource_group,
                                                                             site_name=self.site_name,
@@ -190,7 +190,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -203,7 +202,7 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.diagnostics.list_site_detectors_slot(resource_group_name=self.resource_group,
                                                                              site_name=self.site_name,
@@ -214,7 +213,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -227,7 +225,7 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.diagnostics.list_site_analyses(resource_group_name=self.resource_group,
                                                                        site_name=self.site_name,
@@ -237,7 +235,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -250,7 +247,7 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.diagnostics.list_site_detectors(resource_group_name=self.resource_group,
                                                                         site_name=self.site_name,
@@ -260,7 +257,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -273,7 +269,7 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.diagnostics.list_site_diagnostic_categories_slot(resource_group_name=self.resource_group,
                                                                                          site_name=self.site_name,
@@ -283,7 +279,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -296,7 +291,7 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
         :return: deserialized Diagnosticinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.diagnostics.list_site_diagnostic_categories(resource_group_name=self.resource_group,
                                                                                     site_name=self.site_name)
@@ -305,7 +300,6 @@ class AzureRMDiagnosticsFacts(AzureRMModuleBase):
             self.log('Could not get facts for Diagnostics.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

@@ -160,7 +160,7 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
         :return: deserialized Security Ruleinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.security_rules.get(resource_group_name=self.resource_group,
                                                            network_security_group_name=self.network_security_group_name,
@@ -170,7 +170,6 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
             self.log('Could not get facts for SecurityRules.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

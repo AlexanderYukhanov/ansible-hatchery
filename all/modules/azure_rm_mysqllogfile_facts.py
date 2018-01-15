@@ -111,7 +111,7 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
         :return: deserialized Log Fileinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.log_files.list_by_server(resource_group_name=self.resource_group,
                                                                  server_name=self.server_name)
@@ -120,7 +120,6 @@ class AzureRMLogFilesFacts(AzureRMModuleBase):
             self.log('Could not get facts for LogFiles.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 

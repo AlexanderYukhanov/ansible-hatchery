@@ -146,7 +146,7 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
         :return: deserialized Top Level Domaininstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.top_level_domains.list_agreements(name=self.name)
             self.log("Response : {0}".format(response))
@@ -154,7 +154,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for TopLevelDomains.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
@@ -167,7 +166,7 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
         :return: deserialized Top Level Domaininstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.top_level_domains.get(name=self.name)
             self.log("Response : {0}".format(response))
@@ -175,7 +174,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
             self.log('Could not get facts for TopLevelDomains.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results

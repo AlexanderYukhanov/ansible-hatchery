@@ -145,7 +145,7 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
         :return: deserialized Subscription Usageinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.subscription_usages.get(location_name=self.location_name,
                                                                 usage_name=self.usage_name)
@@ -154,7 +154,6 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
             self.log('Could not get facts for SubscriptionUsages.')
 
         if response is not None:
-            results = {}
             results[response.name] = response.as_dict()
 
         return results
@@ -166,7 +165,7 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
         :return: deserialized Subscription Usageinstance state dictionary
         '''
         response = None
-        results = False
+        results = {}
         try:
             response = self.mgmt_client.subscription_usages.list_by_location(location_name=self.location_name)
             self.log("Response : {0}".format(response))
@@ -174,7 +173,6 @@ class AzureRMSubscriptionUsagesFacts(AzureRMModuleBase):
             self.log('Could not get facts for SubscriptionUsages.')
 
         if response is not None:
-            results = {}
             for item in response:
                 results[item.name] = item.as_dict()
 
