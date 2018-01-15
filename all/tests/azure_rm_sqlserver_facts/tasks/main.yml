@@ -50,7 +50,7 @@
   assert:
     that:
       - output.changed == False
-      - 'sqlsrv{{ rpfx }}unexisting' not in output.servers
+      - "'sqlsrv{{ rpfx }}unexisting' not in output.servers"
 
 - name: Gather facts SQL Server - list
   azure_rm_sqlserver_facts:
