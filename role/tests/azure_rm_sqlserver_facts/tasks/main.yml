@@ -75,7 +75,7 @@
     that:
       - output.changed == False
       - output.servers.sqlsrv{{ rpfx }}.id != None
-      - output.servers.sqlsrv{{ rpfx }}.name == "sqlsrv{{ rpfx }}x"
+      - output.servers.sqlsrv{{ rpfx }}.name == "sqlsrv{{ rpfx }}"
       - output.servers.sqlsrv{{ rpfx }}.type != None
       - output.servers.sqlsrv{{ rpfx }}.location != None
       - output.servers.sqlsrv{{ rpfx }}.kind != None
