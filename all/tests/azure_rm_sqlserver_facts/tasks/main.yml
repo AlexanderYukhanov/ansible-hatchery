@@ -50,7 +50,7 @@
   assert:
     that:
       - output.changed == False
-      - "'unexisting' not in output.servers"
+      - output.servers == False
 
 - name: Gather facts SQL Server - list
   azure_rm_sqlserver_facts:
