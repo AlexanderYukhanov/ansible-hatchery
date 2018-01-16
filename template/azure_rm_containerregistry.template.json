@@ -757,7 +757,7 @@
       "TestPrerequisites": [
         "- name: Create an container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ rpfx }}",
+        "    name: acr{{ rpfx }}$postfix$",
         "    resource_group: \"{{ resource_group }}\"",
         "    location: eastus2",
         "    state: present",
@@ -770,7 +770,7 @@
       "TestPostrequisites": [
         "- name: Delete container registry",
         "  azure_rm_containerregistry:",
-        "    name: acr{{ rpfx }}",
+        "    name: acr{{ rpfx }}$postfix$",
         "    resource_group: \"{{ resource_group }}\"",
         "    state: absent"
       ],

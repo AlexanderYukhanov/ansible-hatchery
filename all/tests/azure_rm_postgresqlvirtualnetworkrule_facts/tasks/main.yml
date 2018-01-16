@@ -18,7 +18,7 @@
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
-    name: test-virtual-network-rule
+    name: test-virtual-network-rulefirst
 - name: Create Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
@@ -52,7 +52,7 @@
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: "postgresqlsrv{{ rpfx }}"
-    name: test-virtual-network-rule
+    name: test-virtual-network-rulefirst
     state: absent
 - name: Delete instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:

@@ -2852,7 +2852,7 @@
         "- name: Create sample container instance",
         "  azure_rm_containerinstance:",
         "    resource_group: \"{{ resource_group }}\"",
-        "    name: aci{{ rpfx }}",
+        "    name: aci{{ rpfx }}$postfix$",
         "    os_type: linux",
         "    ip_address: public",
         "    location: eastus",
@@ -2871,7 +2871,7 @@
       ],
       "TestPostrequisites": [
         "    resource_group: \"{{ resource_group }}\"",
-        "    name: aci{{ rpfx }}",
+        "    name: aci{{ rpfx }}$postfix$",
         "    os_type: linux",
         "    ip_address: public",
         "    location: eastus",

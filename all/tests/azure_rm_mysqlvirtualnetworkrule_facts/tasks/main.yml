@@ -35,7 +35,7 @@
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: mysqlsrv{{ rpfx }}
-    name: test-virtual-network-rule
+    name: test-virtual-network-rulefirst
     virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
 - name: Create Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
@@ -71,7 +71,7 @@
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
     server_name: mysqlsrv{{ rpfx }}
-    name: test-virtual-network-rule
+    name: test-virtual-network-rulefirst
     state: absent
 - name: Delete instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
