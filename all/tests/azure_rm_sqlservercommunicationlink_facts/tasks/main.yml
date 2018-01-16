@@ -7,26 +7,6 @@
   azure_rm_sqlservercommunicationlink_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.server_communication_links == {}
-
-- name: Gather facts Server Communication Link
-  azure_rm_sqlservercommunicationlink_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.server_communication_links == {}
-
-- name: Gather facts Server Communication Link
-  azure_rm_sqlservercommunicationlink_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:
@@ -42,3 +22,4 @@
     that:
       - output.changed == False
       - output.server_communication_links.xxxunknownxxx.id != None
+      - output.server_communication_links.xxxunknownxxxsecond.id != None

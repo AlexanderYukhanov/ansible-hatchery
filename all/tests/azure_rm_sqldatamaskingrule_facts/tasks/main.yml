@@ -7,18 +7,9 @@
   azure_rm_sqldatamaskingrule_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.data_masking_rules == {}
-
-- name: Gather facts Data Masking Rule
-  azure_rm_sqldatamaskingrule_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
       - output.data_masking_rules.xxxunknownxxx.id != None
+      - output.data_masking_rules.xxxunknownxxxsecond.id != None

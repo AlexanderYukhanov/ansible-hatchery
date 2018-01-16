@@ -6,24 +6,6 @@
 - name: Gather facts Subscription Usage
   azure_rm_sqlsubscriptionusage_facts:
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.subscription_usages == {}
-
-- name: Gather facts Subscription Usage
-  azure_rm_sqlsubscriptionusage_facts:
-  register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.subscription_usages == {}
-
-- name: Gather facts Subscription Usage
-  azure_rm_sqlsubscriptionusage_facts:
-  register: output
 - name: Assert that facts are returned
   assert:
     that:
@@ -38,3 +20,4 @@
     that:
       - output.changed == False
       - output.subscription_usages.xxxunknownxxx.id != None
+      - output.subscription_usages.xxxunknownxxxsecond.id != None

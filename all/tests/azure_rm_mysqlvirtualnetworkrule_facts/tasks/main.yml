@@ -3,32 +3,10 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
-- name: Gather facts MySQL Virtual Network Rule
-  azure_rm_mysqlvirtualnetworkrule_facts:
-    resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-  register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.virtual_network_rules == {}
-
-- name: Gather facts MySQL Virtual Network Rule
-  azure_rm_mysqlvirtualnetworkrule_facts:
-    resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
-  register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.virtual_network_rules == {}
-
 - name: Create MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: "mysqlsrv{{ rpfx }}"
+    name: mysqlsrv{{ rpfx }}
     sku:
       name: MYSQLB50
       tier: basic
@@ -56,14 +34,20 @@
 - name: Create Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
+    virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
+- name: Create Virtual Network Rule
+  azure_rm_mysqlvirtualnetworkrule:
+    resource_group: "{{ resource_group }}"
+    server_name: mysqlsrv{{ rpfx }}
+    name: test-virtual-network-rulesecond
     virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
 
 - name: Gather facts MySQL Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule_facts:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
@@ -74,22 +58,57 @@
 - name: Gather facts MySQL Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule_facts:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
       - output.virtual_network_rules.xxxunknownxxx.id != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.id != None
 
 - name: Delete instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
+    state: absent
+- name: Delete instance of Virtual Network Rule
+  azure_rm_mysqlvirtualnetworkrule:
+    resource_group: "{{ resource_group }}"
+    server_name: mysqlsrv{{ rpfx }}
+    name: test-virtual-network-rulesecond
+    state: absent
+
+- name: Gather facts MySQL Virtual Network Rule
+  azure_rm_mysqlvirtualnetworkrule_facts:
+    resource_group: "{{ resource_group }}"
+    server_name: mysqlsrv{{ rpfx }}
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.virtual_network_rules == {}
+
+- name: Gather facts MySQL Virtual Network Rule
+  azure_rm_mysqlvirtualnetworkrule_facts:
+    resource_group: "{{ resource_group }}"
+    server_name: mysqlsrv{{ rpfx }}
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.virtual_network_rules == {}
+
+- name: Delete instance of MySQL Server
+  azure_rm_mysqlserver:
+    resource_group: "{{ resource_group }}"
+    name: mysqlsrv{{ rpfx }}
     state: absent
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: "mysqlsrv{{ rpfx }}"
+    name: mysqlsrv{{ rpfx }}
     state: absent

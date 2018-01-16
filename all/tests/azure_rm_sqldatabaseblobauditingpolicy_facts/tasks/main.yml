@@ -7,16 +7,6 @@
   azure_rm_sqldatabaseblobauditingpolicy_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.database_blob_auditing_policies == {}
-
-- name: Gather facts Database Blob Auditing Policy
-  azure_rm_sqldatabaseblobauditingpolicy_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:

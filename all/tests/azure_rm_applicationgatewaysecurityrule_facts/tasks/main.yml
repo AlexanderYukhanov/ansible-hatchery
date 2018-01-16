@@ -7,16 +7,6 @@
   azure_rm_applicationgatewaysecurityrule_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.security_rules == {}
-
-- name: Gather facts Security Rule
-  azure_rm_applicationgatewaysecurityrule_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:

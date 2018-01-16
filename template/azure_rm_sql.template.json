@@ -4053,7 +4053,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "firewallrulecrudtest-6285",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4330,7 +4330,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -4523,7 +4523,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-5961",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4547,7 +4547,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testdw",
-            "test:default": "\"database{{ rpfx }}\""
+            "test:default": "database{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4571,7 +4571,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "Default",
-            "test:default": "\"geo-policy-name\""
+            "test:default": "geo-policy-name"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -4781,7 +4781,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -4805,7 +4805,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "database_name",
-            "test:default": "\"database{{ rpfx }}\""
+            "test:default": "database{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -4829,7 +4829,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "geo_backup_policy_name",
-            "test:default": "\"geo-policy-name\""
+            "test:default": "geo-policy-name"
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -5002,7 +5002,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-5961",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -6547,7 +6547,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 4,
@@ -7651,7 +7651,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-8069",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -7675,7 +7675,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-8102",
-            "test:default": "\"elasticpool{{ rpfx }}\""
+            "test:default": "elasticpool{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -8151,7 +8151,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -9858,7 +9858,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "sqlcrudtest-4645",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -10305,7 +10305,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"sqlsrv{{ rpfx }}\""
+            "test:default": "sqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,

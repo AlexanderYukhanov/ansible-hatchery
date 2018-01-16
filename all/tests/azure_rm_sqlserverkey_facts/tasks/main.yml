@@ -7,26 +7,6 @@
   azure_rm_sqlserverkey_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.server_keys == {}
-
-- name: Gather facts Server Key
-  azure_rm_sqlserverkey_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.server_keys == {}
-
-- name: Gather facts Server Key
-  azure_rm_sqlserverkey_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:
@@ -42,3 +22,4 @@
     that:
       - output.changed == False
       - output.server_keys.xxxunknownxxx.id != None
+      - output.server_keys.xxxunknownxxxsecond.id != None

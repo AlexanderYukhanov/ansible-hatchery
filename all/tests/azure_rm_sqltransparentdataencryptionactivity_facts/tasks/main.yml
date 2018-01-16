@@ -7,18 +7,9 @@
   azure_rm_sqltransparentdataencryptionactivity_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.transparent_data_encryption_activities == {}
-
-- name: Gather facts Transparent Data Encryption Activity
-  azure_rm_sqltransparentdataencryptionactivity_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
       - output.transparent_data_encryption_activities.xxxunknownxxx.id != None
+      - output.transparent_data_encryption_activities.xxxunknownxxxsecond.id != None

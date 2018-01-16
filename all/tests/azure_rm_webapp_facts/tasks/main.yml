@@ -7,31 +7,12 @@
   azure_rm_webapp_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.web_apps == {}
-
-- name: Gather facts Web App
-  azure_rm_webapp_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.web_apps == {}
-
-- name: Gather facts Web App
-  azure_rm_webapp_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
       - output.web_apps.{{ resource_group }}.id != None
+      - output.web_apps.{{ resource_group }}second.id != None
 
 - name: Gather facts Web App
   azure_rm_webapp_facts:

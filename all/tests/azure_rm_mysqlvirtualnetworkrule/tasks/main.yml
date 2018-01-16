@@ -6,7 +6,7 @@
 - name: Create MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: "mysqlsrv{{ rpfx }}"
+    name: mysqlsrv{{ rpfx }}
     sku:
       name: MYSQLB50
       tier: basic
@@ -35,7 +35,7 @@
 - name: Create instance of Virtual Network Rule -- check mode
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
   check_mode: yes
@@ -48,7 +48,7 @@
 - name: Create instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
   register: output
@@ -60,7 +60,7 @@
 - name: Create again instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     virtual_network_subnet_id: /subscriptions/{{ azure_subscription_id }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Network/virtualNetworks/vnet{{ rpfx }}/subnets/subnet{{ rpfx }}
   register: output
@@ -72,7 +72,7 @@
 - name: Delete instance of Virtual Network Rule -- check mode
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     state: absent
   check_mode: yes
@@ -85,7 +85,7 @@
 - name: Delete instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     state: absent
   register: output
@@ -97,7 +97,7 @@
 - name: Delete unexisting instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "mysqlsrv{{ rpfx }}"
+    server_name: mysqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     state: absent
   register: output
@@ -109,5 +109,5 @@
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"
-    name: "mysqlsrv{{ rpfx }}"
+    name: mysqlsrv{{ rpfx }}
     state: absent

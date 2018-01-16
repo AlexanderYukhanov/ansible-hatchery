@@ -7,18 +7,9 @@
   azure_rm_sqldatabaseoperation_facts:
     resource_group: "{{ resource_group }}"
   register: output
-- name: Assert that empty dictionary was returned
-  assert:
-    that:
-      - output.changed == False
-      - output.database_operations == {}
-
-- name: Gather facts Database Operation
-  azure_rm_sqldatabaseoperation_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
       - output.database_operations.xxxunknownxxx.id != None
+      - output.database_operations.xxxunknownxxxsecond.id != None
