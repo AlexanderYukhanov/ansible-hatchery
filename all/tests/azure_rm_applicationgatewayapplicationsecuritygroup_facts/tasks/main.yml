@@ -43,5 +43,6 @@
   assert:
     that:
       - output.changed == False
-      - output.application_security_groups == {}
+      - "'appgwsg{{ rpfx }}' not in output.application_security_groups"
+      - "'appgwsg{{ rpfx }}second' not in output.application_security_groups"
 

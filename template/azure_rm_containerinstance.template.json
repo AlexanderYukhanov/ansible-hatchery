@@ -2870,6 +2870,8 @@
         "        memory: 1.5"
       ],
       "TestPostrequisites": [
+        "- name: Delete sample container instance",
+        "  azure_rm_containerinstance:",
         "    resource_group: \"{{ resource_group }}\"",
         "    name: aci{{ rpfx }}$postfix$",
         "    os_type: linux",

@@ -70,7 +70,8 @@
   assert:
     that:
       - output.changed == False
-      - output.virtual_network_rules == {}
+      - "'xxxunknownxxx' not in output.virtual_network_rules"
+      - "'xxxunknownxxxsecond' not in output.virtual_network_rules"
 
 - name: Gather facts PostgreSQL Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule_facts:
@@ -81,7 +82,8 @@
   assert:
     that:
       - output.changed == False
-      - output.virtual_network_rules == {}
+      - "'xxxunknownxxx' not in output.virtual_network_rules"
+      - "'xxxunknownxxxsecond' not in output.virtual_network_rules"
 
 - name: Delete instance of PostgreSQL Server
   azure_rm_postgresqlserver:

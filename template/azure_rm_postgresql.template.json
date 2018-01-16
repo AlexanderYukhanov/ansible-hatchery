@@ -42,7 +42,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testserver",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -715,7 +715,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -981,7 +981,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testserver",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1261,7 +1261,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1434,7 +1434,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "vnet-test-svr",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -1706,7 +1706,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -1889,7 +1889,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testserver",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2168,7 +2168,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -2341,7 +2341,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "testserver",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -2631,7 +2631,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "server_name",
-            "test:default": "\"postgresqlsrv{{ rpfx }}\""
+            "test:default": "postgresqlsrv{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 2,

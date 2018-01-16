@@ -60,5 +60,6 @@
   assert:
     that:
       - output.changed == False
-      - output.log_files == {}
+      - "'mysqlsrv{{ rpfx }}' not in output.log_files"
+      - "'mysqlsrv{{ rpfx }}second' not in output.log_files"
 
