@@ -310,7 +310,6 @@ options:
             - 'default_domain_registrar_dns'
     auth_code:
         description:
-            -
 
 extends_documentation_fragment:
     - azure

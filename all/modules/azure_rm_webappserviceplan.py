@@ -54,8 +54,8 @@ options:
                     - Resource ID of the App Service Environment.
     per_site_scaling:
         description:
-            - "If <code>true</code>, apps assigned to this App Service plan can be scaled independently.\nIf <code>false</code>, apps assigned to this App Se
-              rvice plan will scale to all instances of the plan."
+            - If <code>true</code>, apps assigned to this App Service plan can be scaled independently.
+            - If <code>false</code>, apps assigned to this App Service plan will scale to all instances of the plan.
     is_spot:
         description:
             - If <code>true</code>, this App Service Plan owns spot instances.
@@ -73,7 +73,6 @@ options:
             - Scaling worker size ID.
     sku:
         description:
-            -
         suboptions:
             name:
                 description:

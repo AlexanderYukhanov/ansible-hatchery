@@ -49,7 +49,6 @@ options:
             - Maximum duration of the capture session in seconds.
     storage_location:
         description:
-            -
         required: True
         suboptions:
             storage_id:
@@ -64,7 +63,6 @@ options:
                       h /var/captures. Required if no storage ID is provided, otherwise optional."
     filters:
         description:
-            -
         type: list
         suboptions:
             protocol:

@@ -140,8 +140,11 @@ options:
                     - The password for the private registry.
     restart_policy:
         description:
-            - "Restart policy for all containers within the container group. \n- `Always` Always restart\n- `OnFailure` Restart on failure\n- `Never` Never r
-              estart\n."
+            - Restart policy for all containers within the container group.
+            - - `Always` Always restart
+            - - `OnFailure` Restart on failure
+            - - `Never` Never restart
+            - .
         choices:
             - 'always'
             - 'on_failure'

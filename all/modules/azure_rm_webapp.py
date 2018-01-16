@@ -275,10 +275,11 @@ options:
                                     - Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
                             change_step:
                                 description:
-                                    - "In auto ramp up scenario this is the step to to add/remove from <code>ReroutePercentage</code> until it reaches \n<cod
-                                      e>MinReroutePercentage</code> or <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes specifice
-                                      d in <code>ChangeIntervalInMinutes</code>.\nCustom decision algorithm can be provided in TiPCallback site extension wh
-                                      ich URL can be specified in <code>ChangeDecisionCallbackUrl</code>."
+                                    - In auto ramp up scenario this is the step to to add/remove from <code>ReroutePercentage</code> until it reaches
+                                    - "<code>MinReroutePercentage</code> or <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes speci
+                                      ficed in <code>ChangeIntervalInMinutes</code>."
+                                    - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDeci
+                                      sionCallbackUrl</code>."
                             change_interval_in_minutes:
                                 description:
                                     - Specifies interval in mimuntes to reevaluate ReroutePercentage.
@@ -291,7 +292,8 @@ options:
                             change_decision_callback_url:
                                 description:
                                     - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback si
-                                      te extension for the scaffold and contracts.\nhttps://www.siteextensions.net/packages/TiPCallback/"
+                                      te extension for the scaffold and contracts."
+                                    - "https://www.siteextensions.net/packages/TiPCallback/"
                             name:
                                 description:
                                     - "Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the exp
@@ -389,7 +391,8 @@ options:
                                             - Parameters for the executable.
                             min_process_execution_time:
                                 description:
-                                    - "Minimum time the process must execute\nbefore taking the action"
+                                    - Minimum time the process must execute
+                                    - before taking the action
             tracing_options:
                 description:
                     - Tracing options.
@@ -402,8 +405,8 @@ options:
                 suboptions:
                     allowed_origins:
                         description:
-                            - "Gets or sets the list of origins that should be allowed to make cross-origin\ncalls (for example: http://example.com:12345). U
-                              se '*' to allow all."
+                            - Gets or sets the list of origins that should be allowed to make cross-origin
+                            - "calls (for example: http://example.com:12345). Use '*' to allow all."
                         type: list
             push:
                 description:
@@ -421,8 +424,10 @@ options:
                     tags_requiring_auth:
                         description:
                             - "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endp
-                              oint.\nTags can consist of alphanumeric characters and the following:\nC(_), C(@), C(#), C(.), C(:), C(-). \nValidation should
-                               be performed at the PushRequestHandler."
+                              oint."
+                            - "Tags can consist of alphanumeric characters and the following:"
+                            - "C(_), C(@), C(#), C(.), C(:), C(-). "
+                            - Validation should be performed at the PushRequestHandler.
                     dynamic_tags_json:
                         description:
                             - "Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration
@@ -472,8 +477,8 @@ options:
               se</code>."
     host_names_disabled:
         description:
-            - "<code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.\n If <code>true</code>, the app is only accessibl
-              e via API management process."
+            - <code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.
+            -  If <code>true</code>, the app is only accessible via API management process.
     container_size:
         description:
             - Size of the function container.
@@ -486,7 +491,8 @@ options:
         suboptions:
             correlation_id:
                 description:
-                    - "Correlation ID of cloning operation. This ID ties multiple cloning operations\ntogether to use the same snapshot."
+                    - Correlation ID of cloning operation. This ID ties multiple cloning operations
+                    - together to use the same snapshot.
             overwrite:
                 description:
                     - <code>true</code> to overwrite destination app; otherwise, <code>false</code>.
@@ -498,24 +504,24 @@ options:
                     - <code>true</code> to clone source control from source app; otherwise, <code>false</code>.
             source_web_app_id:
                 description:
-                    - "ARM resource ID of the source app. App resource ID is of the form \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/provider
-                      s/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Micros
-                      oft.Web/sites/{siteName}/slots/{slotName} for other slots."
+                    - ARM resource ID of the source app. App resource ID is of the form
+                    - /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and
+                    - /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.
                 required: True
             hosting_environment:
                 description:
                     - App Service Environment.
             app_settings_overrides:
                 description:
-                    - "Application setting overrides for cloned app. If specified, these settings override the settings cloned \nfrom source app. Otherwise,
-                      application settings from source app are retained."
+                    - Application setting overrides for cloned app. If specified, these settings override the settings cloned
+                    - from source app. Otherwise, application settings from source app are retained.
             configure_load_balancing:
                 description:
                     - <code>true</code> to configure load balancing for source and destination app.
             traffic_manager_profile_id:
                 description:
-                    - "ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form \n/subscriptions/{subI
-                      d}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}."
+                    - ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form
+                    - /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}.
             traffic_manager_profile_name:
                 description:
                     - Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already exist.
@@ -541,9 +547,10 @@ options:
                             - Geographical location of the target web app, e.g. SouthEastAsia, SouthCentralUS
                     id:
                         description:
-                            - "ARM resource ID of the target app. \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{
-                              siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{
-                              siteName}/slots/{slotName} for other slots."
+                            - ARM resource ID of the target app.
+                            - /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and
+                            - "/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other
+                              slots."
             overwrite:
                 description:
                     - If <code>true</code> the recovery operation can overwrite source app; otherwise, <code>false</code>.
@@ -552,21 +559,22 @@ options:
                     - If true, site configuration, in addition to content, will be reverted.
             ignore_conflicting_host_names:
                 description:
-                    - "If true, custom hostname conflicts will be ignored when recovering to a target web app.\nThis setting is only necessary when RecoverCo
-                      nfiguration is enabled."
+                    - If true, custom hostname conflicts will be ignored when recovering to a target web app.
+                    - This setting is only necessary when RecoverConfiguration is enabled.
     https_only:
         description:
-            - "HttpsOnly: configures a web site to accept only https requests. Issues redirect for\nhttp requests"
+            - "HttpsOnly: configures a web site to accept only https requests. Issues redirect for"
+            - http requests
     identity:
         description:
-            -
         suboptions:
             type:
                 description:
                     - Type of managed service identity.
     skip_dns_registration:
         description:
-            - "If true web app hostname is not registered with DNS on creation. This parameter is\n only used for app creation."
+            - If true web app hostname is not registered with DNS on creation. This parameter is
+            -  only used for app creation.
     skip_custom_domain_verification:
         description:
             - If true, custom (non *.azurewebsites.net) domains associated with web app are not verified.
