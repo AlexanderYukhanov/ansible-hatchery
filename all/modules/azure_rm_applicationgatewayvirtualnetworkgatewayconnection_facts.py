@@ -29,7 +29,6 @@ options:
     virtual_network_gateway_connection_name:
         description:
             - The name of the virtual network gateway connection.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -44,6 +43,10 @@ EXAMPLES = '''
     azure_rm_applicationgatewayvirtualnetworkgatewayconnection_facts:
       resource_group: resource_group_name
       virtual_network_gateway_connection_name: virtual_network_gateway_connection_name
+
+  - name: List instances of Virtual Network Gateway Connection
+    azure_rm_applicationgatewayvirtualnetworkgatewayconnection_facts:
+      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -85,8 +88,7 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
                 required=True
             ),
             virtual_network_gateway_connection_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -108,6 +110,8 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.virtual_network_gateway_connection_name is not None):
             self.results['virtual_network_gateway_connections'] = self.get()
+        elif (self.resource_group is not None):
+            self.results['virtual_network_gateway_connections'] = self.list()
         return self.results
 
     def get(self):
@@ -127,6 +131,26 @@ class AzureRMVirtualNetworkGatewayConnectionsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Virtual Network Gateway Connection.
+
+        :return: deserialized Virtual Network Gateway Connectioninstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.virtual_network_gateway_connections.list(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for VirtualNetworkGatewayConnections.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

@@ -22,21 +22,13 @@ description:
     - Get facts of Recommendation.
 
 options:
-    resource_group:
-        description:
-            - Name of the resource group to which the resource belongs.
-        required: True
-    site_name:
-        description:
-            - Name of the app.
-        required: True
     featured:
         description:
             - Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.
     filter:
         description:
-            - "Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channels eq C(Api) or channel eq C(N
-              otification)"
+            - "Filter is specified by using OData syntax. Example: $filter=channels eq C(Api) or channel eq C(Notification) and startTime eq C(2014-01-01T00:
+              00:00Z) and endTime eq C(2014-12-31T23:59:59Z) and timeGrain eq duration'[PT1H|PT1M|P1D]"
 
 extends_documentation_fragment:
     - azure
@@ -49,15 +41,7 @@ author:
 EXAMPLES = '''
   - name: List instances of Recommendation
     azure_rm_webrecommendation_facts:
-      resource_group: resource_group_name
-      site_name: site_name
       featured: featured
-      filter: filter
-
-  - name: List instances of Recommendation
-    azure_rm_webrecommendation_facts:
-      resource_group: resource_group_name
-      site_name: site_name
       filter: filter
 '''
 
@@ -89,14 +73,6 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group=dict(
-                type='str',
-                required=True
-            ),
-            site_name=dict(
-                type='str',
-                required=True
-            ),
             featured=dict(
                 type='str'
             ),
@@ -110,8 +86,6 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
             ansible_facts=dict()
         )
         self.mgmt_client = None
-        self.resource_group = None
-        self.site_name = None
         self.featured = None
         self.filter = None
         super(AzureRMRecommendationsFacts, self).__init__(self.module_arg_spec)
@@ -122,15 +96,10 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group is not None and
-                self.site_name is not None):
-            self.results['recommendations'] = self.list_recommended_rules_for_web_app()
-        elif (self.resource_group is not None and
-              self.site_name is not None):
-            self.results['recommendations'] = self.list_history_for_web_app()
+            self.results['recommendations'] = self.list()
         return self.results
 
-    def list_recommended_rules_for_web_app(self):
+    def list(self):
         '''
         Gets facts of the specified Recommendation.
 
@@ -139,29 +108,7 @@ class AzureRMRecommendationsFacts(AzureRMModuleBase):
         response = None
         results = {}
         try:
-            response = self.mgmt_client.recommendations.list_recommended_rules_for_web_app(resource_group_name=self.resource_group,
-                                                                                           site_name=self.site_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for Recommendations.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_history_for_web_app(self):
-        '''
-        Gets facts of the specified Recommendation.
-
-        :return: deserialized Recommendationinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.recommendations.list_history_for_web_app(resource_group_name=self.resource_group,
-                                                                                 site_name=self.site_name)
+            response = self.mgmt_client.recommendations.list()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Recommendations.')

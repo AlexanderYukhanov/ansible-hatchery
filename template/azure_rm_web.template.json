@@ -907,7 +907,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -916,7 +916,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -940,7 +940,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 2,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -961,17 +961,6 @@
           ]
         },
         {
-          "Name": "list_certificates",
-          "Options": [
-            "resource_group_name",
-            "certificate_order_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "certificate_order_name"
-          ]
-        },
-        {
           "Name": "list_by_resource_group",
           "Options": [
             "resource_group_name"
@@ -979,6 +968,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -1516,36 +1510,6 @@
       "ObjectName": "App Service Certificate Order",
       "ResourceNameFieldInRequest": "certificate_order_name",
       "ResourceNameFieldInResponse": "name",
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
-      "ModuleName": "azure_rm_webcertificateregistrationprovider_facts",
-      "ModuleNameAlt": "azure_rm_webcertificateregistrationprovider_facts",
-      "Options": [],
-      "Methods": [
-        {
-          "Name": "list_operations",
-          "Options": [],
-          "RequiredOptions": []
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "CertificateRegistrationProvider",
-      "ModuleOperationName": "certificate_registration_provider",
-      "ObjectName": "Certificate Registration Provider",
-      "ResourceNameFieldInRequest": null,
-      "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,
@@ -4518,54 +4482,6 @@
       "ModuleNameAlt": "azure_rm_webdomain_facts",
       "Options": [
         {
-          "Name": "keywords",
-          "NameAlt": "keywords",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Keywords to be used for generating domain recommendations.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "keywords",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "max_domain_recommendations",
-          "NameAlt": "max_domain_recommendations",
-          "Disposition": "default",
-          "Type": "int",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Maximum number of recommendations.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "max_domain_recommendations",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
           "Name": "resource_group_name",
           "NameAlt": "resource_group",
           "Disposition": "default",
@@ -4582,7 +4498,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -4606,7 +4522,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 2,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -4616,26 +4532,7 @@
       ],
       "Methods": [
         {
-          "Name": "list_recommendations",
-          "Options": [
-            "keywords",
-            "max_domain_recommendations"
-          ],
-          "RequiredOptions": []
-        },
-        {
           "Name": "get",
-          "Options": [
-            "resource_group_name",
-            "domain_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "domain_name"
-          ]
-        },
-        {
-          "Name": "list_ownership_identifiers",
           "Options": [
             "resource_group_name",
             "domain_name"
@@ -4653,6 +4550,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -5647,7 +5549,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Name of the top-level domain.",
           "DefaultValue": null,
@@ -5656,55 +5558,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "include_privacy",
-          "NameAlt": "include_privacy",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "If <code>true</code>, then the list of agreements will include agreements for domain privacy as well; otherwise, <code>false</code>.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "include_privacy",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "for_transfer",
-          "NameAlt": "for_transfer",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "If <code>true</code>, then the list of agreements will include agreements for domain transfer as well; otherwise, <code>false</code>.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "for_transfer",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -5714,17 +5568,6 @@
       ],
       "Methods": [
         {
-          "Name": "list_agreements",
-          "Options": [
-            "name",
-            "include_privacy",
-            "for_transfer"
-          ],
-          "RequiredOptions": [
-            "name"
-          ]
-        },
-        {
           "Name": "get",
           "Options": [
             "name"
@@ -5732,6 +5575,11 @@
           "RequiredOptions": [
             "name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -5806,36 +5654,6 @@
       "ObjectName": "Top Level Domain",
       "ResourceNameFieldInRequest": null,
       "ResourceNameFieldInResponse": "name",
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
-      "ModuleName": "azure_rm_webdomainregistrationprovider_facts",
-      "ModuleNameAlt": "azure_rm_webdomainregistrationprovider_facts",
-      "Options": [],
-      "Methods": [
-        {
-          "Name": "list_operations",
-          "Options": [],
-          "RequiredOptions": []
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "DomainRegistrationProvider",
-      "ModuleOperationName": "domain_registration_provider",
-      "ObjectName": "Domain Registration Provider",
-      "ResourceNameFieldInRequest": null,
-      "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,
@@ -6486,7 +6304,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -6547,6 +6365,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -6861,214 +6684,12 @@
       "TestReplaceStringTo": null
     },
     {
-      "ModuleName": "azure_rm_webdiagnostic_facts",
-      "ModuleNameAlt": "azure_rm_webdiagnostic_facts",
-      "Options": [
-        {
-          "Name": "resource_group_name",
-          "NameAlt": "resource_group",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "True",
-          "VariableValue": "None",
-          "Documentation": "Name of the resource group to which the resource belongs.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_group_name",
-            "test:default": "\"{{ resource_group }}\""
-          },
-          "SubOptions": null,
-          "RequiredCount": 6,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "site_name",
-          "NameAlt": "site_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "True",
-          "VariableValue": "None",
-          "Documentation": "Site Name",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "site_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 6,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "diagnostic_category",
-          "NameAlt": "diagnostic_category",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Diagnostic Category",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "diagnostic_category",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 4,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "slot",
-          "NameAlt": "slot",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Slot Name",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "slot",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 3,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        }
-      ],
-      "Methods": [
-        {
-          "Name": "list_site_analyses_slot",
-          "Options": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_site_detectors_slot",
-          "Options": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_site_analyses",
-          "Options": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category"
-          ]
-        },
-        {
-          "Name": "list_site_detectors",
-          "Options": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name",
-            "diagnostic_category"
-          ]
-        },
-        {
-          "Name": "list_site_diagnostic_categories_slot",
-          "Options": [
-            "resource_group_name",
-            "site_name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_site_diagnostic_categories",
-          "Options": [
-            "resource_group_name",
-            "site_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name"
-          ]
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "Diagnostics",
-      "ModuleOperationName": "diagnostics",
-      "ObjectName": "Diagnostic",
-      "ResourceNameFieldInRequest": "site_name",
-      "ResourceNameFieldInResponse": "site_name",
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
-      "ModuleName": "azure_rm_webprovider_facts",
-      "ModuleNameAlt": "azure_rm_webprovider_facts",
+      "ModuleName": "azure_rm_webdeletedwebapp_facts",
+      "ModuleNameAlt": "azure_rm_webdeletedwebapp_facts",
       "Options": [],
       "Methods": [
         {
-          "Name": "list_operations",
+          "Name": "list",
           "Options": [],
           "RequiredOptions": []
         }
@@ -7079,9 +6700,9 @@
       "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "Provider",
-      "ModuleOperationName": "provider",
-      "ObjectName": "Provider",
+      "ModuleOperationNameUpper": "DeletedWebApps",
+      "ModuleOperationName": "deleted_web_apps",
+      "ObjectName": "Deleted Web App",
       "ResourceNameFieldInRequest": null,
       "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
@@ -7096,54 +6717,6 @@
       "ModuleName": "azure_rm_webrecommendation_facts",
       "ModuleNameAlt": "azure_rm_webrecommendation_facts",
       "Options": [
-        {
-          "Name": "resource_group_name",
-          "NameAlt": "resource_group",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "True",
-          "VariableValue": "None",
-          "Documentation": "Name of the resource group to which the resource belongs.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_group_name",
-            "test:default": "\"{{ resource_group }}\""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "site_name",
-          "NameAlt": "site_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "True",
-          "VariableValue": "None",
-          "Documentation": "Name of the app.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "site_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
         {
           "Name": "featured",
           "NameAlt": "featured",
@@ -7178,7 +6751,7 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channels eq 'Api' or channel eq 'Notification'",
+          "Documentation": "Filter is specified by using OData syntax. Example: $filter=channels eq 'Api' or channel eq 'Notification' and startTime eq '2014-01-01T00:00:00Z' and endTime eq '2014-12-31T23:59:59Z' and timeGrain eq duration'[PT1H|PT1M|P1D]",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "filter",
@@ -7195,29 +6768,12 @@
       ],
       "Methods": [
         {
-          "Name": "list_recommended_rules_for_web_app",
+          "Name": "list",
           "Options": [
-            "resource_group_name",
-            "site_name",
             "featured",
             "filter"
           ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name"
-          ]
-        },
-        {
-          "Name": "list_history_for_web_app",
-          "Options": [
-            "resource_group_name",
-            "site_name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "site_name"
-          ]
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": null,
@@ -7229,103 +6785,6 @@
       "ModuleOperationNameUpper": "Recommendations",
       "ModuleOperationName": "recommendations",
       "ObjectName": "Recommendation",
-      "ResourceNameFieldInRequest": "site_name",
-      "ResourceNameFieldInResponse": "site_name",
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
-      "ModuleName": "azure_rm_web_facts",
-      "ModuleNameAlt": "azure_rm_web_facts",
-      "Options": [
-        {
-          "Name": "sku",
-          "NameAlt": "sku",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of SKU used to filter the regions.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "sku",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "linux_workers_enabled",
-          "NameAlt": "linux_workers_enabled",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Specify <code>true</code> if you want to filter to only regions that support Linux workers.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "linux_workers_enabled",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        }
-      ],
-      "Methods": [
-        {
-          "Name": "list_geo_regions",
-          "Options": [
-            "sku",
-            "linux_workers_enabled"
-          ],
-          "RequiredOptions": []
-        },
-        {
-          "Name": "list_premier_add_on_offers",
-          "Options": [],
-          "RequiredOptions": []
-        },
-        {
-          "Name": "list_skus",
-          "Options": [],
-          "RequiredOptions": []
-        },
-        {
-          "Name": "list_source_controls",
-          "Options": [],
-          "RequiredOptions": []
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "",
-      "ModuleOperationName": "",
-      "ObjectName": "",
       "ResourceNameFieldInRequest": null,
       "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
@@ -13071,421 +12530,13 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "resource_group_name",
             "test:default": "\"{{ resource_group }}\""
-          },
-          "SubOptions": null,
-          "RequiredCount": 87,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "name",
-          "NameAlt": "name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of web app.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 86,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "backup_id",
-          "NameAlt": "backup_id",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "ID of backup.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "backup_id",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "request",
-          "NameAlt": "request",
-          "Disposition": "default",
-          "Type": "dict",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Information on backup request.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "request",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "slot",
-          "NameAlt": "slot",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of web app slot. If not specified then will default to production slot.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "slot",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 42,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "namespace_name",
-          "NameAlt": "namespace_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The namespace for this hybrid connection.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "namespace_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "relay_name",
-          "NameAlt": "relay_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The relay name for this hybrid connection.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "relay_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "process_id",
-          "NameAlt": "process_id",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "PID.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "process_id",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 8,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "instance_id",
-          "NameAlt": "instance_id",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "ID of a specific scaled-out instance. This is the value of the name property in the JSON response from \"GET api/sites/{siteName}/instances\".",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "instance_id",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 6,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "details",
-          "NameAlt": "details",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Specify \"true\" to include metric details in the response. It is \"false\" by default.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "details",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Return only metrics specified in the filter (using OData syntax). For example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq '2014-01-01T00:00:00Z' and endTime eq '2014-12-31T23:59:59Z' and timeGrain eq duration'[Hour|Minute|Day]'.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "target_slot",
-          "NameAlt": "target_slot",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Destination deployment slot during swap operation.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "target_slot",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "preserve_vnet",
-          "NameAlt": "preserve_vnet",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "<code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "preserve_vnet",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "id",
-          "NameAlt": "id",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The ID of a specific deployment. This is the value of the name property in the JSON response from \"GET /api/sites/{siteName}/deployments\".",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "id",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "function_name",
-          "NameAlt": "function_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Function name.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "function_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "view",
-          "NameAlt": "view",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The type of view. This can either be \"summary\" or \"detailed\".",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "view",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "format",
-          "NameAlt": "format",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of the format. Valid values are: \nFileZilla3\nWebDeploy -- default\nFtp. Possible values include: 'FileZilla3', 'WebDeploy', 'Ftp'",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "format",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "web_job_name",
-          "NameAlt": "web_job_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of Web Job.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "web_job_name",
-            "test:default": ""
           },
           "SubOptions": null,
           "RequiredCount": 2,
@@ -13518,809 +12569,33 @@
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
           "AdditionalInfo": null
+        },
+        {
+          "Name": "name",
+          "NameAlt": "name",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Name of the app.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "name",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
-        {
-          "Name": "list_backup_status_secrets_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "backup_id",
-            "request",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "backup_id",
-            "request",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_hybrid_connection_keys_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_instance_process_modules_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot",
-            "instance_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot",
-            "instance_id"
-          ]
-        },
-        {
-          "Name": "list_instance_process_threads_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot",
-            "instance_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot",
-            "instance_id"
-          ]
-        },
-        {
-          "Name": "list_metrics_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "details",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_slot_differences_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "target_slot",
-            "preserve_vnet"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "target_slot",
-            "preserve_vnet"
-          ]
-        },
-        {
-          "Name": "list_backup_status_secrets",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "backup_id",
-            "request"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "backup_id",
-            "request"
-          ]
-        },
-        {
-          "Name": "list_hybrid_connection_keys",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name"
-          ]
-        },
-        {
-          "Name": "list_instance_process_modules",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "instance_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "instance_id"
-          ]
-        },
-        {
-          "Name": "list_instance_process_threads",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "instance_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "instance_id"
-          ]
-        },
-        {
-          "Name": "list_metrics",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "details",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_deployment_log_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "id",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "id",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_function_secrets_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "function_name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "function_name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_instance_processes_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "instance_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "instance_id"
-          ]
-        },
-        {
-          "Name": "list_network_features_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "view",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "view",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_perf_mon_counters_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_process_modules_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_process_threads_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_publishing_profile_xml_with_secrets_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "format"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_triggered_web_job_history_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "web_job_name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "web_job_name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_usages_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_slot_differences_from_production",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "target_slot",
-            "preserve_vnet"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "target_slot",
-            "preserve_vnet"
-          ]
-        },
-        {
-          "Name": "list_deployment_log",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "id"
-          ]
-        },
-        {
-          "Name": "list_function_secrets",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "function_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "function_name"
-          ]
-        },
-        {
-          "Name": "list_instance_processes",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "instance_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "instance_id"
-          ]
-        },
-        {
-          "Name": "list_network_features",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "view"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "view"
-          ]
-        },
-        {
-          "Name": "list_perf_mon_counters",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_process_modules",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id"
-          ]
-        },
-        {
-          "Name": "list_process_threads",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "process_id"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "process_id"
-          ]
-        },
-        {
-          "Name": "list_publishing_profile_xml_with_secrets",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "format"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_backups_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_configurations_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_application_settings_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_connection_strings_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_metadata_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_publishing_credentials_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_site_push_settings_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_configuration_snapshot_info_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_continuous_web_jobs_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_deployments_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_domain_ownership_identifiers_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_instance_functions_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_host_name_bindings_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_hybrid_connections_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_relay_service_connections_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_instance_identifiers_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_sync_function_triggers_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_metric_definitions_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_premier_add_ons_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_processes_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_public_certificates_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_site_extensions_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_snapshots_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_triggered_web_jobs_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_vnet_connections_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_web_jobs_slot",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "slot"
-          ]
-        },
-        {
-          "Name": "list_triggered_web_job_history",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "web_job_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "web_job_name"
-          ]
-        },
-        {
-          "Name": "list_usages",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
         {
           "Name": "list_by_resource_group",
           "Options": [
@@ -14343,301 +12618,9 @@
           ]
         },
         {
-          "Name": "list_backups",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_configurations",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_application_settings",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_connection_strings",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_metadata",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_publishing_credentials",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_site_push_settings",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_slot_configuration_names",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_configuration_snapshot_info",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_continuous_web_jobs",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_deployments",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_domain_ownership_identifiers",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_functions",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_host_name_bindings",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_hybrid_connections",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_relay_service_connections",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_instance_identifiers",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_sync_function_triggers",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_premier_add_ons",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_processes",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_public_certificates",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_site_extensions",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_slots",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_snapshots",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_triggered_web_jobs",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_vnet_connections",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_web_jobs",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -16498,7 +14481,7 @@
       "ModuleOperationNameUpper": "WebApps",
       "ModuleOperationName": "web_apps",
       "ObjectName": "Web App",
-      "ResourceNameFieldInRequest": "web_job_name",
+      "ResourceNameFieldInRequest": "resource_group_name",
       "ResourceNameFieldInResponse": "name",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
@@ -18215,7 +16198,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -18224,7 +16207,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 24,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18248,199 +16231,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 23,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "start_time",
-          "NameAlt": "start_time",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Beginning time of the metrics query.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "start_time",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "end_time",
-          "NameAlt": "end_time",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "End time of the metrics query.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "end_time",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "time_grain",
-          "NameAlt": "time_grain",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Time granularity of the metrics query.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "time_grain",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "details",
-          "NameAlt": "details",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Specify <code>true</code> to include instance details. The default is <code>false</code>.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "details",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq '2014-01-01T00:00:00Z' and endTime eq '2014-12-31T23:59:59Z' and timeGrain eq duration'[Hour|Minute|Day]'.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "worker_pool_name",
-          "NameAlt": "worker_pool_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of the worker pool.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "worker_pool_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 6,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "instance",
-          "NameAlt": "instance",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of the instance in the worker pool.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "instance",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 4,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "properties_to_include",
-          "NameAlt": "properties_to_include",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Comma separated list of app properties to include.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "properties_to_include",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18450,283 +16241,7 @@
       ],
       "Methods": [
         {
-          "Name": "list_multi_role_metrics",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "start_time",
-            "end_time",
-            "time_grain",
-            "details",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_worker_pool_instance_metrics",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name",
-            "instance",
-            "details",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name",
-            "instance"
-          ]
-        },
-        {
-          "Name": "list_web_worker_metrics",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name",
-            "details",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name"
-          ]
-        },
-        {
-          "Name": "list_metrics",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "details",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_multi_role_pool_instance_metrics",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "instance",
-            "details"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "instance"
-          ]
-        },
-        {
-          "Name": "list_worker_pool_instance_metric_definitions",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name",
-            "instance"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name",
-            "instance"
-          ]
-        },
-        {
-          "Name": "list_multi_role_pool_instance_metric_definitions",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "instance"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "instance"
-          ]
-        },
-        {
-          "Name": "list_web_apps",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "properties_to_include"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_usages",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_web_worker_metric_definitions",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name"
-          ]
-        },
-        {
-          "Name": "list_worker_pool_skus",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name"
-          ]
-        },
-        {
-          "Name": "list_web_worker_usages",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "worker_pool_name"
-          ]
-        },
-        {
           "Name": "get",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_capacities",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_vips",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_diagnostics",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_multi_role_pools",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_multi_role_metric_definitions",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_multi_role_pool_skus",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_multi_role_usages",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_operations",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_app_service_plans",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_worker_pools",
           "Options": [
             "resource_group_name",
             "name"
@@ -18744,6 +16259,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -19472,7 +16992,7 @@
       "ModuleOperationNameUpper": "AppServiceEnvironments",
       "ModuleOperationName": "app_service_environments",
       "ObjectName": "App Service Environment",
-      "ResourceNameFieldInRequest": "worker_pool_name",
+      "ResourceNameFieldInRequest": "resource_group_name",
       "ResourceNameFieldInResponse": "name",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
@@ -20765,7 +18285,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -20774,7 +18294,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 12,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -20798,175 +18318,31 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 11,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "skip_token",
-          "NameAlt": "skip_token",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "skip_token",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Supported filter: $filter=state eq running. Returns only web apps that are currently running",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "top",
-          "NameAlt": "top",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "List page size. If specified, results are paged.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "top",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "namespace_name",
-          "NameAlt": "namespace_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The name of the Service Bus namespace.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "namespace_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "relay_name",
-          "NameAlt": "relay_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The name of the Service Bus relay.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "relay_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "details",
-          "NameAlt": "details",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Specify <code>true</code> to include instance details. The default is <code>false</code>.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "details",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "vnet_name",
-          "NameAlt": "vnet_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Name of the Virtual Network.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "vnet_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
           "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "detailed",
+          "NameAlt": "detailed",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "Specify <code>true</code> to return all App Service plan properties. The default is <code>false</code>, which returns a subset of the properties.\n Retrieval of all properties may increase the API latency.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "detailed",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -20975,88 +18351,6 @@
         }
       ],
       "Methods": [
-        {
-          "Name": "list_web_apps",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "skip_token",
-            "filter",
-            "top"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_hybrid_connection_keys",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name"
-          ]
-        },
-        {
-          "Name": "list_web_apps_by_hybrid_connection",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "namespace_name",
-            "relay_name"
-          ]
-        },
-        {
-          "Name": "list_metrics",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "details",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_usages",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_routes_for_vnet",
-          "Options": [
-            "resource_group_name",
-            "name",
-            "vnet_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name",
-            "vnet_name"
-          ]
-        },
         {
           "Name": "get",
           "Options": [
@@ -21069,48 +18363,11 @@
           ]
         },
         {
-          "Name": "list_capabilities",
+          "Name": "list",
           "Options": [
-            "resource_group_name",
-            "name"
+            "detailed"
           ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_hybrid_connections",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_metric_defintions",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
-        },
-        {
-          "Name": "list_vnets",
-          "Options": [
-            "resource_group_name",
-            "name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "name"
-          ]
+          "RequiredOptions": []
         },
         {
           "Name": "list_by_resource_group",
@@ -21556,7 +18813,7 @@
       "ModuleOperationNameUpper": "AppServicePlans",
       "ModuleOperationName": "app_service_plans",
       "ObjectName": "App Service Plan",
-      "ResourceNameFieldInRequest": "vnet_name",
+      "ResourceNameFieldInRequest": "resource_group_name",
       "ResourceNameFieldInResponse": "name",
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,

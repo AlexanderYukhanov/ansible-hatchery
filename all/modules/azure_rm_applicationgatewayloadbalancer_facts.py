@@ -29,7 +29,6 @@ options:
     load_balancer_name:
         description:
             - The name of the load balancer.
-        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -48,6 +47,10 @@ EXAMPLES = '''
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
       expand: expand
+
+  - name: List instances of Load Balancer
+    azure_rm_applicationgatewayloadbalancer_facts:
+      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -127,8 +130,7 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
                 required=True
             ),
             load_balancer_name=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             expand=dict(
                 type='str'
@@ -154,6 +156,8 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.load_balancer_name is not None):
             self.results['load_balancers'] = self.get()
+        elif (self.resource_group is not None):
+            self.results['load_balancers'] = self.list()
         return self.results
 
     def get(self):
@@ -173,6 +177,26 @@ class AzureRMLoadBalancersFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Load Balancer.
+
+        :return: deserialized Load Balancerinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.load_balancers.list(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for LoadBalancers.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

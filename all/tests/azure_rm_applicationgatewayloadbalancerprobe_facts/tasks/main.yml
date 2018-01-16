@@ -12,3 +12,13 @@
     that:
       - output.changed == False
       - output.load_balancer_probes.xxxunknownxxx.id != None
+
+- name: Gather facts Load Balancer Probe
+  azure_rm_applicationgatewayloadbalancerprobe_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.load_balancer_probes.xxxunknownxxx.id != None

@@ -389,13 +389,19 @@ Sample after properties copied ---
   resource name fields: log_file_name server_name server_name
 ------------------------------- Log File
   list
+  ** CREATING FACT MODULE
+  resource name fields: performance_tier_name
 ------------------------------- Performance Tier
   list
+  ** CREATING FACT MODULE
+  resource name fields: location_based_performance_tier_name location_name location_name
 ------------------------------- Location Based Performance Tier
   execute
 ------------------------------- Check Name Availability
   list
-TWEAK: RENAMING resource_group_name -- A
+  ** CREATING FACT MODULE
+  resource name fields: operation_name
+TWEAK: RENAMING resource_group_name --
 TWEAK: RENAMING server_name -- A
 TWEAK: RENAMING properties.administrator_login -- A
 TWEAK: RENAMING properties.administrator_login_password -- A

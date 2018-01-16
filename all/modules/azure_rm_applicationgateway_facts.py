@@ -25,6 +25,7 @@ options:
     resource_group:
         description:
             - The name of the resource group.
+        required: True
     name:
         description:
             - The name of the application gateway.
@@ -45,12 +46,7 @@ EXAMPLES = '''
 
   - name: List instances of Application Gateway
     azure_rm_applicationgateway_facts:
-
-  - name: List instances of Application Gateway
-    azure_rm_applicationgateway_facts:
-
-  - name: List instances of Application Gateway
-    azure_rm_applicationgateway_facts:
+      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -88,7 +84,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             name=dict(
                 type='str'
@@ -113,9 +110,8 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.application_gateway_name is not None):
             self.results['application_gateways'] = self.get()
-            self.results['application_gateways'] = self.list_available_waf_rule_sets()
-            self.results['application_gateways'] = self.list_available_ssl_options()
-            self.results['application_gateways'] = self.list_available_ssl_predefined_policies()
+        elif (self.resource_group is not None):
+            self.results['application_gateways'] = self.list()
         return self.results
 
     def get(self):
@@ -138,7 +134,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
 
         return results
 
-    def list_available_waf_rule_sets(self):
+    def list(self):
         '''
         Gets facts of the specified Application Gateway.
 
@@ -147,47 +143,7 @@ class AzureRMApplicationGatewaysFacts(AzureRMModuleBase):
         response = None
         results = {}
         try:
-            response = self.mgmt_client.application_gateways.list_available_waf_rule_sets()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ApplicationGateways.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_available_ssl_options(self):
-        '''
-        Gets facts of the specified Application Gateway.
-
-        :return: deserialized Application Gatewayinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.application_gateways.list_available_ssl_options()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ApplicationGateways.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_available_ssl_predefined_policies(self):
-        '''
-        Gets facts of the specified Application Gateway.
-
-        :return: deserialized Application Gatewayinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.application_gateways.list_available_ssl_predefined_policies()
+            response = self.mgmt_client.application_gateways.list(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for ApplicationGateways.')

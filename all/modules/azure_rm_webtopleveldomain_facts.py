@@ -25,13 +25,6 @@ options:
     name:
         description:
             - Name of the top-level domain.
-        required: True
-    include_privacy:
-        description:
-            - If <code>true</code>, then the list of agreements will include agreements for domain privacy as well; otherwise, <code>false</code>.
-    for_transfer:
-        description:
-            - If <code>true</code>, then the list of agreements will include agreements for domain transfer as well; otherwise, <code>false</code>.
 
 extends_documentation_fragment:
     - azure
@@ -42,15 +35,12 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Top Level Domain
-    azure_rm_webtopleveldomain_facts:
-      name: name
-      include_privacy: include_privacy
-      for_transfer: for_transfer
-
   - name: Get instance of Top Level Domain
     azure_rm_webtopleveldomain_facts:
       name: name
+
+  - name: List instances of Top Level Domain
+    azure_rm_webtopleveldomain_facts:
 '''
 
 RETURN = '''
@@ -106,13 +96,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             name=dict(
-                type='str',
-                required=True
-            ),
-            include_privacy=dict(
-                type='str'
-            ),
-            for_transfer=dict(
                 type='str'
             )
         )
@@ -123,8 +106,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
         )
         self.mgmt_client = None
         self.name = None
-        self.include_privacy = None
-        self.for_transfer = None
         super(AzureRMTopLevelDomainsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -134,30 +115,9 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.name is not None):
-            self.results['top_level_domains'] = self.list_agreements()
-        elif (self.name is not None):
             self.results['top_level_domains'] = self.get()
+            self.results['top_level_domains'] = self.list()
         return self.results
-
-    def list_agreements(self):
-        '''
-        Gets facts of the specified Top Level Domain.
-
-        :return: deserialized Top Level Domaininstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.top_level_domains.list_agreements(name=self.name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for TopLevelDomains.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -175,6 +135,26 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Top Level Domain.
+
+        :return: deserialized Top Level Domaininstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.top_level_domains.list()
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for TopLevelDomains.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

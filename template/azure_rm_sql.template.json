@@ -6526,7 +6526,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 5,
+          "RequiredCount": 4,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -6550,7 +6550,7 @@
             "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 5,
+          "RequiredCount": 4,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -6567,35 +6567,11 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The name of the database.",
+          "Documentation": "The name of the database to be retrieved.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "database_name",
             "test:default": "database{{ rpfx }}"
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "An OData filter expression that describes a subset of metrics to return.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -6619,6 +6595,30 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "expand",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "filter",
+          "NameAlt": "filter",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "An OData filter expression that describes a subset of databases to return.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "filter",
             "test:default": ""
           },
           "SubOptions": null,
@@ -6679,21 +6679,6 @@
         }
       ],
       "Methods": [
-        {
-          "Name": "list_metrics",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "filter"
-          ]
-        },
         {
           "Name": "get",
           "Options": [
@@ -8145,7 +8130,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -8169,7 +8154,7 @@
             "test:default": "\"sqlsrv{{ rpfx }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -8186,35 +8171,11 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The name of the elastic pool.",
+          "Documentation": "The name of the elastic pool to be retrieved.",
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "elastic_pool_name",
             "test:default": "elasticpool{{ rpfx }}"
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "An OData filter expression that describes a subset of metrics to return.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
           },
           "SubOptions": null,
           "RequiredCount": 1,
@@ -8226,21 +8187,6 @@
         }
       ],
       "Methods": [
-        {
-          "Name": "list_metrics",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "elastic_pool_name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "elastic_pool_name",
-            "filter"
-          ]
-        },
         {
           "Name": "get",
           "Options": [
@@ -10329,7 +10275,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
@@ -10390,6 +10336,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -10806,7 +10757,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -10830,7 +10781,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -10854,7 +10805,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 2,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -10865,19 +10816,6 @@
       "Methods": [
         {
           "Name": "get",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "recommended_elastic_pool_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "recommended_elastic_pool_name"
-          ]
-        },
-        {
-          "Name": "list_metrics",
           "Options": [
             "resource_group_name",
             "server_name",
@@ -15240,6 +15178,36 @@
       "TestReplaceStringTo": null
     },
     {
+      "ModuleName": "azure_rm_sqloperation_facts",
+      "ModuleNameAlt": "azure_rm_sqloperation_facts",
+      "Options": [],
+      "Methods": [
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "Operations",
+      "ModuleOperationName": "operations",
+      "ObjectName": "Operation",
+      "ResourceNameFieldInRequest": null,
+      "ResourceNameFieldInResponse": null,
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "NeedsForceUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
       "ModuleName": "azure_rm_sqlserverkey",
       "ModuleNameAlt": "azure_rm_sqlserverkey",
       "Options": [
@@ -16139,7 +16107,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -16163,7 +16131,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -16187,7 +16155,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 2,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -16198,19 +16166,6 @@
       "Methods": [
         {
           "Name": "get",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "sync_agent_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "sync_agent_name"
-          ]
-        },
-        {
-          "Name": "list_linked_databases",
           "Options": [
             "resource_group_name",
             "server_name",
@@ -17084,7 +17039,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
@@ -17093,7 +17048,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 4,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -17108,7 +17063,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The name of the server.",
           "DefaultValue": null,
@@ -17117,7 +17072,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 4,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -17132,7 +17087,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The name of the database on which the sync group is hosted.",
           "DefaultValue": null,
@@ -17141,7 +17096,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 4,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -17165,126 +17120,6 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "start_time",
-          "NameAlt": "start_time",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Get logs generated after this time.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "start_time",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "end_time",
-          "NameAlt": "end_time",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Get logs generated before this time.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "end_time",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "type",
-          "NameAlt": "type",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The types of logs to retrieve.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "type",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "continuation_token",
-          "NameAlt": "continuation_token",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The continuation token for this operation.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "continuation_token",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "location_name",
-          "NameAlt": "location_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The name of the region where the resource is located.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "location_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
           "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
@@ -17294,43 +17129,6 @@
         }
       ],
       "Methods": [
-        {
-          "Name": "list_logs",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "sync_group_name",
-            "start_time",
-            "end_time",
-            "type",
-            "continuation_token"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "sync_group_name",
-            "start_time",
-            "end_time",
-            "type"
-          ]
-        },
-        {
-          "Name": "list_hub_schemas",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "sync_group_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "sync_group_name"
-          ]
-        },
         {
           "Name": "get",
           "Options": [
@@ -17357,15 +17155,6 @@
             "resource_group_name",
             "server_name",
             "database_name"
-          ]
-        },
-        {
-          "Name": "list_sync_database_ids",
-          "Options": [
-            "location_name"
-          ],
-          "RequiredOptions": [
-            "location_name"
           ]
         }
       ],
@@ -18170,7 +17959,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18194,7 +17983,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18218,7 +18007,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18242,7 +18031,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18266,7 +18055,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 2,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -18277,23 +18066,6 @@
       "Methods": [
         {
           "Name": "get",
-          "Options": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "sync_group_name",
-            "sync_member_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "server_name",
-            "database_name",
-            "sync_group_name",
-            "sync_member_name"
-          ]
-        },
-        {
-          "Name": "list_member_schemas",
           "Options": [
             "resource_group_name",
             "server_name",

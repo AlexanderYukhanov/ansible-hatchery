@@ -987,6 +987,30 @@
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
           "AdditionalInfo": null
+        },
+        {
+          "Name": "filter",
+          "NameAlt": "filter",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The filter to apply on the operation.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "filter",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -1012,9 +1036,14 @@
           ]
         },
         {
-          "Name": "list_deleted",
-          "Options": [],
-          "RequiredOptions": []
+          "Name": "list",
+          "Options": [
+            "filter",
+            "top"
+          ],
+          "RequiredOptions": [
+            "filter"
+          ]
         }
       ],
       "ResponseFields": [

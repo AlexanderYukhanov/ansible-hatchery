@@ -28,14 +28,7 @@ options:
         required: True
     circuit_name:
         description:
-            - The name of the express route circuit.
-        required: True
-    peering_name:
-        description:
-            - The name of the peering.
-    device_path:
-        description:
-            - The path of the device.
+            - The name of express route circuit.
 
 extends_documentation_fragment:
     - azure
@@ -46,31 +39,14 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Express Route Circuit
-    azure_rm_applicationgatewayexpressroutecircuit_facts:
-      resource_group: resource_group_name
-      circuit_name: circuit_name
-      peering_name: peering_name
-      device_path: device_path
-
-  - name: List instances of Express Route Circuit
-    azure_rm_applicationgatewayexpressroutecircuit_facts:
-      resource_group: resource_group_name
-      circuit_name: circuit_name
-      peering_name: peering_name
-      device_path: device_path
-
-  - name: List instances of Express Route Circuit
-    azure_rm_applicationgatewayexpressroutecircuit_facts:
-      resource_group: resource_group_name
-      circuit_name: circuit_name
-      peering_name: peering_name
-      device_path: device_path
-
   - name: Get instance of Express Route Circuit
     azure_rm_applicationgatewayexpressroutecircuit_facts:
       resource_group: resource_group_name
       circuit_name: circuit_name
+
+  - name: List instances of Express Route Circuit
+    azure_rm_applicationgatewayexpressroutecircuit_facts:
+      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -112,13 +88,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
                 required=True
             ),
             circuit_name=dict(
-                type='str',
-                required=True
-            ),
-            peering_name=dict(
-                type='str'
-            ),
-            device_path=dict(
                 type='str'
             )
         )
@@ -130,8 +99,6 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
         self.mgmt_client = None
         self.resource_group = None
         self.circuit_name = None
-        self.peering_name = None
-        self.device_path = None
         super(AzureRMExpressRouteCircuitsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -141,93 +108,11 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.resource_group is not None and
-                self.circuit_name is not None and
-                self.peering_name is not None and
-                self.device_path is not None):
-            self.results['express_route_circuits'] = self.list_arp_table()
-        elif (self.resource_group is not None and
-              self.circuit_name is not None and
-              self.peering_name is not None and
-              self.device_path is not None):
-            self.results['express_route_circuits'] = self.list_routes_table()
-        elif (self.resource_group is not None and
-              self.circuit_name is not None and
-              self.peering_name is not None and
-              self.device_path is not None):
-            self.results['express_route_circuits'] = self.list_routes_table_summary()
-        elif (self.resource_group is not None and
-              self.circuit_name is not None):
+                self.circuit_name is not None):
             self.results['express_route_circuits'] = self.get()
+        elif (self.resource_group is not None):
+            self.results['express_route_circuits'] = self.list()
         return self.results
-
-    def list_arp_table(self):
-        '''
-        Gets facts of the specified Express Route Circuit.
-
-        :return: deserialized Express Route Circuitinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.express_route_circuits.list_arp_table(resource_group_name=self.resource_group,
-                                                                              circuit_name=self.circuit_name,
-                                                                              peering_name=self.peering_name,
-                                                                              device_path=self.device_path)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ExpressRouteCircuits.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_routes_table(self):
-        '''
-        Gets facts of the specified Express Route Circuit.
-
-        :return: deserialized Express Route Circuitinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.express_route_circuits.list_routes_table(resource_group_name=self.resource_group,
-                                                                                 circuit_name=self.circuit_name,
-                                                                                 peering_name=self.peering_name,
-                                                                                 device_path=self.device_path)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ExpressRouteCircuits.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_routes_table_summary(self):
-        '''
-        Gets facts of the specified Express Route Circuit.
-
-        :return: deserialized Express Route Circuitinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.express_route_circuits.list_routes_table_summary(resource_group_name=self.resource_group,
-                                                                                         circuit_name=self.circuit_name,
-                                                                                         peering_name=self.peering_name,
-                                                                                         device_path=self.device_path)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ExpressRouteCircuits.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -246,6 +131,26 @@ class AzureRMExpressRouteCircuitsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Express Route Circuit.
+
+        :return: deserialized Express Route Circuitinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.express_route_circuits.list(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for ExpressRouteCircuits.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

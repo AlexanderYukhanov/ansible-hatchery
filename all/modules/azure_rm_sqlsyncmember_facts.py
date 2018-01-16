@@ -65,14 +65,6 @@ EXAMPLES = '''
       server_name: server_name
       database_name: database_name
       sync_group_name: sync_group_name
-      sync_member_name: sync_member_name
-
-  - name: List instances of Sync Member
-    azure_rm_sqlsyncmember_facts:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      sync_group_name: sync_group_name
 '''
 
 RETURN = '''
@@ -170,12 +162,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None and
-              self.sync_group_name is not None and
-              self.sync_member_name is not None):
-            self.results['sync_members'] = self.list_member_schemas()
-        elif (self.resource_group is not None and
-              self.server_name is not None and
-              self.database_name is not None and
               self.sync_group_name is not None):
             self.results['sync_members'] = self.list_by_sync_group()
         return self.results
@@ -200,30 +186,6 @@ class AzureRMSyncMembersFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list_member_schemas(self):
-        '''
-        Gets facts of the specified Sync Member.
-
-        :return: deserialized Sync Memberinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.sync_members.list_member_schemas(resource_group_name=self.resource_group,
-                                                                         server_name=self.server_name,
-                                                                         database_name=self.database_name,
-                                                                         sync_group_name=self.sync_group_name,
-                                                                         sync_member_name=self.sync_member_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for SyncMembers.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

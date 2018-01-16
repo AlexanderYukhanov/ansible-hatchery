@@ -33,7 +33,6 @@ options:
     peering_name:
         description:
             - The name of the peering.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -49,6 +48,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       circuit_name: circuit_name
       peering_name: peering_name
+
+  - name: List instances of Express Route Circuit Peering
+    azure_rm_applicationgatewayexpressroutecircuitpeering_facts:
+      resource_group: resource_group_name
+      circuit_name: circuit_name
 '''
 
 RETURN = '''
@@ -100,8 +104,7 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
                 required=True
             ),
             peering_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -125,6 +128,9 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
                 self.circuit_name is not None and
                 self.peering_name is not None):
             self.results['express_route_circuit_peerings'] = self.get()
+        elif (self.resource_group is not None and
+              self.circuit_name is not None):
+            self.results['express_route_circuit_peerings'] = self.list()
         return self.results
 
     def get(self):
@@ -145,6 +151,27 @@ class AzureRMExpressRouteCircuitPeeringsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Express Route Circuit Peering.
+
+        :return: deserialized Express Route Circuit Peeringinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.express_route_circuit_peerings.list(resource_group_name=self.resource_group,
+                                                                            circuit_name=self.circuit_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for ExpressRouteCircuitPeerings.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

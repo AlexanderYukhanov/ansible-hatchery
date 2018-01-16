@@ -5,15 +5,6 @@
 
 - name: Gather facts Domain
   azure_rm_webdomain_facts:
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.domains.xxxunknownxxx.id != None
-
-- name: Gather facts Domain
-  azure_rm_webdomain_facts:
     resource_group: "{{ resource_group }}"
   register: output
 - name: Assert that facts are returned
@@ -34,7 +25,6 @@
 
 - name: Gather facts Domain
   azure_rm_webdomain_facts:
-    resource_group: "{{ resource_group }}"
   register: output
 - name: Assert that facts are returned
   assert:

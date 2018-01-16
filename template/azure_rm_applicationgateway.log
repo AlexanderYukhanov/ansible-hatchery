@@ -82,6 +82,8 @@ Sample after properties copied ---
   check_dns_name_availability
 -------------------------------
   list
+  ** CREATING FACT MODULE
+  resource name fields: available_endpoint_service_name
 ------------------------------- Available Endpoint Service
   delete
   get
@@ -121,9 +123,11 @@ Getting example for: get
 Getting example for: create_or_update
   ** CREATING FACT MODULE
 Getting example for: get
-  resource name fields: express_route_circuit_name peering_name name
+  resource name fields: express_route_circuit_name circuit_name name
 ------------------------------- Express Route Circuit
   list
+  ** CREATING FACT MODULE
+  resource name fields: express_route_service_provider_name
 ------------------------------- Express Route Service Provider
   delete
   get
@@ -1046,6 +1050,8 @@ Sample after properties copied ---
   resource name fields: load_balancer_load_balancing_rule_name load_balancing_rule_name name
 ------------------------------- Load Balancer Load Balancing Rule
   list
+  ** CREATING FACT MODULE
+  resource name fields: load_balancer_network_interface_name load_balancer_name load_balancer_name
 ------------------------------- Load Balancer Network Interface
   list
   get
@@ -1386,6 +1392,8 @@ Sample after properties copied ---
   resource name fields: network_interface_ip_configuration_name ip_configuration_name name
 ------------------------------- Network Interface I P Configuration
   list
+  ** CREATING FACT MODULE
+  resource name fields: network_interface_load_balancer_name network_interface_name network_interface_name
 ------------------------------- Network Interface Load Balancer
   delete
   get
@@ -2277,6 +2285,8 @@ Getting example for: get
   resource name fields: packet_capture_name packet_capture_name name
 ------------------------------- Packet Capture
   list
+  ** CREATING FACT MODULE
+  resource name fields: operation_name
 ------------------------------- Operation
   delete
   get
@@ -2887,8 +2897,12 @@ Sample after properties copied ---
   resource name fields: route_name route_name name
 ------------------------------- Route
   list
+  ** CREATING FACT MODULE
+  resource name fields: bgp_service_community_name
 ------------------------------- Bgp Service Community
   list
+  ** CREATING FACT MODULE
+  resource name fields: usage_name
 ------------------------------- Usage
   delete
   get

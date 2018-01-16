@@ -29,7 +29,9 @@ options:
     role_definition_id:
         description:
             - The ID of the role definition.
-        required: True
+    filter:
+        description:
+            - The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.
 
 extends_documentation_fragment:
     - azure
@@ -44,6 +46,11 @@ EXAMPLES = '''
     azure_rm_authorizationroledefinition_facts:
       scope: scope
       role_definition_id: role_definition_id
+
+  - name: List instances of Role Definition
+    azure_rm_authorizationroledefinition_facts:
+      scope: scope
+      filter: filter
 '''
 
 RETURN = '''
@@ -123,8 +130,10 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
                 required=True
             ),
             role_definition_id=dict(
-                type='str',
-                required=True
+                type='str'
+            ),
+            filter=dict(
+                type='str'
             )
         )
         # store the results of the module operation
@@ -135,6 +144,7 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
         self.mgmt_client = None
         self.scope = None
         self.role_definition_id = None
+        self.filter = None
         super(AzureRMRoleDefinitionsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -146,6 +156,8 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
         if (self.scope is not None and
                 self.role_definition_id is not None):
             self.results['role_definitions'] = self.get()
+        elif (self.scope is not None):
+            self.results['role_definitions'] = self.list()
         return self.results
 
     def get(self):
@@ -165,6 +177,26 @@ class AzureRMRoleDefinitionsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Role Definition.
+
+        :return: deserialized Role Definitioninstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.role_definitions.list(scope=self.scope)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for RoleDefinitions.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

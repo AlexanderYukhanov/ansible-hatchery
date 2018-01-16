@@ -166,6 +166,8 @@ Sample after properties copied ---
   resource name fields: registry_name registry_name name
 ------------------------------- Registry
   list
+  ** CREATING FACT MODULE
+  resource name fields: operation_name
 ------------------------------- Operation
   get
   create

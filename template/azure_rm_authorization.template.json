@@ -1,156 +1,14 @@
 {
   "Modules": [
     {
-      "ModuleName": "azure_rm_authorizationpermission_facts",
-      "ModuleNameAlt": "azure_rm_authorizationpermission_facts",
-      "Options": [
-        {
-          "Name": "resource_group_name",
-          "NameAlt": "resource_group",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "True",
-          "VariableValue": "None",
-          "Documentation": "The name of the resource group containing the resource. The name is case insensitive.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_group_name",
-            "test:default": "\"{{ resource_group }}\""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "resource_provider_namespace",
-          "NameAlt": "resource_provider_namespace",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The namespace of the resource provider.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_provider_namespace",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "parent_resource_path",
-          "NameAlt": "parent_resource_path",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The parent resource identity.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "parent_resource_path",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "resource_type",
-          "NameAlt": "resource_type",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The resource type of the resource.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_type",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "resource_name",
-          "NameAlt": "resource_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The name of the resource to get the permissions for.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        }
-      ],
+      "ModuleName": "azure_rm_authorizationclassicadministrator_facts",
+      "ModuleNameAlt": "azure_rm_authorizationclassicadministrator_facts",
+      "Options": [],
       "Methods": [
         {
-          "Name": "list_for_resource",
-          "Options": [
-            "resource_group_name",
-            "resource_provider_namespace",
-            "parent_resource_path",
-            "resource_type",
-            "resource_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "resource_provider_namespace",
-            "parent_resource_path",
-            "resource_type",
-            "resource_name"
-          ]
-        },
-        {
-          "Name": "list_for_resource_group",
-          "Options": [
-            "resource_group_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name"
-          ]
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": null,
@@ -159,11 +17,11 @@
       "TestPostrequisites": null,
       "AssertStateVariable": "",
       "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "Permissions",
-      "ModuleOperationName": "permissions",
-      "ObjectName": "Permission",
-      "ResourceNameFieldInRequest": "resource_name",
-      "ResourceNameFieldInResponse": "resource_name",
+      "ModuleOperationNameUpper": "ClassicAdministrators",
+      "ModuleOperationName": "classic_administrators",
+      "ObjectName": "Classic Administrator",
+      "ResourceNameFieldInRequest": null,
+      "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,
@@ -184,7 +42,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The namespace of the resource provider.",
           "DefaultValue": null,
@@ -235,6 +93,13 @@
           "RequiredOptions": [
             "resource_provider_namespace"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [
+            "expand"
+          ],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -733,8 +598,8 @@
       "ModuleNameAlt": "azure_rm_authorizationroleassignment_facts",
       "Options": [
         {
-          "Name": "resource_group_name",
-          "NameAlt": "resource_group",
+          "Name": "scope",
+          "NameAlt": "scope",
           "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
@@ -742,34 +607,10 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The name of the resource group.",
+          "Documentation": "The scope of the role assignment.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "resource_group_name",
-            "test:default": "\"{{ resource_group }}\""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "resource_provider_namespace",
-          "NameAlt": "resource_provider_namespace",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The namespace of the resource provider.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_provider_namespace",
+            "default": "scope",
             "test:default": ""
           },
           "SubOptions": null,
@@ -781,8 +622,8 @@
           "AdditionalInfo": null
         },
         {
-          "Name": "parent_resource_path",
-          "NameAlt": "parent_resource_path",
+          "Name": "role_assignment_name",
+          "NameAlt": "role_assignment_name",
           "Disposition": "default",
           "Type": "str",
           "ValueIfFalse": null,
@@ -790,58 +631,10 @@
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "The parent resource identity.",
+          "Documentation": "The name of the role assignment to get.",
           "DefaultValue": null,
           "DefaultValueSample": {
-            "default": "parent_resource_path",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "resource_type",
-          "NameAlt": "resource_type",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The resource type of the resource.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_type",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "resource_name",
-          "NameAlt": "resource_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The name of the resource to get role assignments for.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "resource_name",
+            "default": "role_assignment_name",
             "test:default": ""
           },
           "SubOptions": null,
@@ -875,85 +668,9 @@
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
           "AdditionalInfo": null
-        },
-        {
-          "Name": "scope",
-          "NameAlt": "scope",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The scope of the role assignment.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "scope",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 2,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "role_assignment_name",
-          "NameAlt": "role_assignment_name",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The name of the role assignment to get.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "role_assignment_name",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
         }
       ],
       "Methods": [
-        {
-          "Name": "list_for_resource",
-          "Options": [
-            "resource_group_name",
-            "resource_provider_namespace",
-            "parent_resource_path",
-            "resource_type",
-            "resource_name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "resource_provider_namespace",
-            "parent_resource_path",
-            "resource_type",
-            "resource_name"
-          ]
-        },
-        {
-          "Name": "list_for_resource_group",
-          "Options": [
-            "resource_group_name",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "resource_group_name"
-          ]
-        },
         {
           "Name": "get",
           "Options": [
@@ -966,14 +683,11 @@
           ]
         },
         {
-          "Name": "list_for_scope",
+          "Name": "list",
           "Options": [
-            "scope",
             "filter"
           ],
-          "RequiredOptions": [
-            "scope"
-          ]
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -1527,7 +1241,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 1,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -1542,7 +1256,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The ID of the role definition.",
           "DefaultValue": null,
@@ -1552,6 +1266,30 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "filter",
+          "NameAlt": "filter",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "filter",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -1569,6 +1307,16 @@
           "RequiredOptions": [
             "scope",
             "role_definition_id"
+          ]
+        },
+        {
+          "Name": "list",
+          "Options": [
+            "scope",
+            "filter"
+          ],
+          "RequiredOptions": [
+            "scope"
           ]
         }
       ],

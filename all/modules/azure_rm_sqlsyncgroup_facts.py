@@ -25,30 +25,18 @@ options:
     resource_group:
         description:
             - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+        required: True
     server_name:
         description:
             - The name of the server.
+        required: True
     database_name:
         description:
             - The name of the database on which the sync group is hosted.
+        required: True
     sync_group_name:
         description:
             - The name of the sync group.
-    start_time:
-        description:
-            - Get logs generated after this time.
-    end_time:
-        description:
-            - Get logs generated before this time.
-    type:
-        description:
-            - The types of logs to retrieve.
-    continuation_token:
-        description:
-            - The continuation token for this operation.
-    location_name:
-        description:
-            - The name of the region where the resource is located.
 
 extends_documentation_fragment:
     - azure
@@ -59,24 +47,6 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Sync Group
-    azure_rm_sqlsyncgroup_facts:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      sync_group_name: sync_group_name
-      start_time: start_time
-      end_time: end_time
-      type: type
-      continuation_token: continuation_token
-
-  - name: List instances of Sync Group
-    azure_rm_sqlsyncgroup_facts:
-      resource_group: resource_group_name
-      server_name: server_name
-      database_name: database_name
-      sync_group_name: sync_group_name
-
   - name: Get instance of Sync Group
     azure_rm_sqlsyncgroup_facts:
       resource_group: resource_group_name
@@ -89,10 +59,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       server_name: server_name
       database_name: database_name
-
-  - name: List instances of Sync Group
-    azure_rm_sqlsyncgroup_facts:
-      location_name: location_name
 '''
 
 RETURN = '''
@@ -149,30 +115,18 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             server_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             database_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             sync_group_name=dict(
-                type='str'
-            ),
-            start_time=dict(
-                type='str'
-            ),
-            end_time=dict(
-                type='str'
-            ),
-            type=dict(
-                type='str'
-            ),
-            continuation_token=dict(
-                type='str'
-            ),
-            location_name=dict(
                 type='str'
             )
         )
@@ -186,11 +140,6 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         self.server_name = None
         self.database_name = None
         self.sync_group_name = None
-        self.start_time = None
-        self.end_time = None
-        self.type = None
-        self.continuation_token = None
-        self.location_name = None
         super(AzureRMSyncGroupsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -202,77 +151,13 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.server_name is not None and
                 self.database_name is not None and
-                self.sync_group_name is not None and
-                self.start_time is not None and
-                self.end_time is not None and
-                self.type is not None):
-            self.results['sync_groups'] = self.list_logs()
-        elif (self.resource_group is not None and
-              self.server_name is not None and
-              self.database_name is not None and
-              self.sync_group_name is not None):
-            self.results['sync_groups'] = self.list_hub_schemas()
-        elif (self.resource_group is not None and
-              self.server_name is not None and
-              self.database_name is not None and
-              self.sync_group_name is not None):
+                self.sync_group_name is not None):
             self.results['sync_groups'] = self.get()
         elif (self.resource_group is not None and
               self.server_name is not None and
               self.database_name is not None):
             self.results['sync_groups'] = self.list_by_database()
-        elif (self.location_name is not None):
-            self.results['sync_groups'] = self.list_sync_database_ids()
         return self.results
-
-    def list_logs(self):
-        '''
-        Gets facts of the specified Sync Group.
-
-        :return: deserialized Sync Groupinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.sync_groups.list_logs(resource_group_name=self.resource_group,
-                                                              server_name=self.server_name,
-                                                              database_name=self.database_name,
-                                                              sync_group_name=self.sync_group_name,
-                                                              start_time=self.start_time,
-                                                              end_time=self.end_time,
-                                                              type=self.type)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for SyncGroups.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_hub_schemas(self):
-        '''
-        Gets facts of the specified Sync Group.
-
-        :return: deserialized Sync Groupinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.sync_groups.list_hub_schemas(resource_group_name=self.resource_group,
-                                                                     server_name=self.server_name,
-                                                                     database_name=self.database_name,
-                                                                     sync_group_name=self.sync_group_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for SyncGroups.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -308,26 +193,6 @@ class AzureRMSyncGroupsFacts(AzureRMModuleBase):
             response = self.mgmt_client.sync_groups.list_by_database(resource_group_name=self.resource_group,
                                                                      server_name=self.server_name,
                                                                      database_name=self.database_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for SyncGroups.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_sync_database_ids(self):
-        '''
-        Gets facts of the specified Sync Group.
-
-        :return: deserialized Sync Groupinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.sync_groups.list_sync_database_ids(location_name=self.location_name)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for SyncGroups.')

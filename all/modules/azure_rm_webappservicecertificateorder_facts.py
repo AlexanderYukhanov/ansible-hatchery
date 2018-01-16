@@ -25,7 +25,6 @@ options:
     resource_group:
         description:
             - Name of the resource group to which the resource belongs.
-        required: True
     certificate_order_name:
         description:
             - Name of the certificate order..
@@ -47,11 +46,9 @@ EXAMPLES = '''
   - name: List instances of App Service Certificate Order
     azure_rm_webappservicecertificateorder_facts:
       resource_group: resource_group_name
-      certificate_order_name: certificate_order_name
 
   - name: List instances of App Service Certificate Order
     azure_rm_webappservicecertificateorder_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -96,8 +93,7 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             certificate_order_name=dict(
                 type='str'
@@ -122,11 +118,9 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.certificate_order_name is not None):
             self.results['app_service_certificate_orders'] = self.get()
-        elif (self.resource_group is not None and
-              self.certificate_order_name is not None):
-            self.results['app_service_certificate_orders'] = self.list_certificates()
         elif (self.resource_group is not None):
             self.results['app_service_certificate_orders'] = self.list_by_resource_group()
+            self.results['app_service_certificate_orders'] = self.list()
         return self.results
 
     def get(self):
@@ -149,27 +143,6 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
 
         return results
 
-    def list_certificates(self):
-        '''
-        Gets facts of the specified App Service Certificate Order.
-
-        :return: deserialized App Service Certificate Orderinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.app_service_certificate_orders.list_certificates(resource_group_name=self.resource_group,
-                                                                                         certificate_order_name=self.certificate_order_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for AppServiceCertificateOrders.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
     def list_by_resource_group(self):
         '''
         Gets facts of the specified App Service Certificate Order.
@@ -180,6 +153,26 @@ class AzureRMAppServiceCertificateOrdersFacts(AzureRMModuleBase):
         results = {}
         try:
             response = self.mgmt_client.app_service_certificate_orders.list_by_resource_group(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for AppServiceCertificateOrders.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified App Service Certificate Order.
+
+        :return: deserialized App Service Certificate Orderinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.app_service_certificate_orders.list()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceCertificateOrders.')

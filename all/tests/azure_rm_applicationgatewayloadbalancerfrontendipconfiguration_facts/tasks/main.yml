@@ -12,3 +12,13 @@
     that:
       - output.changed == False
       - output.load_balancer_frontend_ip_configurations.xxxunknownxxx.id != None
+
+- name: Gather facts Load Balancer Frontend I P Configuration
+  azure_rm_applicationgatewayloadbalancerfrontendipconfiguration_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.load_balancer_frontend_ip_configurations.xxxunknownxxx.id != None

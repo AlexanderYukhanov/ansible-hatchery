@@ -33,7 +33,6 @@ options:
     probe_name:
         description:
             - The name of the probe.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -49,6 +48,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
       probe_name: probe_name
+
+  - name: List instances of Load Balancer Probe
+    azure_rm_applicationgatewayloadbalancerprobe_facts:
+      resource_group: resource_group_name
+      load_balancer_name: load_balancer_name
 '''
 
 RETURN = '''
@@ -120,8 +124,7 @@ class AzureRMLoadBalancerProbesFacts(AzureRMModuleBase):
                 required=True
             ),
             probe_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -145,6 +148,9 @@ class AzureRMLoadBalancerProbesFacts(AzureRMModuleBase):
                 self.load_balancer_name is not None and
                 self.probe_name is not None):
             self.results['load_balancer_probes'] = self.get()
+        elif (self.resource_group is not None and
+              self.load_balancer_name is not None):
+            self.results['load_balancer_probes'] = self.list()
         return self.results
 
     def get(self):
@@ -165,6 +171,27 @@ class AzureRMLoadBalancerProbesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Load Balancer Probe.
+
+        :return: deserialized Load Balancer Probeinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.load_balancer_probes.list(resource_group_name=self.resource_group,
+                                                                  load_balancer_name=self.load_balancer_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for LoadBalancerProbes.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

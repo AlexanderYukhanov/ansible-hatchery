@@ -33,7 +33,6 @@ options:
     subnet_name:
         description:
             - The name of the subnet.
-        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -53,6 +52,11 @@ EXAMPLES = '''
       virtual_network_name: virtual_network_name
       subnet_name: subnet_name
       expand: expand
+
+  - name: List instances of Subnet
+    azure_rm_applicationgatewaysubnet_facts:
+      resource_group: resource_group_name
+      virtual_network_name: virtual_network_name
 '''
 
 RETURN = '''
@@ -104,8 +108,7 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
                 required=True
             ),
             subnet_name=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             expand=dict(
                 type='str'
@@ -133,6 +136,9 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
                 self.virtual_network_name is not None and
                 self.subnet_name is not None):
             self.results['subnets'] = self.get()
+        elif (self.resource_group is not None and
+              self.virtual_network_name is not None):
+            self.results['subnets'] = self.list()
         return self.results
 
     def get(self):
@@ -153,6 +159,27 @@ class AzureRMSubnetsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Subnet.
+
+        :return: deserialized Subnetinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.subnets.list(resource_group_name=self.resource_group,
+                                                     virtual_network_name=self.virtual_network_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for Subnets.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

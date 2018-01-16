@@ -53,12 +53,6 @@ EXAMPLES = '''
     azure_rm_sqlsyncagent_facts:
       resource_group: resource_group_name
       server_name: server_name
-      sync_agent_name: sync_agent_name
-
-  - name: List instances of Sync Agent
-    azure_rm_sqlsyncagent_facts:
-      resource_group: resource_group_name
-      server_name: server_name
 '''
 
 RETURN = '''
@@ -154,10 +148,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
                 self.sync_agent_name is not None):
             self.results['sync_agents'] = self.get()
         elif (self.resource_group is not None and
-              self.server_name is not None and
-              self.sync_agent_name is not None):
-            self.results['sync_agents'] = self.list_linked_databases()
-        elif (self.resource_group is not None and
               self.server_name is not None):
             self.results['sync_agents'] = self.list_by_server()
         return self.results
@@ -180,28 +170,6 @@ class AzureRMSyncAgentsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list_linked_databases(self):
-        '''
-        Gets facts of the specified Sync Agent.
-
-        :return: deserialized Sync Agentinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.sync_agents.list_linked_databases(resource_group_name=self.resource_group,
-                                                                          server_name=self.server_name,
-                                                                          sync_agent_name=self.sync_agent_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for SyncAgents.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

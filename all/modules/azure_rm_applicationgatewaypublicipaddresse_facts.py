@@ -26,18 +26,6 @@ options:
         description:
             - The name of the resource group.
         required: True
-    virtual_machine_scale_set_name:
-        description:
-            - The name of the virtual machine scale set.
-    virtualmachine_index:
-        description:
-            - The virtual machine index.
-    network_interface_name:
-        description:
-            - The network interface name.
-    ip_configuration_name:
-        description:
-            - The IP configuration name.
     public_ip_address_name:
         description:
             - The name of the subnet.
@@ -54,14 +42,6 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Public I P Addresse
-    azure_rm_applicationgatewaypublicipaddresse_facts:
-      resource_group: resource_group_name
-      virtual_machine_scale_set_name: virtual_machine_scale_set_name
-      virtualmachine_index: virtualmachine_index
-      network_interface_name: network_interface_name
-      ip_configuration_name: ip_configuration_name
-
   - name: Get instance of Public I P Addresse
     azure_rm_applicationgatewaypublicipaddresse_facts:
       resource_group: resource_group_name
@@ -71,7 +51,6 @@ EXAMPLES = '''
   - name: List instances of Public I P Addresse
     azure_rm_applicationgatewaypublicipaddresse_facts:
       resource_group: resource_group_name
-      virtual_machine_scale_set_name: virtual_machine_scale_set_name
 '''
 
 RETURN = '''
@@ -130,18 +109,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            virtual_machine_scale_set_name=dict(
-                type='str'
-            ),
-            virtualmachine_index=dict(
-                type='str'
-            ),
-            network_interface_name=dict(
-                type='str'
-            ),
-            ip_configuration_name=dict(
-                type='str'
-            ),
             public_ip_address_name=dict(
                 type='str'
             ),
@@ -156,10 +123,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         )
         self.mgmt_client = None
         self.resource_group = None
-        self.virtual_machine_scale_set_name = None
-        self.virtualmachine_index = None
-        self.network_interface_name = None
-        self.ip_configuration_name = None
         self.public_ip_address_name = None
         self.expand = None
         super(AzureRMPublicIPAddressesFacts, self).__init__(self.module_arg_spec)
@@ -171,42 +134,11 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.resource_group is not None and
-                self.virtual_machine_scale_set_name is not None and
-                self.virtualmachine_index is not None and
-                self.network_interface_name is not None and
-                self.ip_configuration_name is not None):
-            self.results['public_ip_addresses'] = self.list_virtual_machine_scale_set_vm_public_ip_addresses()
-        elif (self.resource_group is not None and
-              self.public_ip_address_name is not None):
+                self.public_ip_address_name is not None):
             self.results['public_ip_addresses'] = self.get()
-        elif (self.resource_group is not None and
-              self.virtual_machine_scale_set_name is not None):
-            self.results['public_ip_addresses'] = self.list_virtual_machine_scale_set_public_ip_addresses()
+        elif (self.resource_group is not None):
+            self.results['public_ip_addresses'] = self.list()
         return self.results
-
-    def list_virtual_machine_scale_set_vm_public_ip_addresses(self):
-        '''
-        Gets facts of the specified Public I P Addresse.
-
-        :return: deserialized Public I P Addresseinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_vm_public_ip_addresses(resource_group_name=self.resource_group,
-                                                                                                                  virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
-                                                                                                                  virtualmachine_index=self.virtualmachine_index,
-                                                                                                                  network_interface_name=self.network_interface_name,
-                                                                                                                  ip_configuration_name=self.ip_configuration_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for PublicIPAddresses.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -228,7 +160,7 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         return results
 
-    def list_virtual_machine_scale_set_public_ip_addresses(self):
+    def list(self):
         '''
         Gets facts of the specified Public I P Addresse.
 
@@ -237,8 +169,7 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         response = None
         results = {}
         try:
-            response = self.mgmt_client.public_ip_addresses.list_virtual_machine_scale_set_public_ip_addresses(resource_group_name=self.resource_group,
-                                                                                                               virtual_machine_scale_set_name=self.virtual_machine_scale_set_name)
+            response = self.mgmt_client.public_ip_addresses.list(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for PublicIPAddresses.')

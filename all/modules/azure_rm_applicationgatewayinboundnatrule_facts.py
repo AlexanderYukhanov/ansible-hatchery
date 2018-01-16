@@ -33,7 +33,6 @@ options:
     inbound_nat_rule_name:
         description:
             - The name of the inbound nat rule.
-        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -53,6 +52,11 @@ EXAMPLES = '''
       load_balancer_name: load_balancer_name
       inbound_nat_rule_name: inbound_nat_rule_name
       expand: expand
+
+  - name: List instances of Inbound Nat Rule
+    azure_rm_applicationgatewayinboundnatrule_facts:
+      resource_group: resource_group_name
+      load_balancer_name: load_balancer_name
 '''
 
 RETURN = '''
@@ -110,8 +114,7 @@ class AzureRMInboundNatRulesFacts(AzureRMModuleBase):
                 required=True
             ),
             inbound_nat_rule_name=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             expand=dict(
                 type='str'
@@ -139,6 +142,9 @@ class AzureRMInboundNatRulesFacts(AzureRMModuleBase):
                 self.load_balancer_name is not None and
                 self.inbound_nat_rule_name is not None):
             self.results['inbound_nat_rules'] = self.get()
+        elif (self.resource_group is not None and
+              self.load_balancer_name is not None):
+            self.results['inbound_nat_rules'] = self.list()
         return self.results
 
     def get(self):
@@ -159,6 +165,27 @@ class AzureRMInboundNatRulesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Inbound Nat Rule.
+
+        :return: deserialized Inbound Nat Ruleinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.inbound_nat_rules.list(resource_group_name=self.resource_group,
+                                                               load_balancer_name=self.load_balancer_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for InboundNatRules.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

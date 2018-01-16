@@ -26,12 +26,6 @@ options:
         description:
             - The name of the resource group.
         required: True
-    virtual_machine_scale_set_name:
-        description:
-            - The name of the virtual machine scale set.
-    virtualmachine_index:
-        description:
-            - The virtual machine index.
     network_interface_name:
         description:
             - The name of the network interface.
@@ -48,14 +42,6 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Network Interface
-    azure_rm_applicationgatewaynetworkinterface_facts:
-      resource_group: resource_group_name
-      virtual_machine_scale_set_name: virtual_machine_scale_set_name
-      virtualmachine_index: virtualmachine_index
-      network_interface_name: network_interface_name
-      expand: expand
-
   - name: Get instance of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
       resource_group: resource_group_name
@@ -65,18 +51,6 @@ EXAMPLES = '''
   - name: List instances of Network Interface
     azure_rm_applicationgatewaynetworkinterface_facts:
       resource_group: resource_group_name
-      virtual_machine_scale_set_name: virtual_machine_scale_set_name
-      virtualmachine_index: virtualmachine_index
-
-  - name: List instances of Network Interface
-    azure_rm_applicationgatewaynetworkinterface_facts:
-      resource_group: resource_group_name
-      network_interface_name: network_interface_name
-
-  - name: List instances of Network Interface
-    azure_rm_applicationgatewaynetworkinterface_facts:
-      resource_group: resource_group_name
-      virtual_machine_scale_set_name: virtual_machine_scale_set_name
 '''
 
 RETURN = '''
@@ -141,12 +115,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                 type='str',
                 required=True
             ),
-            virtual_machine_scale_set_name=dict(
-                type='str'
-            ),
-            virtualmachine_index=dict(
-                type='str'
-            ),
             network_interface_name=dict(
                 type='str'
             ),
@@ -161,8 +129,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         )
         self.mgmt_client = None
         self.resource_group = None
-        self.virtual_machine_scale_set_name = None
-        self.virtualmachine_index = None
         self.network_interface_name = None
         self.expand = None
         super(AzureRMNetworkInterfacesFacts, self).__init__(self.module_arg_spec)
@@ -174,47 +140,11 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.resource_group is not None and
-                self.virtual_machine_scale_set_name is not None and
-                self.virtualmachine_index is not None and
                 self.network_interface_name is not None):
-            self.results['network_interfaces'] = self.list_virtual_machine_scale_set_ip_configurations()
-        elif (self.resource_group is not None and
-              self.network_interface_name is not None):
             self.results['network_interfaces'] = self.get()
-        elif (self.resource_group is not None and
-              self.virtual_machine_scale_set_name is not None and
-              self.virtualmachine_index is not None):
-            self.results['network_interfaces'] = self.list_virtual_machine_scale_set_vm_network_interfaces()
-        elif (self.resource_group is not None and
-              self.network_interface_name is not None):
-            self.results['network_interfaces'] = self.list_effective_network_security_groups()
-        elif (self.resource_group is not None and
-              self.virtual_machine_scale_set_name is not None):
-            self.results['network_interfaces'] = self.list_virtual_machine_scale_set_network_interfaces()
+        elif (self.resource_group is not None):
+            self.results['network_interfaces'] = self.list()
         return self.results
-
-    def list_virtual_machine_scale_set_ip_configurations(self):
-        '''
-        Gets facts of the specified Network Interface.
-
-        :return: deserialized Network Interfaceinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_ip_configurations(resource_group_name=self.resource_group,
-                                                                                                            virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
-                                                                                                            virtualmachine_index=self.virtualmachine_index,
-                                                                                                            network_interface_name=self.network_interface_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkInterfaces.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -236,7 +166,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         return results
 
-    def list_virtual_machine_scale_set_vm_network_interfaces(self):
+    def list(self):
         '''
         Gets facts of the specified Network Interface.
 
@@ -245,51 +175,7 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         response = None
         results = {}
         try:
-            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_vm_network_interfaces(resource_group_name=self.resource_group,
-                                                                                                                virtual_machine_scale_set_name=self.virtual_machine_scale_set_name,
-                                                                                                                virtualmachine_index=self.virtualmachine_index)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkInterfaces.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_effective_network_security_groups(self):
-        '''
-        Gets facts of the specified Network Interface.
-
-        :return: deserialized Network Interfaceinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.network_interfaces.list_effective_network_security_groups(resource_group_name=self.resource_group,
-                                                                                                  network_interface_name=self.network_interface_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkInterfaces.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_virtual_machine_scale_set_network_interfaces(self):
-        '''
-        Gets facts of the specified Network Interface.
-
-        :return: deserialized Network Interfaceinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.network_interfaces.list_virtual_machine_scale_set_network_interfaces(resource_group_name=self.resource_group,
-                                                                                                             virtual_machine_scale_set_name=self.virtual_machine_scale_set_name)
+            response = self.mgmt_client.network_interfaces.list(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for NetworkInterfaces.')

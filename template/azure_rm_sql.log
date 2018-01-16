@@ -1749,6 +1749,8 @@ Sample after properties copied ---
   resource name fields: failover_group_name failover_group_name name
 ------------------------------- Failover Group
   list
+  ** CREATING FACT MODULE
+  resource name fields: operation_name
 ------------------------------- Operation
   list_by_server
   get

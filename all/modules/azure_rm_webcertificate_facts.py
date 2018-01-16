@@ -25,7 +25,6 @@ options:
     resource_group:
         description:
             - Name of the resource group to which the resource belongs.
-        required: True
     name:
         description:
             - Name of the certificate.
@@ -47,6 +46,9 @@ EXAMPLES = '''
   - name: List instances of Certificate
     azure_rm_webcertificate_facts:
       resource_group: resource_group_name
+
+  - name: List instances of Certificate
+    azure_rm_webcertificate_facts:
 '''
 
 RETURN = '''
@@ -120,8 +122,7 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             name=dict(
                 type='str'
@@ -148,6 +149,7 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
             self.results['certificates'] = self.get()
         elif (self.resource_group is not None):
             self.results['certificates'] = self.list_by_resource_group()
+            self.results['certificates'] = self.list()
         return self.results
 
     def get(self):
@@ -180,6 +182,26 @@ class AzureRMCertificatesFacts(AzureRMModuleBase):
         results = {}
         try:
             response = self.mgmt_client.certificates.list_by_resource_group(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for Certificates.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Certificate.
+
+        :return: deserialized Certificateinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.certificates.list()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Certificates.')

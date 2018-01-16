@@ -33,7 +33,6 @@ options:
     security_rule_name:
         description:
             - The name of the security rule.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -49,6 +48,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       network_security_group_name: network_security_group_name
       security_rule_name: security_rule_name
+
+  - name: List instances of Security Rule
+    azure_rm_applicationgatewaysecurityrule_facts:
+      resource_group: resource_group_name
+      network_security_group_name: network_security_group_name
 '''
 
 RETURN = '''
@@ -126,8 +130,7 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
                 required=True
             ),
             security_rule_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -151,6 +154,9 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
                 self.network_security_group_name is not None and
                 self.security_rule_name is not None):
             self.results['security_rules'] = self.get()
+        elif (self.resource_group is not None and
+              self.network_security_group_name is not None):
+            self.results['security_rules'] = self.list()
         return self.results
 
     def get(self):
@@ -171,6 +177,27 @@ class AzureRMSecurityRulesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Security Rule.
+
+        :return: deserialized Security Ruleinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.security_rules.list(resource_group_name=self.resource_group,
+                                                            network_security_group_name=self.network_security_group_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for SecurityRules.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

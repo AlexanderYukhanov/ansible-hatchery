@@ -685,7 +685,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
@@ -746,6 +746,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -2879,6 +2884,125 @@
       "ObjectName": "Log File",
       "ResourceNameFieldInRequest": "server_name",
       "ResourceNameFieldInResponse": "server_name",
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "NeedsForceUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
+      "ModuleName": "azure_rm_postgresqlperformancetier_facts",
+      "ModuleNameAlt": "azure_rm_postgresqlperformancetier_facts",
+      "Options": [],
+      "Methods": [
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "PerformanceTiers",
+      "ModuleOperationName": "performance_tiers",
+      "ObjectName": "Performance Tier",
+      "ResourceNameFieldInRequest": null,
+      "ResourceNameFieldInResponse": null,
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "NeedsForceUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
+      "ModuleName": "azure_rm_postgresqllocationbasedperformancetier_facts",
+      "ModuleNameAlt": "azure_rm_postgresqllocationbasedperformancetier_facts",
+      "Options": [
+        {
+          "Name": "location_name",
+          "NameAlt": "location_name",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the location.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "location_name",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "list",
+          "Options": [
+            "location_name"
+          ],
+          "RequiredOptions": [
+            "location_name"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "LocationBasedPerformanceTier",
+      "ModuleOperationName": "location_based_performance_tier",
+      "ObjectName": "Location Based Performance Tier",
+      "ResourceNameFieldInRequest": "location_name",
+      "ResourceNameFieldInResponse": "location_name",
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "NeedsForceUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
+      "ModuleName": "azure_rm_postgresqloperation_facts",
+      "ModuleNameAlt": "azure_rm_postgresqloperation_facts",
+      "Options": [],
+      "Methods": [
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "Operations",
+      "ModuleOperationName": "operations",
+      "ObjectName": "Operation",
+      "ResourceNameFieldInRequest": null,
+      "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,

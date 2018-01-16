@@ -33,7 +33,6 @@ options:
     frontend_ip_configuration_name:
         description:
             - The name of the frontend IP configuration.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -49,6 +48,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
       frontend_ip_configuration_name: frontend_ip_configuration_name
+
+  - name: List instances of Load Balancer Frontend I P Configuration
+    azure_rm_applicationgatewayloadbalancerfrontendipconfiguration_facts:
+      resource_group: resource_group_name
+      load_balancer_name: load_balancer_name
 '''
 
 RETURN = '''
@@ -119,8 +123,7 @@ class AzureRMLoadBalancerFrontendIPConfigurationsFacts(AzureRMModuleBase):
                 required=True
             ),
             frontend_ip_configuration_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -144,6 +147,9 @@ class AzureRMLoadBalancerFrontendIPConfigurationsFacts(AzureRMModuleBase):
                 self.load_balancer_name is not None and
                 self.frontend_ip_configuration_name is not None):
             self.results['load_balancer_frontend_ip_configurations'] = self.get()
+        elif (self.resource_group is not None and
+              self.load_balancer_name is not None):
+            self.results['load_balancer_frontend_ip_configurations'] = self.list()
         return self.results
 
     def get(self):
@@ -164,6 +170,27 @@ class AzureRMLoadBalancerFrontendIPConfigurationsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Load Balancer Frontend I P Configuration.
+
+        :return: deserialized Load Balancer Frontend I P Configurationinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.load_balancer_frontend_ip_configurations.list(resource_group_name=self.resource_group,
+                                                                                      load_balancer_name=self.load_balancer_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for LoadBalancerFrontendIPConfigurations.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

@@ -33,7 +33,6 @@ options:
     load_balancing_rule_name:
         description:
             - The name of the load balancing rule.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -49,6 +48,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
       load_balancing_rule_name: load_balancing_rule_name
+
+  - name: List instances of Load Balancer Load Balancing Rule
+    azure_rm_applicationgatewayloadbalancerloadbalancingrule_facts:
+      resource_group: resource_group_name
+      load_balancer_name: load_balancer_name
 '''
 
 RETURN = '''
@@ -125,8 +129,7 @@ class AzureRMLoadBalancerLoadBalancingRulesFacts(AzureRMModuleBase):
                 required=True
             ),
             load_balancing_rule_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -150,6 +153,9 @@ class AzureRMLoadBalancerLoadBalancingRulesFacts(AzureRMModuleBase):
                 self.load_balancer_name is not None and
                 self.load_balancing_rule_name is not None):
             self.results['load_balancer_load_balancing_rules'] = self.get()
+        elif (self.resource_group is not None and
+              self.load_balancer_name is not None):
+            self.results['load_balancer_load_balancing_rules'] = self.list()
         return self.results
 
     def get(self):
@@ -170,6 +176,27 @@ class AzureRMLoadBalancerLoadBalancingRulesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Load Balancer Load Balancing Rule.
+
+        :return: deserialized Load Balancer Load Balancing Ruleinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.load_balancer_load_balancing_rules.list(resource_group_name=self.resource_group,
+                                                                                load_balancer_name=self.load_balancer_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for LoadBalancerLoadBalancingRules.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

@@ -53,12 +53,6 @@ EXAMPLES = '''
     azure_rm_sqlrecommendedelasticpool_facts:
       resource_group: resource_group_name
       server_name: server_name
-      recommended_elastic_pool_name: recommended_elastic_pool_name
-
-  - name: List instances of Recommended Elastic Pool
-    azure_rm_sqlrecommendedelasticpool_facts:
-      resource_group: resource_group_name
-      server_name: server_name
 '''
 
 RETURN = '''
@@ -162,10 +156,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
                 self.recommended_elastic_pool_name is not None):
             self.results['recommended_elastic_pools'] = self.get()
         elif (self.resource_group is not None and
-              self.server_name is not None and
-              self.recommended_elastic_pool_name is not None):
-            self.results['recommended_elastic_pools'] = self.list_metrics()
-        elif (self.resource_group is not None and
               self.server_name is not None):
             self.results['recommended_elastic_pools'] = self.list_by_server()
         return self.results
@@ -188,28 +178,6 @@ class AzureRMRecommendedElasticPoolsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list_metrics(self):
-        '''
-        Gets facts of the specified Recommended Elastic Pool.
-
-        :return: deserialized Recommended Elastic Poolinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.recommended_elastic_pools.list_metrics(resource_group_name=self.resource_group,
-                                                                               server_name=self.server_name,
-                                                                               recommended_elastic_pool_name=self.recommended_elastic_pool_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for RecommendedElasticPools.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

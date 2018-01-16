@@ -29,7 +29,6 @@ options:
     virtual_network_name:
         description:
             - The name of the virtual network.
-        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -52,7 +51,6 @@ EXAMPLES = '''
   - name: List instances of Virtual Network
     azure_rm_applicationgatewayvirtualnetwork_facts:
       resource_group: resource_group_name
-      virtual_network_name: virtual_network_name
 '''
 
 RETURN = '''
@@ -119,8 +117,7 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
                 required=True
             ),
             virtual_network_name=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             expand=dict(
                 type='str'
@@ -146,9 +143,8 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.virtual_network_name is not None):
             self.results['virtual_networks'] = self.get()
-        elif (self.resource_group is not None and
-              self.virtual_network_name is not None):
-            self.results['virtual_networks'] = self.list_usage()
+        elif (self.resource_group is not None):
+            self.results['virtual_networks'] = self.list()
         return self.results
 
     def get(self):
@@ -171,7 +167,7 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         return results
 
-    def list_usage(self):
+    def list(self):
         '''
         Gets facts of the specified Virtual Network.
 
@@ -180,8 +176,7 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         response = None
         results = {}
         try:
-            response = self.mgmt_client.virtual_networks.list_usage(resource_group_name=self.resource_group,
-                                                                    virtual_network_name=self.virtual_network_name)
+            response = self.mgmt_client.virtual_networks.list(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworks.')

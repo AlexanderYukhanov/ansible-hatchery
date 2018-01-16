@@ -33,7 +33,6 @@ options:
     packet_capture_name:
         description:
             - The name of the packet capture session.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -49,6 +48,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       network_watcher_name: network_watcher_name
       packet_capture_name: packet_capture_name
+
+  - name: List instances of Packet Capture
+    azure_rm_applicationgatewaypacketcapture_facts:
+      resource_group: resource_group_name
+      network_watcher_name: network_watcher_name
 '''
 
 RETURN = '''
@@ -94,8 +98,7 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
                 required=True
             ),
             packet_capture_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -119,6 +122,9 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
                 self.network_watcher_name is not None and
                 self.packet_capture_name is not None):
             self.results['packet_captures'] = self.get()
+        elif (self.resource_group is not None and
+              self.network_watcher_name is not None):
+            self.results['packet_captures'] = self.list()
         return self.results
 
     def get(self):
@@ -139,6 +145,27 @@ class AzureRMPacketCapturesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Packet Capture.
+
+        :return: deserialized Packet Captureinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.packet_captures.list(resource_group_name=self.resource_group,
+                                                             network_watcher_name=self.network_watcher_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for PacketCaptures.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

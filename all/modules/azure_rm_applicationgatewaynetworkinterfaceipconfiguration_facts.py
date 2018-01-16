@@ -33,7 +33,6 @@ options:
     ip_configuration_name:
         description:
             - The name of the ip configuration name.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -49,6 +48,11 @@ EXAMPLES = '''
       resource_group: resource_group_name
       network_interface_name: network_interface_name
       ip_configuration_name: ip_configuration_name
+
+  - name: List instances of Network Interface I P Configuration
+    azure_rm_applicationgatewaynetworkinterfaceipconfiguration_facts:
+      resource_group: resource_group_name
+      network_interface_name: network_interface_name
 '''
 
 RETURN = '''
@@ -120,8 +124,7 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
                 required=True
             ),
             ip_configuration_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -145,6 +148,9 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
                 self.network_interface_name is not None and
                 self.ip_configuration_name is not None):
             self.results['network_interface_ip_configurations'] = self.get()
+        elif (self.resource_group is not None and
+              self.network_interface_name is not None):
+            self.results['network_interface_ip_configurations'] = self.list()
         return self.results
 
     def get(self):
@@ -165,6 +171,27 @@ class AzureRMNetworkInterfaceIPConfigurationsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Network Interface I P Configuration.
+
+        :return: deserialized Network Interface I P Configurationinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.network_interface_ip_configurations.list(resource_group_name=self.resource_group,
+                                                                                 network_interface_name=self.network_interface_name)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for NetworkInterfaceIPConfigurations.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

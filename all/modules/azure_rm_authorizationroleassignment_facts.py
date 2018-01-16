@@ -22,31 +22,16 @@ description:
     - Get facts of Role Assignment.
 
 options:
-    resource_group:
-        description:
-            - The name of the resource group.
-    resource_provider_namespace:
-        description:
-            - The namespace of the resource provider.
-    parent_resource_path:
-        description:
-            - The parent resource identity.
-    resource_type:
-        description:
-            - The resource type of the resource.
-    resource_name:
-        description:
-            - The name of the resource to get role assignments for.
-    filter:
-        description:
-            - "The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {
-              id} to return all role assignments at, above or below the scope for the specified principal."
     scope:
         description:
             - The scope of the role assignment.
     role_assignment_name:
         description:
             - The name of the role assignment to get.
+    filter:
+        description:
+            - "The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {
+              id} to return all role assignments at, above or below the scope for the specified principal."
 
 extends_documentation_fragment:
     - azure
@@ -57,20 +42,6 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Role Assignment
-    azure_rm_authorizationroleassignment_facts:
-      resource_group: resource_group_name
-      resource_provider_namespace: resource_provider_namespace
-      parent_resource_path: parent_resource_path
-      resource_type: resource_type
-      resource_name: resource_name
-      filter: filter
-
-  - name: List instances of Role Assignment
-    azure_rm_authorizationroleassignment_facts:
-      resource_group: resource_group_name
-      filter: filter
-
   - name: Get instance of Role Assignment
     azure_rm_authorizationroleassignment_facts:
       scope: scope
@@ -78,7 +49,6 @@ EXAMPLES = '''
 
   - name: List instances of Role Assignment
     azure_rm_authorizationroleassignment_facts:
-      scope: scope
       filter: filter
 '''
 
@@ -141,28 +111,13 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            resource_group=dict(
-                type='str'
-            ),
-            resource_provider_namespace=dict(
-                type='str'
-            ),
-            parent_resource_path=dict(
-                type='str'
-            ),
-            resource_type=dict(
-                type='str'
-            ),
-            resource_name=dict(
-                type='str'
-            ),
-            filter=dict(
-                type='str'
-            ),
             scope=dict(
                 type='str'
             ),
             role_assignment_name=dict(
+                type='str'
+            ),
+            filter=dict(
                 type='str'
             )
         )
@@ -172,14 +127,9 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
             ansible_facts=dict()
         )
         self.mgmt_client = None
-        self.resource_group = None
-        self.resource_provider_namespace = None
-        self.parent_resource_path = None
-        self.resource_type = None
-        self.resource_name = None
-        self.filter = None
         self.scope = None
         self.role_assignment_name = None
+        self.filter = None
         super(AzureRMRoleAssignmentsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -188,64 +138,11 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(AuthorizationManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-        if (self.resource_group is not None and
-                self.resource_provider_namespace is not None and
-                self.parent_resource_path is not None and
-                self.resource_type is not None and
-                self.resource_name is not None):
-            self.results['role_assignments'] = self.list_for_resource()
-        elif (self.resource_group is not None):
-            self.results['role_assignments'] = self.list_for_resource_group()
-        elif (self.scope is not None and
-              self.role_assignment_name is not None):
+        if (self.scope is not None and
+                self.role_assignment_name is not None):
             self.results['role_assignments'] = self.get()
-        elif (self.scope is not None):
-            self.results['role_assignments'] = self.list_for_scope()
+            self.results['role_assignments'] = self.list()
         return self.results
-
-    def list_for_resource(self):
-        '''
-        Gets facts of the specified Role Assignment.
-
-        :return: deserialized Role Assignmentinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.role_assignments.list_for_resource(resource_group_name=self.resource_group,
-                                                                           resource_provider_namespace=self.resource_provider_namespace,
-                                                                           parent_resource_path=self.parent_resource_path,
-                                                                           resource_type=self.resource_type,
-                                                                           resource_name=self.resource_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for RoleAssignments.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list_for_resource_group(self):
-        '''
-        Gets facts of the specified Role Assignment.
-
-        :return: deserialized Role Assignmentinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.role_assignments.list_for_resource_group(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for RoleAssignments.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -267,7 +164,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         return results
 
-    def list_for_scope(self):
+    def list(self):
         '''
         Gets facts of the specified Role Assignment.
 
@@ -276,7 +173,7 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         response = None
         results = {}
         try:
-            response = self.mgmt_client.role_assignments.list_for_scope(scope=self.scope)
+            response = self.mgmt_client.role_assignments.list()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for RoleAssignments.')

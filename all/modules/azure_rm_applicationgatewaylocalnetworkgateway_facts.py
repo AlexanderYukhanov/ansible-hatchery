@@ -29,7 +29,6 @@ options:
     local_network_gateway_name:
         description:
             - The name of the local network gateway.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -44,6 +43,10 @@ EXAMPLES = '''
     azure_rm_applicationgatewaylocalnetworkgateway_facts:
       resource_group: resource_group_name
       local_network_gateway_name: local_network_gateway_name
+
+  - name: List instances of Local Network Gateway
+    azure_rm_applicationgatewaylocalnetworkgateway_facts:
+      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -85,8 +88,7 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
                 required=True
             ),
             local_network_gateway_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -108,6 +110,8 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.local_network_gateway_name is not None):
             self.results['local_network_gateways'] = self.get()
+        elif (self.resource_group is not None):
+            self.results['local_network_gateways'] = self.list()
         return self.results
 
     def get(self):
@@ -127,6 +131,26 @@ class AzureRMLocalNetworkGatewaysFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Local Network Gateway.
+
+        :return: deserialized Local Network Gatewayinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.local_network_gateways.list(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for LocalNetworkGateways.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

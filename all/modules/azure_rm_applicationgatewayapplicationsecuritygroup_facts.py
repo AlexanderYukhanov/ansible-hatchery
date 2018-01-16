@@ -29,7 +29,6 @@ options:
     application_security_group_name:
         description:
             - The name of the application security group.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -44,6 +43,10 @@ EXAMPLES = '''
     azure_rm_applicationgatewayapplicationsecuritygroup_facts:
       resource_group: resource_group_name
       application_security_group_name: application_security_group_name
+
+  - name: List instances of Application Security Group
+    azure_rm_applicationgatewayapplicationsecuritygroup_facts:
+      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -103,8 +106,7 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
                 required=True
             ),
             application_security_group_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -126,6 +128,8 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.application_security_group_name is not None):
             self.results['application_security_groups'] = self.get()
+        elif (self.resource_group is not None):
+            self.results['application_security_groups'] = self.list()
         return self.results
 
     def get(self):
@@ -145,6 +149,26 @@ class AzureRMApplicationSecurityGroupsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Application Security Group.
+
+        :return: deserialized Application Security Groupinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.application_security_groups.list(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for ApplicationSecurityGroups.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

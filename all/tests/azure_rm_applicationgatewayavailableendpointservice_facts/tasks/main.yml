@@ -1,0 +1,13 @@
+- name: Prepare random number
+  set_fact:
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  run_once: yes
+
+- name: Gather facts Available Endpoint Service
+  azure_rm_applicationgatewayavailableendpointservice_facts:
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.available_endpoint_services.xxxunknownxxx.id != None

@@ -22,12 +22,6 @@ description:
     - Get facts of Domain.
 
 options:
-    keywords:
-        description:
-            - Keywords to be used for generating domain recommendations.
-    max_domain_recommendations:
-        description:
-            - Maximum number of recommendations.
     resource_group:
         description:
             - Name of the resource group to which the resource belongs.
@@ -44,11 +38,6 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Domain
-    azure_rm_webdomain_facts:
-      keywords: keywords
-      max_domain_recommendations: max_domain_recommendations
-
   - name: Get instance of Domain
     azure_rm_webdomain_facts:
       resource_group: resource_group_name
@@ -57,11 +46,9 @@ EXAMPLES = '''
   - name: List instances of Domain
     azure_rm_webdomain_facts:
       resource_group: resource_group_name
-      domain_name: domain_name
 
   - name: List instances of Domain
     azure_rm_webdomain_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -98,12 +85,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
     def __init__(self):
         # define user inputs into argument
         self.module_arg_spec = dict(
-            keywords=dict(
-                type='str'
-            ),
-            max_domain_recommendations=dict(
-                type='int'
-            ),
             resource_group=dict(
                 type='str'
             ),
@@ -117,8 +98,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             ansible_facts=dict()
         )
         self.mgmt_client = None
-        self.keywords = None
-        self.max_domain_recommendations = None
         self.resource_group = None
         self.domain_name = None
         super(AzureRMDomainsFacts, self).__init__(self.module_arg_spec)
@@ -129,36 +108,13 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         self.mgmt_client = self.get_mgmt_svc_client(WebSiteManagementClient,
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
-            self.results['domains'] = self.list_recommendations()
-        elif (self.resource_group is not None and
-              self.domain_name is not None):
+        if (self.resource_group is not None and
+                self.domain_name is not None):
             self.results['domains'] = self.get()
-        elif (self.resource_group is not None and
-              self.domain_name is not None):
-            self.results['domains'] = self.list_ownership_identifiers()
         elif (self.resource_group is not None):
             self.results['domains'] = self.list_by_resource_group()
+            self.results['domains'] = self.list()
         return self.results
-
-    def list_recommendations(self):
-        '''
-        Gets facts of the specified Domain.
-
-        :return: deserialized Domaininstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.domains.list_recommendations()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for Domains.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -180,27 +136,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
 
         return results
 
-    def list_ownership_identifiers(self):
-        '''
-        Gets facts of the specified Domain.
-
-        :return: deserialized Domaininstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.domains.list_ownership_identifiers(resource_group_name=self.resource_group,
-                                                                           domain_name=self.domain_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for Domains.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
     def list_by_resource_group(self):
         '''
         Gets facts of the specified Domain.
@@ -211,6 +146,26 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         results = {}
         try:
             response = self.mgmt_client.domains.list_by_resource_group(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for Domains.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Domain.
+
+        :return: deserialized Domaininstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.domains.list()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')

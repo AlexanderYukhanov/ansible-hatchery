@@ -25,7 +25,6 @@
 
 - name: Gather facts App Service Certificate Order
   azure_rm_webappservicecertificateorder_facts:
-    resource_group: "{{ resource_group }}"
   register: output
 - name: Assert that facts are returned
   assert:

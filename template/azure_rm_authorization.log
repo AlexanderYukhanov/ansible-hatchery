@@ -1,10 +1,10 @@
 ------------------------------- Classic Administrator
   list
+  ** CREATING FACT MODULE
+  resource name fields: classic_administrator_name
 ------------------------------- Classic Administrator
   list_for_resource_group
   list_for_resource
-  ** CREATING FACT MODULE
-  resource name fields: permission_name resource_name resource_name
 ------------------------------- Permission
   get
   list

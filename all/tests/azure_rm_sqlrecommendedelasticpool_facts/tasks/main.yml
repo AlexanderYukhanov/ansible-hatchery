@@ -22,13 +22,3 @@
     that:
       - output.changed == False
       - output.recommended_elastic_pools.xxxunknownxxx.id != None
-
-- name: Gather facts Recommended Elastic Pool
-  azure_rm_sqlrecommendedelasticpool_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.recommended_elastic_pools.xxxunknownxxx.id != None

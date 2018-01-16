@@ -1994,7 +1994,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the resource group.",
           "DefaultValue": null,
@@ -2055,6 +2055,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -2897,6 +2902,172 @@
       "ResourceNameFieldInRequest": "container_group_name",
       "ResourceNameFieldInResponse": "name",
       "ReleaseStatus": "RP",
+      "NeedsDeleteBeforeUpdate": false,
+      "NeedsForceUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
+      "ModuleName": "azure_rm_containerinstanceoperation_facts",
+      "ModuleNameAlt": "azure_rm_containerinstanceoperation_facts",
+      "Options": [],
+      "Methods": [
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "Operations",
+      "ModuleOperationName": "operations",
+      "ObjectName": "Operation",
+      "ResourceNameFieldInRequest": null,
+      "ResourceNameFieldInResponse": null,
+      "ReleaseStatus": "",
+      "NeedsDeleteBeforeUpdate": false,
+      "NeedsForceUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
+      "ModuleName": "azure_rm_containerinstancecontainerlog_facts",
+      "ModuleNameAlt": "azure_rm_containerinstancecontainerlog_facts",
+      "Options": [
+        {
+          "Name": "resource_group_name",
+          "NameAlt": "resource_group",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the resource group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "resource_group_name",
+            "test:default": "\"{{ resource_group }}\""
+          },
+          "SubOptions": null,
+          "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "container_group_name",
+          "NameAlt": "container_group_name",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the container group.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "container_group_name",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "container_name",
+          "NameAlt": "container_name",
+          "Disposition": "default",
+          "Type": "str",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "True",
+          "VariableValue": "None",
+          "Documentation": "The name of the container instance.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "container_name",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 1,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        },
+        {
+          "Name": "tail",
+          "NameAlt": "tail",
+          "Disposition": "default",
+          "Type": "int",
+          "ValueIfFalse": null,
+          "ValueIfTrue": null,
+          "IsList": false,
+          "Required": "False",
+          "VariableValue": "None",
+          "Documentation": "The number of lines to show from the tail of the container instance log. If not provided, all available logs are shown up to 4mb.",
+          "DefaultValue": null,
+          "DefaultValueSample": {
+            "default": "tail",
+            "test:default": ""
+          },
+          "SubOptions": null,
+          "RequiredCount": 0,
+          "NoLog": false,
+          "EnumValues": null,
+          "IncludeInDocumentation": true,
+          "IncludeInArgSpec": true,
+          "AdditionalInfo": null
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "list",
+          "Options": [
+            "resource_group_name",
+            "container_group_name",
+            "container_name",
+            "tail"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "container_group_name",
+            "container_name"
+          ]
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "ContainerLogs",
+      "ModuleOperationName": "container_logs",
+      "ObjectName": "Container Log",
+      "ResourceNameFieldInRequest": "container_name",
+      "ResourceNameFieldInResponse": "container_name",
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,
       "CannotTestUpdate": true,

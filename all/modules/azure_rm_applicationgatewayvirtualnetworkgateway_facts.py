@@ -29,7 +29,6 @@ options:
     virtual_network_gateway_name:
         description:
             - The name of the virtual network gateway.
-        required: True
 
 extends_documentation_fragment:
     - azure
@@ -48,7 +47,6 @@ EXAMPLES = '''
   - name: List instances of Virtual Network Gateway
     azure_rm_applicationgatewayvirtualnetworkgateway_facts:
       resource_group: resource_group_name
-      virtual_network_gateway_name: virtual_network_gateway_name
 '''
 
 RETURN = '''
@@ -90,8 +88,7 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
                 required=True
             ),
             virtual_network_gateway_name=dict(
-                type='str',
-                required=True
+                type='str'
             )
         )
         # store the results of the module operation
@@ -113,9 +110,8 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.virtual_network_gateway_name is not None):
             self.results['virtual_network_gateways'] = self.get()
-        elif (self.resource_group is not None and
-              self.virtual_network_gateway_name is not None):
-            self.results['virtual_network_gateways'] = self.list_connections()
+        elif (self.resource_group is not None):
+            self.results['virtual_network_gateways'] = self.list()
         return self.results
 
     def get(self):
@@ -138,7 +134,7 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
 
         return results
 
-    def list_connections(self):
+    def list(self):
         '''
         Gets facts of the specified Virtual Network Gateway.
 
@@ -147,8 +143,7 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
         response = None
         results = {}
         try:
-            response = self.mgmt_client.virtual_network_gateways.list_connections(resource_group_name=self.resource_group,
-                                                                                  virtual_network_gateway_name=self.virtual_network_gateway_name)
+            response = self.mgmt_client.virtual_network_gateways.list(resource_group_name=self.resource_group)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for VirtualNetworkGateways.')

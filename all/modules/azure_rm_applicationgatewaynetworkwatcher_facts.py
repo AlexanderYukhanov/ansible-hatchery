@@ -24,15 +24,11 @@ description:
 options:
     resource_group:
         description:
-            - The name of the network watcher resource group.
+            - The name of the resource group.
         required: True
     network_watcher_name:
         description:
-            - The name of the network watcher resource.
-        required: True
-    parameters:
-        description:
-            - Parameters that scope the list of available providers.
+            - The name of the network watcher.
 
 extends_documentation_fragment:
     - azure
@@ -43,16 +39,14 @@ author:
 '''
 
 EXAMPLES = '''
-  - name: List instances of Network Watcher
-    azure_rm_applicationgatewaynetworkwatcher_facts:
-      resource_group: resource_group_name
-      network_watcher_name: network_watcher_name
-      parameters: parameters
-
   - name: Get instance of Network Watcher
     azure_rm_applicationgatewaynetworkwatcher_facts:
       resource_group: resource_group_name
       network_watcher_name: network_watcher_name
+
+  - name: List instances of Network Watcher
+    azure_rm_applicationgatewaynetworkwatcher_facts:
+      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -94,11 +88,7 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
                 required=True
             ),
             network_watcher_name=dict(
-                type='str',
-                required=True
-            ),
-            parameters=dict(
-                type='dict'
+                type='str'
             )
         )
         # store the results of the module operation
@@ -109,7 +99,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         self.mgmt_client = None
         self.resource_group = None
         self.network_watcher_name = None
-        self.parameters = None
         super(AzureRMNetworkWatchersFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -119,35 +108,11 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
                                                     base_url=self._cloud_environment.endpoints.resource_manager)
 
         if (self.resource_group is not None and
-                self.network_watcher_name is not None and
-                self.parameters is not None):
-            self.results['network_watchers'] = self.list_available_providers()
-        elif (self.resource_group is not None and
-              self.network_watcher_name is not None):
+                self.network_watcher_name is not None):
             self.results['network_watchers'] = self.get()
+        elif (self.resource_group is not None):
+            self.results['network_watchers'] = self.list()
         return self.results
-
-    def list_available_providers(self):
-        '''
-        Gets facts of the specified Network Watcher.
-
-        :return: deserialized Network Watcherinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.network_watchers.list_available_providers(resource_group_name=self.resource_group,
-                                                                                  network_watcher_name=self.network_watcher_name,
-                                                                                  parameters=self.parameters)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkWatchers.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
 
     def get(self):
         '''
@@ -166,6 +131,26 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
+
+        return results
+
+    def list(self):
+        '''
+        Gets facts of the specified Network Watcher.
+
+        :return: deserialized Network Watcherinstance state dictionary
+        '''
+        response = None
+        results = {}
+        try:
+            response = self.mgmt_client.network_watchers.list(resource_group_name=self.resource_group)
+            self.log("Response : {0}".format(response))
+        except CloudError as e:
+            self.log('Could not get facts for NetworkWatchers.')
+
+        if response is not None:
+            for item in response:
+                results[item.name] = item.as_dict()
 
         return results
 

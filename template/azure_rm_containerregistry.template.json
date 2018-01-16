@@ -505,7 +505,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the resource group to which the container registry belongs.",
           "DefaultValue": null,
@@ -514,7 +514,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 4,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -538,7 +538,7 @@
             "test:default": "acr{{ rpfx }}"
           },
           "SubOptions": null,
-          "RequiredCount": 3,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -559,28 +559,6 @@
           ]
         },
         {
-          "Name": "list_credentials",
-          "Options": [
-            "resource_group_name",
-            "registry_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "registry_name"
-          ]
-        },
-        {
-          "Name": "list_usages",
-          "Options": [
-            "resource_group_name",
-            "registry_name"
-          ],
-          "RequiredOptions": [
-            "resource_group_name",
-            "registry_name"
-          ]
-        },
-        {
           "Name": "list_by_resource_group",
           "Options": [
             "resource_group_name"
@@ -588,6 +566,11 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
+        },
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -804,6 +787,36 @@
       "ResourceNameFieldInRequest": "registry_name",
       "ResourceNameFieldInResponse": "name",
       "ReleaseStatus": "RP",
+      "NeedsDeleteBeforeUpdate": false,
+      "NeedsForceUpdate": false,
+      "CannotTestUpdate": true,
+      "UpdateComparisonRules": null,
+      "TestReplaceStringFrom": null,
+      "TestReplaceStringTo": null
+    },
+    {
+      "ModuleName": "azure_rm_containerregistryoperation_facts",
+      "ModuleNameAlt": "azure_rm_containerregistryoperation_facts",
+      "Options": [],
+      "Methods": [
+        {
+          "Name": "list",
+          "Options": [],
+          "RequiredOptions": []
+        }
+      ],
+      "ResponseFields": null,
+      "TestPrerequisitesModule": null,
+      "TestPrerequisites": null,
+      "TestPostrequisites": null,
+      "AssertStateVariable": "",
+      "AssertStateExpectedValue": "Ready",
+      "ModuleOperationNameUpper": "Operations",
+      "ModuleOperationName": "operations",
+      "ObjectName": "Operation",
+      "ResourceNameFieldInRequest": null,
+      "ResourceNameFieldInResponse": null,
+      "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,
       "CannotTestUpdate": true,
@@ -1154,7 +1167,7 @@
             "test:default": "\"{{ resource_group }}\""
           },
           "SubOptions": null,
-          "RequiredCount": 1,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -1178,7 +1191,7 @@
             "test:default": "acr{{ rpfx }}"
           },
           "SubOptions": null,
-          "RequiredCount": 1,
+          "RequiredCount": 2,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -1193,7 +1206,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the replication.",
           "DefaultValue": null,
@@ -1222,6 +1235,17 @@
             "resource_group_name",
             "registry_name",
             "replication_name"
+          ]
+        },
+        {
+          "Name": "list",
+          "Options": [
+            "resource_group_name",
+            "registry_name"
+          ],
+          "RequiredOptions": [
+            "resource_group_name",
+            "registry_name"
           ]
         }
       ],
@@ -1846,7 +1870,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "True",
+          "Required": "False",
           "VariableValue": "None",
           "Documentation": "The name of the webhook.",
           "DefaultValue": null,
@@ -1855,7 +1879,7 @@
             "test:default": "webhook{{ rpfx }}"
           },
           "SubOptions": null,
-          "RequiredCount": 2,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -1878,16 +1902,14 @@
           ]
         },
         {
-          "Name": "list_events",
+          "Name": "list",
           "Options": [
             "resource_group_name",
-            "registry_name",
-            "webhook_name"
+            "registry_name"
           ],
           "RequiredOptions": [
             "resource_group_name",
-            "registry_name",
-            "webhook_name"
+            "registry_name"
           ]
         }
       ],
