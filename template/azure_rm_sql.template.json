@@ -10275,7 +10275,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
           "DefaultValue": null,
@@ -10336,11 +10336,6 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -15169,36 +15164,6 @@
       "ObjectName": "Failover Group",
       "ResourceNameFieldInRequest": "failover_group_name",
       "ResourceNameFieldInResponse": "name",
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
-      "ModuleName": "azure_rm_sqloperation_facts",
-      "ModuleNameAlt": "azure_rm_sqloperation_facts",
-      "Options": [],
-      "Methods": [
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "Operations",
-      "ModuleOperationName": "operations",
-      "ObjectName": "Operation",
-      "ResourceNameFieldInRequest": null,
-      "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,

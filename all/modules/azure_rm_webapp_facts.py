@@ -25,6 +25,7 @@ options:
     resource_group:
         description:
             - Name of the resource group to which the resource belongs.
+        required: True
     include_slots:
         description:
             - Specify <strong>true</strong> to include deployment slots in results. The default is false, which only gives you the production slot of all apps.
@@ -50,9 +51,6 @@ EXAMPLES = '''
     azure_rm_webapp_facts:
       resource_group: resource_group_name
       name: name
-
-  - name: List instances of Web App
-    azure_rm_webapp_facts:
 '''
 
 RETURN = '''
@@ -96,7 +94,8 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             include_slots=dict(
                 type='str'
@@ -127,7 +126,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
         elif (self.resource_group is not None and
               self.name is not None):
             self.results['web_apps'] = self.get()
-            self.results['web_apps'] = self.list()
         return self.results
 
     def list_by_resource_group(self):
@@ -167,26 +165,6 @@ class AzureRMWebAppsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Web App.
-
-        :return: deserialized Web Appinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.web_apps.list()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for WebApps.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

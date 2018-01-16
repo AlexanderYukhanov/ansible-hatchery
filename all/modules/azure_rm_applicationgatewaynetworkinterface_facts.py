@@ -29,6 +29,7 @@ options:
     network_interface_name:
         description:
             - The name of the network interface.
+        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -47,10 +48,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       network_interface_name: network_interface_name
       expand: expand
-
-  - name: List instances of Network Interface
-    azure_rm_applicationgatewaynetworkinterface_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -116,7 +113,8 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
                 required=True
             ),
             network_interface_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -142,8 +140,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.network_interface_name is not None):
             self.results['network_interfaces'] = self.get()
-        elif (self.resource_group is not None):
-            self.results['network_interfaces'] = self.list()
         return self.results
 
     def get(self):
@@ -163,26 +159,6 @@ class AzureRMNetworkInterfacesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Network Interface.
-
-        :return: deserialized Network Interfaceinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.network_interfaces.list(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkInterfaces.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

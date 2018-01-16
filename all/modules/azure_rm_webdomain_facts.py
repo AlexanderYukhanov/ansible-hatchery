@@ -25,6 +25,7 @@ options:
     resource_group:
         description:
             - Name of the resource group to which the resource belongs.
+        required: True
     domain_name:
         description:
             - Name of the domain.
@@ -46,9 +47,6 @@ EXAMPLES = '''
   - name: List instances of Domain
     azure_rm_webdomain_facts:
       resource_group: resource_group_name
-
-  - name: List instances of Domain
-    azure_rm_webdomain_facts:
 '''
 
 RETURN = '''
@@ -86,7 +84,8 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             domain_name=dict(
                 type='str'
@@ -113,7 +112,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
             self.results['domains'] = self.get()
         elif (self.resource_group is not None):
             self.results['domains'] = self.list_by_resource_group()
-            self.results['domains'] = self.list()
         return self.results
 
     def get(self):
@@ -146,26 +144,6 @@ class AzureRMDomainsFacts(AzureRMModuleBase):
         results = {}
         try:
             response = self.mgmt_client.domains.list_by_resource_group(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for Domains.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Domain.
-
-        :return: deserialized Domaininstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.domains.list()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Domains.')

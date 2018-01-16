@@ -1,36 +1,6 @@
 {
   "Modules": [
     {
-      "ModuleName": "azure_rm_authorizationclassicadministrator_facts",
-      "ModuleNameAlt": "azure_rm_authorizationclassicadministrator_facts",
-      "Options": [],
-      "Methods": [
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "ClassicAdministrators",
-      "ModuleOperationName": "classic_administrators",
-      "ObjectName": "Classic Administrator",
-      "ResourceNameFieldInRequest": null,
-      "ResourceNameFieldInResponse": null,
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
       "ModuleName": "azure_rm_authorizationprovideroperationsmetadata_facts",
       "ModuleNameAlt": "azure_rm_authorizationprovideroperationsmetadata_facts",
       "Options": [
@@ -42,7 +12,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The namespace of the resource provider.",
           "DefaultValue": null,
@@ -93,13 +63,6 @@
           "RequiredOptions": [
             "resource_provider_namespace"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [
-            "expand"
-          ],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -605,7 +568,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The scope of the role assignment.",
           "DefaultValue": null,
@@ -629,7 +592,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The name of the role assignment to get.",
           "DefaultValue": null,
@@ -639,30 +602,6 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -681,13 +620,6 @@
             "scope",
             "role_assignment_name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [
-            "filter"
-          ],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -1241,7 +1173,7 @@
             "test:default": ""
           },
           "SubOptions": null,
-          "RequiredCount": 2,
+          "RequiredCount": 1,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -1256,7 +1188,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "The ID of the role definition.",
           "DefaultValue": null,
@@ -1266,30 +1198,6 @@
           },
           "SubOptions": null,
           "RequiredCount": 1,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
           "NoLog": false,
           "EnumValues": null,
           "IncludeInDocumentation": true,
@@ -1307,16 +1215,6 @@
           "RequiredOptions": [
             "scope",
             "role_definition_id"
-          ]
-        },
-        {
-          "Name": "list",
-          "Options": [
-            "scope",
-            "filter"
-          ],
-          "RequiredOptions": [
-            "scope"
           ]
         }
       ],

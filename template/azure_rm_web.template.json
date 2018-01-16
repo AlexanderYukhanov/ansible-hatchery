@@ -907,7 +907,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -968,11 +968,6 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -4489,7 +4484,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -4550,11 +4545,6 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -5549,7 +5539,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "Name of the top-level domain.",
           "DefaultValue": null,
@@ -5575,11 +5565,6 @@
           "RequiredOptions": [
             "name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -6304,7 +6289,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -6365,11 +6350,6 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -6675,118 +6655,6 @@
       "ObjectName": "Certificate",
       "ResourceNameFieldInRequest": "resource_group_name",
       "ResourceNameFieldInResponse": "name",
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
-      "ModuleName": "azure_rm_webdeletedwebapp_facts",
-      "ModuleNameAlt": "azure_rm_webdeletedwebapp_facts",
-      "Options": [],
-      "Methods": [
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "DeletedWebApps",
-      "ModuleOperationName": "deleted_web_apps",
-      "ObjectName": "Deleted Web App",
-      "ResourceNameFieldInRequest": null,
-      "ResourceNameFieldInResponse": null,
-      "ReleaseStatus": "",
-      "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
-      "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
-      "TestReplaceStringFrom": null,
-      "TestReplaceStringTo": null
-    },
-    {
-      "ModuleName": "azure_rm_webrecommendation_facts",
-      "ModuleNameAlt": "azure_rm_webrecommendation_facts",
-      "Options": [
-        {
-          "Name": "featured",
-          "NameAlt": "featured",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "featured",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        },
-        {
-          "Name": "filter",
-          "NameAlt": "filter",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Filter is specified by using OData syntax. Example: $filter=channels eq 'Api' or channel eq 'Notification' and startTime eq '2014-01-01T00:00:00Z' and endTime eq '2014-12-31T23:59:59Z' and timeGrain eq duration'[PT1H|PT1M|P1D]",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "filter",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
-        }
-      ],
-      "Methods": [
-        {
-          "Name": "list",
-          "Options": [
-            "featured",
-            "filter"
-          ],
-          "RequiredOptions": []
-        }
-      ],
-      "ResponseFields": null,
-      "TestPrerequisitesModule": null,
-      "TestPrerequisites": null,
-      "TestPostrequisites": null,
-      "AssertStateVariable": "",
-      "AssertStateExpectedValue": "Ready",
-      "ModuleOperationNameUpper": "Recommendations",
-      "ModuleOperationName": "recommendations",
-      "ObjectName": "Recommendation",
-      "ResourceNameFieldInRequest": null,
-      "ResourceNameFieldInResponse": null,
       "ReleaseStatus": "",
       "NeedsDeleteBeforeUpdate": false,
       "NeedsForceUpdate": false,
@@ -12530,7 +12398,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -12616,11 +12484,6 @@
             "resource_group_name",
             "name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -16198,7 +16061,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -16259,11 +16122,6 @@
           "RequiredOptions": [
             "resource_group_name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [],
-          "RequiredOptions": []
         }
       ],
       "ResponseFields": [
@@ -18285,7 +18143,7 @@
           "ValueIfFalse": null,
           "ValueIfTrue": null,
           "IsList": false,
-          "Required": "False",
+          "Required": "True",
           "VariableValue": "None",
           "Documentation": "Name of the resource group to which the resource belongs.",
           "DefaultValue": null,
@@ -18324,30 +18182,6 @@
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
           "AdditionalInfo": null
-        },
-        {
-          "Name": "detailed",
-          "NameAlt": "detailed",
-          "Disposition": "default",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
-          "IsList": false,
-          "Required": "False",
-          "VariableValue": "None",
-          "Documentation": "Specify <code>true</code> to return all App Service plan properties. The default is <code>false</code>, which returns a subset of the properties.\n Retrieval of all properties may increase the API latency.",
-          "DefaultValue": null,
-          "DefaultValueSample": {
-            "default": "detailed",
-            "test:default": ""
-          },
-          "SubOptions": null,
-          "RequiredCount": 0,
-          "NoLog": false,
-          "EnumValues": null,
-          "IncludeInDocumentation": true,
-          "IncludeInArgSpec": true,
-          "AdditionalInfo": null
         }
       ],
       "Methods": [
@@ -18361,13 +18195,6 @@
             "resource_group_name",
             "name"
           ]
-        },
-        {
-          "Name": "list",
-          "Options": [
-            "detailed"
-          ],
-          "RequiredOptions": []
         },
         {
           "Name": "list_by_resource_group",

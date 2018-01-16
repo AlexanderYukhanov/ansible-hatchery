@@ -29,6 +29,7 @@ options:
     network_watcher_name:
         description:
             - The name of the network watcher.
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -43,10 +44,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewaynetworkwatcher_facts:
       resource_group: resource_group_name
       network_watcher_name: network_watcher_name
-
-  - name: List instances of Network Watcher
-    azure_rm_applicationgatewaynetworkwatcher_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -88,7 +85,8 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
                 required=True
             ),
             network_watcher_name=dict(
-                type='str'
+                type='str',
+                required=True
             )
         )
         # store the results of the module operation
@@ -110,8 +108,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.network_watcher_name is not None):
             self.results['network_watchers'] = self.get()
-        elif (self.resource_group is not None):
-            self.results['network_watchers'] = self.list()
         return self.results
 
     def get(self):
@@ -131,26 +127,6 @@ class AzureRMNetworkWatchersFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Network Watcher.
-
-        :return: deserialized Network Watcherinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.network_watchers.list(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkWatchers.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

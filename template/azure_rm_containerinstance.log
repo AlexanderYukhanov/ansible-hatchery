@@ -496,10 +496,6 @@ Sample after properties copied ---
   resource name fields: container_group_name container_group_name name
 ------------------------------- Container Group
   list
-  ** CREATING FACT MODULE
-  resource name fields: operation_name
 ------------------------------- Operation
   list
-  ** CREATING FACT MODULE
-  resource name fields: container_log_name container_name container_name
 TWEAK: RENAMING resource_group_name -- A

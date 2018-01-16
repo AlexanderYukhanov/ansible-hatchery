@@ -12,13 +12,3 @@
     that:
       - output.changed == False
       - output.local_network_gateways.xxxunknownxxx.id != None
-
-- name: Gather facts Local Network Gateway
-  azure_rm_applicationgatewaylocalnetworkgateway_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.local_network_gateways.xxxunknownxxx.id != None

@@ -25,13 +25,10 @@ options:
     resource_group:
         description:
             - Name of the resource group to which the resource belongs.
+        required: True
     name:
         description:
             - Name of the App Service plan.
-    detailed:
-        description:
-            - "Specify <code>true</code> to return all App Service plan properties. The default is <code>false</code>, which returns a subset of the properti
-              es.\n Retrieval of all properties may increase the API latency."
 
 extends_documentation_fragment:
     - azure
@@ -46,10 +43,6 @@ EXAMPLES = '''
     azure_rm_webappserviceplan_facts:
       resource_group: resource_group_name
       name: name
-
-  - name: List instances of App Service Plan
-    azure_rm_webappserviceplan_facts:
-      detailed: detailed
 
   - name: List instances of App Service Plan
     azure_rm_webappserviceplan_facts:
@@ -164,12 +157,10 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             name=dict(
-                type='str'
-            ),
-            detailed=dict(
                 type='str'
             )
         )
@@ -181,7 +172,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         self.mgmt_client = None
         self.resource_group = None
         self.name = None
-        self.detailed = None
         super(AzureRMAppServicePlansFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -193,7 +183,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.name is not None):
             self.results['app_service_plans'] = self.get()
-            self.results['app_service_plans'] = self.list()
         elif (self.resource_group is not None):
             self.results['app_service_plans'] = self.list_by_resource_group()
         return self.results
@@ -215,26 +204,6 @@ class AzureRMAppServicePlansFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified App Service Plan.
-
-        :return: deserialized App Service Planinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.app_service_plans.list()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for AppServicePlans.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

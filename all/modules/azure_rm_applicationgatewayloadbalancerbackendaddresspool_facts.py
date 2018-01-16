@@ -33,6 +33,7 @@ options:
     backend_address_pool_name:
         description:
             - The name of the backend address pool.
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -48,11 +49,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       load_balancer_name: load_balancer_name
       backend_address_pool_name: backend_address_pool_name
-
-  - name: List instances of Load Balancer Backend Address Pool
-    azure_rm_applicationgatewayloadbalancerbackendaddresspool_facts:
-      resource_group: resource_group_name
-      load_balancer_name: load_balancer_name
 '''
 
 RETURN = '''
@@ -110,7 +106,8 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
                 required=True
             ),
             backend_address_pool_name=dict(
-                type='str'
+                type='str',
+                required=True
             )
         )
         # store the results of the module operation
@@ -134,9 +131,6 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
                 self.load_balancer_name is not None and
                 self.backend_address_pool_name is not None):
             self.results['load_balancer_backend_address_pools'] = self.get()
-        elif (self.resource_group is not None and
-              self.load_balancer_name is not None):
-            self.results['load_balancer_backend_address_pools'] = self.list()
         return self.results
 
     def get(self):
@@ -157,27 +151,6 @@ class AzureRMLoadBalancerBackendAddressPoolsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Load Balancer Backend Address Pool.
-
-        :return: deserialized Load Balancer Backend Address Poolinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.load_balancer_backend_address_pools.list(resource_group_name=self.resource_group,
-                                                                                 load_balancer_name=self.load_balancer_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for LoadBalancerBackendAddressPools.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

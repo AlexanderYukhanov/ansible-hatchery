@@ -29,6 +29,7 @@ options:
     virtual_network_gateway_name:
         description:
             - The name of the virtual network gateway.
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -43,10 +44,6 @@ EXAMPLES = '''
     azure_rm_applicationgatewayvirtualnetworkgateway_facts:
       resource_group: resource_group_name
       virtual_network_gateway_name: virtual_network_gateway_name
-
-  - name: List instances of Virtual Network Gateway
-    azure_rm_applicationgatewayvirtualnetworkgateway_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -88,7 +85,8 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
                 required=True
             ),
             virtual_network_gateway_name=dict(
-                type='str'
+                type='str',
+                required=True
             )
         )
         # store the results of the module operation
@@ -110,8 +108,6 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.virtual_network_gateway_name is not None):
             self.results['virtual_network_gateways'] = self.get()
-        elif (self.resource_group is not None):
-            self.results['virtual_network_gateways'] = self.list()
         return self.results
 
     def get(self):
@@ -131,26 +127,6 @@ class AzureRMVirtualNetworkGatewaysFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Virtual Network Gateway.
-
-        :return: deserialized Virtual Network Gatewayinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.virtual_network_gateways.list(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for VirtualNetworkGateways.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

@@ -25,6 +25,7 @@ options:
     name:
         description:
             - Name of the top-level domain.
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -38,9 +39,6 @@ EXAMPLES = '''
   - name: Get instance of Top Level Domain
     azure_rm_webtopleveldomain_facts:
       name: name
-
-  - name: List instances of Top Level Domain
-    azure_rm_webtopleveldomain_facts:
 '''
 
 RETURN = '''
@@ -96,7 +94,8 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             name=dict(
-                type='str'
+                type='str',
+                required=True
             )
         )
         # store the results of the module operation
@@ -116,7 +115,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
         if (self.name is not None):
             self.results['top_level_domains'] = self.get()
-            self.results['top_level_domains'] = self.list()
         return self.results
 
     def get(self):
@@ -135,26 +133,6 @@ class AzureRMTopLevelDomainsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Top Level Domain.
-
-        :return: deserialized Top Level Domaininstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.top_level_domains.list()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for TopLevelDomains.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

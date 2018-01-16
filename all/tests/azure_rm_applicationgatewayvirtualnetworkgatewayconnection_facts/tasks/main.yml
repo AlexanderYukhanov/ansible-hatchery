@@ -12,13 +12,3 @@
     that:
       - output.changed == False
       - output.virtual_network_gateway_connections.xxxunknownxxx.id != None
-
-- name: Gather facts Virtual Network Gateway Connection
-  azure_rm_applicationgatewayvirtualnetworkgatewayconnection_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.virtual_network_gateway_connections.xxxunknownxxx.id != None

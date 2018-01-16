@@ -219,8 +219,6 @@ Sample after properties copied ---
   resource name fields: certificate_name resource_group_name name
 ------------------------------- Certificate
   list
-  ** CREATING FACT MODULE
-  resource name fields: deleted_web_app_name
 ------------------------------- Deleted Web App
   list_site_diagnostic_categories
   get_site_diagnostic_category
@@ -250,8 +248,6 @@ Sample after properties copied ---
   disable_all_for_web_app
   reset_all_filters_for_web_app
   get_rule_details_by_web_app
-  ** CREATING FACT MODULE
-  resource name fields: recommendation_name
 ------------------------------- Recommendation
   get_publishing_user
   update_publishing_user

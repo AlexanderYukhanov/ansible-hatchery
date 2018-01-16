@@ -25,6 +25,7 @@ options:
     resource_provider_namespace:
         description:
             - The namespace of the resource provider.
+        required: True
     expand:
         description:
             - Specifies whether to expand the values.
@@ -41,10 +42,6 @@ EXAMPLES = '''
   - name: Get instance of Provider Operations Metadata
     azure_rm_authorizationprovideroperationsmetadata_facts:
       resource_provider_namespace: resource_provider_namespace
-      expand: expand
-
-  - name: List instances of Provider Operations Metadata
-    azure_rm_authorizationprovideroperationsmetadata_facts:
       expand: expand
 '''
 
@@ -102,7 +99,8 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_provider_namespace=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -126,7 +124,6 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
 
         if (self.resource_provider_namespace is not None):
             self.results['provider_operations_metadata'] = self.get()
-            self.results['provider_operations_metadata'] = self.list()
         return self.results
 
     def get(self):
@@ -145,26 +142,6 @@ class AzureRMProviderOperationsMetadataFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Provider Operations Metadata.
-
-        :return: deserialized Provider Operations Metadatainstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.provider_operations_metadata.list()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for ProviderOperationsMetadata.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

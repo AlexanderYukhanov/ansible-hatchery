@@ -33,6 +33,7 @@ options:
     default_security_rule_name:
         description:
             - The name of the default security rule.
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -48,11 +49,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       network_security_group_name: network_security_group_name
       default_security_rule_name: default_security_rule_name
-
-  - name: List instances of Default Security Rule
-    azure_rm_applicationgatewaydefaultsecurityrule_facts:
-      resource_group: resource_group_name
-      network_security_group_name: network_security_group_name
 '''
 
 RETURN = '''
@@ -137,7 +133,8 @@ class AzureRMDefaultSecurityRulesFacts(AzureRMModuleBase):
                 required=True
             ),
             default_security_rule_name=dict(
-                type='str'
+                type='str',
+                required=True
             )
         )
         # store the results of the module operation
@@ -161,9 +158,6 @@ class AzureRMDefaultSecurityRulesFacts(AzureRMModuleBase):
                 self.network_security_group_name is not None and
                 self.default_security_rule_name is not None):
             self.results['default_security_rules'] = self.get()
-        elif (self.resource_group is not None and
-              self.network_security_group_name is not None):
-            self.results['default_security_rules'] = self.list()
         return self.results
 
     def get(self):
@@ -184,27 +178,6 @@ class AzureRMDefaultSecurityRulesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Default Security Rule.
-
-        :return: deserialized Default Security Ruleinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.default_security_rules.list(resource_group_name=self.resource_group,
-                                                                    network_security_group_name=self.network_security_group_name)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for DefaultSecurityRules.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

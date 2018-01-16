@@ -29,6 +29,7 @@ options:
     virtual_network_name:
         description:
             - The name of the virtual network.
+        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -47,10 +48,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       virtual_network_name: virtual_network_name
       expand: expand
-
-  - name: List instances of Virtual Network
-    azure_rm_applicationgatewayvirtualnetwork_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -117,7 +114,8 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
                 required=True
             ),
             virtual_network_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -143,8 +141,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.virtual_network_name is not None):
             self.results['virtual_networks'] = self.get()
-        elif (self.resource_group is not None):
-            self.results['virtual_networks'] = self.list()
         return self.results
 
     def get(self):
@@ -164,26 +160,6 @@ class AzureRMVirtualNetworksFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Virtual Network.
-
-        :return: deserialized Virtual Networkinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.virtual_networks.list(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for VirtualNetworks.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

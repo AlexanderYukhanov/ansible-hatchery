@@ -25,13 +25,11 @@ options:
     scope:
         description:
             - The scope of the role assignment.
+        required: True
     role_assignment_name:
         description:
             - The name of the role assignment to get.
-    filter:
-        description:
-            - "The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {
-              id} to return all role assignments at, above or below the scope for the specified principal."
+        required: True
 
 extends_documentation_fragment:
     - azure
@@ -46,10 +44,6 @@ EXAMPLES = '''
     azure_rm_authorizationroleassignment_facts:
       scope: scope
       role_assignment_name: role_assignment_name
-
-  - name: List instances of Role Assignment
-    azure_rm_authorizationroleassignment_facts:
-      filter: filter
 '''
 
 RETURN = '''
@@ -112,13 +106,12 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             scope=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             role_assignment_name=dict(
-                type='str'
-            ),
-            filter=dict(
-                type='str'
+                type='str',
+                required=True
             )
         )
         # store the results of the module operation
@@ -129,7 +122,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         self.mgmt_client = None
         self.scope = None
         self.role_assignment_name = None
-        self.filter = None
         super(AzureRMRoleAssignmentsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -141,7 +133,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
         if (self.scope is not None and
                 self.role_assignment_name is not None):
             self.results['role_assignments'] = self.get()
-            self.results['role_assignments'] = self.list()
         return self.results
 
     def get(self):
@@ -161,26 +152,6 @@ class AzureRMRoleAssignmentsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Role Assignment.
-
-        :return: deserialized Role Assignmentinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.role_assignments.list()
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for RoleAssignments.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

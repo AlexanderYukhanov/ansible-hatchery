@@ -29,6 +29,7 @@ options:
     public_ip_address_name:
         description:
             - The name of the subnet.
+        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -47,10 +48,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       public_ip_address_name: public_ip_address_name
       expand: expand
-
-  - name: List instances of Public I P Addresse
-    azure_rm_applicationgatewaypublicipaddresse_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -110,7 +107,8 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
                 required=True
             ),
             public_ip_address_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -136,8 +134,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.public_ip_address_name is not None):
             self.results['public_ip_addresses'] = self.get()
-        elif (self.resource_group is not None):
-            self.results['public_ip_addresses'] = self.list()
         return self.results
 
     def get(self):
@@ -157,26 +153,6 @@ class AzureRMPublicIPAddressesFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Public I P Addresse.
-
-        :return: deserialized Public I P Addresseinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.public_ip_addresses.list(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for PublicIPAddresses.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

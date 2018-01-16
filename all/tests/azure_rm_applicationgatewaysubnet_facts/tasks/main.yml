@@ -12,13 +12,3 @@
     that:
       - output.changed == False
       - output.subnets.xxxunknownxxx.id != None
-
-- name: Gather facts Subnet
-  azure_rm_applicationgatewaysubnet_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.subnets.xxxunknownxxx.id != None

@@ -22,12 +22,3 @@
     that:
       - output.changed == False
       - output.vaults.xxxunknownxxx.id != None
-
-- name: Gather facts Vault
-  azure_rm_vault_facts:
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.vaults.xxxunknownxxx.id != None

@@ -12,13 +12,3 @@
     that:
       - output.changed == False
       - output.express_route_circuit_peerings.xxxunknownxxx.id != None
-
-- name: Gather facts Express Route Circuit Peering
-  azure_rm_applicationgatewayexpressroutecircuitpeering_facts:
-    resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.express_route_circuit_peerings.xxxunknownxxx.id != None

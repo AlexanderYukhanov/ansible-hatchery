@@ -11,12 +11,3 @@
     that:
       - output.changed == False
       - output.role_definitions.xxxunknownxxx.id != None
-
-- name: Gather facts Role Definition
-  azure_rm_authorizationroledefinition_facts:
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.role_definitions.xxxunknownxxx.id != None

@@ -29,6 +29,7 @@ options:
     network_security_group_name:
         description:
             - The name of the network security group.
+        required: True
     expand:
         description:
             - Expands referenced resources.
@@ -47,10 +48,6 @@ EXAMPLES = '''
       resource_group: resource_group_name
       network_security_group_name: network_security_group_name
       expand: expand
-
-  - name: List instances of Network Security Group
-    azure_rm_applicationgatewaynetworksecuritygroup_facts:
-      resource_group: resource_group_name
 '''
 
 RETURN = '''
@@ -110,7 +107,8 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
                 required=True
             ),
             network_security_group_name=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             expand=dict(
                 type='str'
@@ -136,8 +134,6 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
         if (self.resource_group is not None and
                 self.network_security_group_name is not None):
             self.results['network_security_groups'] = self.get()
-        elif (self.resource_group is not None):
-            self.results['network_security_groups'] = self.list()
         return self.results
 
     def get(self):
@@ -157,26 +153,6 @@ class AzureRMNetworkSecurityGroupsFacts(AzureRMModuleBase):
 
         if response is not None:
             results[response.name] = response.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Network Security Group.
-
-        :return: deserialized Network Security Groupinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.network_security_groups.list(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for NetworkSecurityGroups.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
 
         return results
 

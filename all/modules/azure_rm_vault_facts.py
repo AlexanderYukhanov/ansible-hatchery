@@ -25,15 +25,13 @@ options:
     resource_group:
         description:
             - The name of the Resource Group to which the vault belongs.
+        required: True
     vault_name:
         description:
             - The name of the vault.
     top:
         description:
             - Maximum number of results to return.
-    filter:
-        description:
-            - The filter to apply on the operation.
 
 extends_documentation_fragment:
     - azure
@@ -52,11 +50,6 @@ EXAMPLES = '''
   - name: List instances of Vault
     azure_rm_vault_facts:
       resource_group: resource_group_name
-      top: top
-
-  - name: List instances of Vault
-    azure_rm_vault_facts:
-      filter: filter
       top: top
 '''
 
@@ -95,16 +88,14 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             vault_name=dict(
                 type='str'
             ),
             top=dict(
                 type='int'
-            ),
-            filter=dict(
-                type='str'
             )
         )
         # store the results of the module operation
@@ -116,7 +107,6 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
         self.resource_group = None
         self.vault_name = None
         self.top = None
-        self.filter = None
         super(AzureRMVaultsFacts, self).__init__(self.module_arg_spec)
 
     def exec_module(self, **kwargs):
@@ -130,8 +120,6 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
             self.results['vaults'] = self.get()
         elif (self.resource_group is not None):
             self.results['vaults'] = self.list_by_resource_group()
-        elif (self.filter is not None):
-            self.results['vaults'] = self.list()
         return self.results
 
     def get(self):
@@ -164,26 +152,6 @@ class AzureRMVaultsFacts(AzureRMModuleBase):
         results = {}
         try:
             response = self.mgmt_client.vaults.list_by_resource_group(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for Vaults.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified Vault.
-
-        :return: deserialized Vaultinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.vaults.list(filter=self.filter)
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for Vaults.')

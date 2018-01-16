@@ -25,6 +25,7 @@ options:
     resource_group:
         description:
             - Name of the resource group to which the resource belongs.
+        required: True
     name:
         description:
             - Name of the App Service Environment.
@@ -46,9 +47,6 @@ EXAMPLES = '''
   - name: List instances of App Service Environment
     azure_rm_webappserviceenvironment_facts:
       resource_group: resource_group_name
-
-  - name: List instances of App Service Environment
-    azure_rm_webappserviceenvironment_facts:
 '''
 
 RETURN = '''
@@ -92,7 +90,8 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         # define user inputs into argument
         self.module_arg_spec = dict(
             resource_group=dict(
-                type='str'
+                type='str',
+                required=True
             ),
             name=dict(
                 type='str'
@@ -119,7 +118,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
             self.results['app_service_environments'] = self.get()
         elif (self.resource_group is not None):
             self.results['app_service_environments'] = self.list_by_resource_group()
-            self.results['app_service_environments'] = self.list()
         return self.results
 
     def get(self):
@@ -152,26 +150,6 @@ class AzureRMAppServiceEnvironmentsFacts(AzureRMModuleBase):
         results = {}
         try:
             response = self.mgmt_client.app_service_environments.list_by_resource_group(resource_group_name=self.resource_group)
-            self.log("Response : {0}".format(response))
-        except CloudError as e:
-            self.log('Could not get facts for AppServiceEnvironments.')
-
-        if response is not None:
-            for item in response:
-                results[item.name] = item.as_dict()
-
-        return results
-
-    def list(self):
-        '''
-        Gets facts of the specified App Service Environment.
-
-        :return: deserialized App Service Environmentinstance state dictionary
-        '''
-        response = None
-        results = {}
-        try:
-            response = self.mgmt_client.app_service_environments.list()
             self.log("Response : {0}".format(response))
         except CloudError as e:
             self.log('Could not get facts for AppServiceEnvironments.')
