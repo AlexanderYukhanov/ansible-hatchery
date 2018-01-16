@@ -79,7 +79,7 @@ id:
             est-5678/databases/longtermretentiontest-9012/backupLongTermRetentionPolicies/Default"
 state:
     description:
-        - "The status of the backup long term retention policy. Possible values include: C(Disabled), C(Enabled)"
+        - "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'"
     returned: always
     type: str
     sample: Enabled

@@ -67,7 +67,7 @@ app_service_environments:
                     sample: id
                 status:
                     description:
-                        - "Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)"
+                        - "Current status of the App Service Environment. Possible values include: 'Preparing', 'Ready', 'Scaling', 'Deleting'"
                     returned: always
                     type: str
                     sample: status

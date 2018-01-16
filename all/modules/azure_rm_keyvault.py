@@ -46,7 +46,7 @@ options:
                 required: True
             name:
                 description:
-                    - SKU name to specify whether the key vault is a standard vault or a premium vault.
+                    - SKU name to specify whether the key vault is a C(standard) vault or a C(premium) vault.
                 required: True
                 choices:
                     - 'standard'
@@ -103,10 +103,10 @@ options:
             - Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
     enable_soft_delete:
         description:
-            - Property to specify whether the C(soft delete) functionality is enabled for this key vault. It does not accept false value.
+            - "Property to specify whether the 'soft delete' functionality is enabled for this key vault. It does not accept false value."
     create_mode:
         description:
-            - "The vault's create mode to indicate whether the vault need to be recovered or not."
+            - "The vault's create mode to indicate whether the vault need to be C(recover)ed or not."
         choices:
             - 'recover'
             - 'default'

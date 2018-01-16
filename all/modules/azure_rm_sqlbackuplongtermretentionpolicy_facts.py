@@ -98,7 +98,7 @@ backup_long_term_retention_policies:
                     sample: Japan East
                 state:
                     description:
-                        - "The status of the backup long term retention policy. Possible values include: C(Disabled), C(Enabled)"
+                        - "The status of the backup long term retention policy. Possible values include: 'Disabled', 'Enabled'"
                     returned: always
                     type: str
                     sample: Enabled

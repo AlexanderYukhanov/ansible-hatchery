@@ -86,7 +86,7 @@ virtual_network_rules:
                     sample: Microsoft.DBforMySQL/servers/virtualNetworkRules
                 state:
                     description:
-                        - "Virtual Network Rule State. Possible values include: C(Initializing), C(InProgress), C(Ready), C(Deleting), C(Unknown)"
+                        - "Virtual Network Rule State. Possible values include: 'Initializing', 'InProgress', 'Ready', 'Deleting', 'Unknown'"
                     returned: always
                     type: str
                     sample: Ready

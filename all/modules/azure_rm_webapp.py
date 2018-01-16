@@ -426,7 +426,7 @@ options:
                             - "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endp
                               oint."
                             - "Tags can consist of alphanumeric characters and the following:"
-                            - "C(_), C(@), C(#), C(.), C(:), C(-). "
+                            - "'_', '@', '#', '.', ':', '-'. "
                             - Validation should be performed at the PushRequestHandler.
                     dynamic_tags_json:
                         description:

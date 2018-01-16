@@ -82,7 +82,7 @@ load_balancer_load_balancing_rules:
                             sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/probes/probe1
                 protocol:
                     description:
-                        - "Possible values include: C(Udp), C(Tcp), C(All)"
+                        - "Possible values include: 'Udp', 'Tcp', 'All'"
                     returned: always
                     type: str
                     sample: Tcp

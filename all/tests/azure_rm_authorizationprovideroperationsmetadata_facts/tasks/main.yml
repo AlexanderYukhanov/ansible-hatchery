@@ -6,6 +6,15 @@
 - name: Gather facts Provider Operations Metadata
   azure_rm_authorizationprovideroperationsmetadata_facts:
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.provider_operations_metadata == {}
+
+- name: Gather facts Provider Operations Metadata
+  azure_rm_authorizationprovideroperationsmetadata_facts:
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

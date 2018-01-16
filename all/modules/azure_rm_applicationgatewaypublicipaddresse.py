@@ -48,13 +48,13 @@ options:
                     - 'standard'
     public_ip_allocation_method:
         description:
-            - "The public IP allocation method. Possible values are: C(Static) and C(Dynamic)."
+            - "The public IP allocation method. Possible values are: C(static) and C(dynamic)."
         choices:
             - 'static'
             - 'dynamic'
     public_ip_address_version:
         description:
-            - "The public IP address version. Possible values are: C(IPv4) and C(IPv6)."
+            - "The public IP address version. Possible values are: C(ipv4) and C(ipv6)."
         choices:
             - 'ipv4'
             - 'ipv6'
@@ -86,7 +86,7 @@ options:
             - The resource GUID property of the public IP resource.
     provisioning_state:
         description:
-            - "The provisioning state of the PublicIP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
+            - "The provisioning state of the PublicIP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.

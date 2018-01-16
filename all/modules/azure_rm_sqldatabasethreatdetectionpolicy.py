@@ -43,7 +43,7 @@ options:
             - Resource location. If not set, location from the resource group will be used as default.
     state:
         description:
-            - Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required.
+            - Specifies the state of the policy. If state is C(enabled), storageEndpoint and storageAccountAccessKey are required.
         required: True
         choices:
             - 'new'
@@ -107,8 +107,8 @@ id:
             es/testdb"
 state:
     description:
-        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(New),
-           C(Enabled), C(Disabled)"
+        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'New',
+          'Enabled', 'Disabled'"
     returned: always
     type: str
     sample: Enabled

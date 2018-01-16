@@ -7,6 +7,16 @@
   azure_rm_sqldatabaseusage_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.database_usages == {}
+
+- name: Gather facts Database Usage
+  azure_rm_sqldatabaseusage_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

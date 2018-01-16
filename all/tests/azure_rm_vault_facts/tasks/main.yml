@@ -7,6 +7,26 @@
   azure_rm_vault_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.vaults == {}
+
+- name: Gather facts Vault
+  azure_rm_vault_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.vaults == {}
+
+- name: Gather facts Vault
+  azure_rm_vault_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

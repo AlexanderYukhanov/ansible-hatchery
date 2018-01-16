@@ -7,6 +7,16 @@
   azure_rm_sqlserverconnectionpolicy_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.server_connection_policies == {}
+
+- name: Gather facts Server Connection Policy
+  azure_rm_sqlserverconnectionpolicy_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

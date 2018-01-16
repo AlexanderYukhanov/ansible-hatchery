@@ -40,7 +40,7 @@ options:
         required: True
     state:
         description:
-            - Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required.
+            - Specifies the state of the policy. If state is C(enabled), storageEndpoint and storageAccountAccessKey are required.
         required: True
         choices:
             - 'enabled'
@@ -92,8 +92,8 @@ id:
             atabases/testdb"
 state:
     description:
-        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: C(Enabl
-          ed), C(Disabled)"
+        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Enable
+          d', 'Disabled'"
     returned: always
     type: str
     sample: Enabled

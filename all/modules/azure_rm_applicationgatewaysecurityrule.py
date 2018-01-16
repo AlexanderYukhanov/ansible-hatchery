@@ -42,7 +42,7 @@ options:
             - A description for this rule. Restricted to 140 chars.
     protocol:
         description:
-            - Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*).
+            - Network protocol this rule applies to. Possible values are C(tcp), C(udp), and C(C(*)).
         required: True
         choices:
             - 'tcp'
@@ -50,14 +50,14 @@ options:
             - '*'
     source_port_range:
         description:
-            - The source port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
+            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
     destination_port_range:
         description:
-            - The destination port or range. Integer or range between 0 and 65535. Asterix C(*) can also be used to match all ports.
+            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
     source_address_prefix:
         description:
-            - "The CIDR or source IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(VirtualNetwork), C(AzureLoadBalance
-              r) and C(Internet) can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer'
+              and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from. "
     source_address_prefixes:
         description:
             - The CIDR or source IP ranges.
@@ -75,8 +75,8 @@ options:
                     - Resource location.
     destination_address_prefix:
         description:
-            - "The destination address prefix. CIDR or destination IP range. Asterix C(*) can also be used to match all source IPs. Default tags such as C(Vi
-              rtualNetwork), C(AzureLoadBalancer) and C(Internet) can also be used."
+            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'Virt
+              ualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
     destination_address_prefixes:
         description:
             - The destination address prefixes. CIDR or destination IP ranges.
@@ -102,7 +102,7 @@ options:
         type: list
     access:
         description:
-            - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny)."
+            - "The network traffic is allowed or denied. Possible values are: C(allow) and C(deny)."
         required: True
         choices:
             - 'allow'
@@ -113,15 +113,15 @@ options:
                the priority number, the higher the priority of the rule."
     direction:
         description:
-            - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(Inbound)
-               and C(Outbound)."
+            - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are: C(inbound)
+               and C(outbound)."
         required: True
         choices:
             - 'inbound'
             - 'outbound'
     provisioning_state:
         description:
-            - "The provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
+            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
     name:
         description:
             - The name of the resource that is unique within a resource group. This name can be used to access the resource.

@@ -69,7 +69,7 @@ express_route_circuit_peerings:
                     sample: id
                 state:
                     description:
-                        - "The state of peering. Possible values are: C(Disabled) and C(Enabled). Possible values include: C(Disabled), C(Enabled)"
+                        - "The state of peering. Possible values are: 'Disabled' and 'Enabled'. Possible values include: 'Disabled', 'Enabled'"
                     returned: always
                     type: str
                     sample: state

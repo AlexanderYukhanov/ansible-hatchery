@@ -94,7 +94,7 @@ database_blob_auditing_policies:
                 state:
                     description:
                         - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values
-                          include: C(Enabled), C(Disabled)"
+                          include: 'Enabled', 'Disabled'"
                     returned: always
                     type: str
                     sample: Disabled

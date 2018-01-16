@@ -41,8 +41,8 @@ options:
         suboptions:
             failover_policy:
                 description:
-                    - "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriod
-                      Minutes is required."
+                    - "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is C(automatic) then failoverWithDataLossGracePer
+                      iodMinutes is required."
                 required: True
                 choices:
                     - 'manual'

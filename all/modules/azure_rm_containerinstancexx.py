@@ -141,9 +141,9 @@ options:
     restart_policy:
         description:
             - Restart policy for all containers within the container group.
-            - - `Always` Always restart
-            - - `OnFailure` Restart on failure
-            - - `Never` Never restart
+            - - `C(always)` C(always) restart
+            - - `C(on_failure)` Restart on failure
+            - - `C(never)` C(never) restart
             - .
         choices:
             - 'always'

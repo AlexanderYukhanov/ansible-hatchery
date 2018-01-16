@@ -60,7 +60,7 @@ options:
                             - Resource ID.
                     private_ip_allocation_method:
                         description:
-                            - "The private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
+                            - "The private IP allocation method. Possible values are: C(static) and C(dynamic)."
                         choices:
                             - 'static'
                             - 'dynamic'
@@ -86,13 +86,13 @@ options:
                             - A unique read-only string that changes whenever the resource is updated.
             gateway_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute)."
+                    - "The type of this virtual network gateway. Possible values are: C(vpn) and C(express_route)."
                 choices:
                     - 'vpn'
                     - 'express_route'
             vpn_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased)."
+                    - "The type of this virtual network gateway. Possible values are: C(policy_based) and C(route_based)."
                 choices:
                     - 'policy_based'
                     - 'route_based'
@@ -235,7 +235,7 @@ options:
                             - Resource ID.
                     private_ip_allocation_method:
                         description:
-                            - "The private IP allocation method. Possible values are: C(Static) and C(Dynamic)."
+                            - "The private IP allocation method. Possible values are: C(static) and C(dynamic)."
                         choices:
                             - 'static'
                             - 'dynamic'
@@ -261,13 +261,13 @@ options:
                             - A unique read-only string that changes whenever the resource is updated.
             gateway_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(Vpn) and C(ExpressRoute)."
+                    - "The type of this virtual network gateway. Possible values are: C(vpn) and C(express_route)."
                 choices:
                     - 'vpn'
                     - 'express_route'
             vpn_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(PolicyBased) and C(RouteBased)."
+                    - "The type of this virtual network gateway. Possible values are: C(policy_based) and C(route_based)."
                 choices:
                     - 'policy_based'
                     - 'route_based'
@@ -432,7 +432,7 @@ options:
                     - A unique read-only string that changes whenever the resource is updated.
     connection_type:
         description:
-            - "Gateway connection type. Possible values are: C(Ipsec),C(Vnet2Vnet),C(ExpressRoute), and 'VPNClient."
+            - "Gateway connection type. Possible values are: 'Ipsec',C(vnet2_vnet),C(express_route), and 'C(vpn_client)."
         required: True
         choices:
             - 'ipsec'

@@ -39,18 +39,18 @@ options:
             - Resource ID.
     access:
         description:
-            - "The access type of the rule. Valid values are: C(Allow), C(Deny)."
+            - "The access type of the rule. Valid values are: C(allow), C(deny)."
         required: True
         choices:
             - 'allow'
             - 'deny'
     route_filter_rule_type:
         description:
-            - "The rule type of the rule. Valid value is: C(Community)"
+            - "The rule type of the rule. Valid value is: 'Community'"
         required: True
     communities:
         description:
-            - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
+            - "The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020']"
         required: True
         type: list
     name:

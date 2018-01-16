@@ -7,6 +7,26 @@
   azure_rm_sqlsyncmember_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.sync_members == {}
+
+- name: Gather facts Sync Member
+  azure_rm_sqlsyncmember_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.sync_members == {}
+
+- name: Gather facts Sync Member
+  azure_rm_sqlsyncmember_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

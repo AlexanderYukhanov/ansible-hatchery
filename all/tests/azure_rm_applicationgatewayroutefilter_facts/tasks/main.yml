@@ -7,6 +7,26 @@
   azure_rm_applicationgatewayroutefilter_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.route_filters == {}
+
+- name: Gather facts Route Filter
+  azure_rm_applicationgatewayroutefilter_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.route_filters == {}
+
+- name: Gather facts Route Filter
+  azure_rm_applicationgatewayroutefilter_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

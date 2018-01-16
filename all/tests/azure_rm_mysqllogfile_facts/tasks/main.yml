@@ -3,6 +3,17 @@
     rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
   run_once: yes
 
+- name: Gather facts Log File
+  azure_rm_mysqllogfile_facts:
+    resource_group: "{{ resource_group }}"
+    server_name: "mysqlsrv{{ rpfx }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.log_files == {}
+
 - name: Create MySQL Server
   azure_rm_mysqlserver:
     resource_group: "{{ resource_group }}"

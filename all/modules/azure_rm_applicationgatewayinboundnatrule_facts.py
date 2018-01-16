@@ -73,7 +73,7 @@ inbound_nat_rules:
                     sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb1/inboundNatRules/natRule1.1
                 protocol:
                     description:
-                        - "Possible values include: C(Udp), C(Tcp), C(All)"
+                        - "Possible values include: 'Udp', 'Tcp', 'All'"
                     returned: always
                     type: str
                     sample: Tcp

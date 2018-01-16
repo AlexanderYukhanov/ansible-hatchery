@@ -7,6 +7,26 @@
   azure_rm_sqlreplicationlink_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.replication_links == {}
+
+- name: Gather facts Replication Link
+  azure_rm_sqlreplicationlink_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.replication_links == {}
+
+- name: Gather facts Replication Link
+  azure_rm_sqlreplicationlink_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

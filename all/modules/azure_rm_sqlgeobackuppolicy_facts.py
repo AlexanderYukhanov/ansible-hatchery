@@ -92,7 +92,7 @@ geo_backup_policies:
                     sample: Microsoft.Sql/servers/databases/geoBackupPolicies
                 state:
                     description:
-                        - "The state of the geo backup policy. Possible values include: C(Disabled), C(Enabled)"
+                        - "The state of the geo backup policy. Possible values include: 'Disabled', 'Enabled'"
                     returned: always
                     type: str
                     sample: Enabled

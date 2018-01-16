@@ -7,6 +7,16 @@
   azure_rm_applicationgatewayexpressroutecircuitauthorization_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.express_route_circuit_authorizations == {}
+
+- name: Gather facts Express Route Circuit Authorization
+  azure_rm_applicationgatewayexpressroutecircuitauthorization_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

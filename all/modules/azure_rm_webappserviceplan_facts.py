@@ -91,7 +91,7 @@ app_service_plans:
                     sample: Microsoft.Web/serverfarms
                 status:
                     description:
-                        - "App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)"
+                        - "App Service plan status. Possible values include: 'Ready', 'Pending', 'Creating'"
                     returned: always
                     type: str
                     sample: Ready

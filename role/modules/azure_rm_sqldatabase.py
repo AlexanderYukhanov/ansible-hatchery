@@ -43,20 +43,20 @@ options:
     create_mode:
         description:
             - Specifies the mode of database creation.
-            - "Default: regular database creation."
-            - "Copy: creates a database as a copy of an existing database. sourceDatabaseId must be specified as the resource ID of the source database."
-            - "OnlineSecondary/NonReadableSecondary: creates a database as a (readable or nonreadable) secondary replica of an existing database. sourceDatab
-              aseId must be specified as the resource ID of the existing primary database."
-            - "PointInTimeRestore: Creates a database by restoring a point in time backup of an existing database. sourceDatabaseId must be specified as the
-              resource ID of the existing database, and restorePointInTime must be specified."
-            - "Recovery: Creates a database by restoring a geo-replicated backup. sourceDatabaseId must be specified as the recoverable database resource ID
-              to restore."
-            - "Restore: Creates a database by restoring a backup of a deleted database. sourceDatabaseId must be specified. If sourceDatabaseId is the databa
-              se's original resource ID, then sourceDatabaseDeletionDate must be specified. Otherwise sourceDatabaseId must be the restorable dropped databa
-              se resource ID and sourceDatabaseDeletionDate is ignored. restorePointInTime may also be specified to restore from an earlier point in time."
-            - "RestoreLongTermRetentionBackup: Creates a database by restoring from a long term retention vault. recoveryServicesRecoveryPointResourceId must
-               be specified as the recovery point resource ID."
-            - Copy, NonReadableSecondary, OnlineSecondary and RestoreLongTermRetentionBackup are not supported for DataWarehouse edition.
+            - C(default) regular database creation.
+            - C(copy) creates a database as a copy of an existing database. sourceDatabaseId must be specified as the resource ID of the source database.
+            - "C(online_secondary)/C(non_readable_secondary) creates a database as a (readable or nonreadable) secondary replica of an existing database. sou
+              rceDatabaseId must be specified as the resource ID of the existing primary database."
+            - "C(point_in_time_restore) Creates a database by restoring a point in time backup of an existing database. sourceDatabaseId must be specified as
+               the resource ID of the existing database, and restorePointInTime must be specified."
+            - "C(recovery) Creates a database by restoring a geo-replicated backup. sourceDatabaseId must be specified as the recoverable database resource I
+              D to restore."
+            - "C(restore) Creates a database by restoring a backup of a deleted database. sourceDatabaseId must be specified. If sourceDatabaseId is the data
+              base's original resource ID, then sourceDatabaseDeletionDate must be specified. Otherwise sourceDatabaseId must be the restorable dropped data
+              base resource ID and sourceDatabaseDeletionDate is ignored. restorePointInTime may also be specified to restore from an earlier point in time."
+            - "C(restore)LongTermRetentionBackup: Creates a database by restoring from a long term retention vault. recoveryServicesC(recovery)PointResourceI
+              d must be specified as the recovery point resource ID."
+            - C(copy), C(non_readable_secondary), C(online_secondary) and C(restore)LongTermRetentionBackup are not supported for DataWarehouse edition.
         choices:
             - 'copy'
             - 'default'

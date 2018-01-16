@@ -100,7 +100,7 @@ database_threat_detection_policies:
                 state:
                     description:
                         - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values
-                          include: C(New), C(Enabled), C(Disabled)"
+                          include: 'New', 'Enabled', 'Disabled'"
                     returned: always
                     type: str
                     sample: Enabled

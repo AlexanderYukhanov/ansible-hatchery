@@ -76,13 +76,13 @@ default_security_rules:
                     sample: Allow inbound traffic from all VMs in VNET
                 protocol:
                     description:
-                        - "Network protocol this rule applies to. Possible values are C(Tcp), C(Udp), and C(*). Possible values include: C(Tcp), C(Udp), C(*)"
+                        - "Network protocol this rule applies to. Possible values are 'Tcp', 'Udp', and '*'. Possible values include: 'Tcp', 'Udp', '*'"
                     returned: always
                     type: str
                     sample: *
                 access:
                     description:
-                        - "The network traffic is allowed or denied. Possible values are: C(Allow) and C(Deny). Possible values include: C(Allow), C(Deny)"
+                        - "The network traffic is allowed or denied. Possible values are: 'Allow' and 'Deny'. Possible values include: 'Allow', 'Deny'"
                     returned: always
                     type: str
                     sample: Allow
@@ -96,7 +96,7 @@ default_security_rules:
                 direction:
                     description:
                         - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are
-                          : C(Inbound) and C(Outbound). Possible values include: C(Inbound), C(Outbound)"
+                          : 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
                     returned: always
                     type: str
                     sample: Inbound

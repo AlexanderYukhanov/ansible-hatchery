@@ -73,13 +73,13 @@ route_filter_rules:
                     sample: /subscriptions/subid/resourceGroups/rg1/providers/Microsofot.Network/routeFilters/filterName/routeFilterRules/ruleName
                 access:
                     description:
-                        - "The access type of the rule. Valid values are: C(Allow), C(Deny). Possible values include: C(Allow), C(Deny)"
+                        - "The access type of the rule. Valid values are: 'Allow', 'Deny'. Possible values include: 'Allow', 'Deny'"
                     returned: always
                     type: str
                     sample: Allow
                 communities:
                     description:
-                        - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
+                        - "The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020']"
                     returned: always
                     type: str
                     sample: "[\n\n  '12076:5030',\n\n  '12076:5040'\n\n]"

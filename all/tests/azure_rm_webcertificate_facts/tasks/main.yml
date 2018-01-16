@@ -7,6 +7,26 @@
   azure_rm_webcertificate_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.certificates == {}
+
+- name: Gather facts Certificate
+  azure_rm_webcertificate_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.certificates == {}
+
+- name: Gather facts Certificate
+  azure_rm_webcertificate_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

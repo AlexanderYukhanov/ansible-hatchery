@@ -7,6 +7,26 @@
   azure_rm_webappserviceenvironment_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.app_service_environments == {}
+
+- name: Gather facts App Service Environment
+  azure_rm_webappserviceenvironment_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.app_service_environments == {}
+
+- name: Gather facts App Service Environment
+  azure_rm_webappserviceenvironment_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

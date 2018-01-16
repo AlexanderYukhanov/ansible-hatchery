@@ -157,7 +157,7 @@ id:
     sample: /subscriptions/34adfa4f-cedf-4dc0-ba29-b6d1a69ab345/resourceGroups/testrg123/providers/Microsoft.Web/serverfarms/testsf6141
 status:
     description:
-        - "App Service plan status. Possible values include: C(Ready), C(Pending), C(Creating)"
+        - "App Service plan status. Possible values include: 'Ready', 'Pending', 'Creating'"
     returned: always
     type: str
     sample: Ready

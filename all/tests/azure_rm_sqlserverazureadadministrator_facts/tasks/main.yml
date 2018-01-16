@@ -7,6 +7,26 @@
   azure_rm_sqlserverazureadadministrator_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.server_azure_ad_administrators == {}
+
+- name: Gather facts Server Azure A D Administrator
+  azure_rm_sqlserverazureadadministrator_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.server_azure_ad_administrators == {}
+
+- name: Gather facts Server Azure A D Administrator
+  azure_rm_sqlserverazureadadministrator_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

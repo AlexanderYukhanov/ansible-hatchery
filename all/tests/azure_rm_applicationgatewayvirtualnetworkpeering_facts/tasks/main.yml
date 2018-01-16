@@ -7,6 +7,16 @@
   azure_rm_applicationgatewayvirtualnetworkpeering_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.virtual_network_peerings == {}
+
+- name: Gather facts Virtual Network Peering
+  azure_rm_applicationgatewayvirtualnetworkpeering_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

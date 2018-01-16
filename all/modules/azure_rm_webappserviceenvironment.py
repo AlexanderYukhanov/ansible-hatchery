@@ -88,7 +88,7 @@ options:
                     - Worker size ID for referencing this worker pool.
             compute_mode:
                 description:
-                    - Shared or dedicated app hosting.
+                    - C(shared) or dedicated app hosting.
                 choices:
                     - 'shared'
                     - 'dedicated'
@@ -182,7 +182,7 @@ id:
     sample: id
 status:
     description:
-        - "Current status of the App Service Environment. Possible values include: C(Preparing), C(Ready), C(Scaling), C(Deleting)"
+        - "Current status of the App Service Environment. Possible values include: 'Preparing', 'Ready', 'Scaling', 'Deleting'"
     returned: always
     type: str
     sample: status

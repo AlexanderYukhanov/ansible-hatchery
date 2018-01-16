@@ -7,6 +7,16 @@
   azure_rm_sqldatamaskingpolicy_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.data_masking_policies == {}
+
+- name: Gather facts Data Masking Policy
+  azure_rm_sqldatamaskingpolicy_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:

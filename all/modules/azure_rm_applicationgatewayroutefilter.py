@@ -46,18 +46,18 @@ options:
                     - Resource ID.
             access:
                 description:
-                    - "The access type of the rule. Valid values are: C(Allow), C(Deny)."
+                    - "The access type of the rule. Valid values are: C(allow), C(deny)."
                 required: True
                 choices:
                     - 'allow'
                     - 'deny'
             route_filter_rule_type:
                 description:
-                    - "The rule type of the rule. Valid value is: C(Community)"
+                    - "The rule type of the rule. Valid value is: 'Community'"
                 required: True
             communities:
                 description:
-                    - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
+                    - "The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020']"
                 required: True
                 type: list
             name:
@@ -76,14 +76,14 @@ options:
                     - Resource ID.
             peering_type:
                 description:
-                    - "The PeeringType. Possible values are: C(AzurePublicPeering), C(AzurePrivatePeering), and C(MicrosoftPeering)."
+                    - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peering)."
                 choices:
                     - 'azure_public_peering'
                     - 'azure_private_peering'
                     - 'microsoft_peering'
             state:
                 description:
-                    - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
+                    - "The state of peering. Possible values are: C(disabled) and C(enabled)."
                 choices:
                     - 'disabled'
                     - 'enabled'
@@ -125,8 +125,8 @@ options:
                         type: list
                     advertised_public_prefixes_state:
                         description:
-                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configured), and
-                              C(ValidationNeeded)."
+                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(configured), and
+                               C(validation_needed)."
                         choices:
                             - 'not_configured'
                             - 'configuring'
@@ -159,7 +159,7 @@ options:
                             - Gets BytesOut of the peering.
             provisioning_state:
                 description:
-                    - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
+                    - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
             gateway_manager_etag:
                 description:
                     - The GatewayManager Etag.
@@ -186,18 +186,18 @@ options:
                                     - Resource ID.
                             access:
                                 description:
-                                    - "The access type of the rule. Valid values are: C(Allow), C(Deny)."
+                                    - "The access type of the rule. Valid values are: C(allow), C(deny)."
                                 required: True
                                 choices:
                                     - 'allow'
                                     - 'deny'
                             route_filter_rule_type:
                                 description:
-                                    - "The rule type of the rule. Valid value is: C(Community)"
+                                    - "The rule type of the rule. Valid value is: 'Community'"
                                 required: True
                             communities:
                                 description:
-                                    - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
+                                    - "The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020']"
                                 required: True
                                 type: list
                             name:
@@ -216,14 +216,14 @@ options:
                                     - Resource ID.
                             peering_type:
                                 description:
-                                    - "The PeeringType. Possible values are: C(AzurePublicPeering), C(AzurePrivatePeering), and C(MicrosoftPeering)."
+                                    - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peering)."
                                 choices:
                                     - 'azure_public_peering'
                                     - 'azure_private_peering'
                                     - 'microsoft_peering'
                             state:
                                 description:
-                                    - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
+                                    - "The state of peering. Possible values are: C(disabled) and C(enabled)."
                                 choices:
                                     - 'disabled'
                                     - 'enabled'
@@ -265,8 +265,8 @@ options:
                                         type: list
                                     advertised_public_prefixes_state:
                                         description:
-                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(C
-                                              onfigured), and C(ValidationNeeded)."
+                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(
+                                              configured), and C(validation_needed)."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'
@@ -299,7 +299,7 @@ options:
                                             - Gets BytesOut of the peering.
                             provisioning_state:
                                 description:
-                                    - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Failed)."
+                                    - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                             gateway_manager_etag:
                                 description:
                                     - The GatewayManager Etag.
@@ -342,7 +342,7 @@ options:
                                             - The reference of the RouteFilter resource.
                                     state:
                                         description:
-                                            - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
+                                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
                                         choices:
                                             - 'disabled'
                                             - 'enabled'
@@ -373,8 +373,8 @@ options:
                                 type: list
                             advertised_public_prefixes_state:
                                 description:
-                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(NotConfigured), C(Configuring), C(Configure
-                                      d), and C(ValidationNeeded)."
+                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(configur
+                                      ed), and C(validation_needed)."
                                 choices:
                                     - 'not_configured'
                                     - 'configuring'
@@ -409,18 +409,18 @@ options:
                                             - Resource ID.
                                     access:
                                         description:
-                                            - "The access type of the rule. Valid values are: C(Allow), C(Deny)."
+                                            - "The access type of the rule. Valid values are: C(allow), C(deny)."
                                         required: True
                                         choices:
                                             - 'allow'
                                             - 'deny'
                                     route_filter_rule_type:
                                         description:
-                                            - "The rule type of the rule. Valid value is: C(Community)"
+                                            - "The rule type of the rule. Valid value is: 'Community'"
                                         required: True
                                     communities:
                                         description:
-                                            - "The collection for bgp community values to filter on. e.g. [C(12076:5010),C(12076:5020)]"
+                                            - "The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020']"
                                         required: True
                                         type: list
                                     name:
@@ -439,14 +439,15 @@ options:
                                             - Resource ID.
                                     peering_type:
                                         description:
-                                            - "The PeeringType. Possible values are: C(AzurePublicPeering), C(AzurePrivatePeering), and C(MicrosoftPeering)."
+                                            - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peeri
+                                              ng)."
                                         choices:
                                             - 'azure_public_peering'
                                             - 'azure_private_peering'
                                             - 'microsoft_peering'
                                     state:
                                         description:
-                                            - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
+                                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
                                         choices:
                                             - 'disabled'
                                             - 'enabled'
@@ -482,8 +483,8 @@ options:
                                             - Gets peering stats.
                                     provisioning_state:
                                         description:
-                                            - "Gets the provisioning state of the public IP resource. Possible values are: C(Updating), C(Deleting), and C(Fa
-                                              iled)."
+                                            - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Faile
+                                              d'."
                                     gateway_manager_etag:
                                         description:
                                             - The GatewayManager Etag.
@@ -501,7 +502,7 @@ options:
                                             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
                     state:
                         description:
-                            - "The state of peering. Possible values are: C(Disabled) and C(Enabled)."
+                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
                         choices:
                             - 'disabled'
                             - 'enabled'

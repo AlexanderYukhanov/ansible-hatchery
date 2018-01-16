@@ -7,6 +7,26 @@
   azure_rm_sqlserviceobjective_facts:
     resource_group: "{{ resource_group }}"
   register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.service_objectives == {}
+
+- name: Gather facts Service Objective
+  azure_rm_sqlserviceobjective_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - output.service_objectives == {}
+
+- name: Gather facts Service Objective
+  azure_rm_sqlserviceobjective_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
 - name: Assert that facts are returned
   assert:
     that:
