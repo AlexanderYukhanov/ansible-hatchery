@@ -6,7 +6,7 @@
 - name: Create PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
-    name: "postgresqlsrv{{ rpfx }}"
+    name: postgresqlsrv{{ rpfx }}
     sku:
       name: PGSQLS100
       tier: basic
@@ -17,18 +17,18 @@
 - name: Create Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
 - name: Create Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rulesecond
 
 - name: Gather facts PostgreSQL Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule_facts:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
@@ -39,7 +39,7 @@
 - name: Gather facts PostgreSQL Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule_facts:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
@@ -51,20 +51,20 @@
 - name: Delete instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     state: absent
 - name: Delete instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rulesecond
     state: absent
 
 - name: Gather facts PostgreSQL Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule_facts:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
   register: output
 - name: Assert that empty dictionary was returned
   assert:
@@ -75,7 +75,7 @@
 - name: Gather facts PostgreSQL Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule_facts:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
   register: output
 - name: Assert that empty dictionary was returned
   assert:
@@ -86,10 +86,10 @@
 - name: Delete instance of PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
-    name: "postgresqlsrv{{ rpfx }}"
+    name: postgresqlsrv{{ rpfx }}
     state: absent
 - name: Delete instance of PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
-    name: "postgresqlsrv{{ rpfx }}"
+    name: postgresqlsrv{{ rpfx }}
     state: absent

@@ -6,7 +6,7 @@
 - name: Create PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
-    name: "postgresqlsrv{{ rpfx }}"
+    name: postgresqlsrv{{ rpfx }}
     sku:
       name: PGSQLS100
       tier: basic
@@ -18,7 +18,7 @@
 - name: Create instance of Virtual Network Rule -- check mode
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
   check_mode: yes
   register: output
@@ -30,7 +30,7 @@
 - name: Create instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
   register: output
 - name: Assert the resource instance is well created
@@ -41,7 +41,7 @@
 - name: Create again instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
   register: output
 - name: Assert the state has not changed
@@ -52,7 +52,7 @@
 - name: Delete instance of Virtual Network Rule -- check mode
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     state: absent
   check_mode: yes
@@ -65,7 +65,7 @@
 - name: Delete instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     state: absent
   register: output
@@ -77,7 +77,7 @@
 - name: Delete unexisting instance of Virtual Network Rule
   azure_rm_postgresqlvirtualnetworkrule:
     resource_group: "{{ resource_group }}"
-    server_name: "postgresqlsrv{{ rpfx }}"
+    server_name: postgresqlsrv{{ rpfx }}
     name: test-virtual-network-rule
     state: absent
   register: output
@@ -89,5 +89,5 @@
 - name: Delete instance of PostgreSQL Server
   azure_rm_postgresqlserver:
     resource_group: "{{ resource_group }}"
-    name: "postgresqlsrv{{ rpfx }}"
+    name: postgresqlsrv{{ rpfx }}
     state: absent
