@@ -5,8 +5,12 @@ git pull
 cd ~/azure_preview_modules
 git checkout hatchery-pr-branch 2>/dev/null || git checkout -b hatchery-pr-branch;
 git pull
-cp -rfv ~/ansible-hatchery/role/modules/* ~/azure_preview_modules/library
-cp -rfv ~/ansible-hatchery/role/tests/* ~/azure_preview_modules/tests/integration/targets
+
+while IFS='' read -r line || [[ -n "$line" ]]; do
+    echo "module: $line"
+    cp -rfv ~/ansible-hatchery/all/modules/$line.py ~/azure_preview_modules/library
+    cp -rfv ~/ansible-hatchery/all/tests/$line ~/azure_preview_modules/tests/integration/targets
+done < current-role.txt
 
 git add -A
 git commit -m "updated modules"
