@@ -46,7 +46,7 @@ options:
                 required: True
             name:
                 description:
-                    - SKU name to specify whether the key vault is a C(standard) vault or a C(premium) vault.
+                    - SKU name to specify whether the key vault is a standard vault or a premium vault.
                 required: True
                 choices:
                     - 'standard'
@@ -103,10 +103,10 @@ options:
             - Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
     enable_soft_delete:
         description:
-            - "Property to specify whether the 'soft delete' functionality is enabled for this key vault. It does not accept false value."
+            - Property to specify whether the C(soft delete) functionality is enabled for this key vault. It does not accept false value.
     create_mode:
         description:
-            - "The vault's create mode to indicate whether the vault need to be C(recover)ed or not."
+            - "The vault's create mode to indicate whether the vault need to be recovered or not."
         choices:
             - 'recover'
             - 'default'
@@ -313,10 +313,11 @@ class AzureRMVaults(AzureRMModuleBase):
 
     def adjust_parameters(self):
         if self.parameters.get('access_policies', None) is not None:
-        # option keys must go to dictionary :permissions as keys
-        # option secrets must go to dictionary :permissions as secrets
-        # option certificates must go to dictionary :permissions as certificates
-        # option storage must go to dictionary :permissions as storage
+            # option keys must go to dictionary :permissions as keys
+            # option secrets must go to dictionary :permissions as secrets
+            # option certificates must go to dictionary :permissions as certificates
+            # option storage must go to dictionary :permissions as storage
+            return
 
     def rename_key(self, d, old_name, new_name):
         old_value = d.get(old_name, None)
