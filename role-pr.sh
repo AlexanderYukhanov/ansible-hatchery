@@ -7,9 +7,9 @@ git checkout hatchery-pr-branch 2>/dev/null || git checkout -b hatchery-pr-branc
 git pull
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
-    echo "module: $line"
-    cp -rfv ~/ansible-hatchery/all/modules/$line.py ~/azure_preview_modules/library
-    cp -rfv ~/ansible-hatchery/all/tests/$line ~/azure_preview_modules/tests/integration/targets
+    echo "--- Updating Module: $line"
+    cp -rf ~/ansible-hatchery/all/modules/$line.py ~/azure_preview_modules/library
+    cp -rf ~/ansible-hatchery/all/tests/$line ~/azure_preview_modules/tests/integration/targets
 done < ~/ansible-hatchery/current-role.txt
 
 git add -A
