@@ -11,6 +11,11 @@
   assert:
     that:
       - output.changed == False
+      - output.restorable_dropped_databases.xxxunknownxxx.id != None
+      - output.restorable_dropped_databases.xxxunknownxxx.name != None
+      - output.restorable_dropped_databases.xxxunknownxxx.type != None
+      - output.restorable_dropped_databases.xxxunknownxxx.location != None
+      - output.restorable_dropped_databases.xxxunknownxxx.edition != None
 
 - name: Gather facts Restorable Dropped Database
   azure_rm_sqlrestorabledroppeddatabase_facts:
@@ -20,15 +25,13 @@
   assert:
     that:
       - output.changed == False
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxx.id != None
+      - output.restorable_dropped_databases.xxxunknownxxx.name != None
+      - output.restorable_dropped_databases.xxxunknownxxx.type != None
+      - output.restorable_dropped_databases.xxxunknownxxx.location != None
+      - output.restorable_dropped_databases.xxxunknownxxx.edition != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.id != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.name != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.type != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.location != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.edition != None

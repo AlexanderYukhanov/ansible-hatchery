@@ -11,6 +11,12 @@
   assert:
     that:
       - output.changed == False
+      - output.encryption_protectors.xxxunknownxxx.id != None
+      - output.encryption_protectors.xxxunknownxxx.name != None
+      - output.encryption_protectors.xxxunknownxxx.type != None
+      - output.encryption_protectors.xxxunknownxxx.kind != None
+      - output.encryption_protectors.xxxunknownxxx.location != None
+      - output.encryption_protectors.xxxunknownxxx.uri != None
 
 - name: Gather facts Encryption Protector
   azure_rm_sqlencryptionprotector_facts:
@@ -20,13 +26,15 @@
   assert:
     that:
       - output.changed == False
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.encryption_protectors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.encryption_protectors.xxxunknownxxx.id != None
+      - output.encryption_protectors.xxxunknownxxx.name != None
+      - output.encryption_protectors.xxxunknownxxx.type != None
+      - output.encryption_protectors.xxxunknownxxx.kind != None
+      - output.encryption_protectors.xxxunknownxxx.location != None
+      - output.encryption_protectors.xxxunknownxxx.uri != None
+      - output.encryption_protectors.xxxunknownxxxsecond.id != None
+      - output.encryption_protectors.xxxunknownxxxsecond.name != None
+      - output.encryption_protectors.xxxunknownxxxsecond.type != None
+      - output.encryption_protectors.xxxunknownxxxsecond.kind != None
+      - output.encryption_protectors.xxxunknownxxxsecond.location != None
+      - output.encryption_protectors.xxxunknownxxxsecond.uri != None

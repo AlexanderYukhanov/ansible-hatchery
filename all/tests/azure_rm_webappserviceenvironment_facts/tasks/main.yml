@@ -11,6 +11,8 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_environments.{{ resource_group }}.id != None
+      - output.app_service_environments.{{ resource_group }}.status != None
 
 - name: Gather facts App Service Environment
   azure_rm_webappserviceenvironment_facts:
@@ -20,45 +22,7 @@
   assert:
     that:
       - output.changed == False
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_environments.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_environments.{{ resource_group }}.id != None
+      - output.app_service_environments.{{ resource_group }}.status != None
+      - output.app_service_environments.{{ resource_group }}second.id != None
+      - output.app_service_environments.{{ resource_group }}second.status != None

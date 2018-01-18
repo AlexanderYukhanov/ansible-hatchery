@@ -35,6 +35,12 @@
   assert:
     that:
       - output.changed == False
+      - output.geo_backup_policies.geo-policy-name.id != None
+      - output.geo_backup_policies.geo-policy-name.name != None
+      - output.geo_backup_policies.geo-policy-name.type != None
+      - output.geo_backup_policies.geo-policy-name.state != None
+      - output.geo_backup_policies.geo-policy-name.kind != None
+      - output.geo_backup_policies.geo-policy-name.location != None
 
 - name: Gather facts Geo Backup Policy
   azure_rm_sqlgeobackuppolicy_facts:
@@ -46,3 +52,9 @@
   assert:
     that:
       - output.changed == False
+      - output.geo_backup_policies.geo-policy-name.id != None
+      - output.geo_backup_policies.geo-policy-name.name != None
+      - output.geo_backup_policies.geo-policy-name.type != None
+      - output.geo_backup_policies.geo-policy-name.state != None
+      - output.geo_backup_policies.geo-policy-name.kind != None
+      - output.geo_backup_policies.geo-policy-name.location != None

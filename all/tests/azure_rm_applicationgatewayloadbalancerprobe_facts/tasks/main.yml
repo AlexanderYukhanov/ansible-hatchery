@@ -11,3 +11,8 @@
   assert:
     that:
       - output.changed == False
+      - output.load_balancer_probes.xxxunknownxxx.id != None
+      - output.load_balancer_probes.xxxunknownxxx.protocol != None
+      - output.load_balancer_probes.xxxunknownxxx.port != None
+      - output.load_balancer_probes.xxxunknownxxx.name != None
+      - output.load_balancer_probes.xxxunknownxxx.etag != None

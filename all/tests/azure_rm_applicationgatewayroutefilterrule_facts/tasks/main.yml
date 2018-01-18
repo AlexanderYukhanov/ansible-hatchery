@@ -11,6 +11,11 @@
   assert:
     that:
       - output.changed == False
+      - output.route_filter_rules.xxxunknownxxx.id != None
+      - output.route_filter_rules.xxxunknownxxx.access != None
+      - output.route_filter_rules.xxxunknownxxx.communities != None
+      - output.route_filter_rules.xxxunknownxxx.name != None
+      - output.route_filter_rules.xxxunknownxxx.etag != None
 
 - name: Gather facts Route Filter Rule
   azure_rm_applicationgatewayroutefilterrule_facts:
@@ -20,12 +25,13 @@
   assert:
     that:
       - output.changed == False
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxx.id != None
+      - output.route_filter_rules.xxxunknownxxx.access != None
+      - output.route_filter_rules.xxxunknownxxx.communities != None
+      - output.route_filter_rules.xxxunknownxxx.name != None
+      - output.route_filter_rules.xxxunknownxxx.etag != None
+      - output.route_filter_rules.xxxunknownxxxsecond.id != None
+      - output.route_filter_rules.xxxunknownxxxsecond.access != None
+      - output.route_filter_rules.xxxunknownxxxsecond.communities != None
+      - output.route_filter_rules.xxxunknownxxxsecond.name != None
+      - output.route_filter_rules.xxxunknownxxxsecond.etag != None

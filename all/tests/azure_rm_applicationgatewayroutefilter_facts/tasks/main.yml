@@ -11,6 +11,11 @@
   assert:
     that:
       - output.changed == False
+      - output.route_filters.xxxunknownxxx.id != None
+      - output.route_filters.xxxunknownxxx.name != None
+      - output.route_filters.xxxunknownxxx.type != None
+      - output.route_filters.xxxunknownxxx.location != None
+      - output.route_filters.xxxunknownxxx.etag != None
 
 - name: Gather facts Route Filter
   azure_rm_applicationgatewayroutefilter_facts:
@@ -20,12 +25,13 @@
   assert:
     that:
       - output.changed == False
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.route_filters.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filters.xxxunknownxxx.id != None
+      - output.route_filters.xxxunknownxxx.name != None
+      - output.route_filters.xxxunknownxxx.type != None
+      - output.route_filters.xxxunknownxxx.location != None
+      - output.route_filters.xxxunknownxxx.etag != None
+      - output.route_filters.xxxunknownxxxsecond.id != None
+      - output.route_filters.xxxunknownxxxsecond.name != None
+      - output.route_filters.xxxunknownxxxsecond.type != None
+      - output.route_filters.xxxunknownxxxsecond.location != None
+      - output.route_filters.xxxunknownxxxsecond.etag != None

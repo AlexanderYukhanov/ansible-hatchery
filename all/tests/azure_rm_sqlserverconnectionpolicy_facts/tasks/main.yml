@@ -11,3 +11,8 @@
   assert:
     that:
       - output.changed == False
+      - output.server_connection_policies.xxxunknownxxx.id != None
+      - output.server_connection_policies.xxxunknownxxx.name != None
+      - output.server_connection_policies.xxxunknownxxx.type != None
+      - output.server_connection_policies.xxxunknownxxx.kind != None
+      - output.server_connection_policies.xxxunknownxxx.location != None

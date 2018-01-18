@@ -11,3 +11,8 @@
   assert:
     that:
       - output.changed == False
+      - output.load_balancers.xxxunknownxxx.id != None
+      - output.load_balancers.xxxunknownxxx.name != None
+      - output.load_balancers.xxxunknownxxx.type != None
+      - output.load_balancers.xxxunknownxxx.location != None
+      - output.load_balancers.xxxunknownxxx.sku.name != None

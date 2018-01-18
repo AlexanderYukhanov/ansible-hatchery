@@ -11,6 +11,11 @@
   assert:
     that:
       - output.changed == False
+      - output.backup_long_term_retention_policies.xxxunknownxxx.id != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.name != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.type != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.location != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.state != None
 
 - name: Gather facts Backup Long Term Retention Policy
   azure_rm_sqlbackuplongtermretentionpolicy_facts:
@@ -20,9 +25,13 @@
   assert:
     that:
       - output.changed == False
-      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.id != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.name != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.type != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.location != None
+      - output.backup_long_term_retention_policies.xxxunknownxxx.state != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.id != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.name != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.type != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.location != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.state != None

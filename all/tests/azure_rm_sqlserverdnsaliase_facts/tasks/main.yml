@@ -11,6 +11,9 @@
   assert:
     that:
       - output.changed == False
+      - output.server_dns_aliases.xxxunknownxxx.id != None
+      - output.server_dns_aliases.xxxunknownxxx.name != None
+      - output.server_dns_aliases.xxxunknownxxx.type != None
 
 - name: Gather facts Server Dns Aliase
   azure_rm_sqlserverdnsaliase_facts:
@@ -20,7 +23,9 @@
   assert:
     that:
       - output.changed == False
-      - output.server_dns_aliases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_dns_aliases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_dns_aliases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_dns_aliases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_dns_aliases.xxxunknownxxx.id != None
+      - output.server_dns_aliases.xxxunknownxxx.name != None
+      - output.server_dns_aliases.xxxunknownxxx.type != None
+      - output.server_dns_aliases.xxxunknownxxxsecond.id != None
+      - output.server_dns_aliases.xxxunknownxxxsecond.name != None
+      - output.server_dns_aliases.xxxunknownxxxsecond.type != None

@@ -11,3 +11,8 @@
   assert:
     that:
       - output.changed == False
+      - output.network_interfaces.xxxunknownxxx.id != None
+      - output.network_interfaces.xxxunknownxxx.name != None
+      - output.network_interfaces.xxxunknownxxx.type != None
+      - output.network_interfaces.xxxunknownxxx.location != None
+      - output.network_interfaces.xxxunknownxxx.primary != None

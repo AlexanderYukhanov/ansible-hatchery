@@ -11,3 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.load_balancer_frontend_ip_configurations.xxxunknownxxx.id != None
+      - output.load_balancer_frontend_ip_configurations.xxxunknownxxx.subnet.id != None
+      - output.load_balancer_frontend_ip_configurations.xxxunknownxxx.name != None
+      - output.load_balancer_frontend_ip_configurations.xxxunknownxxx.etag != None

@@ -11,6 +11,10 @@
   assert:
     that:
       - output.changed == False
+      - output.recoverable_databases.xxxunknownxxx.id != None
+      - output.recoverable_databases.xxxunknownxxx.name != None
+      - output.recoverable_databases.xxxunknownxxx.type != None
+      - output.recoverable_databases.xxxunknownxxx.edition != None
 
 - name: Gather facts Recoverable Database
   azure_rm_sqlrecoverabledatabase_facts:
@@ -20,10 +24,11 @@
   assert:
     that:
       - output.changed == False
-      - output.recoverable_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recoverable_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recoverable_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recoverable_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recoverable_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recoverable_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recoverable_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recoverable_databases.xxxunknownxxx.id != None
+      - output.recoverable_databases.xxxunknownxxx.name != None
+      - output.recoverable_databases.xxxunknownxxx.type != None
+      - output.recoverable_databases.xxxunknownxxx.edition != None
+      - output.recoverable_databases.xxxunknownxxxsecond.id != None
+      - output.recoverable_databases.xxxunknownxxxsecond.name != None
+      - output.recoverable_databases.xxxunknownxxxsecond.type != None
+      - output.recoverable_databases.xxxunknownxxxsecond.edition != None

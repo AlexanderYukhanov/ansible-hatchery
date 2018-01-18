@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.service_objectives.xxxunknownxxx.id != None
 
 - name: Gather facts Service Objective
   azure_rm_sqlserviceobjective_facts:
@@ -20,11 +21,5 @@
   assert:
     that:
       - output.changed == False
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_objectives.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.service_objectives.xxxunknownxxx.id != None
+      - output.service_objectives.xxxunknownxxxsecond.id != None

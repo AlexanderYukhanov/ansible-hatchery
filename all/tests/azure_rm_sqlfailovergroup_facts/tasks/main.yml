@@ -11,6 +11,11 @@
   assert:
     that:
       - output.changed == False
+      - output.failover_groups.xxxunknownxxx.id != None
+      - output.failover_groups.xxxunknownxxx.name != None
+      - output.failover_groups.xxxunknownxxx.type != None
+      - output.failover_groups.xxxunknownxxx.location != None
+      - output.failover_groups.xxxunknownxxx.databases != None
 
 - name: Gather facts Failover Group
   azure_rm_sqlfailovergroup_facts:
@@ -20,14 +25,13 @@
   assert:
     that:
       - output.changed == False
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxx.id != None
+      - output.failover_groups.xxxunknownxxx.name != None
+      - output.failover_groups.xxxunknownxxx.type != None
+      - output.failover_groups.xxxunknownxxx.location != None
+      - output.failover_groups.xxxunknownxxx.databases != None
+      - output.failover_groups.xxxunknownxxxsecond.id != None
+      - output.failover_groups.xxxunknownxxxsecond.name != None
+      - output.failover_groups.xxxunknownxxxsecond.type != None
+      - output.failover_groups.xxxunknownxxxsecond.location != None
+      - output.failover_groups.xxxunknownxxxsecond.databases != None

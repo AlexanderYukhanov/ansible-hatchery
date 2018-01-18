@@ -10,3 +10,7 @@
   assert:
     that:
       - output.changed == False
+      - output.top_level_domains.xxxunknownxxx.id != None
+      - output.top_level_domains.xxxunknownxxx.name != None
+      - output.top_level_domains.xxxunknownxxx.type != None
+      - output.top_level_domains.xxxunknownxxx.privacy != None

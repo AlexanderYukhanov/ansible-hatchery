@@ -11,6 +11,12 @@
   assert:
     that:
       - output.changed == False
+      - output.server_communication_links.xxxunknownxxx.id != None
+      - output.server_communication_links.xxxunknownxxx.name != None
+      - output.server_communication_links.xxxunknownxxx.type != None
+      - output.server_communication_links.xxxunknownxxx.state != None
+      - output.server_communication_links.xxxunknownxxx.location != None
+      - output.server_communication_links.xxxunknownxxx.kind != None
 
 - name: Gather facts Server Communication Link
   azure_rm_sqlservercommunicationlink_facts:
@@ -20,10 +26,15 @@
   assert:
     that:
       - output.changed == False
-      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_communication_links.xxxunknownxxx.id != None
+      - output.server_communication_links.xxxunknownxxx.name != None
+      - output.server_communication_links.xxxunknownxxx.type != None
+      - output.server_communication_links.xxxunknownxxx.state != None
+      - output.server_communication_links.xxxunknownxxx.location != None
+      - output.server_communication_links.xxxunknownxxx.kind != None
+      - output.server_communication_links.xxxunknownxxxsecond.id != None
+      - output.server_communication_links.xxxunknownxxxsecond.name != None
+      - output.server_communication_links.xxxunknownxxxsecond.type != None
+      - output.server_communication_links.xxxunknownxxxsecond.state != None
+      - output.server_communication_links.xxxunknownxxxsecond.location != None
+      - output.server_communication_links.xxxunknownxxxsecond.kind != None

@@ -10,6 +10,11 @@
   assert:
     that:
       - output.changed == False
+      - output.subscription_usages.xxxunknownxxx.id != None
+      - output.subscription_usages.xxxunknownxxx.name != None
+      - output.subscription_usages.xxxunknownxxx.type != None
+      - output.subscription_usages.xxxunknownxxx.limit != None
+      - output.subscription_usages.xxxunknownxxx.unit != None
 
 - name: Gather facts Subscription Usage
   azure_rm_sqlsubscriptionusage_facts:
@@ -18,10 +23,13 @@
   assert:
     that:
       - output.changed == False
-      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.subscription_usages.xxxunknownxxx.id != None
+      - output.subscription_usages.xxxunknownxxx.name != None
+      - output.subscription_usages.xxxunknownxxx.type != None
+      - output.subscription_usages.xxxunknownxxx.limit != None
+      - output.subscription_usages.xxxunknownxxx.unit != None
+      - output.subscription_usages.xxxunknownxxxsecond.id != None
+      - output.subscription_usages.xxxunknownxxxsecond.name != None
+      - output.subscription_usages.xxxunknownxxxsecond.type != None
+      - output.subscription_usages.xxxunknownxxxsecond.limit != None
+      - output.subscription_usages.xxxunknownxxxsecond.unit != None

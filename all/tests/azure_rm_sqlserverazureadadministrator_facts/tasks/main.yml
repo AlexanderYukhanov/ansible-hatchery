@@ -11,6 +11,10 @@
   assert:
     that:
       - output.changed == False
+      - output.server_azure_ad_administrators.xxxunknownxxx.id != None
+      - output.server_azure_ad_administrators.xxxunknownxxx.name != None
+      - output.server_azure_ad_administrators.xxxunknownxxx.login != None
+      - output.server_azure_ad_administrators.xxxunknownxxx.sid != None
 
 - name: Gather facts Server Azure A D Administrator
   azure_rm_sqlserverazureadadministrator_facts:
@@ -20,10 +24,11 @@
   assert:
     that:
       - output.changed == False
-      - output.server_azure_ad_administrators.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_azure_ad_administrators.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_azure_ad_administrators.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_azure_ad_administrators.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_azure_ad_administrators.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_azure_ad_administrators.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_azure_ad_administrators.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_azure_ad_administrators.xxxunknownxxx.id != None
+      - output.server_azure_ad_administrators.xxxunknownxxx.name != None
+      - output.server_azure_ad_administrators.xxxunknownxxx.login != None
+      - output.server_azure_ad_administrators.xxxunknownxxx.sid != None
+      - output.server_azure_ad_administrators.xxxunknownxxxsecond.id != None
+      - output.server_azure_ad_administrators.xxxunknownxxxsecond.name != None
+      - output.server_azure_ad_administrators.xxxunknownxxxsecond.login != None
+      - output.server_azure_ad_administrators.xxxunknownxxxsecond.sid != None

@@ -12,3 +12,4 @@
   assert:
     that:
       - output.changed == False
+      - output.application_gateways.appgateway{{ rpfx }}.id != None

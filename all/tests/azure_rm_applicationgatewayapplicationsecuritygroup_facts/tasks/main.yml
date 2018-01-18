@@ -21,6 +21,10 @@
   assert:
     that:
       - output.changed == False
+      - output.application_security_groups.appgwsg{{ rpfx }}.id != None
+      - output.application_security_groups.appgwsg{{ rpfx }}.name != None
+      - output.application_security_groups.appgwsg{{ rpfx }}.type != None
+      - output.application_security_groups.appgwsg{{ rpfx }}.location != None
 
 - name: Delete instance of Application Security Group
   azure_rm_applicationgatewayapplicationsecuritygroup:

@@ -11,6 +11,10 @@
   assert:
     that:
       - output.changed == False
+      - output.recommended_elastic_pools.xxxunknownxxx.id != None
+      - output.recommended_elastic_pools.xxxunknownxxx.name != None
+      - output.recommended_elastic_pools.xxxunknownxxx.type != None
+      - output.recommended_elastic_pools.xxxunknownxxx.dtu != None
 
 - name: Gather facts Recommended Elastic Pool
   azure_rm_sqlrecommendedelasticpool_facts:
@@ -20,17 +24,11 @@
   assert:
     that:
       - output.changed == False
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxx.id != None
+      - output.recommended_elastic_pools.xxxunknownxxx.name != None
+      - output.recommended_elastic_pools.xxxunknownxxx.type != None
+      - output.recommended_elastic_pools.xxxunknownxxx.dtu != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.id != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.name != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.type != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.dtu != None

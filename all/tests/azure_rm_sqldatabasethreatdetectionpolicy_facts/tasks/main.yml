@@ -11,3 +11,9 @@
   assert:
     that:
       - output.changed == False
+      - output.database_threat_detection_policies.xxxunknownxxx.id != None
+      - output.database_threat_detection_policies.xxxunknownxxx.name != None
+      - output.database_threat_detection_policies.xxxunknownxxx.type != None
+      - output.database_threat_detection_policies.xxxunknownxxx.location != None
+      - output.database_threat_detection_policies.xxxunknownxxx.kind != None
+      - output.database_threat_detection_policies.xxxunknownxxx.state != None

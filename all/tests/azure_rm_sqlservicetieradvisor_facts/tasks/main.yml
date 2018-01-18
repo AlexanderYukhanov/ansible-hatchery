@@ -11,6 +11,10 @@
   assert:
     that:
       - output.changed == False
+      - output.service_tier_advisors.xxxunknownxxx.id != None
+      - output.service_tier_advisors.xxxunknownxxx.name != None
+      - output.service_tier_advisors.xxxunknownxxx.type != None
+      - output.service_tier_advisors.xxxunknownxxx.confidence != None
 
 - name: Gather facts Service Tier Advisor
   azure_rm_sqlservicetieradvisor_facts:
@@ -20,25 +24,11 @@
   assert:
     that:
       - output.changed == False
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.service_tier_advisors.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.service_tier_advisors.xxxunknownxxx.id != None
+      - output.service_tier_advisors.xxxunknownxxx.name != None
+      - output.service_tier_advisors.xxxunknownxxx.type != None
+      - output.service_tier_advisors.xxxunknownxxx.confidence != None
+      - output.service_tier_advisors.xxxunknownxxxsecond.id != None
+      - output.service_tier_advisors.xxxunknownxxxsecond.name != None
+      - output.service_tier_advisors.xxxunknownxxxsecond.type != None
+      - output.service_tier_advisors.xxxunknownxxxsecond.confidence != None

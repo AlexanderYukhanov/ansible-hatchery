@@ -11,3 +11,8 @@
   assert:
     that:
       - output.changed == False
+      - output.transparent_data_encryptions.xxxunknownxxx.id != None
+      - output.transparent_data_encryptions.xxxunknownxxx.name != None
+      - output.transparent_data_encryptions.xxxunknownxxx.type != None
+      - output.transparent_data_encryptions.xxxunknownxxx.location != None
+      - output.transparent_data_encryptions.xxxunknownxxx.status != None

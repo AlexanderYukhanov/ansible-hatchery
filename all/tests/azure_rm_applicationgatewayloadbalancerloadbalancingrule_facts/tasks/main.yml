@@ -11,3 +11,8 @@
   assert:
     that:
       - output.changed == False
+      - output.load_balancer_load_balancing_rules.xxxunknownxxx.id != None
+      - output.load_balancer_load_balancing_rules.xxxunknownxxx.probe.id != None
+      - output.load_balancer_load_balancing_rules.xxxunknownxxx.protocol != None
+      - output.load_balancer_load_balancing_rules.xxxunknownxxx.name != None
+      - output.load_balancer_load_balancing_rules.xxxunknownxxx.etag != None

@@ -11,3 +11,6 @@
   assert:
     that:
       - output.changed == False
+      - output.inbound_nat_rules.xxxunknownxxx.id != None
+      - output.inbound_nat_rules.xxxunknownxxx.protocol != None
+      - output.inbound_nat_rules.xxxunknownxxx.name != None

@@ -11,6 +11,9 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_members.xxxunknownxxx.id != None
+      - output.sync_members.xxxunknownxxx.name != None
+      - output.sync_members.xxxunknownxxx.type != None
 
 - name: Gather facts Sync Member
   azure_rm_sqlsyncmember_facts:
@@ -20,15 +23,9 @@
   assert:
     that:
       - output.changed == False
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_members.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_members.xxxunknownxxx.id != None
+      - output.sync_members.xxxunknownxxx.name != None
+      - output.sync_members.xxxunknownxxx.type != None
+      - output.sync_members.xxxunknownxxxsecond.id != None
+      - output.sync_members.xxxunknownxxxsecond.name != None
+      - output.sync_members.xxxunknownxxxsecond.type != None

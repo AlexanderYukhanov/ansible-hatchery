@@ -10,3 +10,7 @@
   assert:
     that:
       - output.changed == False
+      - output.role_assignments.xxxunknownxxx.id != None
+      - output.role_assignments.xxxunknownxxx.name != None
+      - output.role_assignments.xxxunknownxxx.type != None
+      - output.role_assignments.xxxunknownxxx.properties.scope != None

@@ -53,6 +53,10 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_network_rules.xxxunknownxxx.id != None
+      - output.virtual_network_rules.xxxunknownxxx.name != None
+      - output.virtual_network_rules.xxxunknownxxx.type != None
+      - output.virtual_network_rules.xxxunknownxxx.state != None
 
 - name: Gather facts MySQL Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule_facts:
@@ -63,12 +67,14 @@
   assert:
     that:
       - output.changed == False
-      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.virtual_network_rules.xxxunknownxxx.id != None
+      - output.virtual_network_rules.xxxunknownxxx.name != None
+      - output.virtual_network_rules.xxxunknownxxx.type != None
+      - output.virtual_network_rules.xxxunknownxxx.state != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.id != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.name != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.type != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.state != None
 
 - name: Delete instance of Virtual Network Rule
   azure_rm_mysqlvirtualnetworkrule:

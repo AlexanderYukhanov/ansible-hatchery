@@ -11,3 +11,5 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_network_peerings.xxxunknownxxx.id != None
+      - output.virtual_network_peerings.xxxunknownxxx.name != None

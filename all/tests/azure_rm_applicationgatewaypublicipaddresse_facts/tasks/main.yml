@@ -11,3 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.public_ip_addresses.xxxunknownxxx.id != None
+      - output.public_ip_addresses.xxxunknownxxx.name != None
+      - output.public_ip_addresses.xxxunknownxxx.type != None
+      - output.public_ip_addresses.xxxunknownxxx.location != None

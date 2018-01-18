@@ -11,6 +11,10 @@
   assert:
     that:
       - output.changed == False
+      - output.sync_groups.xxxunknownxxx.id != None
+      - output.sync_groups.xxxunknownxxx.name != None
+      - output.sync_groups.xxxunknownxxx.type != None
+      - output.sync_groups.xxxunknownxxx.interval != None
 
 - name: Gather facts Sync Group
   azure_rm_sqlsyncgroup_facts:
@@ -20,14 +24,11 @@
   assert:
     that:
       - output.changed == False
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxx.id != None
+      - output.sync_groups.xxxunknownxxx.name != None
+      - output.sync_groups.xxxunknownxxx.type != None
+      - output.sync_groups.xxxunknownxxx.interval != None
+      - output.sync_groups.xxxunknownxxxsecond.id != None
+      - output.sync_groups.xxxunknownxxxsecond.name != None
+      - output.sync_groups.xxxunknownxxxsecond.type != None
+      - output.sync_groups.xxxunknownxxxsecond.interval != None

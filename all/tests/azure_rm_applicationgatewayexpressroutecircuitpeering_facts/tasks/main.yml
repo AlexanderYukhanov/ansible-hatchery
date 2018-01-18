@@ -11,3 +11,5 @@
   assert:
     that:
       - output.changed == False
+      - output.express_route_circuit_peerings.xxxunknownxxx.id != None
+      - output.express_route_circuit_peerings.xxxunknownxxx.state != None

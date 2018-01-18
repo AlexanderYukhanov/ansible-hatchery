@@ -10,3 +10,6 @@
   assert:
     that:
       - output.changed == False
+      - output.provider_operations_metadata.xxxunknownxxx.id != None
+      - output.provider_operations_metadata.xxxunknownxxx.name != None
+      - output.provider_operations_metadata.xxxunknownxxx.type != None

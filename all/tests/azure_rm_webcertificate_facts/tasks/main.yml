@@ -11,6 +11,13 @@
   assert:
     that:
       - output.changed == False
+      - output.certificates.{{ resource_group }}.id != None
+      - output.certificates.{{ resource_group }}.name != None
+      - output.certificates.{{ resource_group }}.location != None
+      - output.certificates.{{ resource_group }}.type != None
+      - output.certificates.{{ resource_group }}.issuer != None
+      - output.certificates.{{ resource_group }}.password != None
+      - output.certificates.{{ resource_group }}.thumbprint != None
 
 - name: Gather facts Certificate
   azure_rm_webcertificate_facts:
@@ -20,29 +27,17 @@
   assert:
     that:
       - output.changed == False
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.certificates.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.certificates.{{ resource_group }}.id != None
+      - output.certificates.{{ resource_group }}.name != None
+      - output.certificates.{{ resource_group }}.location != None
+      - output.certificates.{{ resource_group }}.type != None
+      - output.certificates.{{ resource_group }}.issuer != None
+      - output.certificates.{{ resource_group }}.password != None
+      - output.certificates.{{ resource_group }}.thumbprint != None
+      - output.certificates.{{ resource_group }}second.id != None
+      - output.certificates.{{ resource_group }}second.name != None
+      - output.certificates.{{ resource_group }}second.location != None
+      - output.certificates.{{ resource_group }}second.type != None
+      - output.certificates.{{ resource_group }}second.issuer != None
+      - output.certificates.{{ resource_group }}second.password != None
+      - output.certificates.{{ resource_group }}second.thumbprint != None

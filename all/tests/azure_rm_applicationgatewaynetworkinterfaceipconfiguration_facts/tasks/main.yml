@@ -11,3 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.network_interface_ip_configurations.xxxunknownxxx.id != None
+      - output.network_interface_ip_configurations.xxxunknownxxx.subnet.id != None
+      - output.network_interface_ip_configurations.xxxunknownxxx.name != None
+      - output.network_interface_ip_configurations.xxxunknownxxx.etag != None

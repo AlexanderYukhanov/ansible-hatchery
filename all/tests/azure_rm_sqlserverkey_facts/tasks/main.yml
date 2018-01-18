@@ -11,6 +11,13 @@
   assert:
     that:
       - output.changed == False
+      - output.server_keys.xxxunknownxxx.id != None
+      - output.server_keys.xxxunknownxxx.name != None
+      - output.server_keys.xxxunknownxxx.type != None
+      - output.server_keys.xxxunknownxxx.kind != None
+      - output.server_keys.xxxunknownxxx.location != None
+      - output.server_keys.xxxunknownxxx.uri != None
+      - output.server_keys.xxxunknownxxx.thumbprint != None
 
 - name: Gather facts Server Key
   azure_rm_sqlserverkey_facts:
@@ -20,13 +27,17 @@
   assert:
     that:
       - output.changed == False
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxx.id != None
+      - output.server_keys.xxxunknownxxx.name != None
+      - output.server_keys.xxxunknownxxx.type != None
+      - output.server_keys.xxxunknownxxx.kind != None
+      - output.server_keys.xxxunknownxxx.location != None
+      - output.server_keys.xxxunknownxxx.uri != None
+      - output.server_keys.xxxunknownxxx.thumbprint != None
+      - output.server_keys.xxxunknownxxxsecond.id != None
+      - output.server_keys.xxxunknownxxxsecond.name != None
+      - output.server_keys.xxxunknownxxxsecond.type != None
+      - output.server_keys.xxxunknownxxxsecond.kind != None
+      - output.server_keys.xxxunknownxxxsecond.location != None
+      - output.server_keys.xxxunknownxxxsecond.uri != None
+      - output.server_keys.xxxunknownxxxsecond.thumbprint != None

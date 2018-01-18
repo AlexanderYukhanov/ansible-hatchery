@@ -11,6 +11,18 @@
   assert:
     that:
       - output.changed == False
+      - output.app_service_plans.{{ resource_group }}.id != None
+      - output.app_service_plans.{{ resource_group }}.name != None
+      - output.app_service_plans.{{ resource_group }}.kind != None
+      - output.app_service_plans.{{ resource_group }}.location != None
+      - output.app_service_plans.{{ resource_group }}.type != None
+      - output.app_service_plans.{{ resource_group }}.status != None
+      - output.app_service_plans.{{ resource_group }}.reserved != None
+      - output.app_service_plans.{{ resource_group }}.sku.name != None
+      - output.app_service_plans.{{ resource_group }}.sku.tier != None
+      - output.app_service_plans.{{ resource_group }}.sku.size != None
+      - output.app_service_plans.{{ resource_group }}.sku.family != None
+      - output.app_service_plans.{{ resource_group }}.sku.capacity != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -20,27 +32,27 @@
   assert:
     that:
       - output.changed == False
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}.id != None
+      - output.app_service_plans.{{ resource_group }}.name != None
+      - output.app_service_plans.{{ resource_group }}.kind != None
+      - output.app_service_plans.{{ resource_group }}.location != None
+      - output.app_service_plans.{{ resource_group }}.type != None
+      - output.app_service_plans.{{ resource_group }}.status != None
+      - output.app_service_plans.{{ resource_group }}.reserved != None
+      - output.app_service_plans.{{ resource_group }}.sku.name != None
+      - output.app_service_plans.{{ resource_group }}.sku.tier != None
+      - output.app_service_plans.{{ resource_group }}.sku.size != None
+      - output.app_service_plans.{{ resource_group }}.sku.family != None
+      - output.app_service_plans.{{ resource_group }}.sku.capacity != None
+      - output.app_service_plans.{{ resource_group }}second.id != None
+      - output.app_service_plans.{{ resource_group }}second.name != None
+      - output.app_service_plans.{{ resource_group }}second.kind != None
+      - output.app_service_plans.{{ resource_group }}second.location != None
+      - output.app_service_plans.{{ resource_group }}second.type != None
+      - output.app_service_plans.{{ resource_group }}second.status != None
+      - output.app_service_plans.{{ resource_group }}second.reserved != None
+      - output.app_service_plans.{{ resource_group }}second.sku.name != None
+      - output.app_service_plans.{{ resource_group }}second.sku.tier != None
+      - output.app_service_plans.{{ resource_group }}second.sku.size != None
+      - output.app_service_plans.{{ resource_group }}second.sku.family != None
+      - output.app_service_plans.{{ resource_group }}second.sku.capacity != None

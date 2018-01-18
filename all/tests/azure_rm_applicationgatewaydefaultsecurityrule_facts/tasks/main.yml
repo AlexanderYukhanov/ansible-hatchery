@@ -11,3 +11,10 @@
   assert:
     that:
       - output.changed == False
+      - output.default_security_rules.xxxunknownxxx.id != None
+      - output.default_security_rules.xxxunknownxxx.description != None
+      - output.default_security_rules.xxxunknownxxx.protocol != None
+      - output.default_security_rules.xxxunknownxxx.access != None
+      - output.default_security_rules.xxxunknownxxx.priority != None
+      - output.default_security_rules.xxxunknownxxx.direction != None
+      - output.default_security_rules.xxxunknownxxx.name != None

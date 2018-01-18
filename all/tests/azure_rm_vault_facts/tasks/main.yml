@@ -11,6 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.vaults.xxxunknownxxx.id != None
 
 - name: Gather facts Vault
   azure_rm_vault_facts:
@@ -20,9 +21,5 @@
   assert:
     that:
       - output.changed == False
-      - output.vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.vaults.xxxunknownxxx.id != None
+      - output.vaults.xxxunknownxxxsecond.id != None

@@ -11,6 +11,11 @@
   assert:
     that:
       - output.changed == False
+      - output.replication_links.xxxunknownxxx.id != None
+      - output.replication_links.xxxunknownxxx.name != None
+      - output.replication_links.xxxunknownxxx.type != None
+      - output.replication_links.xxxunknownxxx.location != None
+      - output.replication_links.xxxunknownxxx.role != None
 
 - name: Gather facts Replication Link
   azure_rm_sqlreplicationlink_facts:
@@ -20,17 +25,13 @@
   assert:
     that:
       - output.changed == False
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
-      - output.replication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.replication_links.xxxunknownxxx.id != None
+      - output.replication_links.xxxunknownxxx.name != None
+      - output.replication_links.xxxunknownxxx.type != None
+      - output.replication_links.xxxunknownxxx.location != None
+      - output.replication_links.xxxunknownxxx.role != None
+      - output.replication_links.xxxunknownxxxsecond.id != None
+      - output.replication_links.xxxunknownxxxsecond.name != None
+      - output.replication_links.xxxunknownxxxsecond.type != None
+      - output.replication_links.xxxunknownxxxsecond.location != None
+      - output.replication_links.xxxunknownxxxsecond.role != None

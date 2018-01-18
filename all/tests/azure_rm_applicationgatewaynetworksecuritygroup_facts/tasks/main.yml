@@ -11,3 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.network_security_groups.xxxunknownxxx.id != None
+      - output.network_security_groups.xxxunknownxxx.name != None
+      - output.network_security_groups.xxxunknownxxx.type != None
+      - output.network_security_groups.xxxunknownxxx.location != None

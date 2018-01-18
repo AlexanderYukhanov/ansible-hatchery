@@ -11,3 +11,7 @@
   assert:
     that:
       - output.changed == False
+      - output.virtual_networks.xxxunknownxxx.id != None
+      - output.virtual_networks.xxxunknownxxx.name != None
+      - output.virtual_networks.xxxunknownxxx.type != None
+      - output.virtual_networks.xxxunknownxxx.location != None
