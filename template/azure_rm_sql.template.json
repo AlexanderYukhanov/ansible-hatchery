@@ -8325,7 +8325,7 @@
           "NameAlt": "kind",
           "Description": "Kind of elastic pool.  This is metadata used for the Azure portal experience.",
           "Type": "str",
-          "Returned": "always",
+          "Returned": "",
           "SampleValue": "kind",
           "SubFields": [],
           "Info": ""

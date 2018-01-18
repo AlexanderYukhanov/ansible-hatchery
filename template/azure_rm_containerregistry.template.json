@@ -684,7 +684,7 @@
           "NameAlt": "status",
           "Description": "The status of the container registry at the time the operation was called.",
           "Type": "complex",
-          "Returned": "always",
+          "Returned": "",
           "SampleValue": "status",
           "SubFields": [
             {
@@ -1284,7 +1284,7 @@
               "NameAlt": "message",
               "Description": "The detailed message for the status, including alerts and error messages.",
               "Type": "str",
-              "Returned": "always",
+              "Returned": "",
               "SampleValue": "The replication is ready.",
               "SubFields": [],
               "Info": "The replication is ready."
@@ -1917,7 +1917,7 @@
           "NameAlt": "scope",
           "Description": "The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.",
           "Type": "str",
-          "Returned": "always",
+          "Returned": "",
           "SampleValue": "myRepository",
           "SubFields": [],
           "Info": "myRepository"
