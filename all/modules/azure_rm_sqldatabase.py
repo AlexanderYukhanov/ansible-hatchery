@@ -140,11 +140,10 @@ options:
               ServiceObjectiveName is ignored. Not supported for DataWarehouse edition."
     read_scale:
         description:
-            - "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not su
-              pported for DataWarehouse edition."
-        choices:
-            - 'enabled'
-            - 'disabled'
+            - "If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for D
+              ataWarehouse edition."
+        type: bool
+        default: False
     sample_name:
         description:
             - "Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not support
@@ -153,7 +152,9 @@ options:
             - 'adventure_works_lt'
     zone_redundant:
         description:
-            - Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones.
+            - Is this database is zone redundant? It means the replicas of this database will be spread across multiple availability zones.
+        type: bool
+        default: False
 
 extends_documentation_fragment:
     - azure
@@ -298,16 +299,16 @@ class AzureRMDatabases(AzureRMModuleBase):
                 type='str'
             ),
             read_scale=dict(
-                type='str',
-                choices=['enabled',
-                         'disabled']
+                type='bool',
+                default=False
             ),
             sample_name=dict(
                 type='str',
                 choices=['adventure_works_lt']
             ),
             zone_redundant=dict(
-                type='str'
+                type='bool',
+                default=False
             ),
             state=dict(
                 type='str',
@@ -362,14 +363,14 @@ class AzureRMDatabases(AzureRMModuleBase):
                 elif key == "elastic_pool_name":
                     self.parameters["elastic_pool_name"] = kwargs[key]
                 elif key == "read_scale":
-                    self.parameters["read_scale"] = _snake_to_camel(kwargs[key], True)
+                    self.parameters["read_scale"] = 'Enabled' if kwargs[key] else 'Disabled'
                 elif key == "sample_name":
                     ev = kwargs[key]
                     if ev == 'adventure_works_lt':
                         ev = 'AdventureWorksLT'
                     self.parameters["sample_name"] = ev
                 elif key == "zone_redundant":
-                    self.parameters["zone_redundant"] = kwargs[key]
+                    self.parameters["zone_redundant"] = 'Enabled' if kwargs[key] else 'Disabled'
 
         old_response = None
         response = None

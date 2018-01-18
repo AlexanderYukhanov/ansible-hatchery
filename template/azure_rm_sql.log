@@ -2316,8 +2316,6 @@ CC: P15 p15 P15
 CC: System system System
 CC: System2 system2 System2
 CC: ElasticPool elastic_pool ElasticPool
-CC: Enabled enabled Enabled
-CC: Disabled disabled Disabled
 CC: AdventureWorksLt adventure_works_lt AdventureWorksLT
 CC: Basic basic Basic
 CC: Standard standard Standard

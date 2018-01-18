@@ -5467,14 +5467,14 @@
           "Name": "read_scale",
           "NameAlt": "read_scale",
           "Disposition": "parameters",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
+          "Type": "bool",
+          "ValueIfFalse": "Disabled",
+          "ValueIfTrue": "Enabled",
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Conditional. If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for DataWarehouse edition.",
-          "DefaultValue": null,
+          "Documentation": "If the database is a geo-secondary, readScale indicates whether read-only connections are allowed to this database or not. Not supported for DataWarehouse edition.",
+          "DefaultValue": "False",
           "DefaultValueSample": {
             "default": "",
             "test:default": ""
@@ -5482,16 +5482,7 @@
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false,
-          "EnumValues": [
-            {
-              "Key": "enabled",
-              "Value": "Enabled"
-            },
-            {
-              "Key": "disabled",
-              "Value": "Disabled"
-            }
-          ],
+          "EnumValues": null,
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- Enum"
@@ -5529,14 +5520,14 @@
           "Name": "zone_redundant",
           "NameAlt": "zone_redundant",
           "Disposition": "parameters",
-          "Type": "str",
-          "ValueIfFalse": null,
-          "ValueIfTrue": null,
+          "Type": "bool",
+          "ValueIfFalse": "Disabled",
+          "ValueIfTrue": "Enabled",
           "IsList": false,
           "Required": "False",
           "VariableValue": "None",
-          "Documentation": "Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones.",
-          "DefaultValue": null,
+          "Documentation": "Is this database is zone redundant? It means the replicas of this database will be spread across multiple availability zones.",
+          "DefaultValue": "False",
           "DefaultValueSample": {
             "default": "",
             "test:default": ""
@@ -5544,7 +5535,7 @@
           "SubOptions": [],
           "RequiredCount": 0,
           "NoLog": false,
-          "EnumValues": [],
+          "EnumValues": null,
           "IncludeInDocumentation": true,
           "IncludeInArgSpec": true,
           "AdditionalInfo": "NO XML PROPERTIES --- PrimaryType"
