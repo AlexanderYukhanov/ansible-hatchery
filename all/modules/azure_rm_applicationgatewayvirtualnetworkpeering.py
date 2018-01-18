@@ -222,14 +222,7 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
                 elif key == "remote_address_space":
                     self.parameters["remote_address_space"] = kwargs[key]
                 elif key == "peering_state":
-                    ev = kwargs[key]
-                    if ev == 'initiated':
-                        ev = 'Initiated'
-                    elif ev == 'connected':
-                        ev = 'Connected'
-                    elif ev == 'disconnected':
-                        ev = 'Disconnected'
-                    self.parameters["peering_state"] = ev
+                    self.parameters["peering_state"] = _snake_to_camel(kwargs[key], True)
                 elif key == "provisioning_state":
                     self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
@@ -356,6 +349,13 @@ class AzureRMVirtualNetworkPeerings(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

@@ -709,16 +709,7 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
                 elif key == "circuit_provisioning_state":
                     self.parameters["circuit_provisioning_state"] = kwargs[key]
                 elif key == "service_provider_provisioning_state":
-                    ev = kwargs[key]
-                    if ev == 'not_provisioned':
-                        ev = 'NotProvisioned'
-                    elif ev == 'provisioning':
-                        ev = 'Provisioning'
-                    elif ev == 'provisioned':
-                        ev = 'Provisioned'
-                    elif ev == 'deprovisioning':
-                        ev = 'Deprovisioning'
-                    self.parameters["service_provider_provisioning_state"] = ev
+                    self.parameters["service_provider_provisioning_state"] = _snake_to_camel(kwargs[key], True)
                 elif key == "authorizations":
                     ev = kwargs[key]
                     if 'authorization_use_status' in ev:
@@ -872,6 +863,13 @@ class AzureRMExpressRouteCircuits(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

@@ -204,12 +204,7 @@ class AzureRMSyncGroups(AzureRMModuleBase):
                 if key == "interval":
                     self.parameters["interval"] = kwargs[key]
                 elif key == "conflict_resolution_policy":
-                    ev = kwargs[key]
-                    if ev == 'hub_win':
-                        ev = 'HubWin'
-                    elif ev == 'member_win':
-                        ev = 'MemberWin'
-                    self.parameters["conflict_resolution_policy"] = ev
+                    self.parameters["conflict_resolution_policy"] = _snake_to_camel(kwargs[key], True)
                 elif key == "sync_database_id":
                     self.parameters["sync_database_id"] = kwargs[key]
                 elif key == "hub_database_user_name":
@@ -341,6 +336,13 @@ class AzureRMSyncGroups(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

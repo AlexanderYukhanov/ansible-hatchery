@@ -332,14 +332,7 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
                 elif key == "virtual_network":
                     self.hosting_environment_envelope["virtual_network"] = kwargs[key]
                 elif key == "internal_load_balancing_mode":
-                    ev = kwargs[key]
-                    if ev == 'none':
-                        ev = 'None'
-                    elif ev == 'web':
-                        ev = 'Web'
-                    elif ev == 'publishing':
-                        ev = 'Publishing'
-                    self.hosting_environment_envelope["internal_load_balancing_mode"] = ev
+                    self.hosting_environment_envelope["internal_load_balancing_mode"] = _snake_to_camel(kwargs[key], True)
                 elif key == "multi_size":
                     self.hosting_environment_envelope["multi_size"] = kwargs[key]
                 elif key == "multi_role_count":
@@ -496,6 +489,13 @@ class AzureRMAppServiceEnvironments(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

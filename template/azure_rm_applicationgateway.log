@@ -3274,3 +3274,45 @@ Getting example for: get
 TWEAK: RENAMING resource_group_name -- A
 TWEAK: RENAMING application_gateway_name -- A
 TWEAK: RENAMING application_gateway_name -- A
+CC: Available available Available
+CC: InUse in_use InUse
+CC: AzurePublicPeering azure_public_peering AzurePublicPeering
+CC: AzurePrivatePeering azure_private_peering AzurePrivatePeering
+CC: MicrosoftPeering microsoft_peering MicrosoftPeering
+CC: Disabled disabled Disabled
+CC: Enabled enabled Enabled
+CC: NotProvisioned not_provisioned NotProvisioned
+CC: Provisioning provisioning Provisioning
+CC: Provisioned provisioned Provisioned
+CC: Deprovisioning deprovisioning Deprovisioning
+CC: Udp udp Udp
+CC: Tcp tcp Tcp
+CC: All all All
+CC: Tcp tcp Tcp
+CC: Udp udp Udp
+CC: Allow allow Allow
+CC: Deny deny Deny
+CC: Inbound inbound Inbound
+CC: Outbound outbound Outbound
+CC: Static static Static
+CC: Dynamic dynamic Dynamic
+CC: Ipv4 ipv4 IPv4
+CC: Ipv6 ipv6 IPv6
+CC: Allow allow Allow
+CC: Deny deny Deny
+CC: VirtualNetworkGateway virtual_network_gateway VirtualNetworkGateway
+CC: VnetLocal vnet_local VnetLocal
+CC: Internet internet Internet
+CC: VirtualAppliance virtual_appliance VirtualAppliance
+CC: None none None
+CC: Initiated initiated Initiated
+CC: Connected connected Connected
+CC: Disconnected disconnected Disconnected
+CC: Vpn vpn Vpn
+CC: ExpressRoute express_route ExpressRoute
+CC: PolicyBased policy_based PolicyBased
+CC: RouteBased route_based RouteBased
+CC: Ipsec ipsec IPsec
+CC: Vnet2Vnet vnet2_vnet Vnet2Vnet
+CC: ExpressRoute express_route ExpressRoute
+CC: VpnClient vpn_client VPNClient

@@ -219,25 +219,13 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 if key == "location":
                     self.parameters["location"] = kwargs[key]
                 elif key == "state":
-                    ev = kwargs[key]
-                    if ev == 'new':
-                        ev = 'New'
-                    elif ev == 'enabled':
-                        ev = 'Enabled'
-                    elif ev == 'disabled':
-                        ev = 'Disabled'
-                    self.parameters["state"] = ev
+                    self.parameters["state"] = _snake_to_camel(kwargs[key], True)
                 elif key == "disabled_alerts":
                     self.parameters["disabled_alerts"] = kwargs[key]
                 elif key == "email_addresses":
                     self.parameters["email_addresses"] = kwargs[key]
                 elif key == "email_account_admins":
-                    ev = kwargs[key]
-                    if ev == 'enabled':
-                        ev = 'Enabled'
-                    elif ev == 'disabled':
-                        ev = 'Disabled'
-                    self.parameters["email_account_admins"] = ev
+                    self.parameters["email_account_admins"] = _snake_to_camel(kwargs[key], True)
                 elif key == "storage_endpoint":
                     self.parameters["storage_endpoint"] = kwargs[key]
                 elif key == "storage_account_access_key":
@@ -245,12 +233,7 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
                 elif key == "retention_days":
                     self.parameters["retention_days"] = kwargs[key]
                 elif key == "use_server_default":
-                    ev = kwargs[key]
-                    if ev == 'enabled':
-                        ev = 'Enabled'
-                    elif ev == 'disabled':
-                        ev = 'Disabled'
-                    self.parameters["use_server_default"] = ev
+                    self.parameters["use_server_default"] = _snake_to_camel(kwargs[key], True)
 
         old_response = None
         response = None
@@ -375,6 +358,13 @@ class AzureRMDatabaseThreatDetectionPolicies(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

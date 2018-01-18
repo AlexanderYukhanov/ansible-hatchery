@@ -200,14 +200,7 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
                 elif key == "frontend_ip_configuration":
                     self.parameters["frontend_ip_configuration"] = kwargs[key]
                 elif key == "protocol":
-                    ev = kwargs[key]
-                    if ev == 'udp':
-                        ev = 'Udp'
-                    elif ev == 'tcp':
-                        ev = 'Tcp'
-                    elif ev == 'all':
-                        ev = 'All'
-                    self.parameters["protocol"] = ev
+                    self.parameters["protocol"] = _snake_to_camel(kwargs[key], True)
                 elif key == "frontend_port":
                     self.parameters["frontend_port"] = kwargs[key]
                 elif key == "backend_port":
@@ -342,6 +335,13 @@ class AzureRMInboundNatRules(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

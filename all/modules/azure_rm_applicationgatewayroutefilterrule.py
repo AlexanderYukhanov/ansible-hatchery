@@ -174,12 +174,7 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
                 if key == "id":
                     self.parameters["id"] = kwargs[key]
                 elif key == "access":
-                    ev = kwargs[key]
-                    if ev == 'allow':
-                        ev = 'Allow'
-                    elif ev == 'deny':
-                        ev = 'Deny'
-                    self.parameters["access"] = ev
+                    self.parameters["access"] = _snake_to_camel(kwargs[key], True)
                 elif key == "route_filter_rule_type":
                     self.parameters["route_filter_rule_type"] = kwargs[key]
                 elif key == "communities":
@@ -308,6 +303,13 @@ class AzureRMRouteFilterRules(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

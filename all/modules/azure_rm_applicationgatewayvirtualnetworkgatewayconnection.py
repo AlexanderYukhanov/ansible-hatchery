@@ -718,13 +718,9 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
                     ev = kwargs[key]
                     if ev == 'ipsec':
                         ev = 'IPsec'
-                    elif ev == 'vnet2_vnet':
-                        ev = 'Vnet2Vnet'
-                    elif ev == 'express_route':
-                        ev = 'ExpressRoute'
                     elif ev == 'vpn_client':
                         ev = 'VPNClient'
-                    self.parameters["connection_type"] = ev
+                    self.parameters["connection_type"] = _snake_to_camel(ev, True)
                 elif key == "routing_weight":
                     self.parameters["routing_weight"] = kwargs[key]
                 elif key == "shared_key":
@@ -946,6 +942,13 @@ class AzureRMVirtualNetworkGatewayConnections(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

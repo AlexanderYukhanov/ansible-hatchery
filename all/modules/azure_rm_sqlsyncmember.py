@@ -205,12 +205,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "database_type":
-                    ev = kwargs[key]
-                    if ev == 'azure_sql_database':
-                        ev = 'AzureSqlDatabase'
-                    elif ev == 'sql_server_database':
-                        ev = 'SqlServerDatabase'
-                    self.parameters["database_type"] = ev
+                    self.parameters["database_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "sync_agent_id":
                     self.parameters["sync_agent_id"] = kwargs[key]
                 elif key == "sql_server_database_id":
@@ -224,14 +219,7 @@ class AzureRMSyncMembers(AzureRMModuleBase):
                 elif key == "password":
                     self.parameters["password"] = kwargs[key]
                 elif key == "sync_direction":
-                    ev = kwargs[key]
-                    if ev == 'bidirectional':
-                        ev = 'Bidirectional'
-                    elif ev == 'one_way_member_to_hub':
-                        ev = 'OneWayMemberToHub'
-                    elif ev == 'one_way_hub_to_member':
-                        ev = 'OneWayHubToMember'
-                    self.parameters["sync_direction"] = ev
+                    self.parameters["sync_direction"] = _snake_to_camel(kwargs[key], True)
 
         old_response = None
         response = None
@@ -358,6 +346,13 @@ class AzureRMSyncMembers(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

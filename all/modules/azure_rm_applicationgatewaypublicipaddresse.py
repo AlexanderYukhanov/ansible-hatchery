@@ -230,12 +230,7 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
                             ev['name'] = 'Standard'
                     self.parameters["sku"] = ev
                 elif key == "public_ip_allocation_method":
-                    ev = kwargs[key]
-                    if ev == 'static':
-                        ev = 'Static'
-                    elif ev == 'dynamic':
-                        ev = 'Dynamic'
-                    self.parameters["public_ip_allocation_method"] = ev
+                    self.parameters["public_ip_allocation_method"] = _snake_to_camel(kwargs[key], True)
                 elif key == "public_ip_address_version":
                     ev = kwargs[key]
                     if ev == 'ipv4':
@@ -377,6 +372,13 @@ class AzureRMPublicIPAddresses(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

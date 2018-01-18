@@ -838,21 +838,9 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
                 if key == "id":
                     self.parameters["id"] = kwargs[key]
                 elif key == "peering_type":
-                    ev = kwargs[key]
-                    if ev == 'azure_public_peering':
-                        ev = 'AzurePublicPeering'
-                    elif ev == 'azure_private_peering':
-                        ev = 'AzurePrivatePeering'
-                    elif ev == 'microsoft_peering':
-                        ev = 'MicrosoftPeering'
-                    self.parameters["peering_type"] = ev
+                    self.parameters["peering_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "state":
-                    ev = kwargs[key]
-                    if ev == 'disabled':
-                        ev = 'Disabled'
-                    elif ev == 'enabled':
-                        ev = 'Enabled'
-                    self.parameters["state"] = ev
+                    self.parameters["state"] = _snake_to_camel(kwargs[key], True)
                 elif key == "azure_asn":
                     self.parameters["azure_asn"] = kwargs[key]
                 elif key == "peer_asn":
@@ -1022,6 +1010,13 @@ class AzureRMExpressRouteCircuitPeerings(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

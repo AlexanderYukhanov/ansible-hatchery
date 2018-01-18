@@ -499,3 +499,8 @@ Sample after properties copied ---
 ------------------------------- Operation
   list
 TWEAK: RENAMING resource_group_name -- A
+CC: Always always Always
+CC: OnFailure on_failure OnFailure
+CC: Never never Never
+CC: Windows windows Windows
+CC: Linux linux Linux

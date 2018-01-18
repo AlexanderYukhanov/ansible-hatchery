@@ -455,21 +455,11 @@ class AzureRMDomains(AzureRMModuleBase):
                 elif key == "consent":
                     self.domain["consent"] = kwargs[key]
                 elif key == "dns_type":
-                    ev = kwargs[key]
-                    if ev == 'azure_dns':
-                        ev = 'AzureDns'
-                    elif ev == 'default_domain_registrar_dns':
-                        ev = 'DefaultDomainRegistrarDns'
-                    self.domain["dns_type"] = ev
+                    self.domain["dns_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "dns_zone_id":
                     self.domain["dns_zone_id"] = kwargs[key]
                 elif key == "target_dns_type":
-                    ev = kwargs[key]
-                    if ev == 'azure_dns':
-                        ev = 'AzureDns'
-                    elif ev == 'default_domain_registrar_dns':
-                        ev = 'DefaultDomainRegistrarDns'
-                    self.domain["target_dns_type"] = ev
+                    self.domain["target_dns_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "auth_code":
                     self.domain["auth_code"] = kwargs[key]
 
@@ -589,6 +579,13 @@ class AzureRMDomains(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

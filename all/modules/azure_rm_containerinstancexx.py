@@ -328,23 +328,11 @@ class AzureRMContainerGroups(AzureRMModuleBase):
                 elif key == "image_registry_credentials":
                     self.container_group["image_registry_credentials"] = kwargs[key]
                 elif key == "restart_policy":
-                    ev = kwargs[key]
-                    if ev == 'always':
-                        ev = 'Always'
-                    elif ev == 'on_failure':
-                        ev = 'OnFailure'
-                    elif ev == 'never':
-                        ev = 'Never'
-                    self.container_group["restart_policy"] = ev
+                    self.container_group["restart_policy"] = _snake_to_camel(kwargs[key], True)
                 elif key == "ip_address":
                     self.container_group["ip_address"] = kwargs[key]
                 elif key == "os_type":
-                    ev = kwargs[key]
-                    if ev == 'windows':
-                        ev = 'Windows'
-                    elif ev == 'linux':
-                        ev = 'Linux'
-                    self.container_group["os_type"] = ev
+                    self.container_group["os_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "volumes":
                     self.container_group["volumes"] = kwargs[key]
 
@@ -464,6 +452,13 @@ class AzureRMContainerGroups(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

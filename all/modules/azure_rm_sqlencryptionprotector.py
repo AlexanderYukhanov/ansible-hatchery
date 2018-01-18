@@ -153,12 +153,7 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
                 elif key == "server_key_name":
                     self.parameters["server_key_name"] = kwargs[key]
                 elif key == "server_key_type":
-                    ev = kwargs[key]
-                    if ev == 'service_managed':
-                        ev = 'ServiceManaged'
-                    elif ev == 'azure_key_vault':
-                        ev = 'AzureKeyVault'
-                    self.parameters["server_key_type"] = ev
+                    self.parameters["server_key_type"] = _snake_to_camel(kwargs[key], True)
 
         old_response = None
         response = None
@@ -277,6 +272,13 @@ class AzureRMEncryptionProtectors(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

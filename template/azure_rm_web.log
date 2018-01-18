@@ -867,3 +867,12 @@ Sample after properties copied ---
 }
   resource name fields: app_service_plan_name resource_group_name name
 TWEAK: RENAMING resource_group_name -- A
+CC: StandardDomainValidatedSsl standard_domain_validated_ssl StandardDomainValidatedSsl
+CC: StandardDomainValidatedWildCardSsl standard_domain_validated_wild_card_ssl StandardDomainValidatedWildCardSsl
+CC: AzureDns azure_dns AzureDns
+CC: DefaultDomainRegistrarDns default_domain_registrar_dns DefaultDomainRegistrarDns
+CC: AzureDns azure_dns AzureDns
+CC: DefaultDomainRegistrarDns default_domain_registrar_dns DefaultDomainRegistrarDns
+CC: None none None
+CC: Web web Web
+CC: Publishing publishing Publishing

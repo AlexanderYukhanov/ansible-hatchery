@@ -162,12 +162,7 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
                 elif key == "authorization_key":
                     self.parameters["authorization_key"] = kwargs[key]
                 elif key == "authorization_use_status":
-                    ev = kwargs[key]
-                    if ev == 'available':
-                        ev = 'Available'
-                    elif ev == 'in_use':
-                        ev = 'InUse'
-                    self.parameters["authorization_use_status"] = ev
+                    self.parameters["authorization_use_status"] = _snake_to_camel(kwargs[key], True)
                 elif key == "provisioning_state":
                     self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
@@ -292,6 +287,13 @@ class AzureRMExpressRouteCircuitAuthorizations(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

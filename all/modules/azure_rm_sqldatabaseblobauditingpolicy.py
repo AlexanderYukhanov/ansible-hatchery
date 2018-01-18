@@ -191,12 +191,7 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
                 setattr(self, key, kwargs[key])
             elif kwargs[key] is not None:
                 if key == "state":
-                    ev = kwargs[key]
-                    if ev == 'enabled':
-                        ev = 'Enabled'
-                    elif ev == 'disabled':
-                        ev = 'Disabled'
-                    self.parameters["state"] = ev
+                    self.parameters["state"] = _snake_to_camel(kwargs[key], True)
                 elif key == "storage_endpoint":
                     self.parameters["storage_endpoint"] = kwargs[key]
                 elif key == "storage_account_access_key":
@@ -330,6 +325,13 @@ class AzureRMDatabaseBlobAuditingPolicies(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

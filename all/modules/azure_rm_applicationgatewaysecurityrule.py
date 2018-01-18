@@ -288,12 +288,7 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 elif key == "description":
                     self.parameters["description"] = kwargs[key]
                 elif key == "protocol":
-                    ev = kwargs[key]
-                    if ev == 'tcp':
-                        ev = 'Tcp'
-                    elif ev == 'udp':
-                        ev = 'Udp'
-                    self.parameters["protocol"] = ev
+                    self.parameters["protocol"] = _snake_to_camel(kwargs[key], True)
                 elif key == "source_port_range":
                     self.parameters["source_port_range"] = kwargs[key]
                 elif key == "destination_port_range":
@@ -315,21 +310,11 @@ class AzureRMSecurityRules(AzureRMModuleBase):
                 elif key == "destination_port_ranges":
                     self.parameters["destination_port_ranges"] = kwargs[key]
                 elif key == "access":
-                    ev = kwargs[key]
-                    if ev == 'allow':
-                        ev = 'Allow'
-                    elif ev == 'deny':
-                        ev = 'Deny'
-                    self.parameters["access"] = ev
+                    self.parameters["access"] = _snake_to_camel(kwargs[key], True)
                 elif key == "priority":
                     self.parameters["priority"] = kwargs[key]
                 elif key == "direction":
-                    ev = kwargs[key]
-                    if ev == 'inbound':
-                        ev = 'Inbound'
-                    elif ev == 'outbound':
-                        ev = 'Outbound'
-                    self.parameters["direction"] = ev
+                    self.parameters["direction"] = _snake_to_camel(kwargs[key], True)
                 elif key == "provisioning_state":
                     self.parameters["provisioning_state"] = kwargs[key]
                 elif key == "name":
@@ -456,6 +441,13 @@ class AzureRMSecurityRules(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

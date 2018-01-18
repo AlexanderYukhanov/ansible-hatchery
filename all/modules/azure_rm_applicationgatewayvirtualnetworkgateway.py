@@ -340,19 +340,9 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
                             ev['private_ip_allocation_method'] = 'Dynamic'
                     self.parameters["ip_configurations"] = ev
                 elif key == "gateway_type":
-                    ev = kwargs[key]
-                    if ev == 'vpn':
-                        ev = 'Vpn'
-                    elif ev == 'express_route':
-                        ev = 'ExpressRoute'
-                    self.parameters["gateway_type"] = ev
+                    self.parameters["gateway_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "vpn_type":
-                    ev = kwargs[key]
-                    if ev == 'policy_based':
-                        ev = 'PolicyBased'
-                    elif ev == 'route_based':
-                        ev = 'RouteBased'
-                    self.parameters["vpn_type"] = ev
+                    self.parameters["vpn_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "enable_bgp":
                     self.parameters["enable_bgp"] = kwargs[key]
                 elif key == "active_active":
@@ -520,6 +510,13 @@ class AzureRMVirtualNetworkGateways(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

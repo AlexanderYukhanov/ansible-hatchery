@@ -192,12 +192,7 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
                 elif key == "key_size":
                     self.certificate_distinguished_name["key_size"] = kwargs[key]
                 elif key == "product_type":
-                    ev = kwargs[key]
-                    if ev == 'standard_domain_validated_ssl':
-                        ev = 'StandardDomainValidatedSsl'
-                    elif ev == 'standard_domain_validated_wild_card_ssl':
-                        ev = 'StandardDomainValidatedWildCardSsl'
-                    self.certificate_distinguished_name["product_type"] = ev
+                    self.certificate_distinguished_name["product_type"] = _snake_to_camel(kwargs[key], True)
                 elif key == "auto_renew":
                     self.certificate_distinguished_name["auto_renew"] = kwargs[key]
                 elif key == "csr":
@@ -320,6 +315,13 @@ class AzureRMAppServiceCertificateOrders(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():

@@ -241,12 +241,7 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                 if key == "alias_name":
                     self.parameters["alias_name"] = kwargs[key]
                 elif key == "rule_state":
-                    ev = kwargs[key]
-                    if ev == 'disabled':
-                        ev = 'Disabled'
-                    elif ev == 'enabled':
-                        ev = 'Enabled'
-                    self.parameters["rule_state"] = ev
+                    self.parameters["rule_state"] = _snake_to_camel(kwargs[key], True)
                 elif key == "schema_name":
                     self.parameters["schema_name"] = kwargs[key]
                 elif key == "table_name":
@@ -255,19 +250,11 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
                     self.parameters["column_name"] = kwargs[key]
                 elif key == "masking_function":
                     ev = kwargs[key]
-                    if ev == 'default':
-                        ev = 'Default'
-                    elif ev == 'ccn':
+                    if ev == 'ccn':
                         ev = 'CCN'
-                    elif ev == 'email':
-                        ev = 'Email'
-                    elif ev == 'number':
-                        ev = 'Number'
                     elif ev == 'ssn':
                         ev = 'SSN'
-                    elif ev == 'text':
-                        ev = 'Text'
-                    self.parameters["masking_function"] = ev
+                    self.parameters["masking_function"] = _snake_to_camel(ev, True)
                 elif key == "number_from":
                     self.parameters["number_from"] = kwargs[key]
                 elif key == "number_to":
@@ -396,6 +383,13 @@ class AzureRMDataMaskingRules(AzureRMModuleBase):
             return response.as_dict()
 
         return False
+
+
+def _snake_to_camel(snake, capitalize_first= False):
+    if capitalize_first:
+        return ''.join(x.capitalize() or '_' for x in snake.split('_'))
+    else:
+        return snake.split('_')[0] + ''.join(x.capitalize() or '_' for x in snake.split('_')[1:])
 
 
 def main():
