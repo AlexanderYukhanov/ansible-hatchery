@@ -10,7 +10,6 @@
   assert:
     that:
       - output.changed == False
-      - output.subscription_usages.xxxunknownxxx.id != None
 
 - name: Gather facts Subscription Usage
   azure_rm_sqlsubscriptionusage_facts:
@@ -19,5 +18,10 @@
   assert:
     that:
       - output.changed == False
-      - output.subscription_usages.xxxunknownxxx.id != None
-      - output.subscription_usages.xxxunknownxxxsecond.id != None
+      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.subscription_usages.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

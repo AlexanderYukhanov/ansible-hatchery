@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.sync_groups.xxxunknownxxx.id != None
 
 - name: Gather facts Sync Group
   azure_rm_sqlsyncgroup_facts:
@@ -21,5 +20,14 @@
   assert:
     that:
       - output.changed == False
-      - output.sync_groups.xxxunknownxxx.id != None
-      - output.sync_groups.xxxunknownxxxsecond.id != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.sync_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

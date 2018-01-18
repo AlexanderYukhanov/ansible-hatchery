@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.route_filter_rules.xxxunknownxxx.id != None
 
 - name: Gather facts Route Filter Rule
   azure_rm_applicationgatewayroutefilterrule_facts:
@@ -21,5 +20,12 @@
   assert:
     that:
       - output.changed == False
-      - output.route_filter_rules.xxxunknownxxx.id != None
-      - output.route_filter_rules.xxxunknownxxxsecond.id != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.route_filter_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

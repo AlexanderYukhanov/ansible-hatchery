@@ -11,4 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.default_security_rules.xxxunknownxxx.id != None

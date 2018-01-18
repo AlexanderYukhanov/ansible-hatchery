@@ -11,4 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.database_threat_detection_policies.xxxunknownxxx.id != None

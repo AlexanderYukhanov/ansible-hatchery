@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.recommended_elastic_pools.xxxunknownxxx.id != None
 
 - name: Gather facts Recommended Elastic Pool
   azure_rm_sqlrecommendedelasticpool_facts:
@@ -21,5 +20,17 @@
   assert:
     that:
       - output.changed == False
-      - output.recommended_elastic_pools.xxxunknownxxx.id != None
-      - output.recommended_elastic_pools.xxxunknownxxxsecond.id != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.recommended_elastic_pools.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

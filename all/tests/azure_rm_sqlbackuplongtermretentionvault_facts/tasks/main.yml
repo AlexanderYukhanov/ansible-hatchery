@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.backup_long_term_retention_vaults.xxxunknownxxx.id != None
 
 - name: Gather facts Backup Long Term Retention Vault
   azure_rm_sqlbackuplongtermretentionvault_facts:
@@ -21,5 +20,8 @@
   assert:
     that:
       - output.changed == False
-      - output.backup_long_term_retention_vaults.xxxunknownxxx.id != None
-      - output.backup_long_term_retention_vaults.xxxunknownxxxsecond.id != None
+      - output.backup_long_term_retention_vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_vaults.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

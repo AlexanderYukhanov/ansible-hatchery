@@ -11,4 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.load_balancer_backend_address_pools.xxxunknownxxx.id != None

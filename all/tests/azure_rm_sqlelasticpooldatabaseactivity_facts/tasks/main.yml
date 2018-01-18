@@ -11,5 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.elastic_pool_database_activities.xxxunknownxxx.id != None
-      - output.elastic_pool_database_activities.xxxunknownxxxsecond.id != None

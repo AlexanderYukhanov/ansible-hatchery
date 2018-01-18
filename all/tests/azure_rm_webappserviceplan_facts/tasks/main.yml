@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.app_service_plans.{{ resource_group }}.id != None
 
 - name: Gather facts App Service Plan
   azure_rm_webappserviceplan_facts:
@@ -21,5 +20,27 @@
   assert:
     that:
       - output.changed == False
-      - output.app_service_plans.{{ resource_group }}.id != None
-      - output.app_service_plans.{{ resource_group }}second.id != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.app_service_plans.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None

@@ -11,8 +11,45 @@
   assert:
     that:
       - output.changed == False
-      - output.web_apps.{{ resource_group }}.id != None
-      - output.web_apps.{{ resource_group }}second.id != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.web_apps.{{ resource_group }}second.AutoRest.Ansible.Model.ModuleResponseField != None
 
 - name: Gather facts Web App
   azure_rm_webapp_facts:
@@ -22,4 +59,3 @@
   assert:
     that:
       - output.changed == False
-      - output.web_apps.{{ resource_group }}.id != None

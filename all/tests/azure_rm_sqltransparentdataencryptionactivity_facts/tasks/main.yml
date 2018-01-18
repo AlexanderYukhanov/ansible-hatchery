@@ -11,5 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.transparent_data_encryption_activities.xxxunknownxxx.id != None
-      - output.transparent_data_encryption_activities.xxxunknownxxxsecond.id != None

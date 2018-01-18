@@ -10,4 +10,3 @@
   assert:
     that:
       - output.changed == False
-      - output.provider_operations_metadata.xxxunknownxxx.id != None

@@ -11,4 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.load_balancer_probes.xxxunknownxxx.id != None

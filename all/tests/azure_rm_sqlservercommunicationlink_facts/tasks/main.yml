@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.server_communication_links.xxxunknownxxx.id != None
 
 - name: Gather facts Server Communication Link
   azure_rm_sqlservercommunicationlink_facts:
@@ -21,5 +20,10 @@
   assert:
     that:
       - output.changed == False
-      - output.server_communication_links.xxxunknownxxx.id != None
-      - output.server_communication_links.xxxunknownxxxsecond.id != None
+      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_communication_links.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

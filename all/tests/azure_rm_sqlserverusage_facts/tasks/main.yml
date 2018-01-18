@@ -11,5 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.server_usages.xxxunknownxxx.id != None
-      - output.server_usages.xxxunknownxxxsecond.id != None

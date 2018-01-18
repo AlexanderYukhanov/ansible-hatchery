@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.restorable_dropped_databases.xxxunknownxxx.id != None
 
 - name: Gather facts Restorable Dropped Database
   azure_rm_sqlrestorabledroppeddatabase_facts:
@@ -21,5 +20,15 @@
   assert:
     that:
       - output.changed == False
-      - output.restorable_dropped_databases.xxxunknownxxx.id != None
-      - output.restorable_dropped_databases.xxxunknownxxxsecond.id != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.restorable_dropped_databases.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

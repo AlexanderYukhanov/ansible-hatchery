@@ -37,8 +37,6 @@
   assert:
     that:
       - output.changed == False
-      - output.log_files.mysqlsrv{{ rpfx }}.id != None
-      - output.log_files.mysqlsrv{{ rpfx }}second.id != None
 
 - name: Delete instance of MySQL Server
   azure_rm_mysqlserver:

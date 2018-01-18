@@ -11,5 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.database_usages.xxxunknownxxx.id != None
-      - output.database_usages.xxxunknownxxxsecond.id != None

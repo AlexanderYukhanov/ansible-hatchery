@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.virtual_network_rules.xxxunknownxxx.id != None
 
 - name: Gather facts Virtual Network Rule
   azure_rm_sqlvirtualnetworkrule_facts:
@@ -21,5 +20,9 @@
   assert:
     that:
       - output.changed == False
-      - output.virtual_network_rules.xxxunknownxxx.id != None
-      - output.virtual_network_rules.xxxunknownxxxsecond.id != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.virtual_network_rules.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

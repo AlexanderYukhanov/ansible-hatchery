@@ -11,4 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.local_network_gateways.xxxunknownxxx.id != None

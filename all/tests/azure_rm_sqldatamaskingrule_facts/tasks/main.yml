@@ -11,5 +11,3 @@
   assert:
     that:
       - output.changed == False
-      - output.data_masking_rules.xxxunknownxxx.id != None
-      - output.data_masking_rules.xxxunknownxxxsecond.id != None

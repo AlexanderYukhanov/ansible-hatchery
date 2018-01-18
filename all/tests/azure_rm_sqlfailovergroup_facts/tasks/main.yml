@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.failover_groups.xxxunknownxxx.id != None
 
 - name: Gather facts Failover Group
   azure_rm_sqlfailovergroup_facts:
@@ -21,5 +20,14 @@
   assert:
     that:
       - output.changed == False
-      - output.failover_groups.xxxunknownxxx.id != None
-      - output.failover_groups.xxxunknownxxxsecond.id != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.failover_groups.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

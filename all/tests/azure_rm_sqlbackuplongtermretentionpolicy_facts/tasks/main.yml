@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.backup_long_term_retention_policies.xxxunknownxxx.id != None
 
 - name: Gather facts Backup Long Term Retention Policy
   azure_rm_sqlbackuplongtermretentionpolicy_facts:
@@ -21,5 +20,9 @@
   assert:
     that:
       - output.changed == False
-      - output.backup_long_term_retention_policies.xxxunknownxxx.id != None
-      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.id != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.backup_long_term_retention_policies.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None

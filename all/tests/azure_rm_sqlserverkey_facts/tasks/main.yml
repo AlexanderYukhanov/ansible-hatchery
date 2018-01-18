@@ -11,7 +11,6 @@
   assert:
     that:
       - output.changed == False
-      - output.server_keys.xxxunknownxxx.id != None
 
 - name: Gather facts Server Key
   azure_rm_sqlserverkey_facts:
@@ -21,5 +20,13 @@
   assert:
     that:
       - output.changed == False
-      - output.server_keys.xxxunknownxxx.id != None
-      - output.server_keys.xxxunknownxxxsecond.id != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
+      - output.server_keys.xxxunknownxxxsecond.AutoRest.Ansible.Model.ModuleResponseField != None
