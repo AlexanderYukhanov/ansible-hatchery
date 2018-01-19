@@ -62,7 +62,7 @@ options:
                 type: list
             name:
                 description:
-                    - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                    - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
             location:
                 description:
                     - Resource location.
@@ -159,7 +159,7 @@ options:
                             - Gets BytesOut of the peering.
             provisioning_state:
                 description:
-                    - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                    - "Gets the provisioning I(state) of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
             gateway_manager_etag:
                 description:
                     - The GatewayManager Etag.
@@ -202,7 +202,7 @@ options:
                                 type: list
                             name:
                                 description:
-                                    - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                                    - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                             location:
                                 description:
                                     - Resource location.
@@ -299,7 +299,7 @@ options:
                                             - Gets BytesOut of the peering.
                             provisioning_state:
                                 description:
-                                    - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                                    - "Gets the provisioning I(state) of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                             gateway_manager_etag:
                                 description:
                                     - The GatewayManager Etag.
@@ -425,7 +425,7 @@ options:
                                         type: list
                                     name:
                                         description:
-                                            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                                            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                                     location:
                                         description:
                                             - Resource location.
@@ -483,8 +483,8 @@ options:
                                             - Gets peering stats.
                                     provisioning_state:
                                         description:
-                                            - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Faile
-                                              d'."
+                                            - "Gets the provisioning I(state) of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Fa
+                                              iled'."
                                     gateway_manager_etag:
                                         description:
                                             - The GatewayManager Etag.

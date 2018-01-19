@@ -57,7 +57,7 @@ options:
                 suboptions:
                     protocol:
                         description:
-                            - The protocol associated with the port.
+                            - The protocol associated with the I(port).
                         choices:
                             - 'tcp'
                             - 'udp'
@@ -140,7 +140,7 @@ options:
                     - The password for the private registry.
     restart_policy:
         description:
-            - Restart policy for all containers within the container group.
+            - Restart policy for all I(containers) within the container group.
             - - `C(always)` C(always) restart
             - - `C(on_failure)` Restart on failure
             - - `C(never)` C(never) restart
@@ -161,7 +161,7 @@ options:
                 suboptions:
                     protocol:
                         description:
-                            - The protocol associated with the port.
+                            - The protocol associated with the I(port).
                         choices:
                             - 'tcp'
                             - 'udp'
@@ -178,13 +178,13 @@ options:
                     - The IP exposed to the public internet.
     os_type:
         description:
-            - The operating system type required by the containers in the container group.
+            - The operating system type required by the I(containers) in the container group.
         choices:
             - 'windows'
             - 'linux'
     volumes:
         description:
-            - The list of volumes that can be mounted by containers in this container group.
+            - The list of volumes that can be mounted by I(containers) in this container group.
         type: list
         suboptions:
             name:

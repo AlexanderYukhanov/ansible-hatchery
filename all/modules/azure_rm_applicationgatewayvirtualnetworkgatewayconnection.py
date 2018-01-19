@@ -141,7 +141,7 @@ options:
                             - The capacity.
             vpn_client_configuration:
                 description:
-                    - The reference of the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
+                    - The reference of the C(vpn)ClientConfiguration resource which represents the P2S C(vpn)Client configurations.
                 suboptions:
                     vpn_client_address_pool:
                         description:
@@ -316,7 +316,7 @@ options:
                             - The capacity.
             vpn_client_configuration:
                 description:
-                    - The reference of the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
+                    - The reference of the C(vpn)ClientConfiguration resource which represents the P2S C(vpn)Client configurations.
                 suboptions:
                     vpn_client_address_pool:
                         description:

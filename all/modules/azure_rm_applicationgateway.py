@@ -107,7 +107,7 @@ options:
                             - Resource ID.
             provisioning_state:
                 description:
-                    - "Provisioning state of the application gateway subnet resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                    - "Provisioning state of the application gateway I(subnet) resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
             name:
                 description:
                     - Name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -153,10 +153,10 @@ options:
                     - Base-64 encoded pfx certificate. Only applicable in PUT Request.
             password:
                 description:
-                    - Password for the pfx file specified in data. Only applicable in PUT request.
+                    - Password for the pfx file specified in I(data). Only applicable in PUT request.
             public_cert_data:
                 description:
-                    - Base-64 encoded Public cert data corresponding to pfx specified in data. Only applicable in GET request.
+                    - Base-64 encoded Public cert I(data) corresponding to pfx specified in I(data). Only applicable in GET request.
             provisioning_state:
                 description:
                     - "Provisioning state of the SSL certificate resource Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -225,7 +225,7 @@ options:
                     - Frontend port
             provisioning_state:
                 description:
-                    - "Provisioning state of the frontend port resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                    - "Provisioning state of the frontend I(port) resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
             name:
                 description:
                     - Name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -254,7 +254,7 @@ options:
                     - Host name to send the probe to.
             path:
                 description:
-                    - "Relative path of probe. Valid path starts from '/'. Probe is sent to <Protocol>://<host>:<port><path>"
+                    - "Relative path of probe. Valid path starts from '/'. Probe is sent to <Protocol>://<I(host)>:<port><path>"
             interval:
                 description:
                     - "The probing interval in seconds. This is the time interval between two consecutive probes. Acceptable values are from 1 second to 8640
@@ -269,7 +269,7 @@ options:
                       es are from 1 second to 20."
             pick_host_name_from_backend_http_settings:
                 description:
-                    - Whether the host header should be picked from the backend http settings. Default value is false.
+                    - Whether the I(host) header should be picked from the backend http settings. Default value is false.
             min_servers:
                 description:
                     - Minimum number of servers that are always marked healthy. Default value is 0.
@@ -451,7 +451,7 @@ options:
                             idle_timeout_in_minutes:
                                 description:
                                     - "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes
-                                      . This element is only used when the protocol is set to TCP."
+                                      . This element is only used when the I(protocol) is set to TCP."
                             enable_floating_ip:
                                 description:
                                     - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availabili
@@ -535,7 +535,7 @@ options:
                                         type: list
                                     disable_bgp_route_propagation:
                                         description:
-                                            - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
+                                            - Gets or sets whether to disable the I(routes) learned by BGP on that route table. True means disable.
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -567,7 +567,7 @@ options:
                                             - Resource ID.
                                     linked_resource_type:
                                         description:
-                                            - Resource type of the linked resource.
+                                            - Resource type of the I(link)ed resource.
                                     link:
                                         description:
                                             - Link to the external resource
@@ -630,7 +630,7 @@ options:
                                     fqdn:
                                         description:
                                             - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the conc
-                                              atenation of the domainNameLabel and the regionalized DNS zone."
+                                              atenation of the I(domain_name_label) and the regionalized DNS zone."
                                     reverse_fqdn:
                                         description:
                                             - "Gets or Sets the Reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP add
@@ -763,7 +763,7 @@ options:
                     - Cookie name to use for the affinity cookie.
             probe_enabled:
                 description:
-                    - Whether the probe is enabled. Default value is false.
+                    - Whether the I(probe) is enabled. Default value is false.
             path:
                 description:
                     - Path which should be used as a prefix for all HTTP requests. Null means no path will be prefixed. Default value is null.
@@ -819,7 +819,7 @@ options:
                             - Resource ID.
             require_server_name_indication:
                 description:
-                    - Applicable only if protocol is https. Enables SNI for multi-hosting.
+                    - Applicable only if I(protocol) is https. Enables SNI for multi-hosting.
             provisioning_state:
                 description:
                     - "Provisioning state of the HTTP listener resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -928,7 +928,7 @@ options:
                     - Resource ID.
             rule_type:
                 description:
-                    - Rule type.
+                    - Rule I(type).
                 choices:
                     - 'basic'
                     - 'path_based_routing'
@@ -989,7 +989,7 @@ options:
                     - Resource ID.
             redirect_type:
                 description:
-                    - Supported http redirection types - C(permanent), C(temporary), C(found), C(see_other).
+                    - Supported http redirection I(type)s - C(permanent), C(temporary), C(found), C(see_other).
                 choices:
                     - 'permanent'
                     - 'found'

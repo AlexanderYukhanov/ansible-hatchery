@@ -43,7 +43,7 @@ options:
             - Resource location. If not set, location from the resource group will be used as default.
     state:
         description:
-            - Specifies the state of the policy. If state is C(enabled), storageEndpoint and storageAccountAccessKey are required.
+            - Specifies the state of the policy. If state is C(enabled), I(storage_endpoint) and I(storage_account_access_key) are required.
         required: True
         choices:
             - 'new'
@@ -65,10 +65,10 @@ options:
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
-              s. If state is Enabled, storageEndpoint is required."
+              s. If I(state) is C(enabled), storageEndpoint is required."
     storage_account_access_key:
         description:
-            - Specifies the identifier key of the Threat Detection audit storage account. If state is Enabled, storageAccountAccessKey is required.
+            - Specifies the identifier key of the Threat Detection audit storage account. If I(state) is C(enabled), storageAccountAccessKey is required.
     retention_days:
         description:
             - Specifies the number of days to keep in the Threat Detection audit logs.

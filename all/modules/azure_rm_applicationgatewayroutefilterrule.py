@@ -55,7 +55,7 @@ options:
         type: list
     name:
         description:
-            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
     location:
         description:
             - Resource location. If not set, location from the resource group will be used as default.

@@ -24,7 +24,8 @@ description:
 options:
     resource_group:
         description:
-            - The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+            - "The name of the reI(source) group that contains the reI(source). You can obtain this I(value) from the Azure ReI(source) Manager API or the po
+              rtal."
         required: True
     server_name:
         description:

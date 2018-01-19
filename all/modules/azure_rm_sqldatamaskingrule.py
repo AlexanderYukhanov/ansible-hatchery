@@ -47,9 +47,9 @@ options:
             - The alias name. This is a legacy parameter and is no longer used.
     rule_state:
         description:
-            - "The rule state. Used to delete a rule. To delete an existing rule, specify the schemaName, tableName, columnName, maskingFunction, and specify
-               ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, regardless of the
-              provided value of ruleState."
+            - "The rule state. Used to delete a rule. To delete an existing rule, specify the I(schema_name), I(table_name), I(column_name), I(masking_functi
+              on), and specify ruleState as disabled. However, if the rule doesn't already exist, the rule will be created with ruleState set to enabled, re
+              gardless of the provided value of ruleState."
         choices:
             - 'disabled'
             - 'enabled'
@@ -78,20 +78,22 @@ options:
             - 'text'
     number_from:
         description:
-            - The numberFrom property of the masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.
+            - The numberFrom property of the masking rule. Required if I(masking_function) is set to C(number), otherwise this parameter will be ignored.
     number_to:
         description:
-            - The numberTo property of the data masking rule. Required if maskingFunction is set to Number, otherwise this parameter will be ignored.
+            - The numberTo property of the data masking rule. Required if I(masking_function) is set to C(number), otherwise this parameter will be ignored.
     prefix_size:
         description:
-            - "If maskingFunction is set to Text, the number of characters to show unmasked in the beginning of the string. Otherwise, this parameter will be
-               ignored."
+            - "If I(masking_function) is set to C(text), the number of characters to show unmasked in the beginning of the string. Otherwise, this parameter
+              will be ignored."
     suffix_size:
         description:
-            - If maskingFunction is set to Text, the number of characters to show unmasked at the end of the string. Otherwise, this parameter will be ignored.
+            - "If I(masking_function) is set to C(text), the number of characters to show unmasked at the end of the string. Otherwise, this parameter will b
+              e ignored."
     replacement_string:
         description:
-            - If maskingFunction is set to Text, the character to use for masking the unexposed part of the string. Otherwise, this parameter will be ignored.
+            - "If I(masking_function) is set to C(text), the character to use for masking the unexposed part of the string. Otherwise, this parameter will be
+               ignored."
 
 extends_documentation_fragment:
     - azure

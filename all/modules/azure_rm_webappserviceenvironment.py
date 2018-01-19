@@ -138,8 +138,8 @@ options:
             -  (most likely because NSG blocked the incoming traffic).
     dynamic_cache_enabled:
         description:
-            - "True/false indicating whether the App Service Environment is suspended. The environment can be suspended e.g. when the management endpoint is
-              no longer available"
+            - "True/false indicating whether the App Service Environment is I(suspended). The environment can be I(suspended) e.g. when the management endpoi
+              nt is no longer available"
             - (most likely because NSG blocked the incoming traffic).
     cluster_settings:
         description:

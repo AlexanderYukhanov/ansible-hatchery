@@ -50,11 +50,11 @@ options:
                 type: list
             not_actions:
                 description:
-                    - Denied actions.
+                    - Denied I(actions).
                 type: list
     properties_assignable_scopes:
         description:
-            - Role definition assignable scopes.
+            - Role definition assignable I(scope)s.
         type: list
 
 extends_documentation_fragment:

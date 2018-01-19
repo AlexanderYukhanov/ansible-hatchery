@@ -74,14 +74,15 @@ options:
                             - '*'
                     source_port_range:
                         description:
-                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                     destination_port_range:
                         description:
-                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'Azu
-                              reLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                            - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
+                              'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates fr
+                              om. "
                     source_address_prefixes:
                         description:
                             - The CIDR or source IP ranges.
@@ -99,8 +100,8 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. Default ta
-                              gs such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all source IPs. Defaul
+                              t tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
                     destination_address_prefixes:
                         description:
                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -148,7 +149,7 @@ options:
                             - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                     name:
                         description:
-                            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                     etag:
                         description:
                             - A unique read-only string that changes whenever the resource is updated.
@@ -173,14 +174,15 @@ options:
                             - '*'
                     source_port_range:
                         description:
-                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                     destination_port_range:
                         description:
-                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'Azu
-                              reLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from. "
+                            - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
+                              'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates fr
+                              om. "
                     source_address_prefixes:
                         description:
                             - The CIDR or source IP ranges.
@@ -198,8 +200,8 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. Default ta
-                              gs such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all source IPs. Defaul
+                              t tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
                     destination_address_prefixes:
                         description:
                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -247,7 +249,7 @@ options:
                             - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                     name:
                         description:
-                            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                     etag:
                         description:
                             - A unique read-only string that changes whenever the resource is updated.
@@ -358,7 +360,7 @@ options:
                                     idle_timeout_in_minutes:
                                         description:
                                             - "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4
-                                               minutes. This element is only used when the protocol is set to TCP."
+                                               minutes. This element is only used when the I(protocol) is set to TCP."
                                     enable_floating_ip:
                                         description:
                                             - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Av
@@ -566,7 +568,7 @@ options:
                     idle_timeout_in_minutes:
                         description:
                             - "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This e
-                              lement is only used when the protocol is set to TCP."
+                              lement is only used when the I(protocol) is set to TCP."
                     enable_floating_ip:
                         description:
                             - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group
@@ -638,17 +640,17 @@ options:
                                             - '*'
                                     source_port_range:
                                         description:
-                                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all port
-                                              s."
+                                            - "The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all
+                                              ports."
                                     destination_port_range:
                                         description:
-                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all
-                                               ports."
+                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match
+                                               all ports."
                                     source_address_prefix:
                                         description:
-                                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'Virtu
-                                              alNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where n
-                                              etwork traffic originates from. "
+                                            - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'V
+                                              irtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies whe
+                                              re network traffic originates from. "
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
@@ -659,8 +661,8 @@ options:
                                         type: list
                                     destination_address_prefix:
                                         description:
-                                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source
-                                               IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                                            - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all so
+                                              urce IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -701,7 +703,7 @@ options:
                                             - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                                     name:
                                         description:
-                                            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                                            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                                     etag:
                                         description:
                                             - A unique read-only string that changes whenever the resource is updated.
@@ -726,17 +728,17 @@ options:
                                             - '*'
                                     source_port_range:
                                         description:
-                                            - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all port
-                                              s."
+                                            - "The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all
+                                              ports."
                                     destination_port_range:
                                         description:
-                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all
-                                               ports."
+                                            - "The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match
+                                               all ports."
                                     source_address_prefix:
                                         description:
-                                            - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'Virtu
-                                              alNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where n
-                                              etwork traffic originates from. "
+                                            - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'V
+                                              irtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies whe
+                                              re network traffic originates from. "
                                     source_address_prefixes:
                                         description:
                                             - The CIDR or source IP ranges.
@@ -747,8 +749,8 @@ options:
                                         type: list
                                     destination_address_prefix:
                                         description:
-                                            - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source
-                                               IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                                            - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all so
+                                              urce IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
                                     destination_address_prefixes:
                                         description:
                                             - The destination address prefixes. CIDR or destination IP ranges.
@@ -789,7 +791,7 @@ options:
                                             - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                                     name:
                                         description:
-                                            - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                                            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                                     etag:
                                         description:
                                             - A unique read-only string that changes whenever the resource is updated.
@@ -837,7 +839,7 @@ options:
                                     next_hop_ip_address:
                                         description:
                                             - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop t
-                                              ype is VirtualAppliance."
+                                              ype is C(virtual_appliance)."
                                     provisioning_state:
                                         description:
                                             - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -849,7 +851,7 @@ options:
                                             - A unique read-only string that changes whenever the resource is updated.
                             disable_bgp_route_propagation:
                                 description:
-                                    - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
+                                    - Gets or sets whether to disable the I(routes) learned by BGP on that route table. True means disable.
                             provisioning_state:
                                 description:
                                     - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -881,7 +883,7 @@ options:
                                     - Resource ID.
                             linked_resource_type:
                                 description:
-                                    - Resource type of the linked resource.
+                                    - Resource type of the I(link)ed resource.
                             link:
                                 description:
                                     - Link to the external resource
@@ -944,7 +946,7 @@ options:
                             fqdn:
                                 description:
                                     - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the concatenatio
-                                      n of the domainNameLabel and the regionalized DNS zone."
+                                      n of the I(domain_name_label) and the regionalized DNS zone."
                             reverse_fqdn:
                                 description:
                                     - "Gets or Sets the Reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If
@@ -1011,8 +1013,8 @@ options:
                     - Fully qualified DNS name supporting internal communications between VMs in the same virtual network.
             internal_domain_name_suffix:
                 description:
-                    - "Even if internalDnsNameLabel is not specified, a DNS entry is created for the primary NIC of the VM. This DNS name can be constructed
-                      by concatenating the VM name with the value of internalDomainNameSuffix."
+                    - "Even if I(internal_dns_name_label) is not specified, a DNS entry is created for the primary NIC of the VM. This DNS name can be constr
+                      ucted by concatenating the VM name with the value of internalDomainNameSuffix."
     mac_address:
         description:
             - The MAC address of the network interface.

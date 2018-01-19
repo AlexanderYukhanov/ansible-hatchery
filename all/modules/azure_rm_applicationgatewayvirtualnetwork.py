@@ -38,7 +38,7 @@ options:
             - Resource location. If not set, location from the resource group will be used as default.
     address_space:
         description:
-            - The AddressSpace that contains an array of IP address ranges that can be used by subnets.
+            - The AddressSpace that contains an array of IP address ranges that can be used by I(subnets).
         suboptions:
             address_prefixes:
                 description:
@@ -94,15 +94,15 @@ options:
                                     - '*'
                             source_port_range:
                                 description:
-                                    - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                                    - The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                             destination_port_range:
                                 description:
-                                    - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                                    - The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                             source_address_prefix:
                                 description:
-                                    - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwor
-                                      k', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic o
-                                      riginates from. "
+                                    - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'VirtualNe
+                                      twork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traff
+                                      ic originates from. "
                             source_address_prefixes:
                                 description:
                                     - The CIDR or source IP ranges.
@@ -120,8 +120,8 @@ options:
                                             - Resource location.
                             destination_address_prefix:
                                 description:
-                                    - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. De
-                                      fault tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                                    - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all source IPs
+                                      . Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
                             destination_address_prefixes:
                                 description:
                                     - The destination address prefixes. CIDR or destination IP ranges.
@@ -169,7 +169,7 @@ options:
                                     - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                             name:
                                 description:
-                                    - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                                    - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                             etag:
                                 description:
                                     - A unique read-only string that changes whenever the resource is updated.
@@ -194,15 +194,15 @@ options:
                                     - '*'
                             source_port_range:
                                 description:
-                                    - "The source port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                                    - The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                             destination_port_range:
                                 description:
-                                    - "The destination port or range. Integer or range between 0 and 65535. Asterix '*' can also be used to match all ports."
+                                    - The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
                             source_address_prefix:
                                 description:
-                                    - "The CIDR or source IP range. Asterix '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwor
-                                      k', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic o
-                                      riginates from. "
+                                    - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'VirtualNe
+                                      twork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traff
+                                      ic originates from. "
                             source_address_prefixes:
                                 description:
                                     - The CIDR or source IP ranges.
@@ -220,8 +220,8 @@ options:
                                             - Resource location.
                             destination_address_prefix:
                                 description:
-                                    - "The destination address prefix. CIDR or destination IP range. Asterix '*' can also be used to match all source IPs. De
-                                      fault tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                                    - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all source IPs
+                                      . Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
                             destination_address_prefixes:
                                 description:
                                     - The destination address prefixes. CIDR or destination IP ranges.
@@ -269,7 +269,7 @@ options:
                                     - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
                             name:
                                 description:
-                                    - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+                                    - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
                             etag:
                                 description:
                                     - A unique read-only string that changes whenever the resource is updated.
@@ -316,8 +316,8 @@ options:
                                     - 'none'
                             next_hop_ip_address:
                                 description:
-                                    - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is V
-                                      irtualAppliance."
+                                    - "The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is C
+                                      (virtual_appliance)."
                             provisioning_state:
                                 description:
                                     - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -329,7 +329,7 @@ options:
                                     - A unique read-only string that changes whenever the resource is updated.
                     disable_bgp_route_propagation:
                         description:
-                            - Gets or sets whether to disable the routes learned by BGP on that route table. True means disable.
+                            - Gets or sets whether to disable the I(routes) learned by BGP on that route table. True means disable.
                     provisioning_state:
                         description:
                             - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -361,7 +361,7 @@ options:
                             - Resource ID.
                     linked_resource_type:
                         description:
-                            - Resource type of the linked resource.
+                            - Resource type of the I(link)ed resource.
                     link:
                         description:
                             - Link to the external resource
@@ -396,9 +396,9 @@ options:
                     - If gateway links can be used in remote virtual networking to link to this virtual network.
             use_remote_gateways:
                 description:
-                    - "If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also
-                      true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This f
-                      lag cannot be set if virtual network already has a gateway."
+                    - "If remote gateways can be used on this virtual network. If the flag is set to true, and I(allow_gateway_transit) on remote peering is
+                      also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. T
+                      his flag cannot be set if virtual network already has a gateway."
             remote_virtual_network:
                 description:
                     - "The reference of the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to
@@ -442,7 +442,7 @@ options:
             - Indicates if DDoS protection is enabled for all the protected resources in a Virtual Network.
     enable_vm_protection:
         description:
-            - Indicates if Vm protection is enabled for all the subnets in a Virtual Network.
+            - Indicates if Vm protection is enabled for all the I(subnets) in a Virtual Network.
     etag:
         description:
             - Gets a unique read-only string that changes whenever the resource is updated.

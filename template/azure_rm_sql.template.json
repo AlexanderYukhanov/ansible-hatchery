@@ -6474,7 +6474,7 @@
       "UpdateComparisonRules": [
         {
           "Option": [
-            "location"
+            "parameters['location']"
           ],
           "ReturnField": [
             "location"

@@ -52,7 +52,7 @@ options:
             - 'none'
     next_hop_ip_address:
         description:
-            - The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance.
+            - The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is C(virtual_appliance).
     provisioning_state:
         description:
             - "The provisioning state of the resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."

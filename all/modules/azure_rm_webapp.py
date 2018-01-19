@@ -320,7 +320,7 @@ options:
                 suboptions:
                     triggers:
                         description:
-                            - Conditions that describe when to execute the auto-heal actions.
+                            - Conditions that describe when to execute the auto-heal I(actions).
                         suboptions:
                             requests:
                                 description:
@@ -388,7 +388,7 @@ options:
                                             - Executable to be run.
                                     parameters:
                                         description:
-                                            - Parameters for the executable.
+                                            - Parameters for the I(exe)cutable.
                             min_process_execution_time:
                                 description:
                                     - Minimum time the process must execute

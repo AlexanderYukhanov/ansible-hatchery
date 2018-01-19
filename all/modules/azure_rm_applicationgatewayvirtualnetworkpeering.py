@@ -48,9 +48,9 @@ options:
             - If gateway links can be used in remote virtual networking to link to this virtual network.
     use_remote_gateways:
         description:
-            - "If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, vi
-              rtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be se
-              t if virtual network already has a gateway."
+            - "If remote gateways can be used on this virtual network. If the flag is set to true, and I(allow_gateway_transit) on remote peering is also tru
+              e, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot
+              be set if virtual network already has a gateway."
     remote_virtual_network:
         description:
             - "The reference of the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register

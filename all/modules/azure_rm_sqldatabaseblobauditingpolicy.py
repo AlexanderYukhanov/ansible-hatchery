@@ -40,17 +40,17 @@ options:
         required: True
     state:
         description:
-            - Specifies the state of the policy. If state is C(enabled), storageEndpoint and storageAccountAccessKey are required.
+            - Specifies the state of the policy. If state is C(enabled), I(storage_endpoint) and I(storage_account_access_key) are required.
         required: True
         choices:
             - 'enabled'
             - 'disabled'
     storage_endpoint:
         description:
-            - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint is required."
+            - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If I(state) is C(enabled), storageEndpoint is required."
     storage_account_access_key:
         description:
-            - Specifies the identifier key of the auditing storage account. If state is Enabled, storageAccountAccessKey is required.
+            - Specifies the identifier key of the auditing storage account. If I(state) is C(enabled), storageAccountAccessKey is required.
     retention_days:
         description:
             - Specifies the number of days to keep in the audit logs.
@@ -63,7 +63,7 @@ options:
             - Specifies the blob storage subscription Id.
     is_storage_secondary_key_in_use:
         description:
-            - "Specifies whether storageAccountAccessKey value is the storage's secondary key."
+            - "Specifies whether I(storage_account_access_key) value is the storage's secondary key."
 
 extends_documentation_fragment:
     - azure

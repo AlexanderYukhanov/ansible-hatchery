@@ -69,8 +69,8 @@ options:
                        in the Microsoft Azure DNS system."
             fqdn:
                 description:
-                    - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the concatenation of the domainN
-                      ameLabel and the regionalized DNS zone."
+                    - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the concatenation of the I(domai
+                      n_name_label) and the regionalized DNS zone."
             reverse_fqdn:
                 description:
                     - "Gets or Sets the Reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseFqdn
