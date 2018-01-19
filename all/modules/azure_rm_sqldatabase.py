@@ -155,6 +155,10 @@ options:
             - Is this database is zone redundant? It means the replicas of this database will be spread across multiple availability zones.
         type: bool
         default: False
+    force_update:
+      description:
+          - Needs to be set to True in order to SQL Database to be updated.
+      type: bool
 
 extends_documentation_fragment:
     - azure
@@ -310,6 +314,9 @@ class AzureRMDatabases(AzureRMModuleBase):
                 type='bool',
                 default=False
             ),
+            force_update=dict(
+                type='bool'
+            ),
             state=dict(
                 type='str',
                 default='present',
@@ -397,7 +404,18 @@ class AzureRMDatabases(AzureRMModuleBase):
                 self.to_do = Actions.Delete
             elif self.state == 'present':
                 self.log("Need to check if SQL Database instance has to be deleted or may be updated")
-                self.to_do = Actions.Update
+                if (self.location is not None) and (self.location != old_response['location']):
+                    self.to_do = Actions.Update
+                if ('read_scale' in self.parameters) and (self.parameters['read_scale'] != old_response['read_scale']):
+                    self.to_do = Actions.Update
+                if (self.requested_service_objective_id is not None) and (self.requested_service_objective_id != old_response['requested_service_objective_id']):
+                    self.to_do = Actions.Update
+                if (self.requested_service_objective_name is not None) and (self.requested_service_objective_name != old_response['requested_service_objective_name']):
+                    self.to_do = Actions.Update
+                if (self.max_size_bytes is not None) and (self.max_size_bytes != old_response['max_size_bytes']):
+                    self.to_do = Actions.Update
+                if (self.edition is not None) and (self.edition != old_response['edition']):
+                    self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
             self.log("Need to Create / Update the SQL Database instance")

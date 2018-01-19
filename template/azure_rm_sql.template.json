@@ -6469,9 +6469,58 @@
       "ResourceNameFieldInRequest": null,
       "ResourceNameFieldInResponse": null,
       "NeedsDeleteBeforeUpdate": false,
-      "NeedsForceUpdate": false,
+      "NeedsForceUpdate": true,
       "CannotTestUpdate": true,
-      "UpdateComparisonRules": null,
+      "UpdateComparisonRules": [
+        {
+          "Option": [
+            "location"
+          ],
+          "ReturnField": [
+            "location"
+          ]
+        },
+        {
+          "Option": [
+            "parameters['read_scale']"
+          ],
+          "ReturnField": [
+            "read_scale"
+          ]
+        },
+        {
+          "Option": [
+            "requested_service_objective_id"
+          ],
+          "ReturnField": [
+            "requested_service_objective_id"
+          ]
+        },
+        {
+          "Option": [
+            "requested_service_objective_name"
+          ],
+          "ReturnField": [
+            "requested_service_objective_name"
+          ]
+        },
+        {
+          "Option": [
+            "max_size_bytes"
+          ],
+          "ReturnField": [
+            "max_size_bytes"
+          ]
+        },
+        {
+          "Option": [
+            "edition"
+          ],
+          "ReturnField": [
+            "edition"
+          ]
+        }
+      ],
       "TestReplaceStringFrom": null,
       "TestReplaceStringTo": null
     },
