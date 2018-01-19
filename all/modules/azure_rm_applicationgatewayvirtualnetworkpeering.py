@@ -69,7 +69,7 @@ options:
                 type: list
     peering_state:
         description:
-            - The status of the virtual network peering. Possible values are C(initiated), C(connected), and C(disconnected).
+            - "The status of the virtual network peering. Possible values are 'C(initiated)', 'C(connected)', and 'C(disconnected)'."
         choices:
             - 'initiated'
             - 'connected'

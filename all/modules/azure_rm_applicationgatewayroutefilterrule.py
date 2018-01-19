@@ -39,7 +39,7 @@ options:
             - Resource ID.
     access:
         description:
-            - "The access type of the rule. Valid values are: C(allow), C(deny)."
+            - "The access type of the rule. Valid values are: 'C(allow)', 'C(deny)'."
         required: True
         choices:
             - 'allow'

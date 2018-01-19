@@ -65,7 +65,7 @@ options:
                     - Set to <code>true</code> to update existing hostname.
             host_type:
                 description:
-                    - Indicates whether the hostname is a standard or repository hostname.
+                    - Indicates whether the hostname is a C(standard) or C(repository) hostname.
                 choices:
                     - 'standard'
                     - 'repository'
@@ -272,23 +272,23 @@ options:
                                     - Hostname of a slot to which the traffic will be redirected if decided to. E.g. myapp-stage.azurewebsites.net.
                             reroute_percentage:
                                 description:
-                                    - Percentage of the traffic which will be redirected to <code>ActionHostName</code>.
+                                    - Percentage of the traffic which will be redirected to <code>I(action_host_name)</code>.
                             change_step:
                                 description:
-                                    - In auto ramp up scenario this is the step to to add/remove from <code>ReroutePercentage</code> until it reaches
-                                    - "<code>MinReroutePercentage</code> or <code>MaxReroutePercentage</code>. Site metrics are checked every N minutes speci
-                                      ficed in <code>ChangeIntervalInMinutes</code>."
-                                    - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified in <code>ChangeDeci
-                                      sionCallbackUrl</code>."
+                                    - In auto ramp up scenario this is the step to to add/remove from <code>I(reroute_percentage)</code> until it reaches
+                                    - "<code>I(min_reroute_percentage)</code> or <code>I(max_reroute_percentage)</code>. Site metrics are checked every N min
+                                      utes specificed in <code>I(change_interval_in_minutes)</code>."
+                                    - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified in <code>I(change_d
+                                      ecision_callback_url)</code>."
                             change_interval_in_minutes:
                                 description:
-                                    - Specifies interval in mimuntes to reevaluate ReroutePercentage.
+                                    - Specifies interval in mimuntes to reevaluate I(reroute_percentage).
                             min_reroute_percentage:
                                 description:
-                                    - Specifies lower boundary above which ReroutePercentage will stay.
+                                    - Specifies lower boundary above which I(reroute_percentage) will stay.
                             max_reroute_percentage:
                                 description:
-                                    - Specifies upper boundary below which ReroutePercentage will stay.
+                                    - Specifies upper boundary below which I(reroute_percentage) will stay.
                             change_decision_callback_url:
                                 description:
                                     - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback si
@@ -345,7 +345,7 @@ options:
                                             - HTTP status code.
                                     sub_status:
                                         description:
-                                            - Request Sub Status.
+                                            - Request Sub I(status).
                                     win32_status:
                                         description:
                                             - Win32 error code.
@@ -388,7 +388,7 @@ options:
                                             - Executable to be run.
                                     parameters:
                                         description:
-                                            - Parameters for the I(exe)cutable.
+                                            - Parameters for the executable.
                             min_process_execution_time:
                                 description:
                                     - Minimum time the process must execute
@@ -560,7 +560,7 @@ options:
             ignore_conflicting_host_names:
                 description:
                     - If true, custom hostname conflicts will be ignored when recovering to a target web app.
-                    - This setting is only necessary when RecoverConfiguration is enabled.
+                    - This setting is only necessary when I(recover_configuration) is enabled.
     https_only:
         description:
             - "HttpsOnly: configures a web site to accept only https requests. Issues redirect for"

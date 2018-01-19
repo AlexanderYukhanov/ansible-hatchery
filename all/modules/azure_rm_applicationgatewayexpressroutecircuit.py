@@ -45,13 +45,13 @@ options:
                     - The name of the SKU.
             tier:
                 description:
-                    - The tier of the SKU. Possible values are C(standard) and C(premium).
+                    - "The tier of the SKU. Possible values are 'C(standard)' and 'C(premium)'."
                 choices:
                     - 'standard'
                     - 'premium'
             family:
                 description:
-                    - "The family of the SKU. Possible values are: C(unlimited_data) and C(metered_data)."
+                    - "The family of the SKU. Possible values are: 'C(unlimited_data)' and 'C(metered_data)'."
                 choices:
                     - 'unlimited_data'
                     - 'metered_data'
@@ -60,11 +60,11 @@ options:
             - Allow classic operations
     circuit_provisioning_state:
         description:
-            - The CircuitC(provisioning)State state of the resource.
+            - The CircuitProvisioningState state of the resource.
     service_provider_provisioning_state:
         description:
-            - "The ServiceProviderC(provisioning)State state of the resource. Possible values are C(not_provisioned), C(provisioning), C(provisioned), and C(
-              deprovisioning)."
+            - "The ServiceProviderProvisioningState state of the resource. Possible values are 'C(not_provisioned)', 'C(provisioning)', 'C(provisioned)', and
+               'C(deprovisioning)'."
         choices:
             - 'not_provisioned'
             - 'provisioning'
@@ -83,7 +83,7 @@ options:
                     - The authorization key.
             authorization_use_status:
                 description:
-                    - "AuthorizationUseStatus. Possible values are: C(available) and C(in_use)."
+                    - "AuthorizationUseStatus. Possible values are: 'C(available)' and 'C(in_use)'."
                 choices:
                     - 'available'
                     - 'in_use'
@@ -103,14 +103,14 @@ options:
                     - Resource ID.
             peering_type:
                 description:
-                    - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peering)."
+                    - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_peering)'."
                 choices:
                     - 'azure_public_peering'
                     - 'azure_private_peering'
                     - 'microsoft_peering'
             state:
                 description:
-                    - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                    - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                 choices:
                     - 'disabled'
                     - 'enabled'
@@ -152,8 +152,8 @@ options:
                         type: list
                     advertised_public_prefixes_state:
                         description:
-                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(configured), and
-                               C(validation_needed)."
+                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(configured)
+                              ', and 'C(validation_needed)'."
                         choices:
                             - 'not_configured'
                             - 'configuring'
@@ -213,7 +213,7 @@ options:
                                     - Resource ID.
                             access:
                                 description:
-                                    - "The access type of the rule. Valid values are: C(allow), C(deny)."
+                                    - "The access type of the rule. Valid values are: 'C(allow)', 'C(deny)'."
                                 required: True
                                 choices:
                                     - 'allow'
@@ -243,14 +243,15 @@ options:
                                     - Resource ID.
                             peering_type:
                                 description:
-                                    - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peering)."
+                                    - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_peering)
+                                      '."
                                 choices:
                                     - 'azure_public_peering'
                                     - 'azure_private_peering'
                                     - 'microsoft_peering'
                             state:
                                 description:
-                                    - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                                    - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                                 choices:
                                     - 'disabled'
                                     - 'enabled'
@@ -292,8 +293,8 @@ options:
                                         type: list
                                     advertised_public_prefixes_state:
                                         description:
-                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(
-                                              configured), and C(validation_needed)."
+                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)'
+                                              , 'C(configured)', and 'C(validation_needed)'."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'
@@ -369,7 +370,7 @@ options:
                                             - The reference of the RouteFilter resource.
                                     state:
                                         description:
-                                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                                            - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                                         choices:
                                             - 'disabled'
                                             - 'enabled'
@@ -400,8 +401,8 @@ options:
                                 type: list
                             advertised_public_prefixes_state:
                                 description:
-                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(configur
-                                      ed), and C(validation_needed)."
+                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(con
+                                      figured)', and 'C(validation_needed)'."
                                 choices:
                                     - 'not_configured'
                                     - 'configuring'
@@ -436,7 +437,7 @@ options:
                                             - Resource ID.
                                     access:
                                         description:
-                                            - "The access type of the rule. Valid values are: C(allow), C(deny)."
+                                            - "The access type of the rule. Valid values are: 'C(allow)', 'C(deny)'."
                                         required: True
                                         choices:
                                             - 'allow'
@@ -466,15 +467,15 @@ options:
                                             - Resource ID.
                                     peering_type:
                                         description:
-                                            - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peeri
-                                              ng)."
+                                            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_
+                                              peering)'."
                                         choices:
                                             - 'azure_public_peering'
                                             - 'azure_private_peering'
                                             - 'microsoft_peering'
                                     state:
                                         description:
-                                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                                            - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                                         choices:
                                             - 'disabled'
                                             - 'enabled'
@@ -529,7 +530,7 @@ options:
                                             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
                     state:
                         description:
-                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                            - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                         choices:
                             - 'disabled'
                             - 'enabled'
@@ -557,7 +558,7 @@ options:
                     - The BandwidthInMbps.
     provisioning_state:
         description:
-            - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+            - "Gets the C(provisioning) state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
     gateway_manager_etag:
         description:
             - The GatewayManager Etag.

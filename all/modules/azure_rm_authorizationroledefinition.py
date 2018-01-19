@@ -54,7 +54,7 @@ options:
                 type: list
     properties_assignable_scopes:
         description:
-            - Role definition assignable I(scope)s.
+            - Role definition assignable scopes.
         type: list
 
 extends_documentation_fragment:

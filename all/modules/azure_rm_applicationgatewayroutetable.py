@@ -49,8 +49,8 @@ options:
                     - The destination CIDR to which the route applies.
             next_hop_type:
                 description:
-                    - "The type of Azure hop the packet should be sent to. Possible values are: C(virtual_network_gateway), C(vnet_local), C(internet), C(vir
-                      tual_appliance), and C(none)."
+                    - "The type of Azure hop the packet should be sent to. Possible values are: 'C(virtual_network_gateway)', 'C(vnet_local)', 'C(internet)',
+                       'C(virtual_appliance)', and 'C(none)'."
                 required: True
                 choices:
                     - 'virtual_network_gateway'

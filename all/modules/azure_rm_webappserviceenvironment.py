@@ -88,7 +88,7 @@ options:
                     - Worker size ID for referencing this worker pool.
             compute_mode:
                 description:
-                    - C(shared) or dedicated app hosting.
+                    - C(shared) or C(dedicated) app hosting.
                 choices:
                     - 'shared'
                     - 'dedicated'

@@ -60,7 +60,7 @@ options:
                             - Resource ID.
                     private_ip_allocation_method:
                         description:
-                            - "The private IP allocation method. Possible values are: C(static) and C(dynamic)."
+                            - "The private IP allocation method. Possible values are: 'C(static)' and 'C(dynamic)'."
                         choices:
                             - 'static'
                             - 'dynamic'
@@ -86,13 +86,13 @@ options:
                             - A unique read-only string that changes whenever the resource is updated.
             gateway_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(vpn) and C(express_route)."
+                    - "The type of this virtual network gateway. Possible values are: 'C(vpn)' and 'C(express_route)'."
                 choices:
                     - 'vpn'
                     - 'express_route'
             vpn_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(policy_based) and C(route_based)."
+                    - "The type of this virtual network gateway. Possible values are: 'C(policy_based)' and 'C(route_based)'."
                 choices:
                     - 'policy_based'
                     - 'route_based'
@@ -141,7 +141,7 @@ options:
                             - The capacity.
             vpn_client_configuration:
                 description:
-                    - The reference of the C(vpn)ClientConfiguration resource which represents the P2S C(vpn)Client configurations.
+                    - The reference of the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
                 suboptions:
                     vpn_client_address_pool:
                         description:
@@ -235,7 +235,7 @@ options:
                             - Resource ID.
                     private_ip_allocation_method:
                         description:
-                            - "The private IP allocation method. Possible values are: C(static) and C(dynamic)."
+                            - "The private IP allocation method. Possible values are: 'C(static)' and 'C(dynamic)'."
                         choices:
                             - 'static'
                             - 'dynamic'
@@ -261,13 +261,13 @@ options:
                             - A unique read-only string that changes whenever the resource is updated.
             gateway_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(vpn) and C(express_route)."
+                    - "The type of this virtual network gateway. Possible values are: 'C(vpn)' and 'C(express_route)'."
                 choices:
                     - 'vpn'
                     - 'express_route'
             vpn_type:
                 description:
-                    - "The type of this virtual network gateway. Possible values are: C(policy_based) and C(route_based)."
+                    - "The type of this virtual network gateway. Possible values are: 'C(policy_based)' and 'C(route_based)'."
                 choices:
                     - 'policy_based'
                     - 'route_based'
@@ -316,7 +316,7 @@ options:
                             - The capacity.
             vpn_client_configuration:
                 description:
-                    - The reference of the C(vpn)ClientConfiguration resource which represents the P2S C(vpn)Client configurations.
+                    - The reference of the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
                 suboptions:
                     vpn_client_address_pool:
                         description:
@@ -432,7 +432,7 @@ options:
                     - A unique read-only string that changes whenever the resource is updated.
     connection_type:
         description:
-            - "Gateway connection type. Possible values are: 'Ipsec',C(vnet2_vnet),C(express_route), and 'C(vpn_client)."
+            - "Gateway connection type. Possible values are: 'C(ipsec)','C(vnet2_vnet)','C(express_route)', and 'C(vpn_client)."
         required: True
         choices:
             - 'ipsec'
@@ -444,7 +444,7 @@ options:
             - The routing weight.
     shared_key:
         description:
-            - The IPSec shared key.
+            - The C(ipsec) shared key.
     peer:
         description:
             - The reference to peerings resource.
@@ -460,7 +460,7 @@ options:
             - Enable policy-based traffic selectors.
     ipsec_policies:
         description:
-            - The IPSec Policies to be considered by this connection.
+            - The C(ipsec) Policies to be considered by this connection.
         type: list
         suboptions:
             sa_life_time_seconds:

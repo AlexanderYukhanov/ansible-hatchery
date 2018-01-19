@@ -171,7 +171,7 @@ options:
                         required: True
             type:
                 description:
-                    - Specifies if the IP is exposed to the public internet.
+                    - Specifies if the I(ip) is exposed to the public internet.
                 required: True
             ip:
                 description:

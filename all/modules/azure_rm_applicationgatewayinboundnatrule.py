@@ -46,7 +46,7 @@ options:
                     - Resource ID.
     protocol:
         description:
-            - "Possible values include: C(udp), C(tcp), C(all)"
+            - "Possible values include: 'C(udp)', 'C(tcp)', 'C(all)'"
         choices:
             - 'udp'
             - 'tcp'
@@ -59,8 +59,8 @@ options:
             - The port used for the internal endpoint. Acceptable values range from 1 to 65535.
     idle_timeout_in_minutes:
         description:
-            - "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only u
-              sed when the I(protocol) is set to TCP."
+            - "The timeout for the C(tcp) idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is onl
+              y used when the I(protocol) is set to C(tcp)."
     enable_floating_ip:
         description:
             - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting i

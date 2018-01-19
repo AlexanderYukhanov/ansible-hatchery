@@ -48,13 +48,13 @@ options:
                     - 'standard'
     public_ip_allocation_method:
         description:
-            - "The public IP allocation method. Possible values are: C(static) and C(dynamic)."
+            - "The public IP allocation method. Possible values are: 'C(static)' and 'C(dynamic)'."
         choices:
             - 'static'
             - 'dynamic'
     public_ip_address_version:
         description:
-            - "The public IP address version. Possible values are: C(ipv4) and C(ipv6)."
+            - "The public IP address version. Possible values are: 'C(ipv4)' and 'C(ipv6)'."
         choices:
             - 'ipv4'
             - 'ipv6'
@@ -73,8 +73,8 @@ options:
                       n_name_label) and the regionalized DNS zone."
             reverse_fqdn:
                 description:
-                    - "Gets or Sets the Reverse FQDN. A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseFqdn
-                       is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN. "
+                    - "Gets or Sets the Reverse I(fqdn). A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseF
+                      qdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse I(fqdn). "
     ip_address:
         description:
             - The IP address associated with the public IP address resource.

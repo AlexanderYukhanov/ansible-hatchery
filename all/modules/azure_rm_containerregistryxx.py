@@ -52,7 +52,7 @@ options:
             - The value that indicates whether the admin user is enabled.
     storage_account:
         description:
-            - The properties of the storage account for the container registry. Only applicable to Classic SKU.
+            - The properties of the storage account for the container registry. Only applicable to Classic I(sku).
         suboptions:
             id:
                 description:

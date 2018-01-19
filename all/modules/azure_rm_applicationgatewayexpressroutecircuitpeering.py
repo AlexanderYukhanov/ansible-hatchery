@@ -39,14 +39,14 @@ options:
             - Resource ID.
     peering_type:
         description:
-            - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peering)."
+            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_peering)'."
         choices:
             - 'azure_public_peering'
             - 'azure_private_peering'
             - 'microsoft_peering'
     state:
         description:
-            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+            - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
         choices:
             - 'disabled'
             - 'enabled'
@@ -88,8 +88,8 @@ options:
                 type: list
             advertised_public_prefixes_state:
                 description:
-                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(configured), and C(valid
-                      ation_needed)."
+                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(configured)', and '
+                      C(validation_needed)'."
                 choices:
                     - 'not_configured'
                     - 'configuring'
@@ -149,7 +149,7 @@ options:
                             - Resource ID.
                     access:
                         description:
-                            - "The access type of the rule. Valid values are: C(allow), C(deny)."
+                            - "The access type of the rule. Valid values are: 'C(allow)', 'C(deny)'."
                         required: True
                         choices:
                             - 'allow'
@@ -179,14 +179,14 @@ options:
                             - Resource ID.
                     peering_type:
                         description:
-                            - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peering)."
+                            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_peering)'."
                         choices:
                             - 'azure_public_peering'
                             - 'azure_private_peering'
                             - 'microsoft_peering'
                     state:
                         description:
-                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                            - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                         choices:
                             - 'disabled'
                             - 'enabled'
@@ -228,8 +228,8 @@ options:
                                 type: list
                             advertised_public_prefixes_state:
                                 description:
-                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(configur
-                                      ed), and C(validation_needed)."
+                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(con
+                                      figured)', and 'C(validation_needed)'."
                                 choices:
                                     - 'not_configured'
                                     - 'configuring'
@@ -289,7 +289,7 @@ options:
                                             - Resource ID.
                                     access:
                                         description:
-                                            - "The access type of the rule. Valid values are: C(allow), C(deny)."
+                                            - "The access type of the rule. Valid values are: 'C(allow)', 'C(deny)'."
                                         required: True
                                         choices:
                                             - 'allow'
@@ -319,15 +319,15 @@ options:
                                             - Resource ID.
                                     peering_type:
                                         description:
-                                            - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peeri
-                                              ng)."
+                                            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_
+                                              peering)'."
                                         choices:
                                             - 'azure_public_peering'
                                             - 'azure_private_peering'
                                             - 'microsoft_peering'
                                     state:
                                         description:
-                                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                                            - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                                         choices:
                                             - 'disabled'
                                             - 'enabled'
@@ -404,8 +404,8 @@ options:
                                         type: list
                                     advertised_public_prefixes_state:
                                         description:
-                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(
-                                              configured), and C(validation_needed)."
+                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)'
+                                              , 'C(configured)', and 'C(validation_needed)'."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'
@@ -440,7 +440,7 @@ options:
                                         type: list
                             state:
                                 description:
-                                    - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                                    - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                                 choices:
                                     - 'disabled'
                                     - 'enabled'
@@ -471,8 +471,8 @@ options:
                         type: list
                     advertised_public_prefixes_state:
                         description:
-                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(configured), and
-                               C(validation_needed)."
+                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(configured)
+                              ', and 'C(validation_needed)'."
                         choices:
                             - 'not_configured'
                             - 'configuring'
@@ -507,7 +507,7 @@ options:
                                     - Resource ID.
                             access:
                                 description:
-                                    - "The access type of the rule. Valid values are: C(allow), C(deny)."
+                                    - "The access type of the rule. Valid values are: 'C(allow)', 'C(deny)'."
                                 required: True
                                 choices:
                                     - 'allow'
@@ -537,14 +537,15 @@ options:
                                     - Resource ID.
                             peering_type:
                                 description:
-                                    - "The PeeringType. Possible values are: C(azure_public_peering), C(azure_private_peering), and C(microsoft_peering)."
+                                    - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_peering)
+                                      '."
                                 choices:
                                     - 'azure_public_peering'
                                     - 'azure_private_peering'
                                     - 'microsoft_peering'
                             state:
                                 description:
-                                    - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                                    - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                                 choices:
                                     - 'disabled'
                                     - 'enabled'
@@ -586,8 +587,8 @@ options:
                                         type: list
                                     advertised_public_prefixes_state:
                                         description:
-                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are C(not_configured), C(configuring), C(
-                                              configured), and C(validation_needed)."
+                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)'
+                                              , 'C(configured)', and 'C(validation_needed)'."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'
@@ -663,7 +664,7 @@ options:
                                             - The reference of the RouteFilter resource.
                                     state:
                                         description:
-                                            - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                                            - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                                         choices:
                                             - 'disabled'
                                             - 'enabled'
@@ -672,7 +673,7 @@ options:
                                     - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
             state:
                 description:
-                    - "The state of peering. Possible values are: C(disabled) and C(enabled)."
+                    - "The state of peering. Possible values are: 'C(disabled)' and 'C(enabled)'."
                 choices:
                     - 'disabled'
                     - 'enabled'

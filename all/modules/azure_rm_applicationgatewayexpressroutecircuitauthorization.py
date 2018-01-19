@@ -42,7 +42,7 @@ options:
             - The authorization key.
     authorization_use_status:
         description:
-            - "AuthorizationUseStatus. Possible values are: C(available) and C(in_use)."
+            - "AuthorizationUseStatus. Possible values are: 'C(available)' and 'C(in_use)'."
         choices:
             - 'available'
             - 'in_use'

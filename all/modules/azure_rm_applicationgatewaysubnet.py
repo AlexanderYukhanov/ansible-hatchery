@@ -57,13 +57,14 @@ options:
                 suboptions:
                     id:
                         description:
-                            - Resource ID.
+                            - C(*)ResourceC(*) C(*)IDC(*).
                     description:
                         description:
-                            - A description for this rule. Restricted to 140 chars.
+                            - C(*)AC(*) C(*)descriptionC(*) C(*)forC(*) C(*)thisC(*) C(*)ruleC(*). C(*)RestrictedC(*) C(*)toC(*) C(*)140C(*) C(*)charsC(*).
                     protocol:
                         description:
-                            - Network protocol this rule applies to. Possible values are C(tcp), C(udp), and C(C(*)).
+                            - "C(*)NetworkC(*) C(*)protocolC(*) C(*)thisC(*) C(*)ruleC(*) C(*)appliesC(*) C(*)toC(*). C(*)PossibleC(*) C(*)valuesC(*) C(*)are
+                              C(*) 'C(*)CC(*)(C(*)tcpC(*))', 'C(*)CC(*)(C(*)udpC(*))', C(*)andC(*) '*'."
                         required: True
                         choices:
                             - 'tcp'
@@ -71,22 +72,28 @@ options:
                             - '*'
                     source_port_range:
                         description:
-                            - The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
+                            - "C(*)TheC(*) C(*)sourceC(*) C(*)portC(*) C(*)orC(*) C(*)rangeC(*). C(*)IntegerC(*) C(*)orC(*) C(*)rangeC(*) C(*)betweenC(*) C(*
+                              )0C(*) C(*)andC(*) C(*)65535C(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)matchC(*
+                              ) C(*)allC(*) C(*)portsC(*)."
                     destination_port_range:
                         description:
-                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
+                            - "C(*)TheC(*) C(*)destinationC(*) C(*)portC(*) C(*)orC(*) C(*)rangeC(*). C(*)IntegerC(*) C(*)orC(*) C(*)rangeC(*) C(*)betweenC(*
+                              ) C(*)0C(*) C(*)andC(*) C(*)65535C(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)mat
+                              chC(*) C(*)allC(*) C(*)portsC(*)."
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
-                              'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates fr
-                              om. "
+                            - "C(*)TheC(*) C(*)CIDRC(*) C(*)orC(*) C(*)sourceC(*) C(*)IPC(*) C(*)rangeC(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)
+                              beC(*) C(*)usedC(*) C(*)toC(*) C(*)matchC(*) C(*)allC(*) C(*)sourceC(*) C(*)IPsC(*). C(*)DefaultC(*) C(*)tagsC(*) C(*)suchC(*)
+                               C(*)asC(*) 'C(*)VirtualNetworkC(*)', 'C(*)AzureLoadBalancerC(*)' C(*)andC(*) 'C(*)InternetC(*)' C(*)canC(*) C(*)alsoC(*) C(*)
+                              beC(*) C(*)usedC(*). C(*)IfC(*) C(*)thisC(*) C(*)isC(*) C(*)anC(*) C(*)ingressC(*) C(*)ruleC(*), C(*)specifiesC(*) C(*)whereC(
+                              *) C(*)networkC(*) C(*)trafficC(*) C(*)originatesC(*) C(*)fromC(*). "
                     source_address_prefixes:
                         description:
-                            - The CIDR or source IP ranges.
+                            - C(*)TheC(*) C(*)CIDRC(*) C(*)orC(*) C(*)sourceC(*) C(*)IPC(*) C(*)rangesC(*).
                         type: list
                     source_application_security_groups:
                         description:
-                            - The application security group specified as source.
+                            - C(*)TheC(*) C(*)applicationC(*) C(*)securityC(*) C(*)groupC(*) C(*)specifiedC(*) C(*)asC(*) C(*)sourceC(*).
                         type: list
                         suboptions:
                             id:
@@ -97,15 +104,18 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all source IPs. Defaul
-                              t tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "C(*)TheC(*) C(*)destinationC(*) C(*)addressC(*) C(*)prefixC(*). C(*)CIDRC(*) C(*)orC(*) C(*)destinationC(*) C(*)IPC(*) C(*)ran
+                              geC(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)matchC(*) C(*)allC(*) C(*)sourceC(
+                              *) C(*)IPsC(*). C(*)DefaultC(*) C(*)tagsC(*) C(*)suchC(*) C(*)asC(*) 'C(*)VirtualNetworkC(*)', 'C(*)AzureLoadBalancerC(*)' C(*
+                              )andC(*) 'C(*)InternetC(*)' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*)."
                     destination_address_prefixes:
                         description:
-                            - The destination address prefixes. CIDR or destination IP ranges.
+                            - "C(*)TheC(*) C(*)destinationC(*) C(*)addressC(*) C(*)prefixesC(*). C(*)CIDRC(*) C(*)orC(*) C(*)destinationC(*) C(*)IPC(*) C(*)r
+                              angesC(*)."
                         type: list
                     destination_application_security_groups:
                         description:
-                            - The application security group specified as destination.
+                            - C(*)TheC(*) C(*)applicationC(*) C(*)securityC(*) C(*)groupC(*) C(*)specifiedC(*) C(*)asC(*) C(*)destinationC(*).
                         type: list
                         suboptions:
                             id:
@@ -116,40 +126,48 @@ options:
                                     - Resource location.
                     source_port_ranges:
                         description:
-                            - The source port ranges.
+                            - C(*)TheC(*) C(*)sourceC(*) C(*)portC(*) C(*)rangesC(*).
                         type: list
                     destination_port_ranges:
                         description:
-                            - The destination port ranges.
+                            - C(*)TheC(*) C(*)destinationC(*) C(*)portC(*) C(*)rangesC(*).
                         type: list
                     access:
                         description:
-                            - "The network traffic is allowed or denied. Possible values are: C(allow) and C(deny)."
+                            - "C(*)TheC(*) C(*)networkC(*) C(*)trafficC(*) C(*)isC(*) C(*)allowedC(*) C(*)orC(*) C(*)deniedC(*). C(*)PossibleC(*) C(*)valuesC
+                              (*) C(*)areC(*): 'C(*)AllowC(*)' C(*)andC(*) 'C(*)DenyC(*)'."
                         required: True
                         choices:
                             - 'allow'
                             - 'deny'
                     priority:
                         description:
-                            - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the colle
-                              ction. The lower the priority number, the higher the priority of the rule."
+                            - "C(*)TheC(*) C(*)priorityC(*) C(*)ofC(*) C(*)theC(*) C(*)ruleC(*). C(*)TheC(*) C(*)valueC(*) C(*)canC(*) C(*)beC(*) C(*)between
+                              C(*) C(*)100C(*) C(*)andC(*) C(*)4096C(*). C(*)TheC(*) C(*)priorityC(*) C(*)numberC(*) C(*)mustC(*) C(*)beC(*) C(*)uniqueC(*)
+                              C(*)forC(*) C(*)eachC(*) C(*)ruleC(*) C(*)inC(*) C(*)theC(*) C(*)collectionC(*). C(*)TheC(*) C(*)lowerC(*) C(*)theC(*) C(*)pri
+                              orityC(*) C(*)numberC(*), C(*)theC(*) C(*)higherC(*) C(*)theC(*) C(*)priorityC(*) C(*)ofC(*) C(*)theC(*) C(*)ruleC(*)."
                     direction:
                         description:
-                            - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                               are: C(inbound) and C(outbound)."
+                            - "C(*)TheC(*) C(*)directionC(*) C(*)ofC(*) C(*)theC(*) C(*)ruleC(*). C(*)TheC(*) C(*)directionC(*) C(*)specifiesC(*) C(*)ifC(*)
+                              C(*)ruleC(*) C(*)willC(*) C(*)beC(*) C(*)evaluatedC(*) C(*)onC(*) C(*)incomingC(*) C(*)orC(*) C(*)outcomingC(*) C(*)trafficC(*
+                              ). C(*)PossibleC(*) C(*)valuesC(*) C(*)areC(*): 'C(*)InboundC(*)' C(*)andC(*) 'C(*)OutboundC(*)'."
                         required: True
                         choices:
                             - 'inbound'
                             - 'outbound'
                     provisioning_state:
                         description:
-                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - "C(*)TheC(*) C(*)provisioningC(*) C(*)stateC(*) C(*)ofC(*) C(*)theC(*) C(*)publicC(*) C(*)IPC(*) C(*)resourceC(*). C(*)Possible
+                              C(*) C(*)valuesC(*) C(*)areC(*): 'C(*)UpdatingC(*)', 'C(*)DeletingC(*)', C(*)andC(*) 'C(*)FailedC(*)'."
                     name:
                         description:
-                            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
+                            - "C(*)TheC(*) C(*)nameC(*) C(*)ofC(*) C(*)theC(*) C(*)resourceC(*) C(*)thatC(*) C(*)isC(*) C(*)uniqueC(*) C(*)withinC(*) C(*)aC(
+                              *) C(*)resourceC(*) C(*)groupC(*). C(*)ThisC(*) C(*)nameC(*) C(*)canC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)IC(*)(C(*)acce
+                              ssC(*)) C(*)theC(*) C(*)resourceC(*)."
                     etag:
                         description:
-                            - A unique read-only string that changes whenever the resource is updated.
+                            - "C(*)AC(*) C(*)uniqueC(*) C(*)readC(*)-C(*)onlyC(*) C(*)stringC(*) C(*)thatC(*) C(*)changesC(*) C(*)wheneverC(*) C(*)theC(*) C(
+                              *)resourceC(*) C(*)isC(*) C(*)updatedC(*)."
             default_security_rules:
                 description:
                     - The default security rules of network security group.
@@ -157,13 +175,14 @@ options:
                 suboptions:
                     id:
                         description:
-                            - Resource ID.
+                            - C(*)ResourceC(*) C(*)IDC(*).
                     description:
                         description:
-                            - A description for this rule. Restricted to 140 chars.
+                            - C(*)AC(*) C(*)descriptionC(*) C(*)forC(*) C(*)thisC(*) C(*)ruleC(*). C(*)RestrictedC(*) C(*)toC(*) C(*)140C(*) C(*)charsC(*).
                     protocol:
                         description:
-                            - Network protocol this rule applies to. Possible values are C(tcp), C(udp), and C(C(*)).
+                            - "C(*)NetworkC(*) C(*)protocolC(*) C(*)thisC(*) C(*)ruleC(*) C(*)appliesC(*) C(*)toC(*). C(*)PossibleC(*) C(*)valuesC(*) C(*)are
+                              C(*) 'C(*)CC(*)(C(*)tcpC(*))', 'C(*)CC(*)(C(*)udpC(*))', C(*)andC(*) '*'."
                         required: True
                         choices:
                             - 'tcp'
@@ -171,22 +190,28 @@ options:
                             - '*'
                     source_port_range:
                         description:
-                            - The source port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
+                            - "C(*)TheC(*) C(*)sourceC(*) C(*)portC(*) C(*)orC(*) C(*)rangeC(*). C(*)IntegerC(*) C(*)orC(*) C(*)rangeC(*) C(*)betweenC(*) C(*
+                              )0C(*) C(*)andC(*) C(*)65535C(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)matchC(*
+                              ) C(*)allC(*) C(*)portsC(*)."
                     destination_port_range:
                         description:
-                            - The destination port or range. Integer or range between 0 and 65535. Asterix C(C(*)) can also be used to match all ports.
+                            - "C(*)TheC(*) C(*)destinationC(*) C(*)portC(*) C(*)orC(*) C(*)rangeC(*). C(*)IntegerC(*) C(*)orC(*) C(*)rangeC(*) C(*)betweenC(*
+                              ) C(*)0C(*) C(*)andC(*) C(*)65535C(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)mat
+                              chC(*) C(*)allC(*) C(*)portsC(*)."
                     source_address_prefix:
                         description:
-                            - "The CIDR or source IP range. Asterix C(C(*)) can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
-                              'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates fr
-                              om. "
+                            - "C(*)TheC(*) C(*)CIDRC(*) C(*)orC(*) C(*)sourceC(*) C(*)IPC(*) C(*)rangeC(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)
+                              beC(*) C(*)usedC(*) C(*)toC(*) C(*)matchC(*) C(*)allC(*) C(*)sourceC(*) C(*)IPsC(*). C(*)DefaultC(*) C(*)tagsC(*) C(*)suchC(*)
+                               C(*)asC(*) 'C(*)VirtualNetworkC(*)', 'C(*)AzureLoadBalancerC(*)' C(*)andC(*) 'C(*)InternetC(*)' C(*)canC(*) C(*)alsoC(*) C(*)
+                              beC(*) C(*)usedC(*). C(*)IfC(*) C(*)thisC(*) C(*)isC(*) C(*)anC(*) C(*)ingressC(*) C(*)ruleC(*), C(*)specifiesC(*) C(*)whereC(
+                              *) C(*)networkC(*) C(*)trafficC(*) C(*)originatesC(*) C(*)fromC(*). "
                     source_address_prefixes:
                         description:
-                            - The CIDR or source IP ranges.
+                            - C(*)TheC(*) C(*)CIDRC(*) C(*)orC(*) C(*)sourceC(*) C(*)IPC(*) C(*)rangesC(*).
                         type: list
                     source_application_security_groups:
                         description:
-                            - The application security group specified as source.
+                            - C(*)TheC(*) C(*)applicationC(*) C(*)securityC(*) C(*)groupC(*) C(*)specifiedC(*) C(*)asC(*) C(*)sourceC(*).
                         type: list
                         suboptions:
                             id:
@@ -197,15 +222,18 @@ options:
                                     - Resource location.
                     destination_address_prefix:
                         description:
-                            - "The destination address prefix. CIDR or destination IP range. Asterix C(C(*)) can also be used to match all source IPs. Defaul
-                              t tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used."
+                            - "C(*)TheC(*) C(*)destinationC(*) C(*)addressC(*) C(*)prefixC(*). C(*)CIDRC(*) C(*)orC(*) C(*)destinationC(*) C(*)IPC(*) C(*)ran
+                              geC(*). C(*)AsterixC(*) '*' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)matchC(*) C(*)allC(*) C(*)sourceC(
+                              *) C(*)IPsC(*). C(*)DefaultC(*) C(*)tagsC(*) C(*)suchC(*) C(*)asC(*) 'C(*)VirtualNetworkC(*)', 'C(*)AzureLoadBalancerC(*)' C(*
+                              )andC(*) 'C(*)InternetC(*)' C(*)canC(*) C(*)alsoC(*) C(*)beC(*) C(*)usedC(*)."
                     destination_address_prefixes:
                         description:
-                            - The destination address prefixes. CIDR or destination IP ranges.
+                            - "C(*)TheC(*) C(*)destinationC(*) C(*)addressC(*) C(*)prefixesC(*). C(*)CIDRC(*) C(*)orC(*) C(*)destinationC(*) C(*)IPC(*) C(*)r
+                              angesC(*)."
                         type: list
                     destination_application_security_groups:
                         description:
-                            - The application security group specified as destination.
+                            - C(*)TheC(*) C(*)applicationC(*) C(*)securityC(*) C(*)groupC(*) C(*)specifiedC(*) C(*)asC(*) C(*)destinationC(*).
                         type: list
                         suboptions:
                             id:
@@ -216,40 +244,48 @@ options:
                                     - Resource location.
                     source_port_ranges:
                         description:
-                            - The source port ranges.
+                            - C(*)TheC(*) C(*)sourceC(*) C(*)portC(*) C(*)rangesC(*).
                         type: list
                     destination_port_ranges:
                         description:
-                            - The destination port ranges.
+                            - C(*)TheC(*) C(*)destinationC(*) C(*)portC(*) C(*)rangesC(*).
                         type: list
                     access:
                         description:
-                            - "The network traffic is allowed or denied. Possible values are: C(allow) and C(deny)."
+                            - "C(*)TheC(*) C(*)networkC(*) C(*)trafficC(*) C(*)isC(*) C(*)allowedC(*) C(*)orC(*) C(*)deniedC(*). C(*)PossibleC(*) C(*)valuesC
+                              (*) C(*)areC(*): 'C(*)AllowC(*)' C(*)andC(*) 'C(*)DenyC(*)'."
                         required: True
                         choices:
                             - 'allow'
                             - 'deny'
                     priority:
                         description:
-                            - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the colle
-                              ction. The lower the priority number, the higher the priority of the rule."
+                            - "C(*)TheC(*) C(*)priorityC(*) C(*)ofC(*) C(*)theC(*) C(*)ruleC(*). C(*)TheC(*) C(*)valueC(*) C(*)canC(*) C(*)beC(*) C(*)between
+                              C(*) C(*)100C(*) C(*)andC(*) C(*)4096C(*). C(*)TheC(*) C(*)priorityC(*) C(*)numberC(*) C(*)mustC(*) C(*)beC(*) C(*)uniqueC(*)
+                              C(*)forC(*) C(*)eachC(*) C(*)ruleC(*) C(*)inC(*) C(*)theC(*) C(*)collectionC(*). C(*)TheC(*) C(*)lowerC(*) C(*)theC(*) C(*)pri
+                              orityC(*) C(*)numberC(*), C(*)theC(*) C(*)higherC(*) C(*)theC(*) C(*)priorityC(*) C(*)ofC(*) C(*)theC(*) C(*)ruleC(*)."
                     direction:
                         description:
-                            - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
-                               are: C(inbound) and C(outbound)."
+                            - "C(*)TheC(*) C(*)directionC(*) C(*)ofC(*) C(*)theC(*) C(*)ruleC(*). C(*)TheC(*) C(*)directionC(*) C(*)specifiesC(*) C(*)ifC(*)
+                              C(*)ruleC(*) C(*)willC(*) C(*)beC(*) C(*)evaluatedC(*) C(*)onC(*) C(*)incomingC(*) C(*)orC(*) C(*)outcomingC(*) C(*)trafficC(*
+                              ). C(*)PossibleC(*) C(*)valuesC(*) C(*)areC(*): 'C(*)InboundC(*)' C(*)andC(*) 'C(*)OutboundC(*)'."
                         required: True
                         choices:
                             - 'inbound'
                             - 'outbound'
                     provisioning_state:
                         description:
-                            - "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+                            - "C(*)TheC(*) C(*)provisioningC(*) C(*)stateC(*) C(*)ofC(*) C(*)theC(*) C(*)publicC(*) C(*)IPC(*) C(*)resourceC(*). C(*)Possible
+                              C(*) C(*)valuesC(*) C(*)areC(*): 'C(*)UpdatingC(*)', 'C(*)DeletingC(*)', C(*)andC(*) 'C(*)FailedC(*)'."
                     name:
                         description:
-                            - The name of the resource that is unique within a resource group. This name can be used to I(access) the resource.
+                            - "C(*)TheC(*) C(*)nameC(*) C(*)ofC(*) C(*)theC(*) C(*)resourceC(*) C(*)thatC(*) C(*)isC(*) C(*)uniqueC(*) C(*)withinC(*) C(*)aC(
+                              *) C(*)resourceC(*) C(*)groupC(*). C(*)ThisC(*) C(*)nameC(*) C(*)canC(*) C(*)beC(*) C(*)usedC(*) C(*)toC(*) C(*)IC(*)(C(*)acce
+                              ssC(*)) C(*)theC(*) C(*)resourceC(*)."
                     etag:
                         description:
-                            - A unique read-only string that changes whenever the resource is updated.
+                            - "C(*)AC(*) C(*)uniqueC(*) C(*)readC(*)-C(*)onlyC(*) C(*)stringC(*) C(*)thatC(*) C(*)changesC(*) C(*)wheneverC(*) C(*)theC(*) C(
+                              *)resourceC(*) C(*)isC(*) C(*)updatedC(*)."
             resource_guid:
                 description:
                     - The resource GUID property of the network security group resource.
@@ -282,8 +318,8 @@ options:
                             - The destination CIDR to which the route applies.
                     next_hop_type:
                         description:
-                            - "The type of Azure hop the packet should be sent to. Possible values are: C(virtual_network_gateway), C(vnet_local), C(internet
-                              ), C(virtual_appliance), and C(none)."
+                            - "The type of Azure hop the packet should be sent to. Possible values are: 'C(virtual_network_gateway)', 'C(vnet_local)', 'C(int
+                              ernet)', 'C(virtual_appliance)', and 'C(none)'."
                         required: True
                         choices:
                             - 'virtual_network_gateway'
@@ -338,7 +374,7 @@ options:
                     - Resource ID.
             linked_resource_type:
                 description:
-                    - Resource type of the I(link)ed resource.
+                    - Resource type of the linked resource.
             link:
                 description:
                     - Link to the external resource

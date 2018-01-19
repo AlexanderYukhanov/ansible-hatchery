@@ -43,7 +43,7 @@ options:
             - Resource location. If not set, location from the resource group will be used as default.
     state:
         description:
-            - Specifies the state of the policy. If state is C(enabled), I(storage_endpoint) and I(storage_account_access_key) are required.
+            - Specifies the state of the policy. If state is C(C(C(enabled))), I(storage_endpoint) and I(storage_account_access_key) are required.
         required: True
         choices:
             - 'new'
@@ -51,8 +51,8 @@ options:
             - 'disabled'
     disabled_alerts:
         description:
-            - "Specifies the semicolon-separated list of alerts that are disabled, or empty string to disable no alerts. Possible values: Sql_Injection; Sql_
-              Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
+            - "Specifies the semicolon-separated list of alerts that are C(C(C(disabled))), or empty string to disable no alerts. Possible values: Sql_Inject
+              ion; Sql_Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
     email_addresses:
         description:
             - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
@@ -65,10 +65,10 @@ options:
     storage_endpoint:
         description:
             - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
-              s. If I(state) is C(enabled), storageEndpoint is required."
+              s. If I(state) is C(C(C(enabled))), storageEndpoint is required."
     storage_account_access_key:
         description:
-            - Specifies the identifier key of the Threat Detection audit storage account. If I(state) is C(enabled), storageAccountAccessKey is required.
+            - Specifies the identifier key of the Threat Detection audit storage account. If I(state) is C(C(C(enabled))), storageAccountAccessKey is required.
     retention_days:
         description:
             - Specifies the number of days to keep in the Threat Detection audit logs.
