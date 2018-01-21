@@ -34,3 +34,4 @@ azure_rm_containerregistryreplication
 azure_rm_containerregistryreplication_facts
 azure_rm_containerregistrywebhook
 azure_rm_containerregistrywebhook_facts
+azure_rm_keyvault
