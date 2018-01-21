@@ -55,7 +55,6 @@ options:
         description:
             - "An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's t
               enant ID."
-        type: list
         suboptions:
             tenant_id:
                 description:
@@ -71,20 +70,16 @@ options:
                     -  Application ID of the client making request on behalf of a principal
             keys:
                 description:
-                    - Permissions to keys
-                type: list
+                    - List of permissions to keys
             secrets:
                 description:
-                    - Permissions to secrets
-                type: list
+                    - List of permissions to secrets
             certificates:
                 description:
-                    - Permissions to certificates
-                type: list
+                    - List of permissions to certificates
             storage:
                 description:
-                    - Permissions to storage accounts
-                type: list
+                    - List of permissions to storage accounts
     vault_uri:
         description:
             - The URI of the vault for performing operations on keys and secrets.
@@ -102,7 +97,7 @@ options:
         type: bool
     enable_soft_delete:
         description:
-            - Property to specify whether the C(soft delete) functionality is enabled for this key vault. It does not accept false value.
+            - Property to specify whether the soft delete functionality is enabled for this key vault.
         type: bool
     create_mode:
         description:
@@ -110,6 +105,13 @@ options:
         choices:
             - 'recover'
             - 'default'
+    state:
+        description:
+            - Assert the state of the KeyVault. Use 'present' to create or update an KeyVault and 'absent' to delete it.
+        default: present
+        choices:
+            - absent
+            - present
 
 extends_documentation_fragment:
     - azure
