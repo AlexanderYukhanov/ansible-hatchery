@@ -346,9 +346,6 @@ class AzureRMVaults(AzureRMModuleBase):
                     self.to_do = Actions.Update
                 elif ('create_mode' in self.parameters) and (self.parameters['create_mode'] != old_response['create_mode']):
                     self.to_do = Actions.Update
-                # SKU Family
-                # SKU Name
-                # access_policies
                 elif 'access_policies' in self.parameters:
                     if len(self.parameters['access_policies']) != len(old_response['access_policies']):
                         self.to_do = Actions.Update
@@ -365,16 +362,16 @@ class AzureRMVaults(AzureRMModuleBase):
                             if n.get('application_id', False) != o.get('application_id', False):
                                 self.to_do = Actions.Update
                                 break
-                            if n.get('keys', []).cmp(o.get('keys', [])) != 0:
+                            if sorted(n.get('keys', [])).cmp(sorted(o.get('keys', []))) != 0:
                                 self.to_do = Actions.Update
                                 break
-                            if n.get('secrets', []).cmp(o.get('secrets', [])) != 0:
+                            if sorted(n.get('secrets', [])).cmp(sorted(o.get('secrets', []))) != 0:
                                 self.to_do = Actions.Update
                                 break
-                            if n.get('certificates', []).cmp(o.get('certificates', [])) != 0:
+                            if sorted(n.get('certificates', [])).cmp(sorted(o.get('certificates', []))) != 0:
                                 self.to_do = Actions.Update
                                 break
-                            if n.get('storage', []).cmp(o.get('storage', [])) != 0:
+                            if sorted(n.get('storage', [])).cmp(sorted(o.get('storage', []))) != 0:
                                 self.to_do = Actions.Update
                                 break
 
