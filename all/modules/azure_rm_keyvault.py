@@ -137,12 +137,10 @@ options:
         description:
             - Property to specify whether the soft delete functionality is enabled for this key vault.
         type: bool
-    create_mode:
+    recover_mode:
         description:
-            - "The vault's create mode to indicate whether the vault need to be recovered or not."
-        choices:
-            - 'recover'
-            - 'default'
+            - Create vault in recovery mode.
+        type: bool
     state:
         description:
             - Assert the state of the KeyVault. Use 'present' to create or update an KeyVault and 'absent' to delete it.
@@ -239,11 +237,8 @@ class AzureRMVaults(AzureRMModuleBase):
             enable_soft_delete=dict(
                 type='bool'
             ),
-            create_mode=dict(
-                type='str',
-                choices=['recover',
-                         'default'],
-                default='default'
+            recover_mode=dict(
+                type='bool'
             ),
             state=dict(
                 type='str',
@@ -302,8 +297,8 @@ class AzureRMVaults(AzureRMModuleBase):
                     self.parameters.setdefault("properties", {})["enabled_for_template_deployment"] = kwargs[key]
                 elif key == "enable_soft_delete":
                     self.parameters.setdefault("properties", {})["enable_soft_delete"] = kwargs[key]
-                elif key == "create_mode":
-                    self.parameters.setdefault("properties", {})["create_mode"] = kwargs[key]
+                elif key == "recover_mode":
+                    self.parameters.setdefault("properties", {})["create_mode"] = 'recover' if kwargs[key] else 'default'
 
         old_response = None
         response = None
