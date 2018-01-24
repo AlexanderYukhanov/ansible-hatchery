@@ -913,7 +913,7 @@
     },
     {
       "ModuleName": "azure_rm_vault_facts",
-      "ModuleNameAlt": "azure_rm_vault_facts",
+      "ModuleNameAlt": "azure_rm_keyvault_facts",
       "Options": [
         {
           "Name": "resource_group_name",

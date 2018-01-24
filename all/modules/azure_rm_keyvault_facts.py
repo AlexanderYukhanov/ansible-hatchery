@@ -15,7 +15,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: azure_rm_vault_facts
+module: azure_rm_keyvault_facts
 version_added: "2.5"
 short_description: Get Vault facts.
 description:
@@ -43,12 +43,12 @@ author:
 
 EXAMPLES = '''
   - name: Get instance of Vault
-    azure_rm_vault_facts:
+    azure_rm_keyvault_facts:
       resource_group: resource_group_name
       vault_name: vault_name
 
   - name: List instances of Vault
-    azure_rm_vault_facts:
+    azure_rm_keyvault_facts:
       resource_group: resource_group_name
       top: top
 '''
