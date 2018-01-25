@@ -1,4 +1,4 @@
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 sudo npm -g install autorest@2.0.4215
@@ -20,10 +20,7 @@ cd ~
 cd autorest.ansible
 sudo npm install
 
-sudo npm install -g @microsoft.azure/autorest.python@2.1.26
 
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
 
 sudo npm run build
 cd ~
