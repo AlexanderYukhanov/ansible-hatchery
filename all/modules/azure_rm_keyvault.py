@@ -305,7 +305,7 @@ class AzureRMVaults(AzureRMModuleBase):
                 elif key == "recover_mode":
                     self.parameters.setdefault("properties", {})["create_mode"] = 'recover' if kwargs[key] else 'default'
 
-        if self.parameters['properties'].get('tenant_id') is None:
+        if self.parameters.setdefault("properties", {}).setdefault('tenant_id', None) is None:
             self.parameters['properties']['tenant_id'] = self.credentials['tenant']
 
         old_response = None
