@@ -18,5 +18,5 @@ cd azure-rest-api-specs/
 git checkout ansible-generator-branch
 cd ~
 cd autorest.ansible
-npm install
+sudo npm install
 cd ~
