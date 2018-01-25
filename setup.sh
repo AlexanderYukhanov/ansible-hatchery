@@ -20,6 +20,8 @@ cd ~
 cd autorest.ansible
 sudo npm install
 
+sudo npm install -g @microsoft.azure/autorest.python@2.1.26
+
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
