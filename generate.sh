@@ -1,40 +1,40 @@
 
-rm -rf $HOME/ansible-hatchery/prs
-rm -rf $HOME/ansible-hatchery/role
-rm -rf $HOME/ansible-hatchery/all
-rm -rf $HOME/ansible-hatchery/template
+rm -rf /ansible-hatchery/prs
+rm -rf /ansible-hatchery/role
+rm -rf /ansible-hatchery/all
+rm -rf /ansible-hatchery/template
 
-cd $HOME/azure-rest-api-specs/specification/sql/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery --use=$HOME/autorest.ansible --python --tag=package-2017-03-preview &
+cd /azure-rest-api-specs/specification/sql/resource-manager
+autorest --output-folder=/ansible-hatchery --use=/autorest.ansible --python --tag=package-2017-03-preview &
 
-cd $HOME/azure-rest-api-specs/specification/mysql/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2017-04-preview &
+cd /azure-rest-api-specs/specification/mysql/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2017-04-preview &
 
-cd $HOME/azure-rest-api-specs/specification/postgresql/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2017-04-preview &
+cd /azure-rest-api-specs/specification/postgresql/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2017-04-preview &
 
-cd $HOME/azure-rest-api-specs/specification/authorization/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2015-07 &
+cd /azure-rest-api-specs/specification/authorization/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2015-07 &
 
-cd $HOME/azure-rest-api-specs/specification/web/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2016-09 &
+cd /azure-rest-api-specs/specification/web/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2016-09 &
 
-cd $HOME/azure-rest-api-specs/specification/network/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2017-10 &
+cd /azure-rest-api-specs/specification/network/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2017-10 &
 
-cd $HOME/azure-rest-api-specs/specification/containerinstance/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2017-10-preview &
+cd /azure-rest-api-specs/specification/containerinstance/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2017-10-preview &
 
-cd $HOME/azure-rest-api-specs/specification/containerregistry/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2017-10 &
+cd /azure-rest-api-specs/specification/containerregistry/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2017-10 &
 
-cd $HOME/azure-rest-api-specs/specification/keyvault/resource-manager
-autorest --output-folder=$HOME/ansible-hatchery/ --use=$HOME/autorest.ansible --python --tag=package-2016-10 &
+cd /azure-rest-api-specs/specification/keyvault/resource-manager
+autorest --output-folder=/ansible-hatchery/ --use=/autorest.ansible --python --tag=package-2016-10 &
 
 wait
 
-cp $HOME/ansible-hatchery/python/prs/* $HOME/ansible-hatchery/prs/
-cp $HOME/ansible-hatchery/python/role/* $HOME/ansible-hatchery/role/
-cp $HOME/ansible-hatchery/python/all/* $HOME/ansible-hatchery/all/
-cp $HOME/ansible-hatchery/python/template/* $HOME/ansible-hatchery/template/
-rm -rf $HOME/ansible-hatchery/python
+cp /ansible-hatchery/python/prs/* /ansible-hatchery/prs/
+cp /ansible-hatchery/python/role/* /ansible-hatchery/role/
+cp /ansible-hatchery/python/all/* /ansible-hatchery/all/
+cp /ansible-hatchery/python/template/* /ansible-hatchery/template/
+rm -rf /ansible-hatchery/python
