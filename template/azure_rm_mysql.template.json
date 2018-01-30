@@ -292,7 +292,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "1024",
-            "test:default": ""
+            "test:default": "51200"
           },
           "SubOptions": [],
           "RequiredCount": 0,
