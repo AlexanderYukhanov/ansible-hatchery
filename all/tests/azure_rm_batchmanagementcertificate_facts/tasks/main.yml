@@ -1,0 +1,40 @@
+- name: Prepare random number
+  set_fact:
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  run_once: yes
+
+- name: Gather facts Certificate
+  azure_rm_batchmanagementcertificate_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.certificate.xxxunknownxxx.id != None
+      - output.certificate.xxxunknownxxx.name != None
+      - output.certificate.xxxunknownxxx.type != None
+      - output.certificate.xxxunknownxxx.etag != None
+      - output.certificate.xxxunknownxxx.thumbprint != None
+      - output.certificate.xxxunknownxxx.format != None
+      - output.certificate.xxxunknownxxxsecond.id != None
+      - output.certificate.xxxunknownxxxsecond.name != None
+      - output.certificate.xxxunknownxxxsecond.type != None
+      - output.certificate.xxxunknownxxxsecond.etag != None
+      - output.certificate.xxxunknownxxxsecond.thumbprint != None
+      - output.certificate.xxxunknownxxxsecond.format != None
+
+- name: Gather facts Certificate
+  azure_rm_batchmanagementcertificate_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.certificate.xxxunknownxxx.id != None
+      - output.certificate.xxxunknownxxx.name != None
+      - output.certificate.xxxunknownxxx.type != None
+      - output.certificate.xxxunknownxxx.etag != None
+      - output.certificate.xxxunknownxxx.thumbprint != None
+      - output.certificate.xxxunknownxxx.format != None
