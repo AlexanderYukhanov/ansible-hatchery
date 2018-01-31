@@ -42,7 +42,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "NOT FOUND",
-            "test:default": ""
+            "test:default": "vault{{ rpfx }}"
           },
           "SubOptions": null,
           "RequiredCount": 0,
@@ -179,7 +179,7 @@
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
-                "test:default": ""
+                "test:default": "A"
               },
               "SubOptions": [],
               "RequiredCount": 0,
@@ -203,7 +203,7 @@
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
-                "test:default": ""
+                "test:default": "standard"
               },
               "SubOptions": [],
               "RequiredCount": 0,
@@ -285,7 +285,7 @@
               "DefaultValue": null,
               "DefaultValueSample": {
                 "default": "",
-                "test:default": ""
+                "test:default": "99998888-8666-4144-9199-2d7cd0111111"
               },
               "SubOptions": [],
               "RequiredCount": 0,
@@ -485,7 +485,7 @@
           "DefaultValue": null,
           "DefaultValueSample": {
             "default": "",
-            "test:default": ""
+            "test:default": "yes"
           },
           "SubOptions": [],
           "RequiredCount": 0,

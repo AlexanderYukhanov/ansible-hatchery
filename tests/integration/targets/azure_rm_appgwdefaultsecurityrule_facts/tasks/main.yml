@@ -1,0 +1,20 @@
+- name: Prepare random number
+  set_fact:
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  run_once: yes
+
+- name: Gather facts Default Security Rule
+  azure_rm_appgwdefaultsecurityrule_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.default_security_rules.xxxunknownxxx.id != None
+      - output.default_security_rules.xxxunknownxxx.description != None
+      - output.default_security_rules.xxxunknownxxx.protocol != None
+      - output.default_security_rules.xxxunknownxxx.access != None
+      - output.default_security_rules.xxxunknownxxx.priority != None
+      - output.default_security_rules.xxxunknownxxx.direction != None
+      - output.default_security_rules.xxxunknownxxx.name != None

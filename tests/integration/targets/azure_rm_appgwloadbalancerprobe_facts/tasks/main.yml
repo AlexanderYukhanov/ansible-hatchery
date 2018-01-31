@@ -1,0 +1,18 @@
+- name: Prepare random number
+  set_fact:
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  run_once: yes
+
+- name: Gather facts Load Balancer Probe
+  azure_rm_appgwloadbalancerprobe_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.load_balancer_probes.xxxunknownxxx.id != None
+      - output.load_balancer_probes.xxxunknownxxx.protocol != None
+      - output.load_balancer_probes.xxxunknownxxx.port != None
+      - output.load_balancer_probes.xxxunknownxxx.name != None
+      - output.load_balancer_probes.xxxunknownxxx.etag != None

@@ -1,0 +1,17 @@
+- name: Prepare random number
+  set_fact:
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  run_once: yes
+
+- name: Gather facts Public I P Addresse
+  azure_rm_appgwpublicipaddresse_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.public_ip_addresses.xxxunknownxxx.id != None
+      - output.public_ip_addresses.xxxunknownxxx.name != None
+      - output.public_ip_addresses.xxxunknownxxx.type != None
+      - output.public_ip_addresses.xxxunknownxxx.location != None
