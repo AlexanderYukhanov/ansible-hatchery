@@ -1,0 +1,37 @@
+- name: Prepare random number
+  set_fact:
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  run_once: yes
+
+- name: Gather facts Job
+  azure_rm_batchaijob_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.jobs.xxxunknownxxx.id != None
+      - output.jobs.xxxunknownxxx.name != None
+      - output.jobs.xxxunknownxxx.type != None
+      - output.jobs.xxxunknownxxx.priority != None
+      - output.jobs.xxxunknownxxx.cluster.id != None
+
+- name: Gather facts Job
+  azure_rm_batchaijob_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.jobs.xxxunknownxxx.id != None
+      - output.jobs.xxxunknownxxx.name != None
+      - output.jobs.xxxunknownxxx.type != None
+      - output.jobs.xxxunknownxxx.priority != None
+      - output.jobs.xxxunknownxxx.cluster.id != None
+      - output.jobs.xxxunknownxxxsecond.id != None
+      - output.jobs.xxxunknownxxxsecond.name != None
+      - output.jobs.xxxunknownxxxsecond.type != None
+      - output.jobs.xxxunknownxxxsecond.priority != None
+      - output.jobs.xxxunknownxxxsecond.cluster.id != None

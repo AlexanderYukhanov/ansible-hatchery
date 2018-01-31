@@ -1,0 +1,37 @@
+- name: Prepare random number
+  set_fact:
+    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+  run_once: yes
+
+- name: Gather facts File Server
+  azure_rm_batchaifileserver_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.file_servers.xxxunknownxxx.id != None
+      - output.file_servers.xxxunknownxxx.name != None
+      - output.file_servers.xxxunknownxxx.type != None
+      - output.file_servers.xxxunknownxxx.location != None
+      - output.file_servers.xxxunknownxxx.subnet.id != None
+
+- name: Gather facts File Server
+  azure_rm_batchaifileserver_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.file_servers.xxxunknownxxx.id != None
+      - output.file_servers.xxxunknownxxx.name != None
+      - output.file_servers.xxxunknownxxx.type != None
+      - output.file_servers.xxxunknownxxx.location != None
+      - output.file_servers.xxxunknownxxx.subnet.id != None
+      - output.file_servers.xxxunknownxxxsecond.id != None
+      - output.file_servers.xxxunknownxxxsecond.name != None
+      - output.file_servers.xxxunknownxxxsecond.type != None
+      - output.file_servers.xxxunknownxxxsecond.location != None
+      - output.file_servers.xxxunknownxxxsecond.subnet.id != None
