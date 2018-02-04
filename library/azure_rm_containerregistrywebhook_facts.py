@@ -104,7 +104,7 @@ webhooks:
                         - The list of actions that trigger the webhook to post notifications.
                     returned: always
                     type: str
-                    sample: "[\n\n  'push'\n\n]"
+                    sample: "[\n  'push'\n]"
 '''
 
 from ansible.module_utils.azure_rm_common import AzureRMModuleBase

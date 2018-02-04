@@ -338,7 +338,7 @@ class AzureRMSyncGroups(AzureRMModuleBase):
         return False
 
 
-def _snake_to_camel(snake, capitalize_first= False):
+def _snake_to_camel(snake, capitalize_first=False):
     if capitalize_first:
         return ''.join(x.capitalize() or '_' for x in snake.split('_'))
     else:
