@@ -64,6 +64,14 @@ options:
     is_storage_secondary_key_in_use:
         description:
             - "Specifies whether I(storage_account_access_key) value is the storage's secondary key."
+    state:
+      description:
+        - Assert the state of the Database Blob Auditing Policy.
+        - Use 'present' to create or update an Database Blob Auditing Policy and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

@@ -38,6 +38,14 @@ options:
         description:
             - The name of the partner server.
         required: True
+    state:
+      description:
+        - Assert the state of the Server Communication Link.
+        - Use 'present' to create or update an Server Communication Link and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

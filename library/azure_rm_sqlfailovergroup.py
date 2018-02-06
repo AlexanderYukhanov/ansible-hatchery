@@ -75,6 +75,14 @@ options:
         description:
             - List of databases in the failover group.
         type: list
+    state:
+      description:
+        - Assert the state of the Failover Group.
+        - Use 'present' to create or update an Failover Group and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

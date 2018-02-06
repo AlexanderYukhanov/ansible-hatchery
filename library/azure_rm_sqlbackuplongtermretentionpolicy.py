@@ -49,6 +49,14 @@ options:
         description:
             - The azure recovery services backup protection policy resource id
         required: True
+    state:
+      description:
+        - Assert the state of the Backup Long Term Retention Policy.
+        - Use 'present' to create or update an Backup Long Term Retention Policy and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

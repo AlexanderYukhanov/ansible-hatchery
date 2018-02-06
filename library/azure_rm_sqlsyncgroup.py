@@ -85,6 +85,14 @@ options:
             master_sync_member_name:
                 description:
                     - Name of master sync member where the schema is from.
+    state:
+      description:
+        - Assert the state of the Sync Group.
+        - Use 'present' to create or update an Sync Group and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

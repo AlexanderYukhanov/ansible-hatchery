@@ -49,6 +49,14 @@ options:
         description:
             - "The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not apply.
               The specified users receive data results without masking for all of the database queries."
+    state:
+      description:
+        - Assert the state of the Data Masking Policy.
+        - Use 'present' to create or update an Data Masking Policy and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

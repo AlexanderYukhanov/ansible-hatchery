@@ -44,6 +44,14 @@ options:
         choices:
             - 'enabled'
             - 'disabled'
+    state:
+      description:
+        - Assert the state of the Transparent Data Encryption.
+        - Use 'present' to create or update an Transparent Data Encryption and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

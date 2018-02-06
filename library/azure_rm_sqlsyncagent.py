@@ -37,6 +37,14 @@ options:
     sync_database_id:
         description:
             - ARM resource id of the sync database in the sync agent.
+    state:
+      description:
+        - Assert the state of the Sync Agent.
+        - Use 'present' to create or update an Sync Agent and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

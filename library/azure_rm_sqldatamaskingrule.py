@@ -94,6 +94,14 @@ options:
         description:
             - "If I(masking_function) is set to C(text), the character to use for masking the unexposed part of the string. Otherwise, this parameter will be
                ignored."
+    state:
+      description:
+        - Assert the state of the Data Masking Rule.
+        - Use 'present' to create or update an Data Masking Rule and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

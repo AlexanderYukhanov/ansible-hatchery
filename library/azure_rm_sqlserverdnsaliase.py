@@ -34,6 +34,14 @@ options:
         description:
             - The name of the server DNS alias.
         required: True
+    state:
+      description:
+        - Assert the state of the Server Dns Aliase.
+        - Use 'present' to create or update an Server Dns Aliase and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

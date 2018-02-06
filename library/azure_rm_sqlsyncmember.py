@@ -73,6 +73,14 @@ options:
             - 'bidirectional'
             - 'one_way_member_to_hub'
             - 'one_way_hub_to_member'
+    state:
+      description:
+        - Assert the state of the Sync Member.
+        - Use 'present' to create or update an Sync Member and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

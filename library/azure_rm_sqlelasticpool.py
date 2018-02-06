@@ -60,6 +60,14 @@ options:
         description:
             - "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availabi
               lity zones."
+    state:
+      description:
+        - Assert the state of the ElasticPool.
+        - Use 'present' to create or update an ElasticPool and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

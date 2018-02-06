@@ -78,6 +78,14 @@ options:
         choices:
             - 'enabled'
             - 'disabled'
+    state:
+      description:
+        - Assert the state of the Database Threat Detection Policy.
+        - Use 'present' to create or update an Database Threat Detection Policy and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

@@ -38,6 +38,14 @@ options:
         description:
             - The azure recovery services vault resource id
         required: True
+    state:
+      description:
+        - Assert the state of the Backup Long Term Retention Vault.
+        - Use 'present' to create or update an Backup Long Term Retention Vault and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

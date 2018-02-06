@@ -47,6 +47,14 @@ options:
         choices:
             - 'service_managed'
             - 'azure_key_vault'
+    state:
+      description:
+        - Assert the state of the Encryption Protector.
+        - Use 'present' to create or update an Encryption Protector and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

@@ -42,6 +42,14 @@ options:
             - 'default'
             - 'proxy'
             - 'redirect'
+    state:
+      description:
+        - Assert the state of the Server Connection Policy.
+        - Use 'present' to create or update an Server Connection Policy and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

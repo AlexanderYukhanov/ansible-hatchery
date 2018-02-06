@@ -50,6 +50,14 @@ options:
         description:
             - The server Active Directory Administrator tenant id.
         required: True
+    state:
+      description:
+        - Assert the state of the Server Azure A D Administrator.
+        - Use 'present' to create or update an Server Azure A D Administrator and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

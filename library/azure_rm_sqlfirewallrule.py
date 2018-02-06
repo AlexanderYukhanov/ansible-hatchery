@@ -41,6 +41,14 @@ options:
         description:
             - "The end IP address of the firewall rule. Must be IPv4 format. Must be greater than or equal to I(start_ip_address). Use value '0.0.0.0' to rep
               resent all Azure-internal IP addresses."
+    state:
+      description:
+        - Assert the state of the Firewall Rule.
+        - Use 'present' to create or update an Firewall Rule and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

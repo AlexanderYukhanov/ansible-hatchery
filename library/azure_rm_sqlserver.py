@@ -48,6 +48,14 @@ options:
               source."
         choices:
             - 'system_assigned'
+    state:
+      description:
+        - Assert the state of the SQL Server.
+        - Use 'present' to create or update an SQL Server and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

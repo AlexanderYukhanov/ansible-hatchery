@@ -45,6 +45,14 @@ options:
         choices:
             - 'disabled'
             - 'enabled'
+    state:
+      description:
+        - Assert the state of the Geo Backup Policy.
+        - Use 'present' to create or update an Geo Backup Policy and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure
