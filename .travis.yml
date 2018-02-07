@@ -83,6 +83,14 @@ before_install:
       liststr=tests/integration/targets/azure_rm_*/tasks/main.yml;
       list=($liststr);
 
+      declare -a list=("tests/integration/targets/azure_rm_sqlservercommunicationlink/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_sqlservercommunicationlink_facts/tasks/main.yml"
+                       "tests/integration/targets/azure_rm_sqlgeobackuppolicy/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_sqlgeobackuppolicy_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplication/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplication_facts/tasks/main.yml" 
+                      )
+
       echo start = $start, end = $end, list_lenth = ${#list[@]};
 
       for (( i = $start; i < $end; i++ )); do
