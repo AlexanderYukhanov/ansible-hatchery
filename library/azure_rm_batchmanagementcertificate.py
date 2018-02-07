@@ -32,8 +32,8 @@ options:
         required: True
     certificate_name:
         description:
-            - "The identifier for the certificate. This must be made up of algorithm and I(thumbprint) separated by a dash, and must match the certificate I(
-              data) in the request. For example SHA1-a3d1c5."
+            - "The identifier for the certificate. This must be made up of algorithm and I(thumbprint) separated by a dash, and must match the certificate
+               I(data) in the request. For example SHA1-a3d1c5."
         required: True
     thumbprint_algorithm:
         description:
@@ -56,11 +56,19 @@ options:
             - This is required if the certificate I(format) is C(pfx) and must be omitted if the certificate I(format) is C(cer).
     if_match:
         description:
-            - "The entity state (ETag) version of the certificate to update. A value of '*' can be used to apply the operation only if the certificate alread
-              y exists. If omitted, this operation will always be applied."
+            - "The entity state (ETag) version of the certificate to update. A value of '*' can be used to apply the operation only if the certificate
+               already exists. If omitted, this operation will always be applied."
     if_none_match:
         description:
             - "Set to '*' to allow a new certificate to be created, but to prevent updating an existing certificate. Other values will be ignored."
+    state:
+      description:
+        - Assert the state of the Certificate.
+        - Use 'present' to create or update an Certificate and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

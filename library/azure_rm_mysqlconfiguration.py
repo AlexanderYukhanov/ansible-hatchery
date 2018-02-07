@@ -43,6 +43,14 @@ options:
     source:
         description:
             - Source of the configuration.
+    state:
+      description:
+        - Assert the state of the Configuration.
+        - Use 'present' to create or update an Configuration and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

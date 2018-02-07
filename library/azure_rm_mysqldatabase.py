@@ -42,8 +42,17 @@ options:
             - The collation of the database. Check MySQL documentation for possible values.
     force_update:
       description:
-          - Needs to be set to True in order to MySQL Database to be updated.
+          - MySQL Database will be updated if given parameters differ from existing resource state.
+          - To force MySQL Database update in any circumstances set this parameter to True.
       type: bool
+    state:
+      description:
+        - Assert the state of the MySQL Database.
+        - Use 'present' to create or update an MySQL Database and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

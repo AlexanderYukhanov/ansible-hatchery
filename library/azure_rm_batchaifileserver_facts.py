@@ -28,8 +28,8 @@ options:
         required: True
     file_server_name:
         description:
-            - "The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters a
-              long with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
+            - "The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters
+               along with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
     file_servers_list_by_resource_group_options:
         description:
             - Additional parameters for the operation

@@ -40,6 +40,14 @@ options:
     display_name:
         description:
             - The display name for the application.
+    state:
+      description:
+        - Assert the state of the Application.
+        - Use 'present' to create or update an Application and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

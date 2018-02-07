@@ -123,6 +123,14 @@ options:
                     reason:
                         description:
                             - Reason of the SKU capability.
+    state:
+      description:
+        - Assert the state of the App Service Plan.
+        - Use 'present' to create or update an App Service Plan and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

@@ -28,9 +28,9 @@ options:
         required: True
     account_name:
         description:
-            - "A name for the Batch account which must be unique within the region. Batch account names must be between 3 and 24 characters in length and mus
-              t use only numbers and lowercase letters. This name is used as part of the DNS name that is used to access the Batch service in the region in
-              which the account is created. For example: http://accountname.region.batch.azure.com/."
+            - "A name for the Batch account which must be unique within the region. Batch account names must be between 3 and 24 characters in length and
+               must use only numbers and lowercase letters. This name is used as part of the DNS name that is used to access the Batch service in the
+               region in which the account is created. For example: http://accountname.region.batch.azure.com/."
         required: True
     location:
         description:
@@ -45,9 +45,9 @@ options:
                 required: True
     pool_allocation_mode:
         description:
-            - "The pool allocation mode also affects how clients may authenticate to the Batch Service API. If the mode is C(batch_service), clients may auth
-              enticate using access keys or Azure Active Directory. If the mode is C(user_subscription), clients must use Azure Active Directory. The defaul
-              t is C(batch_service)."
+            - "The pool allocation mode also affects how clients may authenticate to the Batch Service API. If the mode is C(batch_service), clients may
+               authenticate using access keys or Azure Active Directory. If the mode is C(user_subscription), clients must use Azure Active Directory. The
+               default is C(batch_service)."
         choices:
             - 'batch_service'
             - 'user_subscription'
@@ -63,6 +63,14 @@ options:
                 description:
                     - The URL of the Azure key vault associated with the Batch account.
                 required: True
+    state:
+      description:
+        - Assert the state of the Batch Account.
+        - Use 'present' to create or update an Batch Account and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

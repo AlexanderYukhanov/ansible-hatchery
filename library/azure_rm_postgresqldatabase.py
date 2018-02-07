@@ -42,8 +42,17 @@ options:
             - The collation of the database. Check PostgreSQL documentation for possible values.
     force_update:
       description:
-          - Needs to be set to True in order to PostgreSQL Database to be updated.
+          - PostgreSQL Database will be updated if given parameters differ from existing resource state.
+          - To force PostgreSQL Database update in any circumstances set this parameter to True.
       type: bool
+    state:
+      description:
+        - Assert the state of the PostgreSQL Database.
+        - Use 'present' to create or update an PostgreSQL Database and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

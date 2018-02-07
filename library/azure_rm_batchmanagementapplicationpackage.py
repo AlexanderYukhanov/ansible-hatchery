@@ -38,6 +38,14 @@ options:
         description:
             - The version of the application.
         required: True
+    state:
+      description:
+        - Assert the state of the Application Package.
+        - Use 'present' to create or update an Application Package and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

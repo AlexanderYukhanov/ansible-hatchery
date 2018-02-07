@@ -56,6 +56,14 @@ options:
         description:
             - Role definition assignable scopes.
         type: list
+    state:
+      description:
+        - Assert the state of the Role Definition.
+        - Use 'present' to create or update an Role Definition and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

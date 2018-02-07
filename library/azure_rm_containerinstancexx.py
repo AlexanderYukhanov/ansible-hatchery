@@ -212,6 +212,14 @@ options:
             empty_dir:
                 description:
                     - The empty directory volume.
+    state:
+      description:
+        - Assert the state of the Container Group.
+        - Use 'present' to create or update an Container Group and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

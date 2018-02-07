@@ -257,16 +257,16 @@ options:
                     - "Relative path of probe. Valid path starts from '/'. Probe is sent to <I(protocol)>://<I(host)>:<port><path>"
             interval:
                 description:
-                    - "The probing interval in seconds. This is the time interval between two consecutive probes. Acceptable values are from 1 second to 8640
-                      0 seconds."
+                    - "The probing interval in seconds. This is the time interval between two consecutive probes. Acceptable values are from 1 second to
+                       86400 seconds."
             timeout:
                 description:
-                    - "the probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period. Acceptable values are
-                       from 1 second to 86400 seconds."
+                    - "the probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period. Acceptable values
+                       are from 1 second to 86400 seconds."
             unhealthy_threshold:
                 description:
-                    - "The probe retry count. Backend server is marked down after consecutive probe failure count reaches UnhealthyThreshold. Acceptable valu
-                      es are from 1 second to 20."
+                    - "The probe retry count. Backend server is marked down after consecutive probe failure count reaches UnhealthyThreshold. Acceptable
+                       values are from 1 second to 20."
             pick_host_name_from_backend_http_settings:
                 description:
                     - Whether the I(host) header should be picked from the backend C(http) settings. Default value is false.
@@ -351,8 +351,8 @@ options:
                                             - 'dynamic'
                                     private_ip_address_version:
                                         description:
-                                            - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is C(ipv4) o
-                                              r C(ipv6). Default is taken as C(ipv4).  Possible values are: 'C(ipv4)' and 'C(ipv6)'."
+                                            - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is C(ipv4)
+                                               or C(ipv6). Default is taken as C(ipv4).  Possible values are: 'C(ipv4)' and 'C(ipv6)'."
                                         choices:
                                             - 'ipv4'
                                             - 'ipv6'
@@ -371,8 +371,8 @@ options:
                                         type: list
                                     provisioning_state:
                                         description:
-                                            - "The provisioning state of the network interface IP configuration. Possible values are: 'Updating', 'Deleting',
-                                               and 'Failed'."
+                                            - "The provisioning state of the network interface IP configuration. Possible values are: 'Updating',
+                                               'Deleting', and 'Failed'."
                                     name:
                                         description:
                                             - The name of the resource that is unique within a resource group. This name can be used to access the resource.
@@ -443,20 +443,20 @@ options:
                                     - 'all'
                             frontend_port:
                                 description:
-                                    - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable val
-                                      ues range from 1 to 65534."
+                                    - "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable
+                                       values range from 1 to 65534."
                             backend_port:
                                 description:
                                     - The port used for the internal endpoint. Acceptable values range from 1 to 65535.
                             idle_timeout_in_minutes:
                                 description:
-                                    - "The timeout for the C(tcp) idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minu
-                                      tes. This element is only used when the I(protocol) is set to C(tcp)."
+                                    - "The timeout for the C(tcp) idle connection. The value can be set between 4 and 30 minutes. The default value is 4
+                                       minutes. This element is only used when the I(protocol) is set to C(tcp)."
                             enable_floating_ip:
                                 description:
-                                    - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availabili
-                                      ty Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't b
-                                      e changed after you create the endpoint."
+                                    - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn
+                                       Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This
+                                       setting can't be changed after you create the endpoint."
                             provisioning_state:
                                 description:
                                     - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -477,8 +477,8 @@ options:
                             - 'dynamic'
                     private_ip_address_version:
                         description:
-                            - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is C(ipv4) or C(ipv6). Defau
-                              lt is taken as C(ipv4).  Possible values are: 'C(ipv4)' and 'C(ipv6)'."
+                            - "Available from Api-Version 2016-03-30 onwards, it represents whether the specific ipconfiguration is C(ipv4) or C(ipv6).
+                               Default is taken as C(ipv4).  Possible values are: 'C(ipv4)' and 'C(ipv6)'."
                         choices:
                             - 'ipv4'
                             - 'ipv6'
@@ -624,18 +624,18 @@ options:
                                 suboptions:
                                     domain_name_label:
                                         description:
-                                            - "Gets or sets the Domain name label.The concatenation of the domain name label and the regionalized DNS zone ma
-                                              ke up the fully qualified domain name associated with the public IP address. If a domain name label is specifi
-                                              ed, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
+                                            - "Gets or sets the Domain name label.The concatenation of the domain name label and the regionalized DNS zone
+                                               make up the fully qualified domain name associated with the public IP address. If a domain name label is
+                                               specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
                                     fqdn:
                                         description:
-                                            - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the conc
-                                              atenation of the I(domain_name_label) and the regionalized DNS zone."
+                                            - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the
+                                               concatenation of the I(domain_name_label) and the regionalized DNS zone."
                                     reverse_fqdn:
                                         description:
                                             - "Gets or Sets the Reverse I(fqdn). A user-visible, fully qualified domain name that resolves to this public IP
-                                              address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the
-                                               in-addr.arpa domain to the reverse I(fqdn). "
+                                               address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in
+                                               the in-addr.arpa domain to the reverse I(fqdn). "
                             ip_address:
                                 description:
                                     - The IP address associated with the public IP address resource.
@@ -723,8 +723,8 @@ options:
                     - 'disabled'
             request_timeout:
                 description:
-                    - "Request timeout in seconds. Application Gateway will fail the request if response is not received within RequestTimeout. Acceptable va
-                      lues are from 1 second to 86400 seconds."
+                    - "Request timeout in seconds. Application Gateway will fail the request if response is not received within RequestTimeout. Acceptable
+                       values are from 1 second to 86400 seconds."
             probe:
                 description:
                     - Probe resource of an application gateway.
@@ -1092,6 +1092,14 @@ options:
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.
+    state:
+      description:
+        - Assert the state of the Application Gateway.
+        - Use 'present' to create or update an Application Gateway and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

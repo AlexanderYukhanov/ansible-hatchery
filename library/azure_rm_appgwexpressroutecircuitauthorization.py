@@ -52,6 +52,14 @@ options:
     name:
         description:
             - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
+    state:
+      description:
+        - Assert the state of the Express Route Circuit Authorization.
+        - Use 'present' to create or update an Express Route Circuit Authorization and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

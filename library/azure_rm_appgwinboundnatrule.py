@@ -59,12 +59,12 @@ options:
             - The port used for the internal endpoint. Acceptable values range from 1 to 65535.
     idle_timeout_in_minutes:
         description:
-            - "The timeout for the C(tcp) idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is onl
-              y used when the I(protocol) is set to C(tcp)."
+            - "The timeout for the C(tcp) idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is
+               only used when the I(protocol) is set to C(tcp)."
     enable_floating_ip:
         description:
-            - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting i
-              s required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint."
+            - "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting
+               is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint."
     provisioning_state:
         description:
             - "Gets the provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
@@ -74,6 +74,14 @@ options:
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.
+    state:
+      description:
+        - Assert the state of the Inbound Nat Rule.
+        - Use 'present' to create or update an Inbound Nat Rule and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

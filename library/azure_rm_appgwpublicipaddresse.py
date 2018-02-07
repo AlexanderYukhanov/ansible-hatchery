@@ -64,17 +64,18 @@ options:
         suboptions:
             domain_name_label:
                 description:
-                    - "Gets or sets the Domain name label.The concatenation of the domain name label and the regionalized DNS zone make up the fully qualifie
-                      d domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP
-                       in the Microsoft Azure DNS system."
+                    - "Gets or sets the Domain name label.The concatenation of the domain name label and the regionalized DNS zone make up the fully
+                       qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the
+                       public IP in the Microsoft Azure DNS system."
             fqdn:
                 description:
-                    - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the concatenation of the I(domai
-                      n_name_label) and the regionalized DNS zone."
+                    - "Gets the FQDN, Fully qualified domain name of the A DNS record associated with the public IP. This is the concatenation of the
+                       I(domain_name_label) and the regionalized DNS zone."
             reverse_fqdn:
                 description:
-                    - "Gets or Sets the Reverse I(fqdn). A user-visible, fully qualified domain name that resolves to this public IP address. If the reverseF
-                      qdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse I(fqdn). "
+                    - "Gets or Sets the Reverse I(fqdn). A user-visible, fully qualified domain name that resolves to this public IP address. If the
+                       reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse
+                       I(fqdn). "
     ip_address:
         description:
             - The IP address associated with the public IP address resource.
@@ -94,6 +95,14 @@ options:
         description:
             - A list of availability zones denoting the IP allocated for the resource needs to come from.
         type: list
+    state:
+      description:
+        - Assert the state of the Public I P Addresse.
+        - Use 'present' to create or update an Public I P Addresse and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

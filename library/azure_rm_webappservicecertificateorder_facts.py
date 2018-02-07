@@ -68,7 +68,7 @@ app_service_certificate_orders:
                 status:
                     description:
                         - "Current order status. Possible values include: 'Pendingissuance', 'Issued', 'Revoked', 'Canceled', 'Denied', 'Pendingrevocation',
-                          'PendingRekey', 'Unused', 'Expired', 'NotSubmitted'"
+                           'PendingRekey', 'Unused', 'Expired', 'NotSubmitted'"
                     returned: always
                     type: str
                     sample: status

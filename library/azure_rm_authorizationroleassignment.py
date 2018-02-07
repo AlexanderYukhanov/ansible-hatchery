@@ -25,8 +25,9 @@ options:
     scope:
         description:
             - "The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/'
-              for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscri
-              ption-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource."
+               for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+               '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a
+               resource."
         required: True
     role_assignment_name:
         description:
@@ -45,7 +46,15 @@ options:
             principal_id:
                 description:
                     - "The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or
-                      security group."
+                       security group."
+    state:
+      description:
+        - Assert the state of the Role Assignment.
+        - Use 'present' to create or update an Role Assignment and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

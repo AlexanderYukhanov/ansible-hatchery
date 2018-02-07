@@ -28,8 +28,8 @@ options:
         required: True
     job_name:
         description:
-            - "The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (
-              -) and underscore (_). The name must be from 1 through 64 characters long."
+            - "The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash
+               (-) and underscore (_). The name must be from 1 through 64 characters long."
         required: True
     location:
         description:
@@ -39,8 +39,8 @@ options:
             - Describe the experiment information of the job
     priority:
         description:
-            - "Priority associated with the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highes
-              t priority. The default value is 0."
+            - "Priority associated with the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the
+               highest priority. The default value is 0."
     cluster:
         description:
         required: True
@@ -55,8 +55,8 @@ options:
         required: True
     container_settings:
         description:
-            - "If the container was downloaded as part of I(cluster) setup then the same container image will be used. If not provided, the job will run on t
-              he VM."
+            - "If the container was downloaded as part of I(cluster) setup then the same container image will be used. If not provided, the job will run on
+               the VM."
         suboptions:
             image_source_registry:
                 description:
@@ -78,8 +78,8 @@ options:
                                     - One of password or I(password_secret_reference) must be specified.
                             password_secret_reference:
                                 description:
-                                    - "Users can store their secrets in Azure KeyVault and pass it to the Batch AI Service to integrate with KeyVault. One of
-                                       I(password) or passwordSecretReference must be specified."
+                                    - "Users can store their secrets in Azure KeyVault and pass it to the Batch AI Service to integrate with KeyVault. One
+                                       of I(password) or passwordSecretReference must be specified."
                                 suboptions:
                                     source_vault:
                                         description:
@@ -127,12 +127,12 @@ options:
             worker_count:
                 description:
                     - "If specified, the value must be less than or equal to (nodeCount * numberOfGPUs per VM). If not specified, the default value is equal
-                      to nodeCount. This property can be specified only for distributed TensorFlow training"
+                       to nodeCount. This property can be specified only for distributed TensorFlow training"
             parameter_server_count:
                 description:
-                    - "If specified, the value must be less than or equal to nodeCount. If not specified, the default value is equal to 1 for distributed Ten
-                      sorFlow training (This property is not applicable for single machine training). This property can be specified only for distributed Te
-                      nsorFlow training."
+                    - "If specified, the value must be less than or equal to nodeCount. If not specified, the default value is equal to 1 for distributed
+                       TensorFlow training (This property is not applicable for single machine training). This property can be specified only for
+                       distributed TensorFlow training."
     caffe_settings:
         description:
         suboptions:
@@ -184,8 +184,8 @@ options:
         suboptions:
             command_line:
                 description:
-                    - "If containerSettings is specified on the job, this commandLine will be executed in the same container as job. Otherwise it will be exe
-                      cuted on the node."
+                    - "If containerSettings is specified on the job, this commandLine will be executed in the same container as job. Otherwise it will be
+                       executed on the node."
                 required: True
     std_out_err_path_prefix:
         description:
@@ -197,9 +197,9 @@ options:
         suboptions:
             id:
                 description:
-                    - "It will be available for the job as an environment variable under AZ_BATCHAI_INPUT_id. The service will also provide the following  en
-                      vironment variable: AZ_BATCHAI_PREV_OUTPUT_Name. The value of the variable will be populated if the job is being retried after a previ
-                      ous failure, otherwise it will be set to nothing."
+                    - "It will be available for the job as an environment variable under AZ_BATCHAI_INPUT_id. The service will also provide the following
+                       environment variable: AZ_BATCHAI_PREV_OUTPUT_Name. The value of the variable will be populated if the job is being retried after a
+                       previous failure, otherwise it will be set to nothing."
                 required: True
             path:
                 description:
@@ -221,8 +221,8 @@ options:
                     - The suffix path where the output directory will be created.
             type:
                 description:
-                    - "Default value is C(custom). The possible values are C(model), C(logs), C(summary), and C(custom). Users can use multiple enums for a s
-                      ingle directory. Eg. outPutType='C(model),C(logs), C(summary)'."
+                    - "Default value is C(custom). The possible values are C(model), C(logs), C(summary), and C(custom). Users can use multiple enums for a
+                       single directory. Eg. outPutType='C(model),C(logs), C(summary)'."
                 choices:
                     - 'model'
                     - 'logs'
@@ -233,9 +233,9 @@ options:
                     - Default is true. If false, then the directory is not created and can be any directory path that the user specifies.
     environment_variables:
         description:
-            - "Batch AI service sets the following environment variables for all jobs: AZ_BATCHAI_INPUT_id, AZ_BATCHAI_OUTPUT_id, AZ_BATCHAI_NUM_GPUS_PER_NOD
-              E. For distributed TensorFlow jobs, following additional environment variables are set by the Batch AI Service: AZ_BATCHAI_PS_HOSTS, AZ_BATCHA
-              I_WORKER_HOSTS"
+            - "Batch AI service sets the following environment variables for all jobs: AZ_BATCHAI_INPUT_id, AZ_BATCHAI_OUTPUT_id,
+               AZ_BATCHAI_NUM_GPUS_PER_NODE. For distributed TensorFlow jobs, following additional environment variables are set by the Batch AI Service:
+               AZ_BATCHAI_PS_HOSTS, AZ_BATCHAI_WORKER_HOSTS"
         type: list
         suboptions:
             name:
@@ -250,6 +250,14 @@ options:
             max_wall_clock_time:
                 description:
                     - Default Value = 1 week.
+    state:
+      description:
+        - Assert the state of the Job.
+        - Use 'present' to create or update an Job and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

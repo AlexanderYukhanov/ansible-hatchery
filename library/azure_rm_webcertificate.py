@@ -54,8 +54,16 @@ options:
             - Key Vault secret name.
     server_farm_id:
         description:
-            - "Resource ID of the associated App Service plan, formatted as: '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.
-              Web/serverfarms/{appServicePlanName}'."
+            - "Resource ID of the associated App Service plan, formatted as:
+               '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}'."
+    state:
+      description:
+        - Assert the state of the Certificate.
+        - Use 'present' to create or update an Certificate and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

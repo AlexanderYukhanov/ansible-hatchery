@@ -44,6 +44,14 @@ options:
     ignore_missing_vnet_service_endpoint:
         description:
             - Create firewall rule before the virtual network has vnet service endpoint enabled.
+    state:
+      description:
+        - Assert the state of the Virtual Network Rule.
+        - Use 'present' to create or update an Virtual Network Rule and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

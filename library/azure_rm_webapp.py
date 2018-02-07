@@ -71,8 +71,8 @@ options:
                     - 'repository'
     server_farm_id:
         description:
-            - "Resource ID of the associated App Service plan, formatted as: '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.
-              Web/serverfarms/{appServicePlanName}'."
+            - "Resource ID of the associated App Service plan, formatted as:
+               '/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}'."
     reserved:
         description:
             - <code>true</code> if reserved; otherwise, <code>false</code>.
@@ -276,10 +276,10 @@ options:
                             change_step:
                                 description:
                                     - In auto ramp up scenario this is the step to to add/remove from <code>I(reroute_percentage)</code> until it reaches
-                                    - "<code>I(min_reroute_percentage)</code> or <code>I(max_reroute_percentage)</code>. Site metrics are checked every N min
-                                      utes specificed in <code>I(change_interval_in_minutes)</code>."
-                                    - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified in <code>I(change_d
-                                      ecision_callback_url)</code>."
+                                    - "<code>I(min_reroute_percentage)</code> or <code>I(max_reroute_percentage)</code>. Site metrics are checked every N
+                                       minutes specificed in <code>I(change_interval_in_minutes)</code>."
+                                    - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified in
+                                       <code>I(change_decision_callback_url)</code>."
                             change_interval_in_minutes:
                                 description:
                                     - Specifies interval in mimuntes to reevaluate I(reroute_percentage).
@@ -291,13 +291,13 @@ options:
                                     - Specifies upper boundary below which I(reroute_percentage) will stay.
                             change_decision_callback_url:
                                 description:
-                                    - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback si
-                                      te extension for the scaffold and contracts."
+                                    - "Custom decision algorithm can be provided in TiPCallback site extension which URL can be specified. See TiPCallback
+                                       site extension for the scaffold and contracts."
                                     - "https://www.siteextensions.net/packages/TiPCallback/"
                             name:
                                 description:
-                                    - "Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the exp
-                                      eriment."
+                                    - "Name of the routing rule. The recommended name would be to point to the slot which will receive the traffic in the
+                                       experiment."
             limits:
                 description:
                     - Site limits.
@@ -423,15 +423,15 @@ options:
                             - Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration endpoint.
                     tags_requiring_auth:
                         description:
-                            - "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endp
-                              oint."
+                            - "Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration
+                               endpoint."
                             - "Tags can consist of alphanumeric characters and the following:"
                             - "'_', '@', '#', '.', ':', '-'. "
                             - Validation should be performed at the PushRequestHandler.
                     dynamic_tags_json:
                         description:
                             - "Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration
-                              endpoint."
+                               endpoint."
             api_definition:
                 description:
                     - Information about the formal API definition for the app.
@@ -469,12 +469,12 @@ options:
                     - Resource ID of the App Service Environment.
     client_affinity_enabled:
         description:
-            - "<code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which route client requests in the s
-              ame session to the same instance. Default is <code>true</code>."
+            - "<code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which route client requests in the
+               same session to the same instance. Default is <code>true</code>."
     client_cert_enabled:
         description:
-            - "<code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise, <code>false</code>. Default is <code>fal
-              se</code>."
+            - "<code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise, <code>false</code>. Default is
+               <code>false</code>."
     host_names_disabled:
         description:
             - <code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.
@@ -550,7 +550,7 @@ options:
                             - ARM resource ID of the target app.
                             - /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and
                             - "/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other
-                              slots."
+                               slots."
             overwrite:
                 description:
                     - If <code>true</code> the recovery operation can overwrite source app; otherwise, <code>false</code>.
@@ -584,6 +584,14 @@ options:
     ttl_in_seconds:
         description:
             - "Time to live in seconds for web app's default domain name."
+    state:
+      description:
+        - Assert the state of the Web App.
+        - Use 'present' to create or update an Web App and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

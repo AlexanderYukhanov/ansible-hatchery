@@ -63,8 +63,8 @@ options:
             - The CircuitProvisioningState state of the resource.
     service_provider_provisioning_state:
         description:
-            - "The ServiceProviderProvisioningState state of the resource. Possible values are 'C(not_provisioned)', 'C(provisioning)', 'C(provisioned)', and
-               'C(deprovisioning)'."
+            - "The ServiceProviderProvisioningState state of the resource. Possible values are 'C(not_provisioned)', 'C(provisioning)', 'C(provisioned)',
+               and 'C(deprovisioning)'."
         choices:
             - 'not_provisioned'
             - 'provisioning'
@@ -152,8 +152,8 @@ options:
                         type: list
                     advertised_public_prefixes_state:
                         description:
-                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(configured)
-                              ', and 'C(validation_needed)'."
+                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)',
+                               'C(configured)', and 'C(validation_needed)'."
                         choices:
                             - 'not_configured'
                             - 'configuring'
@@ -243,8 +243,8 @@ options:
                                     - Resource ID.
                             peering_type:
                                 description:
-                                    - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_peering)
-                                      '."
+                                    - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and
+                                       'C(microsoft_peering)'."
                                 choices:
                                     - 'azure_public_peering'
                                     - 'azure_private_peering'
@@ -293,8 +293,8 @@ options:
                                         type: list
                                     advertised_public_prefixes_state:
                                         description:
-                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)'
-                                              , 'C(configured)', and 'C(validation_needed)'."
+                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)',
+                                               'C(configuring)', 'C(configured)', and 'C(validation_needed)'."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'
@@ -401,8 +401,8 @@ options:
                                 type: list
                             advertised_public_prefixes_state:
                                 description:
-                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(con
-                                      figured)', and 'C(validation_needed)'."
+                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)',
+                                       'C(configured)', and 'C(validation_needed)'."
                                 choices:
                                     - 'not_configured'
                                     - 'configuring'
@@ -467,8 +467,8 @@ options:
                                             - Resource ID.
                                     peering_type:
                                         description:
-                                            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_
-                                              peering)'."
+                                            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and
+                                               'C(microsoft_peering)'."
                                         choices:
                                             - 'azure_public_peering'
                                             - 'azure_private_peering'
@@ -511,8 +511,8 @@ options:
                                             - Gets peering stats.
                                     provisioning_state:
                                         description:
-                                            - "Gets the provisioning I(state) of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Fa
-                                              iled'."
+                                            - "Gets the provisioning I(state) of the public IP resource. Possible values are: 'Updating', 'Deleting', and
+                                               'Failed'."
                                     gateway_manager_etag:
                                         description:
                                             - The GatewayManager Etag.
@@ -562,6 +562,14 @@ options:
     gateway_manager_etag:
         description:
             - The GatewayManager Etag.
+    state:
+      description:
+        - Assert the state of the Express Route Circuit.
+        - Use 'present' to create or update an Express Route Circuit and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

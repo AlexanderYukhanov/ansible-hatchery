@@ -28,8 +28,8 @@ options:
         required: True
     job_name:
         description:
-            - "The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (
-              -) and underscore (_). The name must be from 1 through 64 characters long."
+            - "The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash
+               (-) and underscore (_). The name must be from 1 through 64 characters long."
     jobs_list_by_resource_group_options:
         description:
             - Additional parameters for the operation
@@ -84,8 +84,8 @@ jobs:
                     sample: Microsoft.BatchAI/Jobs
                 priority:
                     description:
-                        - "Priority associated with the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 bein
-                          g the highest priority. The default value is 0."
+                        - "Priority associated with the job. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000
+                           being the highest priority. The default value is 0."
                     returned: always
                     type: int
                     sample: 0

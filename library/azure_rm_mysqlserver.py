@@ -72,6 +72,14 @@ options:
     admin_password:
         description:
             - The password of the administrator login.
+    state:
+      description:
+        - Assert the state of the MySQL Server.
+        - Use 'present' to create or update an MySQL Server and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

@@ -66,6 +66,14 @@ options:
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.
+    state:
+      description:
+        - Assert the state of the Local Network Gateway.
+        - Use 'present' to create or update an Local Network Gateway and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

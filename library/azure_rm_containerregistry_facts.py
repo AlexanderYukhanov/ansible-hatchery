@@ -93,8 +93,8 @@ registries:
                     contains:
                         name:
                             description:
-                                - "The SKU name of the container registry. Required for registry creation. Possible values include: 'Classic', 'Basic', 'Stan
-                                  dard', 'Premium'"
+                                - "The SKU name of the container registry. Required for registry creation. Possible values include: 'Classic', 'Basic',
+                                   'Standard', 'Premium'"
                             returned: always
                             type: str
                             sample: Standard

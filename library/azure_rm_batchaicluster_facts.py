@@ -28,8 +28,8 @@ options:
         required: True
     cluster_name:
         description:
-            - "The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along wit
-              h dash (-) and underscore (_). The name must be from 1 through 64 characters long."
+            - "The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along
+               with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
     clusters_list_by_resource_group_options:
         description:
             - Additional parameters for the operation

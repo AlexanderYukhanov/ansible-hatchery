@@ -28,17 +28,17 @@ options:
         required: True
     cluster_name:
         description:
-            - "The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along wit
-              h dash (-) and underscore (_). The name must be from 1 through 64 characters long."
+            - "The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along
+               with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
         required: True
     location:
         description:
             - Resource location. If not set, location from the resource group will be used as default.
     vm_size:
         description:
-            - "All virtual machines in a cluster are the same size. For information about available VM sizes for clusters using images from the Virtual Machi
-              nes Marketplace (see Sizes for Virtual Machines (Linux) or Sizes for Virtual Machines (Windows). Batch AI service supports all Azure VM sizes
-              except STANDARD_A0 and those with premium storage (STANDARD_GS, STANDARD_DS, and STANDARD_DSV2 series)."
+            - "All virtual machines in a cluster are the same size. For information about available VM sizes for clusters using images from the Virtual
+               Machines Marketplace (see Sizes for Virtual Machines (Linux) or Sizes for Virtual Machines (Windows). Batch AI service supports all Azure VM
+               sizes except STANDARD_A0 and those with premium storage (STANDARD_GS, STANDARD_DS, and STANDARD_DSV2 series)."
         required: True
     vm_priority:
         description:
@@ -139,8 +139,8 @@ options:
                                             - One of accountKey or I(account_key_secret_reference) must be specified.
                                     account_key_secret_reference:
                                         description:
-                                            - "Users can store their secrets in Azure KeyVault and pass it to the Batch AI Service to integrate with KeyVault
-                                              . One of I(account_key) or accountKeySecretReference must be specified."
+                                            - "Users can store their secrets in Azure KeyVault and pass it to the Batch AI Service to integrate with
+                                               KeyVault. One of I(account_key) or accountKeySecretReference must be specified."
                             relative_mount_path:
                                 description:
                                     - Note that all file shares will be mounted under $AZ_BATCHAI_MOUNT_ROOT location.
@@ -171,8 +171,8 @@ options:
                                             - One of accountKey or I(account_key_secret_reference) must be specified.
                                     account_key_secret_reference:
                                         description:
-                                            - "Users can store their secrets in Azure KeyVault and pass it to the Batch AI Service to integrate with KeyVault
-                                              . One of I(account_key) or accountKeySecretReference must be specified."
+                                            - "Users can store their secrets in Azure KeyVault and pass it to the Batch AI Service to integrate with
+                                               KeyVault. One of I(account_key) or accountKeySecretReference must be specified."
                             relative_mount_path:
                                 description:
                                     - Note that all blob file systems will be mounted under $AZ_BATCHAI_MOUNT_ROOT location.
@@ -229,6 +229,14 @@ options:
                 description:
                     - The ID of the resource
                 required: True
+    state:
+      description:
+        - Assert the state of the Cluster.
+        - Use 'present' to create or update an Cluster and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

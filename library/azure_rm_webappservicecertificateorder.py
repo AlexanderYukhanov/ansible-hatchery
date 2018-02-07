@@ -60,6 +60,14 @@ options:
     csr:
         description:
             - Last CSR that was created for this order.
+    state:
+      description:
+        - Assert the state of the App Service Certificate Order.
+        - Use 'present' to create or update an App Service Certificate Order and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure
@@ -87,7 +95,7 @@ id:
 status:
     description:
         - "Current order status. Possible values include: 'Pendingissuance', 'Issued', 'Revoked', 'Canceled', 'Denied', 'Pendingrevocation', 'PendingRekey',
-          'Unused', 'Expired', 'NotSubmitted'"
+           'Unused', 'Expired', 'NotSubmitted'"
     returned: always
     type: str
     sample: status

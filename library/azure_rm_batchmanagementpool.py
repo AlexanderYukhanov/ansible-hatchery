@@ -39,37 +39,38 @@ options:
             - The display name need not be unique and can contain any Unicode characters up to a maximum length of 1024.
     vm_size:
         description:
-            - "For information about available sizes of virtual machines for Cloud Services pools (pools created with cloudServiceConfiguration), see Sizes f
-              or Cloud Services (http://azure.microsoft.com/documentation/articles/cloud-services-sizes-specs/). Batch supports all Cloud Services VM sizes
-              except ExtraSmall. For information about available VM sizes for pools using images from the Virtual Machines Marketplace (pools created with v
-              irtualMachineConfiguration) see Sizes for Virtual Machines (Linux) (https://azure.microsoft.com/documentation/articles/virtual-machines-linux-
-              sizes/) or Sizes for Virtual Machines (Windows) (https://azure.microsoft.com/documentation/articles/virtual-machines-windows-sizes/). Batch su
-              pports all Azure VM sizes except STANDARD_A0 and those with premium storage (STANDARD_GS, STANDARD_DS, and STANDARD_DSV2 series)."
+            - "For information about available sizes of virtual machines for Cloud Services pools (pools created with cloudServiceConfiguration), see Sizes
+               for Cloud Services (http://azure.microsoft.com/documentation/articles/cloud-services-sizes-specs/). Batch supports all Cloud Services VM
+               sizes except ExtraSmall. For information about available VM sizes for pools using images from the Virtual Machines Marketplace (pools
+               created with virtualMachineConfiguration) see Sizes for Virtual Machines (Linux)
+               (https://azure.microsoft.com/documentation/articles/virtual-machines-linux-sizes/) or Sizes for Virtual Machines (Windows)
+               (https://azure.microsoft.com/documentation/articles/virtual-machines-windows-sizes/). Batch supports all Azure VM sizes except STANDARD_A0
+               and those with premium storage (STANDARD_GS, STANDARD_DS, and STANDARD_DSV2 series)."
     deployment_configuration:
         description:
-            - "Using CloudServiceConfiguration specifies that the nodes should be creating using Azure Cloud Services (PaaS), while VirtualMachineConfigurati
-              on uses Azure Virtual Machines (IaaS)."
+            - "Using CloudServiceConfiguration specifies that the nodes should be creating using Azure Cloud Services (PaaS), while
+               VirtualMachineConfiguration uses Azure Virtual Machines (IaaS)."
         suboptions:
             cloud_service_configuration:
                 description:
-                    - "This property and I(virtual_machine_configuration) are mutually exclusive and one of the properties must be specified. This property c
-                      annot be specified if the Batch account was created with its poolAllocationMode property set to 'UserSubscription'."
+                    - "This property and I(virtual_machine_configuration) are mutually exclusive and one of the properties must be specified. This property
+                       cannot be specified if the Batch account was created with its poolAllocationMode property set to 'UserSubscription'."
                 suboptions:
                     os_family:
                         description:
                             - "Possible values are: 2 - OS Family 2, equivalent to Windows Server 2008 R2 SP1. 3 - OS Family 3, equivalent to Windows Server
-                              2012. 4 - OS Family 4, equivalent to Windows Server 2012 R2. 5 - OS Family 5, equivalent to Windows Server 2016. For more info
-                              rmation, see Azure Guest OS Releases (https://azure.microsoft.com/documentation/articles/cloud-services-guestos-update-matrix/
-                              #releases)."
+                               2012. 4 - OS Family 4, equivalent to Windows Server 2012 R2. 5 - OS Family 5, equivalent to Windows Server 2016. For more
+                               information, see Azure Guest OS Releases
+                               (https://azure.microsoft.com/documentation/articles/cloud-services-guestos-update-matrix/#releases)."
                         required: True
                     target_os_version:
                         description:
                             - The default value is * which specifies the latest operating system version for the specified OS family.
                     current_os_version:
                         description:
-                            - "This may differ from I(target_os_version) if the pool state is Upgrading. In this case some virtual machines may be on the I(t
-                              arget_os_version) and some may be on the currentOSVersion during the upgrade process. Once all virtual machines have upgraded,
-                               currentOSVersion is updated to be the same as I(target_os_version)."
+                            - "This may differ from I(target_os_version) if the pool state is Upgrading. In this case some virtual machines may be on the
+                               I(target_os_version) and some may be on the currentOSVersion during the upgrade process. Once all virtual machines have
+                               upgraded, currentOSVersion is updated to be the same as I(target_os_version)."
             virtual_machine_configuration:
                 description:
                     - This property and I(cloud_service_configuration) are mutually exclusive and one of the properties must be specified.
@@ -92,10 +93,10 @@ options:
                                     - "A value of 'latest' can be specified to select the latest version of an image. If omitted, the default is 'latest'."
                             id:
                                 description:
-                                    - "This property is mutually exclusive with other properties. The virtual machine image must be in the same region and su
-                                      bscription as the Azure Batch account. For information about the firewall settings for Batch node agent to communicate
-                                       with Batch service see https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#virtual-network-vnet-and-firewal
-                                      l-configuration ."
+                                    - "This property is mutually exclusive with other properties. The virtual machine image must be in the same region and
+                                       subscription as the Azure Batch account. For information about the firewall settings for Batch node agent to
+                                       communicate with Batch service see
+                                       https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#virtual-network-vnet-and-firewall-configuration ."
                     os_disk:
                         description:
                         suboptions:
@@ -108,10 +109,11 @@ options:
                                     - 'read_write'
                     node_agent_sku_id:
                         description:
-                            - "The Batch node agent is a program that runs on each node in the pool, and provides the command-and-control interface between t
-                              he node and the Batch service. There are different implementations of the node agent, known as SKUs, for different operating s
-                              ystems. You must specify a node agent SKU which matches the selected image reference. To get the list of supported node agent
-                              SKUs along with their list of verified image references, see the 'List supported node agent SKUs' operation."
+                            - "The Batch node agent is a program that runs on each node in the pool, and provides the command-and-control interface between
+                               the node and the Batch service. There are different implementations of the node agent, known as SKUs, for different
+                               operating systems. You must specify a node agent SKU which matches the selected image reference. To get the list of
+                               supported node agent SKUs along with their list of verified image references, see the 'List supported node agent SKUs'
+                               operation."
                         required: True
                     windows_configuration:
                         description:
@@ -135,8 +137,8 @@ options:
                                     -  C(none) - The caching mode for the disk is not enabled.
                                     -  C(read_only) - The caching mode for the disk is read only.
                                     -  C(read_write) - The caching mode for the disk is read and write.
-                                    - " The default value for caching is C(none). For information about the caching options see: https://blogs.msdn.microsoft
-                                      .com/windowsazurestorage/2012/06/27/exploring-windows-azure-drives-disks-and-images/."
+                                    - " The default value for caching is C(none). For information about the caching options see:
+                                       https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/27/exploring-windows-azure-drives-disks-and-images/."
                                 choices:
                                     - 'none'
                                     - 'read_only'
@@ -154,8 +156,9 @@ options:
                                     - 'premium_lrs'
                     license_type:
                         description:
-                            - "This only applies to images that contain the Windows operating system, and should only be used when you hold valid on-premises
-                               licenses for the nodes which will be deployed. If omitted, no on-premises licensing discount is applied. Values are:"
+                            - "This only applies to images that contain the Windows operating system, and should only be used when you hold valid
+                               on-premises licenses for the nodes which will be deployed. If omitted, no on-premises licensing discount is applied. Values
+                               are:"
                             -  Windows_Server - The on-premises license is for Windows Server.
                             -  Windows_Client - The on-premises license is for Windows Client.
     scale_settings:
@@ -167,8 +170,9 @@ options:
                 suboptions:
                     resize_timeout:
                         description:
-                            - "The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch service
-                               rejects the request with an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad Request)."
+                            - "The default value is 15 minutes. The minimum value is 5 minutes. If you specify a value less than 5 minutes, the Batch
+                               service rejects the request with an error; if you are calling the REST API directly, the HTTP status code is 400 (Bad
+                               Request)."
                     target_dedicated_nodes:
                         description:
                             - At least one of targetDedicatedNodes, targetLowPriority nodes must be set.
@@ -195,8 +199,8 @@ options:
                             - If omitted, the default value is 15 minutes (PT15M).
     inter_node_communication:
         description:
-            - "This imposes restrictions on which nodes can be assigned to the pool. Enabling this value can reduce the chance of the requested number of nod
-              es to be allocated in the pool. If not specified, this value defaults to 'C(disabled)'."
+            - "This imposes restrictions on which nodes can be assigned to the pool. Enabling this value can reduce the chance of the requested number of
+               nodes to be allocated in the pool. If not specified, this value defaults to 'C(disabled)'."
         choices:
             - 'enabled'
             - 'disabled'
@@ -205,34 +209,35 @@ options:
         suboptions:
             subnet_id:
                 description:
-                    - "The virtual network must be in the same region and subscription as the Azure Batch account. The specified subnet should have enough fr
-                      ee IP addresses to accommodate the number of nodes in the pool. If the subnet doesn't have enough free IP addresses, the pool will par
-                      tially allocate compute nodes, and a resize error will occur. The 'MicrosoftAzureBatch' service principal must have the 'Classic Virtu
-                      al Machine Contributor' Role-Based Access Control (RBAC) role for the specified VNet. The specified subnet must allow communication fr
-                      om the Azure Batch service to be able to schedule tasks on the compute nodes. This can be verified by checking if the specified VNet h
-                      as any associated Network Security Groups (NSG). If communication to the compute nodes in the specified subnet is denied by an NSG, th
-                      en the Batch service will set the state of the compute nodes to unusable. For pools created via virtualMachineConfiguration the Batch
-                      account must have poolAllocationMode userSubscription in order to use a VNet. If the specified VNet has any associated Network Securit
-                      y Groups (NSG), then a few reserved system ports must be enabled for inbound communication. For pools created with a virtual machine c
-                      onfiguration, enable ports 29876 and 29877, as well as port 22 for Linux and port 3389 for Windows. For pools created with a cloud ser
-                      vice configuration, enable ports 10100, 20100, and 30100. Also enable outbound connections to Azure Storage on port 443. For more deta
-                      ils see: https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#virtual-network-vnet-and-firewall-configuration"
+                    - "The virtual network must be in the same region and subscription as the Azure Batch account. The specified subnet should have enough
+                       free IP addresses to accommodate the number of nodes in the pool. If the subnet doesn't have enough free IP addresses, the pool will
+                       partially allocate compute nodes, and a resize error will occur. The 'MicrosoftAzureBatch' service principal must have the 'Classic
+                       Virtual Machine Contributor' Role-Based Access Control (RBAC) role for the specified VNet. The specified subnet must allow
+                       communication from the Azure Batch service to be able to schedule tasks on the compute nodes. This can be verified by checking if
+                       the specified VNet has any associated Network Security Groups (NSG). If communication to the compute nodes in the specified subnet
+                       is denied by an NSG, then the Batch service will set the state of the compute nodes to unusable. For pools created via
+                       virtualMachineConfiguration the Batch account must have poolAllocationMode userSubscription in order to use a VNet. If the specified
+                       VNet has any associated Network Security Groups (NSG), then a few reserved system ports must be enabled for inbound communication.
+                       For pools created with a virtual machine configuration, enable ports 29876 and 29877, as well as port 22 for Linux and port 3389 for
+                       Windows. For pools created with a cloud service configuration, enable ports 10100, 20100, and 30100. Also enable outbound
+                       connections to Azure Storage on port 443. For more details see:
+                       https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#virtual-network-vnet-and-firewall-configuration"
             endpoint_configuration:
                 description:
                     - Pool endpoint configuration is only supported on pools with the virtualMachineConfiguration property.
                 suboptions:
                     inbound_nat_pools:
                         description:
-                            - "The maximum number of inbound NAT pools per Batch pool is 5. If the maximum number of inbound NAT pools is exceeded the reques
-                              t fails with HTTP status code 400."
+                            - "The maximum number of inbound NAT pools per Batch pool is 5. If the maximum number of inbound NAT pools is exceeded the
+                               request fails with HTTP status code 400."
                         required: True
                         type: list
                         suboptions:
                             name:
                                 description:
-                                    - "The name must be unique within a Batch pool, can contain letters, numbers, underscores, periods, and hyphens. Names mu
-                                      st start with a letter or number, must end with a letter, number, or underscore, and cannot exceed 77 characters.  If
-                                      any invalid values are provided the request fails with HTTP status code 400."
+                                    - "The name must be unique within a Batch pool, can contain letters, numbers, underscores, periods, and hyphens. Names
+                                       must start with a letter or number, must end with a letter, number, or underscore, and cannot exceed 77 characters.
+                                       If any invalid values are provided the request fails with HTTP status code 400."
                                 required: True
                             protocol:
                                 description:
@@ -243,34 +248,35 @@ options:
                                     - 'udp'
                             backend_port:
                                 description:
-                                    - "This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 22, 3389, 29876 and 2987
-                                      7 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400."
+                                    - "This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 22, 3389, 29876 and
+                                       29877 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400."
                                 required: True
                             frontend_port_range_start:
                                 description:
-                                    - "Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved. All ranges within a p
-                                      ool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTT
-                                      P status code 400."
+                                    - "Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved. All ranges within a
+                                       pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with
+                                       HTTP status code 400."
                                 required: True
                             frontend_port_range_end:
                                 description:
                                     - "Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved by the Batch service.
-                                      All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the r
-                                      equest fails with HTTP status code 400."
+                                       All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the
+                                       request fails with HTTP status code 400."
                                 required: True
                             network_security_group_rules:
                                 description:
-                                    - "The maximum number of rules that can be specified across all the endpoints on a Batch pool is 25. If no network securi
-                                      ty group rules are specified, a default rule will be created to allow inbound access to the specified I(backend_port).
-                                       If the maximum number of network security group rules is exceeded the request fails with HTTP status code 400."
+                                    - "The maximum number of rules that can be specified across all the endpoints on a Batch pool is 25. If no network
+                                       security group rules are specified, a default rule will be created to allow inbound access to the specified
+                                       I(backend_port). If the maximum number of network security group rules is exceeded the request fails with HTTP
+                                       status code 400."
                                 type: list
                                 suboptions:
                                     priority:
                                         description:
-                                            - "Priorities within a pool must be unique and are evaluated in order of priority. The lower the number the highe
-                                              r the priority. For example, rules could be specified with order numbers of 150, 250, and 350. The rule with t
-                                              he order number of 150 takes precedence over the rule that has an order of 250. Allowed priorities are 150 to
-                                              3500. If any reserved or duplicate values are provided the request fails with HTTP status code 400."
+                                            - "Priorities within a pool must be unique and are evaluated in order of priority. The lower the number the
+                                               higher the priority. For example, rules could be specified with order numbers of 150, 250, and 350. The rule
+                                               with the order number of 150 takes precedence over the rule that has an order of 250. Allowed priorities are
+                                               150 to 3500. If any reserved or duplicate values are provided the request fails with HTTP status code 400."
                                         required: True
                                     access:
                                         description:
@@ -281,8 +287,8 @@ options:
                                             - 'deny'
                                     source_address_prefix:
                                         description:
-                                            - "Valid values are a single IP address (i.e. 10.10.10.10), IP subnet (i.e. 192.168.1.0/24), default tag, or * (f
-                                              or all addresses).  If any other values are provided the request fails with HTTP status code 400."
+                                            - "Valid values are a single IP address (i.e. 10.10.10.10), IP subnet (i.e. 192.168.1.0/24), default tag, or *
+                                               (for all addresses).  If any other values are provided the request fails with HTTP status code 400."
                                         required: True
     max_tasks_per_node:
         description:
@@ -308,8 +314,8 @@ options:
                 required: True
             elevation_level:
                 description:
-                    - "C(non_admin) - The auto user is a standard user without elevated access. C(admin) - The auto user is a user with elevated access and o
-                      perates with full Administrator permissions. The default value is C(non_admin)."
+                    - "C(non_admin) - The auto user is a standard user without elevated access. C(admin) - The auto user is a user with elevated access and
+                       operates with full Administrator permissions. The default value is C(non_admin)."
                 choices:
                     - 'non_admin'
                     - 'admin'
@@ -319,18 +325,18 @@ options:
                 suboptions:
                     uid:
                         description:
-                            - "The uid and I(gid) properties must be specified together or not at all. If not specified the underlying operating system picks
-                               the uid."
+                            - "The uid and I(gid) properties must be specified together or not at all. If not specified the underlying operating system
+                               picks the uid."
                     gid:
                         description:
-                            - "The I(uid) and gid properties must be specified together or not at all. If not specified the underlying operating system picks
-                               the gid."
+                            - "The I(uid) and gid properties must be specified together or not at all. If not specified the underlying operating system
+                               picks the gid."
                     ssh_private_key:
                         description:
-                            - "The private key must not be password protected. The private key is used to automatically configure asymmetric-key based authen
-                              tication for SSH between nodes in a Linux pool when the pool's enableInterNodeCommunication property is true (it is ignored if
-                               enableInterNodeCommunication is false). It does this by placing the key pair into the user's .ssh directory. If not specified
-                              , password-less SSH is not configured between nodes (no modification of the user's .ssh directory is done)."
+                            - "The private key must not be password protected. The private key is used to automatically configure asymmetric-key based
+                               authentication for SSH between nodes in a Linux pool when the pool's enableInterNodeCommunication property is true (it is
+                               ignored if enableInterNodeCommunication is false). It does this by placing the key pair into the user's .ssh directory. If
+                               not specified, password-less SSH is not configured between nodes (no modification of the user's .ssh directory is done)."
     metadata:
         description:
             - The Batch service does not assign any meaning to metadata; it is solely for the use of user code.
@@ -348,27 +354,27 @@ options:
         suboptions:
             command_line:
                 description:
-                    - "The command line does not run under a shell, and therefore cannot take advantage of shell features such as environment variable expans
-                      ion. If you want to take advantage of such features, you should invoke the shell in the command line, for example using 'cmd /c MyComm
-                      and' in Windows or '/bin/sh -c MyCommand' in Linux. Required if any other properties of the startTask are specified."
+                    - "The command line does not run under a shell, and therefore cannot take advantage of shell features such as environment variable
+                       expansion. If you want to take advantage of such features, you should invoke the shell in the command line, for example using 'cmd
+                       /c MyCommand' in Windows or '/bin/sh -c MyCommand' in Linux. Required if any other properties of the startTask are specified."
             resource_files:
                 description:
                 type: list
                 suboptions:
                     blob_source:
                         description:
-                            - "This URL must be readable using anonymous access; that is, the Batch service does not present any credentials when downloading
-                               the blob. There are two ways to get such a URL for a blob in Azure storage: include a Shared Access Signature (SAS) granting
-                              read permissions on the blob, or set the ACL for the blob or its container to allow public access."
+                            - "This URL must be readable using anonymous access; that is, the Batch service does not present any credentials when
+                               downloading the blob. There are two ways to get such a URL for a blob in Azure storage: include a Shared Access Signature
+                               (SAS) granting read permissions on the blob, or set the ACL for the blob or its container to allow public access."
                         required: True
                     file_path:
                         description:
                         required: True
                     file_mode:
                         description:
-                            - "This property applies only to files being downloaded to Linux compute nodes. It will be ignored if it is specified for a resou
-                              rceFile which will be downloaded to a Windows node. If this property is not specified for a Linux node, then a default value o
-                              f 0770 is applied to the file."
+                            - "This property applies only to files being downloaded to Linux compute nodes. It will be ignored if it is specified for a
+                               resourceFile which will be downloaded to a Windows node. If this property is not specified for a Linux node, then a default
+                               value of 0770 is applied to the file."
             environment_settings:
                 description:
                 type: list
@@ -391,38 +397,39 @@ options:
                         suboptions:
                             scope:
                                 description:
-                                    - "C(pool) - specifies that the C(task) runs as the common auto user account which is created on every node in a C(pool).
-                                       C(task) - specifies that the service should create a new user for the C(task). The default value is C(task)."
+                                    - "C(pool) - specifies that the C(task) runs as the common auto user account which is created on every node in a
+                                       C(pool). C(task) - specifies that the service should create a new user for the C(task). The default value is
+                                       C(task)."
                                 choices:
                                     - 'task'
                                     - 'pool'
                             elevation_level:
                                 description:
-                                    - "C(non_admin) - The auto user is a standard user without elevated access. C(admin) - The auto user is a user with eleva
-                                      ted access and operates with full Administrator permissions. The default value is C(non_admin)."
+                                    - "C(non_admin) - The auto user is a standard user without elevated access. C(admin) - The auto user is a user with
+                                       elevated access and operates with full Administrator permissions. The default value is C(non_admin)."
                                 choices:
                                     - 'non_admin'
                                     - 'admin'
             max_task_retry_count:
                 description:
-                    - "The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Ba
-                      tch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the
-                       task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If th
-                      e maximum retry count is -1, the Batch service retries the task without limit."
+                    - "The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The
+                       Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries
+                       the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task.
+                       If the maximum retry count is -1, the Batch service retries the task without limit."
             wait_for_success:
                 description:
-                    - "If true and the start task fails on a compute node, the Batch service retries the start task up to its maximum retry count (I(max_task
-                      _retry_count)). If the task has still not completed successfully after all retries, then the Batch service marks the compute node unus
-                      able, and will not schedule tasks to it. This condition can be detected via the node state and scheduling error detail. If false, the
-                      Batch service will not wait for the start task to complete. In this case, other tasks can start executing on the compute node while th
-                      e start task is still running; and even if the start task fails, new tasks will continue to be scheduled on the node. The default is f
-                      alse."
+                    - "If true and the start task fails on a compute node, the Batch service retries the start task up to its maximum retry count
+                       (I(max_task_retry_count)). If the task has still not completed successfully after all retries, then the Batch service marks the
+                       compute node unusable, and will not schedule tasks to it. This condition can be detected via the node state and scheduling error
+                       detail. If false, the Batch service will not wait for the start task to complete. In this case, other tasks can start executing on
+                       the compute node while the start task is still running; and even if the start task fails, new tasks will continue to be scheduled on
+                       the node. The default is false."
     certificates:
         description:
-            - "For Windows compute nodes, the Batch service installs the certificates to the specified certificate store and location. For Linux compute node
-              s, the certificates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is suppl
-              ied to the task to query for this location. For certificates with visibility of 'remoteUser', a 'certs' directory is created in the user's hom
-              e directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory."
+            - "For Windows compute nodes, the Batch service installs the certificates to the specified certificate store and location. For Linux compute
+               nodes, the certificates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is
+               supplied to the task to query for this location. For certificates with visibility of 'remoteUser', a 'certs' directory is created in the
+               user's home directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory."
         type: list
         suboptions:
             id:
@@ -431,18 +438,18 @@ options:
             store_location:
                 description:
                     - "The default value is C(current_user). This property is applicable only for pools configured with Windows nodes (that is, created with
-                      cloudServiceConfiguration, or with virtualMachineConfiguration using a Windows image reference). For Linux compute nodes, the certific
-                      ates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is supplied to
-                      the task to query for this location. For certificates with I(visibility) of 'remoteUser', a 'certs' directory is created in the user's
-                       home directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory."
+                       cloudServiceConfiguration, or with virtualMachineConfiguration using a Windows image reference). For Linux compute nodes, the
+                       certificates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is
+                       supplied to the task to query for this location. For certificates with I(visibility) of 'remoteUser', a 'certs' directory is created
+                       in the user's home directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory."
                 choices:
                     - 'current_user'
                     - 'local_machine'
             store_name:
                 description:
-                    - "This property is applicable only for pools configured with Windows nodes (that is, created with cloudServiceConfiguration, or with vir
-                      tualMachineConfiguration using a Windows image reference). Common store names include: My, Root, CA, Trust, Disallowed, TrustedPeople,
-                       TrustedPublisher, AuthRoot, AddressBook, but any custom store name can also be used. The default value is My."
+                    - "This property is applicable only for pools configured with Windows nodes (that is, created with cloudServiceConfiguration, or with
+                       virtualMachineConfiguration using a Windows image reference). Common store names include: My, Root, CA, Trust, Disallowed,
+                       TrustedPeople, TrustedPublisher, AuthRoot, AddressBook, but any custom store name can also be used. The default value is My."
             visibility:
                 description:
                     - "Values are:"
@@ -453,8 +460,8 @@ options:
                 type: list
     application_packages:
         description:
-            - "Changes to application packages affect all new compute nodes joining the pool, but do not affect compute nodes that are already in the pool un
-              til they are rebooted or reimaged."
+            - "Changes to application packages affect all new compute nodes joining the pool, but do not affect compute nodes that are already in the pool
+               until they are rebooted or reimaged."
         type: list
         suboptions:
             id:
@@ -462,20 +469,28 @@ options:
                 required: True
             version:
                 description:
-                    - "If this is omitted, and no default version is specified for this application, the request fails with the error code InvalidApplication
-                      PackageReferences. If you are calling the REST API directly, the HTTP status code is 409."
+                    - "If this is omitted, and no default version is specified for this application, the request fails with the error code
+                       InvalidApplicationPackageReferences. If you are calling the REST API directly, the HTTP status code is 409."
     application_licenses:
         description:
-            - "The list of application licenses must be a subset of available Batch service application licenses. If a license is requested which is not supp
-              orted, pool creation will fail."
+            - "The list of application licenses must be a subset of available Batch service application licenses. If a license is requested which is not
+               supported, pool creation will fail."
         type: list
     if_match:
         description:
-            - "The entity state (ETag) version of the pool to update. A value of '*' can be used to apply the operation only if the pool already exists. If o
-              mitted, this operation will always be applied."
+            - "The entity state (ETag) version of the pool to update. A value of '*' can be used to apply the operation only if the pool already exists. If
+               omitted, this operation will always be applied."
     if_none_match:
         description:
             - "Set to '*' to allow a new pool to be created, but to prevent updating an existing pool. Other values will be ignored."
+    state:
+      description:
+        - Assert the state of the Pool.
+        - Use 'present' to create or update an Pool and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

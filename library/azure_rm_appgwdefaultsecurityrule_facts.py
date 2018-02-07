@@ -88,15 +88,15 @@ default_security_rules:
                     sample: Allow
                 priority:
                     description:
-                        - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collectio
-                          n. The lower the priority number, the higher the priority of the rule."
+                        - "The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the
+                           collection. The lower the priority number, the higher the priority of the rule."
                     returned: always
                     type: int
                     sample: 65000
                 direction:
                     description:
-                        - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values are
-                          : 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
+                        - "The direction of the rule. The direction specifies if rule will be evaluated on incoming or outcoming traffic. Possible values
+                           are: 'Inbound' and 'Outbound'. Possible values include: 'Inbound', 'Outbound'"
                     returned: always
                     type: str
                     sample: Inbound

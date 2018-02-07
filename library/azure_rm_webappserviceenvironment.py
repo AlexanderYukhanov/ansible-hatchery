@@ -134,12 +134,12 @@ options:
     suspended:
         description:
             - "<code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can be suspended, e.g. when the
-              management endpoint is no longer available"
+               management endpoint is no longer available"
             -  (most likely because NSG blocked the incoming traffic).
     dynamic_cache_enabled:
         description:
-            - "True/false indicating whether the App Service Environment is I(suspended). The environment can be I(suspended) e.g. when the management endpoi
-              nt is no longer available"
+            - "True/false indicating whether the App Service Environment is I(suspended). The environment can be I(suspended) e.g. when the management
+               endpoint is no longer available"
             - (most likely because NSG blocked the incoming traffic).
     cluster_settings:
         description:
@@ -156,6 +156,14 @@ options:
         description:
             - User added ip ranges to whitelist on ASE db
         type: list
+    state:
+      description:
+        - Assert the state of the App Service Environment.
+        - Use 'present' to create or update an App Service Environment and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

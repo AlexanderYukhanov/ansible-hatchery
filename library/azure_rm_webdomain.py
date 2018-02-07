@@ -284,8 +284,8 @@ options:
         suboptions:
             agreement_keys:
                 description:
-                    - "List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code> re
-                      source."
+                    - "List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code>
+                       resource."
                 type: list
             agreed_by:
                 description:
@@ -310,6 +310,14 @@ options:
             - 'default_domain_registrar_dns'
     auth_code:
         description:
+    state:
+      description:
+        - Assert the state of the Domain.
+        - Use 'present' to create or update an Domain and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

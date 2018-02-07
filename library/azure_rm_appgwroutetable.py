@@ -49,8 +49,8 @@ options:
                     - The destination CIDR to which the route applies.
             next_hop_type:
                 description:
-                    - "The type of Azure hop the packet should be sent to. Possible values are: 'C(virtual_network_gateway)', 'C(vnet_local)', 'C(internet)',
-                       'C(virtual_appliance)', and 'C(none)'."
+                    - "The type of Azure hop the packet should be sent to. Possible values are: 'C(virtual_network_gateway)', 'C(vnet_local)',
+                       'C(internet)', 'C(virtual_appliance)', and 'C(none)'."
                 required: True
                 choices:
                     - 'virtual_network_gateway'
@@ -79,6 +79,14 @@ options:
     etag:
         description:
             - Gets a unique read-only string that changes whenever the resource is updated.
+    state:
+      description:
+        - Assert the state of the Route Table.
+        - Use 'present' to create or update an Route Table and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

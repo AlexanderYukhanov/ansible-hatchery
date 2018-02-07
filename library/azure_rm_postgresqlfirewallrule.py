@@ -43,6 +43,14 @@ options:
     end_ip_address:
         description:
             - The end IP address of the server firewall rule. Must be IPv4 format.
+    state:
+      description:
+        - Assert the state of the Firewall Rule.
+        - Use 'present' to create or update an Firewall Rule and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

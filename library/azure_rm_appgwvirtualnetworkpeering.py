@@ -48,13 +48,13 @@ options:
             - If gateway links can be used in remote virtual networking to link to this virtual network.
     use_remote_gateways:
         description:
-            - "If remote gateways can be used on this virtual network. If the flag is set to true, and I(allow_gateway_transit) on remote peering is also tru
-              e, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot
-              be set if virtual network already has a gateway."
+            - "If remote gateways can be used on this virtual network. If the flag is set to true, and I(allow_gateway_transit) on remote peering is also
+               true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag
+               cannot be set if virtual network already has a gateway."
     remote_virtual_network:
         description:
-            - "The reference of the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to register
-               for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)."
+            - "The reference of the remote virtual network. The remote virtual network can be in the same or different region (preview). See here to
+               register for the preview and learn more (https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-create-peering)."
         suboptions:
             id:
                 description:
@@ -83,6 +83,14 @@ options:
     etag:
         description:
             - A unique read-only string that changes whenever the resource is updated.
+    state:
+      description:
+        - Assert the state of the Virtual Network Peering.
+        - Use 'present' to create or update an Virtual Network Peering and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

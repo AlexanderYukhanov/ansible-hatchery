@@ -28,8 +28,8 @@ options:
         required: True
     file_server_name:
         description:
-            - "The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters a
-              long with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
+            - "The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters
+               along with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
         required: True
     location:
         description:
@@ -81,6 +81,14 @@ options:
                 description:
                     - The ID of the resource
                 required: True
+    state:
+      description:
+        - Assert the state of the File Server.
+        - Use 'present' to create or update an File Server and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

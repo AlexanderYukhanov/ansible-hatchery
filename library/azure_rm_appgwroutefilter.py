@@ -125,8 +125,8 @@ options:
                         type: list
                     advertised_public_prefixes_state:
                         description:
-                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(configured)
-                              ', and 'C(validation_needed)'."
+                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)',
+                               'C(configured)', and 'C(validation_needed)'."
                         choices:
                             - 'not_configured'
                             - 'configuring'
@@ -216,8 +216,8 @@ options:
                                     - Resource ID.
                             peering_type:
                                 description:
-                                    - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_peering)
-                                      '."
+                                    - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and
+                                       'C(microsoft_peering)'."
                                 choices:
                                     - 'azure_public_peering'
                                     - 'azure_private_peering'
@@ -266,8 +266,8 @@ options:
                                         type: list
                                     advertised_public_prefixes_state:
                                         description:
-                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)'
-                                              , 'C(configured)', and 'C(validation_needed)'."
+                                            - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)',
+                                               'C(configuring)', 'C(configured)', and 'C(validation_needed)'."
                                         choices:
                                             - 'not_configured'
                                             - 'configuring'
@@ -374,8 +374,8 @@ options:
                                 type: list
                             advertised_public_prefixes_state:
                                 description:
-                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)', 'C(con
-                                      figured)', and 'C(validation_needed)'."
+                                    - "AdvertisedPublicPrefixState of the Peering resource. Possible values are 'C(not_configured)', 'C(configuring)',
+                                       'C(configured)', and 'C(validation_needed)'."
                                 choices:
                                     - 'not_configured'
                                     - 'configuring'
@@ -440,8 +440,8 @@ options:
                                             - Resource ID.
                                     peering_type:
                                         description:
-                                            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and 'C(microsoft_
-                                              peering)'."
+                                            - "The PeeringType. Possible values are: 'C(azure_public_peering)', 'C(azure_private_peering)', and
+                                               'C(microsoft_peering)'."
                                         choices:
                                             - 'azure_public_peering'
                                             - 'azure_private_peering'
@@ -484,8 +484,8 @@ options:
                                             - Gets peering stats.
                                     provisioning_state:
                                         description:
-                                            - "Gets the provisioning I(state) of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Fa
-                                              iled'."
+                                            - "Gets the provisioning I(state) of the public IP resource. Possible values are: 'Updating', 'Deleting', and
+                                               'Failed'."
                                     gateway_manager_etag:
                                         description:
                                             - The GatewayManager Etag.
@@ -510,6 +510,14 @@ options:
             name:
                 description:
                     - Gets name of the resource that is unique within a resource group. This name can be used to access the resource.
+    state:
+      description:
+        - Assert the state of the Route Filter.
+        - Use 'present' to create or update an Route Filter and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

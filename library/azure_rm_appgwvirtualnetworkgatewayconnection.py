@@ -104,8 +104,8 @@ options:
                     - ActiveActive flag
             gateway_default_site:
                 description:
-                    - "The reference of the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case
-                       of removing existing default site setting."
+                    - "The reference of the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in
+                       case of removing existing default site setting."
                 suboptions:
                     id:
                         description:
@@ -279,8 +279,8 @@ options:
                     - ActiveActive flag
             gateway_default_site:
                 description:
-                    - "The reference of the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case
-                       of removing existing default site setting."
+                    - "The reference of the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in
+                       case of removing existing default site setting."
                 suboptions:
                     id:
                         description:
@@ -546,6 +546,14 @@ options:
     etag:
         description:
             - Gets a unique read-only string that changes whenever the resource is updated.
+    state:
+      description:
+        - Assert the state of the Virtual Network Gateway Connection.
+        - Use 'present' to create or update an Virtual Network Gateway Connection and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

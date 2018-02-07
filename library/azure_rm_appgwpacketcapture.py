@@ -59,8 +59,8 @@ options:
                     - The URI of the storage path to save the packet capture. Must be a well-formed URI describing the location to save the packet capture.
             file_path:
                 description:
-                    - "A valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual machine it must start wit
-                      h /var/captures. Required if no storage ID is provided, otherwise optional."
+                    - "A valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual machine it must start
+                       with /var/captures. Required if no storage ID is provided, otherwise optional."
     filters:
         description:
         type: list
@@ -74,22 +74,30 @@ options:
                     - 'any'
             local_ip_address:
                 description:
-                    - "Local IP Address to be filtered on. Notation: '127.0.0.1' for single address entry. '127.0.0.1-127.0.0.255' for range. '127.0.0.1;127.
-                      0.0.5'? for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. De
-                      fault = null."
+                    - "Local IP Address to be filtered on. Notation: '127.0.0.1' for single address entry. '127.0.0.1-127.0.0.255' for range.
+                       '127.0.0.1;127.0.0.5'? for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not
+                       currently supported. Default = null."
             remote_ip_address:
                 description:
-                    - "Local IP Address to be filtered on. Notation: '127.0.0.1' for single address entry. '127.0.0.1-127.0.0.255' for range. '127.0.0.1;127.
-                      0.0.5;' for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. De
-                      fault = null."
+                    - "Local IP Address to be filtered on. Notation: '127.0.0.1' for single address entry. '127.0.0.1-127.0.0.255' for range.
+                       '127.0.0.1;127.0.0.5;' for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not
+                       currently supported. Default = null."
             local_port:
                 description:
                     - "Local port to be filtered on. Notation: '80' for single port entry.'80-85' for range. '80;443;' for multiple entries. Multiple ranges
-                      not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
+                       not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
             remote_port:
                 description:
-                    - "Remote port to be filtered on. Notation: '80' for single port entry.'80-85' for range. '80;443;' for multiple entries. Multiple ranges
-                       not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
+                    - "Remote port to be filtered on. Notation: '80' for single port entry.'80-85' for range. '80;443;' for multiple entries. Multiple
+                       ranges not currently supported. Mixing ranges with multiple entries not currently supported. Default = null."
+    state:
+      description:
+        - Assert the state of the Packet Capture.
+        - Use 'present' to create or update an Packet Capture and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

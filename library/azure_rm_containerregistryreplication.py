@@ -40,6 +40,14 @@ options:
     location:
         description:
             - Resource location. If not set, location from the resource group will be used as default.
+    state:
+      description:
+        - Assert the state of the Replication.
+        - Use 'present' to create or update an Replication and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure

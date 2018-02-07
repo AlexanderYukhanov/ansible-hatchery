@@ -35,16 +35,16 @@ options:
             - The maximum number of items to return in the response.
     select:
         description:
-            - "Comma separated list of properties that should be returned. e.g. 'properties/provisioningState'. Only top level properties under properties/ a
-              re valid for selection."
+            - "Comma separated list of properties that should be returned. e.g. 'properties/provisioningState'. Only top level properties under properties/
+               are valid for selection."
     filter:
         description:
-            - "OData filter expression. Valid properties for filtering are 'properties/provisioningState', 'properties/provisioningStateTransitionTime', 'nam
-              e'."
+            - "OData filter expression. Valid properties for filtering are 'properties/provisioningState', 'properties/provisioningStateTransitionTime',
+               'name'."
     certificate_name:
         description:
             - "The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data
-              in the request. For example SHA1-a3d1c5."
+               in the request. For example SHA1-a3d1c5."
 
 extends_documentation_fragment:
     - azure

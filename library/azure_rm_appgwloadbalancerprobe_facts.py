@@ -69,9 +69,9 @@ load_balancer_probes:
                     sample: /subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/probes/probe1
                 protocol:
                     description:
-                        - "The protocol of the end point. Possible values are: 'Http' or 'Tcp'. If 'Tcp' is specified, a received ACK is required for the pro
-                          be to be successful. If 'Http' is specified, a 200 OK response from the specifies URI is required for the probe to be successful.
-                          Possible values include: 'Http', 'Tcp'"
+                        - "The protocol of the end point. Possible values are: 'Http' or 'Tcp'. If 'Tcp' is specified, a received ACK is required for the
+                           probe to be successful. If 'Http' is specified, a 200 OK response from the specifies URI is required for the probe to be
+                           successful. Possible values include: 'Http', 'Tcp'"
                     returned: always
                     type: str
                     sample: Http

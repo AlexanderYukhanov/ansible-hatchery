@@ -58,6 +58,14 @@ options:
                 description:
                     - The resource ID of the storage account.
                 required: True
+    state:
+      description:
+        - Assert the state of the Registry.
+        - Use 'present' to create or update an Registry and 'absent' to delete it.
+      default: present
+      choices:
+        - absent
+        - present
 
 extends_documentation_fragment:
     - azure
