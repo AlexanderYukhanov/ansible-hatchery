@@ -44,8 +44,8 @@ options:
             - "The version of the server. For example '12.0'."
     identity:
         description:
-            - "The identity type. Set this to 'C(system_assigned)' in order to automatically create and assign an Azure Active Directory principal for the re
-              source."
+            - "The identity type. Set this to 'C(system_assigned)' in order to automatically create and assign an Azure Active Directory principal for the
+               resource."
         choices:
             - 'system_assigned'
     state:

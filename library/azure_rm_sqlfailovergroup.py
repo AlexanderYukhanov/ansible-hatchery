@@ -41,16 +41,16 @@ options:
         suboptions:
             failover_policy:
                 description:
-                    - "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is C(automatic) then I(failover_with_data_loss_gr
-                      ace_period_minutes) is required."
+                    - "Failover policy of the read-write endpoint for the failover group. If failoverPolicy is C(automatic) then
+                       I(failover_with_data_loss_grace_period_minutes) is required."
                 required: True
                 choices:
                     - 'manual'
                     - 'automatic'
             failover_with_data_loss_grace_period_minutes:
                 description:
-                    - "Grace period before failover with data loss is attempted for the read-write endpoint. If I(failover_policy) is C(automatic) then failo
-                      verWithDataLossGracePeriodMinutes is required."
+                    - "Grace period before failover with data loss is attempted for the read-write endpoint. If I(failover_policy) is C(automatic) then
+                       failoverWithDataLossGracePeriodMinutes is required."
     read_only_endpoint:
         description:
             - Read-only endpoint of the failover group instance.

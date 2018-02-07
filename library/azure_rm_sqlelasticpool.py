@@ -58,8 +58,8 @@ options:
             - Gets storage limit for the database elastic pool in MB.
     zone_redundant:
         description:
-            - "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple availabi
-              lity zones."
+            - "Whether or not this database elastic pool is zone redundant, which means the replicas of this database will be spread across multiple
+               availability zones."
     state:
       description:
         - Assert the state of the ElasticPool.

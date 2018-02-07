@@ -51,8 +51,8 @@ options:
             - 'disabled'
     disabled_alerts:
         description:
-            - "Specifies the semicolon-separated list of alerts that are C(C(C(disabled))), or empty string to disable no alerts. Possible values: Sql_Inject
-              ion; Sql_Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
+            - "Specifies the semicolon-separated list of alerts that are C(C(C(disabled))), or empty string to disable no alerts. Possible values:
+               Sql_Injection; Sql_Injection_Vulnerability; Access_Anomaly; Usage_Anomaly."
     email_addresses:
         description:
             - Specifies the semicolon-separated list of e-mail addresses to which the alert is sent.
@@ -64,8 +64,8 @@ options:
             - 'disabled'
     storage_endpoint:
         description:
-            - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit log
-              s. If I(state) is C(C(C(enabled))), storageEndpoint is required."
+            - "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit
+               logs. If I(state) is C(C(C(enabled))), storageEndpoint is required."
     storage_account_access_key:
         description:
             - Specifies the identifier key of the Threat Detection audit storage account. If I(state) is C(C(C(enabled))), storageAccountAccessKey is required.
@@ -116,7 +116,7 @@ id:
 state:
     description:
         - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'New',
-          'Enabled', 'Disabled'"
+           'Enabled', 'Disabled'"
     returned: always
     type: str
     sample: Enabled

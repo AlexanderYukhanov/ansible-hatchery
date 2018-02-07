@@ -100,8 +100,8 @@ id:
             atabases/testdb"
 state:
     description:
-        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include: 'Enable
-          d', 'Disabled'"
+        - "Specifies the state of the policy. If state is Enabled, storageEndpoint and storageAccountAccessKey are required. Possible values include:
+           'Enabled', 'Disabled'"
     returned: always
     type: str
     sample: Enabled

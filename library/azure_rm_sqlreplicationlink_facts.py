@@ -98,8 +98,8 @@ replication_links:
                     sample: Japan East
                 role:
                     description:
-                        - "The role of the database in the replication link. Possible values include: 'Primary', 'Secondary', 'NonReadableSecondary', 'Source
-                          ', 'Copy'"
+                        - "The role of the database in the replication link. Possible values include: 'Primary', 'Secondary', 'NonReadableSecondary',
+                           'Source', 'Copy'"
                     returned: always
                     type: str
                     sample: Secondary

@@ -131,10 +131,11 @@ databases:
                     sample: SQL_Latin1_General_CP1_CI_AS
                 edition:
                     description:
-                        - "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is NonReadableSeconda
-                          ry or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/
-                          providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: 'Capabilities_ListByLocation.'. Possible
-                          values include: 'Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch', 'DataWarehouse', 'System', 'System2'"
+                        - "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If createMode is
+                           NonReadableSecondary or OnlineSecondary, this value is ignored. To see possible values, query the capabilities API
+                           (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId:
+                           'Capabilities_ListByLocation.'. Possible values include: 'Web', 'Business', 'Basic', 'Standard', 'Premium', 'Free', 'Stretch',
+                           'DataWarehouse', 'System', 'System2'"
                     returned: always
                     type: str
                     sample: Basic
