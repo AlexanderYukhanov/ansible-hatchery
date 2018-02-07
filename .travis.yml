@@ -75,7 +75,6 @@ before_install:
       travis_wait 50 delete_resource_group $resource_group;
     }
 
-
   - scan_test() {
       end=$((id * number_per_job));
       start=$((end - number_per_job));
