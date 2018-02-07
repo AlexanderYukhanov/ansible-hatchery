@@ -56,8 +56,8 @@ before_install:
       end=$((id * number_per_job));
       start=$((end - number_per_job));
 
-      #liststr=tests/integration/targets/azure_rm_*/tasks/main.yml;
-      #list=($liststr);
+      liststr=tests/integration/targets/azure_rm_*/tasks/main.yml;
+      list=($liststr);
 
       declare -a list=("tests/integration/targets/azure_rm_sqlservercommunicationlink/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_sqlservercommunicationlink_facts/tasks/main.yml"
