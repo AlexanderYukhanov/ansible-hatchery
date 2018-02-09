@@ -19,6 +19,7 @@ env:
     - id=4
     - id=5
     - id=6
+    - id=7
 
 
 before_install:
@@ -65,6 +66,14 @@ before_install:
                        "tests/integration/targets/azure_rm_sqlgeobackuppolicy_facts/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_batchmanagementapplication/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_batchmanagementapplication_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplicationpackage/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplicationpackage_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementbatchaccount/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementbatchaccount_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementpool/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementpool_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementcertificate/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementcertificate_facts/tasks/main.yml" 
                       )
 
       echo start = $start, end = $end, list_lenth = ${#list[@]};
