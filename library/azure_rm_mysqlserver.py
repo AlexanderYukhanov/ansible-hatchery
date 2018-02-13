@@ -65,7 +65,6 @@ options:
         description:
             - Enable SSL enforcement.
         type: bool
-        default: False
     admin_username:
         description:
             - "The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation)."
@@ -177,8 +176,7 @@ class AzureRMServers(AzureRMModuleBase):
                          '5.7']
             ),
             enforce_ssl=dict(
-                type='bool',
-                default=False
+                type='bool'
             ),
             create_mode=dict(
                 type='str',
