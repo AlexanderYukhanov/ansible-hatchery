@@ -1,20 +1,21 @@
 - name: Prepare random number
   set_fact:
-    rpfx: "{{ 1000 | random }}{{ resource_group | hash('md5') | truncate(7, True, '') }}"
+    rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
 - name: Gather facts Batch Account
   azure_rm_batchmanagementbatchaccount_facts:
     resource_group: "{{ resource_group }}"
+    account_name: batchaccount{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
-      - output.batch_account.xxxunknownxxx.id != None
-      - output.batch_account.xxxunknownxxx.name != None
-      - output.batch_account.xxxunknownxxx.type != None
-      - output.batch_account.xxxunknownxxx.location != None
+      - output.batch_account.batchaccount{{ rpfx }}.id != None
+      - output.batch_account.batchaccount{{ rpfx }}.name != None
+      - output.batch_account.batchaccount{{ rpfx }}.type != None
+      - output.batch_account.batchaccount{{ rpfx }}.location != None
 
 - name: Gather facts Batch Account
   azure_rm_batchmanagementbatchaccount_facts:
@@ -24,11 +25,11 @@
   assert:
     that:
       - output.changed == False
-      - output.batch_account.xxxunknownxxx.id != None
-      - output.batch_account.xxxunknownxxx.name != None
-      - output.batch_account.xxxunknownxxx.type != None
-      - output.batch_account.xxxunknownxxx.location != None
-      - output.batch_account.xxxunknownxxxsecond.id != None
-      - output.batch_account.xxxunknownxxxsecond.name != None
-      - output.batch_account.xxxunknownxxxsecond.type != None
-      - output.batch_account.xxxunknownxxxsecond.location != None
+      - output.batch_account.batchaccount{{ rpfx }}.id != None
+      - output.batch_account.batchaccount{{ rpfx }}.name != None
+      - output.batch_account.batchaccount{{ rpfx }}.type != None
+      - output.batch_account.batchaccount{{ rpfx }}.location != None
+      - output.batch_account.batchaccount{{ rpfx }}second.id != None
+      - output.batch_account.batchaccount{{ rpfx }}second.name != None
+      - output.batch_account.batchaccount{{ rpfx }}second.type != None
+      - output.batch_account.batchaccount{{ rpfx }}second.location != None
