@@ -50,8 +50,7 @@ options:
             - "C(recovery): Creates a database by restoring a geo-replicated backup."
             - "C(restore): Creates a database by restoring a backup of a deleted database."
             - "C(restore_long_term_retention_backup): Creates a database by restoring from a long term retention vault."
-            - "C(copy), C(non_readable_secondary), C(online_secondary) and C(restore_long_term_retention_backup) are not supported for C(data_warehouse)
-               edition."
+            - C(copy), C(non_readable_secondary), C(online_secondary) and C(restore_long_term_retention_backup) are not supported for C(data_warehouse) edition.
         choices:
             - 'copy'
             - 'default'
@@ -67,8 +66,8 @@ options:
             - Specifies the resource ID of the source database
     source_database_deletion_date:
         description:
-            - "Required if I(create_mode) is C(restore) and I(source_database_id) is the deleted database's original resource id when it existed (as
-               opposed to its current restorable dropped database id), then this value is required. Specifies the time that the database was deleted."
+            - "Required if I(create_mode) is C(restore) and I(source_database_id) is the deleted database's original resource id when it existed (as opposed
+               to its current restorable dropped database id), then this value is required. Specifies the time that the database was deleted."
     restore_point_in_time:
         description:
             - "Required if I(create_mode) is C(point_in_time_restore), this value is required. If I(create_mode) is C(restore), this value is optional.
@@ -76,12 +75,12 @@ options:
                or equal to the source database's earliestRestoreDate value."
     recovery_services_recovery_point_resource_id:
         description:
-            - "Required if I(create_mode) is C(restore_long_term_retention_backup), then this value is required. Specifies the resource ID of the
-               recovery point to restore from."
+            - "Required if I(create_mode) is C(restore_long_term_retention_backup), then this value is required. Specifies the resource ID of therecovery
+               point to C(restore) from."
     edition:
         description:
             - "The edition of the database. The DatabaseEditions enumeration contains all the valid editions. If I(create_mode) is C(non_readable_secondary)
-              or C(online_secondary), this value is ignored. To see possible values, query the capabilities API
+               or C(online_secondary), this value is ignored. To see possible values, query the capabilities API
                (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId:
                'Capabilities_ListByLocation.'."
         choices:
@@ -97,18 +96,17 @@ options:
             - 'system2'
     max_size_bytes:
         description:
-            - "The max size of the database expressed in bytes. If I(create_mode) is not C(default), this value is ignored. To see possible values, query the
-               capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId:
-               'Capabilities_ListByLocation.'"
+            - "The max size of the database expressed in bytes. If I(create_mode) is not C(default), this value is ignored. To see possible values, query
+               the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by
+               operationId: 'Capabilities_ListByLocation.'"
     elastic_pool_name:
         description:
-            - "The name of the elastic pool the database is in. Not supported for C(data_warehouse) edition."
+            - The name of the elastic pool the database is in. Not supported for C(data_warehouse) edition.
     read_scale:
         description:
             - "If the database is a geo-secondary, indicates whether read-only connections are allowed to this database or not. Not supported for
                C(data_warehouse) edition."
         type: bool
-        default: False
     sample_name:
         description:
             - "Indicates the name of the sample schema to apply when creating this database. If I(create_mode) is not C(default), this value is ignored. Not
@@ -119,7 +117,6 @@ options:
         description:
             - Is this database is zone redundant? It means the replicas of this database will be spread across multiple availability zones.
         type: bool
-        default: False
     force_update:
       description:
           - SQL Database will be updated if given parameters differ from existing resource state.
@@ -127,7 +124,8 @@ options:
       type: bool
     state:
       description:
-        - Assert the state of the SQL Database. Use 'present' to create or update an SQL Database and 'absent' to delete it.
+        - Assert the state of the SQL Database.
+        - Use 'present' to create or update an SQL Database and 'absent' to delete it.
       default: present
       choices:
         - absent
@@ -276,16 +274,14 @@ class AzureRMDatabases(AzureRMModuleBase):
                 type='str'
             ),
             read_scale=dict(
-                type='bool',
-                default=False
+                type='bool'
             ),
             sample_name=dict(
                 type='str',
                 choices=['adventure_works_lt']
             ),
             zone_redundant=dict(
-                type='bool',
-                default=False
+                type='bool'
             ),
             force_update=dict(
                 type='bool'
@@ -375,14 +371,11 @@ class AzureRMDatabases(AzureRMModuleBase):
                 self.log("Need to check if SQL Database instance has to be deleted or may be updated")
                 if ('location' in self.parameters) and (self.parameters['location'] != old_response['location']):
                     self.to_do = Actions.Update
-                if (('read_scale' in self.parameters) and
-                        (self.parameters['read_scale'] != old_response['read_scale'])):
+                if ('read_scale' in self.parameters) and (self.parameters['read_scale'] != old_response['read_scale']):
                     self.to_do = Actions.Update
-                if (('max_size_bytes' in self.parameters) and
-                        (self.parameters['max_size_bytes'] != old_response['max_size_bytes'])):
+                if ('max_size_bytes' in self.parameters) and (self.parameters['max_size_bytes'] != old_response['max_size_bytes']):
                     self.to_do = Actions.Update
-                if (('edition' in self.parameters) and
-                        (self.parameters['edition'] != old_response['edition'])):
+                if ('edition' in self.parameters) and (self.parameters['edition'] != old_response['edition']):
                     self.to_do = Actions.Update
 
         if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
