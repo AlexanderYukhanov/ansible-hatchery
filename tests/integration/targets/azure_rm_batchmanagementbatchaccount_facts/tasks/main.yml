@@ -10,7 +10,7 @@
 - name: Create Batch Account
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: ba{{ rpfx }}
+    account_name: ba{{ rpfx }}second
 
 - name: Gather facts Batch Account
   azure_rm_batchmanagementbatchaccount_facts:
@@ -51,7 +51,7 @@
 - name: Delete instance of Batch Account
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: ba{{ rpfx }}
+    account_name: ba{{ rpfx }}second
     state: absent
 
 - name: Gather facts Batch Account
