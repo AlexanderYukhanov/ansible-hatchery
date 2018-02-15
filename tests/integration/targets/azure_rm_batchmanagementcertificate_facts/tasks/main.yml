@@ -6,6 +6,7 @@
 - name: Gather facts Certificate
   azure_rm_batchmanagementcertificate_facts:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
@@ -27,6 +28,7 @@
 - name: Gather facts Certificate
   azure_rm_batchmanagementcertificate_facts:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:

@@ -12,11 +12,17 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     pool_name: bmp{{ rpfx }}
+    deployment_configuration:
+      cloud_service_configuration:
+        os_family: linux
 - name: Create Pool
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     pool_name: bmp{{ rpfx }}
+    deployment_configuration:
+      cloud_service_configuration:
+        os_family: linux
 
 - name: Gather facts Pool
   azure_rm_batchmanagementpool_facts:

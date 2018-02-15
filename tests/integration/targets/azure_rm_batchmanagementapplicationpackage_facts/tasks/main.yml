@@ -6,11 +6,12 @@
 - name: Gather facts Application Package
   azure_rm_batchmanagementapplicationpackage_facts:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
-      - output.application_package.xxxunknownxxx.id != None
-      - output.application_package.xxxunknownxxx.version != None
-      - output.application_package.xxxunknownxxx.state != None
+      - output.application_package.ba{{ rpfx }}.id != None
+      - output.application_package.ba{{ rpfx }}.version != None
+      - output.application_package.ba{{ rpfx }}.state != None

@@ -6,6 +6,9 @@
 - name: Create instance of Certificate -- check mode
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    certificate_name: cert{{ rpfx }}
+    data: 123456789993833838
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -16,6 +19,9 @@
 - name: Create instance of Certificate
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    certificate_name: cert{{ rpfx }}
+    data: 123456789993833838
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -25,6 +31,9 @@
 - name: Create again instance of Certificate
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    certificate_name: cert{{ rpfx }}
+    data: 123456789993833838
   register: output
 - name: Assert the state has not changed
   assert:
@@ -34,6 +43,8 @@
 - name: Delete instance of Certificate -- check mode
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    certificate_name: cert{{ rpfx }}
     state: absent
   check_mode: yes
   register: output
@@ -45,6 +56,8 @@
 - name: Delete instance of Certificate
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    certificate_name: cert{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -55,6 +68,8 @@
 - name: Delete unexisting instance of Certificate
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    certificate_name: cert{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
