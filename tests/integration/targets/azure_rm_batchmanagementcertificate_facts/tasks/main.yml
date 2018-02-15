@@ -3,6 +3,28 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
+- name: Create Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+
+- name: Create instance of Certificate -- check mode
+  azure_rm_batchmanagementcertificate:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    thumbprint_algorithm: SHA1
+    thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    format: pfx
+    data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
+    password: KG0UY40e...
+  check_mode: yes
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+
 - name: Gather facts Certificate
   azure_rm_batchmanagementcertificate_facts:
     resource_group: "{{ resource_group }}"
