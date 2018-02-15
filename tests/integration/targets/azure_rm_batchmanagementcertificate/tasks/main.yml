@@ -8,7 +8,11 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     certificate_name: cert{{ rpfx }}
-    data: 123456789993833838
+    thumbprint_algorithm: SHA1
+    thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    format: Pfx
+    data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
+    password: KG0UY40e...
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -21,7 +25,11 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     certificate_name: cert{{ rpfx }}
-    data: 123456789993833838
+    thumbprint_algorithm: SHA1
+    thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    format: Pfx
+    data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
+    password: KG0UY40e...
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -33,7 +41,11 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     certificate_name: cert{{ rpfx }}
-    data: 123456789993833838
+    thumbprint_algorithm: SHA1
+    thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    format: Pfx
+    data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
+    password: KG0UY40e...
   register: output
 - name: Assert the state has not changed
   assert:

@@ -14,7 +14,8 @@
     pool_name: bmp{{ rpfx }}
     deployment_configuration:
       cloud_service_configuration:
-        os_family: linux
+        os_family: 4
+        target_os_version: WA-GUEST-OS-4.45_201708-01
 - name: Create Pool
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
@@ -22,7 +23,8 @@
     pool_name: bmp{{ rpfx }}
     deployment_configuration:
       cloud_service_configuration:
-        os_family: linux
+        os_family: 4
+        target_os_version: WA-GUEST-OS-4.45_201708-01
 
 - name: Gather facts Pool
   azure_rm_batchmanagementpool_facts:
