@@ -10,7 +10,7 @@
     certificate_name: cert{{ rpfx }}
     thumbprint_algorithm: SHA1
     thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
-    format: Pfx
+    format: pfx
     data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
     password: KG0UY40e...
   check_mode: yes
@@ -27,7 +27,7 @@
     certificate_name: cert{{ rpfx }}
     thumbprint_algorithm: SHA1
     thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
-    format: Pfx
+    format: pfx
     data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
     password: KG0UY40e...
   register: output
@@ -43,7 +43,7 @@
     certificate_name: cert{{ rpfx }}
     thumbprint_algorithm: SHA1
     thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
-    format: Pfx
+    format: pfx
     data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
     password: KG0UY40e...
   register: output
