@@ -18,6 +18,7 @@
   azure_rm_batchmanagementapplication:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -28,6 +29,7 @@
   azure_rm_batchmanagementapplication:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
   register: output
 - name: Assert the state has not changed
   assert:
@@ -38,6 +40,7 @@
   azure_rm_batchmanagementapplication:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
     state: absent
   check_mode: yes
   register: output
@@ -50,6 +53,7 @@
   azure_rm_batchmanagementapplication:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -61,6 +65,7 @@
   azure_rm_batchmanagementapplication:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
