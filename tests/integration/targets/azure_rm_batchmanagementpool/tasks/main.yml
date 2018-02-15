@@ -3,9 +3,16 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
+- name: Create Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+
 - name: Create instance of Pool -- check mode
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -16,6 +23,8 @@
 - name: Create instance of Pool
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -25,6 +34,8 @@
 - name: Create again instance of Pool
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
   register: output
 - name: Assert the state has not changed
   assert:
@@ -34,6 +45,8 @@
 - name: Delete instance of Pool -- check mode
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
     state: absent
   check_mode: yes
   register: output
@@ -45,6 +58,8 @@
 - name: Delete instance of Pool
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -55,9 +70,17 @@
 - name: Delete unexisting instance of Pool
   azure_rm_batchmanagementpool:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
   assert:
     that:
       - output.changed == false
+
+- name: Delete instance of Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    state: absent

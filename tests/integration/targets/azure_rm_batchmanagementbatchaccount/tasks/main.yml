@@ -6,7 +6,7 @@
 - name: Create instance of Batch Account -- check mode
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: batchaccount{{ rpfx }}
+    account_name: ba{{ rpfx }}
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -17,7 +17,7 @@
 - name: Create instance of Batch Account
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: batchaccount{{ rpfx }}
+    account_name: ba{{ rpfx }}
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -27,7 +27,7 @@
 - name: Create again instance of Batch Account
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: batchaccount{{ rpfx }}
+    account_name: ba{{ rpfx }}
   register: output
 - name: Assert the state has not changed
   assert:
@@ -37,7 +37,7 @@
 - name: Delete instance of Batch Account -- check mode
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: batchaccount{{ rpfx }}
+    account_name: ba{{ rpfx }}
     state: absent
   check_mode: yes
   register: output
@@ -49,7 +49,7 @@
 - name: Delete instance of Batch Account
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: batchaccount{{ rpfx }}
+    account_name: ba{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed
@@ -60,7 +60,7 @@
 - name: Delete unexisting instance of Batch Account
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-    account_name: batchaccount{{ rpfx }}
+    account_name: ba{{ rpfx }}
     state: absent
   register: output
 - name: Assert the state has changed

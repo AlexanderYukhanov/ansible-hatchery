@@ -3,32 +3,99 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
-- name: Gather facts Pool
-  azure_rm_batchmanagementpool_facts:
+- name: Create Batch Account
+  azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
-  register: output
-- name: Assert that facts are returned
-  assert:
-    that:
-      - output.changed == False
-      - output.pool.xxxunknownxxx.id != None
-      - output.pool.xxxunknownxxx.name != None
-      - output.pool.xxxunknownxxx.type != None
-      - output.pool.xxxunknownxxx.etag != None
-      - output.pool.xxxunknownxxxsecond.id != None
-      - output.pool.xxxunknownxxxsecond.name != None
-      - output.pool.xxxunknownxxxsecond.type != None
-      - output.pool.xxxunknownxxxsecond.etag != None
+    account_name: ba{{ rpfx }}
+- name: Create Pool
+  azure_rm_batchmanagementpool:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
+- name: Create Pool
+  azure_rm_batchmanagementpool:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
 
 - name: Gather facts Pool
   azure_rm_batchmanagementpool_facts:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
-      - output.pool.xxxunknownxxx.id != None
-      - output.pool.xxxunknownxxx.name != None
-      - output.pool.xxxunknownxxx.type != None
-      - output.pool.xxxunknownxxx.etag != None
+      - output.pool.bmp{{ rpfx }}.id != None
+      - output.pool.bmp{{ rpfx }}.name != None
+      - output.pool.bmp{{ rpfx }}.type != None
+      - output.pool.bmp{{ rpfx }}.etag != None
+      - output.pool.bmp{{ rpfx }}second.id != None
+      - output.pool.bmp{{ rpfx }}second.name != None
+      - output.pool.bmp{{ rpfx }}second.type != None
+      - output.pool.bmp{{ rpfx }}second.etag != None
+
+- name: Gather facts Pool
+  azure_rm_batchmanagementpool_facts:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
+  register: output
+- name: Assert that facts are returned
+  assert:
+    that:
+      - output.changed == False
+      - output.pool.bmp{{ rpfx }}.id != None
+      - output.pool.bmp{{ rpfx }}.name != None
+      - output.pool.bmp{{ rpfx }}.type != None
+      - output.pool.bmp{{ rpfx }}.etag != None
+
+- name: Delete instance of Pool
+  azure_rm_batchmanagementpool:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
+    state: absent
+- name: Delete instance of Pool
+  azure_rm_batchmanagementpool:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
+    state: absent
+
+- name: Gather facts Pool
+  azure_rm_batchmanagementpool_facts:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - "'bmp{{ rpfx }}' not in output.pool"
+      - "'bmp{{ rpfx }}second' not in output.pool"
+
+- name: Gather facts Pool
+  azure_rm_batchmanagementpool_facts:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    pool_name: bmp{{ rpfx }}
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - "'bmp{{ rpfx }}' not in output.pool"
+      - "'bmp{{ rpfx }}second' not in output.pool"
+
+- name: Delete instance of Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    state: absent
+- name: Delete instance of Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    state: absent
