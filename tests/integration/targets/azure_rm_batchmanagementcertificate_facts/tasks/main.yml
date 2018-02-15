@@ -12,32 +12,32 @@
   assert:
     that:
       - output.changed == False
-      - output.certificate.cert{{ rpfx }}.id != None
-      - output.certificate.cert{{ rpfx }}.name != None
-      - output.certificate.cert{{ rpfx }}.type != None
-      - output.certificate.cert{{ rpfx }}.etag != None
-      - output.certificate.cert{{ rpfx }}.thumbprint != None
-      - output.certificate.cert{{ rpfx }}.format != None
-      - output.certificate.cert{{ rpfx }}second.id != None
-      - output.certificate.cert{{ rpfx }}second.name != None
-      - output.certificate.cert{{ rpfx }}second.type != None
-      - output.certificate.cert{{ rpfx }}second.etag != None
-      - output.certificate.cert{{ rpfx }}second.thumbprint != None
-      - output.certificate.cert{{ rpfx }}second.format != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.id != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.name != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.type != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.etag != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.thumbprint != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.format != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.id != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.name != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.type != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.etag != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.thumbprint != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.format != None
 
 - name: Gather facts Certificate
   azure_rm_batchmanagementcertificate_facts:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: cert{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
-      - output.certificate.cert{{ rpfx }}.id != None
-      - output.certificate.cert{{ rpfx }}.name != None
-      - output.certificate.cert{{ rpfx }}.type != None
-      - output.certificate.cert{{ rpfx }}.etag != None
-      - output.certificate.cert{{ rpfx }}.thumbprint != None
-      - output.certificate.cert{{ rpfx }}.format != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.id != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.name != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.type != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.etag != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.thumbprint != None
+      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.format != None

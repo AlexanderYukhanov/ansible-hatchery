@@ -60,20 +60,20 @@ before_install:
       liststr=tests/integration/targets/azure_rm_*/tasks/main.yml;
       list=($liststr);
 
-      declare -a list=("tests/integration/targets/azure_rm_sqlservercommunicationlink/tasks/main.yml" 
-                       "tests/integration/targets/azure_rm_sqlservercommunicationlink_facts/tasks/main.yml"
-                       "tests/integration/targets/azure_rm_sqlgeobackuppolicy/tasks/main.yml" 
-                       "tests/integration/targets/azure_rm_sqlgeobackuppolicy_facts/tasks/main.yml" 
-                       "tests/integration/targets/azure_rm_batchmanagementapplication/tasks/main.yml" 
-                       "tests/integration/targets/azure_rm_batchmanagementapplication_facts/tasks/main.yml" 
-                       "tests/integration/targets/azure_rm_batchmanagementapplicationpackage/tasks/main.yml" 
-                       "tests/integration/targets/azure_rm_batchmanagementapplicationpackage_facts/tasks/main.yml" 
-                       "tests/integration/targets/azure_rm_batchmanagementbatchaccount/tasks/main.yml" 
+      declare -a list=("tests/integration/targets/azure_rm_batchmanagementbatchaccount/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_batchmanagementbatchaccount_facts/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_batchmanagementpool/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_batchmanagementpool_facts/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_batchmanagementcertificate/tasks/main.yml" 
                        "tests/integration/targets/azure_rm_batchmanagementcertificate_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplication/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplication_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplicationpackage/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_batchmanagementapplicationpackage_facts/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_sqlservercommunicationlink/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_sqlservercommunicationlink_facts/tasks/main.yml"
+                       "tests/integration/targets/azure_rm_sqlgeobackuppolicy/tasks/main.yml" 
+                       "tests/integration/targets/azure_rm_sqlgeobackuppolicy_facts/tasks/main.yml" 
                       )
 
       echo start = $start, end = $end, list_lenth = ${#list[@]};

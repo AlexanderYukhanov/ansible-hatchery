@@ -7,7 +7,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: cert{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     thumbprint_algorithm: SHA1
     thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     format: pfx
@@ -24,7 +24,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: cert{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     thumbprint_algorithm: SHA1
     thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     format: pfx
@@ -40,7 +40,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: cert{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     thumbprint_algorithm: SHA1
     thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     format: pfx
@@ -56,7 +56,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: cert{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     state: absent
   check_mode: yes
   register: output
@@ -69,7 +69,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: cert{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     state: absent
   register: output
 - name: Assert the state has changed
@@ -81,7 +81,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: cert{{ rpfx }}
+    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
     state: absent
   register: output
 - name: Assert the state has changed
