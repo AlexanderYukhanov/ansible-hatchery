@@ -13,11 +13,14 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     pool_name: bmp{{ rpfx }}
-    vm_size: STANDARD_D4
+    vm_size: STANDARD_A1
     deployment_configuration:
       cloud_service_configuration:
-        os_family: 4
-        target_os_version: WA-GUEST-OS-4.45_201708-01
+        image_reference:
+          publisher: Canonical
+          offer: UbuntuServer
+          sku: 14.04.2-LTS
+          version: latest
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
@@ -32,8 +35,11 @@
     pool_name: bmp{{ rpfx }}
     deployment_configuration:
       cloud_service_configuration:
-        os_family: 4
-        target_os_version: WA-GUEST-OS-4.45_201708-01
+        image_reference:
+          publisher: Canonical
+          offer: UbuntuServer
+          sku: 14.04.2-LTS
+          version: latest
   register: output
 - name: Assert the resource instance is well created
   assert:
