@@ -3,6 +3,15 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
+- name: Create Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: batchaccount{{ rpfx }}
+- name: Create Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: batchaccount{{ rpfx }}second
+
 - name: Gather facts Batch Account
   azure_rm_batchmanagementbatchaccount_facts:
     resource_group: "{{ resource_group }}"
@@ -33,3 +42,38 @@
       - output.batch_account.batchaccount{{ rpfx }}second.name != None
       - output.batch_account.batchaccount{{ rpfx }}second.type != None
       - output.batch_account.batchaccount{{ rpfx }}second.location != None
+
+- name: Delete instance of Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: batchaccount{{ rpfx }}
+    state: absent
+- name: Delete instance of Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: batchaccount{{ rpfx }}
+    state: absent
+
+- name: Gather facts Batch Account
+  azure_rm_batchmanagementbatchaccount_facts:
+    resource_group: "{{ resource_group }}"
+    account_name: batchaccount{{ rpfx }}
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - "'batchaccount{{ rpfx }}' not in output.batch_account"
+      - "'batchaccount{{ rpfx }}second' not in output.batch_account"
+
+- name: Gather facts Batch Account
+  azure_rm_batchmanagementbatchaccount_facts:
+    resource_group: "{{ resource_group }}"
+  register: output
+- name: Assert that empty dictionary was returned
+  assert:
+    that:
+      - output.changed == False
+      - "'batchaccount{{ rpfx }}' not in output.batch_account"
+      - "'batchaccount{{ rpfx }}second' not in output.batch_account"
+
