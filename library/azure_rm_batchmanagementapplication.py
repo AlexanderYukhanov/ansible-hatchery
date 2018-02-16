@@ -256,7 +256,7 @@ class AzureRMApplication(AzureRMModuleBase):
                                                         application_id=self.application_id)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Application instance : {0} found".format(response.name))
+            self.log("Application instance : {0} found".format(response.application_id))
         except CloudError as e:
             self.log('Did not find the Application instance.')
         if found is True:
