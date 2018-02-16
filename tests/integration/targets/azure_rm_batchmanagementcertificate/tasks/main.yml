@@ -12,7 +12,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
     thumbprint_algorithm: SHA1
     thumbprint: 071cb94f0cc8514d024124708ee8b2687bd7d9d5
     format: cer
@@ -28,7 +28,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
     thumbprint_algorithm: SHA1
     thumbprint: 071cb94f0cc8514d024124708ee8b2687bd7d9d5
     format: cer
@@ -43,7 +43,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
     thumbprint_algorithm: SHA1
     thumbprint: 071cb94f0cc8514d024124708ee8b2687bd7d9d5
     format: cer
@@ -58,7 +58,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
     state: absent
   check_mode: yes
   register: output
@@ -71,7 +71,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
     state: absent
   register: output
 - name: Assert the state has changed
@@ -83,7 +83,7 @@
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
     state: absent
   register: output
 - name: Assert the state has changed
