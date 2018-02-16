@@ -37,6 +37,8 @@
     pool_name: bmp{{ rpfx }}
     deployment_configuration:
       cloud_service_configuration:
+        os_family: 4
+        target_os_version: WA-GUEST-OS-4.45_201708-01
         image_reference:
           publisher: Canonical
           offer: UbuntuServer
@@ -57,6 +59,11 @@
       cloud_service_configuration:
         os_family: 4
         target_os_version: WA-GUEST-OS-4.45_201708-01
+        image_reference:
+          publisher: Canonical
+          offer: UbuntuServer
+          sku: 14.04.2-LTS
+          version: latest
   register: output
 - name: Assert the state has not changed
   assert:
