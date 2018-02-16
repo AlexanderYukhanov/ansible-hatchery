@@ -7,6 +7,7 @@
   azure_rm_batchmanagementapplication:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
   check_mode: yes
   register: output
 - name: Assert the resource instance is well created
