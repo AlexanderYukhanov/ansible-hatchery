@@ -3,6 +3,11 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
+- name: Create Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+
 - name: Create instance of Application -- check mode
   azure_rm_batchmanagementapplication:
     resource_group: "{{ resource_group }}"
