@@ -50,7 +50,6 @@ options:
     data:
         description:
             - The maximum size is 10KB.
-        required: True
     password:
         description:
             - This is required if the certificate I(format) is C(pfx) and must be omitted if the certificate I(format) is C(cer).
@@ -144,8 +143,7 @@ class AzureRMCertificate(AzureRMModuleBase):
                          'cer']
             ),
             data=dict(
-                type='str',
-                required=True
+                type='str'
             ),
             password=dict(
                 type='str',

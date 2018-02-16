@@ -33,7 +33,7 @@
     that:
       - output.changed == False
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].id != None
-      #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].name != None
+      - output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].name != None
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].type != None
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].etag != None
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].thumbprint != None
@@ -60,7 +60,7 @@
     that:
       - output.changed == False
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].id != None
-      #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].name != None
+      - output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].name != None
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].type != None
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].etag != None
       #- output.certificate['SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5'].thumbprint != None
