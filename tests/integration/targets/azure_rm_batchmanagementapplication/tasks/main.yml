@@ -7,6 +7,8 @@
   azure_rm_batchmanagementbatchaccount:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
+    auto_storage:
+      storage_account_id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zimstestrg/providers/Microsoft.Storage/storageAccounts/zimsstorage
 
 - name: Create instance of Application -- check mode
   azure_rm_batchmanagementapplication:
