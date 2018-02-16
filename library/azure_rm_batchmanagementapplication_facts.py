@@ -138,7 +138,7 @@ class AzureRMApplicationFacts(AzureRMModuleBase):
             self.log('Could not get facts for Application.')
 
         if response is not None:
-            results[response.name] = response.as_dict()
+            results[response.id] = response.as_dict()
 
         return results
 
