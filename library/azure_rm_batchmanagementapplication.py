@@ -215,7 +215,8 @@ class AzureRMApplication(AzureRMModuleBase):
             else:
                 response = self.mgmt_client.application.update(resource_group_name=self.resource_group,
                                                                account_name=self.account_name,
-                                                               application_id=self.application_id)
+                                                               application_id=self.application_id,
+                                                               parameters=self.parameters)
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
