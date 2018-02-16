@@ -3,12 +3,32 @@
     rpfx: "{{ resource_group | hash('md5') | truncate(7, True, '') }}{{ 1000 | random }}"
   run_once: yes
 
+- name: Create Batch Account
+  azure_rm_batchmanagementbatchaccount:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    auto_storage:
+      storage_account_id: /subscriptions/685ba005-af8d-4b04-8f16-a7bf38b2eb5a/resourceGroups/zimstestrg/providers/Microsoft.Storage/storageAccounts/zimsstorage
+
+- name: Create instance of Application
+  azure_rm_batchmanagementapplication:
+    resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
+  register: output
+- name: Assert the resource instance is well created
+  assert:
+    that:
+      - output.changed
+
 - name: Gather facts Application
   azure_rm_batchmanagementapplication_facts:
     resource_group: "{{ resource_group }}"
+    account_name: ba{{ rpfx }}
+    application_id: bapp{{ rpfx }}
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
-      - output.application.xxxunknownxxx.id != None
+      - output.application.bapp{{ rpfx }}.id != None
