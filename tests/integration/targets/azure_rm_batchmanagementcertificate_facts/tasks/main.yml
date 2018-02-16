@@ -8,17 +8,15 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
 
-- name: Create instance of Certificate -- check mode
+- name: Create instance of Certificate
   azure_rm_batchmanagementcertificate:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
     thumbprint_algorithm: SHA1
-    thumbprint: 0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
-    format: pfx
-    data: MIIJsgIBAzCCCW4GCSqGSIb3DQE...
-    password: KG0UY40e...
-  check_mode: yes
+    thumbprint: 071cb94f0cc8514d024124708ee8b2687bd7d9d5
+    format: cer
+    data: MIICEjCCAXsCAg36MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwGA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNEREMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdlYiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIwODIyMDUyNjU0WhcNMTcwODIxMDUyNjU0WjBKMQswCQYDVQQGEwJKUDEOMAwGA1UECAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBsZS5jb20wXDANBgkqhkiG9w0BAQEFAANLADBIAkEAm/xmkHmEQrurE/0re/jeFRLl8ZPjBop7uLHhnia7lQG/5zDtZIUC3RVpqDSwBuw/NTweGyuP+o8AG98HxqxTBwIDAQABMA0GCSqGSIb3DQEBBQUAA4GBABS2TLuBeTPmcaTaUW/LCB2NYOy8GMdzR1mx8iBIu2H6/E2tiY3RIevV2OW61qY2/XRQg7YPxx3ffeUugX9F4J/iPnnu1zAxxyBy2VguKv4SWjRFoRkIfIlHX0qVviMhSlNy2ioFLy7JcPZb+v3ftDGywUqcBiVDoea0Hn+GmxZACg==
   register: output
 - name: Assert the resource instance is well created
   assert:
@@ -34,32 +32,32 @@
   assert:
     that:
       - output.changed == False
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.id != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.name != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.type != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.etag != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.thumbprint != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.format != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.id != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.name != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.type != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.etag != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.thumbprint != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.format != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.id != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.name != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.type != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.etag != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.thumbprint != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.format != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.id != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.name != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.type != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.etag != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.thumbprint != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.format != None
 
 - name: Gather facts Certificate
   azure_rm_batchmanagementcertificate_facts:
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
-    certificate_name: SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E
+    certificate_name: SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5
   register: output
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.id != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.name != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.type != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.etag != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.thumbprint != None
-      - output.certificate.SHA1-0A0E4F50D51BEADEAC1D35AFC5116098E7902E6E.format != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.id != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.name != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.type != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.etag != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.thumbprint != None
+      - output.certificate.SHA1-071cb94f0cc8514d024124708ee8b2687bd7d9d5.format != None
