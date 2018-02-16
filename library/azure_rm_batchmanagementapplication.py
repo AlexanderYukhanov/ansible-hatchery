@@ -177,7 +177,7 @@ class AzureRMApplication(AzureRMModuleBase):
             if not old_response:
                 self.results['changed'] = True
             else:
-                self.results['changed'] = old_response.__ne__(response)
+                self.results['changed'] = False
             self.log("Creation / Update done")
         elif self.to_do == Actions.Delete:
             self.log("Application instance deleted")
@@ -223,7 +223,10 @@ class AzureRMApplication(AzureRMModuleBase):
         except CloudError as exc:
             self.log('Error attempting to create the Application instance.')
             self.fail("Error creating the Application instance: {0}".format(str(exc)))
-        return response.as_dict()
+        if response is not None:
+            return response.as_dict()
+        else:
+            return None
 
     def delete_application(self):
         '''
