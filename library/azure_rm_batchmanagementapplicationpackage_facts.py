@@ -162,7 +162,7 @@ class AzureRMApplicationPackageFacts(AzureRMModuleBase):
             self.log('Could not get facts for ApplicationPackage.')
 
         if response is not None:
-            results[response.name] = response.as_dict()
+            results[response.version] = response.as_dict()
 
         return results
 

@@ -270,7 +270,7 @@ class AzureRMApplicationPackage(AzureRMModuleBase):
                                                                 version=self.version)
             found = True
             self.log("Response : {0}".format(response))
-            self.log("Application Package instance : {0} found".format(response.name))
+            self.log("Application Package instance : {0} found".format(response.version))
         except CloudError as e:
             self.log('Did not find the Application Package instance.')
         if found is True:
