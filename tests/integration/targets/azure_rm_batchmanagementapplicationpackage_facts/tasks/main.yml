@@ -34,16 +34,16 @@
 
 - name: Debug dump
   debug:
-    log: OUTPUT -- {{ output }}
+    msg: OUTPUT -- {{ output }}
 
 
 - name: Debug dump 2
   debug:
-    log: OUTPUT -- {{ output.application_package }}
+    msg: OUTPUT -- {{ output.application_package }}
 
 - name: Debug dump 3
   debug:
-    log: OUTPUT -- {{ output.application_package.ba{{ rpfx }} }}
+    msg: OUTPUT -- {{ output.application_package.ba{{ rpfx }} }}
 
 - name: Assert that facts are returned
   assert:
