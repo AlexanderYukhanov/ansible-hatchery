@@ -21,7 +21,7 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     application_id: bapp{{ rpfx }}
-    version: 1.2.3
+    version: ver12345
   register: output
 
 - name: Gather facts Application Package
@@ -29,27 +29,18 @@
     resource_group: "{{ resource_group }}"
     account_name: ba{{ rpfx }}
     application_id: bapp{{ rpfx }}
-    version: 1.2.3
+    version: ver12345
   register: output
-
-- name: Debug dump
-  debug:
-    msg: OUTPUT -- {{ output }}
-
 
 - name: Debug dump 2
   debug:
     msg: OUTPUT -- {{ output.application_package }}
 
-- name: Debug dump 3
-  debug:
-    msg: OUTPUT -- {{ output.application_package.ba{{ rpfx }} }}
-
 - name: Assert that facts are returned
   assert:
     that:
       - output.changed == False
-      #- output.application_package.ba{{ rpfx }}.application_id != None
-      #- output.application_package.ba{{ rpfx }}.version != None
-      #- output.application_package.ba{{ rpfx }}.state != None
+      - output.application_package.ver12345.id != None
+      - output.application_package.ver12345.version != None
+      - output.application_package.ver12345.state != None
 
