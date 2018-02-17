@@ -175,7 +175,7 @@ class AzureRMApplicationPackage(AzureRMModuleBase):
                 self.log("Need to check if Application Package instance has to be deleted or may be updated")
                 self.to_do = Actions.Update
 
-        if (self.to_do == Actions.Create) or (self.to_do == Actions.Update):
+        if (self.to_do == Actions.Create):
             self.log("Need to Create / Update the Application Package instance")
 
             if self.check_mode:
@@ -227,8 +227,6 @@ class AzureRMApplicationPackage(AzureRMModuleBase):
                                                                        account_name=self.account_name,
                                                                        application_id=self.application_id,
                                                                        version=self.version)
-            else:
-                response = self.mgmt_client.application_package.update()
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 
