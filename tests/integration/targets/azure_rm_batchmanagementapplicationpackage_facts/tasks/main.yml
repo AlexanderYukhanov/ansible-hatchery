@@ -35,6 +35,11 @@
   assert:
     that:
       - output.changed == False
-      - output.application_package.ba{{ rpfx }}.id != None
+      #- output.application_package.ba{{ rpfx }}.application_id != None
       - output.application_package.ba{{ rpfx }}.version != None
       - output.application_package.ba{{ rpfx }}.state != None
+
+- name: Debug dump
+  debug:
+    log: OUTPUT -- {{ output }}
+    
