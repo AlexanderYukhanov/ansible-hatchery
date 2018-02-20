@@ -279,12 +279,9 @@ class AzureRMFileServers(AzureRMModuleBase):
         self.log("Creating / Updating the File Server instance {0}".format(self.file_server_name))
 
         try:
-            if self.to_do == Actions.Create:
-                response = self.mgmt_client.file_servers.create(resource_group_name=self.resource_group,
+            response = self.mgmt_client.file_servers.create(resource_group_name=self.resource_group,
                                                                 file_server_name=self.file_server_name,
                                                                 parameters=self.parameters)
-            else:
-                response = self.mgmt_client.file_servers.update()
             if isinstance(response, AzureOperationPoller):
                 response = self.get_poller_result(response)
 

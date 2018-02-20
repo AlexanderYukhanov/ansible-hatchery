@@ -398,7 +398,7 @@ class AzureRMClusters(AzureRMModuleBase):
             if self.check_mode:
                 self.results['changed'] = True
                 return self.results
-
+            self.populate_account_keys()
             response = self.create_update_cluster()
 
             if not old_response:
@@ -427,6 +427,34 @@ class AzureRMClusters(AzureRMModuleBase):
             self.results["id"] = response["id"]
 
         return self.results
+
+    def populate_account_keys(self):
+        '''
+        Populate storage account key for mount volumes if credentials not provided.
+        '''
+        try:
+            volumes = self.parameters['node_setup']['mount_volumes']
+        except KeyError:
+            return
+        for systems in volumes.values():
+            for s in systems:
+                if 'account_name' in s and 'credentials' not in s:
+                    s['credentials'] = {'account_key': self.get_key_for_storage_account(s['account_name'])}
+
+    def get_key_for_storage_account(self, name):
+        '''
+        Finds a storage account key for a storage account with given name.
+        :return str: the storage account key.
+        '''
+        try:
+            resource_id = next((acc.id for acc in self.storage_client.storage_accounts.list() if
+                                acc.name == name))
+        except StopIteration:
+            self.fail('Error finding {0} storage account under current subscription'.format(name))
+        resource_group = resource_id.split('/')[4]
+        keys = self.storage_client.storage_accounts.list_keys(resource_group, name)
+        return keys.keys[0].value
+
 
     def create_update_cluster(self):
         '''
